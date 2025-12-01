@@ -34,6 +34,7 @@ const ExerciseView = ({ tenseId }) => {
   const [stats, setStats] = useState({ correct: 0, incorrect: 0 });
   const [vocabularyImage, setVocabularyImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
+  const [remainingVocabExercises, setRemainingVocabExercises] = useState([]);
   
   const inputRef = useRef(null);
   const initialTimerRef = useRef(null);
@@ -128,6 +129,7 @@ const ExerciseView = ({ tenseId }) => {
     let loadedExercises = [];
     if (isVocabTopic) {
       loadedExercises = getVocabularyByTopic(tenseId);
+      setRemainingVocabExercises([...loadedExercises]);
     } else {
       loadedExercises = getExercisesByTense(tenseId);
     }
@@ -178,15 +180,23 @@ const ExerciseView = ({ tenseId }) => {
     setFeedback(null);
     setShowAnswer(false);
     setCountdown(20);
+    // Reset remaining exercises when changing direction
+    if (isVocabulary) {
+      setRemainingVocabExercises([...exercises]);
+    }
     loadNewQuestion();
   };
 
   const loadNewQuestion = () => {
-    if (exercises.length > 0) {
+    const exercisesToUse = isVocabulary && remainingVocabExercises.length > 0 
+      ? remainingVocabExercises 
+      : exercises;
+    
+    if (exercisesToUse.length > 0) {
       clearAllTimers();
       
-      const randomIndex = Math.floor(Math.random() * exercises.length);
-      const exercise = exercises[randomIndex];
+      const randomIndex = Math.floor(Math.random() * exercisesToUse.length);
+      const exercise = exercisesToUse[randomIndex];
       setCurrentExercise(exercise);
       setUserAnswer('');
       setUserAnswers([]);
@@ -275,8 +285,22 @@ const ExerciseView = ({ tenseId }) => {
         incorrect: prev.incorrect + (isCorrect ? 0 : 1)
       }));
 
-      // Si la respuesta es correcta, esperar 5 segundos y pasar a la siguiente
+      // Si la respuesta es correcta, eliminar del pool y pasar a la siguiente
       if (isCorrect) {
+        // Remover el ejercicio actual del pool de vocabulario
+        const updatedRemaining = remainingVocabExercises.filter(ex => ex !== currentExercise);
+        setRemainingVocabExercises(updatedRemaining);
+        
+        // Mostrar mensaje si completó todos
+        if (updatedRemaining.length === 0) {
+          setTimeout(() => {
+            alert('¡Felicitaciones! Has completado todas las palabras correctamente. 🎉\n\nEstadísticas finales:\nCorrectas: ' + (stats.correct + 1) + '\nIncorrectas: ' + stats.incorrect);
+            // Reiniciar el vocabulario
+            setRemainingVocabExercises([...exercises]);
+            setStats({ correct: 0, incorrect: 0 });
+          }, 100);
+        }
+        
         feedbackTimerRef.current = setTimeout(() => {
           loadNewQuestion();
         }, 5000);
@@ -533,6 +557,17 @@ const ExerciseView = ({ tenseId }) => {
         {/* Sección de estadísticas y toggle para vocabulario */}
         {isVocabulary && (
           <div className="mt-4 flex flex-col gap-4">
+            {/* Indicador de palabras restantes */}
+            <div className="flex items-center justify-center gap-4 p-3 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">📚</span>
+                <div>
+                  <p className="text-sm font-semibold text-purple-700">Palabras por aprender</p>
+                  <p className="text-2xl font-bold text-purple-900">{remainingVocabExercises.length} / {exercises.length}</p>
+                </div>
+              </div>
+            </div>
+            
             {/* Estadísticas en tiempo real */}
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs sm:text-sm">
               <div className="flex items-center gap-2">
