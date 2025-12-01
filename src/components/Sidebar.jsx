@@ -11,7 +11,8 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     'Question Forms': false,
     'Mixed Practice': false,
     'Vocabulary': false,
-    'Weather Exercise': false
+    'Weather Exercise': false,
+    'Exam': false
   });
 
   const tenses = [
@@ -313,6 +314,32 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                   }`}
                 >
                   Match Words & Definitions
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Sección: Exam */}
+          <div className="mb-2">
+            <button
+              onClick={() => toggleSection('Exam')}
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
+            >
+              <span className="group-hover:translate-x-1 transition-transform duration-300">📝 Exam</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Exam'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
+            </button>
+
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Exam'] ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="ml-3 mt-1">
+                <button
+                  onClick={() => onSelectTense('exam')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'exam'
+                      ? 'bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-lg shadow-purple-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  Complete Exam
                 </button>
               </div>
             </div>

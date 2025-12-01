@@ -2,11 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
 import MatchExercise from './MatchExercise';
+import ExamView from './ExamView';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es un ejercicio de tipo match, usar el componente especializado
   if (tenseId === 'weather-match') {
     return <MatchExercise tenseId={tenseId} />;
+  }
+
+  // Si es el examen, usar el componente ExamView
+  if (tenseId === 'exam') {
+    return <ExamView />;
   }
 
   const [exercises, setExercises] = useState([]);
