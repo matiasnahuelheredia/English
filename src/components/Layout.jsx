@@ -7,7 +7,7 @@ const Layout = ({ children, selectedTense, onSelectTense }) => {
       <Sidebar selectedTense={selectedTense} onSelectTense={onSelectTense} />
       
       <div className="flex-1 overflow-y-auto">
-        <div className="p-6 md:p-8">
+        <div className="p-4 sm:p-6 md:p-8">
           {children}
         </div>
       </div>

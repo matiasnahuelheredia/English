@@ -495,12 +495,12 @@ const ExerciseView = ({ tenseId }) => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+    <div className="max-w-4xl mx-auto px-2 sm:px-4">
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">{getTenseTitle()}</h2>
-            <p className="text-gray-600">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{getTenseTitle()}</h2>
+            <p className="text-sm sm:text-base text-gray-600">
               {isVocabulary
                 ? (isReversed 
                     ? 'Traduce la siguiente palabra del español al inglés.'
@@ -602,7 +602,7 @@ const ExerciseView = ({ tenseId }) => {
         )}
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-6">
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
         <div className="mb-6">
           <div className="flex-1">
             {/* Contador inicial solo para vocabulario */}
@@ -620,11 +620,11 @@ const ExerciseView = ({ tenseId }) => {
                 {/* Imagen del vocabulario */}
                 {vocabularyImage && !imageLoading && (
                   <div className="flex justify-center mb-4">
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-4 border-blue-200">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-4 border-blue-200 w-full max-w-md">
                       <img 
                         src={vocabularyImage} 
                         alt={currentExercise.englishWord}
-                        className="w-full max-w-md h-64 object-cover"
+                        className="w-full h-48 sm:h-56 md:h-64 object-cover"
                         onError={(e) => {
                           console.log('Image failed to load');
                           e.target.style.display = 'none';
@@ -637,13 +637,13 @@ const ExerciseView = ({ tenseId }) => {
                 
                 {imageLoading && (
                   <div className="flex justify-center mb-4">
-                    <div className="w-full max-w-md h-64 bg-gray-200 animate-pulse flex items-center justify-center rounded-lg">
+                    <div className="w-full max-w-md h-48 sm:h-56 md:h-64 bg-gray-200 animate-pulse flex items-center justify-center rounded-lg">
                       <span className="text-gray-500">Cargando imagen...</span>
                     </div>
                   </div>
                 )}
                 
-                <span className="text-gray-800 font-medium text-lg">
+                <span className="text-gray-800 font-medium text-base sm:text-lg">
                   {isReversed 
                     ? `Translate to English: ${Array.isArray(currentExercise.spanishWord) ? currentExercise.spanishWord[0] : currentExercise.spanishWord}`
                     : `Translate to Spanish: ${currentExercise.englishWord}`
@@ -654,7 +654,7 @@ const ExerciseView = ({ tenseId }) => {
                   ref={inputRef}
                   value={userAnswer || ''}
                   onChange={(e) => handleAnswerChange(e.target.value)}
-                  className="border border-gray-300 rounded px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 w-full max-w-md"
+                  className="border border-gray-300 rounded px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
                   placeholder="Tu respuesta..."
                   disabled={feedback !== null}
                   onKeyPress={(e) => {
@@ -666,7 +666,7 @@ const ExerciseView = ({ tenseId }) => {
               </div>
             ) : (
               // Renderizado para ejercicios normales
-              <div className="flex flex-wrap items-center gap-2 mb-3">
+              <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-3 text-sm sm:text-base">
                 {currentExercise.sentenceParts?.map((part, partIndex) => {
                   if (part.type === 'text') {
                     return <span key={partIndex} className="text-gray-800 text-lg">{part.content}</span>;
@@ -681,7 +681,7 @@ const ExerciseView = ({ tenseId }) => {
                         type="text"
                         value={userAnswers[inputIndex] || ''}
                         onChange={(e) => handleAnswerChange(e.target.value, inputIndex)}
-                        className="border border-gray-300 rounded px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[150px]"
+                        className="border border-gray-300 rounded px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[120px] sm:min-w-[150px]"
                         placeholder="..."
                         disabled={feedback !== null}
                       />
