@@ -24,14 +24,32 @@ const ExamView = () => {
         title: '📚 Cómo resolver: Narrative Tenses',
         example: 'We _______ (have) dinner when the electricity went off.',
         solution: 'were having',
-        explanation: 'En narrativas usamos diferentes tiempos para expresar:',
+        explanation: 'En narrativas usamos diferentes tiempos para expresar acciones en el pasado:',
         points: [
-          '🔹 Past Continuous: Acciones en progreso interrumpidas → "were having"',
-          '🔹 Past Perfect: Acciones anteriores a otra pasada → "had eaten"',
-          '🔹 Past Perfect Continuous: Duración antes de otra acción → "had been waiting"',
-          '🔹 Past Simple: Acciones completadas secuenciales → "went, ate, left"'
+          '🔹 Past Simple: Acciones COMPLETADAS y SECUENCIALES',
+          '   • Se terminaron en el pasado → "I ate dinner, watched TV, and went to bed"',
+          '   • Eventos uno después del otro → "She opened the door, walked in, and sat down"',
+          '   • Palabra clave: "then" (entonces), verbos de acción completa',
+          '',
+          '🔹 Past Continuous: Acciones EN PROGRESO que fueron INTERRUMPIDAS',
+          '   • Acción larga que estaba pasando → "I was eating when..."',
+          '   • Se combina con Past Simple (interrupción) → "were having dinner when electricity went off"',
+          '   • Palabra clave: "when" + Past Simple, "while" + otra acción continua',
+          '   • Contexto temporal específico → "At 8pm, I was studying"',
+          '',
+          '🔹 Past Perfect: Acción que pasó ANTES de otra acción pasada',
+          '   • Primera acción de dos eventos → "I had eaten (1º) before I watched TV (2º)"',
+          '   • Causa-efecto en el pasado → "They were hungry because they hadn\'t eaten"',
+          '   • Palabra clave: "before", "after", "already", "just", "by the time"',
+          '   • Resultado visible en el pasado → "Someone had broken the window" (ventana rota)',
+          '',
+          '🔹 Past Perfect Continuous: DURACIÓN de acción antes de otra acción pasada',
+          '   • Énfasis en cuánto tiempo → "I had been waiting for 2 hours when..."',
+          '   • Actividad continua con resultado → "She was tired because she had been running"',
+          '   • Palabra clave: "for" + tiempo, "since" + momento, "How long"',
+          '   • La acción puede continuar o no → "had been studying all night (y seguía cansado)"'
         ],
-        tip: '💡 Busca palabras clave: "when" (interrupción), "before" (anterior), "for ages" (duración)'
+        tip: '💡 TRUCO: ¿Interrupción? → Past Continuous. ¿Secuencia? → Past Simple. ¿Primera de dos? → Past Perfect. ¿Duración antes? → Past Perfect Continuous'
       },
       'present-perfect': {
         title: '📚 Cómo resolver: Present Perfect',

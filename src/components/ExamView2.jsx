@@ -24,14 +24,32 @@ const ExamView2 = () => {
         title: '📚 Cómo resolver: Narrative Tenses (Cybersecurity)',
         example: 'The hacker _______ (access) our database when the firewall blocked him.',
         solution: 'was accessing',
-        explanation: 'En narrativas de ciberseguridad usamos diferentes tiempos:',
+        explanation: 'En narrativas de seguridad usamos diferentes tiempos para describir incidentes:',
         points: [
-          '🔹 Past Continuous: Ataques en progreso interrumpidos → "was accessing"',
-          '🔹 Past Perfect: Acciones anteriores → "had encrypted the files"',
-          '🔹 Past Perfect Continuous: Duración de monitoreo/ataque → "had been monitoring"',
-          '🔹 Past Simple: Acciones completadas → "detected, reported, patched"'
+          '🔹 Past Simple: Acciones de seguridad COMPLETADAS y SECUENCIALES',
+          '   • Eventos del incidente uno tras otro → "detected the breach, blocked access, sent alert"',
+          '   • Acciones completas → "The firewall blocked the attack"',
+          '   • Palabra clave: "then" (entonces), secuencia de eventos',
+          '',
+          '🔹 Past Continuous: Ataques EN PROGRESO que fueron INTERRUMPIDOS',
+          '   • Ataque en curso → "The hacker was accessing when..."',
+          '   • Se combina con Past Simple (interrupción) → "was downloading files when firewall blocked"',
+          '   • Palabra clave: "when" + acción que interrumpe, "while" + otra acción continua',
+          '   • Momento específico → "At 3am, the malware was spreading"',
+          '',
+          '🔹 Past Perfect: Vulnerabilidad que existía ANTES del ataque',
+          '   • Primera acción de dos eventos → "They had exposed (1º) the port before the attack (2º)"',
+          '   • Causa del incidente → "The breach succeeded because they hadn\'t updated the patch"',
+          '   • Palabra clave: "before", "after", "already", "by the time"',
+          '   • Estado previo → "Someone had stolen the credentials" (antes del acceso)',
+          '',
+          '🔹 Past Perfect Continuous: DURACIÓN del ataque antes de detección',
+          '   • Énfasis en tiempo del ataque → "had been running for hours when detected"',
+          '   • Actividad continua → "The malware had been encrypting files since midnight"',
+          '   • Palabra clave: "for" + duración, "since" + momento inicial',
+          '   • Impacto acumulado → "had been stealing data for weeks (mucho daño)"'
         ],
-        tip: '💡 Palabras clave: "when" (interrupción), "before the breach" (anterior), "for hours" (duración)'
+        tip: '💡 CONTEXTO DE SEGURIDAD: ¿Ataque interrumpido? → Past Continuous. ¿Pasos del incidente? → Past Simple. ¿Vulnerabilidad previa? → Past Perfect. ¿Tiempo del ataque? → Past Perfect Continuous'
       },
       'cybersecurity-present-perfect': {
         title: '📚 Cómo resolver: Present Perfect (Cybersecurity)',
