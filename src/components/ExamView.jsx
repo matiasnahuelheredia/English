@@ -125,7 +125,7 @@ const ExamView = () => {
     const savedAnswer = allAnswers[exerciseKey] || '';
     setUserAnswer(savedAnswer);
     setFeedback(null);
-  }, [currentSectionIndex, currentExerciseIndex, allAnswers]);
+  }, [currentSectionIndex, currentExerciseIndex]);
 
   const checkAnswer = () => {
     if (!userAnswer.trim()) {
