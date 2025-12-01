@@ -577,8 +577,7 @@ const ExerciseView = ({ tenseId }) => {
             </div>
           </div>
         )}
-      </div>
-        
+
         {/* Grammar Structure Help */}
         {!isVocabulary && getTenseStructure() && (
           <div className="mt-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
