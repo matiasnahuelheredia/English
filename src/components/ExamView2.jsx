@@ -216,11 +216,43 @@ const ExamView2 = () => {
     alert(`¡Examen completado!\n\nCorrectas: ${score.correct}\nIncorrectas: ${score.incorrect}\nSin responder: ${unanswered}\nPuntuación: ${Math.round((score.correct / totalExercises) * 100)}%`);
   };
 
+  const highlightKeywords = (text) => {
+    const keywords = [
+      // Time indicators
+      'when', 'while', 'before', 'after', 'until', 'since', 'for', 'ago', 'yet', 'already', 'just', 'ever', 'never',
+      'yesterday', 'tomorrow', 'today', 'now', 'then', 'soon', 'later', 'recently', 'lately',
+      'always', 'often', 'usually', 'sometimes', 'rarely', 'seldom', 'hardly',
+      // Question words
+      'how long', 'how many', 'how much', 'how often',
+      // Future indicators
+      'next week', 'next month', 'next year', 'this time tomorrow', 'by the time', 'by',
+      // Present perfect indicators
+      'have', 'has', 'had',
+      // Continuous indicators
+      'at the moment', 'right now', 'currently',
+      // Conditional indicators
+      'if', 'unless', 'provided', 'as long as',
+      // Sequencers
+      'first', 'second', 'then', 'finally', 'eventually'
+    ];
+
+    let highlightedText = text;
+    keywords.forEach(keyword => {
+      const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
+      highlightedText = highlightedText.replace(regex, '<span class="bg-green-100 text-green-800 px-1 rounded font-semibold">$1</span>');
+    });
+
+    return highlightedText;
+  };
+
   const renderExerciseContent = () => {
     if (currentSection.type === 'multiple-choice') {
       return (
         <div className="space-y-4">
-          <p className="text-lg text-gray-800 mb-4">{currentExercise.sentence}</p>
+          <p 
+            className="text-lg text-gray-800 mb-4"
+            dangerouslySetInnerHTML={{ __html: highlightKeywords(currentExercise.sentence) }}
+          />
           
           <div className="space-y-2">
             {currentExercise.options.map((option, index) => (
@@ -280,9 +312,12 @@ const ExamView2 = () => {
     if (currentSection.type === 'fill-word') {
       return (
         <div className="space-y-4">
-          <p className="text-lg text-gray-800">
-            {currentExercise.sentence.replace('_______', `<span class="font-bold text-blue-600">${currentExercise.firstLetter}_______</span>`)}
-          </p>
+          <p 
+            className="text-lg text-gray-800"
+            dangerouslySetInnerHTML={{
+              __html: highlightKeywords(currentExercise.sentence.replace('_______', `<span class="font-bold text-blue-600">${currentExercise.firstLetter}_______</span>`))
+            }}
+          />
 
           <div className="space-y-2">
             <label className="block text-sm font-semibold text-gray-700">
@@ -308,7 +343,7 @@ const ExamView2 = () => {
         <p 
           className="text-lg text-gray-800"
           dangerouslySetInnerHTML={{
-            __html: currentExercise.sentence.replace(/_______ \(/g, '<span class="font-bold text-blue-600">_______</span> (')
+            __html: highlightKeywords(currentExercise.sentence).replace(/_______ \(/g, '<span class="font-bold text-blue-600">_______</span> (')
           }}
         />
 
