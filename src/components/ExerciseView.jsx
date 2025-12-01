@@ -3,6 +3,7 @@ import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
 import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
+import ExamView2 from './ExamView2';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es un ejercicio de tipo match, usar el componente especializado
@@ -13,6 +14,11 @@ const ExerciseView = ({ tenseId }) => {
   // Si es el examen, usar el componente ExamView
   if (tenseId === 'exam') {
     return <ExamView />;
+  }
+
+  // Si es el examen 2 (cybersecurity), usar el componente ExamView2
+  if (tenseId === 'exam2') {
+    return <ExamView2 />;
   }
 
   const [exercises, setExercises] = useState([]);
