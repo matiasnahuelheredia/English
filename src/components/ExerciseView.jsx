@@ -516,66 +516,68 @@ const ExerciseView = ({ tenseId }) => {
                     : 'Completa la siguiente oración seleccionando la opción correcta.')}
             </p>
           </div>
-          
-          {isVocabulary && (
-            <div className="flex flex-col items-end gap-3 ml-4">
-              {/* Estadísticas en tiempo real */}
-              <div className="flex items-center gap-4 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  <span className="font-semibold text-green-700">{stats.correct}</span>
-                  <span className="text-gray-600">Correctas</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <span className="font-semibold text-red-700">{stats.incorrect}</span>
-                  <span className="text-gray-600">Incorrectas</span>
-                </div>
+        </div>
+
+        {/* Sección de estadísticas y toggle para vocabulario */}
+        {isVocabulary && (
+          <div className="mt-4 flex flex-col gap-4">
+            {/* Estadísticas en tiempo real */}
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs sm:text-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="font-semibold text-green-700">{stats.correct}</span>
+                <span className="text-gray-600">Correctas</span>
               </div>
-              
-              {/* Barra de progreso visual */}
-              {(stats.correct + stats.incorrect) > 0 && (
-                <div className="w-64">
-                  <div className="flex h-6 rounded-full overflow-hidden bg-gray-200">
-                    <div 
-                      className="bg-green-500 transition-all duration-500 flex items-center justify-center text-xs text-white font-semibold"
-                      style={{ width: `${(stats.correct / (stats.correct + stats.incorrect)) * 100}%` }}
-                    >
-                      {stats.correct > 0 && `${Math.round((stats.correct / (stats.correct + stats.incorrect)) * 100)}%`}
-                    </div>
-                    <div 
-                      className="bg-red-500 transition-all duration-500 flex items-center justify-center text-xs text-white font-semibold"
-                      style={{ width: `${(stats.incorrect / (stats.correct + stats.incorrect)) * 100}%` }}
-                    >
-                      {stats.incorrect > 0 && `${Math.round((stats.incorrect / (stats.correct + stats.incorrect)) * 100)}%`}
-                    </div>
-                  </div>
-                </div>
-              )}
-              
-              {/* Toggle de dirección */}
-              <div className="flex items-center gap-3">
-                <span className="text-sm font-medium text-gray-700">
-                  {isReversed ? 'ES → EN' : 'EN → ES'}
-                </span>
-                <button
-                  onClick={handleToggleDirection}
-                  className="relative inline-flex items-center h-8 w-16 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                  style={{ backgroundColor: isReversed ? '#3b82f6' : '#9ca3af' }}
-                >
-                  <span
-                    className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                      isReversed ? 'translate-x-9' : 'translate-x-1'
-                    }`}
-                  />
-                </button>
-                <span className="text-sm font-medium text-gray-700">
-                  Cambiar dirección
-                </span>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <span className="font-semibold text-red-700">{stats.incorrect}</span>
+                <span className="text-gray-600">Incorrectas</span>
               </div>
             </div>
-          )}
-        </div>
+            
+            {/* Barra de progreso visual */}
+            {(stats.correct + stats.incorrect) > 0 && (
+              <div className="w-full max-w-md mx-auto sm:mx-0">
+                <div className="flex h-6 rounded-full overflow-hidden bg-gray-200">
+                  <div 
+                    className="bg-green-500 transition-all duration-500 flex items-center justify-center text-xs text-white font-semibold"
+                    style={{ width: `${(stats.correct / (stats.correct + stats.incorrect)) * 100}%` }}
+                  >
+                    {stats.correct > 0 && `${Math.round((stats.correct / (stats.correct + stats.incorrect)) * 100)}%`}
+                  </div>
+                  <div 
+                    className="bg-red-500 transition-all duration-500 flex items-center justify-center text-xs text-white font-semibold"
+                    style={{ width: `${(stats.incorrect / (stats.correct + stats.incorrect)) * 100}%` }}
+                  >
+                    {stats.incorrect > 0 && `${Math.round((stats.incorrect / (stats.correct + stats.incorrect)) * 100)}%`}
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* Toggle de dirección */}
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3">
+              <span className="text-xs sm:text-sm font-medium text-gray-700">
+                {isReversed ? 'ES → EN' : 'EN → ES'}
+              </span>
+              <button
+                onClick={handleToggleDirection}
+                className="relative inline-flex items-center h-8 w-16 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                style={{ backgroundColor: isReversed ? '#3b82f6' : '#9ca3af' }}
+              >
+                <span
+                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                    isReversed ? 'translate-x-9' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className="text-xs sm:text-sm font-medium text-gray-700">
+                Cambiar dirección
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
         
         {/* Grammar Structure Help */}
         {!isVocabulary && getTenseStructure() && (
