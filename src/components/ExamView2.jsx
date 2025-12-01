@@ -10,6 +10,8 @@ const ExamView2 = () => {
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [completedExercises, setCompletedExercises] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
+  const [allAnswers, setAllAnswers] = useState({});
+  const [checkedExercises, setCheckedExercises] = useState(new Set());
 
   const currentSection = sections[currentSectionIndex];
   const currentExercise = currentSection?.exercises[currentExerciseIndex];
@@ -122,9 +124,11 @@ const ExamView2 = () => {
   };
 
   useEffect(() => {
-    setUserAnswer('');
+    const exerciseKey = `${currentSectionIndex}-${currentExerciseIndex}`;
+    const savedAnswer = allAnswers[exerciseKey] || '';
+    setUserAnswer(savedAnswer);
     setFeedback(null);
-  }, [currentSectionIndex, currentExerciseIndex]);
+  }, [currentSectionIndex, currentExerciseIndex, allAnswers]);
 
   const checkAnswer = () => {
     if (!userAnswer.trim()) {
@@ -153,6 +157,9 @@ const ExamView2 = () => {
       );
     }
 
+    const exerciseKey = `${currentSectionIndex}-${currentExerciseIndex}`;
+    const alreadyChecked = checkedExercises.has(exerciseKey);
+
     setFeedback({
       isCorrect,
       explanation: currentExercise.explanation,
@@ -161,13 +168,19 @@ const ExamView2 = () => {
         : currentExercise.correctAnswer
     });
 
-    if (isCorrect) {
-      setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
-    } else {
-      setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
-    }
+    // Save the answer
+    setAllAnswers(prev => ({ ...prev, [exerciseKey]: userAnswer }));
 
-    setCompletedExercises(prev => prev + 1);
+    // Update score only if not previously checked
+    if (!alreadyChecked) {
+      if (isCorrect) {
+        setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
+      } else {
+        setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
+      }
+      setCompletedExercises(prev => prev + 1);
+      setCheckedExercises(prev => new Set([...prev, exerciseKey]));
+    }
   };
 
   const nextExercise = () => {
@@ -176,10 +189,31 @@ const ExamView2 = () => {
     } else if (currentSectionIndex < sections.length - 1) {
       setCurrentSectionIndex(currentSectionIndex + 1);
       setCurrentExerciseIndex(0);
-    } else {
-      // Examen completado
-      alert(`¡Examen completado!\n\nCorrectas: ${score.correct}\nIncorrectas: ${score.incorrect}\nPuntuación: ${Math.round((score.correct / totalExercises) * 100)}%`);
     }
+  };
+
+  const previousExercise = () => {
+    if (currentExerciseIndex > 0) {
+      setCurrentExerciseIndex(currentExerciseIndex - 1);
+    } else if (currentSectionIndex > 0) {
+      setCurrentSectionIndex(currentSectionIndex - 1);
+      setCurrentExerciseIndex(sections[currentSectionIndex - 1].exercises.length - 1);
+    }
+  };
+
+  const goToExercise = (sectionIdx, exerciseIdx) => {
+    setCurrentSectionIndex(sectionIdx);
+    setCurrentExerciseIndex(exerciseIdx);
+  };
+
+  const finishExam = () => {
+    const unanswered = totalExercises - checkedExercises.size;
+    if (unanswered > 0) {
+      if (!window.confirm(`Tienes ${unanswered} pregunta(s) sin responder. ¿Deseas finalizar el examen de todos modos?`)) {
+        return;
+      }
+    }
+    alert(`¡Examen completado!\n\nCorrectas: ${score.correct}\nIncorrectas: ${score.incorrect}\nSin responder: ${unanswered}\nPuntuación: ${Math.round((score.correct / totalExercises) * 100)}%`);
   };
 
   const renderExerciseContent = () => {
@@ -446,24 +480,40 @@ const ExamView2 = () => {
         )}
 
         {/* Action Buttons */}
-        <div className="mt-6 flex justify-center gap-4">
-          {!feedback ? (
+        <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="flex gap-4">
             <button
-              onClick={checkAnswer}
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              onClick={previousExercise}
+              disabled={currentSectionIndex === 0 && currentExerciseIndex === 0}
+              className="bg-gray-500 hover:bg-gray-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:transform-none"
             >
-              Verificar Respuesta
+              ← Anterior
             </button>
-          ) : (
+            
+            {!feedback && (
+              <button
+                onClick={checkAnswer}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              >
+                ✓ Verificar
+              </button>
+            )}
+            
             <button
               onClick={nextExercise}
-              className={`${
-                isLastExercise
-                  ? 'bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600'
-                  : 'bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600'
-              } text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200`}
+              disabled={isLastExercise}
+              className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:transform-none"
             >
-              {isLastExercise ? 'Finalizar Examen' : 'Siguiente Ejercicio →'}
+              Siguiente →
+            </button>
+          </div>
+          
+          {isLastExercise && (
+            <button
+              onClick={finishExam}
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+            >
+              🏁 Finalizar Examen
             </button>
           )}
         </div>
@@ -471,30 +521,48 @@ const ExamView2 = () => {
 
       {/* Stepper Navigation */}
       <div className="bg-white rounded-lg shadow-md p-4">
-        <div className="flex items-center justify-center gap-2 flex-wrap">
-          {sections.map((section, sectionIdx) => (
-            <div key={section.id} className="flex items-center">
-              <div className={`flex items-center gap-1 px-3 py-2 rounded-lg ${
-                sectionIdx === currentSectionIndex
-                  ? 'bg-blue-100 border-2 border-blue-500'
-                  : sectionIdx < currentSectionIndex
-                  ? 'bg-green-100'
-                  : 'bg-gray-100'
-              }`}>
-                <span className={`text-xs font-semibold ${
-                  sectionIdx === currentSectionIndex ? 'text-blue-700' : 'text-gray-600'
-                }`}>
-                  {sectionIdx + 1}
-                </span>
-                {sectionIdx < currentSectionIndex && (
-                  <span className="text-green-600 text-sm">✓</span>
-                )}
-              </div>
-              {sectionIdx < sections.length - 1 && (
-                <div className="w-4 h-0.5 bg-gray-300 mx-1"></div>
-              )}
-            </div>
-          ))}
+        <p className="text-xs text-gray-500 text-center mb-3">Haz clic en cualquier ejercicio para navegar</p>
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
+          {sections.map((section, sectionIdx) => 
+            section.exercises.map((exercise, exerciseIdx) => {
+              const exerciseKey = `${sectionIdx}-${exerciseIdx}`;
+              const isAnswered = checkedExercises.has(exerciseKey);
+              const isCurrent = sectionIdx === currentSectionIndex && exerciseIdx === currentExerciseIndex;
+              const globalIndex = sections.slice(0, sectionIdx).reduce((acc, s) => acc + s.exercises.length, 0) + exerciseIdx;
+              
+              return (
+                <button
+                  key={exerciseKey}
+                  onClick={() => goToExercise(sectionIdx, exerciseIdx)}
+                  className={`px-2 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                    isCurrent
+                      ? 'bg-blue-600 text-white ring-2 ring-blue-400 ring-offset-2 scale-110'
+                      : isAnswered
+                      ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
+                  title={`${section.title} - Ejercicio ${exerciseIdx + 1}`}
+                >
+                  {globalIndex + 1}
+                  {isAnswered && !isCurrent && <span className="ml-1">✓</span>}
+                </button>
+              );
+            })
+          )}
+        </div>
+        <div className="mt-3 flex items-center justify-center gap-4 text-xs text-gray-600">
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 bg-blue-600 rounded"></div>
+            <span>Actual</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 bg-green-100 border border-green-300 rounded"></div>
+            <span>Respondida</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 bg-gray-100 border border-gray-300 rounded"></div>
+            <span>Pendiente</span>
+          </div>
         </div>
       </div>
     </div>
