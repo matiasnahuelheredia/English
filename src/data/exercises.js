@@ -2463,6 +2463,25 @@ const exercisesData = {
     }
   ],
 
+  'weather-match': [
+    {
+      type: 'match',
+      instruction: 'Match the words and definitions.',
+      words: ['hail', 'drought', 'blizzard', 'heatwave', 'flood', 'monsoon', 'lightning', 'thunder', 'hurricane'],
+      definitions: [
+        { id: 1, text: 'a period of unusually hot weather', answer: 'heatwave' },
+        { id: 2, text: 'a long, usually hot, dry period when there is little or no rain', answer: 'drought' },
+        { id: 3, text: 'small balls of ice that fall like rain', answer: 'hail' },
+        { id: 4, text: 'a flash of very bright light in the sky caused by electricity', answer: 'lightning' },
+        { id: 5, text: 'the loud noise that you hear during a storm', answer: 'thunder' },
+        { id: 6, text: 'a snow storm with very strong winds', answer: 'blizzard' },
+        { id: 7, text: 'when everything becomes covered with water', answer: 'flood' },
+        { id: 8, text: 'a violent storm with very strong winds (also cyclone, tornado, typhoon)', answer: 'hurricane' },
+        { id: 9, text: 'the season when it rains a lot in southern Asia', answer: 'monsoon' }
+      ]
+    }
+  ],
+
   'mixed-tenses': []
 };
 

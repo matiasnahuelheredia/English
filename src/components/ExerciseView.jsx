@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
+import MatchExercise from './MatchExercise';
 
 const ExerciseView = ({ tenseId }) => {
+  // Si es un ejercicio de tipo match, usar el componente especializado
+  if (tenseId === 'weather-match') {
+    return <MatchExercise tenseId={tenseId} />;
+  }
+
   const [exercises, setExercises] = useState([]);
   const [currentExercise, setCurrentExercise] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');

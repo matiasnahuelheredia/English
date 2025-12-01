@@ -10,7 +10,8 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     'Conditionals': false,
     'Question Forms': false,
     'Mixed Practice': false,
-    'Vocabulary': false
+    'Vocabulary': false,
+    'Weather Exercise': false
   });
 
   const tenses = [
@@ -60,18 +61,20 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 bg-blue-600 text-white p-2 rounded-md"
+        className="md:hidden fixed top-4 left-4 z-50 bg-blue-600 text-white p-2 rounded-md shadow-lg hover:bg-blue-700 hover:scale-110 active:scale-95 transition-all duration-200"
       >
-        {isOpen ? '✕' : '☰'}
+        <span className={`inline-block transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}>
+          {isOpen ? '✕' : '☰'}
+        </span>
       </button>
 
       <div
         className={`${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:translate-x-0 fixed md:static inset-y-0 left-0 z-40 w-64 bg-gray-900 text-white transition-transform duration-300 ease-in-out flex flex-col`}
+        } md:translate-x-0 fixed md:static inset-y-0 left-0 z-40 w-64 bg-gradient-to-b from-gray-900 to-gray-800 text-white transition-all duration-500 ease-in-out flex flex-col shadow-2xl`}
       >
-        <div className="p-4 border-b border-gray-700">
-          <h1 className="text-xl font-bold">English Learning</h1>
+        <div className="p-4 border-b border-gray-700 bg-gradient-to-r from-blue-900 to-blue-800">
+          <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-pulse">English Learning</h1>
         </div>
 
         <div className="flex-1 overflow-y-auto p-4">
@@ -79,216 +82,247 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
           <div className="mb-2">
             <button
               onClick={() => toggleSection('Tiempos Verbales')}
-              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-gray-200 transition-colors py-2"
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
             >
-              <span>Tiempos Verbales</span>
-              <span className="text-lg">{expandedSections['Tiempos Verbales'] ? '▼' : '▶'}</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-300">Tiempos Verbales</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Tiempos Verbales'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
             </button>
 
-            {expandedSections['Tiempos Verbales'] && (
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Tiempos Verbales'] ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className="ml-2 mt-2 space-y-2">
                 {/* Present */}
                 <div>
                   <button
                     onClick={() => toggleSection('Present')}
-                    className="w-full flex items-center justify-between text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors py-1"
+                    className="w-full flex items-center justify-between text-sm font-semibold text-blue-400 hover:text-blue-300 hover:bg-gray-800 rounded-lg transition-all duration-300 py-1 px-2 group"
                   >
-                    <span>Present</span>
-                    <span className="text-sm">{expandedSections['Present'] ? '▼' : '▶'}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">Present</span>
+                    <span className={`text-sm transition-transform duration-500 ${expandedSections['Present'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
                   </button>
-                  {expandedSections['Present'] && (
+                  <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Present'] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="ml-3 mt-1">
-                      {groupedTenses['Present']?.map((tense) => (
+                      {groupedTenses['Present']?.map((tense, index) => (
                         <button
                           key={tense.id}
                           onClick={() => onSelectTense(tense.id)}
-                          className={`w-full text-left px-3 py-2 rounded-md mb-1 text-sm transition-colors ${
+                          style={{ animationDelay: `${index * 50}ms` }}
+                          className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
                             selectedTense === tense.id
-                              ? 'bg-blue-600 text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
+                              ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                              : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                           }`}
                         >
                           {tense.name}
                         </button>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
 
                 {/* Past */}
                 <div>
                   <button
                     onClick={() => toggleSection('Past')}
-                    className="w-full flex items-center justify-between text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors py-1"
+                    className="w-full flex items-center justify-between text-sm font-semibold text-blue-400 hover:text-blue-300 hover:bg-gray-800 rounded-lg transition-all duration-300 py-1 px-2 group"
                   >
-                    <span>Past</span>
-                    <span className="text-sm">{expandedSections['Past'] ? '▼' : '▶'}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">Past</span>
+                    <span className={`text-sm transition-transform duration-500 ${expandedSections['Past'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
                   </button>
-                  {expandedSections['Past'] && (
+                  <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Past'] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="ml-3 mt-1">
-                      {groupedTenses['Past']?.map((tense) => (
+                      {groupedTenses['Past']?.map((tense, index) => (
                         <button
                           key={tense.id}
                           onClick={() => onSelectTense(tense.id)}
-                          className={`w-full text-left px-3 py-2 rounded-md mb-1 text-sm transition-colors ${
+                          style={{ animationDelay: `${index * 50}ms` }}
+                          className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
                             selectedTense === tense.id
-                              ? 'bg-blue-600 text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
+                              ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                              : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                           }`}
                         >
                           {tense.name}
                         </button>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
 
                 {/* Future */}
                 <div>
                   <button
                     onClick={() => toggleSection('Future')}
-                    className="w-full flex items-center justify-between text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors py-1"
+                    className="w-full flex items-center justify-between text-sm font-semibold text-blue-400 hover:text-blue-300 hover:bg-gray-800 rounded-lg transition-all duration-300 py-1 px-2 group"
                   >
-                    <span>Future</span>
-                    <span className="text-sm">{expandedSections['Future'] ? '▼' : '▶'}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">Future</span>
+                    <span className={`text-sm transition-transform duration-500 ${expandedSections['Future'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
                   </button>
-                  {expandedSections['Future'] && (
+                  <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Future'] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="ml-3 mt-1">
-                      {groupedTenses['Future']?.map((tense) => (
+                      {groupedTenses['Future']?.map((tense, index) => (
                         <button
                           key={tense.id}
                           onClick={() => onSelectTense(tense.id)}
-                          className={`w-full text-left px-3 py-2 rounded-md mb-1 text-sm transition-colors ${
+                          style={{ animationDelay: `${index * 50}ms` }}
+                          className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
                             selectedTense === tense.id
-                              ? 'bg-blue-600 text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
+                              ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                              : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                           }`}
                         >
                           {tense.name}
                         </button>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Sección: Conditionals */}
           <div className="mb-2">
             <button
               onClick={() => toggleSection('Conditionals')}
-              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-gray-200 transition-colors py-2"
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
             >
-              <span>Conditionals</span>
-              <span className="text-lg">{expandedSections['Conditionals'] ? '▼' : '▶'}</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-300">Conditionals</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Conditionals'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
             </button>
 
-            {expandedSections['Conditionals'] && (
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Conditionals'] ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className="ml-3 mt-1">
-                {groupedTenses['Conditionals']?.map((tense) => (
+                {groupedTenses['Conditionals']?.map((tense, index) => (
                   <button
                     key={tense.id}
                     onClick={() => onSelectTense(tense.id)}
-                    className={`w-full text-left px-3 py-2 rounded-md mb-1 text-sm transition-colors ${
+                    style={{ animationDelay: `${index * 50}ms` }}
+                    className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
                       selectedTense === tense.id
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-300 hover:bg-gray-800'
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
                     {tense.name}
                   </button>
                 ))}
               </div>
-            )}
+            </div>
           </div>
 
           {/* Sección: Question Forms */}
           <div className="mb-2">
             <button
               onClick={() => toggleSection('Question Forms')}
-              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-gray-200 transition-colors py-2"
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
             >
-              <span>Question Forms</span>
-              <span className="text-lg">{expandedSections['Question Forms'] ? '▼' : '▶'}</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-300">Question Forms</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Question Forms'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
             </button>
 
-            {expandedSections['Question Forms'] && (
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Question Forms'] ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className="ml-3 mt-1">
                 <button
                   onClick={() => onSelectTense('question-forms')}
-                  className={`w-full text-left px-3 py-2 rounded-md mb-1 text-sm transition-colors ${
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
                     selectedTense === 'question-forms'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-800'
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                   }`}
                 >
                   Word Order in Questions
                 </button>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Sección: Mixed Practice */}
           <div className="mb-2">
             <button
               onClick={() => toggleSection('Mixed Practice')}
-              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-gray-200 transition-colors py-2"
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
             >
-              <span>Mixed Practice</span>
-              <span className="text-lg">{expandedSections['Mixed Practice'] ? '▼' : '▶'}</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-300">Mixed Practice</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Mixed Practice'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
             </button>
 
-            {expandedSections['Mixed Practice'] && (
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Mixed Practice'] ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className="ml-3 mt-1">
                 <button
                   onClick={() => onSelectTense('mixed-tenses')}
-                  className={`w-full text-left px-3 py-2 rounded-md mb-1 text-sm transition-colors ${
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
                     selectedTense === 'mixed-tenses'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-800'
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                   }`}
                 >
                   All Tenses Mixed
                 </button>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Sección: Vocabulary */}
           <div className="mb-2">
             <button
               onClick={() => toggleSection('Vocabulary')}
-              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-gray-200 transition-colors py-2"
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
             >
-              <span>Vocabulary</span>
-              <span className="text-lg">{expandedSections['Vocabulary'] ? '▼' : '▶'}</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-300">Vocabulary</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Vocabulary'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
             </button>
 
-            {expandedSections['Vocabulary'] && (
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Vocabulary'] ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className="ml-3 mt-1">
-                {vocabularyTopics.map((topic) => (
+                {vocabularyTopics.map((topic, index) => (
                   <button
                     key={topic.id}
                     onClick={() => onSelectTense(topic.id)}
-                    className={`w-full text-left px-3 py-2 rounded-md mb-1 text-sm transition-colors ${
+                    style={{ animationDelay: `${index * 50}ms` }}
+                    className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
                       selectedTense === topic.id
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-300 hover:bg-gray-800'
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
                     {topic.name}
                   </button>
                 ))}
               </div>
-            )}
+            </div>
+          </div>
+
+          {/* Sección: Weather Exercise */}
+          <div className="mb-2">
+            <button
+              onClick={() => toggleSection('Weather Exercise')}
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
+            >
+              <span className="group-hover:translate-x-1 transition-transform duration-300">Weather Exercise</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Weather Exercise'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
+            </button>
+
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Weather Exercise'] ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="ml-3 mt-1">
+                <button
+                  onClick={() => onSelectTense('weather-match')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'weather-match'
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  Match Words & Definitions
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {isOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30 backdrop-blur-sm transition-all duration-500"
           onClick={() => setIsOpen(false)}
         />
       )}
