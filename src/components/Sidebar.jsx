@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
 
 const Sidebar = ({ selectedTense, onSelectTense }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -13,7 +12,6 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     'Mixed Practice': false,
     'Vocabulary': false
   });
-  const { user, logout } = useAuth();
 
   const tenses = [
     { id: 'present-simple', name: 'Present Simple', category: 'Present' },
@@ -73,8 +71,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
         } md:translate-x-0 fixed md:static inset-y-0 left-0 z-40 w-64 bg-gray-900 text-white transition-transform duration-300 ease-in-out flex flex-col`}
       >
         <div className="p-4 border-b border-gray-700">
-          <h1 className="text-xl font-bold mb-2">English Learning</h1>
-          <p className="text-sm text-gray-400">Bienvenido, {user?.name}!</p>
+          <h1 className="text-xl font-bold">English Learning</h1>
         </div>
 
         <div className="flex-1 overflow-y-auto p-4">
@@ -286,15 +283,6 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               </div>
             )}
           </div>
-        </div>
-
-        <div className="p-4 border-t border-gray-700">
-          <button
-            onClick={logout}
-            className="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md transition-colors"
-          >
-            Cerrar Sesión
-          </button>
         </div>
       </div>
 
