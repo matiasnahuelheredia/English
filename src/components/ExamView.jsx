@@ -9,11 +9,114 @@ const ExamView = () => {
   const [feedback, setFeedback] = useState(null);
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [completedExercises, setCompletedExercises] = useState(0);
+  const [showHelp, setShowHelp] = useState(false);
 
   const currentSection = sections[currentSectionIndex];
   const currentExercise = currentSection?.exercises[currentExerciseIndex];
   const totalExercises = getTotalExercises();
   const progress = (completedExercises / totalExercises) * 100;
+
+  const getSectionHelp = (sectionId) => {
+    const helpContent = {
+      'narrative-tenses': {
+        title: '📚 Cómo resolver: Narrative Tenses',
+        example: 'We _______ (have) dinner when the electricity went off.',
+        solution: 'were having',
+        explanation: 'En narrativas usamos diferentes tiempos para expresar:',
+        points: [
+          '🔹 Past Continuous: Acciones en progreso interrumpidas → "were having"',
+          '🔹 Past Perfect: Acciones anteriores a otra pasada → "had eaten"',
+          '🔹 Past Perfect Continuous: Duración antes de otra acción → "had been waiting"',
+          '🔹 Past Simple: Acciones completadas secuenciales → "went, ate, left"'
+        ],
+        tip: '💡 Busca palabras clave: "when" (interrupción), "before" (anterior), "for ages" (duración)'
+      },
+      'present-perfect': {
+        title: '📚 Cómo resolver: Present Perfect',
+        example: 'How long _______ (you / wait)?',
+        solution: 'have you been waiting',
+        explanation: 'Diferencia entre Simple y Continuous:',
+        points: [
+          '🔹 Simple: Experiencias, resultados, estados → "have known", "have broken"',
+          '🔹 Continuous: Duración, actividad temporal → "have been waiting"',
+          '🔹 Verbos de estado NO usan continuous → know, like, have (poseer)',
+          '🔹 "How long" generalmente usa continuous (excepto verbos de estado)'
+        ],
+        tip: '💡 Si enfatiza DURACIÓN de acción temporal → Continuous. Si es RESULTADO o ESTADO → Simple'
+      },
+      'future-forms': {
+        title: '📚 Cómo resolver: Future Forms',
+        example: 'This time tomorrow, I\'ll do / I\'ll be doing my exam.',
+        solution: 'I\'ll be doing',
+        explanation: 'Elige según el contexto:',
+        points: [
+          '🔹 Future Continuous: Acción en progreso en momento específico → "I\'ll be doing"',
+          '🔹 Future Perfect: Acción completa ANTES de tiempo futuro → "will have finished by 3pm"',
+          '🔹 "This time tomorrow/next week" → Future Continuous',
+          '🔹 "By (time/date)" → Future Perfect'
+        ],
+        tip: '💡 Busca indicadores de tiempo: "at this time", "by then", "when you arrive"'
+      },
+      'word-order': {
+        title: '📚 Cómo resolver: Word Order',
+        example: 'is / Fiona / for / late / class / often',
+        solution: 'Fiona is often late for class',
+        explanation: 'Posición de adverbios en inglés:',
+        points: [
+          '🔹 Frecuencia (often, always, rarely): DESPUÉS de BE, ANTES de otros verbos',
+          '🔹 Opinión (Luckily, Fortunately): Al PRINCIPIO de la oración',
+          '🔹 Modo (happily, quickly): Después del verbo o al final',
+          '🔹 Tiempo (yesterday, next week): Al FINAL de la oración'
+        ],
+        tip: '💡 Orden básico: Sujeto + (BE) + Adverbio de frecuencia + Verbo + Complemento + Tiempo'
+      },
+      'adverbs': {
+        title: '📚 Cómo resolver: Adverbs',
+        example: 'Have you ever / even tried sushi?',
+        solution: 'ever',
+        explanation: 'Adverbios confusos:',
+        points: [
+          '🔹 ever (preguntas: ¿alguna vez?) vs even (incluso)',
+          '🔹 specially (específicamente para) vs especially (particularmente)',
+          '🔹 hard (con esfuerzo) vs hardly (apenas)',
+          '🔹 still (todavía) vs yet (todavía - final de frase negativa/pregunta)',
+          '🔹 in the end (finalmente) vs at the end (al final de algo)',
+          '🔹 nearly (casi) vs near (cerca)'
+        ],
+        tip: '💡 Lee la oración completa y piensa en el SIGNIFICADO, no solo la gramática'
+      },
+      'mixed-grammar': {
+        title: '📚 Cómo resolver: Mixed Grammar',
+        example: 'Your brother doesn\'t smoke, does / doesn\'t he?',
+        solution: 'does',
+        explanation: 'Reglas variadas de gramática:',
+        points: [
+          '🔹 The + adjective = grupo general → "The rich" (no "people")',
+          '🔹 Question tags: Oración negativa → tag positivo (y viceversa)',
+          '🔹 Such + a/an + adj + noun → "such a good time"',
+          '🔹 Auxiliar en respuestas cortas debe coincidir con el tiempo',
+          '🔹 "did + infinitive" para ENFATIZAR → "I did tell you!"'
+        ],
+        tip: '💡 Cada ejercicio tiene su propia regla - lee con atención el contexto'
+      },
+      'vocabulary': {
+        title: '📚 Cómo resolver: Vocabulary',
+        example: 'We\'re having another h_______ this month. It\'s been over 35 degrees.',
+        solution: 'heatwave',
+        explanation: 'Estrategia para completar palabras:',
+        points: [
+          '🔹 Lee el CONTEXTO completo - las pistas están en la oración',
+          '🔹 Usa la primera letra como guía inicial',
+          '🔹 Piensa en palabras relacionadas al tema (clima, salud, viajes)',
+          '🔹 Verifica que la palabra tenga sentido gramaticalmente',
+          '🔹 Común en exámenes: heatwave, allergic, fill, open-minded, thick, leather, aisle, pressure'
+        ],
+        tip: '💡 El contexto SIEMPRE da la pista - ejemplo: "35 degrees" → habla de calor → heatwave'
+      }
+    };
+
+    return helpContent[sectionId] || null;
+  };
 
   useEffect(() => {
     setUserAnswer('');
@@ -241,12 +344,55 @@ const ExamView = () => {
       <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-xl sm:text-2xl font-bold">{currentSection.title}</h2>
-          <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
-            Sección {currentSectionIndex + 1}/{sections.length}
-          </span>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowHelp(!showHelp)}
+              className="bg-white text-blue-600 px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-all duration-200 flex items-center gap-1"
+            >
+              <span>💡</span>
+              <span className="hidden sm:inline">Ayuda</span>
+            </button>
+            <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+              Sección {currentSectionIndex + 1}/{sections.length}
+            </span>
+          </div>
         </div>
         <p className="text-blue-100 text-sm sm:text-base">{currentSection.instruction}</p>
       </div>
+
+      {/* Help Panel */}
+      {showHelp && getSectionHelp(currentSection.id) && (
+        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6 animate-fadeIn">
+          <div className="flex items-start justify-between mb-3">
+            <h3 className="text-lg font-bold text-gray-800">{getSectionHelp(currentSection.id).title}</h3>
+            <button
+              onClick={() => setShowHelp(false)}
+              className="text-gray-500 hover:text-gray-700 font-bold text-xl"
+            >
+              ✕
+            </button>
+          </div>
+          
+          <div className="bg-white bg-opacity-70 rounded-lg p-4 mb-3">
+            <p className="text-sm font-semibold text-gray-700 mb-2">📝 Ejemplo:</p>
+            <p className="text-gray-800 mb-1">{getSectionHelp(currentSection.id).example}</p>
+            <p className="text-green-700 font-semibold">✓ Solución: {getSectionHelp(currentSection.id).solution}</p>
+          </div>
+
+          <div className="mb-3">
+            <p className="text-sm font-semibold text-gray-800 mb-2">{getSectionHelp(currentSection.id).explanation}</p>
+            <ul className="space-y-1">
+              {getSectionHelp(currentSection.id).points.map((point, index) => (
+                <li key={index} className="text-sm text-gray-700">{point}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-blue-100 border border-blue-300 rounded-lg p-3">
+            <p className="text-sm text-blue-900 font-medium">{getSectionHelp(currentSection.id).tip}</p>
+          </div>
+        </div>
+      )}
 
       {/* Exercise Content */}
       <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6">
