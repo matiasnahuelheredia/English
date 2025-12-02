@@ -122,7 +122,7 @@ const ExerciseView = ({ tenseId }) => {
   useEffect(() => {
     clearAllTimers();
     
-    const vocabTopics = ['clothes-fashion', 'airport', 'weather', 'illnesses-injuries', 'cinema', 'dependent-prepositions', 'education', 'food-cooking', 'houses', 'money', 'personality', 'relationships', 'sport'];
+    const vocabTopics = ['clothes-fashion', 'airport', 'weather', 'illnesses-injuries', 'cinema', 'dependent-prepositions', 'education', 'food-cooking', 'houses', 'money', 'personality', 'relationships', 'sport', 'the-body'];
     const isVocabTopic = vocabTopics.includes(tenseId);
     setIsVocabulary(isVocabTopic);
 
@@ -436,6 +436,7 @@ const ExerciseView = ({ tenseId }) => {
       'personality': 'Personality - Vocabulary',
       'relationships': 'Relationships - Vocabulary',
       'sport': 'Sport - Vocabulary',
+      'the-body': 'The Body - Vocabulary',
     };
     return titles[tenseId] || 'Ejercicios';
   };

@@ -1255,6 +1255,75 @@ export const vocabularyData = {
       explanation: '"Train" significa entrenar. Sportspeople have to do this every day.',
       imageUrl: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop'
     }
+  ],
+
+  'the-body': [
+    {
+      englishWord: 'Toes',
+      spanishWord: ['dedos del pie'],
+      explanation: '"Toes" significa dedos del pie. You have ten toes on your feet.',
+      imageUrl: 'https://images.unsplash.com/photo-1587837073080-448bc6a2329b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Teeth',
+      spanishWord: ['dientes'],
+      explanation: '"Teeth" significa dientes. You use your teeth to chew food.',
+      imageUrl: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Hands',
+      spanishWord: ['manos'],
+      explanation: '"Hands" significa manos. You use your hands to write and touch.',
+      imageUrl: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Smiling',
+      spanishWord: ['sonriendo', 'sonreír'],
+      explanation: '"Smiling" significa sonriendo. If someone is smiling, they are happy.',
+      imageUrl: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Kick',
+      spanishWord: ['patear'],
+      explanation: '"Kick" significa patear. You kick a football.',
+      imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Nod',
+      spanishWord: ['asentir', 'decir que sí con la cabeza'],
+      explanation: '"Nod" significa asentir. If you agree to something, you will nod.',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Nose',
+      spanishWord: ['nariz'],
+      explanation: '"Nose" significa nariz. You use your nose to smell.',
+      imageUrl: 'https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Knees',
+      spanishWord: ['rodillas'],
+      explanation: '"Knees" significa rodillas. Your knees let you bend your legs.',
+      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Ears',
+      spanishWord: ['oídos', 'orejas'],
+      explanation: '"Ears" significa oídos. You use your ears to listen.',
+      imageUrl: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Clap',
+      spanishWord: ['aplaudir'],
+      explanation: '"Clap" significa aplaudir. At the end of a concert, you should clap the musicians.',
+      imageUrl: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Staring',
+      spanishWord: ['mirando fijamente', 'mirar fijo'],
+      explanation: '"Staring" significa mirar fijamente. Staring at other people is rude.',
+      imageUrl: 'https://images.unsplash.com/photo-1504933350103-e840ede978d4?w=400&h=300&fit=crop'
+    }
   ]
 };
 
