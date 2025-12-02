@@ -118,6 +118,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                 >
                   🎬 Cinema
                 </button>
+                <button
+                  onClick={() => onSelectTense('dependent-prepositions')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'dependent-prepositions'
+                      ? 'bg-gradient-to-r from-green-600 to-green-500 text-white shadow-lg shadow-green-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  🔗 Dependent Prepositions
+                </button>
               </div>
             </div>
           </div>

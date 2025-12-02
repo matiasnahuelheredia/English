@@ -691,6 +691,45 @@ export const vocabularyData = {
       explanation: '"Scene" significa escena. Una parte de una película.',
       imageUrl: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=300&fit=crop'
     }
+  ],
+
+  'dependent-prepositions': [
+    {
+      englishWord: 'Arrived in',
+      spanishWord: ['llegar a', 'arribar a'],
+      explanation: '"Arrived in" - We arrived IN London last week. Usamos IN con ciudades y países.',
+      imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Belong to',
+      spanishWord: ['pertenecer a'],
+      explanation: '"Belong to" - Who does this coat belong TO? Significa pertenecer a alguien.',
+      imageUrl: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Spend on',
+      spanishWord: ['gastar en'],
+      explanation: '"Spend on" - I spend a lot of money ON gadgets. Gastar dinero EN algo.',
+      imageUrl: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Remind of',
+      spanishWord: ['recordar a', 'hacer recordar'],
+      explanation: '"Remind of" - This music reminds me OF my childhood. Recordar/hacer pensar EN algo.',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Choose between',
+      spanishWord: ['elegir entre'],
+      explanation: '"Choose between" - I can\'t choose BETWEEN the meat and the fish. Elegir ENTRE dos opciones.',
+      imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Pay for',
+      spanishWord: ['pagar por'],
+      explanation: '"Pay for" - I pay FOR all my online shopping by credit card. Pagar POR algo.',
+      imageUrl: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=300&fit=crop'
+    }
   ]
 };
 
