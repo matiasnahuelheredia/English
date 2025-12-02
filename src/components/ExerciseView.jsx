@@ -558,20 +558,20 @@ const ExerciseView = ({ tenseId }) => {
 
   if (!currentExercise) {
     return (
-      <div className="bg-white rounded-lg shadow-md p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">{getTenseTitle()}</h2>
-        <p className="text-gray-600">Cargando ejercicio...</p>
+      <div className="bg-htb-card border border-gray-800 rounded-lg p-8 text-center">
+        <h2 className="text-2xl font-bold mb-4 text-white">{getTenseTitle()}</h2>
+        <p className="text-htb-text-dim">Cargando ejercicio...</p>
       </div>
     );
   }
 
   return (
     <div className="max-w-4xl mx-auto px-2 sm:px-4">
-      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
+      <div className="bg-htb-card rounded-lg border border-gray-800 p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{getTenseTitle()}</h2>
-            <p className="text-sm sm:text-base text-gray-600">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{getTenseTitle()}</h2>
+            <p className="text-sm sm:text-base text-htb-text-dim">
               {isVocabulary
                 ? (isReversed 
                     ? 'Traduce la siguiente palabra del español al inglés.'
@@ -587,12 +587,12 @@ const ExerciseView = ({ tenseId }) => {
         {isVocabulary && (
           <div className="mt-4 flex flex-col gap-4">
             {/* Indicador de palabras restantes */}
-            <div className="flex items-center justify-center gap-4 p-3 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
+            <div className="flex items-center justify-center gap-4 p-3 bg-htb-sidebar rounded-lg border border-htb-green/30">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">📚</span>
                 <div>
-                  <p className="text-sm font-semibold text-purple-700">Palabras por aprender</p>
-                  <p className="text-2xl font-bold text-purple-900">{remainingVocabExercises.length} / {exercises.length}</p>
+                  <p className="text-sm font-semibold text-htb-green">Palabras por aprender</p>
+                  <p className="text-2xl font-bold text-white">{remainingVocabExercises.length} / {exercises.length}</p>
                 </div>
               </div>
             </div>
@@ -600,23 +600,23 @@ const ExerciseView = ({ tenseId }) => {
             {/* Estadísticas en tiempo real */}
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs sm:text-sm">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="font-semibold text-green-700">{stats.correct}</span>
-                <span className="text-gray-600">Correctas</span>
+                <div className="w-3 h-3 rounded-full bg-htb-green"></div>
+                <span className="font-semibold text-htb-green">{stats.correct}</span>
+                <span className="text-htb-text-dim">Correctas</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <span className="font-semibold text-red-700">{stats.incorrect}</span>
-                <span className="text-gray-600">Incorrectas</span>
+                <span className="font-semibold text-red-500">{stats.incorrect}</span>
+                <span className="text-htb-text-dim">Incorrectas</span>
               </div>
             </div>
             
             {/* Barra de progreso visual */}
             {(stats.correct + stats.incorrect) > 0 && (
               <div className="w-full max-w-md mx-auto sm:mx-0">
-                <div className="flex h-6 rounded-full overflow-hidden bg-gray-200">
+                <div className="flex h-6 rounded-full overflow-hidden bg-htb-sidebar">
                   <div 
-                    className="bg-green-500 transition-all duration-500 flex items-center justify-center text-xs text-white font-semibold"
+                    className="bg-htb-green transition-all duration-500 flex items-center justify-center text-xs text-htb-bg font-semibold"
                     style={{ width: `${(stats.correct / (stats.correct + stats.incorrect)) * 100}%` }}
                   >
                     {stats.correct > 0 && `${Math.round((stats.correct / (stats.correct + stats.incorrect)) * 100)}%`}
@@ -633,21 +633,21 @@ const ExerciseView = ({ tenseId }) => {
             
             {/* Toggle de dirección */}
             <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3">
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
+              <span className="text-xs sm:text-sm font-medium text-htb-text">
                 {isReversed ? 'ES → EN' : 'EN → ES'}
               </span>
               <button
                 onClick={handleToggleDirection}
-                className="relative inline-flex items-center h-8 w-16 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                style={{ backgroundColor: isReversed ? '#3b82f6' : '#9ca3af' }}
+                className="relative inline-flex items-center h-8 w-16 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-htb-green focus:ring-offset-2 focus:ring-offset-htb-bg"
+                style={{ backgroundColor: isReversed ? '#9fef00' : '#374151' }}
               >
                 <span
-                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                    isReversed ? 'translate-x-9' : 'translate-x-1'
+                  className={`inline-block h-6 w-6 transform rounded-full transition-transform ${
+                    isReversed ? 'translate-x-9 bg-htb-bg' : 'translate-x-1 bg-white'
                   }`}
                 />
               </button>
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
+              <span className="text-xs sm:text-sm font-medium text-htb-text">
                 Cambiar dirección
               </span>
             </div>
@@ -656,43 +656,43 @@ const ExerciseView = ({ tenseId }) => {
 
         {/* Grammar Structure Help */}
         {!isVocabulary && getTenseStructure() && (
-          <div className="mt-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
+          <div className="mt-4 bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
-              <span className="text-blue-600 text-xl">📖</span>
-              <h3 className="text-sm font-bold text-blue-900 uppercase tracking-wide">Estructura Gramatical</h3>
+              <span className="text-htb-green text-xl">📖</span>
+              <h3 className="text-sm font-bold text-htb-green uppercase tracking-wide">Estructura Gramatical</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-              <div className="bg-white bg-opacity-60 rounded p-3">
-                <p className="font-semibold text-green-700 mb-1">✓ Afirmativa</p>
-                <p className="text-gray-700 text-xs leading-relaxed">{getTenseStructure().affirmative}</p>
+              <div className="bg-htb-card rounded p-3 border border-gray-800">
+                <p className="font-semibold text-htb-green mb-1">✓ Afirmativa</p>
+                <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().affirmative}</p>
               </div>
-              <div className="bg-white bg-opacity-60 rounded p-3">
-                <p className="font-semibold text-red-700 mb-1">✗ Negativa</p>
-                <p className="text-gray-700 text-xs leading-relaxed">{getTenseStructure().negative}</p>
+              <div className="bg-htb-card rounded p-3 border border-gray-800">
+                <p className="font-semibold text-red-500 mb-1">✗ Negativa</p>
+                <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().negative}</p>
               </div>
-              <div className="bg-white bg-opacity-60 rounded p-3">
-                <p className="font-semibold text-blue-700 mb-1">? Interrogativa</p>
-                <p className="text-gray-700 text-xs leading-relaxed">{getTenseStructure().interrogative}</p>
+              <div className="bg-htb-card rounded p-3 border border-gray-800">
+                <p className="font-semibold text-blue-400 mb-1">? Interrogativa</p>
+                <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().interrogative}</p>
               </div>
             </div>
-            <div className="mt-3 bg-yellow-50 border border-yellow-200 rounded p-2">
-              <p className="text-xs text-gray-600">
-                <span className="font-semibold text-yellow-800">Ejemplo:</span> 
-                <span className="ml-1 text-gray-800 italic">{getTenseStructure().example}</span>
+            <div className="mt-3 bg-htb-sidebar border border-htb-green/30 rounded p-2">
+              <p className="text-xs text-htb-text-dim">
+                <span className="font-semibold text-htb-green">Ejemplo:</span> 
+                <span className="ml-1 text-htb-text italic">{getTenseStructure().example}</span>
               </p>
             </div>
           </div>
         )}
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+      <div className="bg-htb-card border border-gray-800 rounded-lg p-4 sm:p-6">
         <div className="mb-6">
           <div className="flex-1">
             {/* Contador inicial solo para vocabulario */}
             {isVocabulary && initialCountdown > 0 && !feedback && (
-              <div className="mb-4 p-3 rounded-md bg-blue-50 border border-blue-300 text-center">
-                <p className="text-sm text-blue-700">
-                  ⏱️ Tienes <span className="font-bold text-blue-600 text-lg">{initialCountdown}</span> segundo{initialCountdown !== 1 ? 's' : ''} para responder
+              <div className="mb-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
+                <p className="text-sm text-htb-green">
+                  ⏱️ Tienes <span className="font-bold text-htb-green text-lg">{initialCountdown}</span> segundo{initialCountdown !== 1 ? 's' : ''} para responder
                 </p>
               </div>
             )}
@@ -703,7 +703,7 @@ const ExerciseView = ({ tenseId }) => {
                 {/* Imagen del vocabulario */}
                 {vocabularyImage && !imageLoading && (
                   <div className="flex justify-center mb-4">
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-4 border-blue-200 w-full max-w-md">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-4 border-htb-green w-full max-w-md">
                       <img 
                         src={vocabularyImage} 
                         alt={currentExercise.englishWord}
@@ -720,13 +720,13 @@ const ExerciseView = ({ tenseId }) => {
                 
                 {imageLoading && (
                   <div className="flex justify-center mb-4">
-                    <div className="w-full max-w-md h-48 sm:h-56 md:h-64 bg-gray-200 animate-pulse flex items-center justify-center rounded-lg">
-                      <span className="text-gray-500">Cargando imagen...</span>
+                    <div className="w-full max-w-md h-48 sm:h-56 md:h-64 bg-htb-sidebar animate-pulse flex items-center justify-center rounded-lg border border-gray-800">
+                      <span className="text-htb-text-dim">Cargando imagen...</span>
                     </div>
                   </div>
                 )}
                 
-                <span className="text-gray-800 font-medium text-base sm:text-lg">
+                <span className="text-white font-medium text-base sm:text-lg">
                   {isReversed 
                     ? `Translate to English: ${Array.isArray(currentExercise.spanishWord) ? currentExercise.spanishWord[0] : currentExercise.spanishWord}`
                     : `Translate to Spanish: ${currentExercise.englishWord}`
@@ -737,7 +737,7 @@ const ExerciseView = ({ tenseId }) => {
                   ref={inputRef}
                   value={userAnswer || ''}
                   onChange={(e) => handleAnswerChange(e.target.value)}
-                  className="border border-gray-300 rounded px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                  className="border border-gray-300 rounded px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-htb-green w-full bg-htb-bg text-white"
                   placeholder="Tu respuesta..."
                   disabled={feedback !== null}
                   onKeyPress={(e) => {
@@ -752,7 +752,7 @@ const ExerciseView = ({ tenseId }) => {
               <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-3 text-sm sm:text-base">
                 {currentExercise.sentenceParts?.map((part, partIndex) => {
                   if (part.type === 'text') {
-                    return <span key={partIndex} className="text-gray-800 text-lg">{part.content}</span>;
+                    return <span key={partIndex} className="text-white text-lg">{part.content}</span>;
                   } else if (part.type === 'input') {
                     const inputIndex = currentExercise.sentenceParts
                       .slice(0, partIndex)
@@ -764,7 +764,7 @@ const ExerciseView = ({ tenseId }) => {
                         type="text"
                         value={userAnswers[inputIndex] || ''}
                         onChange={(e) => handleAnswerChange(e.target.value, inputIndex)}
-                        className="border border-gray-300 rounded px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[120px] sm:min-w-[150px]"
+                        className="border border-gray-300 rounded px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-htb-green min-w-[120px] sm:min-w-[150px] bg-htb-bg text-white"
                         placeholder="..."
                         disabled={feedback !== null}
                       />
@@ -798,11 +798,11 @@ const ExerciseView = ({ tenseId }) => {
 
             {/* Mostrar la respuesta después de 10 segundos solo en vocabulario */}
             {isVocabulary && showAnswer && !feedback && (
-              <div className="mt-4 p-4 rounded-md bg-blue-50 border border-blue-300">
-                <p className="font-semibold text-blue-800 text-base mb-2">
+              <div className="mt-4 p-4 rounded-md bg-htb-sidebar border border-htb-green/30">
+                <p className="font-semibold text-htb-green text-base mb-2">
                   💡 Respuesta:
                 </p>
-                <p className="text-gray-800 text-base">
+                <p className="text-white text-base">
                   {isReversed 
                     ? currentExercise.englishWord
                     : (Array.isArray(currentExercise.spanishWord) 
@@ -810,7 +810,7 @@ const ExerciseView = ({ tenseId }) => {
                         : currentExercise.spanishWord)
                   }
                 </p>
-                <p className="text-sm text-gray-600 mt-2 italic">
+                <p className="text-sm text-htb-text-dim mt-2 italic">
                   {currentExercise.explanation}
                 </p>
               </div>
@@ -818,17 +818,17 @@ const ExerciseView = ({ tenseId }) => {
 
             {/* Mostrar contador regresivo solo en vocabulario cuando hay feedback incorrecto pero no se ha mostrado la respuesta */}
             {isVocabulary && feedback && !feedback.isCorrect && !showAnswer && (
-              <div className="mt-4 p-3 rounded-md bg-gray-50 border border-gray-300 text-center">
-                <p className="text-sm text-gray-600">
-                  La respuesta se mostrará en <span className="font-bold text-blue-600 text-lg">{countdown}</span> segundo{countdown !== 1 ? 's' : ''}
+              <div className="mt-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
+                <p className="text-sm text-htb-text">
+                  La respuesta se mostrará en <span className="font-bold text-htb-green text-lg">{countdown}</span> segundo{countdown !== 1 ? 's' : ''}
                 </p>
               </div>
             )}
 
             {/* Mostrar mensaje de espera cuando la respuesta es correcta en vocabulario */}
             {isVocabulary && feedback && feedback.isCorrect && (
-              <div className="mt-4 p-3 rounded-md bg-green-50 border border-green-300 text-center">
-                <p className="text-sm text-green-700">
+              <div className="mt-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
+                <p className="text-sm text-htb-green">
                   ⏳ Cargando siguiente pregunta en 5 segundos...
                 </p>
               </div>
@@ -838,31 +838,31 @@ const ExerciseView = ({ tenseId }) => {
               <div
                 className={`mt-4 p-4 rounded-md ${
                   feedback.isCorrect
-                    ? 'bg-green-100 border border-green-400'
-                    : 'bg-red-100 border border-red-400'
+                    ? 'bg-htb-sidebar border border-htb-green'
+                    : 'bg-htb-sidebar border border-red-500'
                 }`}
               >
                 <p
                   className={`font-semibold text-lg ${
-                    feedback.isCorrect ? 'text-green-800' : 'text-red-800'
+                    feedback.isCorrect ? 'text-htb-green' : 'text-red-500'
                   }`}
                 >
                   {feedback.isCorrect ? '✓ Correcto' : '✗ Incorrecto'}
                 </p>
                 {/* Mostrar el tiempo verbal solo en Mixed Tenses */}
                 {tenseId === 'mixed-tenses' && feedback.tense && (
-                  <p className="text-sm text-purple-700 font-semibold mt-1 bg-purple-50 inline-block px-3 py-1 rounded">
+                  <p className="text-sm text-htb-green font-semibold mt-1 bg-htb-card inline-block px-3 py-1 rounded border border-htb-green/30">
                     📚 {feedback.tense}
                   </p>
                 )}
-                <p className="text-base text-gray-700 mt-2">{feedback.message}</p>
+                <p className="text-base text-htb-text mt-2">{feedback.message}</p>
                 {!feedback.isCorrect && showAnswer && (
                   <>
-                    <p className="text-base text-gray-700 mt-3">
+                    <p className="text-base text-htb-text mt-3">
                       <strong>Respuesta correcta:</strong> {feedback.correctAnswer}
                     </p>
                     {feedback.userAnswerText && (
-                      <p className="text-base text-gray-700 mt-2">
+                      <p className="text-base text-htb-text mt-2">
                         <strong>Tu respuesta:</strong> {feedback.userAnswerText}
                       </p>
                     )}
@@ -870,11 +870,11 @@ const ExerciseView = ({ tenseId }) => {
                 )}
                 {!isVocabulary && !feedback.isCorrect && (
                   <>
-                    <p className="text-base text-gray-700 mt-3">
+                    <p className="text-base text-htb-text mt-3">
                       <strong>Respuesta correcta:</strong> {feedback.correctAnswer}
                     </p>
                     {feedback.userAnswerText && (
-                      <p className="text-base text-gray-700 mt-2">
+                      <p className="text-base text-htb-text mt-2">
                         <strong>Tu respuesta:</strong> {feedback.userAnswerText}
                       </p>
                     )}
@@ -887,7 +887,7 @@ const ExerciseView = ({ tenseId }) => {
               {!feedback ? (
                 <button
                   onClick={checkAnswer}
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+                  className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
                 >
                   Verificar respuesta
                 </button>
@@ -897,7 +897,7 @@ const ExerciseView = ({ tenseId }) => {
                   {(!isVocabulary || (isVocabulary && !feedback.isCorrect && showAnswer)) && (
                     <button
                       onClick={loadNewQuestion}
-                      className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+                      className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
                     >
                       Siguiente pregunta →
                     </button>
