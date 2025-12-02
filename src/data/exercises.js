@@ -283,6 +283,446 @@ const exercisesData = {
       options: ['been waiting', 'waited', 'wait'],
       correctAnswer: 'been waiting',
       explanation: 'Usamos Present Perfect Continuous con "for 30 minutes" para enfatizar la duración de una acción que continúa.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The penetration tester has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'multiple CSRF vulnerabilities in the web application.' }
+      ],
+      options: ['identified', 'been identifying', 'identified OR been identifying'],
+      correctAnswer: 'identified',
+      explanation: 'Present Perfect Simple para reportar hallazgos específicos durante el pentesting.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Our team has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'privilege escalation since morning.' }
+      ],
+      options: ['attempted', 'been attempting', 'attempted OR been attempting'],
+      correctAnswer: 'been attempting',
+      explanation: 'Present Perfect Continuous enfatiza la actividad continua de intentar escalar privilegios.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The vulnerability scanner has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: '47 critical issues so far.' }
+      ],
+      options: ['detected', 'been detecting', 'detected OR been detecting'],
+      correctAnswer: 'detected',
+      explanation: 'Usamos Present Perfect Simple porque contamos hallazgos específicos hasta ahora.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Have you' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the credentials database yet?' }
+      ],
+      options: ['dumped', 'been dumping', 'dumped OR been dumping'],
+      correctAnswer: 'dumped',
+      explanation: 'Pregunta sobre una acción específica completada, típica en informes de pentesting.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The application has never' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'input validation properly.' }
+      ],
+      options: ['implemented', 'been implementing', 'implemented OR been implementing'],
+      correctAnswer: 'implemented',
+      explanation: 'Usamos Present Perfect para describir un problema persistente sin tiempo específico.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'XSS payloads throughout the entire session.' }
+      ],
+      options: ['tested', 'been testing', 'tested OR been testing'],
+      correctAnswer: 'been testing',
+      explanation: 'Present Perfect Continuous enfatiza la actividad continua de testing durante la sesión.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The SIEM has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'suspicious activities since 3 AM.' }
+      ],
+      options: ['logged', 'been logging', 'logged OR been logging'],
+      correctAnswer: 'been logging',
+      explanation: 'Actividad continua de registro desde un punto específico en el pasado.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Has the WAF' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'any malicious requests today?' }
+      ],
+      options: ['blocked', 'been blocking', 'blocked OR been blocking'],
+      correctAnswer: 'blocked',
+      explanation: 'Pregunta sobre acciones específicas completadas en un período que continúa (today).'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The red team has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'lateral movement across the network.' }
+      ],
+      options: ['achieved', 'been achieving', 'achieved OR been achieving'],
+      correctAnswer: 'achieved',
+      explanation: 'Logro específico en pentesting reportado con Present Perfect Simple.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'I have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'Burp Suite for web application testing for years.' }
+      ],
+      options: ['used', 'been using', 'used OR been using'],
+      correctAnswer: 'used OR been using',
+      explanation: 'Ambas formas son correctas para describir experiencia con herramientas.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The IDS has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: '15 intrusion attempts this week.' }
+      ],
+      options: ['detected', 'been detecting', 'detected OR been detecting'],
+      correctAnswer: 'detected',
+      explanation: 'Contamos eventos específicos en un período que aún continúa (this week).'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Have you ever' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'a successful buffer overflow attack?' }
+      ],
+      options: ['executed', 'been executing', 'executed OR been executing'],
+      correctAnswer: 'executed',
+      explanation: 'Pregunta sobre experiencia en pentesting sin tiempo específico.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The authentication mechanism has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'broken for the past three releases.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Estado continuo desde el pasado hasta ahora en el informe.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Our findings have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'that HTTPS is not properly enforced.' }
+      ],
+      options: ['shown', 'been showing', 'shown OR been showing'],
+      correctAnswer: 'shown',
+      explanation: 'Hallazgos específicos reportados con Present Perfect Simple.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The organization has not' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'multi-factor authentication yet.' }
+      ],
+      options: ['deployed', 'been deploying', 'deployed OR been deploying'],
+      correctAnswer: 'deployed',
+      explanation: 'Acción específica que no se ha completado, reportada con "yet".'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'How many endpoints have you' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'during this assessment?' }
+      ],
+      options: ['compromised', 'been compromising', 'compromised OR been compromising'],
+      correctAnswer: 'compromised',
+      explanation: 'Pregunta cuantitativa sobre resultados específicos del pentesting.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The API has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'sensitive data without encryption.' }
+      ],
+      options: ['exposed', 'been exposing', 'exposed OR been exposing'],
+      correctAnswer: 'been exposing',
+      explanation: 'Actividad continua problemática identificada durante el assessment.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'all recommended security patches successfully.' }
+      ],
+      options: ['applied', 'been applying', 'applied OR been applying'],
+      correctAnswer: 'applied',
+      explanation: 'Acción completada reportada en el informe de remediación.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The penetration test has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'numerous SQL injection points.' }
+      ],
+      options: ['revealed', 'been revealing', 'revealed OR been revealing'],
+      correctAnswer: 'revealed',
+      explanation: 'Hallazgos revelados durante el test, uso típico en informes.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Security headers have not' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'configured on the web server.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Estado negativo identificado en el assessment de seguridad.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The pentester has just' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'root access on the target system.' }
+      ],
+      options: ['gained', 'been gaining', 'gained OR been gaining'],
+      correctAnswer: 'gained',
+      explanation: 'Logro reciente específico en el pentesting con "just".'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Session management has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'vulnerable throughout the application.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Vulnerabilidad persistente identificada en todo el sistema.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Have you' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the scope of the penetration test?' }
+      ],
+      options: ['defined', 'been defining', 'defined OR been defining'],
+      correctAnswer: 'defined',
+      explanation: 'Pregunta sobre una tarea específica completada antes del test.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The client has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'all critical findings from last year.' }
+      ],
+      options: ['remediated', 'been remediating', 'remediated OR been remediating'],
+      correctAnswer: 'remediated',
+      explanation: 'Acción completada de corrección de vulnerabilidades reportada.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Nmap has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: '23 open ports on the target.' }
+      ],
+      options: ['discovered', 'been discovering', 'discovered OR been discovering'],
+      correctAnswer: 'discovered',
+      explanation: 'Resultado específico de reconocimiento con herramienta.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The security team has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'incident response procedures since the breach.' }
+      ],
+      options: ['improved', 'been improving', 'improved OR been improving'],
+      correctAnswer: 'been improving',
+      explanation: 'Proceso continuo de mejora desde un evento pasado.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Default credentials have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'found on multiple devices.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Hallazgo pasivo reportado en evaluación de seguridad.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'How long has the vulnerability' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'in production?' }
+      ],
+      options: ['existed', 'been existing', 'existed OR been existing'],
+      correctAnswer: 'existed',
+      explanation: 'Pregunta sobre duración de una vulnerabilidad en el sistema.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The exploit has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'against the test environment successfully.' }
+      ],
+      options: ['worked', 'been working', 'worked OR been working'],
+      correctAnswer: 'worked',
+      explanation: 'Resultado exitoso de prueba de exploit reportado.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Metasploit has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the most reliable framework for exploitation.' }
+      ],
+      options: ['proven', 'been proving', 'proven OR been proving'],
+      correctAnswer: 'proven',
+      explanation: 'Evaluación basada en experiencia acumulada con la herramienta.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The assessment has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'weak password policies across the organization.' }
+      ],
+      options: ['uncovered', 'been uncovering', 'uncovered OR been uncovering'],
+      correctAnswer: 'uncovered',
+      explanation: 'Hallazgo específico descubierto durante la evaluación.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We have never' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'such poor segmentation in a corporate network.' }
+      ],
+      options: ['seen', 'been seeing', 'seen OR been seeing'],
+      correctAnswer: 'seen',
+      explanation: 'Experiencia extrema reportada sin tiempo específico.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The target has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'to our port scanning attempts.' }
+      ],
+      options: ['responded', 'been responding', 'responded OR been responding'],
+      correctAnswer: 'responded',
+      explanation: 'Acción específica del objetivo durante reconocimiento.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Security awareness training has not' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'conducted for employees this year.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Falta de acción identificada en revisión de controles.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The vulnerability has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'in the OWASP Top 10 for five years.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Estado continuo de una vulnerabilidad conocida.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Attackers have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'this technique since 2020.' }
+      ],
+      options: ['exploited', 'been exploiting', 'exploited OR been exploiting'],
+      correctAnswer: 'been exploiting',
+      explanation: 'Actividad continua de atacantes desde un punto en el pasado.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The report has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: '12 high-severity findings.' }
+      ],
+      options: ['documented', 'been documenting', 'documented OR been documenting'],
+      correctAnswer: 'documented',
+      explanation: 'Acción completada de documentar hallazgos en el informe.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'CSRF tokens have not' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'implemented on critical forms.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Control de seguridad faltante identificado en el test.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The blue team has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'our activities within 15 minutes.' }
+      ],
+      options: ['detected', 'been detecting', 'detected OR been detecting'],
+      correctAnswer: 'detected',
+      explanation: 'Capacidad de detección demostrada durante el ejercicio.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'command injection in three different endpoints.' }
+      ],
+      options: ['confirmed', 'been confirming', 'confirmed OR been confirming'],
+      correctAnswer: 'confirmed',
+      explanation: 'Verificación específica de vulnerabilidad en múltiples puntos.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The engagement has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'longer than expected due to scope changes.' }
+      ],
+      options: ['taken', 'been taking', 'taken OR been taking'],
+      correctAnswer: 'taken',
+      explanation: 'Duración del proyecto reportada con justificación.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Rate limiting has never' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'on the authentication endpoint.' }
+      ],
+      options: ['existed', 'been existing', 'existed OR been existing'],
+      correctAnswer: 'existed',
+      explanation: 'Ausencia completa de control de seguridad reportada.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The security posture has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'significantly since last assessment.' }
+      ],
+      options: ['improved', 'been improving', 'improved OR been improving'],
+      correctAnswer: 'improved',
+      explanation: 'Cambio positivo comparado con evaluación anterior.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Sensitive data has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'stored in plain text in the database.' }
+      ],
+      options: ['been', 'been being', 'is'],
+      correctAnswer: 'been',
+      explanation: 'Práctica insegura identificada en revisión de datos.'
     }
   ],
   
@@ -399,6 +839,396 @@ const exercisesData = {
       options: ['have been trying', 'have tried', 'am trying'],
       correctAnswer: 'have been trying',
       explanation: 'Usamos "have been trying" para enfatizar los intentos repetidos durante toda la semana.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The red team has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'enumeration techniques since the engagement started.' }
+      ],
+      options: ['been using', 'used', 'using'],
+      correctAnswer: 'been using',
+      explanation: 'Actividad continua desde el inicio del engagement hasta ahora.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'How long have you' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'brute-force attacks on the login page?' }
+      ],
+      options: ['been running', 'run', 'running'],
+      correctAnswer: 'been running',
+      explanation: 'Pregunta sobre duración de actividad continua de pentesting.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Wireshark has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'packets for the last 3 hours.' }
+      ],
+      options: ['been capturing', 'captured', 'capturing'],
+      correctAnswer: 'been capturing',
+      explanation: 'Proceso continuo de captura durante período específico.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The honeypot has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'attacker behavior patterns all month.' }
+      ],
+      options: ['been recording', 'recorded', 'recording'],
+      correctAnswer: 'been recording',
+      explanation: 'Actividad continua de monitoreo durante todo el mes.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'SQLMap against the database since morning.' }
+      ],
+      options: ['been running', 'run', 'running'],
+      correctAnswer: 'been running',
+      explanation: 'Ejecución continua de herramienta desde la mañana.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What have you' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'with Metasploit for so long?' }
+      ],
+      options: ['been doing', 'done', 'doing'],
+      correctAnswer: 'been doing',
+      explanation: 'Pregunta sobre actividad continua reciente con herramienta.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The IDS has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'false positives throughout the test.' }
+      ],
+      options: ['been generating', 'generated', 'generating'],
+      correctAnswer: 'been generating',
+      explanation: 'Problema continuo durante toda la duración del test.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Attackers have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the network perimeter for days.' }
+      ],
+      options: ['been probing', 'probed', 'probing'],
+      correctAnswer: 'been probing',
+      explanation: 'Actividad maliciosa continua durante varios días.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The SOC team has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'alerts 24/7 for weeks.' }
+      ],
+      options: ['been monitoring', 'monitored', 'monitoring'],
+      correctAnswer: 'been monitoring',
+      explanation: 'Monitoreo continuo ininterrumpido durante semanas.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'I have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'this vulnerability research for months.' }
+      ],
+      options: ['been conducting', 'conducted', 'conducting'],
+      correctAnswer: 'been conducting',
+      explanation: 'Investigación continua durante período prolongado.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The payload has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'in the background since deployment.' }
+      ],
+      options: ['been executing', 'executed', 'executing'],
+      correctAnswer: 'been executing',
+      explanation: 'Ejecución continua desde el momento del despliegue.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'How long has the backdoor' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'on the server?' }
+      ],
+      options: ['been running', 'run', 'running'],
+      correctAnswer: 'been running',
+      explanation: 'Pregunta sobre duración de compromiso del sistema.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'different injection vectors all afternoon.' }
+      ],
+      options: ['been testing', 'tested', 'testing'],
+      correctAnswer: 'been testing',
+      explanation: 'Testing continuo durante toda la tarde.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The cryptominer has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'CPU resources for weeks undetected.' }
+      ],
+      options: ['been consuming', 'consumed', 'consuming'],
+      correctAnswer: 'been consuming',
+      explanation: 'Actividad maliciosa continua sin detección.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Security researchers have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'this exploit chain since disclosure.' }
+      ],
+      options: ['been analyzing', 'analyzed', 'analyzing'],
+      correctAnswer: 'been analyzing',
+      explanation: 'Análisis continuo desde el momento de divulgación.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The C2 server has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'commands to infected hosts continuously.' }
+      ],
+      options: ['been sending', 'sent', 'sending'],
+      correctAnswer: 'been sending',
+      explanation: 'Comunicación continua de comando y control.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What techniques have they' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'for privilege escalation?' }
+      ],
+      options: ['been using', 'used', 'using'],
+      correctAnswer: 'been using',
+      explanation: 'Pregunta sobre técnicas empleadas durante el ataque.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The fuzzer has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'inputs for hours without crash.' }
+      ],
+      options: ['been generating', 'generated', 'generating'],
+      correctAnswer: 'been generating',
+      explanation: 'Proceso continuo de fuzzing durante horas.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Threat actors have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'APT techniques increasingly.' }
+      ],
+      options: ['been adopting', 'adopted', 'adopting'],
+      correctAnswer: 'been adopting',
+      explanation: 'Tendencia continua observada en threat intelligence.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The vulnerability scanner has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the entire subnet since midnight.' }
+      ],
+      options: ['been scanning', 'scanned', 'scanning'],
+      correctAnswer: 'been scanning',
+      explanation: 'Escaneo continuo desde medianoche hasta ahora.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'I have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'to reverse engineer this malware for days.' }
+      ],
+      options: ['been trying', 'tried', 'trying'],
+      correctAnswer: 'been trying',
+      explanation: 'Esfuerzo continuo de ingeniería inversa.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The EDR has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'suspicious processes constantly.' }
+      ],
+      options: ['been detecting', 'detected', 'detecting'],
+      correctAnswer: 'been detecting',
+      explanation: 'Detección continua por sistema de endpoint.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'How long have you' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'hash cracking with Hashcat?' }
+      ],
+      options: ['been doing', 'done', 'doing'],
+      correctAnswer: 'been doing',
+      explanation: 'Pregunta sobre duración de actividad de crackeo.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The pentester has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'Active Directory enumeration all day.' }
+      ],
+      options: ['been performing', 'performed', 'performing'],
+      correctAnswer: 'been performing',
+      explanation: 'Enumeración continua durante todo el día.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Automated scanners have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'our WAF since last week.' }
+      ],
+      options: ['been testing', 'tested', 'testing'],
+      correctAnswer: 'been testing',
+      explanation: 'Testing automatizado continuo desde la semana pasada.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The organization has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'its security infrastructure gradually.' }
+      ],
+      options: ['been hardening', 'hardened', 'hardening'],
+      correctAnswer: 'been hardening',
+      explanation: 'Proceso continuo de endurecimiento de seguridad.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Malicious actors have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'phishing campaigns targeting employees.' }
+      ],
+      options: ['been launching', 'launched', 'launching'],
+      correctAnswer: 'been launching',
+      explanation: 'Campañas continuas de phishing en curso.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The security team has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'threat hunting exercises regularly.' }
+      ],
+      options: ['been conducting', 'conducted', 'conducting'],
+      correctAnswer: 'been conducting',
+      explanation: 'Actividad regular continua de búsqueda de amenazas.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What payloads have you' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'against the IDS?' }
+      ],
+      options: ['been deploying', 'deployed', 'deploying'],
+      correctAnswer: 'been deploying',
+      explanation: 'Pregunta sobre actividad continua de testing.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The malware has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'laterally across the network.' }
+      ],
+      options: ['been spreading', 'spread', 'spreading'],
+      correctAnswer: 'been spreading',
+      explanation: 'Propagación continua de malware en la red.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'I have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'source code for vulnerabilities for hours.' }
+      ],
+      options: ['been reviewing', 'reviewed', 'reviewing'],
+      correctAnswer: 'been reviewing',
+      explanation: 'Revisión continua de código fuente.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The target has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'unusually since we started reconnaissance.' }
+      ],
+      options: ['been behaving', 'behaved', 'behaving'],
+      correctAnswer: 'been behaving',
+      explanation: 'Comportamiento continuo anómalo desde reconocimiento.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Cybercriminals have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'ransomware-as-a-service models.' }
+      ],
+      options: ['been developing', 'developed', 'developing'],
+      correctAnswer: 'been developing',
+      explanation: 'Desarrollo continuo de modelos de negocio criminal.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The SIEM has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'correlation rules since the upgrade.' }
+      ],
+      options: ['been refining', 'refined', 'refining'],
+      correctAnswer: 'been refining',
+      explanation: 'Proceso continuo de refinamiento desde actualización.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'How long has the APT group' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'in our infrastructure?' }
+      ],
+      options: ['been operating', 'operated', 'operating'],
+      correctAnswer: 'been operating',
+      explanation: 'Pregunta sobre duración de presencia de APT.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'OSINT techniques throughout the engagement.' }
+      ],
+      options: ['been applying', 'applied', 'applying'],
+      correctAnswer: 'been applying',
+      explanation: 'Aplicación continua de técnicas OSINT.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The botnet has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'in size exponentially.' }
+      ],
+      options: ['been growing', 'grown', 'growing'],
+      correctAnswer: 'been growing',
+      explanation: 'Crecimiento continuo observado en análisis.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Security vendors have' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'signatures for this threat.' }
+      ],
+      options: ['been updating', 'updated', 'updating'],
+      correctAnswer: 'been updating',
+      explanation: 'Actualización continua de firmas de amenazas.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The persistence mechanism has' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'across system reboots successfully.' }
+      ],
+      options: ['been surviving', 'survived', 'surviving'],
+      correctAnswer: 'been surviving',
+      explanation: 'Persistencia continua demostrada a través de reinicios.'
     }
   ],
 
@@ -524,6 +1354,396 @@ const exercisesData = {
       options: ['were listening', 'listened', 'listen'],
       correctAnswer: 'were listening',
       explanation: 'Usamos "were listening" para una acción en progreso cuando llegué (otra acción).'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The security analyst' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'logs when the alert triggered.' }
+      ],
+      options: ['was reviewing', 'reviewed', 'reviews'],
+      correctAnswer: 'was reviewing',
+      explanation: 'Acción en progreso interrumpida por la alerta en informe.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'At 2 AM, the attacker' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'credentials from memory.' }
+      ],
+      options: ['was extracting', 'extracted', 'extracts'],
+      correctAnswer: 'was extracting',
+      explanation: 'Actividad en progreso en momento específico del ataque.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the firewall doing at the time of breach?' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Pregunta sobre estado del firewall durante incidente.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'While we' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the perimeter, they discovered the backdoor.' }
+      ],
+      options: ['were testing', 'tested', 'test'],
+      correctAnswer: 'were testing',
+      explanation: 'Dos acciones simultáneas durante pentesting.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The IDS' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'when we performed the attack.' }
+      ],
+      options: ['was sleeping', 'slept', 'sleeps'],
+      correctAnswer: 'was sleeping',
+      explanation: 'Estado del IDS durante ejecución del ataque.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'At midnight, the malware' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'files silently.' }
+      ],
+      options: ['was encrypting', 'encrypted', 'encrypts'],
+      correctAnswer: 'was encrypting',
+      explanation: 'Actividad de ransomware en progreso en momento específico.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The SOC team' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the incident when I called.' }
+      ],
+      options: ['was investigating', 'investigated', 'investigates'],
+      correctAnswer: 'was investigating',
+      explanation: 'Investigación en progreso interrumpida por llamada.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'While the backup' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'running, the system crashed.' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Proceso en ejecución cuando ocurrió el fallo.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What commands' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the attacker executing at 3 PM?' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Pregunta sobre actividad específica del atacante.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The proxy logs show users' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'malicious sites yesterday.' }
+      ],
+      options: ['were visiting', 'visited', 'visit'],
+      correctAnswer: 'were visiting',
+      explanation: 'Actividad en progreso detectada en logs.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'During the assessment, we' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'lateral movement techniques.' }
+      ],
+      options: ['were employing', 'employed', 'employ'],
+      correctAnswer: 'were employing',
+      explanation: 'Técnicas en uso durante la evaluación.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The database' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'when the SQL injection occurred.' }
+      ],
+      options: ['was responding', 'responded', 'responds'],
+      correctAnswer: 'was responding',
+      explanation: 'Estado de la base de datos durante el ataque.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'At the time of compromise, administrators' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the patch.' }
+      ],
+      options: ['were deploying', 'deployed', 'deploy'],
+      correctAnswer: 'were deploying',
+      explanation: 'Acción en progreso durante el compromiso.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The pentester' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'Nmap when the target went offline.' }
+      ],
+      options: ['was running', 'ran', 'runs'],
+      correctAnswer: 'was running',
+      explanation: 'Escaneo en progreso interrumpido por caída del objetivo.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'While authentication' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'failing, attackers gained access.' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Contexto del fallo durante explotación.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the endpoint protection doing during infection?' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Pregunta sobre estado de protección durante incidente.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The red team' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'Active Directory when blue team detected them.' }
+      ],
+      options: ['was enumerating', 'enumerated', 'enumerates'],
+      correctAnswer: 'was enumerating',
+      explanation: 'Enumeración en progreso cuando fueron detectados.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Network traffic' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'suspiciously high at 4 AM.' }
+      ],
+      options: ['was running', 'ran', 'runs'],
+      correctAnswer: 'was running',
+      explanation: 'Tráfico anómalo en momento específico reportado.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'While I' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the report, new vulnerabilities emerged.' }
+      ],
+      options: ['was writing', 'wrote', 'write'],
+      correctAnswer: 'was writing',
+      explanation: 'Redacción en progreso cuando surgieron hallazgos.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The C2 server' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'instructions when we blocked it.' }
+      ],
+      options: ['was sending', 'sent', 'sends'],
+      correctAnswer: 'was sending',
+      explanation: 'Comunicación en progreso al momento del bloqueo.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'At 5 PM yesterday, the team' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'privilege escalation vectors.' }
+      ],
+      options: ['was researching', 'researched', 'researches'],
+      correctAnswer: 'was researching',
+      explanation: 'Investigación en curso en momento específico.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The exploit' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'when antivirus caught it.' }
+      ],
+      options: ['was executing', 'executed', 'executes'],
+      correctAnswer: 'was executing',
+      explanation: 'Ejecución interrumpida por detección de AV.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What tools' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'you using during reconnaissance?' }
+      ],
+      options: ['were', 'was', 'are'],
+      correctAnswer: 'were',
+      explanation: 'Pregunta sobre herramientas en uso durante fase.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The victim' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'credentials when phishing link was clicked.' }
+      ],
+      options: ['was entering', 'entered', 'enters'],
+      correctAnswer: 'was entering',
+      explanation: 'Acción de víctima en progreso durante ataque.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'While defenders' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'focused on one attack, another began.' }
+      ],
+      options: ['were', 'was', 'are'],
+      correctAnswer: 'were',
+      explanation: 'Distracción durante ataque multi-vector.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The fuzzer' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'when it found the crash.' }
+      ],
+      options: ['was running', 'ran', 'runs'],
+      correctAnswer: 'was running',
+      explanation: 'Fuzzing en progreso cuando se encontró vulnerabilidad.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'At the moment of breach, logging' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'disabled.' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Estado crítico de logging durante incidente.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The administrator' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'when the ransomware struck.' }
+      ],
+      options: ['was sleeping', 'slept', 'sleeps'],
+      correctAnswer: 'was sleeping',
+      explanation: 'Momento del ataque durante horario no laboral.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Data' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'exfiltrating slowly over weeks.' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Exfiltración continua durante período extendido.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'the EDR reporting at time of infection?' }
+      ],
+      options: ['was', 'were', 'is'],
+      correctAnswer: 'was',
+      explanation: 'Pregunta sobre telemetría durante compromiso.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The payload' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'obfuscation techniques when analyzed.' }
+      ],
+      options: ['was using', 'used', 'uses'],
+      correctAnswer: 'was using',
+      explanation: 'Técnica en uso descubierta durante análisis.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'While CVE details' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'being published, exploitation began.' }
+      ],
+      options: ['were', 'was', 'are'],
+      correctAnswer: 'were',
+      explanation: 'Explotación iniciada durante divulgación.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The honeypot' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'attacks when researchers checked it.' }
+      ],
+      options: ['was logging', 'logged', 'logs'],
+      correctAnswer: 'was logging',
+      explanation: 'Registro activo durante revisión de honeypot.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'At that time, the organization' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'their incident response plan.' }
+      ],
+      options: ['was updating', 'updated', 'updates'],
+      correctAnswer: 'was updating',
+      explanation: 'Actualización en progreso en momento relevante.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The malware' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'for C2 connection when firewall blocked it.' }
+      ],
+      options: ['was attempting', 'attempted', 'attempts'],
+      correctAnswer: 'was attempting',
+      explanation: 'Intento en progreso interrumpido por firewall.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'What indicators' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'showing up during the attack?' }
+      ],
+      options: ['were', 'was', 'are'],
+      correctAnswer: 'were',
+      explanation: 'Pregunta sobre IOCs presentes durante incidente.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'Threat intelligence feeds' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'this campaign when we saw it.' }
+      ],
+      options: ['were tracking', 'tracked', 'track'],
+      correctAnswer: 'were tracking',
+      explanation: 'Seguimiento en curso de campaña maliciosa.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'The vulnerability' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'actively when patch released.' }
+      ],
+      options: ['was being exploited', 'exploited', 'exploits'],
+      correctAnswer: 'was being exploited',
+      explanation: 'Explotación activa en momento de parche.'
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'During the purple team exercise, both sides' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'effectively.' }
+      ],
+      options: ['were communicating', 'communicated', 'communicate'],
+      correctAnswer: 'were communicating',
+      explanation: 'Comunicación en progreso durante ejercicio.'
     }
   ],
 
