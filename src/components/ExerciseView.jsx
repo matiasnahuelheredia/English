@@ -6,6 +6,7 @@ import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
 import Introduction from './Introduction';
 import ConflictWarfareExercise from './ConflictWarfareExercise';
+import AdjectivesExercise from './AdjectivesExercise';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -16,6 +17,11 @@ const ExerciseView = ({ tenseId }) => {
   // Si es conflict-warfare, mostrar el componente ConflictWarfareExercise
   if (tenseId === 'conflict-warfare') {
     return <ConflictWarfareExercise />;
+  }
+
+  // Si es adjectives, mostrar el componente AdjectivesExercise
+  if (tenseId === 'adjectives') {
+    return <AdjectivesExercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
