@@ -1105,6 +1105,81 @@ export const vocabularyData = {
       explanation: '"Charming" significa encantador. Someone who has an attractive personality is charming.',
       imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop'
     }
+  ],
+
+  'relationships': [
+    {
+      englishWord: 'Mates',
+      spanishWord: ['amigos', 'compañeros'],
+      explanation: '"Mates" significa amigos (coloquial). The colloquial word for friends is mates.',
+      imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Partner',
+      spanishWord: ['pareja', 'compañero', 'novio'],
+      explanation: '"Partner" significa pareja. Another word for boyfriend/girlfriend is partner.',
+      imageUrl: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Classmates',
+      spanishWord: ['compañeros de clase'],
+      explanation: '"Classmates" significa compañeros de clase. People you go to school with are your classmates.',
+      imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'In common',
+      spanishWord: ['en común'],
+      explanation: '"In common" significa en común. If you share interests with someone, you have something in common.',
+      imageUrl: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Get in touch',
+      spanishWord: ['ponerse en contacto', 'contactar'],
+      explanation: '"Get in touch" significa ponerse en contacto. To get in touch with someone, you might call or text them.',
+      imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Socialise',
+      spanishWord: ['socializar', 'relacionarse'],
+      explanation: '"Socialise" significa socializar. After work, you might socialise with your colleagues.',
+      imageUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Trusted',
+      spanishWord: ['confiado', 'de confianza'],
+      explanation: '"Trusted" significa de confianza. Close friends can be trusted with secrets.',
+      imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Get married',
+      spanishWord: ['casarse'],
+      explanation: '"Get married" significa casarse. Many people get married in a church.',
+      imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Flatmates',
+      spanishWord: ['compañeros de piso', 'compañeros de departamento'],
+      explanation: '"Flatmates" significa compañeros de piso. At university, you\'re likely to have flatmates.',
+      imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Get on well',
+      spanishWord: ['llevarse bien'],
+      explanation: '"Get on well" significa llevarse bien. If you get on well with somebody you might become friends.',
+      imageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Single',
+      spanishWord: ['soltero', 'soltera'],
+      explanation: '"Single" significa soltero. If you\'re not in a relationship, you are single.',
+      imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Get engaged',
+      spanishWord: ['comprometerse', 'prometerse'],
+      explanation: '"Get engaged" significa comprometerse. Before getting married, people usually get engaged.',
+      imageUrl: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&h=300&fit=crop'
+    }
   ]
 };
 
