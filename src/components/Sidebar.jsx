@@ -21,25 +21,25 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
   });
 
   const tenses = [
-    { id: 'present-simple', name: 'Present Simple', category: 'Present' },
-    { id: 'present-continuous', name: 'Present Continuous', category: 'Present' },
-    { id: 'present-simple-continuous-mix', name: 'Present Simple & Continuous Mix', category: 'Present' },
-    { id: 'present-perfect', name: 'Present Perfect', category: 'Present' },
-    { id: 'present-perfect-continuous', name: 'Present Perfect Continuous', category: 'Present' },
+    { id: 'present-simple', name: '🔄 Present Simple', category: 'Present' },
+    { id: 'present-continuous', name: '⏳ Present Continuous', category: 'Present' },
+    { id: 'present-simple-continuous-mix', name: '🔀 Present Simple & Continuous Mix', category: 'Present' },
+    { id: 'present-perfect', name: '✅ Present Perfect', category: 'Present' },
+    { id: 'present-perfect-continuous', name: '⏰ Present Perfect Continuous', category: 'Present' },
     
-    { id: 'past-simple', name: 'Past Simple', category: 'Past' },
-    { id: 'past-continuous', name: 'Past Continuous', category: 'Past' },
-    { id: 'past-perfect', name: 'Past Perfect', category: 'Past' },
-    { id: 'past-perfect-continuous', name: 'Past Perfect Continuous', category: 'Past' },
+    { id: 'past-simple', name: '📅 Past Simple', category: 'Past' },
+    { id: 'past-continuous', name: '⏮️ Past Continuous', category: 'Past' },
+    { id: 'past-perfect', name: '🔙 Past Perfect', category: 'Past' },
+    { id: 'past-perfect-continuous', name: '⏪ Past Perfect Continuous', category: 'Past' },
     
-    { id: 'future-simple', name: 'Future Simple', category: 'Future' },
-    { id: 'future-continuous', name: 'Future Continuous', category: 'Future' },
-    { id: 'future-perfect', name: 'Future Perfect', category: 'Future' },
-    { id: 'future-perfect-continuous', name: 'Future Perfect Continuous', category: 'Future' },
+    { id: 'future-simple', name: '🔮 Future Simple', category: 'Future' },
+    { id: 'future-continuous', name: '⏭️ Future Continuous', category: 'Future' },
+    { id: 'future-perfect', name: '🎯 Future Perfect', category: 'Future' },
+    { id: 'future-perfect-continuous', name: '⏩ Future Perfect Continuous', category: 'Future' },
     
-    { id: 'first-conditional', name: 'First Conditional', category: 'Conditionals' },
-    { id: 'second-conditional', name: 'Second Conditional', category: 'Conditionals' },
-    { id: 'third-conditional', name: 'Third Conditional', category: 'Conditionals' },
+    { id: 'first-conditional', name: '1️⃣ First Conditional', category: 'Conditionals' },
+    { id: 'second-conditional', name: '2️⃣ Second Conditional', category: 'Conditionals' },
+    { id: 'third-conditional', name: '3️⃣ Third Conditional', category: 'Conditionals' },
   ];
 
   const vocabularyTopics = [
