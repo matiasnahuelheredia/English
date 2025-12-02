@@ -8,6 +8,7 @@ import Introduction from './Introduction';
 import ConflictWarfareExercise from './ConflictWarfareExercise';
 import AdjectivesExercise from './AdjectivesExercise';
 import PhonesTechnologyExercise from './PhonesTechnologyExercise';
+import ManagerialReportsExercise from './ManagerialReportsExercise';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -28,6 +29,11 @@ const ExerciseView = ({ tenseId }) => {
   // Si es phones-technology, mostrar el componente PhonesTechnologyExercise
   if (tenseId === 'phones-technology') {
     return <PhonesTechnologyExercise />;
+  }
+
+  // Si es managerial-reports, mostrar el componente ManagerialReportsExercise
+  if (tenseId === 'managerial-reports') {
+    return <ManagerialReportsExercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
