@@ -4,8 +4,14 @@ import { getVocabularyByTopic } from '../data/vocabularyData';
 import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
+import Introduction from './Introduction';
 
 const ExerciseView = ({ tenseId }) => {
+  // Si es la introducción, mostrar el componente Introduction
+  if (tenseId === 'introduction') {
+    return <Introduction />;
+  }
+
   // Si es un ejercicio de tipo match, usar el componente especializado
   if (tenseId === 'weather-match') {
     return <MatchExercise tenseId={tenseId} />;

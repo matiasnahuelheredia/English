@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import ExerciseView from './components/ExerciseView';
 
 function App() {
-  const [selectedTense, setSelectedTense] = useState('present-perfect');
+  const [selectedTense, setSelectedTense] = useState('introduction');
 
   return (
     <Layout selectedTense={selectedTense} onSelectTense={setSelectedTense}>
