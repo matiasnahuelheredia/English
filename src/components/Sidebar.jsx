@@ -555,6 +555,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Conflict and Warfare
                     </button>
+                    <button
+                      onClick={() => onSelectTense('phones-technology')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'phones-technology'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Phones and Technology
+                    </button>
                   </div>
                 )}
               </div>
