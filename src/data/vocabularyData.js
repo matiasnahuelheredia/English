@@ -1180,6 +1180,81 @@ export const vocabularyData = {
       explanation: '"Get engaged" significa comprometerse. Before getting married, people usually get engaged.',
       imageUrl: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&h=300&fit=crop'
     }
+  ],
+
+  'sport': [
+    {
+      englishWord: 'Drew',
+      spanishWord: ['empató', 'empatamos'],
+      explanation: '"Drew" es el pasado de draw (empatar). The past tense of draw.',
+      imageUrl: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Lost',
+      spanishWord: ['perdió', 'perdimos'],
+      explanation: '"Lost" es el pasado de lose (perder). The past tense of lose.',
+      imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Swimming pool',
+      spanishWord: ['piscina', 'pileta'],
+      explanation: '"Swimming pool" significa piscina. The place where you swim.',
+      imageUrl: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Golf course',
+      spanishWord: ['campo de golf'],
+      explanation: '"Golf course" significa campo de golf. Golf is played on a golf course.',
+      imageUrl: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Referee',
+      spanishWord: ['árbitro', 'réferi'],
+      explanation: '"Referee" significa árbitro. A person who controls the game in some sports.',
+      imageUrl: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Team',
+      spanishWord: ['equipo'],
+      explanation: '"Team" significa equipo. A group of people who play a sport.',
+      imageUrl: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Spectators',
+      spanishWord: ['espectadores', 'público'],
+      explanation: '"Spectators" significa espectadores. People who watch a sport.',
+      imageUrl: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Goals',
+      spanishWord: ['goles'],
+      explanation: '"Goals" significa goles. The best player scored four goals.',
+      imageUrl: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Do',
+      spanishWord: ['hacer (ejercicio)'],
+      explanation: '"Do" se usa para yoga, tai-chi, aerobics. You do yoga, tai-chi and aerobics.',
+      imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Football pitch',
+      spanishWord: ['cancha de fútbol', 'campo de fútbol'],
+      explanation: '"Football pitch" significa cancha de fútbol. Football is played on a football pitch.',
+      imageUrl: 'https://images.unsplash.com/photo-1459865264687-595d652de67e?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Tennis court',
+      spanishWord: ['cancha de tenis'],
+      explanation: '"Tennis court" significa cancha de tenis. Tennis is played on a tennis court.',
+      imageUrl: 'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Train',
+      spanishWord: ['entrenar'],
+      explanation: '"Train" significa entrenar. Sportspeople have to do this every day.',
+      imageUrl: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop'
+    }
   ]
 };
 
