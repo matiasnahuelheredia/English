@@ -16,128 +16,128 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'Have you ever' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'a SQL injection attack?' }
+        { type: 'text', content: 'caviar?' }
       ],
-      options: ['performed', 'performed OR been performing', 'been performing'],
-      correctAnswer: 'performed',
-      explanation: 'Usamos "performed" (Present Perfect Simple) porque estamos preguntando sobre una experiencia en la vida sin importar cuándo ocurrió. No necesitamos la forma continua porque no enfatizamos la duración de la acción.'
+      options: ['tried', 'tried OR been trying', 'been trying'],
+      correctAnswer: 'tried',
+      explanation: 'Usamos "tried" (Present Perfect Simple) porque estamos preguntando sobre una experiencia en la vida sin importar cuándo ocurrió. No necesitamos la forma continua porque no enfatizamos la duración de la acción.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: "The security team's" },
+        { type: 'text', content: "She's" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'on this vulnerability since January.' }
+        { type: 'text', content: 'here since July.' }
       ],
       options: ['worked OR been working', 'been working', 'worked'],
       correctAnswer: 'worked OR been working',
-      explanation: 'Ambas formas son correctas. "Has worked" enfatiza el resultado (siguen trabajando), mientras que "has been working" enfatiza la continuidad de la acción desde enero hasta ahora.'
+      explanation: 'Ambas formas son correctas. "Has worked" enfatiza el resultado (sigue trabajando aquí), mientras que "has been working" enfatiza la continuidad de la acción desde julio hasta ahora.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The firewall has' },
+        { type: 'text', content: 'Your mother has' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'five attacks this morning!' }
+        { type: 'text', content: 'three times this morning!' }
       ],
-      options: ['blocked', 'blocked OR been blocking', 'been blocking'],
-      correctAnswer: 'blocked',
-      explanation: 'Usamos "blocked" porque estamos contando acciones completas (cinco ataques). El Present Perfect Simple se usa para acciones repetidas y contables.'
+      options: ['phoned', 'phoned OR been phoning', 'been phoning'],
+      correctAnswer: 'phoned',
+      explanation: 'Usamos "phoned" porque estamos contando acciones completas (tres llamadas). El Present Perfect Simple se usa para acciones repetidas y contables.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: "The hackers are frustrated because they've" },
+        { type: 'text', content: "The kids are exhausted because they've" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'exploits all day without success.' }
+        { type: 'text', content: 'around all day.' }
       ],
-      options: ['tried OR been trying', 'tried', 'been trying'],
-      correctAnswer: 'been trying',
-      explanation: 'Usamos "been trying" (Present Perfect Continuous) porque enfatizamos la actividad continua que causó la frustración. La duración de la acción es importante aquí.'
+      options: ['run OR been running', 'run', 'been running'],
+      correctAnswer: 'been running',
+      explanation: 'Usamos "been running" (Present Perfect Continuous) porque enfatizamos la actividad continua que causó el cansancio. La duración de la acción es importante aquí.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: "The pentesters haven't" },
+        { type: 'text', content: "Tim and Lucy haven't" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'the new security system yet.' }
+        { type: 'text', content: 'our new house yet.' }
       ],
-      options: ['tested OR been testing', 'tested', 'been testing'],
-      correctAnswer: 'tested',
-      explanation: 'Usamos "tested" porque se trata de una acción puntual (probar el sistema). "Test" en este sentido no se usa normalmente en forma continua.'
+      options: ['seen OR been seeing', 'seen', 'been seeing'],
+      correctAnswer: 'seen',
+      explanation: 'Usamos "seen" porque se trata de una acción puntual (ver la casa). "See" en el sentido de "conocer/visitar un lugar" no se usa normalmente en forma continua.'
     },
     {
       sentenceParts: [
         { type: 'text', content: "I've never" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'a zero-day exploit. Have you?' }
+        { type: 'text', content: 'her boyfriend. Have you?' }
       ],
-      options: ['been discovering', 'discovered', 'discovered OR been discovering'],
-      correctAnswer: 'discovered',
-      explanation: 'Usamos "discovered" porque "discover" (encontrar por primera vez) es una acción puntual que no se usa en forma continua en este contexto.'
+      options: ['been meeting', 'met', 'met OR been meeting'],
+      correctAnswer: 'met',
+      explanation: 'Usamos "met" porque "meet" (conocer a alguien por primera vez) es una acción puntual que no se usa en forma continua en este contexto.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: "The DDoS attack's" },
+        { type: 'text', content: "It's" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'since midnight.' }
+        { type: 'text', content: 'all morning.' }
       ],
-      options: ['continued OR been continuing', 'been continuing', 'continued'],
-      correctAnswer: 'been continuing',
-      explanation: 'Usamos "been continuing" (Present Perfect Continuous) porque enfatizamos la actividad continua desde medianoche. La duración es importante aquí.'
+      options: ['snowed OR been snowing', 'been snowing', 'snowed'],
+      correctAnswer: 'been snowing',
+      explanation: 'Usamos "been snowing" (Present Perfect Continuous) porque enfatizamos la actividad continua durante toda la mañana. La duración es importante aquí.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The ethical hacker has just' },
+        { type: 'text', content: 'Bill has just' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: "to the security conference. He won't be back till next week." }
+        { type: 'text', content: "to work. He won't be back till this evening." }
       ],
       options: ['been going', 'gone', 'gone OR been going'],
       correctAnswer: 'gone',
-      explanation: 'Usamos "gone" porque fue a la conferencia y no está aquí ahora. "Gone" implica que la persona no está presente, mientras que "been" implicaría que ya regresó.'
+      explanation: 'Usamos "gone" porque Bill fue al trabajo y no está aquí ahora. "Gone" implica que la persona no está presente, mientras que "been" implicaría que ya regresó.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'Our sysadmin has' },
+        { type: 'text', content: 'My niece has' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'remotely since the pandemic.' }
+        { type: 'text', content: 'alone since her divorce.' }
       ],
-      options: ['worked', 'been working', 'worked OR been working'],
-      correctAnswer: 'worked OR been working',
-      explanation: 'Ambas formas son correctas. "Has worked" enfatiza el estado/resultado (trabaja remotamente), mientras que "has been working" enfatiza la continuidad de la situación desde la pandemia.'
+      options: ['lived', 'been living', 'lived OR been living'],
+      correctAnswer: 'lived OR been living',
+      explanation: 'Ambas formas son correctas. "Has lived" enfatiza el estado/resultado (vive sola), mientras que "has been living" enfatiza la continuidad de la situación desde el divorcio.'
     },
     {
       sentenceParts: [
         { type: 'text', content: "I've" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: "the network logs all morning. I'm at entry 15,000." }
+        { type: 'text', content: "all morning. I'm on page 120 of my book." }
       ],
-      options: ['analyzed', 'analyzed OR been analyzing', 'been analyzing'],
-      correctAnswer: 'been analyzing',
-      explanation: 'Usamos "been analyzing" (Present Perfect Continuous) porque enfatizamos la actividad continua de analizar durante toda la mañana. Mencionamos el progreso (entrada 15,000) lo que indica duración.'
+      options: ['read', 'read OR been reading', 'been reading'],
+      correctAnswer: 'been reading',
+      explanation: 'Usamos "been reading" (Present Perfect Continuous) porque enfatizamos la actividad continua de leer durante toda la mañana. Mencionamos el progreso (página 120) lo que indica duración.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'I' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(patch) the server. Can we go live now?' }
+        { type: 'text', content: '(finish) my homework. Can I go out now?' }
       ],
-      correctAnswer: ['have patched'],
-      explanation: 'Present Perfect Simple: have/has + past participle. Usamos "have patched" porque la acción acaba de completarse y el resultado es importante ahora (podemos publicar).'
+      correctAnswer: ['have finished'],
+      explanation: 'Present Perfect Simple: have/has + past participle. Usamos "have finished" porque la acción acaba de completarse y el resultado es importante ahora (puedo salir).'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The hacker' },
+        { type: 'text', content: 'She' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(infiltrate) systems for five years.' }
+        { type: 'text', content: '(work) here for five years.' }
       ],
-      correctAnswer: ['has infiltrated', 'has been infiltrating'],
-      explanation: 'Ambas formas son correctas. "Has infiltrated" o "has been infiltrating" porque la duración (cinco años) conecta el pasado con el presente.'
+      correctAnswer: ['has worked', 'has been working'],
+      explanation: 'Ambas formas son correctas. "Has worked" o "has been working" porque la duración (cinco años) conecta el pasado con el presente.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'They' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(never/crack) a 256-bit encryption before.' }
+        { type: 'text', content: '(never/visit) Paris before.' }
       ],
-      correctAnswer: ['have never cracked', "haven't cracked"],
-      explanation: 'Present Perfect con "never": have/has + never + past participle. Hablamos de una experiencia en ciberseguridad hasta ahora.'
+      correctAnswer: ['have never visited', "haven't visited"],
+      explanation: 'Present Perfect con "never": have/has + never + past participle. Hablamos de una experiencia de vida hasta ahora.'
     },
     {
       sentenceParts: [
@@ -145,7 +145,7 @@ const exercisesData = {
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'you' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'as a pentester?' }
+        { type: 'text', content: 'English?' }
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
@@ -155,67 +155,67 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: "I've" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'my root password. Have you seen it?' }
+        { type: 'text', content: 'my keys. Have you seen them?' }
       ],
       options: ['lost', 'losed', 'been losing'],
       correctAnswer: 'lost',
-      explanation: 'Usamos "lost" (Present Perfect Simple) para indicar que la contraseña está perdida ahora. El resultado presente es importante.'
+      explanation: 'Usamos "lost" (Present Perfect Simple) para indicar que las llaves están perdidas ahora. El resultado presente es importante.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'They' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'in the same hacker collective for 10 years.' }
+        { type: 'text', content: 'married for 10 years.' }
       ],
       options: ['have been', 'are', 'were'],
       correctAnswer: 'have been',
-      explanation: 'Usamos "have been" porque la duración (10 años) conecta el pasado con el presente. Todavía están en el colectivo.'
+      explanation: 'Usamos "have been" porque la duración (10 años) conecta el pasado con el presente. Todavía están casados.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'He' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'three network scans this morning.' }
+        { type: 'text', content: 'three cups of coffee this morning.' }
       ],
-      options: ['has run', 'ran', 'has been running'],
-      correctAnswer: 'has run',
-      explanation: 'Usamos "has run" porque contamos acciones completas en un período que aún no ha terminado ("this morning").'
+      options: ['has drunk', 'drank', 'has been drinking'],
+      correctAnswer: 'has drunk',
+      explanation: 'Usamos "has drunk" porque contamos acciones completas en un período que aún no ha terminado ("this morning").'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'We' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'each other since our first CTF competition.' }
+        { type: 'text', content: 'each other since high school.' }
       ],
       options: ['have known', 'know', 'knew'],
       correctAnswer: 'have known',
-      explanation: 'Usamos "have known" con "since" para indicar que la acción comenzó en el pasado (primera competencia CTF) y continúa hasta ahora.'
+      explanation: 'Usamos "have known" con "since" para indicar que la acción comenzó en el pasado (high school) y continúa hasta ahora.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The team' },
+        { type: 'text', content: 'Sarah' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'any bug bounties recently.' }
+        { type: 'text', content: 'to the gym recently.' }
       ],
-      options: ["hasn't found", "didn't find", 'is not finding'],
-      correctAnswer: "hasn't found",
-      explanation: 'Usamos "hasn\'t found" con "recently" para hablar de un período reciente hasta el presente.'
+      options: ["hasn't been", "didn't go", 'is not going'],
+      correctAnswer: "hasn't been",
+      explanation: 'Usamos "hasn\'t been" con "recently" para hablar de un período reciente hasta el presente.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'How many systems' },
+        { type: 'text', content: 'How many countries' },
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'you' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'into?' }
+        { type: 'text', content: 'to?' }
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Preguntamos sobre experiencias en pentesting usando Present Perfect con "How many".'
+      explanation: 'Preguntamos sobre experiencias de vida usando Present Perfect con "How many".'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The backup' },
+        { type: 'text', content: 'The train' },
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'already' },
         { type: 'dropdown', content: '' }
@@ -228,47 +228,47 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: "I've" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'to DEF CON twice.' }
+        { type: 'text', content: 'to Japan twice.' }
       ],
       options: ['been', 'gone', 'went'],
       correctAnswer: 'been',
-      explanation: 'Usamos "been" (no "gone") porque regresamos de la conferencia. "Gone" implicaría que todavía estamos allí.'
+      explanation: 'Usamos "been" (no "gone") porque regresamos de Japón. "Gone" implicaría que todavía estamos allí.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'Someone' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'all the user data!' }
+        { type: 'text', content: 'all the cookies!' }
       ],
-      options: ['has stolen', 'stole', 'steals'],
-      correctAnswer: 'has stolen',
-      explanation: 'Usamos Present Perfect porque el resultado presente es visible (no hay datos) pero no sabemos exactamente cuándo pasó.'
+      options: ['has eaten', 'ate', 'eats'],
+      correctAnswer: 'has eaten',
+      explanation: 'Usamos Present Perfect porque el resultado presente es visible (no hay cookies) pero no sabemos exactamente cuándo pasó.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'My colleague' },
+        { type: 'text', content: 'My brother' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'their own cybersecurity startup.' }
+        { type: 'text', content: 'his own company.' }
       ],
-      options: ['has launched', 'launched', 'launches'],
-      correctAnswer: 'has launched',
+      options: ['has started', 'started', 'starts'],
+      correctAnswer: 'has started',
       explanation: 'Usamos Present Perfect para noticias recientes o logros cuando el tiempo exacto no es importante.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The botnet' },
+        { type: 'text', content: 'It' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'requests for hours!' }
+        { type: 'text', content: 'for hours!' }
       ],
-      options: ['has been sending', 'sent', 'sends'],
-      correctAnswer: 'has been sending',
+      options: ['has been raining', 'rained', 'rains'],
+      correctAnswer: 'has been raining',
       explanation: 'Usamos Present Perfect Continuous con "for hours" para enfatizar la duración de una actividad que continúa.'
     },
     {
       sentenceParts: [
         { type: 'text', content: "You've" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'incredible progress in your hacking skills!' }
+        { type: 'text', content: 'so much progress!' }
       ],
       options: ['made', 'make', 'making'],
       correctAnswer: 'made',
@@ -276,9 +276,9 @@ const exercisesData = {
     },
     {
       sentenceParts: [
-        { type: 'text', content: "We've" },
+        { type: 'text', content: "They've" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'for a server response for 30 minutes.' }
+        { type: 'text', content: 'for the bus for 30 minutes.' }
       ],
       options: ['been waiting', 'waited', 'wait'],
       correctAnswer: 'been waiting',
@@ -291,21 +291,21 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'I' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'ports for two hours.' }
+        { type: 'text', content: 'for two hours.' }
       ],
-      options: ['have been scanning', 'have scanned', 'am scanning'],
-      correctAnswer: 'have been scanning',
-      explanation: 'Usamos Present Perfect Continuous "have been scanning" para enfatizar la duración de una acción que comenzó en el pasado y continúa hasta ahora.'
+      options: ['have been waiting', 'have waited', 'am waiting'],
+      correctAnswer: 'have been waiting',
+      explanation: 'Usamos Present Perfect Continuous "have been waiting" para enfatizar la duración de una acción que comenzó en el pasado y continúa hasta ahora.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'She' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'Python for exploit development for five years.' }
+        { type: 'text', content: 'English for five years.' }
       ],
-      options: ['has been learning', 'has learned', 'is learning'],
-      correctAnswer: 'has been learning',
-      explanation: 'Usamos "has been learning" para enfatizar la actividad continua durante los cinco años.'
+      options: ['has been studying', 'has studied', 'is studying'],
+      correctAnswer: 'has been studying',
+      explanation: 'Usamos "has been studying" para enfatizar la actividad continua durante los cinco años.'
     },
     {
       sentenceParts: [
@@ -313,54 +313,54 @@ const exercisesData = {
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'you' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'on this exploit?' }
+        { type: 'text', content: 'here?' }
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Preguntamos con "How long have you been working" sobre la duración de trabajar en este exploit.'
+      explanation: 'Preguntamos con "How long have you been living" sobre la duración de vivir en este lugar.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'They' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'password hashes all day.' }
+        { type: 'text', content: 'all day.' }
       ],
-      options: ['have been cracking', 'have cracked', 'are cracking'],
-      correctAnswer: 'have been cracking',
-      explanation: 'Usamos "have been cracking" para enfatizar la actividad continua durante todo el día.'
+      options: ['have been working', 'have worked', 'are working'],
+      correctAnswer: 'have been working',
+      explanation: 'Usamos "have been working" para enfatizar la actividad continua durante todo el día.'
     },
     {
       sentenceParts: [
         { type: 'text', content: "My eyes hurt. I've" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'network traffic for hours.' }
+        { type: 'text', content: 'for hours.' }
       ],
-      options: ['been monitoring', 'monitored', 'monitoring'],
-      correctAnswer: 'been monitoring',
+      options: ['been reading', 'read', 'reading'],
+      correctAnswer: 'been reading',
       explanation: 'Usamos Present Perfect Continuous para explicar la causa de ojos cansados (actividad reciente continua).'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'He' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'bug bounty hunting regularly lately.' }
+        { type: 'text', content: 'to the gym regularly lately.' }
       ],
-      options: ['has been doing', 'has done', 'does'],
-      correctAnswer: 'has been doing',
-      explanation: 'Usamos "has been doing" con "lately" para una actividad repetida en el período reciente.'
+      options: ['has been going', 'has gone', 'goes'],
+      correctAnswer: 'has been going',
+      explanation: 'Usamos "has been going" con "lately" para una actividad repetida en el período reciente.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'How long' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(you/wait) for the exploit to compile?' }
+        { type: 'text', content: '(you/wait) for the bus?' }
       ],
       correctAnswer: ['have you been waiting'],
       explanation: 'Present Perfect Continuous question: How long + have/has + subject + been + verb-ing. Preguntamos por la duración de una acción que continúa.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: "You're exhausted! What" },
+        { type: 'text', content: "You're out of breath! What" },
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'you' },
         { type: 'dropdown', content: '' },
@@ -368,13 +368,13 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Preguntamos "What have you been debugging?" para entender la causa del cansancio (actividad reciente).'
+      explanation: 'Preguntamos "What have you been doing?" para entender la causa del cansancio (actividad reciente).'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'We' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'this penetration test for months.' }
+        { type: 'text', content: 'this project for months.' }
       ],
       options: ['have been planning', 'have planned', 'are planning'],
       correctAnswer: 'have been planning',
@@ -382,19 +382,19 @@ const exercisesData = {
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The security alerts' },
+        { type: 'text', content: 'The phone' },
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'all morning!' }
       ],
-      options: ['have been triggering', 'have triggered', 'are triggering'],
-      correctAnswer: 'have been triggering',
-      explanation: 'Usamos "have been triggering" para enfatizar lo molesto de una acción repetida durante toda la mañana.'
+      options: ['has been ringing', 'has rung', 'is ringing'],
+      correctAnswer: 'has been ringing',
+      explanation: 'Usamos "has been ringing" para enfatizar lo molesto de una acción repetida durante toda la mañana.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'I' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'to establish a reverse shell all week.' }
+        { type: 'text', content: 'to call you all week.' }
       ],
       options: ['have been trying', 'have tried', 'am trying'],
       correctAnswer: 'have been trying',
@@ -407,21 +407,21 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'I' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'network traffic when the breach happened.' }
+        { type: 'text', content: 'TV when you called.' }
       ],
-      options: ['was monitoring', 'monitored', 'monitor'],
-      correctAnswer: 'was monitoring',
-      explanation: 'Usamos Past Continuous "was monitoring" para una acción en progreso interrumpida por otra acción en el pasado.'
+      options: ['was watching', 'watched', 'watch'],
+      correctAnswer: 'was watching',
+      explanation: 'Usamos Past Continuous "was watching" para una acción en progreso interrumpida por otra acción en el pasado.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'They' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'a penetration test at 3 PM yesterday.' }
+        { type: 'text', content: 'dinner at 7 PM yesterday.' }
       ],
-      options: ['were conducting', 'conducted', 'conduct'],
-      correctAnswer: 'were conducting',
-      explanation: 'Usamos "were conducting" para describir una acción que estaba en progreso a una hora específica del pasado.'
+      options: ['were having', 'had', 'have'],
+      correctAnswer: 'were having',
+      explanation: 'Usamos "were having" para describir una acción que estaba en progreso a una hora específica del pasado.'
     },
     {
       sentenceParts: [
@@ -429,7 +429,7 @@ const exercisesData = {
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'you' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'in the dark web at midnight?' }
+        { type: 'text', content: 'at 10 PM last night?' }
       ],
       options: ['were', 'was'],
       correctAnswer: 'were',
@@ -437,34 +437,34 @@ const exercisesData = {
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The DDoS attack' },
+        { type: 'text', content: 'It' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'when we shut down the server.' }
+        { type: 'text', content: 'when we left the house.' }
       ],
-      options: ['was happening', 'happened', 'happens'],
-      correctAnswer: 'was happening',
-      explanation: 'Usamos "was happening" para describir un ataque que estaba en progreso cuando ocurrió otra acción.'
+      options: ['was raining', 'rained', 'rains'],
+      correctAnswer: 'was raining',
+      explanation: 'Usamos "was raining" para describir el clima que estaba en progreso cuando ocurrió otra acción.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'She' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'the exploit while I' },
+        { type: 'text', content: 'while I' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'the payload.' }
+        { type: 'text', content: 'dinner.' }
       ],
-      options: ['was testing', 'tested'],
-      correctAnswer: 'was testing',
+      options: ['was studying', 'studied'],
+      correctAnswer: 'was studying',
       explanation: 'Usamos Past Continuous para dos acciones simultáneas en progreso en el pasado.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'We' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'a vulnerability scan when the power went out.' }
+        { type: 'text', content: 'a movie when the power went out.' }
       ],
-      options: ['were running', 'ran', 'run'],
-      correctAnswer: 'were running',
+      options: ['were watching', 'watched', 'watch'],
+      correctAnswer: 'were watching',
       explanation: 'Usamos "were watching" para una acción en progreso que fue interrumpida (apagón).'
     },
     {
@@ -1197,7 +1197,7 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'I' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'to Black Hat conference last year.' }
+        { type: 'text', content: 'to Paris last year.' }
       ],
       options: ['went', 'go', 'gone'],
       correctAnswer: 'went',
@@ -1207,38 +1207,38 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'She' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'the exploit development yesterday.' }
+        { type: 'text', content: 'her homework yesterday.' }
       ],
-      options: ['completed', 'complete', 'completes'],
-      correctAnswer: 'completed',
-      explanation: 'Usamos "completed" porque "yesterday" es un marcador temporal del pasado que requiere Past Simple.'
+      options: ['finished', 'finish', 'finishes'],
+      correctAnswer: 'finished',
+      explanation: 'Usamos "finished" porque "yesterday" es un marcador temporal del pasado que requiere Past Simple.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'They' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'a new security server in 2020.' }
+        { type: 'text', content: 'a new car in 2020.' }
       ],
-      options: ['deployed', 'deploy', 'deploys'],
-      correctAnswer: 'deployed',
-      explanation: 'Usamos "deployed" porque "in 2020" es un tiempo específico en el pasado y la acción está completa.'
+      options: ['bought', 'buy', 'buys'],
+      correctAnswer: 'bought',
+      explanation: 'Usamos "bought" porque "in 2020" es un tiempo específico en el pasado y la acción está completa.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'Last night, I' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(attend) a cybersecurity webinar.' }
+        { type: 'text', content: '(watch) a great movie on TV.' }
       ],
-      correctAnswer: ['attended'],
-      explanation: 'Past Simple: verb + ed (regular verbs). Usamos "attended" porque "last night" es un tiempo específico y completado en el pasado.'
+      correctAnswer: ['watched'],
+      explanation: 'Past Simple: verb + ed (regular verbs). Usamos "watched" porque "last night" es un tiempo específico y completado en el pasado.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'What system' },
+        { type: 'text', content: 'Where' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(you/compromise) last month?' }
+        { type: 'text', content: '(you/go) on vacation last summer?' }
       ],
-      correctAnswer: ['did you compromise'],
+      correctAnswer: ['did you go'],
       explanation: 'Past Simple question: Did + subject + verb (base form). "Did" ya indica el pasado, por eso el verbo va en forma base.'
     },
     {
@@ -1460,17 +1460,17 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'I' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'the exploit tomorrow.' }
+        { type: 'text', content: 'you tomorrow.' }
       ],
-      options: ['will execute', 'execute', 'executed'],
-      correctAnswer: 'will execute',
-      explanation: 'Usamos "will execute" (Future Simple) porque "tomorrow" indica una acción futura. "Will" expresa una decisión o promesa.'
+      options: ['will call', 'call', 'called'],
+      correctAnswer: 'will call',
+      explanation: 'Usamos "will call" (Future Simple) porque "tomorrow" indica una acción futura. "Will" expresa una decisión o promesa.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The update' },
+        { type: 'text', content: 'She' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'deploy at 6 PM.' }
+        { type: 'text', content: 'arrive at 6 PM.' }
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
@@ -1480,27 +1480,27 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'They' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'to the CTF competition next Friday.' }
+        { type: 'text', content: 'to the party next Friday.' }
       ],
-      options: ['will participate', 'participate', 'participated'],
-      correctAnswer: 'will participate',
-      explanation: 'Usamos "will participate" porque "next Friday" es un tiempo futuro específico.'
+      options: ['will come', 'come', 'came'],
+      correctAnswer: 'will come',
+      explanation: 'Usamos "will come" porque "next Friday" es un tiempo futuro específico.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The ransomware' },
+        { type: 'text', content: 'It' },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'spread later today.' }
+        { type: 'text', content: 'rain later today.' }
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para hacer una predicción sobre amenazas futuras basada en análisis.'
+      explanation: 'Usamos "will" para hacer una predicción sobre el clima futuro basada en lo que creemos.'
     },
     {
       sentenceParts: [
         { type: 'text', content: "Don't worry, I" },
         { type: 'dropdown', content: '' },
-        { type: 'text', content: 'patch the vulnerability.' }
+        { type: 'text', content: 'help you.' }
       ],
       options: ['will', "won't", 'am'],
       correctAnswer: 'will',
@@ -1508,7 +1508,7 @@ const exercisesData = {
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The penetration test' },
+        { type: 'text', content: 'The meeting' },
         { type: 'dropdown', content: '' },
         { type: 'text', content: 'start in 10 minutes.' }
       ],
@@ -1934,47 +1934,47 @@ const exercisesData = {
   'first-conditional': [
     {
       sentenceParts: [
-        { type: 'text', content: 'If the firewall' },
+        { type: 'text', content: 'If it' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(detect) an intrusion, it' },
+        { type: 'text', content: '(rain) tomorrow, we' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(block) the connection." }
+        { type: 'text', content: "(stay) at home." }
       ],
-      correctAnswer: ['detects', 'will block'],
-      explanation: 'First Conditional: If + Present Simple, will + infinitive. Usamos "detects" (presente simple) en la condición y "will block" (futuro simple) en el resultado. Expresa una situación real y posible en el futuro.'
+      correctAnswer: ['rains', 'will stay'],
+      explanation: 'First Conditional: If + Present Simple, will + infinitive. Usamos "rains" (presente simple) en la condición y "will stay" (futuro simple) en el resultado. Expresa una situación real y posible en el futuro.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The company' },
+        { type: 'text', content: 'She' },
         { type: 'input', content: '' },
-        { type: 'text', content: '(be) grateful if you' },
+        { type: 'text', content: '(be) happy if you' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(report) the vulnerability." }
+        { type: 'text', content: "(call) her." }
       ],
-      correctAnswer: ['will be', 'report'],
-      explanation: 'First Conditional: resultado + if + condición. "Will be" es el resultado futuro y "report" es la condición en presente simple. La condición es posible y realista.'
+      correctAnswer: ['will be', 'call'],
+      explanation: 'First Conditional: resultado + if + condición. "Will be" es el resultado futuro y "call" es la condición en presente simple. La condición es posible y realista.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'If they' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(not update) the system, they" },
+        { type: 'text', content: "(not study), they" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(get) hacked." }
+        { type: 'text', content: "(fail) the exam." }
       ],
-      correctAnswer: ["don't update", 'will get'],
-      explanation: 'First Conditional negativo: If + don\'t/doesn\'t + verbo, will + infinitive. "Don\'t update" es presente simple negativo y "will get" es el resultado futuro.'
+      correctAnswer: ["don't study", 'will fail'],
+      explanation: 'First Conditional negativo: If + don\'t/doesn\'t + verbo, will + infinitive. "Don\'t study" es presente simple negativo y "will fail" es el resultado futuro.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'If the hacker' },
+        { type: 'text', content: 'If he' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(bypass) the authentication, we" },
+        { type: 'text', content: "(arrive) on time, we" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(need) to investigate." }
+        { type: 'text', content: "(can) start the meeting." }
       ],
-      correctAnswer: ['bypasses', 'will need'],
-      explanation: 'First Conditional: If + presente simple, will + infinitive. "Bypasses" (tercera persona) + "will need" (futuro). Situación futura posible.'
+      correctAnswer: ['arrives', 'can'],
+      explanation: 'First Conditional con modal: If + presente simple, modal + infinitive. "Arrives" (tercera persona) + "can" (modal de posibilidad). Situación futura posible.'
     },
     {
       sentenceParts: [
@@ -2060,34 +2060,34 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'If I' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(have) elite hacking skills, I" },
+        { type: 'text', content: "(be) rich, I" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(work) for a top cybersecurity firm." }
+        { type: 'text', content: "(travel) around the world." }
       ],
-      correctAnswer: ['had', 'would work'],
-      explanation: 'Second Conditional: If + Past Simple, would + infinitive. Usamos "had" para la condición hipotética. Describe situaciones hipotéticas o poco probables en el presente/futuro.'
+      correctAnswer: ['were', 'would travel'],
+      explanation: 'Second Conditional: If + Past Simple, would + infinitive. Usamos "were" (no "was") para todas las personas en situaciones formales. Describe situaciones hipotéticas o poco probables en el presente/futuro.'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'She' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(get) the OSCP certification if she" },
+        { type: 'text', content: "(buy) a new car if she" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(practice) more." }
+        { type: 'text', content: "(have) enough money." }
       ],
-      correctAnswer: ['would get', 'practiced'],
-      explanation: 'Second Conditional: resultado + if + condición. "Would get" expresa el resultado hipotético y "practiced" (pasado simple) la condición irreal o improbable.'
+      correctAnswer: ['would buy', 'had'],
+      explanation: 'Second Conditional: resultado + if + condición. "Would buy" expresa el resultado hipotético y "had" (pasado simple) la condición irreal o improbable.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'If the network' },
+        { type: 'text', content: 'If they' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(not be) vulnerable, we" },
+        { type: 'text', content: "(not live) so far away, we" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(exploit) it so easily." }
+        { type: 'text', content: "(visit) them more often." }
       ],
-      correctAnswer: ["weren't", "wouldn't exploit"],
-      explanation: 'Second Conditional negativo: If + weren\'t + verbo, wouldn\'t + infinitive. "Weren\'t" es la condición hipotética negativa y "wouldn\'t exploit" es el resultado.'
+      correctAnswer: ["didn't live", 'would visit'],
+      explanation: 'Second Conditional negativo: If + didn\'t + verbo, would + infinitive. "Didn\'t live" es la condición hipotética negativa y "would visit" es el resultado.'
     },
     {
       sentenceParts: [
@@ -2095,10 +2095,10 @@ const exercisesData = {
         { type: 'input', content: '' },
         { type: 'text', content: "(you/do) if you" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(discover) a zero-day exploit?" }
+        { type: 'text', content: "(see) a ghost?" }
       ],
-      correctAnswer: ['would you do', 'discovered'],
-      explanation: 'Second Conditional en pregunta: What + would + sujeto + verbo + if + pasado simple. Situación hipotética: "would you do" + "discovered".'
+      correctAnswer: ['would you do', 'saw'],
+      explanation: 'Second Conditional en pregunta: What + would + sujeto + verbo + if + pasado simple. Situación hipotética poco probable: "would you do" + "saw".'
     },
     {
       sentenceParts: [
@@ -2184,34 +2184,34 @@ const exercisesData = {
       sentenceParts: [
         { type: 'text', content: 'If I' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(know) about the vulnerability, I" },
+        { type: 'text', content: "(know) about the meeting, I" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(patch) it." }
+        { type: 'text', content: "(attend) it." }
       ],
-      correctAnswer: ['had known', 'would have patched'],
-      explanation: 'Third Conditional: If + Past Perfect, would have + past participle. "Had known" y "would have patched" hablan de una situación pasada que no ocurrió. Expresa arrepentimiento o situaciones imposibles de cambiar.'
+      correctAnswer: ['had known', 'would have attended'],
+      explanation: 'Third Conditional: If + Past Perfect, would have + past participle. "Had known" y "would have attended" hablan de una situación pasada que no ocurrió. Expresa arrepentimiento o situaciones imposibles de cambiar.'
     },
     {
       sentenceParts: [
-        { type: 'text', content: 'The company' },
+        { type: 'text', content: 'She' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(not suffer) the data breach if they" },
+        { type: 'text', content: "(not miss) the train if she" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(implement) 2FA." }
+        { type: 'text', content: "(leave) home earlier." }
       ],
-      correctAnswer: ["wouldn't have suffered", 'had implemented'],
-      explanation: 'Third Conditional negativo: "wouldn\'t have suffered" (resultado que no pasó) + "had implemented" (condición que no se cumplió en el pasado).'
+      correctAnswer: ["wouldn't have missed", 'had left'],
+      explanation: 'Third Conditional negativo: "wouldn\'t have missed" (resultado que no pasó) + "had left" (condición que no se cumplió en el pasado).'
     },
     {
       sentenceParts: [
         { type: 'text', content: 'If they' },
         { type: 'input', content: '' },
-        { type: 'text', content: "(practice) more, they" },
+        { type: 'text', content: "(study) harder, they" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(win) the CTF competition." }
+        { type: 'text', content: "(pass) the exam." }
       ],
-      correctAnswer: ['had practiced', 'would have won'],
-      explanation: 'Third Conditional: "had practiced" + "would have won". Habla de algo que no pasó en el pasado y su resultado (que tampoco ocurrió).'
+      correctAnswer: ['had studied', 'would have passed'],
+      explanation: 'Third Conditional: "had studied" + "would have passed". Habla de algo que no pasó en el pasado y su resultado (que tampoco ocurrió).'
     },
     {
       sentenceParts: [
@@ -2219,9 +2219,9 @@ const exercisesData = {
         { type: 'input', content: '' },
         { type: 'text', content: "(you/do) if you" },
         { type: 'input', content: '' },
-        { type: 'text', content: "(detect) the attack earlier?" }
+        { type: 'text', content: "(see) the accident?" }
       ],
-      correctAnswer: ['would you have done', 'had detected'],
+      correctAnswer: ['would you have done', 'had seen'],
       explanation: 'Third Conditional en pregunta: What + would + sujeto + have + past participle + if + past perfect. Situación hipotética en el pasado.'
     },
     {
