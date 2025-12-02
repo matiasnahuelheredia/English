@@ -2,235 +2,266 @@ import React, { useState } from 'react';
 
 const ManagerialReportsExercise = () => {
   const [activeTab, setActiveTab] = useState(1);
-  const [answers, setAnswers] = useState({});
-  const [submitted, setSubmitted] = useState({});
-  const [showSample, setShowSample] = useState({});
 
-  // Exercise 1: Executive Summary
-  const exercise1 = {
-    title: "Exercise 1: Executive Summary",
-    description: "Write a brief executive summary for a cybersecurity incident report",
-    prompt: "Your company experienced a data breach last week. Write an executive summary (150-200 words) that includes:",
-    requirements: [
-      "Brief description of the incident",
-      "Impact on the organization",
-      "Immediate actions taken",
-      "Recommendations for future prevention"
-    ],
-    sampleAnswer: `EXECUTIVE SUMMARY
+  // Exercise 1: Fill in the blanks - Executive Summary
+  const exercise1Questions = [
+    {
+      id: 1,
+      text: "On November 28, our security team",
+      textAfter: "unauthorized access to our customer database.",
+      options: ['detected', 'prevented', 'ignored', 'caused'],
+      correct: 'detected'
+    },
+    {
+      id: 2,
+      text: "The breach was",
+      textAfter: "through our intrusion detection system at 14:30 GMT.",
+      options: ['identified', 'hidden', 'deleted', 'created'],
+      correct: 'identified'
+    },
+    {
+      id: 3,
+      text: "No financial information was",
+      textAfter: ".",
+      options: ['exposed', 'protected', 'encrypted', 'saved'],
+      correct: 'exposed'
+    },
+    {
+      id: 4,
+      text: "Immediate actions",
+      textAfter: "isolating affected systems and resetting user credentials.",
+      options: ['included', 'excluded', 'avoided', 'delayed'],
+      correct: 'included'
+    },
+    {
+      id: 5,
+      text: "To prevent future incidents, we",
+      textAfter: "implementing multi-factor authentication across all systems.",
+      options: ['recommend', 'reject', 'postpone', 'cancel'],
+      correct: 'recommend'
+    }
+  ];
 
-On November 28, 2025, our security team detected unauthorized access to our customer database, affecting approximately 15,000 user records. The breach was identified through our intrusion detection system at 14:30 GMT and contained within two hours.
+  // Exercise 2: Fill in the blanks - Performance Report
+  const exercise2Questions = [
+    {
+      id: 1,
+      text: "Our security team has",
+      textAfter: "significant improvement across all KPIs this quarter.",
+      options: ['demonstrated', 'avoided', 'prevented', 'reduced'],
+      correct: 'demonstrated'
+    },
+    {
+      id: 2,
+      text: "Response time to incidents",
+      textAfter: "by 35% compared to last quarter.",
+      options: ['decreased', 'increased', 'remained', 'doubled'],
+      correct: 'decreased'
+    },
+    {
+      id: 3,
+      text: "The team successfully",
+      textAfter: "247 security threats this quarter.",
+      options: ['mitigated', 'created', 'ignored', 'missed'],
+      correct: 'mitigated'
+    },
+    {
+      id: 4,
+      text: "Key challenges",
+      textAfter: "staff turnover and budget constraints.",
+      options: ['included', 'solved', 'eliminated', 'prevented'],
+      correct: 'included'
+    },
+    {
+      id: 5,
+      text: "We",
+      textAfter: "a 20% improvement in overall security posture with these initiatives.",
+      options: ['project', 'doubt', 'deny', 'reject'],
+      correct: 'project'
+    }
+  ];
 
-The compromised data included names, email addresses, and encrypted passwords. No financial information was exposed. The incident has resulted in temporary service disruption and potential reputational damage.
+  // Exercise 3: Fill in the blanks - Post-Mortem Report
+  const exercise3Questions = [
+    {
+      id: 1,
+      text: "The attack",
+      textAfter: "from a sophisticated phishing email.",
+      options: ['originated', 'ended', 'stopped', 'failed'],
+      correct: 'originated'
+    },
+    {
+      id: 2,
+      text: "An employee in finance",
+      textAfter: "a malicious attachment.",
+      options: ['opened', 'deleted', 'blocked', 'reported'],
+      correct: 'opened'
+    },
+    {
+      id: 3,
+      text: "Our endpoint protection",
+      textAfter: "to detect the threat.",
+      options: ['failed', 'succeeded', 'managed', 'continued'],
+      correct: 'failed'
+    },
+    {
+      id: 4,
+      text: "Backup verification processes",
+      textAfter: "effective - full recovery was achieved.",
+      options: ['proved', 'seemed', 'appeared', 'looked'],
+      correct: 'proved'
+    },
+    {
+      id: 5,
+      text: "We have",
+      textAfter: "mandatory security awareness training for all staff.",
+      options: ['launched', 'cancelled', 'postponed', 'rejected'],
+      correct: 'launched'
+    }
+  ];
 
-Immediate actions included isolating affected systems, resetting all user credentials, notifying impacted customers, and engaging external cybersecurity consultants for forensic analysis. Our incident response team worked around the clock to restore normal operations by 22:00 GMT.
+  // Exercise 4: Fill in the blanks - Budget Proposal
+  const exercise4Questions = [
+    {
+      id: 1,
+      text: "Recent incidents have",
+      textAfter: "critical vulnerabilities in our infrastructure.",
+      options: ['exposed', 'hidden', 'resolved', 'prevented'],
+      correct: 'exposed'
+    },
+    {
+      id: 2,
+      text: "This investment will",
+      textAfter: "risk exposure by 75%.",
+      options: ['reduce', 'increase', 'maintain', 'double'],
+      correct: 'reduce'
+    },
+    {
+      id: 3,
+      text: "The total investment",
+      textAfter: "$400,000 over the next fiscal year.",
+      options: ['amounts to', 'exceeds', 'falls below', 'eliminates'],
+      correct: 'amounts to'
+    },
+    {
+      id: 4,
+      text: "We expect a 60%",
+      textAfter: "in successful security incidents.",
+      options: ['reduction', 'increase', 'stability', 'growth'],
+      correct: 'reduction'
+    },
+    {
+      id: 5,
+      text: "The three-year ROI is",
+      textAfter: "at 147%.",
+      options: ['projected', 'limited', 'capped', 'restricted'],
+      correct: 'projected'
+    }
+  ];
 
-To prevent future incidents, we recommend implementing multi-factor authentication across all systems, conducting comprehensive security audits quarterly, enhancing employee security awareness training, and upgrading our firewall infrastructure. The estimated cost for these improvements is $250,000, with implementation targeted for Q1 2026.`,
-    tips: [
-      "Start with the most critical information",
-      "Use clear, concise language",
-      "Include specific data and timeframes",
-      "End with actionable recommendations"
-    ]
-  };
+  // Exercise 5: Fill in the blanks - Strategic Recommendations
+  const exercise5Questions = [
+    {
+      id: 1,
+      text: "Our security maturity level is",
+      textAfter: "as 'Reactive' on the CMMI scale.",
+      options: ['classified', 'promoted', 'upgraded', 'advanced'],
+      correct: 'classified'
+    },
+    {
+      id: 2,
+      text: "Leading organizations have",
+      textAfter: "zero-trust architecture.",
+      options: ['adopted', 'rejected', 'ignored', 'avoided'],
+      correct: 'adopted'
+    },
+    {
+      id: 3,
+      text: "We recommend",
+      textAfter: "AI-powered threat intelligence systems.",
+      options: ['deploying', 'removing', 'disabling', 'abandoning'],
+      correct: 'deploying'
+    },
+    {
+      id: 4,
+      text: "Without these improvements, we",
+      textAfter: "HIGH risk of a significant data breach.",
+      options: ['face', 'avoid', 'eliminate', 'prevent'],
+      correct: 'face'
+    },
+    {
+      id: 5,
+      text: "The estimated investment",
+      textAfter: "$2.1M over three years.",
+      options: ['totals', 'exceeds', 'reduces', 'minimizes'],
+      correct: 'totals'
+    }
+  ];
 
-  // Exercise 2: Quarterly Performance Report
-  const exercise2 = {
-    title: "Exercise 2: Quarterly Performance Report",
-    description: "Write a quarterly performance report section analyzing team metrics",
-    prompt: "As IT Security Manager, write a quarterly performance analysis (200-250 words) covering:",
-    requirements: [
-      "Key performance indicators (KPIs)",
-      "Comparison with previous quarter",
-      "Challenges encountered",
-      "Action plan for next quarter"
-    ],
-    sampleAnswer: `QUARTERLY PERFORMANCE ANALYSIS - Q4 2025
+  const exercises = [
+    { title: 'Exercise 1: Executive Summary', questions: exercise1Questions },
+    { title: 'Exercise 2: Performance Report', questions: exercise2Questions },
+    { title: 'Exercise 3: Post-Mortem Report', questions: exercise3Questions },
+    { title: 'Exercise 4: Budget Proposal', questions: exercise4Questions },
+    { title: 'Exercise 5: Strategic Recommendations', questions: exercise5Questions }
+  ];
 
-Our security operations team has demonstrated significant improvement across all key performance indicators this quarter. Response time to security incidents decreased by 35% (from 45 minutes to 29 minutes average), while threat detection accuracy increased to 94%, up from 87% in Q3.
-
-The team successfully mitigated 247 security threats, representing a 12% increase from the previous quarter. However, this also reflects a concerning rise in attack attempts. Our vulnerability assessment program identified and remediated 89% of critical vulnerabilities within the 48-hour SLA, exceeding our 85% target.
-
-Key challenges included staff turnover (two senior analysts departed), resulting in temporary resource constraints, and the emergence of sophisticated phishing campaigns that required additional training resources. Budget constraints limited our ability to implement advanced threat intelligence tools.
-
-For Q1 2026, our action plan focuses on three priorities: recruiting and onboarding two replacement analysts by January 15th, deploying AI-powered threat detection systems to reduce manual workload, and launching an enhanced security awareness program targeting executive-level personnel. We project a 20% improvement in overall security posture with these initiatives.`,
-    tips: [
-      "Lead with quantifiable results",
-      "Provide context through comparisons",
-      "Be honest about challenges",
-      "Propose specific, measurable actions"
-    ]
-  };
-
-  // Exercise 3: Incident Post-Mortem Report
-  const exercise3 = {
-    title: "Exercise 3: Incident Post-Mortem Report",
-    description: "Write a post-mortem analysis of a security incident",
-    prompt: "Write a post-mortem report (200-250 words) for a ransomware attack that affected 50 workstations:",
-    requirements: [
-      "Timeline of events",
-      "Root cause analysis",
-      "Lessons learned",
-      "Preventive measures implemented"
-    ],
-    sampleAnswer: `INCIDENT POST-MORTEM: RANSOMWARE ATTACK - INCIDENT #2025-047
-
-TIMELINE:
-December 1, 2025, 09:15 - Initial compromise via phishing email
-09:45 - Ransomware began encrypting files across network
-10:20 - IT helpdesk received multiple user reports
-10:35 - Network segments isolated, incident response activated
-14:00 - All affected systems quarantined and offline
-December 2, 12:00 - Systems restored from backups
-
-ROOT CAUSE ANALYSIS:
-The attack originated from a sophisticated spear-phishing email that bypassed our email filters. An employee in the finance department opened a malicious attachment, executing the ransomware payload. Our endpoint protection failed to detect the threat due to outdated signature databases.
-
-LESSONS LEARNED:
-1. Email filtering requires enhanced configuration for advanced threats
-2. Backup verification processes proved effective - full recovery achieved
-3. Incident communication protocols need improvement - 25-minute delay in escalation
-4. Cross-departmental coordination was challenging during peak incident
-
-PREVENTIVE MEASURES IMPLEMENTED:
-- Deployed next-generation email security gateway (December 3)
-- Implemented application whitelisting on all endpoints (December 5)
-- Established 15-minute incident escalation SLA
-- Scheduled weekly backup restoration drills
-- Launched mandatory security awareness training for all staff (ongoing)
-
-Total downtime: 26 hours. Estimated cost: $85,000. No data loss occurred.`,
-    tips: [
-      "Maintain chronological accuracy",
-      "Focus on facts, not blame",
-      "Document what worked and what didn't",
-      "Ensure measures are specific and actionable"
-    ]
-  };
-
-  // Exercise 4: Budget Proposal Report
-  const exercise4 = {
-    title: "Exercise 4: Budget Proposal Report",
-    description: "Write a budget proposal for security infrastructure upgrades",
-    prompt: "Draft a budget proposal (200-250 words) requesting funding for security improvements:",
-    requirements: [
-      "Justification for the investment",
-      "Detailed cost breakdown",
-      "Expected ROI or benefits",
-      "Implementation timeline"
-    ],
-    sampleAnswer: `BUDGET PROPOSAL: CYBERSECURITY INFRASTRUCTURE UPGRADE 2026
-
-JUSTIFICATION:
-Our current security infrastructure, deployed in 2021, no longer adequately protects against evolving threats. Recent incidents have exposed critical vulnerabilities, resulting in $340,000 in remediation costs over the past year. This investment will reduce risk exposure by 75% and decrease incident response costs significantly.
-
-COST BREAKDOWN:
-- Next-generation firewall and IDS/IPS: $120,000
-- SIEM platform upgrade and integration: $85,000
-- Endpoint detection and response (EDR) solution: $95,000
-- Security awareness training platform: $25,000
-- Professional services and implementation: $75,000
-Total Investment: $400,000
-
-EXPECTED BENEFITS:
-- 60% reduction in successful security incidents (projected savings: $200,000/year)
-- 40% decrease in incident response time
-- Automated threat detection reducing manual effort by 500 hours/year
-- Compliance with ISO 27001 and SOC 2 requirements
-- Three-year ROI: 147%
-
-IMPLEMENTATION TIMELINE:
-Q1 2026: Vendor selection and procurement (January-February)
-Q2 2026: Infrastructure deployment and configuration (March-May)
-Q3 2026: Testing, training, and optimization (June-August)
-Q4 2026: Full operational capability and audit
-
-This strategic investment positions our organization to proactively defend against sophisticated threats while ensuring regulatory compliance and business continuity.`,
-    tips: [
-      "Connect spending to business outcomes",
-      "Provide detailed cost justification",
-      "Quantify benefits where possible",
-      "Include realistic timelines"
-    ]
-  };
-
-  // Exercise 5: Strategic Recommendation Report
-  const exercise5 = {
-    title: "Exercise 5: Strategic Recommendation Report",
-    description: "Write strategic recommendations for long-term security improvements",
-    prompt: "Prepare a strategic recommendation report (200-250 words) for the executive board:",
-    requirements: [
-      "Current state assessment",
-      "Industry best practices comparison",
-      "Strategic recommendations",
-      "Risk assessment"
-    ],
-    sampleAnswer: `STRATEGIC SECURITY RECOMMENDATIONS FOR 2026-2028
-
-CURRENT STATE ASSESSMENT:
-Our organization's security maturity level is classified as "Reactive" on the CMMI scale. While we successfully respond to incidents, we lack proactive threat hunting capabilities and automated response mechanisms. Current security spending represents 3.2% of IT budget, below the industry average of 5.8%.
-
-INDUSTRY BENCHMARK ANALYSIS:
-Leading organizations in our sector have adopted zero-trust architecture, implemented 24/7 security operations centers (SOC), and leverage artificial intelligence for threat detection. Our competitors average 99.7% uptime compared to our 97.2%, primarily due to security incidents.
-
-STRATEGIC RECOMMENDATIONS:
-1. Adopt Zero-Trust Security Model: Implement identity-centric security controls across all access points (18-month initiative)
-2. Establish 24/7 SOC: Build internal capability or partner with managed security service provider (12-month implementation)
-3. AI-Powered Threat Intelligence: Deploy machine learning systems for predictive threat detection (24-month rollout)
-4. Security Culture Transformation: Embed security awareness into organizational DNA through continuous training and leadership commitment
-
-RISK ASSESSMENT:
-Without these improvements, we face:
-- HIGH risk of significant data breach (probability: 65% within 24 months)
-- MEDIUM risk of regulatory non-compliance and penalties
-- HIGH risk of competitive disadvantage and customer trust erosion
-
-Estimated investment: $2.1M over three years. Projected risk reduction: 80%.`,
-    tips: [
-      "Use data to support assertions",
-      "Compare against industry standards",
-      "Think long-term and strategic",
-      "Clearly articulate risks of inaction"
-    ]
-  };
-
-  const exercises = [exercise1, exercise2, exercise3, exercise4, exercise5];
   const currentExercise = exercises[activeTab - 1];
 
-  const handleAnswerChange = (exerciseId, value) => {
-    setAnswers({ ...answers, [exerciseId]: value });
+  const [answers, setAnswers] = useState({});
+  const [showResults, setShowResults] = useState({});
+
+  const handleAnswerChange = (exerciseNum, questionId, value) => {
+    setAnswers({
+      ...answers,
+      [`${exerciseNum}-${questionId}`]: value
+    });
   };
 
-  const handleSubmit = (exerciseId) => {
-    if (answers[exerciseId]?.trim()) {
-      setSubmitted({ ...submitted, [exerciseId]: true });
-    }
+  const handleCheck = (exerciseNum) => {
+    setShowResults({
+      ...showResults,
+      [exerciseNum]: true
+    });
   };
 
-  const handleToggleSample = (exerciseId) => {
-    setShowSample({ ...showSample, [exerciseId]: !showSample[exerciseId] });
-  };
-
-  const handleReset = (exerciseId) => {
+  const handleReset = (exerciseNum) => {
     const newAnswers = { ...answers };
-    delete newAnswers[exerciseId];
+    currentExercise.questions.forEach(q => {
+      delete newAnswers[`${exerciseNum}-${q.id}`];
+    });
     setAnswers(newAnswers);
     
-    const newSubmitted = { ...submitted };
-    delete newSubmitted[exerciseId];
-    setSubmitted(newSubmitted);
+    const newResults = { ...showResults };
+    delete newResults[exerciseNum];
+    setShowResults(newResults);
   };
 
-  const wordCount = (text) => {
-    return text?.trim().split(/\s+/).filter(word => word.length > 0).length || 0;
+  const calculateScore = (exerciseNum, questions) => {
+    let correct = 0;
+    questions.forEach(question => {
+      const userAnswer = answers[`${exerciseNum}-${question.id}`];
+      if (userAnswer === question.correct) {
+        correct++;
+      }
+    });
+    return correct;
   };
+
+  const isCorrect = (exerciseNum, questionId) => {
+    const question = currentExercise.questions.find(q => q.id === questionId);
+    return answers[`${exerciseNum}-${questionId}`] === question.correct;
+  };
+
+  const score = calculateScore(activeTab, currentExercise.questions);
+  const totalQuestions = currentExercise.questions.length;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="bg-htb-card border border-htb-green/30 rounded-lg shadow-lg p-6 mb-6">
         <h1 className="text-3xl font-bold text-white mb-2">Managerial Reports Writing</h1>
-        <p className="text-htb-text">Advanced C1 - Professional report writing for IT managers</p>
+        <p className="text-htb-text">Advanced C1 - Professional report writing vocabulary and phrases</p>
       </div>
 
       {/* Tab Switcher */}
@@ -246,180 +277,192 @@ Estimated investment: $2.1M over three years. Projected risk reduction: 80%.`,
             }`}
           >
             Exercise {index + 1}
-            {submitted[index + 1] && (
-              <span className="ml-1 text-xs">✓</span>
-            )}
           </button>
         ))}
       </div>
 
-      {/* Exercise Content */}
-      <div className="bg-htb-card border border-gray-800 rounded-lg p-8 mb-6">
-        <h2 className="text-2xl font-bold text-white mb-4">{currentExercise.title}</h2>
-        <p className="text-htb-text mb-6">{currentExercise.description}</p>
-
-        {/* Prompt */}
-        <div className="bg-htb-sidebar border border-htb-green/20 rounded-lg p-6 mb-6">
-          <h3 className="text-lg font-bold text-htb-green mb-3">📋 Assignment:</h3>
-          <p className="text-htb-text mb-4">{currentExercise.prompt}</p>
-          
-          <h4 className="text-md font-semibold text-white mb-2">Requirements:</h4>
-          <ul className="list-disc list-inside space-y-1 text-htb-text">
-            {currentExercise.requirements.map((req, index) => (
-              <li key={index}>{req}</li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Writing Area */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-3">
-            <label className="text-white font-semibold">Your Report:</label>
-            <span className={`text-sm ${
-              wordCount(answers[activeTab]) < 150 
-                ? 'text-yellow-400' 
-                : wordCount(answers[activeTab]) > 250 
-                ? 'text-red-400' 
-                : 'text-htb-green'
-            }`}>
-              Word count: {wordCount(answers[activeTab])} 
-              {activeTab === 1 && ' (Target: 150-200)'}
-              {activeTab !== 1 && ' (Target: 200-250)'}
-            </span>
-          </div>
-          
-          <textarea
-            value={answers[activeTab] || ''}
-            onChange={(e) => handleAnswerChange(activeTab, e.target.value)}
-            placeholder="Write your report here..."
-            disabled={submitted[activeTab]}
-            className={`w-full h-96 px-4 py-3 bg-htb-bg border-2 rounded-lg text-white font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-htb-green transition-all ${
-              submitted[activeTab]
-                ? 'border-htb-green'
-                : 'border-gray-700 hover:border-htb-green/50'
-            }`}
-            style={{ lineHeight: '1.6' }}
-          />
-        </div>
-
-        {/* Submission Feedback */}
-        {submitted[activeTab] && (
-          <div className="bg-htb-green/10 border-2 border-htb-green/30 rounded-lg p-6 mb-6">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-3xl">✓</span>
-              <div>
-                <p className="font-bold text-lg text-htb-green">Report Submitted!</p>
-                <p className="text-htb-text text-sm">
-                  Great work! Compare your report with the sample answer below to identify areas for improvement.
-                </p>
+      {/* Score Display */}
+      {showResults[activeTab] && (
+        <div className="bg-htb-card border border-htb-green/30 rounded-lg p-6 mb-6">
+          <div className="text-center">
+            <div className="text-6xl mb-4">
+              {score === totalQuestions ? '🏆' : score >= totalQuestions * 0.8 ? '✅' : '📝'}
+            </div>
+            <p className="text-4xl font-bold text-htb-green mb-4">
+              {score}/{totalQuestions}
+            </p>
+            <div className="w-full bg-htb-sidebar rounded-full h-6 mb-6 max-w-md mx-auto">
+              <div
+                className="bg-htb-green h-6 rounded-full transition-all duration-500 flex items-center justify-center"
+                style={{ width: `${(score / totalQuestions) * 100}%` }}
+              >
+                <span className="text-xs font-bold text-htb-bg">
+                  {Math.round((score / totalQuestions) * 100)}%
+                </span>
               </div>
             </div>
+            <p className={`text-xl font-semibold ${
+              score === totalQuestions ? 'text-htb-green' : 'text-blue-400'
+            }`}>
+              {score === totalQuestions 
+                ? 'Perfect! Excellent professional vocabulary!' 
+                : 'Good job! Review the incorrect answers.'}
+            </p>
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          {!submitted[activeTab] ? (
-            <button
-              onClick={() => handleSubmit(activeTab)}
-              disabled={!answers[activeTab]?.trim()}
-              className={`px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all duration-200 ${
-                answers[activeTab]?.trim()
-                  ? 'bg-htb-green hover:bg-htb-green-hover text-htb-bg hover:shadow-xl transform hover:scale-105'
-                  : 'bg-gray-700 text-gray-500 cursor-not-allowed'
-              }`}
-            >
-              ✓ Submit Report
-            </button>
-          ) : (
-            <button
-              onClick={() => handleReset(activeTab)}
-              className="bg-htb-sidebar border-2 border-htb-green hover:border-htb-green-hover text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-            >
-              🔄 Write Again
-            </button>
-          )}
-          
-          <button
-            onClick={() => handleToggleSample(activeTab)}
-            className="bg-htb-sidebar border border-gray-700 hover:border-htb-green/50 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-          >
-            {showSample[activeTab] ? '👁️ Hide Sample Answer' : '👁️ Show Sample Answer'}
-          </button>
+      {/* Exercise Content */}
+      <div className="bg-htb-card border border-gray-800 rounded-lg p-8 mb-6">
+        <h2 className="text-2xl font-bold text-white mb-6">{currentExercise.title}</h2>
+        <p className="text-htb-text mb-6">Choose the correct word to complete each sentence from a professional report.</p>
+
+        <div className="space-y-5">
+          {currentExercise.questions.map((question) => {
+            const userAnswer = answers[`${activeTab}-${question.id}`] || '';
+            const showFeedback = showResults[activeTab];
+            const correct = isCorrect(activeTab, question.id);
+
+            return (
+              <div key={question.id} className="flex items-start gap-3">
+                <span className="text-htb-text font-bold min-w-[30px]">{question.id}.</span>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-2 text-htb-text text-lg">
+                    <span>{question.text}</span>
+                    
+                    <select
+                      value={userAnswer}
+                      onChange={(e) => handleAnswerChange(activeTab, question.id, e.target.value)}
+                      className={`px-4 py-2 rounded-lg border-2 bg-htb-bg text-white font-semibold focus:outline-none focus:ring-2 focus:ring-htb-green transition-all ${
+                        showFeedback
+                          ? correct
+                            ? 'border-htb-green'
+                            : userAnswer
+                            ? 'border-red-500'
+                            : 'border-gray-700'
+                          : 'border-gray-700 hover:border-htb-green/50'
+                      }`}
+                    >
+                      <option value="">...</option>
+                      {question.options.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+
+                    {showFeedback && userAnswer && (
+                      <span className={`text-2xl ${correct ? 'text-htb-green' : 'text-red-500'}`}>
+                        {correct ? '✓' : '✗'}
+                      </span>
+                    )}
+
+                    <span>{question.textAfter}</span>
+                  </div>
+
+                  {/* Show correct answer if wrong */}
+                  {showFeedback && !correct && userAnswer && (
+                    <div className="mt-2 ml-8 text-sm">
+                      <span className="text-htb-text-dim">Correct answer: </span>
+                      <span className="text-htb-green font-semibold">{question.correct}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Sample Answer */}
-        {showSample[activeTab] && (
-          <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-white mb-4">📄 Sample Answer:</h3>
-            <div className="bg-htb-bg border border-gray-800 rounded-lg p-6 mb-4">
-              <pre className="text-htb-text whitespace-pre-wrap font-sans text-sm leading-relaxed">
-                {currentExercise.sampleAnswer}
-              </pre>
-            </div>
-            
-            <div className="mt-4">
-              <h4 className="text-lg font-semibold text-htb-green mb-3">💡 Writing Tips:</h4>
-              <ul className="space-y-2">
-                {currentExercise.tips.map((tip, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="text-htb-green mt-1">•</span>
-                    <span className="text-htb-text text-sm">{tip}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-4 mt-8">
+          <button
+            onClick={() => handleCheck(activeTab)}
+            className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+          >
+            ✓ Check Answers
+          </button>
+          <button
+            onClick={() => handleReset(activeTab)}
+            className="bg-htb-sidebar border border-gray-700 hover:border-htb-green/50 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+          >
+            🔄 Start Again
+          </button>
+        </div>
       </div>
 
-      {/* Writing Guidelines */}
+      {/* Professional Writing Guidelines */}
       <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-6">
-        <h3 className="text-xl font-bold text-white mb-4">📚 Professional Report Writing Guidelines</h3>
+        <h3 className="text-xl font-bold text-white mb-4">📚 Professional Report Writing - Key Vocabulary</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <h4 className="font-semibold text-htb-green mb-3">Structure Elements:</h4>
+            <h4 className="font-semibold text-htb-green mb-3">Executive Summary Phrases:</h4>
             <ul className="space-y-2 text-htb-text text-sm">
-              <li>✓ Clear headings and sections</li>
-              <li>✓ Executive summary at the beginning</li>
-              <li>✓ Logical flow of information</li>
-              <li>✓ Data-driven conclusions</li>
-              <li>✓ Actionable recommendations</li>
+              <li>✓ "detected/identified unauthorized access"</li>
+              <li>✓ "the incident was contained within..."</li>
+              <li>✓ "immediate actions included..."</li>
+              <li>✓ "no financial data was exposed"</li>
+              <li>✓ "we recommend implementing..."</li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold text-htb-green mb-3">Language Features:</h4>
+            <h4 className="font-semibold text-htb-green mb-3">Performance Report Phrases:</h4>
             <ul className="space-y-2 text-htb-text text-sm">
-              <li>✓ Formal, professional tone</li>
-              <li>✓ Passive voice where appropriate</li>
-              <li>✓ Industry-specific terminology</li>
-              <li>✓ Quantifiable metrics and KPIs</li>
-              <li>✓ Concise, clear sentences</li>
+              <li>✓ "demonstrated significant improvement"</li>
+              <li>✓ "response time decreased by X%"</li>
+              <li>✓ "successfully mitigated X threats"</li>
+              <li>✓ "key challenges included..."</li>
+              <li>✓ "we project/anticipate..."</li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold text-htb-green mb-3">Common Phrases:</h4>
-            <ul className="space-y-1 text-htb-text text-sm">
-              <li>• "The analysis indicates..."</li>
-              <li>• "Key findings demonstrate..."</li>
-              <li>• "It is recommended that..."</li>
-              <li>• "Comparative data shows..."</li>
-              <li>• "Implementation will require..."</li>
+            <h4 className="font-semibold text-htb-green mb-3">Post-Mortem Phrases:</h4>
+            <ul className="space-y-2 text-htb-text text-sm">
+              <li>✓ "the attack originated from..."</li>
+              <li>✓ "an employee opened/clicked..."</li>
+              <li>✓ "the system failed to detect..."</li>
+              <li>✓ "backup processes proved effective"</li>
+              <li>✓ "we have launched/implemented..."</li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold text-htb-green mb-3">Avoid:</h4>
-            <ul className="space-y-1 text-htb-text text-sm">
-              <li>✗ Informal language or slang</li>
-              <li>✗ Personal opinions without data</li>
-              <li>✗ Vague or ambiguous statements</li>
-              <li>✗ Overly complex sentences</li>
-              <li>✗ Emotional or subjective language</li>
+            <h4 className="font-semibold text-htb-green mb-3">Budget & Strategy Phrases:</h4>
+            <ul className="space-y-2 text-htb-text text-sm">
+              <li>✓ "incidents have exposed vulnerabilities"</li>
+              <li>✓ "this will reduce risk by X%"</li>
+              <li>✓ "the investment amounts to/totals..."</li>
+              <li>✓ "we face HIGH/MEDIUM/LOW risk"</li>
+              <li>✓ "organizations have adopted..."</li>
             </ul>
           </div>
+        </div>
+
+        <div className="mt-6 bg-htb-card border border-htb-green/20 rounded-lg p-4">
+          <h4 className="text-white font-bold mb-3">💡 Writing Tips:</h4>
+          <ul className="space-y-2 text-htb-text text-sm">
+            <li className="flex items-start gap-2">
+              <span className="text-htb-green mt-1">•</span>
+              <span>Use strong action verbs: detected, implemented, mitigated, achieved</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-htb-green mt-1">•</span>
+              <span>Include specific metrics and percentages for credibility</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-htb-green mt-1">•</span>
+              <span>Use passive voice when appropriate: "was detected", "were implemented"</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-htb-green mt-1">•</span>
+              <span>Be clear about recommendations: "we recommend", "it is essential that"</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-htb-green mt-1">•</span>
+              <span>Maintain formal, professional tone throughout</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

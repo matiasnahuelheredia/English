@@ -452,6 +452,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Confusing Adverbs
                     </button>
+                    <button
+                      onClick={() => onSelectTense('sentence-adverbs')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'sentence-adverbs'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Sentence Adverbs
+                    </button>
                   </div>
                 )}
 

@@ -10,6 +10,7 @@ import AdjectivesExercise from './AdjectivesExercise';
 import PhonesTechnologyExercise from './PhonesTechnologyExercise';
 import ManagerialReportsExercise from './ManagerialReportsExercise';
 import ConfusingAdverbsExercise from './ConfusingAdverbsExercise';
+import SentenceAdverbsExercise from './SentenceAdverbsExercise';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -40,6 +41,11 @@ const ExerciseView = ({ tenseId }) => {
   // Si es confusing-adverbs, mostrar el componente ConfusingAdverbsExercise
   if (tenseId === 'confusing-adverbs') {
     return <ConfusingAdverbsExercise />;
+  }
+
+  // Si es sentence-adverbs, mostrar el componente SentenceAdverbsExercise
+  if (tenseId === 'sentence-adverbs') {
+    return <SentenceAdverbsExercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
