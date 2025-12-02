@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 const Sidebar = ({ selectedTense, onSelectTense }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [expandedSections, setExpandedSections] = useState({
+    'Intermediate': false,
+    'Intermediate-Vocabulary': false,
     'Upper-Intermediate': true,
     'Tiempos Verbales': true,
     'Present': true,
@@ -81,6 +83,50 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
         </div>
 
         <div className="flex-1 overflow-y-auto p-4">
+          {/* Sección: Intermediate */}
+          <div className="mb-2">
+            <button
+              onClick={() => toggleSection('Intermediate')}
+              className="w-full flex items-center justify-between text-xs font-semibold text-green-400 uppercase tracking-wider hover:text-green-300 hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group border-2 border-green-600"
+            >
+              <span className="group-hover:translate-x-1 transition-transform duration-300">📗 Intermediate B1</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Intermediate'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
+            </button>
+
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Intermediate'] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="ml-1 mt-2 space-y-2">
+          
+          {/* Sección: Vocabulary - Intermediate */}
+          <div className="mb-2">
+            <button
+              onClick={() => toggleSection('Intermediate-Vocabulary')}
+              className="w-full flex items-center justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group"
+            >
+              <span className="group-hover:translate-x-1 transition-transform duration-300">Vocabulary</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Intermediate-Vocabulary'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
+            </button>
+
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Intermediate-Vocabulary'] ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="ml-3 mt-1">
+                <button
+                  onClick={() => onSelectTense('cinema')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'cinema'
+                      ? 'bg-gradient-to-r from-green-600 to-green-500 text-white shadow-lg shadow-green-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  🎬 Cinema
+                </button>
+              </div>
+            </div>
+          </div>
+              
+              </div>
+            </div>
+          </div>
+          {/* Fin de Intermediate */}
+          
           {/* Sección principal: Upper-Intermediate */}
           <div className="mb-2">
             <button

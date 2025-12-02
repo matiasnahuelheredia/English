@@ -122,7 +122,7 @@ const ExerciseView = ({ tenseId }) => {
   useEffect(() => {
     clearAllTimers();
     
-    const vocabTopics = ['clothes-fashion', 'airport', 'weather', 'illnesses-injuries'];
+    const vocabTopics = ['clothes-fashion', 'airport', 'weather', 'illnesses-injuries', 'cinema'];
     const isVocabTopic = vocabTopics.includes(tenseId);
     setIsVocabulary(isVocabTopic);
 
@@ -427,6 +427,7 @@ const ExerciseView = ({ tenseId }) => {
       'airport': 'Airport - Vocabulary',
       'weather': 'Weather - Vocabulary',
       'illnesses-injuries': 'Illnesses and Injuries - Vocabulary',
+      'cinema': 'Cinema - Vocabulary',
     };
     return titles[tenseId] || 'Ejercicios';
   };

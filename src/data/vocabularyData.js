@@ -616,6 +616,81 @@ export const vocabularyData = {
       spanishWord: ['volvió en sí', 'recuperó el conocimiento', 'se recuperó'],
       explanation: '"Came around" significa volvió en sí o recuperó el conocimiento. Recuperar la consciencia después de desmayarse.'
     }
+  ],
+
+  'cinema': [
+    {
+      englishWord: 'Plot',
+      spanishWord: ['trama', 'argumento', 'historia'],
+      explanation: '"Plot" significa trama o argumento. La historia de una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Subtitles',
+      spanishWord: ['subtítulos', 'subtitulos'],
+      explanation: '"Subtitles" significa subtítulos. Palabras que traducen lo que se dice en una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Comedy',
+      spanishWord: ['comedia'],
+      explanation: '"Comedy" significa comedia. Una película que te hace reír.',
+      imageUrl: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Horror film',
+      spanishWord: ['película de terror', 'película de miedo', 'film de terror'],
+      explanation: '"Horror film" significa película de terror. Una película que te asusta.',
+      imageUrl: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Musical',
+      spanishWord: ['musical'],
+      explanation: '"Musical" significa musical. Una película con canto y baile.',
+      imageUrl: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Director',
+      spanishWord: ['director', 'directora'],
+      explanation: '"Director" significa director. La persona que hace/dirige una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Soundtrack',
+      spanishWord: ['banda sonora', 'música'],
+      explanation: '"Soundtrack" significa banda sonora. La música de una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Cast',
+      spanishWord: ['reparto', 'elenco', 'actores'],
+      explanation: '"Cast" significa reparto o elenco. Todas las personas que actúan en una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Script',
+      spanishWord: ['guión', 'guion'],
+      explanation: '"Script" significa guión. Las palabras/diálogos de una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Star',
+      spanishWord: ['estrella', 'protagonista', 'actor principal'],
+      explanation: '"Star" significa estrella o protagonista. El actor más importante de una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Special effects',
+      spanishWord: ['efectos especiales'],
+      explanation: '"Special effects" significa efectos especiales. Ejemplo: \'The Matrix\' has a lot of special effects in it.',
+      imageUrl: 'https://images.unsplash.com/photo-1574267432644-f00e2f8af7d3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Scene',
+      spanishWord: ['escena'],
+      explanation: '"Scene" significa escena. Una parte de una película.',
+      imageUrl: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=300&fit=crop'
+    }
   ]
 };
 
