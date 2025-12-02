@@ -1324,6 +1324,363 @@ export const vocabularyData = {
       explanation: '"Staring" significa mirar fijamente. Staring at other people is rude.',
       imageUrl: 'https://images.unsplash.com/photo-1504933350103-e840ede978d4?w=400&h=300&fit=crop'
     }
+  ],
+
+  'transport': [
+    {
+      englishWord: 'Carriage',
+      spanishWord: ['vagón', 'coche de tren'],
+      explanation: '"Carriage" significa vagón. This is part of a train for carrying people.',
+      imageUrl: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Platform',
+      spanishWord: ['andén', 'plataforma'],
+      explanation: '"Platform" significa andén. The place where you stand to wait for a train.',
+      imageUrl: 'https://images.unsplash.com/photo-1568790078435-a3f16e24e68b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Taxi rank',
+      spanishWord: ['parada de taxis'],
+      explanation: '"Taxi rank" significa parada de taxis. You wait for a taxi at the taxi rank.',
+      imageUrl: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Seat belt',
+      spanishWord: ['cinturón de seguridad'],
+      explanation: '"Seat belt" significa cinturón de seguridad. In a car you must wear a seat belt.',
+      imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Pedestrian area',
+      spanishWord: ['zona peatonal', 'área peatonal'],
+      explanation: '"Pedestrian area" significa zona peatonal. You can\'t drive in a pedestrian area.',
+      imageUrl: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Motorway',
+      spanishWord: ['autopista'],
+      explanation: '"Motorway" significa autopista. A road where traffic can travel fast is a motorway.',
+      imageUrl: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Coach',
+      spanishWord: ['autobús interurbano', 'ómnibus'],
+      explanation: '"Coach" significa autobús interurbano. Similar to a bus but it goes between cities.',
+      imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Lorry',
+      spanishWord: ['camión'],
+      explanation: '"Lorry" significa camión. A lorry is used for transporting goods.',
+      imageUrl: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Traffic lights',
+      spanishWord: ['semáforos'],
+      explanation: '"Traffic lights" significa semáforos. Traffic lights are used to control and direct road users.',
+      imageUrl: 'https://images.unsplash.com/photo-1546768292-fb12f6c92568?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Pedestrian crossings',
+      spanishWord: ['cruces peatonales', 'pasos de peatones'],
+      explanation: '"Pedestrian crossings" significa cruces peatonales. They create safe places to cross the road.',
+      imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Speed limits',
+      spanishWord: ['límites de velocidad'],
+      explanation: '"Speed limits" significa límites de velocidad. They can be different depending on the type of road.',
+      imageUrl: 'https://images.unsplash.com/photo-1617228238100-b35902e91588?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Traffic jams',
+      spanishWord: ['atascos', 'embotellamientos'],
+      explanation: '"Traffic jams" significa atascos. Cities usually have a lot of traffic jams.',
+      imageUrl: 'https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Scooter',
+      spanishWord: ['motoneta', 'scooter'],
+      explanation: '"Scooter" significa motoneta. A vehicle that is similar to a motorbike.',
+      imageUrl: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&h=300&fit=crop'
+    }
+  ],
+
+  'word-building': [
+    {
+      englishWord: 'Achievement',
+      spanishWord: ['logro', 'logros'],
+      explanation: '"Achievement" es el sustantivo de achieve (lograr). Achieve + ment = Achievement.',
+      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Compensation',
+      spanishWord: ['compensación', 'indemnización'],
+      explanation: '"Compensation" es el sustantivo de compensate (compensar). Compensate + tion = Compensation.',
+      imageUrl: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Choice',
+      spanishWord: ['elección', 'opción'],
+      explanation: '"Choice" es el sustantivo de choose (elegir). Choose → Choice (palabra nueva).',
+      imageUrl: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Agreement',
+      spanishWord: ['acuerdo'],
+      explanation: '"Agreement" es el sustantivo de agree (estar de acuerdo). Agree + ment = Agreement.',
+      imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Complaint',
+      spanishWord: ['queja', 'reclamo'],
+      explanation: '"Complaint" es el sustantivo de complain (quejarse). Complain → Complaint (palabra nueva).',
+      imageUrl: 'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Loss',
+      spanishWord: ['pérdida'],
+      explanation: '"Loss" es el sustantivo de lose (perder). Lose → Loss (palabra nueva).',
+      imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Argument',
+      spanishWord: ['discusión', 'argumento'],
+      explanation: '"Argument" es el sustantivo de argue (discutir). Argue + ment = Argument.',
+      imageUrl: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Demonstration',
+      spanishWord: ['demostración', 'manifestación'],
+      explanation: '"Demonstration" es el sustantivo de demonstrate (demostrar). Demonstrate + tion = Demonstration.',
+      imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Success',
+      spanishWord: ['éxito'],
+      explanation: '"Success" es el sustantivo de succeed (tener éxito). Succeed → Success (palabra nueva).',
+      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Payment',
+      spanishWord: ['pago'],
+      explanation: '"Payment" es el sustantivo de pay (pagar). Pay + ment = Payment.',
+      imageUrl: 'https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Attachment',
+      spanishWord: ['archivo adjunto', 'apego'],
+      explanation: '"Attachment" es el sustantivo de attach (adjuntar). Attach + ment = Attachment.',
+      imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop'
+    }
+  ],
+
+  'work': [
+    {
+      englishWord: 'Resign',
+      spanishWord: ['renunciar', 'dimitir'],
+      explanation: '"Resign" significa renunciar. To leave your job because you want to.',
+      imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Retire',
+      spanishWord: ['jubilarse', 'retirarse'],
+      explanation: '"Retire" significa jubilarse. To stop working in your early sixties.',
+      imageUrl: 'https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Temporary',
+      spanishWord: ['temporal', 'provisorio'],
+      explanation: '"Temporary" significa temporal. If your contract isn\'t permanent, it is temporary.',
+      imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Contract',
+      spanishWord: ['contrato'],
+      explanation: '"Contract" significa contrato. A written legal document about your job.',
+      imageUrl: 'https://images.unsplash.com/photo-1554224311-beee4ece4959?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Work experience',
+      spanishWord: ['experiencia laboral'],
+      explanation: '"Work experience" significa experiencia laboral. I\'ve just left school; I have no work experience.',
+      imageUrl: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Unemployed',
+      spanishWord: ['desempleado', 'desocupado'],
+      explanation: '"Unemployed" significa desempleado. If you don\'t have a job, you are unemployed.',
+      imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Sacked',
+      spanishWord: ['despedido', 'echado'],
+      explanation: '"Sacked" significa despedido. If you are asked to leave your job, you have been sacked.',
+      imageUrl: 'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Promotion',
+      spanishWord: ['ascenso', 'promoción'],
+      explanation: '"Promotion" significa ascenso. Getting a better job at your current company is promotion.',
+      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Submit a CV',
+      spanishWord: ['enviar un CV', 'presentar un currículum'],
+      explanation: '"Submit a CV" significa enviar un currículum. To apply for a job, you usually have to submit a CV.',
+      imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Qualifications',
+      spanishWord: ['calificaciones', 'títulos', 'certificaciones'],
+      explanation: '"Qualifications" significa calificaciones o títulos. Most jobs need applicants to have certain qualifications.',
+      imageUrl: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Self-employed',
+      spanishWord: ['autónomo', 'trabajador independiente'],
+      explanation: '"Self-employed" significa autónomo. If you work for yourself, you are self-employed.',
+      imageUrl: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Part-time',
+      spanishWord: ['medio tiempo', 'tiempo parcial'],
+      explanation: '"Part-time" significa medio tiempo. If a job only requires a few hours\' work each day, it is part-time.',
+      imageUrl: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=300&fit=crop'
+    }
+  ],
+
+  'adverbs-phrases': [
+    {
+      englishWord: 'Gradually',
+      spanishWord: ['gradualmente', 'poco a poco'],
+      explanation: '"Gradually" significa gradualmente o poco a poco. Synonym: little by little.',
+      imageUrl: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Ideally',
+      spanishWord: ['idealmente', 'en un mundo ideal'],
+      explanation: '"Ideally" significa idealmente. Synonym: in a perfect world.',
+      imageUrl: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Eventually',
+      spanishWord: ['finalmente', 'al final', 'eventualmente'],
+      explanation: '"Eventually" significa finalmente o al final. In the end; after a series of events or difficulties.',
+      imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Apparently',
+      spanishWord: ['aparentemente', 'al parecer'],
+      explanation: '"Apparently" significa aparentemente. According to what you have heard or read.',
+      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'In fact',
+      spanishWord: ['de hecho', 'en realidad'],
+      explanation: '"In fact" significa de hecho. The truth is.',
+      imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Anyway',
+      spanishWord: ['de todos modos', 'de todas formas'],
+      explanation: '"Anyway" significa de todos modos. Synonym: in any case.',
+      imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Basically',
+      spanishWord: ['básicamente', 'fundamentalmente'],
+      explanation: '"Basically" significa básicamente. In the most important ways.',
+      imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Ever',
+      spanishWord: ['alguna vez'],
+      explanation: '"Ever" significa alguna vez. Have you ever tried eating a whole chilly?',
+      imageUrl: 'https://images.unsplash.com/photo-1476234251651-f353703a034d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Specially',
+      spanishWord: ['especialmente', 'hecho especialmente'],
+      explanation: '"Specially" significa especialmente (para un propósito). These chairs were specially made for this room.',
+      imageUrl: 'https://images.unsplash.com/photo-1503602642458-232111445657?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Hardly',
+      spanishWord: ['apenas', 'casi no'],
+      explanation: '"Hardly" significa apenas. I can hardly hear a word you\'re saying.',
+      imageUrl: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Still',
+      spanishWord: ['todavía', 'aún'],
+      explanation: '"Still" significa todavía. It\'s almost midnight and she still hasn\'t arrived home.',
+      imageUrl: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'In the end',
+      spanishWord: ['al final', 'finalmente'],
+      explanation: '"In the end" significa al final. Jane agreed to help but in the end she didn\'t turn up at all.',
+      imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Nearly',
+      spanishWord: ['casi'],
+      explanation: '"Nearly" significa casi. She nearly hit the tree with the car but manage to stop at the last minute.',
+      imageUrl: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&h=300&fit=crop'
+    }
+  ],
+
+  'business': [
+    {
+      englishWord: 'Chain',
+      spanishWord: ['cadena'],
+      explanation: '"Chain" significa cadena. A group of shops, hotels, etc. owned by the same person.',
+      imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Head office',
+      spanishWord: ['oficina central', 'sede central'],
+      explanation: '"Head office" significa oficina central. The main office of a company.',
+      imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Multinational',
+      spanishWord: ['multinacional'],
+      explanation: '"Multinational" significa multinacional. A company that has offices or factories in many countries.',
+      imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Owner',
+      spanishWord: ['dueño', 'propietario'],
+      explanation: '"Owner" significa dueño. The person who owns a business.',
+      imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Colleague',
+      spanishWord: ['colega', 'compañero de trabajo'],
+      explanation: '"Colleague" significa colega. A person who works with you.',
+      imageUrl: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Staff',
+      spanishWord: ['personal', 'empleados'],
+      explanation: '"Staff" significa personal. The group of people who work for an organization.',
+      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Branch',
+      spanishWord: ['sucursal', 'filial'],
+      explanation: '"Branch" significa sucursal. An office or shop that is part of a larger organization.',
+      imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Customer',
+      spanishWord: ['cliente'],
+      explanation: '"Customer" significa cliente. Person who buys goods or services, e.g. from a shop or restaurant.',
+      imageUrl: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=300&fit=crop'
+    }
   ]
 };
 

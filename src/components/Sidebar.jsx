@@ -208,6 +208,36 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                 >
                   👤 The Body
                 </button>
+                <button
+                  onClick={() => onSelectTense('transport')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'transport'
+                      ? 'bg-gradient-to-r from-green-600 to-green-500 text-white shadow-lg shadow-green-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  🚌 Transport
+                </button>
+                <button
+                  onClick={() => onSelectTense('word-building')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'word-building'
+                      ? 'bg-gradient-to-r from-green-600 to-green-500 text-white shadow-lg shadow-green-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  🔤 Word Building
+                </button>
+                <button
+                  onClick={() => onSelectTense('work')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'work'
+                      ? 'bg-gradient-to-r from-green-600 to-green-500 text-white shadow-lg shadow-green-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  💼 Work
+                </button>
               </div>
             </div>
           </div>
@@ -424,7 +454,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               <span className={`text-lg transition-transform duration-500 ${expandedSections['Vocabulary'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
             </button>
 
-            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Vocabulary'] ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Vocabulary'] ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className="ml-3 mt-1">
                 {vocabularyTopics.map((topic, index) => (
                   <button
@@ -440,6 +470,26 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     {topic.name}
                   </button>
                 ))}
+                <button
+                  onClick={() => onSelectTense('adverbs-phrases')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'adverbs-phrases'
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  💬 Adverbs and Phrases
+                </button>
+                <button
+                  onClick={() => onSelectTense('business')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'business'
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  💼 Business
+                </button>
               </div>
             </div>
           </div>
