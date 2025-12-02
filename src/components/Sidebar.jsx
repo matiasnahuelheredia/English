@@ -429,18 +429,44 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                   </div>
                 )}
 
-                {/* Weather */}
+                {/* Grammar B1 */}
                 <button
-                  onClick={() => toggleSection('Weather Exercise')}
+                  onClick={() => toggleSection('Intermediate-Grammar')}
                   className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                 >
-                  <span className="text-htb-text-dim">Weather Exercise</span>
-                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Weather Exercise'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="text-htb-text-dim">Grammar</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Intermediate-Grammar'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
 
-                {expandedSections['Weather Exercise'] && (
+                {expandedSections['Intermediate-Grammar'] && (
+                  <div className="ml-3 space-y-0.5">
+                    <button
+                      onClick={() => onSelectTense('confusing-adverbs')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'confusing-adverbs'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Confusing Adverbs
+                    </button>
+                  </div>
+                )}
+
+                {/* Weather Exercise */}
+                <button
+                  onClick={() => toggleSection('Weather Exercise B1')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Weather Exercise</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Weather Exercise B1'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Weather Exercise B1'] && (
                   <div className="ml-3">
                     <button
                       onClick={() => onSelectTense('weather-match')}
