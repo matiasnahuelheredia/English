@@ -15,6 +15,8 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     'Question Forms': false,
     'Mixed Practice': false,
     'Vocabulary': false,
+    'Advanced': false,
+    'Advanced-Vocabulary': false,
     'Weather Exercise': false,
     'Exam': false,
     'Exam 2': false
@@ -451,6 +453,77 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     </button>
                   </div>
                 )}
+              </div>
+            )}
+          </div>
+
+          {/* ADVANCED C1 */}
+          <div>
+            <button
+              onClick={() => toggleSection('Advanced')}
+              className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
+            >
+              <span className="text-htb-text">Advanced C1</span>
+              <svg className={`w-4 h-4 transition-transform ${expandedSections['Advanced'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {expandedSections['Advanced'] && (
+              <div className="ml-3 mt-1 space-y-1">
+                {/* Vocabulary Advanced */}
+                <button
+                  onClick={() => toggleSection('Advanced-Vocabulary')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Vocabulary</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Advanced-Vocabulary'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Advanced-Vocabulary'] && (
+                  <div className="ml-3 space-y-0.5">
+                    <button
+                      onClick={() => onSelectTense('adjectives')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'adjectives'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Adjectives
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('conflict-warfare')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'conflict-warfare'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Conflict and Warfare
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* B2 UPPER-INTERMEDIATE */}
+          <div>
+            <button
+              onClick={() => toggleSection('Upper-Intermediate')}
+              className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
+            >
+              <span className="text-htb-text">Upper-Intermediate B2</span>
+              <svg className={`w-4 h-4 transition-transform ${expandedSections['Upper-Intermediate'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {expandedSections['Upper-Intermediate'] && (
+              <div className="ml-3 mt-1 space-y-1">
 
                 {/* Exams */}
                 <button
