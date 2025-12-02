@@ -955,6 +955,81 @@ export const vocabularyData = {
       explanation: '"Path" significa sendero o camino. There is a small path from the gate to my door.',
       imageUrl: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&h=300&fit=crop'
     }
+  ],
+
+  'money': [
+    {
+      englishWord: 'Earn money',
+      spanishWord: ['ganar dinero'],
+      explanation: '"Earn money" significa ganar dinero. If you work, you earn money.',
+      imageUrl: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Tax',
+      spanishWord: ['impuesto', 'impuestos'],
+      explanation: '"Tax" significa impuesto. Money that you pay to the government.',
+      imageUrl: 'https://images.unsplash.com/photo-1554224311-beee4ece4959?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Mortgage',
+      spanishWord: ['hipoteca'],
+      explanation: '"Mortgage" significa hipoteca. Money that you borrow to buy a house.',
+      imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Salary',
+      spanishWord: ['salario', 'sueldo'],
+      explanation: '"Salary" significa salario. Money that you get every month if you work.',
+      imageUrl: 'https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Afford',
+      spanishWord: ['permitirse', 'costear'],
+      explanation: '"Afford" significa permitirse o poder pagar. I have no money; I can\'t afford to eat out.',
+      imageUrl: 'https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Owe',
+      spanishWord: ['deber', 'adeudar'],
+      explanation: '"Owe" significa deber dinero. If I lend you money, you owe me.',
+      imageUrl: 'https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Credit card',
+      spanishWord: ['tarjeta de crédito'],
+      explanation: '"Credit card" significa tarjeta de crédito. You can pay for things by credit card.',
+      imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Loan',
+      spanishWord: ['préstamo'],
+      explanation: '"Loan" significa préstamo. Money which a bank lends you.',
+      imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Lend',
+      spanishWord: ['prestar'],
+      explanation: '"Lend" significa prestar. Some people never lend money to their friends.',
+      imageUrl: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Waste money',
+      spanishWord: ['malgastar dinero', 'desperdiciar dinero'],
+      explanation: '"Waste money" significa malgastar dinero. To buy stupid things is to waste money.',
+      imageUrl: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Save money',
+      spanishWord: ['ahorrar dinero'],
+      explanation: '"Save money" significa ahorrar dinero. To put money aside is to save money.',
+      imageUrl: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Invest',
+      spanishWord: ['invertir'],
+      explanation: '"Invest" significa invertir. To buy shares in a company is to invest.',
+      imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop'
+    }
   ]
 };
 
