@@ -880,6 +880,81 @@ export const vocabularyData = {
       explanation: '"Vegetables" significa verduras. Peppers, cabbage and courgettes are vegetables.',
       imageUrl: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop'
     }
+  ],
+
+  'houses': [
+    {
+      englishWord: 'Outskirts',
+      spanishWord: ['afueras', 'periferia'],
+      explanation: '"Outskirts" significa afueras o periferia. Many people prefer to live on the outskirts of large cities.',
+      imageUrl: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Ground floor',
+      spanishWord: ['planta baja', 'piso bajo'],
+      explanation: '"Ground floor" significa planta baja. The bottom level of a block of flats.',
+      imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Capital city',
+      spanishWord: ['ciudad capital', 'capital'],
+      explanation: '"Capital city" significa ciudad capital. London is a capital city.',
+      imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Terrace',
+      spanishWord: ['terraza', 'terraza exterior'],
+      explanation: '"Terrace" significa terraza. To enjoy the sun, you might sit out on the terrace.',
+      imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Suburb',
+      spanishWord: ['suburbio', 'zona residencial'],
+      explanation: '"Suburb" significa suburbio o zona residencial. Richmond is a suburb of London.',
+      imageUrl: 'https://images.unsplash.com/photo-1464146072230-91cabc968266?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Entrance',
+      spanishWord: ['entrada', 'acceso'],
+      explanation: '"Entrance" significa entrada. To go into a building, you use the entrance.',
+      imageUrl: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Village',
+      spanishWord: ['pueblo', 'aldea'],
+      explanation: '"Village" significa pueblo. A very small town in the country.',
+      imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Block of flats',
+      spanishWord: ['edificio de departamentos', 'bloque de pisos'],
+      explanation: '"Block of flats" significa edificio de departamentos. I live in a block of flats.',
+      imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Balcony',
+      spanishWord: ['balcón'],
+      explanation: '"Balcony" significa balcón. An area built upstairs outside a house.',
+      imageUrl: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Chimney',
+      spanishWord: ['chimenea'],
+      explanation: '"Chimney" significa chimenea. It\'s on the roof and smoke comes out of it.',
+      imageUrl: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Garage',
+      spanishWord: ['garaje', 'cochera'],
+      explanation: '"Garage" significa garaje o cochera. A place where you keep your car.',
+      imageUrl: 'https://images.unsplash.com/photo-1580913428706-c311a5e16d65?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Path',
+      spanishWord: ['sendero', 'camino', 'senda'],
+      explanation: '"Path" significa sendero o camino. There is a small path from the gate to my door.',
+      imageUrl: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&h=300&fit=crop'
+    }
   ]
 };
 

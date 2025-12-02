@@ -148,6 +148,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                 >
                   🍳 Food and Cooking
                 </button>
+                <button
+                  onClick={() => onSelectTense('houses')}
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 text-sm transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg animate-fadeIn ${
+                    selectedTense === 'houses'
+                      ? 'bg-gradient-to-r from-green-600 to-green-500 text-white shadow-lg shadow-green-500/50 scale-105'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  🏠 Houses
+                </button>
               </div>
             </div>
           </div>

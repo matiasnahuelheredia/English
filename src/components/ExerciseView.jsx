@@ -122,7 +122,7 @@ const ExerciseView = ({ tenseId }) => {
   useEffect(() => {
     clearAllTimers();
     
-    const vocabTopics = ['clothes-fashion', 'airport', 'weather', 'illnesses-injuries', 'cinema', 'dependent-prepositions', 'education', 'food-cooking'];
+    const vocabTopics = ['clothes-fashion', 'airport', 'weather', 'illnesses-injuries', 'cinema', 'dependent-prepositions', 'education', 'food-cooking', 'houses'];
     const isVocabTopic = vocabTopics.includes(tenseId);
     setIsVocabulary(isVocabTopic);
 
@@ -431,6 +431,7 @@ const ExerciseView = ({ tenseId }) => {
       'dependent-prepositions': 'Dependent Prepositions - Vocabulary',
       'education': 'Education - Vocabulary',
       'food-cooking': 'Food and Cooking - Vocabulary',
+      'houses': 'Houses - Vocabulary',
     };
     return titles[tenseId] || 'Ejercicios';
   };
