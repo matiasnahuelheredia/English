@@ -5,11 +5,17 @@ import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
 import Introduction from './Introduction';
+import ConflictWarfareExercise from './ConflictWarfareExercise';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
   if (tenseId === 'introduction') {
     return <Introduction />;
+  }
+
+  // Si es conflict-warfare, mostrar el componente ConflictWarfareExercise
+  if (tenseId === 'conflict-warfare') {
+    return <ConflictWarfareExercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado

@@ -46,7 +46,8 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     { id: 'clothes-fashion', name: 'Clothes and Fashion' },
     { id: 'airport', name: 'Airport' },
     { id: 'weather', name: 'Weather' },
-    { id: 'illnesses-injuries', name: 'Illnesses and Injuries' }
+    { id: 'illnesses-injuries', name: 'Illnesses and Injuries' },
+    { id: 'conflict-warfare', name: 'Conflict and Warfare' }
   ];
 
   const groupedTenses = tenses.reduce((acc, tense) => {
