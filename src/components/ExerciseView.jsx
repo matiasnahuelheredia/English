@@ -408,6 +408,7 @@ const ExerciseView = ({ tenseId }) => {
     const titles = {
       'present-simple': 'Present Simple',
       'present-continuous': 'Present Continuous',
+      'present-simple-continuous-mix': 'Present Simple & Continuous Mix - Action and Non-Action Verbs',
       'present-perfect': 'Present Perfect',
       'present-perfect-continuous': 'Present Perfect Continuous',
       'past-simple': 'Past Simple',
@@ -459,6 +460,12 @@ const ExerciseView = ({ tenseId }) => {
         negative: 'Subject + am/is/are + not + verb + ing',
         interrogative: 'Am/Is/Are + subject + verb + ing?',
         example: 'I am working / She is working / Are you working?'
+      },
+      'present-simple-continuous-mix': {
+        affirmative: 'Present Simple: Subject + verb(s) | Present Continuous: Subject + am/is/are + verb+ing',
+        negative: 'Present Simple: don\'t/doesn\'t + verb | Present Continuous: am/is/are + not + verb+ing',
+        interrogative: 'Present Simple: Do/Does + subject + verb? | Present Continuous: Am/Is/Are + subject + verb+ing?',
+        example: 'Action verbs: I\'m eating (now) vs I eat (habit) | Non-action verbs: I like (NOT I\'m liking)'
       },
       'present-perfect': {
         affirmative: 'Subject + have/has + past participle',

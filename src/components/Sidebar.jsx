@@ -22,6 +22,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
   const tenses = [
     { id: 'present-simple', name: 'Present Simple', category: 'Present' },
     { id: 'present-continuous', name: 'Present Continuous', category: 'Present' },
+    { id: 'present-simple-continuous-mix', name: 'Present Simple & Continuous Mix', category: 'Present' },
     { id: 'present-perfect', name: 'Present Perfect', category: 'Present' },
     { id: 'present-perfect-continuous', name: 'Present Perfect Continuous', category: 'Present' },
     

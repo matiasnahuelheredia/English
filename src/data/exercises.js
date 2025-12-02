@@ -2482,6 +2482,69 @@ const exercisesData = {
     }
   ],
 
+  'present-simple-continuous-mix': [
+    {
+      sentenceParts: [
+        { type: 'text', content: "It's my sister's birthday today and she" },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'a party.' }
+      ],
+      options: ["'s having", "has", "'s have"],
+      correctAnswer: "'s having",
+      explanation: "Usamos Present Continuous ('s having) porque es una acción temporal que está sucediendo ahora (today). La fiesta está ocurriendo en este momento específico."
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'We' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: "round to her house at eight o'clock this evening." }
+      ],
+      options: ["'re going", "go", "'re go"],
+      correctAnswer: "'re going",
+      explanation: "Usamos Present Continuous ('re going) porque es un plan futuro definido. Tenemos una hora específica (eight o'clock this evening) para esta acción planificada."
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'She' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'her birthday, but this one is special because she\'s thirty!' }
+      ],
+      options: ["doesn't usually celebrate", "isn't usually celebrating", "don't usually celebrate"],
+      correctAnswer: "doesn't usually celebrate",
+      explanation: "Usamos Present Simple negativo (doesn't usually celebrate) porque hablamos de un hábito o rutina general. 'Usually' es una palabra clave que indica Present Simple."
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'After class today I' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'into town to buy her present.' }
+      ],
+      options: ["'m going", "go", "'m go"],
+      correctAnswer: "'m going",
+      explanation: "Usamos Present Continuous ('m going) porque es un plan futuro específico. 'After class today' indica una intención o plan concreto para el futuro cercano."
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'I' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: "I'll get her some CDs." }
+      ],
+      options: ["think", "'m thinking", "thinks"],
+      correctAnswer: "think",
+      explanation: "Usamos Present Simple (think) porque 'think' es un non-action verb (verbo de estado) cuando expresa opinión. Los verbos de estado no se usan en forma continua."
+    },
+    {
+      sentenceParts: [
+        { type: 'text', content: 'She really' },
+        { type: 'dropdown', content: '' },
+        { type: 'text', content: 'music.' }
+      ],
+      options: ["loves", "'s loving", "love"],
+      correctAnswer: "loves",
+      explanation: "Usamos Present Simple (loves) porque 'love' es un non-action verb (verbo de emoción/sentimiento). Los verbos de estado como love, like, hate, etc. normalmente no se usan en forma continua."
+    }
+  ],
+
   'mixed-tenses': []
 };
 
