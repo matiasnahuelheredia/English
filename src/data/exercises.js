@@ -1404,6 +1404,57 @@ const exercisesData = {
     }
   ],
 
+  'present-perfect-past-simple-2': [
+    {
+      sentenceParts: [
+        { type: 'reorder', content: '' }
+      ],
+      words: shuffleArray(['yet.', "hasn't", 'started', 'The', 'film']),
+      correctAnswer: ['The', 'film', "hasn't", 'started', 'yet.'],
+      explanation: 'Present Perfect negativo: Subject + haven\'t/hasn\'t + past participle. "Yet" se usa en negativas y preguntas para indicar que algo no ha ocurrido hasta ahora.'
+    },
+    {
+      sentenceParts: [
+        { type: 'reorder', content: '' }
+      ],
+      words: shuffleArray(['you', 'How', 'long', 'did', 'Oxford?', 'stay', 'in']),
+      correctAnswer: ['How', 'long', 'did', 'you', 'stay', 'in', 'Oxford?'],
+      explanation: 'Past Simple pregunta: How long + did + subject + verb. Usamos Past Simple porque la estancia en Oxford ya terminó (acción completa en el pasado).'
+    },
+    {
+      sentenceParts: [
+        { type: 'reorder', content: '' }
+      ],
+      words: shuffleArray(['your', 'Have', 'finished', 'homework', 'yet?', 'you']),
+      correctAnswer: ['Have', 'you', 'finished', 'your', 'homework', 'yet?'],
+      explanation: 'Present Perfect pregunta: Have/Has + subject + past participle. "Yet" en preguntas significa "ya" y sugiere que esperamos que la acción esté completa pronto.'
+    },
+    {
+      sentenceParts: [
+        { type: 'reorder', content: '' }
+      ],
+      words: shuffleArray(['arrived', 'Laura', 'the', 'at', 'has', 'just', 'airport.']),
+      correctAnswer: ['Laura', 'has', 'just', 'arrived', 'at', 'the', 'airport.'],
+      explanation: 'Present Perfect con "just": Subject + has/have + just + past participle. "Just" indica que la acción ocurrió muy recientemente y es relevante ahora.'
+    },
+    {
+      sentenceParts: [
+        { type: 'reorder', content: '' }
+      ],
+      words: shuffleArray(['years', 'ago.', 'We', 'here', 'moved', 'three']),
+      correctAnswer: ['We', 'moved', 'here', 'three', 'years', 'ago.'],
+      explanation: 'Past Simple: Subject + verb (past). Usamos Past Simple porque "ago" siempre indica un tiempo específico terminado en el pasado.'
+    },
+    {
+      sentenceParts: [
+        { type: 'reorder', content: '' }
+      ],
+      words: shuffleArray(['been', 'to', 'has', 'USA.', 'Peter', 'never', 'the']),
+      correctAnswer: ['Peter', 'has', 'never', 'been', 'to', 'the', 'USA.'],
+      explanation: 'Present Perfect con "never": Subject + has/have + never + past participle. "Never" indica una experiencia de vida (nunca en toda su vida hasta ahora).'
+    }
+  ],
+
   'future-simple': [
     {
       sentenceParts: [

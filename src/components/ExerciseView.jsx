@@ -443,6 +443,7 @@ const ExerciseView = ({ tenseId }) => {
       'work': 'Work - Vocabulary',
       'adverbs-phrases': 'Adverbs and Adverbial Phrases - Vocabulary',
       'business': 'Business - Vocabulary',
+      'present-perfect-past-simple-2': 'Present Perfect & Past Simple (2) - Word Order',
     };
     return titles[tenseId] || 'Ejercicios';
   };
@@ -502,6 +503,12 @@ const ExerciseView = ({ tenseId }) => {
         negative: 'Subject + had + not + been + verb + ing',
         interrogative: 'Had + subject + been + verb + ing?',
         example: 'I had been working / Had you been working?'
+      },
+      'present-perfect-past-simple-2': {
+        affirmative: 'Present Perfect: have/has + past participle | Past Simple: verb + ed (regular) / irregular form',
+        negative: 'Present Perfect: haven\'t/hasn\'t + past participle | Past Simple: didn\'t + verb (base form)',
+        interrogative: 'Present Perfect: Have/Has + subject + past participle? | Past Simple: Did + subject + verb?',
+        example: 'Present Perfect (experience, unfinished time): I have visited Paris | Past Simple (finished time): I visited Paris in 2020'
       },
       'future-simple': {
         affirmative: 'Subject + will + verb (base form)',
