@@ -1030,6 +1030,81 @@ export const vocabularyData = {
       explanation: '"Invest" significa invertir. To buy shares in a company is to invest.',
       imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop'
     }
+  ],
+
+  'personality': [
+    {
+      englishWord: 'Dishonest',
+      spanishWord: ['deshonesto', 'mentiroso'],
+      explanation: '"Dishonest" significa deshonesto. The opposite of honest.',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Competitive',
+      spanishWord: ['competitivo', 'competitiva'],
+      explanation: '"Competitive" significa competitivo. Someone who always wants to win is competitive.',
+      imageUrl: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Generous',
+      spanishWord: ['generoso', 'generosa'],
+      explanation: '"Generous" significa generoso. The opposite of mean.',
+      imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Bossy',
+      spanishWord: ['mandón', 'mandona', 'autoritario'],
+      explanation: '"Bossy" significa mandón o autoritario. Someone who gives orders is bossy.',
+      imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Impatient',
+      spanishWord: ['impaciente'],
+      explanation: '"Impatient" significa impaciente. The opposite of patient.',
+      imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Reliable',
+      spanishWord: ['confiable', 'fiable'],
+      explanation: '"Reliable" significa confiable. Someone you can trust is reliable.',
+      imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Stupid',
+      spanishWord: ['estúpido', 'tonto'],
+      explanation: '"Stupid" significa estúpido o tonto. The opposite of clever.',
+      imageUrl: 'https://images.unsplash.com/photo-1583421194803-5e467c3a39b6?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Independent',
+      spanishWord: ['independiente'],
+      explanation: '"Independent" significa independiente. Someone who likes doing things alone is independent.',
+      imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Quiet',
+      spanishWord: ['callado', 'callada', 'tranquilo'],
+      explanation: '"Quiet" significa callado o tranquilo. The opposite of talkative.',
+      imageUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Spoilt',
+      spanishWord: ['mimado', 'mimada', 'malcriado'],
+      explanation: '"Spoilt" significa mimado o malcriado. Only children are often spoilt.',
+      imageUrl: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Sociable',
+      spanishWord: ['sociable', 'extrovertido'],
+      explanation: '"Sociable" significa sociable. If you like being with people, you are sociable.',
+      imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Charming',
+      spanishWord: ['encantador', 'encantadora', 'carismático'],
+      explanation: '"Charming" significa encantador. Someone who has an attractive personality is charming.',
+      imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop'
+    }
   ]
 };
 
