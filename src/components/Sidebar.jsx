@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Sidebar = ({ selectedTense, onSelectTense }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [expandedSections, setExpandedSections] = useState({
+    'Upper-Intermediate': true,
     'Tiempos Verbales': true,
     'Present': true,
     'Past': false,
@@ -80,7 +81,20 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
         </div>
 
         <div className="flex-1 overflow-y-auto p-4">
-          {/* Sección principal: Tiempos Verbales */}
+          {/* Sección principal: Upper-Intermediate */}
+          <div className="mb-2">
+            <button
+              onClick={() => toggleSection('Upper-Intermediate')}
+              className="w-full flex items-center justify-between text-xs font-semibold text-yellow-400 uppercase tracking-wider hover:text-yellow-300 hover:bg-gray-800 rounded-lg transition-all duration-300 py-2 px-2 group border-2 border-yellow-600"
+            >
+              <span className="group-hover:translate-x-1 transition-transform duration-300">🎯 Upper-Intermediate B2</span>
+              <span className={`text-lg transition-transform duration-500 ${expandedSections['Upper-Intermediate'] ? 'rotate-180' : 'rotate-0'}`}>▼</span>
+            </button>
+
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['Upper-Intermediate'] ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="ml-1 mt-2 space-y-2">
+          
+          {/* Sección: Tiempos Verbales */}
           <div className="mb-2">
             <button
               onClick={() => toggleSection('Tiempos Verbales')}
@@ -371,6 +385,12 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               </div>
             </div>
           </div>
+              
+              </div>
+            </div>
+          </div>
+          {/* Fin de Upper-Intermediate */}
+          
         </div>
       </div>
 
