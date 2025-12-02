@@ -4,264 +4,384 @@ const AdjectivesExercise = () => {
   const questions = [
     {
       id: 1,
-      text: "I'm sure Hannah will know the answer because she's very",
-      options: ['gentle', 'steady', 'bright'],
-      correct: 'bright'
+      text: "The security analyst is very",
+      textAfter: "when it comes to analyzing malware behavior and finding vulnerabilities.",
+      options: ['careless', 'meticulous', 'reckless'],
+      correct: 'meticulous'
     },
     {
       id: 2,
-      text: "He's very",
-      textAfter: ", so don't be afraid to tell him why you're upset.",
-      options: ['sympathetic', 'annoying', 'sarcastic'],
-      correct: 'sympathetic'
+      text: "A good penetration tester must be",
+      textAfter: "to find creative solutions when standard attack vectors fail.",
+      options: ['resourceful', 'predictable', 'rigid'],
+      correct: 'resourceful'
     },
     {
       id: 3,
-      text: "People say Chloe is very",
-      textAfter: "and I'd agree that she's careful and works hard.",
-      options: ['straightforward', 'conscientious', 'sarcastic'],
-      correct: 'conscientious'
+      text: "The firewall configuration should be",
+      textAfter: "to prevent any unauthorized access attempts.",
+      options: ['robust', 'vulnerable', 'weak'],
+      correct: 'robust'
     },
     {
       id: 4,
-      text: "Any Olympic athlete has to be",
-      textAfter: "because the one thing you can't do is give up.",
-      options: ['determined', 'sympathetic', 'gentle'],
-      correct: 'determined'
+      text: "Our incident response team is extremely",
+      textAfter: "and can detect threats within minutes of intrusion.",
+      options: ['vigilant', 'negligent', 'unaware'],
+      correct: 'vigilant'
     },
     {
       id: 5,
-      text: "She's perfectly happy to do the project on her own so I think you'd say she's",
-      options: ['self-sufficient', 'steady', 'spontaneous'],
-      correct: 'self-sufficient'
+      text: "The security protocol must be",
+      textAfter: "enough to protect against sophisticated attacks.",
+      options: ['comprehensive', 'incomplete', 'basic'],
+      correct: 'comprehensive'
     },
     {
       id: 6,
-      text: "Jamie is very aggressive but his twin brother is almost the opposite – so",
-      textAfter: "and caring.",
-      options: ['bright', 'gentle', 'thorough'],
-      correct: 'gentle'
+      text: "Zero-day exploits are particularly",
+      textAfter: "because no patch exists to fix the vulnerability.",
+      options: ['harmless', 'trivial', 'critical'],
+      correct: 'critical'
     },
     {
       id: 7,
-      text: "I don't like it when Alex is",
-      textAfter: "because, though he thinks he's funny, he is actually being mean.",
-      options: ['resourceful', 'sympathetic', 'sarcastic'],
-      correct: 'sarcastic'
+      text: "The encryption algorithm is so",
+      textAfter: "that even quantum computers would struggle to break it.",
+      options: ['sophisticated', 'primitive', 'simple'],
+      correct: 'sophisticated'
     },
     {
       id: 8,
-      text: "My relationship with my aunt is very complicated but my uncle is more",
-      options: ['sarcastic', 'straightforward', 'determined'],
-      correct: 'straightforward'
+      text: "Phishing attacks are becoming increasingly",
+      textAfter: "making it harder for users to identify malicious emails.",
+      options: ['obvious', 'deceptive', 'transparent'],
+      correct: 'deceptive'
     }
   ];
 
-  const [answers, setAnswers] = useState({});
-  const [showScore, setShowScore] = useState(false);
-  const [showAnswers, setShowAnswers] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [score, setScore] = useState(0);
+  const [answeredQuestions, setAnsweredQuestions] = useState([]);
+  const [isCompleted, setIsCompleted] = useState(false);
 
-  const handleAnswerChange = (questionId, value) => {
-    setAnswers({ ...answers, [questionId]: value });
-    setShowScore(false);
-    setShowAnswers(false);
+  const handleAnswerSelect = (value) => {
+    if (!showFeedback) {
+      setSelectedAnswer(value);
+    }
   };
 
-  const calculateScore = () => {
-    let correct = 0;
-    questions.forEach(question => {
-      if (answers[question.id] === question.correct) {
-        correct++;
+  const handleSubmit = () => {
+    if (selectedAnswer) {
+      setShowFeedback(true);
+      const isCorrect = selectedAnswer === questions[currentQuestion].correct;
+      if (isCorrect) {
+        setScore(score + 1);
       }
-    });
-    return correct;
+      setAnsweredQuestions([...answeredQuestions, {
+        questionId: questions[currentQuestion].id,
+        answer: selectedAnswer,
+        correct: isCorrect
+      }]);
+    }
   };
 
-  const handleScore = () => {
-    setShowScore(true);
-    setShowAnswers(false);
+  const handleNext = () => {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedAnswer('');
+      setShowFeedback(false);
+    } else {
+      setIsCompleted(true);
+    }
   };
 
   const handleReset = () => {
-    setAnswers({});
-    setShowScore(false);
-    setShowAnswers(false);
+    setCurrentQuestion(0);
+    setSelectedAnswer('');
+    setShowFeedback(false);
+    setScore(0);
+    setAnsweredQuestions([]);
+    setIsCompleted(false);
   };
 
-  const handleShowAnswers = () => {
-    setShowAnswers(true);
-    setShowScore(false);
-  };
-
-  const score = calculateScore();
   const totalQuestions = questions.length;
+  const currentQ = questions[currentQuestion];
+
+  // Completion view
+  if (isCompleted) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="bg-htb-card border border-htb-green/30 rounded-lg shadow-lg p-6 mb-6">
+          <h1 className="text-3xl font-bold text-white mb-2">Advanced Vocabulary: Cybersecurity Adjectives</h1>
+          <p className="text-htb-text">Exercise Completed!</p>
+        </div>
+
+        {/* Final Score */}
+        <div className="bg-htb-card border border-htb-green/30 rounded-lg p-8 mb-6">
+          <div className="text-center">
+            <div className="text-6xl mb-4">
+              {score === totalQuestions ? '🏆' : score >= totalQuestions * 0.7 ? '✅' : '📝'}
+            </div>
+            <p className="text-4xl font-bold text-htb-green mb-4">
+              {score}/{totalQuestions}
+            </p>
+            <div className="w-full bg-htb-sidebar rounded-full h-6 mb-6 max-w-md mx-auto">
+              <div
+                className="bg-htb-green h-6 rounded-full transition-all duration-500 flex items-center justify-center"
+                style={{ width: `${(score / totalQuestions) * 100}%` }}
+              >
+                <span className="text-xs font-bold text-htb-bg">
+                  {Math.round((score / totalQuestions) * 100)}%
+                </span>
+              </div>
+            </div>
+            <p className={`text-xl font-semibold ${
+              score === totalQuestions 
+                ? 'text-htb-green' 
+                : score >= totalQuestions * 0.7 
+                ? 'text-blue-400' 
+                : 'text-yellow-400'
+            }`}>
+              {score === totalQuestions 
+                ? 'Perfect score! Excellent work!' 
+                : score >= totalQuestions * 0.7 
+                ? 'Great job! Keep practicing.' 
+                : 'Good effort! Try again to improve your score.'}
+            </p>
+          </div>
+
+          {/* Review Answers */}
+          <div className="mt-8 space-y-4">
+            <h3 className="text-lg font-bold text-white mb-4">📋 Review Your Answers:</h3>
+            {answeredQuestions.map((item, index) => {
+              const question = questions.find(q => q.id === item.questionId);
+              return (
+                <div key={item.questionId} className={`p-4 rounded-lg border-2 ${
+                  item.correct ? 'border-htb-green/30 bg-htb-green/5' : 'border-red-500/30 bg-red-500/5'
+                }`}>
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">{item.correct ? '✓' : '✗'}</span>
+                    <div className="flex-1">
+                      <p className="text-htb-text mb-2">
+                        <span className="font-semibold">{index + 1}.</span> {question.text}{' '}
+                        <span className={item.correct ? 'text-htb-green font-bold' : 'text-red-400 font-bold line-through'}>
+                          {item.answer}
+                        </span>
+                        {question.textAfter && <span> {question.textAfter}</span>}
+                      </p>
+                      {!item.correct && (
+                        <p className="text-sm">
+                          <span className="text-htb-text-dim">Correct answer: </span>
+                          <span className="text-htb-green font-semibold">{question.correct}</span>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <button
+            onClick={handleReset}
+            className="w-full mt-8 bg-htb-green hover:bg-htb-green-hover text-htb-bg px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+          >
+            🔄 Try Again
+          </button>
+        </div>
+
+        {/* Vocabulary Reference */}
+        <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-6">
+          <h3 className="text-xl font-bold text-white mb-4">📚 Cybersecurity Adjectives</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">meticulous:</span>{' '}
+              <span className="text-htb-text text-sm">extremely careful and precise</span>
+            </div>
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">resourceful:</span>{' '}
+              <span className="text-htb-text text-sm">able to find clever solutions</span>
+            </div>
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">robust:</span>{' '}
+              <span className="text-htb-text text-sm">strong and secure</span>
+            </div>
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">vigilant:</span>{' '}
+              <span className="text-htb-text text-sm">always alert and watchful</span>
+            </div>
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">comprehensive:</span>{' '}
+              <span className="text-htb-text text-sm">complete and thorough</span>
+            </div>
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">critical:</span>{' '}
+              <span className="text-htb-text text-sm">extremely important or dangerous</span>
+            </div>
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">sophisticated:</span>{' '}
+              <span className="text-htb-text text-sm">advanced and complex</span>
+            </div>
+            <div className="bg-htb-card border border-gray-800 rounded p-3">
+              <span className="text-htb-green font-semibold">deceptive:</span>{' '}
+              <span className="text-htb-text text-sm">misleading or designed to trick</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="bg-htb-card border border-htb-green/30 rounded-lg shadow-lg p-6 mb-6">
-        <h1 className="text-3xl font-bold text-white mb-2">Advanced Vocabulary: Adjectives</h1>
+        <h1 className="text-3xl font-bold text-white mb-2">Advanced Vocabulary: Cybersecurity Adjectives</h1>
         <p className="text-htb-text">Choose the correct adjective to complete each sentence</p>
-      </div>
-
-      {/* Feedback Score */}
-      {showScore && (
-        <div className="bg-htb-card border border-gray-800 rounded-lg p-6 mb-6">
-          <div className="text-center">
-            <p className="text-2xl font-bold text-htb-green mb-4">
-              Score: {score}/{totalQuestions}
-            </p>
-            <div className="w-full bg-htb-sidebar rounded-full h-4 mb-4">
-              <div
-                className="bg-htb-green h-4 rounded-full transition-all duration-500"
-                style={{ width: `${(score / totalQuestions) * 100}%` }}
-              ></div>
-            </div>
-            <p className={`text-lg font-semibold ${score === totalQuestions ? 'text-htb-green' : 'text-htb-text'}`}>
-              {score < 8 ? '0-7 Please try again.' : '8/8 - Well done!'}
-            </p>
+        
+        {/* Progress Indicator */}
+        <div className="mt-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-htb-text-dim text-sm">Question</span>
+            <span className="text-htb-green font-bold text-lg">{currentQuestion + 1}</span>
+            <span className="text-htb-text-dim text-sm">of {totalQuestions}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-htb-text-dim text-sm">Score:</span>
+            <span className="text-htb-green font-bold text-lg">{score}/{currentQuestion + (showFeedback ? 1 : 0)}</span>
           </div>
         </div>
-      )}
+        
+        {/* Progress Bar */}
+        <div className="w-full bg-htb-sidebar rounded-full h-2 mt-4">
+          <div
+            className="bg-htb-green h-2 rounded-full transition-all duration-300"
+            style={{ width: `${((currentQuestion + (showFeedback ? 1 : 0)) / totalQuestions) * 100}%` }}
+          ></div>
+        </div>
+      </div>
 
-      {/* Exercise */}
-      <div className="bg-htb-card border border-gray-800 rounded-lg p-6 mb-6">
-        <p className="text-htb-green font-semibold mb-6">Choose the correct answer.</p>
+      {/* Question */}
+      <div className="bg-htb-card border border-gray-800 rounded-lg p-8 mb-6">
+        <div className="mb-8">
+          <p className="text-htb-text text-lg leading-relaxed">
+            {currentQ.text}{' '}
+            <span className="inline-block min-w-[150px]">
+              <select
+                value={selectedAnswer}
+                onChange={(e) => handleAnswerSelect(e.target.value)}
+                disabled={showFeedback}
+                className={`px-4 py-2 rounded-lg border-2 bg-htb-bg text-white font-semibold focus:outline-none focus:ring-2 focus:ring-htb-green transition-all ${
+                  showFeedback
+                    ? selectedAnswer === currentQ.correct
+                      ? 'border-htb-green'
+                      : 'border-red-500'
+                    : 'border-gray-700 hover:border-htb-green/50'
+                }`}
+              >
+                <option value="">...</option>
+                {currentQ.options.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </span>
+            {' '}{currentQ.textAfter}
+          </p>
+        </div>
 
-        <ol className="space-y-6">
-          {questions.map((question, index) => {
-            const isAnswered = answers[question.id];
-            const isCorrect = answers[question.id] === question.correct;
-            const showFeedback = showScore || showAnswers;
-
-            return (
-              <li key={question.id} className="flex items-start gap-3">
-                <span className="text-htb-text font-semibold mt-2">{index + 1}.</span>
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 text-htb-text">
-                    <span>{question.text}</span>
-                    
-                    <div className="relative inline-block">
-                      <select
-                        value={answers[question.id] || ''}
-                        onChange={(e) => handleAnswerChange(question.id, e.target.value)}
-                        className={`px-4 py-2 rounded-lg border-2 bg-htb-bg text-white font-semibold focus:outline-none focus:ring-2 focus:ring-htb-green transition-all ${
-                          showFeedback
-                            ? isCorrect
-                              ? 'border-htb-green'
-                              : isAnswered
-                              ? 'border-red-500'
-                              : 'border-gray-700'
-                            : 'border-gray-700 hover:border-htb-green/50'
-                        }`}
-                      >
-                        <option value="">...</option>
-                        {question.options.map((option) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                      
-                      {/* Feedback icon */}
-                      {showFeedback && isAnswered && (
-                        <span className={`ml-2 text-xl ${isCorrect ? 'text-htb-green' : 'text-red-500'}`}>
-                          {isCorrect ? '✓' : '✗'}
-                        </span>
-                      )}
-                    </div>
-
-                    {question.textAfter && <span>{question.textAfter}</span>}
-                    {!question.textAfter && <span>.</span>}
-                  </div>
-
-                  {/* Show correct answer if needed */}
-                  {showAnswers && !isCorrect && isAnswered && (
-                    <div className="mt-2 text-sm">
-                      <span className="text-htb-text">Correct answer: </span>
-                      <span className="text-htb-green font-semibold">{question.correct}</span>
-                    </div>
-                  )}
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+        {/* Feedback */}
+        {showFeedback && (
+          <div className={`p-4 rounded-lg border-2 mb-6 ${
+            selectedAnswer === currentQ.correct
+              ? 'border-htb-green/30 bg-htb-green/10'
+              : 'border-red-500/30 bg-red-500/10'
+          }`}>
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">
+                {selectedAnswer === currentQ.correct ? '✓' : '✗'}
+              </span>
+              <div>
+                <p className={`font-bold text-lg ${
+                  selectedAnswer === currentQ.correct ? 'text-htb-green' : 'text-red-400'
+                }`}>
+                  {selectedAnswer === currentQ.correct ? 'Correct!' : 'Incorrect'}
+                </p>
+                {selectedAnswer !== currentQ.correct && (
+                  <p className="text-htb-text text-sm mt-1">
+                    The correct answer is: <span className="text-htb-green font-semibold">{currentQ.correct}</span>
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 mt-8">
-          <button
-            onClick={handleScore}
-            className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-          >
-            📊 Score
-          </button>
-          <button
-            onClick={handleReset}
-            className="bg-htb-sidebar border border-gray-700 hover:border-htb-green/50 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-          >
-            🔄 Start again
-          </button>
-          <button
-            onClick={handleShowAnswers}
-            className="bg-htb-sidebar border border-gray-700 hover:border-htb-green/50 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-          >
-            👁️ Show answers
-          </button>
+        <div className="flex gap-4">
+          {!showFeedback ? (
+            <button
+              onClick={handleSubmit}
+              disabled={!selectedAnswer}
+              className={`flex-1 px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all duration-200 ${
+                selectedAnswer
+                  ? 'bg-htb-green hover:bg-htb-green-hover text-htb-bg hover:shadow-xl transform hover:scale-105'
+                  : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+              }`}
+            >
+              ✓ Check Answer
+            </button>
+          ) : (
+            <button
+              onClick={handleNext}
+              className="flex-1 bg-htb-green hover:bg-htb-green-hover text-htb-bg px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+            >
+              {currentQuestion < totalQuestions - 1 ? '→ Next Question' : '🏁 Finish'}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Vocabulary Reference */}
       <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-6">
-        <h3 className="text-xl font-bold text-white mb-4">📚 Adjective Definitions</h3>
+        <h3 className="text-xl font-bold text-white mb-4">📚 Cybersecurity Adjectives</h3>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">bright:</span>{' '}
-            <span className="text-htb-text text-sm">intelligent and quick to learn</span>
-          </div>
-          <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">sympathetic:</span>{' '}
-            <span className="text-htb-text text-sm">showing understanding and care</span>
-          </div>
-          <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">conscientious:</span>{' '}
-            <span className="text-htb-text text-sm">careful and thorough in work</span>
-          </div>
-          <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">determined:</span>{' '}
-            <span className="text-htb-text text-sm">having strong will to succeed</span>
-          </div>
-          <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">self-sufficient:</span>{' '}
-            <span className="text-htb-text text-sm">able to do things independently</span>
-          </div>
-          <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">gentle:</span>{' '}
-            <span className="text-htb-text text-sm">kind, mild, and soft in manner</span>
-          </div>
-          <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">sarcastic:</span>{' '}
-            <span className="text-htb-text text-sm">using irony to mock or convey contempt</span>
-          </div>
-          <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">straightforward:</span>{' '}
-            <span className="text-htb-text text-sm">honest, direct, and easy to understand</span>
+            <span className="text-htb-green font-semibold">meticulous:</span>{' '}
+            <span className="text-htb-text text-sm">extremely careful and precise</span>
           </div>
           <div className="bg-htb-card border border-gray-800 rounded p-3">
             <span className="text-htb-green font-semibold">resourceful:</span>{' '}
             <span className="text-htb-text text-sm">able to find clever solutions</span>
           </div>
           <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">thorough:</span>{' '}
-            <span className="text-htb-text text-sm">complete and careful in detail</span>
+            <span className="text-htb-green font-semibold">robust:</span>{' '}
+            <span className="text-htb-text text-sm">strong and secure</span>
           </div>
           <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">spontaneous:</span>{' '}
-            <span className="text-htb-text text-sm">acting without planning</span>
+            <span className="text-htb-green font-semibold">vigilant:</span>{' '}
+            <span className="text-htb-text text-sm">always alert and watchful</span>
           </div>
           <div className="bg-htb-card border border-gray-800 rounded p-3">
-            <span className="text-htb-green font-semibold">steady:</span>{' '}
-            <span className="text-htb-text text-sm">reliable and consistent</span>
+            <span className="text-htb-green font-semibold">comprehensive:</span>{' '}
+            <span className="text-htb-text text-sm">complete and thorough</span>
+          </div>
+          <div className="bg-htb-card border border-gray-800 rounded p-3">
+            <span className="text-htb-green font-semibold">critical:</span>{' '}
+            <span className="text-htb-text text-sm">extremely important or dangerous</span>
+          </div>
+          <div className="bg-htb-card border border-gray-800 rounded p-3">
+            <span className="text-htb-green font-semibold">sophisticated:</span>{' '}
+            <span className="text-htb-text text-sm">advanced and complex</span>
+          </div>
+          <div className="bg-htb-card border border-gray-800 rounded p-3">
+            <span className="text-htb-green font-semibold">deceptive:</span>{' '}
+            <span className="text-htb-text text-sm">misleading or designed to trick</span>
           </div>
         </div>
       </div>
