@@ -453,6 +453,57 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     </button>
                   </div>
                 )}
+
+                {/* Exams */}
+                <button
+                  onClick={() => toggleSection('Exam')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Exam</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Exam'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Exam'] && (
+                  <div className="ml-3">
+                    <button
+                      onClick={() => onSelectTense('exam')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'exam'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Complete Exam
+                    </button>
+                  </div>
+                )}
+
+                <button
+                  onClick={() => toggleSection('Exam 2')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Exam 2 - Cybersecurity</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Exam 2'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Exam 2'] && (
+                  <div className="ml-3">
+                    <button
+                      onClick={() => onSelectTense('exam2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'exam2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Cybersecurity Exam
+                    </button>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -503,75 +554,6 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       }`}
                     >
                       Conflict and Warfare
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-
-          {/* B2 UPPER-INTERMEDIATE */}
-          <div>
-            <button
-              onClick={() => toggleSection('Upper-Intermediate')}
-              className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
-            >
-              <span className="text-htb-text">Upper-Intermediate B2</span>
-              <svg className={`w-4 h-4 transition-transform ${expandedSections['Upper-Intermediate'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {expandedSections['Upper-Intermediate'] && (
-              <div className="ml-3 mt-1 space-y-1">
-
-                {/* Exams */}
-                <button
-                  onClick={() => toggleSection('Exam')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
-                >
-                  <span className="text-htb-text-dim">Exam</span>
-                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Exam'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-
-                {expandedSections['Exam'] && (
-                  <div className="ml-3">
-                    <button
-                      onClick={() => onSelectTense('exam')}
-                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
-                        selectedTense === 'exam'
-                          ? 'bg-htb-green text-htb-bg font-medium'
-                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
-                      }`}
-                    >
-                      Complete Exam
-                    </button>
-                  </div>
-                )}
-
-                <button
-                  onClick={() => toggleSection('Exam 2')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
-                >
-                  <span className="text-htb-text-dim">Exam 2 - Cybersecurity</span>
-                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Exam 2'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-
-                {expandedSections['Exam 2'] && (
-                  <div className="ml-3">
-                    <button
-                      onClick={() => onSelectTense('exam2')}
-                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
-                        selectedTense === 'exam2'
-                          ? 'bg-htb-green text-htb-bg font-medium'
-                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
-                      }`}
-                    >
-                      Cybersecurity Exam
                     </button>
                   </div>
                 )}
