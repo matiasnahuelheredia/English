@@ -730,6 +730,156 @@ export const vocabularyData = {
       explanation: '"Pay for" - I pay FOR all my online shopping by credit card. Pagar POR algo.',
       imageUrl: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=300&fit=crop'
     }
+  ],
+
+  'education': [
+    {
+      englishWord: 'Revise',
+      spanishWord: ['repasar', 'estudiar', 'revisar'],
+      explanation: '"Revise" significa repasar o estudiar. To prepare for an exam = revise.',
+      imageUrl: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Fail',
+      spanishWord: ['reprobar', 'suspender', 'fallar'],
+      explanation: '"Fail" significa reprobar o suspender. The opposite of pass an exam.',
+      imageUrl: 'https://images.unsplash.com/photo-1554224311-beee4ece4959?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Pupil',
+      spanishWord: ['alumno', 'alumna', 'estudiante'],
+      explanation: '"Pupil" significa alumno o estudiante. A child who is at school.',
+      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Terms',
+      spanishWord: ['trimestres', 'períodos escolares'],
+      explanation: '"Terms" significa trimestres o períodos escolares. A school year is divided into three terms.',
+      imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Primary school',
+      spanishWord: ['escuela primaria', 'primaria'],
+      explanation: '"Primary school" significa escuela primaria. For children between 4 and 11.',
+      imageUrl: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Secondary school',
+      spanishWord: ['escuela secundaria', 'secundaria'],
+      explanation: '"Secondary school" significa escuela secundaria. For children between 11 and 18.',
+      imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Kindergarten',
+      spanishWord: ['jardín de infantes', 'kínder', 'preescolar'],
+      explanation: '"Kindergarten" significa jardín de infantes. In the US, nursery school is known as kindergarten.',
+      imageUrl: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Boarding school',
+      spanishWord: ['internado', 'escuela interna'],
+      explanation: '"Boarding school" significa internado. Some children go away to boarding school (viven allí).',
+      imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Degree',
+      spanishWord: ['título universitario', 'grado', 'licenciatura'],
+      explanation: '"Degree" significa título universitario. When you graduate from university, you will have a degree.',
+      imageUrl: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'State schools',
+      spanishWord: ['escuelas públicas', 'escuelas estatales'],
+      explanation: '"State schools" significa escuelas públicas/estatales. Schools that are free to attend.',
+      imageUrl: 'https://images.unsplash.com/photo-1577896851905-4d2d8e0b7a1d?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Private schools',
+      spanishWord: ['escuelas privadas', 'colegios privados'],
+      explanation: '"Private schools" significa escuelas privadas. Schools where parents have to pay.',
+      imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Pass your exams',
+      spanishWord: ['aprobar los exámenes', 'pasar los exámenes'],
+      explanation: '"Pass your exams" significa aprobar los exámenes. To do well at school, you need to pass your exams.',
+      imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop'
+    }
+  ],
+
+  'food-cooking': [
+    {
+      englishWord: 'Boiled',
+      spanishWord: ['hervido', 'cocido'],
+      explanation: '"Boiled" significa hervido. Cooked in very hot water.',
+      imageUrl: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Baked',
+      spanishWord: ['horneado', 'al horno'],
+      explanation: '"Baked" significa horneado. Cooked in the oven, e.g. cakes or bread.',
+      imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Roast',
+      spanishWord: ['asado', 'rostizado'],
+      explanation: '"Roast" significa asado. Meat is cooked like this in the oven.',
+      imageUrl: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Meat',
+      spanishWord: ['carne'],
+      explanation: '"Meat" significa carne. For example, chicken, sausages, duck.',
+      imageUrl: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Fried',
+      spanishWord: ['frito', 'freído'],
+      explanation: '"Fried" significa frito. Eggs can be boiled or fried.',
+      imageUrl: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Peppers',
+      spanishWord: ['pimientos', 'morrones'],
+      explanation: '"Peppers" significa pimientos. Usually red or green, but can be yellow or orange.',
+      imageUrl: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Fruit',
+      spanishWord: ['fruta', 'frutas'],
+      explanation: '"Fruit" significa fruta. Grapes, cherries and raspberries are types of fruit.',
+      imageUrl: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Seafood',
+      spanishWord: ['mariscos', 'frutos del mar'],
+      explanation: '"Seafood" significa mariscos. Prawns and mussels are types of seafood.',
+      imageUrl: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Grill',
+      spanishWord: ['asar a la parrilla', 'grillar'],
+      explanation: '"Grill" significa asar a la parrilla. The healthiest way to cook meat is to grill it.',
+      imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Eating out',
+      spanishWord: ['comer afuera', 'salir a comer'],
+      explanation: '"Eating out" significa comer afuera o en restaurantes. Also known as dining out.',
+      imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Steam',
+      spanishWord: ['cocinar al vapor', 'vaporizar'],
+      explanation: '"Steam" significa cocinar al vapor. A healthy way to cook vegetables is to steam them.',
+      imageUrl: 'https://images.unsplash.com/photo-1607532941433-304659e8198a?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Vegetables',
+      spanishWord: ['verduras', 'vegetales'],
+      explanation: '"Vegetables" significa verduras. Peppers, cabbage and courgettes are vegetables.',
+      imageUrl: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop'
+    }
   ]
 };
 
