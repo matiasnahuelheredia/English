@@ -29,7 +29,7 @@ const ExerciseView = ({ tenseId }) => {
   const [isReversed, setIsReversed] = useState(true);
   const [isVocabulary, setIsVocabulary] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [countdown, setCountdown] = useState(20);
+  const [countdown, setCountdown] = useState(4);
   const [initialCountdown, setInitialCountdown] = useState(20);
   const [stats, setStats] = useState({ correct: 0, incorrect: 0 });
   const [vocabularyImage, setVocabularyImage] = useState(null);
@@ -820,7 +820,7 @@ const ExerciseView = ({ tenseId }) => {
             {isVocabulary && feedback && !feedback.isCorrect && !showAnswer && (
               <div className="mt-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
                 <p className="text-sm text-htb-text">
-                  La respuesta se mostrará en <span className="font-bold text-htb-green text-lg">{countdown}</span> segundo{countdown !== 1 ? 's' : ''}
+                  Next answer in <span className="font-bold text-htb-green text-lg">{countdown}</span> second{countdown !== 1 ? 's' : ''}
                 </p>
               </div>
             )}

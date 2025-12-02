@@ -86,7 +86,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
             </div>
             <div>
               <h1 className="text-lg font-semibold text-white">English Learning</h1>
-              <p className="text-xs text-htb-text-dim">Practice Platform</p>
+              <p className="text-xs text-htb-text-dim">Hacking Practice Platform</p>
             </div>
           </div>
         </div>
