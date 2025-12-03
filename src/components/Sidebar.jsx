@@ -541,6 +541,17 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     </button>
                   </div>
                 )}
+
+                <button
+                  onClick={() => onSelectTense('exam3')}
+                  className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                    selectedTense === 'exam3'
+                      ? 'bg-htb-green text-htb-bg font-medium'
+                      : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                  }`}
+                >
+                  Final Exam
+                </button>
               </div>
             )}
           </div>
