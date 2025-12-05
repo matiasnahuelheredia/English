@@ -6,6 +6,1092 @@ const EmailWritingB2 = () => {
   const emailExamples = [
     {
       id: 1,
+      title: 'Informal Email - Catching Up with Friend',
+      category: 'Informal',
+      subject: 'News!',
+      to: 'johnstons586@gmail.com',
+      situation: 'You haven\'t been in touch with your friend Sue for a while because you\'ve been ill. Write an informal email catching up and asking for hotel recommendations.',
+      email: `Hi Sue,
+
+Sorry that I haven\'t been in touch for a while, but I\'ve been ill. I got flu last week and I had a temperature of 39°C, so I\'ve been in bed for four days. I\'m feeling a bit better today, so I\'ve been catching up on my emails. Luckily, my classes at university don\'t start till next week.
+
+How are you? What have you been doing? Anything exciting? Here everyone is fine (apart from me and my flu!). My brother Ian has just started his new job with a software company – I think I told you about it when I last wrote – anyway, so far, he\'s really been enjoying it. How is your family? I hope they\'re well.
+
+I have some good news – I\'m going to a conference in your town in May, from 16th to 20th. Could you recommend a hotel where I could stay, in the centre of town? It needs to be somewhere not too expensive because the university is paying. I\'ll have a free half-day for sightseeing. Do you think you\'ll be able to show me around? That would be great.
+
+Well, that\'s all for now. Please give my regards to your parents.
+
+Hope to hear from you soon.
+
+Take care,
+
+Anna
+
+PS Please reply to this email address. I\'ve stopped using the old Yahoo one.`,
+      keyPhrases: [
+        'Sorry that I haven\'t been in touch',
+        'I\'ve been ill',
+        'I\'m feeling a bit better',
+        'catching up on my emails',
+        'How are you?',
+        'What have you been doing?',
+        'everyone is fine',
+        'has just started',
+        'I have some good news',
+        'Could you recommend',
+        'Do you think you\'ll be able to',
+        'Hope to hear from you soon',
+        'Take care'
+      ],
+      structure: [
+        '1. Greeting: Informal opening with apology',
+        '2. Explanation: Reason for not being in touch',
+        '3. Current status: Update on recovery',
+        '4. Questions: Ask about friend\'s life',
+        '5. Family news: Update on brother',
+        '6. Main request: Conference and hotel recommendation',
+        '7. Additional request: Ask to meet up',
+        '8. Closing: Friendly sign-off with PS'
+      ],
+      grammarFocus: [
+        'Present Perfect: "haven\'t been in touch", "I\'ve been ill"',
+        'Present Perfect Continuous: "I\'ve been catching up"',
+        'Past Simple: "I got flu", "I had a temperature"',
+        'Present Continuous for future: "I\'m going to a conference"',
+        'Modal verbs: "Could you recommend", "Do you think you\'ll be able"',
+        'Time expressions: "for a while", "for four days", "so far"',
+        'Informal contractions throughout'
+      ]
+    },
+    {
+      id: 2,
+      title: 'Informal Email - Planning a Reunion',
+      category: 'Informal',
+      subject: 'Long time no see!',
+      to: 'mike.taylor@email.com',
+      situation: 'You want to organize a reunion with old university friends. Write an informal email suggesting dates and asking for ideas.',
+      email: `Hey Mike!
+
+I can\'t believe it\'s been almost two years since we all graduated! Time really does fly, doesn\'t it? I\'ve been thinking about this for ages, and I reckon it\'s about time we got the old gang back together for a proper reunion.
+
+I bumped into Sarah last month at a conference in Edinburgh, and we were reminiscing about all the crazy things we used to get up to at uni. Remember that time we tried to cook a three-course meal for the whole floor and nearly set off the fire alarm? Good times!
+
+Anyway, I was wondering if you\'d be up for organizing something? I\'ve already mentioned it to a few people – Sarah\'s definitely in, and Tom said he\'d try to make it work around his shifts at the hospital. I\'m thinking maybe a weekend in late June or early July? That way, people who are teaching will have finished for the summer.
+
+I was considering either London or somewhere in the countryside – maybe the Lake District? London would be easier for most people to get to, but the Lakes would be more relaxing and we could do some hiking. What do you reckon? Have you got any better ideas?
+
+Also, have you managed to stay in touch with anyone else from our year? I\'ve completely lost contact with most people, which is a bit rubbish really. It would be great to track down as many of the old crew as possible.
+
+Let me know what you think! If you\'re keen, maybe we could set up a group chat or something to start planning properly?
+
+Missing the old days!
+
+Cheers,
+Alex
+
+PS How\'s the new job going? You never did tell me how the interview went!`,
+      keyPhrases: [
+        'I can\'t believe it\'s been',
+        'Time really does fly',
+        'I\'ve been thinking about this for ages',
+        'it\'s about time we',
+        'I bumped into',
+        'we were reminiscing about',
+        'Remember that time we',
+        'I was wondering if you\'d be up for',
+        'I\'m thinking maybe',
+        'What do you reckon?',
+        'Have you got any better ideas?',
+        'Let me know what you think',
+        'Missing the old days'
+      ],
+      structure: [
+        '1. Opening: Exclamatory greeting and time reference',
+        '2. Purpose: Suggest reunion',
+        '3. Shared memory: Reminisce about university',
+        '4. Details: Propose dates and who\'s interested',
+        '5. Options: Suggest possible locations',
+        '6. Request input: Ask for opinions and ideas',
+        '7. Additional question: About other friends',
+        '8. Call to action: Request response',
+        '9. Closing: Nostalgic sign-off with PS'
+      ],
+      grammarFocus: [
+        'Present Perfect: "it\'s been almost two years", "I\'ve been thinking"',
+        'Past Simple: "I bumped into", "we were reminiscing"',
+        'Used to: "we used to get up to"',
+        'Modal verbs: "would be", "could do", "could set up"',
+        'Conditional: "If you\'re keen"',
+        'Question forms: "What do you reckon?", "Have you got?"',
+        'Informal phrasal verbs: "get up to", "set up", "track down"'
+      ]
+    },
+    {
+      id: 3,
+      title: 'Informal Email - Apologizing for Missing Event',
+      category: 'Informal',
+      subject: 'So sorry I missed your party!',
+      to: 'rachel.green@email.com',
+      situation: 'You missed your friend\'s birthday party due to unexpected circumstances. Write an informal email apologizing and explaining what happened.',
+      email: `Dear Rachel,
+
+I am SO sorry I missed your birthday party on Saturday! I\'ve been feeling absolutely terrible about it all weekend. I bet you\'re wondering what on earth happened, so let me explain.
+
+Everything was going fine – I\'d bought your present, got dressed up, and was literally about to leave my flat when my sister called in floods of tears. Her car had broken down on the motorway about 50 miles away, and she was stuck there with her two-year-old twins. Her husband was abroad on business, and she didn\'t know who else to call.
+
+I know I should have messaged you straight away, but to be honest, it was such chaos that I completely forgot. I drove out to pick her up, which took forever because of the traffic, and then we had to wait ages for the breakdown service. By the time I got her and the twins back home and settled, it was nearly midnight. I felt awful knowing I\'d missed your party.
+
+I really hope you had an amazing time despite my no-show. Did many people turn up? I\'ve seen some photos on Instagram and it looks like it was a great night. That cake looked incredible!
+
+I\'d love to take you out for dinner next week to make up for it – my treat, obviously. Are you free any evening? I promise I won\'t let you down this time! I\'ve also got your present here, which I\'m dying to give you.
+
+Once again, I\'m really sorry. I hope you can forgive me!
+
+Lots of love,
+
+Emma
+
+PS Tell me you saved me a piece of that cake!`,
+      keyPhrases: [
+        'I am SO sorry',
+        'I\'ve been feeling absolutely terrible',
+        'I bet you\'re wondering',
+        'let me explain',
+        'Everything was going fine',
+        'was literally about to',
+        'in floods of tears',
+        'I know I should have',
+        'to be honest',
+        'it was such chaos',
+        'By the time',
+        'I felt awful',
+        'I\'d love to',
+        'to make up for it',
+        'I hope you can forgive me'
+      ],
+      structure: [
+        '1. Apology: Strong opening apology',
+        '2. Acknowledgment: Recognize reader\'s curiosity',
+        '3. Explanation: Describe what went wrong',
+        '4. Further apology: Explain why didn\'t message',
+        '5. Details: Full account of the situation',
+        '6. Expression of regret: Show you know you missed out',
+        '7. Interest in event: Ask about the party',
+        '8. Offer to make amends: Suggest dinner',
+        '9. Final apology: Reinforce sincerity',
+        '10. Light-hearted PS: Keep it friendly'
+      ],
+      grammarFocus: [
+        'Present Perfect Continuous: "I\'ve been feeling"',
+        'Past Continuous: "was literally about to leave", "was going fine"',
+        'Past Perfect: "had broken down", "I\'d bought"',
+        'Modal perfect: "I should have messaged"',
+        'Past Simple: sequence of events',
+        'By the time + Past Perfect: "By the time I got her back"',
+        'Emphatic DO: "I am SO sorry"',
+        'Future arrangement: "Are you free any evening?"'
+      ]
+    },
+    {
+      id: 9,
+      title: 'Semi-formal Email - Professional Networking',
+      category: 'Networking',
+      subject: 'Following up from the Digital Innovation Conference',
+      to: 'james.wilson@email.com',
+      situation: 'You\'ve just received some exciting news about a job promotion. Write an informal email sharing the news with your close friend.',
+      email: `Hi James!
+
+I\'ve got some massive news and I just had to tell you straight away! You know how I\'ve been working my socks off at the marketing agency for the past three years? Well, it\'s finally paid off – they\'ve offered me the Creative Director position! I still can\'t quite believe it!
+
+I found out yesterday afternoon. Sarah, the MD, called me into her office and I was absolutely bricking it because I thought I\'d done something wrong. But then she started going on about how impressed they\'ve been with my work on the recent campaigns, and how the clients have been specifically asking for me. And then she just came out with it – would I be interested in taking over as Creative Director when Mark retires next month?
+
+I mean, I\'ve been hoping for a promotion for ages, but I never expected it to be THIS big! The salary is insane – almost double what I\'m on now – plus I\'ll get my own team of five designers and a company car. Mental, right?
+
+The only slight downside is that I\'ll have to travel quite a bit more – probably once or twice a month to our offices in Berlin and Amsterdam. But hey, I\'m not complaining! Free trips to Europe sound pretty good to me.
+
+I\'ve been absolutely buzzing since I heard. I went straight out and bought a bottle of champagne to celebrate with my flatmate last night. We polished off the whole thing and I\'ve got a bit of a headache today, but it was totally worth it!
+
+Anyway, I wanted you to be one of the first to know. We should definitely go out for a proper celebration soon. Are you around this weekend? Drinks are on me!
+
+Can\'t wait to catch up properly!
+
+All the best,
+
+Sophie
+
+PS Remember when we were at uni and I said I\'d be running a creative agency by the time I was 30? Not quite there yet, but this is definitely a step in the right direction!`,
+      keyPhrases: [
+        'I\'ve got some massive news',
+        'I just had to tell you',
+        'You know how I\'ve been',
+        'it\'s finally paid off',
+        'I still can\'t quite believe it',
+        'I was absolutely bricking it',
+        'she started going on about',
+        'she just came out with it',
+        'I never expected it to be',
+        'The only slight downside is',
+        'I\'m not complaining',
+        'I\'ve been absolutely buzzing',
+        'We polished off',
+        'I wanted you to be one of the first to know',
+        'Drinks are on me'
+      ],
+      structure: [
+        '1. Exciting opening: Build anticipation',
+        '2. Background: Reference shared knowledge',
+        '3. Big reveal: Share the news',
+        '4. The moment: Describe how you found out',
+        '5. Details: Explain the position and benefits',
+        '6. Minor concern: Mention travel requirement',
+        '7. Celebration story: Share how you celebrated',
+        '8. Personal touch: Acknowledge importance of friendship',
+        '9. Invitation: Suggest celebration',
+        '10. Nostalgic PS: Reference shared past'
+      ],
+      grammarFocus: [
+        'Present Perfect Continuous: "I\'ve been working my socks off"',
+        'Present Perfect: "they\'ve offered me", "it\'s finally paid off"',
+        'Past Simple: "I found out", "she called me"',
+        'Past Continuous: "I was absolutely bricking it", "I thought"',
+        'Present Perfect: "I\'ve been hoping", "I\'ve been buzzing"',
+        'Future: "I\'ll have to travel", "I\'ll get my own team"',
+        'Informal expressions: "working my socks off", "Mental, right?"',
+        'Colloquial past: "We polished off the whole thing"'
+      ]
+    },
+    {
+      id: 10,
+      title: 'Formal Email - Grant Application Follow-up',
+      category: 'Academic/Funding',
+      subject: 'Follow-up on Research Grant Application REF: ENV2025-847',
+      to: 'lisa.martinez@email.com',
+      situation: 'You\'re facing a difficult decision about whether to accept a job offer abroad. Write an informal email to your friend asking for advice.',
+      email: `Hey Lisa,
+
+I hope you\'re doing well! I\'m writing because I could really use some advice from someone who knows me well, and you\'re always so good at seeing things clearly.
+
+So here\'s the situation – I\'ve been offered an amazing job in Singapore. It\'s with a massive tech company, the salary is incredible (seriously, like triple what I\'m earning now), and it would be an unbelievable opportunity for my career. On paper, it\'s everything I\'ve been working towards.
+
+But here\'s the thing – I\'d have to move to Singapore for at least three years, possibly longer. That means leaving my family, my friends, and basically everything I know. Plus, I\'ve been seeing Tom for about six months now, and things are getting quite serious between us. I know six months isn\'t that long, but still...
+
+I\'ve been going round in circles about this for days and I honestly don\'t know what to do. Part of me is thinking "when will I ever get another opportunity like this?" But then another part of me is terrified of moving to the other side of the world and regretting it.
+
+Tom says he\'d support whatever decision I make, but I can tell he\'s gutted about the idea of me leaving. My parents are trying to be supportive too, but I know Mum\'s already worrying about how often she\'d see me.
+
+What would you do if you were in my position? I mean, you lived in Australia for two years, didn\'t you? How did you cope with being so far from home? Did you ever regret going?
+
+I\'ve got to give them an answer by next Friday, so I\'m running out of time to decide. Any words of wisdom would be massively appreciated!
+
+Sorry for dumping all this on you – I just really value your opinion and I\'m a bit desperate for some perspective!
+
+Missing our coffee catch-ups already (and I haven\'t even left yet!),
+
+Claire
+
+PS How are things with you anyway? I feel like I\'ve been so wrapped up in my own drama that I haven\'t asked how you are!`,
+      keyPhrases: [
+        'I hope you\'re doing well',
+        'I could really use some advice',
+        'here\'s the situation',
+        'On paper, it\'s everything',
+        'But here\'s the thing',
+        'I\'ve been going round in circles',
+        'I honestly don\'t know what to do',
+        'Part of me is thinking... But then another part',
+        'I can tell he\'s gutted',
+        'What would you do if you were in my position?',
+        'How did you cope with',
+        'Did you ever regret',
+        'I\'ve got to give them an answer',
+        'I\'m running out of time',
+        'Any words of wisdom would be massively appreciated',
+        'Sorry for dumping all this on you'
+      ],
+      structure: [
+        '1. Greeting: Friendly opening',
+        '2. Purpose: State need for advice',
+        '3. The opportunity: Present the positive aspects',
+        '4. The dilemma: Explain the concerns',
+        '5. Personal complications: Mention relationship',
+        '6. Internal conflict: Show indecision',
+        '7. Others\' reactions: Family and partner\'s views',
+        '8. Direct questions: Ask for specific advice',
+        '9. Deadline: Create urgency',
+        '10. Appreciation: Thank in advance',
+        '11. Self-awareness: Acknowledge taking up time',
+        '12. PS: Show you care about them too'
+      ],
+      grammarFocus: [
+        'Present Perfect: "I\'ve been offered", "I\'ve been seeing Tom"',
+        'Present Perfect Continuous: "I\'ve been going round in circles"',
+        'Modal verbs: "I\'d have to move", "would you do"',
+        'Conditional: "What would you do if you were"',
+        'Past Simple: "you lived in Australia"',
+        'Future: "when will I ever get"',
+        'Present Continuous for complaints: "Mum\'s already worrying"',
+        'Have got to: "I\'ve got to give them an answer"',
+        'Question forms for advice: "How did you cope?", "Did you regret?"'
+      ]
+    },
+    {
+      id: 6,
+      title: 'Informal Email - Complaining to Roommate',
+      category: 'Informal',
+      subject: 'We need to talk about the flat...',
+      to: 'danny.brown@email.com',
+      situation: 'You share a flat with someone who has been leaving the kitchen messy and making noise late at night. Write an informal email addressing these issues diplomatically.',
+      email: `Hey Danny,
+
+Hope you\'re having a good week! Listen, I wanted to have a quick chat about a couple of things regarding the flat. I know we\'re both super busy with work and everything, but there are a few issues that have been bothering me lately, and I thought it would be better to clear the air rather than let things fester.
+
+First off, the kitchen situation. I\'ve noticed that over the past few weeks, it\'s been getting left in a bit of a state quite often. I\'m talking dirty dishes piling up in the sink, food containers left out, that sort of thing. I completely get that after a long day at work, the last thing you want to do is clean up, but it\'s been getting a bit much. The other day I found a pan that had been sitting there for three days with food stuck to it – it was absolutely mingin!
+
+I know I\'m not perfect either, and I\'ve definitely left the odd mug lying around, but I do try to clean up after myself most of the time. Maybe we could agree on a simple rule like "wash up as you go" or at least make sure everything\'s sorted by the end of each day?
+
+The other thing – and I feel a bit awkward bringing this up – is the noise late at night. I know you\'ve had your mates round a few times recently, which is totally fine, but the walls are pretty thin and I\'ve been struggling to sleep when there\'s music and talking going on till 2 or 3 in the morning. I\'ve got early starts for work and I\'ve been absolutely knackered lately.
+
+I\'m not saying you can\'t have people over or anything like that – it\'s your flat too! But maybe if you could keep it down a bit after midnight on weeknights? Or give me a heads up if you\'re planning a late one, so I can maybe crash at my girlfriend\'s place if I\'ve got an early meeting?
+
+I really don\'t want this to come across as me having a go at you – you\'re a great flatmate in so many ways, and I know we generally get on really well. I just think it\'s important we\'re both comfortable in our own home, you know?
+
+Let me know what you think? Maybe we could grab a pint this weekend and have a proper chat about it all?
+
+Cheers,
+Matt`,
+      keyPhrases: [
+        'Hope you\'re having a good week',
+        'I wanted to have a quick chat',
+        'I thought it would be better to clear the air',
+        'rather than let things fester',
+        'I\'ve noticed that',
+        'it\'s been getting a bit much',
+        'I know I\'m not perfect either',
+        'Maybe we could agree on',
+        'I feel a bit awkward bringing this up',
+        'which is totally fine, but',
+        'I\'m not saying you can\'t',
+        'I really don\'t want this to come across as',
+        'Let me know what you think'
+      ],
+      structure: [
+        '1. Friendly opening: Set positive tone',
+        '2. Purpose statement: Introduce topic diplomatically',
+        '3. First issue: Kitchen mess with specific examples',
+        '4. Acknowledgment: Admit own imperfections',
+        '5. Suggestion: Propose solution',
+        '6. Second issue: Late night noise',
+        '7. Clarification: Show understanding and flexibility',
+        '8. Alternative solutions: Offer compromises',
+        '9. Reassurance: Emphasize good relationship',
+        '10. Call to action: Suggest face-to-face chat'
+      ],
+      grammarFocus: [
+        'Present Perfect Continuous: "have been bothering me", "have been struggling"',
+        'Present Perfect: "I\'ve noticed", "it\'s been getting"',
+        'Modal verbs for suggestions: "could", "would", "maybe"',
+        'Passive voice: "getting left in a bit of a state"',
+        'Conditional: "if you could keep it down"',
+        'Gerunds: "bothering me", "bringing this up", "having a go"',
+        'Informal phrasal verbs: "clear the air", "piling up", "clean up", "come across as"',
+        'British slang: "mingin", "knackered", "having a go"'
+      ]
+    },
+    {
+      id: 7,
+      title: 'Informal Email - Inviting Friend to Visit',
+      category: 'Informal',
+      subject: 'You HAVE to come visit!',
+      to: 'chloe.parker@email.com',
+      situation: 'You\'ve moved to a new city and want to invite your best friend to come visit and explore the area with you.',
+      email: `Hi Chloe!
+
+I can\'t believe I\'ve been here in Barcelona for two months already – time\'s absolutely flying! I\'m finally settled in properly now, and I\'ve been meaning to write to you for ages about coming to visit. So here it is – you NEED to come out here!
+
+Honestly, this place is incredible. I\'ve been exploring non-stop at weekends, and I keep thinking "Chloe would absolutely love this." Remember how we were obsessed with Gaudí when we did that architecture module at uni? Well, I\'ve been to the Sagrada Familia three times already and I\'m still discovering new details every time. It\'s mind-blowing!
+
+I\'ve also found the most amazing tapas bars in the Gothic Quarter. There\'s this tiny place called El Xampanyet that does the best patatas bravas I\'ve ever tasted, and the wine is ridiculously cheap. We could literally eat our way around the city – I\'ve already got a whole list of places I want to take you.
+
+The weather\'s been gorgeous too. Even now in late autumn, it\'s still warm enough to sit outside in the evenings. The beaches aren\'t too packed anymore either, so we could actually have a proper catch-up without being surrounded by thousands of tourists.
+
+I\'ve got quite a bit of annual leave left this year, so I could take a few days off whenever suits you. What about sometime in January or February? Flights are really cheap then – I\'ve been checking, and you can get return flights from London for under £50 if you book in advance. Plus, it\'s off-season so hotels are much more affordable too.
+
+You could stay with me, obviously – my flat\'s tiny but the sofa\'s actually pretty comfortable (I\'ve been told!), or if you\'d prefer your own space, I can help you find somewhere nearby. There\'s a really nice hostel just down the road that does private rooms for about €30 a night.
+
+I know you\'ve been saying for ages that you need a proper break from work. This could be perfect timing! Plus, I\'m starting to forget what you look like in person rather than just on video calls!
+
+What do you reckon? Shall we start looking at dates? I\'m literally free whenever, so just let me know what works for you and I\'ll book the time off.
+
+Can\'t wait to hear back from you!
+
+Missing you loads,
+
+Laura
+
+PS I\'ve already planned a whole weekend itinerary in my head. I\'m that excited!`,
+      keyPhrases: [
+        'I can\'t believe',
+        'time\'s absolutely flying',
+        'I\'ve been meaning to',
+        'you NEED to',
+        'I keep thinking',
+        'Remember how we were',
+        'It\'s mind-blowing',
+        'We could literally',
+        'I\'ve already got a whole list',
+        'What about sometime in',
+        'You could stay with me, obviously',
+        'I know you\'ve been saying for ages',
+        'This could be perfect timing',
+        'What do you reckon?',
+        'I\'m literally free whenever',
+        'Can\'t wait to hear back'
+      ],
+      structure: [
+        '1. Opening: Time reference and excitement',
+        '2. Main invitation: Direct and enthusiastic',
+        '3. Selling points: Architecture and cultural attractions',
+        '4. Food highlights: Specific recommendations',
+        '5. Weather and beach: Additional attractions',
+        '6. Logistics: Dates and flight costs',
+        '7. Accommodation options: Both free and paid',
+        '8. Personal appeal: Reference friend\'s needs',
+        '9. Call to action: Ask for decision',
+        '10. Enthusiastic closing with PS'
+      ],
+      grammarFocus: [
+        'Present Perfect: "I\'ve been here", "I\'ve been exploring"',
+        'Present Perfect Continuous: "I\'ve been meaning to", "you\'ve been saying"',
+        'Modal verbs: "could take", "could stay", "would absolutely love"',
+        'Conditional: "if you book in advance", "if you\'d prefer"',
+        'Emphatic structures: "you NEED to", "literally eat our way"',
+        'Future arrangements: "I can help you find"',
+        'Superlatives: "the best patatas bravas", "the most amazing tapas bars"',
+        'Informal contractions throughout'
+      ]
+    },
+    {
+      id: 8,
+      title: 'Informal Email - Asking to Borrow Something',
+      category: 'Informal',
+      subject: 'Huge favour to ask...',
+      to: 'ben.hughes@email.com',
+      situation: 'You need to borrow your friend\'s camping equipment for a trip. Write an informal email asking if you can borrow it.',
+      email: `Hey Ben,
+
+How\'s it going? Hope all\'s well with you! I\'m writing to ask you a massive favour, so feel free to say no if it\'s not convenient – I\'ll completely understand.
+
+Basically, a group of us from work have decided to go camping in the Lake District for a long weekend at the end of this month. It was all quite last-minute – someone suggested it in the pub last week and before we knew it, we\'d all booked the time off work! The thing is, I\'ve never actually been camping before (I know, I know, how have I made it to 28 without ever sleeping in a tent?!), so I don\'t have any of the gear.
+
+I remembered that you\'re really into all that outdoor stuff and you mentioned ages ago that you\'ve got loads of camping equipment. I was wondering if there\'s any chance I could borrow some bits and pieces? I\'d only need them for the one weekend – Friday 27th to Monday 30th.
+
+I\'m mainly looking for a tent (just for me, so nothing massive), a sleeping bag, and maybe a camping stove if you\'ve got one going spare? If you\'ve got any other essentials that you think I might need, I\'d be really grateful for those too. To be honest, I haven\'t got a clue what I\'m doing!
+
+Obviously, I\'d take really good care of everything and make sure it all comes back clean and in perfect condition. And I\'d be more than happy to return the favour somehow – maybe I could take you out for a few pints when I bring your stuff back? Or if you need any help with anything, just shout.
+
+I know it\'s a big ask, and I\'d totally get it if you\'d rather not lend your gear out. Just thought I\'d check before I go and spend a fortune buying everything new for what might be a one-off trip!
+
+Let me know what you think when you get a chance. No pressure at all!
+
+Cheers mate,
+
+Josh
+
+PS If you\'ve got any camping tips for a complete beginner, I\'m all ears! I\'ve been watching YouTube videos but I\'m still slightly terrified I\'m going to end up sleeping in a puddle or something.`,
+      keyPhrases: [
+        'How\'s it going?',
+        'Hope all\'s well with you',
+        'to ask you a massive favour',
+        'feel free to say no',
+        'I\'ll completely understand',
+        'Basically',
+        'The thing is',
+        'I was wondering if there\'s any chance',
+        'I\'m mainly looking for',
+        'if you\'ve got one going spare',
+        'To be honest',
+        'I haven\'t got a clue',
+        'Obviously, I\'d take really good care',
+        'I\'d be more than happy to',
+        'I know it\'s a big ask',
+        'I\'d totally get it if',
+        'No pressure at all'
+      ],
+      structure: [
+        '1. Casual greeting: Establish friendly tone',
+        '2. Purpose with caveat: State favour but offer easy out',
+        '3. Context: Explain the camping trip',
+        '4. Self-deprecating humor: Acknowledge inexperience',
+        '5. The request: Specific items needed with dates',
+        '6. Additional request: Ask for extras and advice',
+        '7. Reassurance: Promise to take care of items',
+        '8. Offer reciprocation: Suggest ways to return favour',
+        '9. Understanding exit: Acknowledge it\'s okay to refuse',
+        '10. Casual closing with helpful PS'
+      ],
+      grammarFocus: [
+        'Present Perfect: "have decided", "I\'ve never been", "you\'ve got"',
+        'Past Simple: "someone suggested", "we\'d all booked"',
+        'Would for polite requests: "I was wondering if", "I\'d be grateful"',
+        'Conditional: "if there\'s any chance", "if you\'d rather not"',
+        'Modal verbs: "could borrow", "might need", "might be"',
+        'Present Continuous for future: "I\'m writing to ask"',
+        'Gerunds: "sleeping in a tent", "buying everything new"',
+        'Informal expressions: "going spare", "just shout", "I\'m all ears"'
+      ]
+    },
+    {
+      id: 9,
+      title: 'Informal Email - Congratulating on Achievement',
+      category: 'Informal',
+      subject: 'CONGRATULATIONS!!!',
+      to: 'amy.roberts@email.com',
+      situation: 'Your friend just completed a marathon after months of training. Write an informal email congratulating them.',
+      email: `AMY!!!
+
+I just saw your post on Instagram – YOU DID IT! I\'m so incredibly proud of you! Running a full marathon is absolutely insane, and you smashed it!
+
+I\'ve been following your training journey on social media for the past few months, and honestly, your dedication has been so inspiring. All those early morning runs in the freezing cold, the long weekend sessions, dealing with injuries – you just kept going no matter what. That takes some serious mental strength.
+
+And look at your time – 4 hours 23 minutes! That\'s phenomenal for your first marathon! I know you were hoping to go under 4 hours 30, but you absolutely destroyed that target. I bet when you started training back in June, you never imagined you\'d get such a good time.
+
+How are you feeling now? You must be absolutely exhausted! Are you able to walk today or are the stairs your worst enemy? I remember when my cousin ran the London Marathon, she said she couldn\'t sit down properly for about three days afterwards!
+
+I saw in the photos that your whole family was there to support you at the finish line. That must have been such an emotional moment. Were you crying? I think I would have been an absolute mess!
+
+So what\'s next for you? Are you going to have a well-deserved rest, or are you already planning the next challenge? Knowing you, you\'re probably already eyeing up an ultra-marathon or something equally crazy! Whatever you decide to do, I know you\'ll absolutely nail it.
+
+We definitely need to celebrate properly. Are you free next weekend? I want to take you out for dinner – my treat. You deserve to eat the biggest, most indulgent meal imaginable after all those months of healthy eating and carb-loading!
+
+Seriously though, I\'m just so happy for you. You set yourself an incredible goal and you achieved it through sheer determination and hard work. You should be ridiculously proud of yourself.
+
+Well done, Marathon Woman!
+
+Lots of love,
+
+Kate
+
+PS Please tell me you\'ve got the medal on permanent display somewhere. If I\'d run 42 kilometers, I\'d probably sleep wearing it!`,
+      keyPhrases: [
+        'YOU DID IT!',
+        'I\'m so incredibly proud of you',
+        'you smashed it',
+        'I\'ve been following',
+        'your dedication has been so inspiring',
+        'you just kept going',
+        'That takes some serious',
+        'you absolutely destroyed that target',
+        'How are you feeling now?',
+        'You must be absolutely',
+        'That must have been',
+        'So what\'s next for you?',
+        'Knowing you, you\'re probably',
+        'We definitely need to celebrate',
+        'You deserve to',
+        'You should be ridiculously proud'
+      ],
+      structure: [
+        '1. Enthusiastic opening: Show excitement',
+        '2. Main congratulations: Express pride',
+        '3. Acknowledgment of effort: Recognize training journey',
+        '4. Specific achievement: Comment on time',
+        '5. Recovery check: Ask about physical state with humor',
+        '6. Emotional moment: Reference finish line',
+        '7. Future plans: Ask about next goals',
+        '8. Celebration offer: Suggest dinner treat',
+        '9. Summary praise: Emphasize accomplishment',
+        '10. Fun sign-off with playful PS'
+      ],
+      grammarFocus: [
+        'Present Perfect: "I\'ve been following", "you\'ve got"',
+        'Past Simple: "you smashed it", "you kept going"',
+        'Modal perfects: "you never imagined you\'d get", "I would have been"',
+        'Present Continuous for recent completion: "How are you feeling"',
+        'Future: "you\'re probably already eyeing up"',
+        'Emphatic structures: "absolutely insane", "so incredibly proud"',
+        'Question forms: "How are you feeling?", "Were you crying?"',
+        'Informal intensifiers: "absolutely", "ridiculously", "so"'
+      ]
+    },
+    {
+      id: 10,
+      title: 'Informal Email - Sharing Bad News',
+      category: 'Informal',
+      subject: 'Some not-so-great news...',
+      to: 'ollie.thompson@email.com',
+      situation: 'You\'ve just found out you didn\'t get a job you really wanted. Write an informal email to your close friend sharing the disappointment.',
+      email: `Hey Ollie,
+
+I hope you\'re doing alright. I\'ve got some disappointing news that I wanted to share with you – I didn\'t get the job at the design agency I\'d been interviewing for. Just got the rejection email this morning and I\'m feeling pretty gutted about it, to be honest.
+
+I really thought I\'d nailed the final interview, you know? I\'d prepared loads, all my answers seemed to go down well, and the creative director even said she was "very impressed" with my portfolio. So when I saw the email come through this morning, I was actually expecting it to be good news. But nope – they\'ve decided to go with someone who has "more extensive experience in digital marketing campaigns."
+
+What\'s frustrating is that I\'ve been working really hard over the past year to build up exactly that kind of experience. I\'ve taken on extra freelance projects, done two online courses, even volunteered my time to help that charity redesign their website. Apparently, it\'s still not enough.
+
+I know I shouldn\'t take it too personally – there were probably loads of really qualified candidates, and sometimes these decisions just come down to tiny details or even just gut feeling. But it\'s hard not to feel a bit deflated when you\'ve invested so much time and emotional energy into the application process.
+
+The worst part is that I\'d already started imagining myself working there. I\'d looked up how long the commute would be, I\'d been thinking about which projects I\'d love to work on, and I\'d even mentally spent my first pay cheque! I know, I know – I was getting way ahead of myself.
+
+Anyway, I just needed to vent to someone who gets it. You\'ve been through this kind of thing before with those teaching jobs you applied for last year, so I figured you\'d understand. How did you deal with the rejection? Because right now I\'m swinging between wanting to immediately apply for ten more jobs and never wanting to write another cover letter ever again!
+
+I think I might just take the rest of the day off from job hunting and do something to take my mind off it. Maybe I\'ll finally finish that book I\'ve been reading for about three months, or go for a long walk or something.
+
+Thanks for listening to me moan. I promise I\'ll be more cheerful next time we chat! Hopefully with some actual good news to share.
+
+Speak soon,
+
+Jordan
+
+PS If you fancy meeting up for a pint sometime this week, I could definitely use some company and distraction!`,
+      keyPhrases: [
+        'Some disappointing news',
+        'I\'m feeling pretty gutted',
+        'to be honest',
+        'I really thought I\'d nailed',
+        'you know?',
+        'all my answers seemed to go down well',
+        'I was actually expecting',
+        'But nope',
+        'What\'s frustrating is',
+        'I\'ve been working really hard',
+        'it\'s still not enough',
+        'I know I shouldn\'t take it too personally',
+        'it\'s hard not to feel',
+        'I\'d already started imagining',
+        'I was getting way ahead of myself',
+        'I just needed to vent',
+        'who gets it',
+        'Thanks for listening to me moan'
+      ],
+      structure: [
+        '1. Opening: Check on friend then introduce bad news',
+        '2. The news: State rejection clearly',
+        '3. Expectations: Explain why disappointed',
+        '4. Frustration: Express efforts made',
+        '5. Rational perspective: Try to be objective',
+        '6. Emotional reality: Admit real feelings',
+        '7. Self-awareness: Acknowledge getting ahead',
+        '8. Purpose: Explain need to share',
+        '9. Seeking advice: Ask how friend coped',
+        '10. Plan forward: Mention self-care',
+        '11. Appreciation: Thank for listening',
+        '12. Hopeful PS: Suggest meeting up'
+      ],
+      grammarFocus: [
+        'Present Perfect: "I\'ve got", "I\'ve been working", "I\'ve taken on"',
+        'Past Simple: "didn\'t get", "got the rejection", "they\'ve decided"',
+        'Past Perfect: "I\'d been interviewing", "I\'d prepared", "I\'d been thinking"',
+        'Modal perfects: "I thought I\'d nailed", "You\'ve been through"',
+        'Present Continuous: "I\'m feeling", "I\'m swinging between"',
+        'Gerunds: "getting ahead of myself", "job hunting", "listening to me moan"',
+        'Would for habitual past in mind: "I\'d love to work on"',
+        'Conditional: "if you fancy meeting up"'
+      ]
+    },
+    {
+      id: 11,
+      title: 'Informal Email - Making Plans with Friends',
+      category: 'Informal',
+      subject: 'Beach weekend - who\'s in?',
+      to: 'group.friends@email.com',
+      situation: 'You want to organize a beach trip with a group of friends. Write an informal email proposing the idea and coordinating details.',
+      email: `Hey everyone!
+
+Right, so I\'ve had an idea that I think you\'re all going to love. The weather forecast for next weekend is looking absolutely gorgeous – sunny and 25°C – and I reckon we should make the most of it before summer properly ends. How do you all fancy a day trip to Brighton beach on Saturday?
+
+I know it\'s a bit last minute, but hear me out! We could get the early train down (there\'s one that leaves at 8:47am), spend the whole day by the sea, and be back in London by about 9pm. Train tickets are only £15 if we book today, which is a pretty decent deal.
+
+Here\'s what I\'m thinking: we could set up camp on the beach, go for a swim if anyone\'s brave enough (the water\'s probably freezing but whatever!), grab fish and chips for lunch, maybe play some beach volleyball or frisbee, and then hit up one of the bars on the seafront for sundowners. Doesn\'t that sound perfect?
+
+I\'ve already checked and the tide\'s going to be out most of the day, so we\'ll have loads of space on the beach. Plus, I\'ve got a massive beach umbrella we can borrow, and Sam said she\'s got a cool box we can use for drinks and snacks.
+
+So who\'s up for it? I need to know numbers by tomorrow evening so I can book the train tickets – apparently they sell out pretty quickly for weekend trips when the weather\'s good. 
+
+A few practical things to sort out:
+- If you\'re coming, can you let me know ASAP?
+- Bring: swimsuit, towel, suncream, sunglasses, and maybe a jumper for the evening
+- We should probably make sandwiches at home to save money (though we\'re definitely getting proper fish and chips at some point!)
+- If anyone\'s got beach games, inflatables, or speakers, bring them along!
+
+Sarah, I know you mentioned you might be away visiting your parents this weekend – has that changed at all? Would be gutted if you couldn\'t make it!
+
+Jake, this means you have to actually leave your flat and interact with real humans instead of just gaming all weekend. No excuses! 😊
+
+Right, I\'m going to stop rambling now. Let me know what you think! If enough people are keen, I\'ll set up a WhatsApp group to coordinate all the details.
+
+Fingers crossed for a unanimous "YES"!
+
+Love,
+Mia
+
+PS If it absolutely pours with rain and the whole thing\'s a disaster, I take zero responsibility. I\'m just the ideas person! 😂`,
+      keyPhrases: [
+        'Right, so I\'ve had an idea',
+        'I think you\'re all going to love',
+        'I reckon we should',
+        'How do you all fancy',
+        'I know it\'s a bit last minute, but hear me out',
+        'Here\'s what I\'m thinking',
+        'Doesn\'t that sound perfect?',
+        'So who\'s up for it?',
+        'I need to know',
+        'A few practical things to sort out',
+        'can you let me know ASAP?',
+        'Would be gutted if you couldn\'t make it',
+        'No excuses!',
+        'Let me know what you think',
+        'Fingers crossed for'
+      ],
+      structure: [
+        '1. Enthusiastic opening: Grab attention with idea',
+        '2. Weather hook: Present opportunity',
+        '3. Main proposal: Beach trip suggestion',
+        '4. Logistics: Train times and costs',
+        '5. Day plan: Detailed itinerary',
+        '6. Practical details: Tide, equipment available',
+        '7. Call to action: Request RSVPs with deadline',
+        '8. Checklist: What to bring',
+        '9. Personal mentions: Address individuals',
+        '10. Coordination plan: WhatsApp group',
+        '11. Playful closing with disclaimer PS'
+      ],
+      grammarFocus: [
+        'Present Continuous for future: "I\'m thinking", "the weather\'s looking"',
+        'Modal verbs: "should make", "could get", "might be"',
+        'Conditional: "If enough people are keen", "If it pours"',
+        'Going to future: "you\'re all going to love", "the tide\'s going to be"',
+        'Present Perfect: "I\'ve had an idea", "I\'ve already checked"',
+        'Imperative for instructions: "Bring", "Let me know"',
+        'Question tags implied: "Doesn\'t that sound perfect?"',
+        'Informal contractions and colloquialisms throughout'
+      ]
+    },
+    {
+      id: 12,
+      title: 'Informal Email - Asking About Relationship Issues',
+      category: 'Informal',
+      subject: 'Need to talk... (nothing serious!)',
+      to: 'jessica.lee@email.com',
+      situation: 'You\'re having some confusion about a new relationship and need advice from your close friend. Write an informal email asking for perspective.',
+      email: `Hey Jess,
+
+Hope you\'re good! I\'m writing because I could really do with some advice about the whole situation with Mark, and you\'re basically the only person I trust to be brutally honest with me without judging.
+
+So, things have been going really well with him – like, really well. We\'ve been seeing each other for about six weeks now, and when we\'re together, everything feels perfect. He\'s funny, he\'s thoughtful, we never run out of things to talk about, and there\'s definitely a spark there. On paper, it all sounds great, right?
+
+But here\'s the thing that\'s been bugging me: he\'s really inconsistent with communication. Like, when we\'re together in person, he\'s super attentive and affectionate. But then during the week, I barely hear from him. Sometimes he\'ll go two or three days without texting, and when he does message, it\'s just really brief stuff like "hey, how\'s work?" with no real conversation.
+
+At first, I thought maybe he\'s just not a big texter, which is fair enough – not everyone lives on their phone. But then last week, I saw him constantly on his phone when we were out with his mates at the pub. So clearly he CAN text when he wants to!
+
+I\'ve tried bringing it up casually, saying something like "I feel like we don\'t talk much during the week," and he just said "Yeah, sorry, I\'ve been really busy with work." Which might be true – he has got a pretty full-on job. But is it really that hard to send a quick message saying "hope you\'re having a good day" or something?
+
+The thing is, I really like him, and I don\'t want to come across as clingy or needy. I\'m not expecting constant communication or anything – I\'ve got my own life and I\'m perfectly happy doing my own thing. But I also don\'t want to be sat around wondering if he\'s actually that interested or if I\'m just convenient when he happens to be free.
+
+Am I overthinking this? You know I have a tendency to spiral when I\'m unsure about things. Or is this a genuine red flag that I should be paying attention to? 
+
+What would you do in my situation? Should I have another proper conversation with him about it, or should I just match his energy and see what happens? Or – and I know you\'ll tell me straight – do you think I should just cut my losses now before I get even more invested?
+
+I\'m also worried that my past relationship experiences are making me paranoid. You remember how things were with Chris – he did exactly the same thing with the hot-and-cold behavior, and that ended up being a total disaster. I don\'t want to project all that onto Mark if he\'s genuinely just rubbish at texting!
+
+Ugh, I\'m sorry for the essay. My brain\'s just been going round in circles with this. I\'d really value your take on it all because you\'re so good at seeing things objectively.
+
+Can we maybe grab coffee this weekend? I feel like I need a proper face-to-face debrief with you!
+
+Thanks for always being my voice of reason 💚
+
+Love you,
+Charlotte
+
+PS Please tell me I\'m not being completely crazy!`,
+      keyPhrases: [
+        'I could really do with some advice',
+        'you\'re basically the only person',
+        'to be brutally honest with me',
+        'things have been going really well',
+        'On paper, it all sounds great, right?',
+        'But here\'s the thing that\'s been bugging me',
+        'which is fair enough',
+        'So clearly he CAN',
+        'I\'ve tried bringing it up casually',
+        'Which might be true',
+        'The thing is',
+        'I don\'t want to come across as',
+        'Am I overthinking this?',
+        'You know I have a tendency to',
+        'Or is this a genuine red flag',
+        'What would you do in my situation?',
+        'you\'ll tell me straight',
+        'I don\'t want to project',
+        'My brain\'s just been going round in circles'
+      ],
+      structure: [
+        '1. Casual opening with purpose',
+        '2. Context: Relationship going well',
+        '3. The problem: Inconsistent communication',
+        '4. Evidence: Specific examples',
+        '5. Attempted solution: Tried discussing casually',
+        '6. Internal conflict: Don\'t want to seem needy',
+        '7. Self-awareness: Question own perception',
+        '8. Direct questions: Seek specific advice',
+        '9. Past context: Reference previous relationship',
+        '10. Apology for length',
+        '11. Request to meet: Face-to-face chat',
+        '12. Appreciation with vulnerable PS'
+      ],
+      grammarFocus: [
+        'Present Perfect Continuous: "things have been going", "that\'s been bugging"',
+        'Present Perfect: "We\'ve been seeing", "I\'ve tried bringing it up"',
+        'Modal verbs: "could really do with", "would you do", "should I"',
+        'Conditional: "if he\'s genuinely", "if I\'m just convenient"',
+        'Reported speech: "saying something like"',
+        'Emphatic structures: "clearly he CAN text", "is it really that hard"',
+        'Question forms for advice: multiple question types',
+        'Gerunds and infinitives: "without judging", "to be brutally honest"'
+      ]
+    },
+    {
+      id: 13,
+      title: 'Informal Email - Explaining Why You\'re Leaving a Job',
+      category: 'Informal',
+      subject: 'Big news (finally!)',
+      to: 'marcus.davies@email.com',
+      situation: 'You\'ve decided to quit your job and want to tell your work friend before you officially hand in your notice. Write an informal email explaining your decision.',
+      email: `Hey Marcus,
+
+I wanted to give you a heads up about something before it becomes office gossip – I\'ve decided to hand in my notice. I know this might come as a bit of a shock, especially since I\'ve been here for nearly four years, but I\'ve been thinking about it for months and I\'ve finally made up my mind.
+
+Please keep this between us for now! I\'m planning to tell Helen (our manager) on Monday, but I wanted you to hear it from me first rather than through the grapevine. You\'ve been such a brilliant work mate over the years, and it felt wrong not giving you a proper explanation.
+
+Basically, I\'ve just reached a point where I feel completely stuck here. Don\'t get me wrong – it\'s not a terrible job, and there are things I\'ll genuinely miss (the free coffee, the casual Fridays, you and the lunch crew!). But I\'ve been doing essentially the same thing day in, day out for the past two years, and I\'m just not learning anything new anymore.
+
+I\'ve brought it up with Helen a few times, asking about opportunities for progression or maybe moving into a different department, but there never seems to be any budget for it, or the timing\'s not right, or there are "no positions available at the moment." I\'ve basically been fobbed off so many times that I\'ve lost count.
+
+The final straw came last month when they hired that external candidate for the senior analyst role – you know, the one I\'d expressed interest in multiple times? They didn\'t even give me the opportunity to apply or interview for it. That really stung, and it made me realize that they clearly don\'t see me progressing here, so why am I hanging around?
+
+I haven\'t got another job lined up yet, which I know is a bit risky, but I\'ve got enough savings to last me about four months, and honestly, I think I need a proper break anyway. I\'ve been feeling burned out for ages, and maybe some time off will help me figure out what I actually want to do next.
+
+I might do some traveling – I\'ve always wanted to do that South America trip we used to talk about in our lunch breaks! Or I might finally get around to doing that UX design course I\'ve been putting off forever. The point is, for the first time in years, I\'ll actually have some time to think about what I want rather than just going through the motions.
+
+I\'m genuinely going to miss working with you though. You\'ve made the tough days so much more bearable, and lunch breaks definitely won\'t be the same without our ridiculous conversations about absolutely nothing! We\'ll have to make sure we stay in touch properly – maybe actually do those climbing sessions we keep saying we\'re going to organize?
+
+Anyway, I just wanted to let you know before the office rumor mill goes into overdrive. I\'m planning to work my full notice period (probably four weeks), so we\'ve still got some time before I disappear!
+
+Let\'s grab a pint after work one day this week? My treat – I owe you several after all the times you\'ve covered for me when I\'ve been "working from home" (aka having a duvet day!).
+
+Cheers,
+Ryan
+
+PS Seriously though, keep it quiet until Monday. I don\'t need Karen from HR hunting me down before I\'ve even spoken to Helen!`,
+      keyPhrases: [
+        'I wanted to give you a heads up',
+        'before it becomes office gossip',
+        'this might come as a bit of a shock',
+        'I\'ve been thinking about it for months',
+        'I\'ve finally made up my mind',
+        'Please keep this between us',
+        'I wanted you to hear it from me first',
+        'rather than through the grapevine',
+        'Don\'t get me wrong',
+        'there are things I\'ll genuinely miss',
+        'I feel completely stuck',
+        'day in, day out',
+        'I\'ve been fobbed off',
+        'The final straw came',
+        'That really stung',
+        'I haven\'t got another job lined up yet',
+        'which I know is a bit risky',
+        'I\'m genuinely going to miss',
+        'keep it quiet'
+      ],
+      structure: [
+        '1. Heads up: Announce decision privately',
+        '2. Request confidentiality: Ask to keep secret',
+        '3. Personal acknowledgment: Value the friendship',
+        '4. Main explanation: Feel stuck and unstimulated',
+        '5. Positive aspects: Acknowledge good parts',
+        '6. Attempts made: Tried to progress internally',
+        '7. Final straw: Specific incident that decided it',
+        '8. No backup plan: Explain risk but justification',
+        '9. Future possibilities: Travel and learning',
+        '10. Personal sentiment: Will miss the friend',
+        '11. Maintain connection: Suggest staying in touch',
+        '12. Immediate plans: Offer to meet',
+        '13. Reminder PS: Reinforce confidentiality'
+      ],
+      grammarFocus: [
+        'Present Perfect: "I\'ve decided", "I\'ve been thinking", "You\'ve been"',
+        'Present Perfect Continuous: "I\'ve been doing", "I\'ve been feeling"',
+        'Future Continuous: "I\'ll be working"',
+        'Past Simple: "came last month", "they hired", "That really stung"',
+        'Modal perfects: "might come", "would you do"',
+        'Gerunds: "before becoming", "about progressing", "without our conversations"',
+        'Passive voice: "I\'ve been fobbed off", "I\'ve been feeling burned out"',
+        'Informal phrasal verbs: "hand in", "keep quiet", "hang around", "figure out"'
+      ]
+    },
+    {
+      id: 14,
+      title: 'Informal Email - Reconnecting After Long Time',
+      category: 'Informal',
+      subject: 'Long time no speak!',
+      to: 'kelly.anderson@email.com',
+      situation: 'You haven\'t been in touch with an old friend for over a year. Write an informal email reconnecting and catching up.',
+      email: `Hey Kelly!
+
+I know, I know – it\'s been absolutely ages since we last spoke, and I\'m completely rubbish for not staying in touch better. I was scrolling through old photos on my phone the other day and came across that hilarious one of us at your 25th birthday party (you know, the one where we both thought wearing matching unicorn onesies was a brilliant idea 😂), and it made me realize how much I\'ve missed having you in my life.
+
+How have you been? What\'s been going on in Kelly-world? I feel like the last proper conversation we had was... what, about a year and a half ago? Maybe longer? Time has absolutely flown by and I genuinely can\'t believe it\'s been that long.
+
+I\'ve been meaning to reach out for months but, you know how it is – life just gets ridiculously busy and before you know it, weeks turn into months. Plus, the longer you leave it, the more awkward it feels to break the silence, which is stupid really because we used to talk literally every day!
+
+So much has happened since we last caught up! Where do I even start? I finally left that awful job at the marketing agency (remember how I used to complain about my boss constantly?), and I\'ve been working for a tech startup for about eight months now. It\'s absolutely chaotic but in a good way – I\'m learning loads and the people are amazing.
+
+I also moved flat! I\'m living in Hackney now, sharing with two girls I met through a friend. The flat\'s tiny and the rent is extortionate (welcome to London, right?), but it\'s in such a cool area with loads of great bars and restaurants, so I\'m not complaining.
+
+Oh, and you\'ll never guess what – I\'ve taken up rock climbing! I know, completely random for someone who used to get out of breath walking up stairs, but I absolutely love it. You should come try it sometime if you fancy it – there\'s a brilliant climbing center near me.
+
+Anyway, enough about me rambling on about my life! I really want to hear what\'s been happening with you. Are you still at the same company? How\'s your family? Are you still with Matt, or am I completely out of the loop? (Please don\'t tell me you got married and I missed it because I\'ve been a terrible friend!)
+
+I was thinking – and stop me if this is too presumptuous – but maybe we could actually meet up properly? Like, not just say "we should totally get coffee sometime" and then never do it, but actually put a date in the diary? I\'m free most weekends, or we could do an evening during the week if that works better for you?
+
+I\'d genuinely love to catch up properly and hear everything that\'s been going on. Plus, I owe you a massive apology coffee for being so rubbish at keeping in touch!
+
+Let me know if you fancy it – no pressure if you\'re super busy, I totally get it. But it would be really lovely to see you again.
+
+Missing your face!
+
+Emma x
+
+PS I still have that book you lent me about two years ago. I promise I\'ll actually bring it if we meet up! (I know, I know, I\'m the worst!)`,
+      keyPhrases: [
+        'it\'s been absolutely ages',
+        'I\'m completely rubbish for',
+        'it made me realize',
+        'How have you been?',
+        'What\'s been going on',
+        'I\'ve been meaning to',
+        'you know how it is',
+        'the longer you leave it, the more awkward it feels',
+        'which is stupid really',
+        'So much has happened',
+        'Where do I even start?',
+        'you\'ll never guess what',
+        'enough about me rambling on',
+        'I really want to hear',
+        'Are you still',
+        'or am I completely out of the loop?',
+        'stop me if this is too presumptuous',
+        'not just say... but actually',
+        'I\'d genuinely love to',
+        'no pressure if'
+      ],
+      structure: [
+        '1. Apologetic opening: Acknowledge time gap',
+        '2. Trigger memory: Share what prompted email',
+        '3. Opening questions: Ask about their life',
+        '4. Self-awareness: Explain delay in contacting',
+        '5. Life updates: Job change',
+        '6. Life updates: New flat',
+        '7. Life updates: New hobby',
+        '8. Shift focus: Ask about their life',
+        '9. Specific questions: Probe for details',
+        '10. Concrete proposal: Suggest actual meetup',
+        '11. Flexibility: Offer options and understanding',
+        '12. Warm closing with playful PS'
+      ],
+      grammarFocus: [
+        'Present Perfect: "it\'s been ages", "I\'ve been meaning to"',
+        'Present Perfect Continuous: "What\'s been going on", "I\'ve been working"',
+        'Past Simple: "I was scrolling", "I moved", "I met"',
+        'Used to: "we used to talk", "I used to complain"',
+        'Modal verbs: "would be lovely", "could do", "should come"',
+        'Conditional: "if we meet up", "if you fancy it"',
+        'Gerunds: "about rambling", "at keeping in touch"',
+        'Question forms: variety of question structures',
+        'Informal time expressions: "absolutely ages", "months and months"'
+      ]
+    },
+    {
+      id: 15,
+      title: 'Informal Email - Declining an Invitation Diplomatically',
+      category: 'Informal',
+      subject: 'Re: Wedding invitation',
+      to: 'hannah.foster@email.com',
+      situation: 'A colleague has invited you to their wedding but you can\'t attend due to prior commitments. Write a diplomatic informal email declining the invitation.',
+      email: `Dear Hannah,
+
+Thank you so much for the wedding invitation! I was absolutely thrilled to receive it – the design is gorgeous, and I can only imagine how excited you both must be getting as the big day approaches. I\'ve been looking at the date on my calendar ever since the envelope arrived, desperately hoping I\'d be able to make it work.
+
+Unfortunately, I\'m gutted to say that I\'m not going to be able to come. I genuinely feel terrible about this, especially because I know how meaningful it is to have the people you care about there to celebrate with you.
+
+The timing has just worked out horribly – that weekend falls right in the middle of my sister\'s visit from Australia. She\'s only over for two weeks (her first time back in three years!), and we\'ve had this trip planned for absolutely ages. We\'re taking our parents away to the Cotswolds for their 40th wedding anniversary, and obviously I can\'t bail on that.
+
+I was honestly going back and forth about whether I could somehow do both – maybe race back for the evening reception or something – but your venue\'s about four hours away from where we\'ll be, and I realized that trying to squeeze it in would just mean doing neither thing properly and probably being stressed and exhausted the entire time.
+
+I really want you to know that it\'s nothing to do with not wanting to be there – I absolutely would love to celebrate with you and David! You\'ve both been so lovely to work with, and I think it\'s wonderful that you\'re getting married. I just genuinely can\'t make the logistics work with my family commitments.
+
+Please don\'t feel like you need to save me a spot just in case or anything like that – I definitely won\'t be able to make it, so please give my place to someone else who can be there to enjoy your special day properly.
+
+I\'d really love to take you both out for dinner or drinks sometime after the honeymoon though, if you\'re up for it? My treat, obviously – consider it a very belated wedding celebration! I want to hear all about the day and see about a million photos.
+
+I hope you have the most incredible, magical day, and I\'m sending you both so much love and all my best wishes. I\'ll be thinking of you on the day and raising a glass from afar!
+
+I\'m genuinely so sorry I can\'t be there in person.
+
+All my love,
+
+Sophie
+
+PS Please send me some photos afterwards – I\'d love to see how it all turns out! And congratulations again to you both. You\'re going to make a beautiful bride! 💕`,
+      keyPhrases: [
+        'Thank you so much for',
+        'I was absolutely thrilled to receive',
+        'I can only imagine how excited',
+        'Unfortunately, I\'m gutted to say',
+        'I genuinely feel terrible about this',
+        'especially because I know how meaningful',
+        'The timing has just worked out horribly',
+        'we\'ve had this planned for absolutely ages',
+        'obviously I can\'t bail on that',
+        'I was honestly going back and forth',
+        'whether I could somehow do both',
+        'I realized that',
+        'doing neither thing properly',
+        'I really want you to know',
+        'it\'s nothing to do with not wanting to be there',
+        'I just genuinely can\'t make the logistics work',
+        'Please don\'t feel like you need to',
+        'I\'d really love to',
+        'if you\'re up for it',
+        'I hope you have the most incredible'
+      ],
+      structure: [
+        '1. Grateful opening: Thank for invitation',
+        '2. Enthusiasm: Express genuine excitement for them',
+        '3. The decline: Deliver bad news with regret',
+        '4. Explanation: Valid prior commitment',
+        '5. Considered alternatives: Show you tried to make it work',
+        '6. Reassurance: Not a rejection of them personally',
+        '7. Practical point: Don\'t save a spot',
+        '8. Alternative offer: Suggest celebration later',
+        '9. Well wishes: Heartfelt congratulations',
+        '10. Apology: Reinforce regret',
+        '11. Sweet PS: Request photos and compliment'
+      ],
+      grammarFocus: [
+        'Present Perfect Continuous: "I\'ve been looking"',
+        'Present Perfect: "we\'ve had this planned", "You\'ve been so lovely"',
+        'Future Continuous: "We\'re taking our parents"',
+        'Modal verbs: "must be", "would love to", "could somehow"',
+        'Gerunds: "after receiving", "about whether", "trying to squeeze"',
+        'Conditional: "if you\'re up for it"',
+        'Passive voice: "I was absolutely thrilled"',
+        'Reported thought: "I realized that trying to squeeze it in would mean"',
+        'Emphatic adverbs: "absolutely", "genuinely", "definitely"'
+      ]
+    },
+    {
+      id: 16,
       title: 'Formal Email - Negotiating Business Terms',
       category: 'Formal Business',
       subject: 'Proposal for Partnership and Contract Terms Review',
@@ -62,7 +1148,7 @@ Director of Strategic Partnerships`,
       ]
     },
     {
-      id: 2,
+      id: 17,
       title: 'Semi-formal Email - Academic Research Collaboration',
       category: 'Academic',
       subject: 'Invitation to Collaborate on Climate Research Project',
@@ -120,7 +1206,7 @@ Institute for Climate Studies`,
       ]
     },
     {
-      id: 3,
+      id: 18,
       title: 'Formal Email - Diplomatic Complaint',
       category: 'Formal Complaint',
       subject: 'Formal Complaint Regarding Service Disruption and Compensation Request',
@@ -199,7 +1285,7 @@ Frequent Flyer Number: GA8472951`,
       ]
     },
     {
-      id: 4,
+      id: 19,
       title: 'Semi-formal Email - Professional Networking',
       category: 'Networking',
       subject: 'Following Up from TechInnovate Summit - Potential Collaboration',
@@ -264,7 +1350,7 @@ GreenTech Solutions Ltd.`,
       ]
     },
     {
-      id: 5,
+      id: 20,
       title: 'Formal Email - Grant Application Follow-up',
       category: 'Academic/Funding',
       subject: 'Follow-up on Research Grant Application REF: ENV2025-847',
