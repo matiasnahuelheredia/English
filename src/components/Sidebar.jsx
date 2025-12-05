@@ -553,6 +553,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Email Writing Examples
                     </button>
+                    <button
+                      onClick={() => onSelectTense('story-telling-b2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'story-telling-b2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Story Telling Examples
+                    </button>
                   </div>
                 )}
 

@@ -14,6 +14,7 @@ import ConfusingAdverbsExercise from './ConfusingAdverbsExercise';
 import SentenceAdverbsExercise from './SentenceAdverbsExercise';
 import EmailWritingB1 from './EmailWritingB1';
 import EmailWritingB2 from './EmailWritingB2';
+import StoryTellingB2 from './StoryTellingB2';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -64,6 +65,11 @@ const ExerciseView = ({ tenseId }) => {
   // Si es email-writing-b2, mostrar el componente EmailWritingB2
   if (tenseId === 'email-writing-b2') {
     return <EmailWritingB2 />;
+  }
+
+  // Si es story-telling-b2, mostrar el componente StoryTellingB2
+  if (tenseId === 'story-telling-b2') {
+    return <StoryTellingB2 />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
