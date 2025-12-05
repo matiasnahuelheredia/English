@@ -1,145 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { getExam2Sections, getTotalExam2Exercises } from '../data/examData2';
+import { getExam3Sections, getTotalExam3Exercises } from '../data/examData3';
 
-const ExamView2 = () => {
-  const [sections] = useState(getExam2Sections());
+const ExamView3 = () => {
+  const [sections] = useState(getExam3Sections());
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [feedback, setFeedback] = useState(null);
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [completedExercises, setCompletedExercises] = useState(0);
-  const [showHelp, setShowHelp] = useState(false);
   const [allAnswers, setAllAnswers] = useState({});
   const [checkedExercises, setCheckedExercises] = useState(new Set());
 
   const currentSection = sections[currentSectionIndex];
   const currentExercise = currentSection?.exercises[currentExerciseIndex];
-  const totalExercises = getTotalExam2Exercises();
+  const totalExercises = getTotalExam3Exercises();
   const progress = (completedExercises / totalExercises) * 100;
-
-  const getSectionHelp = (sectionId) => {
-    const helpContent = {
-      'cybersecurity-narrative': {
-        title: '📚 Cómo resolver: Narrative Tenses (Cybersecurity)',
-        example: 'The hacker _______ (access) our database when the firewall blocked him.',
-        solution: 'was accessing',
-        explanation: 'En narrativas de seguridad usamos diferentes tiempos para describir incidentes:',
-        points: [
-          '🔹 Past Simple: Acciones de seguridad COMPLETADAS y SECUENCIALES',
-          '   • Eventos del incidente uno tras otro → "detected the breach, blocked access, sent alert"',
-          '   • Acciones completas → "The firewall blocked the attack"',
-          '   • Palabra clave: "then" (entonces), secuencia de eventos',
-          '',
-          '🔹 Past Continuous: Ataques EN PROGRESO que fueron INTERRUMPIDOS',
-          '   • Ataque en curso → "The hacker was accessing when..."',
-          '   • Se combina con Past Simple (interrupción) → "was downloading files when firewall blocked"',
-          '   • Palabra clave: "when" + acción que interrumpe, "while" + otra acción continua',
-          '   • Momento específico → "At 3am, the malware was spreading"',
-          '',
-          '🔹 Past Perfect: Vulnerabilidad que existía ANTES del ataque',
-          '   • Primera acción de dos eventos → "They had exposed (1º) the port before the attack (2º)"',
-          '   • Causa del incidente → "The breach succeeded because they hadn\'t updated the patch"',
-          '   • Palabra clave: "before", "after", "already", "by the time"',
-          '   • Estado previo → "Someone had stolen the credentials" (antes del acceso)',
-          '',
-          '🔹 Past Perfect Continuous: DURACIÓN del ataque antes de detección',
-          '   • Énfasis en tiempo del ataque → "had been running for hours when detected"',
-          '   • Actividad continua → "The malware had been encrypting files since midnight"',
-          '   • Palabra clave: "for" + duración, "since" + momento inicial',
-          '   • Impacto acumulado → "had been stealing data for weeks (mucho daño)"'
-        ],
-        tip: '💡 CONTEXTO DE SEGURIDAD: ¿Ataque interrumpido? → Past Continuous. ¿Pasos del incidente? → Past Simple. ¿Vulnerabilidad previa? → Past Perfect. ¿Tiempo del ataque? → Past Perfect Continuous'
-      },
-      'cybersecurity-present-perfect': {
-        title: '📚 Cómo resolver: Present Perfect (Cybersecurity)',
-        example: 'How long _______ (the system / be) under attack?',
-        solution: 'has the system been',
-        explanation: 'En contexto de seguridad:',
-        points: [
-          '🔹 Simple: Experiencias de ataques, vulnerabilidades detectadas → "have experienced"',
-          '🔹 Continuous: Duración de monitoreo, investigación → "have been investigating"',
-          '🔹 Verbos de estado: use (usar), protect (proteger) → pueden ser simple o continuous',
-          '🔹 "How long" con ataques/monitoreo activo → Continuous'
-        ],
-        tip: '💡 Si enfatiza DURACIÓN de investigación/ataque → Continuous. Si es RESULTADO detectado → Simple'
-      },
-      'cybersecurity-future': {
-        title: '📚 Cómo resolver: Future Forms (Cybersecurity)',
-        example: 'By Friday, we will install / will have installed the security patches.',
-        solution: 'will have installed',
-        explanation: 'En planificación de seguridad:',
-        points: [
-          '🔹 Future Continuous: Instalación/escaneo en progreso en momento específico',
-          '🔹 Future Perfect: Parches/auditorías completadas ANTES de deadline',
-          '🔹 "By [date/time]" con seguridad → Future Perfect (completado)',
-          '🔹 "At [time]" durante mantenimiento → Future Continuous (en progreso)'
-        ],
-        tip: '💡 Deadlines de seguridad usan "by" → Future Perfect. Ventanas de mantenimiento → Continuous'
-      },
-      'cybersecurity-word-order': {
-        title: '📚 Cómo resolver: Word Order (Cybersecurity)',
-        example: 'is / Our firewall / updated / automatically / always',
-        solution: 'Our firewall is always automatically updated',
-        explanation: 'Orden de adverbios en contexto técnico:',
-        points: [
-          '🔹 Frecuencia (always, rarely): DESPUÉS de BE, ANTES de otros verbos',
-          '🔹 Opinión (Fortunately, Surprisingly): Al PRINCIPIO',
-          '🔹 Modo (automatically, securely): Después de frecuencia o verbo',
-          '🔹 Tiempo (next Monday, this week): Al FINAL'
-        ],
-        tip: '💡 En seguridad: Sistema + BE + Frecuencia + Modo + Acción + Tiempo'
-      },
-      'cybersecurity-adverbs': {
-        title: '📚 Cómo resolver: Adverbs (Cybersecurity)',
-        example: 'Have you ever / even tried penetration testing?',
-        solution: 'ever',
-        explanation: 'Adverbios en contexto de seguridad:',
-        points: [
-          '🔹 ever (experiencias de seguridad) vs even (incluso)',
-          '🔹 specially (diseñado específicamente) vs especially (particularmente vulnerable)',
-          '🔹 hardly (apenas detectado) vs hard (trabajar intensamente)',
-          '🔹 still (aún vulnerable) vs yet (todavía no parcheado - final)',
-          '🔹 in the end (finalmente bloqueamos) vs at the end (al final del escaneo)',
-          '🔹 nearly (casi hackeado) vs near (cerca del servidor)'
-        ],
-        tip: '💡 Contexto técnico: lee toda la frase, piensa en SIGNIFICADO de seguridad'
-      },
-      'cybersecurity-mixed': {
-        title: '📚 Cómo resolver: Mixed Grammar (Cybersecurity)',
-        example: 'Your network doesn\'t have encryption, does / doesn\'t it?',
-        solution: 'does',
-        explanation: 'Gramática variada en ciberseguridad:',
-        points: [
-          '🔹 The + adjective para sistemas → "The vulnerable" (sistemas)',
-          '🔹 Question tags: Negativo → positivo (doesn\'t have → does it)',
-          '🔹 Such + a + adj + noun → "such a serious breach"',
-          '🔹 Auxiliar en respuestas debe coincidir con tiempo usado',
-          '🔹 "did + verb" para ENFATIZAR advertencias → "I did warn you!"'
-        ],
-        tip: '💡 En seguridad, el énfasis es crítico - "did warn", "does matter"'
-      },
-      'cybersecurity-vocabulary': {
-        title: '📚 Cómo resolver: Cybersecurity Vocabulary',
-        example: 'A f_______ monitors and controls network traffic.',
-        solution: 'firewall',
-        explanation: 'Vocabulario esencial de ciberseguridad:',
-        points: [
-          '🔹 firewall (cortafuegos) - protección de red',
-          '🔹 malware (software malicioso) - virus, troyanos, etc.',
-          '🔹 phishing (suplantación) - emails fraudulentos',
-          '🔹 encryption (cifrado) - proteger datos',
-          '🔹 vulnerability (vulnerabilidad) - debilidades explotables',
-          '🔹 ransomware (secuestro de datos) - pide rescate',
-          '🔹 backup (respaldo) - copia de seguridad',
-          '🔹 authentication (autenticación) - verificar identidad'
-        ],
-        tip: '💡 El contexto describe la FUNCIÓN del término - usa pistas técnicas en la oración'
-      }
-    };
-
-    return helpContent[sectionId] || null;
-  };
 
   useEffect(() => {
     const exerciseKey = `${currentSectionIndex}-${currentExerciseIndex}`;
@@ -403,9 +279,9 @@ const ExamView2 = () => {
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-center mb-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">🔐 Cybersecurity English Exam</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">📝 B2 Final Exam</h1>
             <p className="text-sm text-htb-text-dim mt-1">
-              Progreso: {completedExercises} / {totalExercises} ejercicios
+              Grammar & Vocabulary Assessment
             </p>
           </div>
 
@@ -435,54 +311,13 @@ const ExamView2 = () => {
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-xl sm:text-2xl font-bold text-white">{currentSection.title}</h2>
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => setShowHelp(!showHelp)}
-              className="bg-htb-green text-htb-bg px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-htb-green-hover transition-all duration-200 flex items-center gap-1"
-            >
-              <span>💡</span>
-              <span className="hidden sm:inline">Ayuda</span>
-            </button>
             <span className="bg-htb-card border border-htb-green/30 text-htb-green px-3 py-1 rounded-full text-sm font-semibold">
-              Sección {currentSectionIndex + 1}/{sections.length}
+              Section {currentSectionIndex + 1}/{sections.length}
             </span>
           </div>
         </div>
         <p className="text-htb-text text-sm sm:text-base">{currentSection.instruction}</p>
       </div>
-
-      {/* Help Panel */}
-      {showHelp && getSectionHelp(currentSection.id) && (
-        <div className="bg-htb-card border-2 border-htb-green/50 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6 animate-fadeIn">
-          <div className="flex items-start justify-between mb-3">
-            <h3 className="text-lg font-bold text-white">{getSectionHelp(currentSection.id).title}</h3>
-            <button
-              onClick={() => setShowHelp(false)}
-              className="text-htb-text-dim hover:text-white font-bold text-xl"
-            >
-              ✕
-            </button>
-          </div>
-          
-          <div className="bg-htb-sidebar border border-htb-green/20 rounded-lg p-4 mb-3">
-            <p className="text-sm font-semibold text-htb-text mb-2">📝 Ejemplo:</p>
-            <p className="text-htb-text mb-1">{getSectionHelp(currentSection.id).example}</p>
-            <p className="text-htb-green font-semibold">✓ Solución: {getSectionHelp(currentSection.id).solution}</p>
-          </div>
-
-          <div className="mb-3">
-            <p className="text-sm font-semibold text-white mb-2">{getSectionHelp(currentSection.id).explanation}</p>
-            <ul className="space-y-1">
-              {getSectionHelp(currentSection.id).points.map((point, index) => (
-                <li key={index} className="text-sm text-htb-text">{point}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-3">
-            <p className="text-sm text-htb-green font-medium">{getSectionHelp(currentSection.id).tip}</p>
-          </div>
-        </div>
-      )}
 
       {/* Exercise Content */}
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4 sm:p-6 mb-6">
@@ -622,4 +457,4 @@ const ExamView2 = () => {
   );
 };
 
-export default ExamView2;
+export default ExamView3;

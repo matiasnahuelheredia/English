@@ -409,6 +409,6 @@ export const getExamSection = (sectionId) => {
   return examData.sections.find(section => section.id === sectionId);
 };
 
-export const getTotalExercises = () => {
+export const getTotalExam3Exercises = () => {
   return examData.sections.reduce((total, section) => total + section.exercises.length, 0);
 };

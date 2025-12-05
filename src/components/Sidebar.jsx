@@ -6,7 +6,10 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     'Intermediate': false,
     'Intermediate-Vocabulary': false,
     'Intermediate-Grammar': false,
+    'Intermediate-Writing': false,
     'Upper-Intermediate': true,
+    'Upper-Intermediate-Grammar': false,
+    'Upper-Intermediate-Writing': false,
     'Tiempos Verbales': true,
     'Present': true,
     'Past': false,
@@ -177,6 +180,32 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       }`}
                     >
                       Present Perfect & Past Simple (2)
+                    </button>
+                  </div>
+                )}
+
+                {/* Writing B1 */}
+                <button
+                  onClick={() => toggleSection('Intermediate-Writing')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Writing Skills</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Intermediate-Writing'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Intermediate-Writing'] && (
+                  <div className="ml-3 space-y-0.5">
+                    <button
+                      onClick={() => onSelectTense('email-writing-b1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'email-writing-b1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Email Writing Examples
                     </button>
                   </div>
                 )}
@@ -461,6 +490,68 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       }`}
                     >
                       Sentence Adverbs
+                    </button>
+                  </div>
+                )}
+
+                {/* Grammar B2 */}
+                <button
+                  onClick={() => toggleSection('Upper-Intermediate-Grammar')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Grammar</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Upper-Intermediate-Grammar'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Upper-Intermediate-Grammar'] && (
+                  <div className="ml-3 space-y-0.5">
+                    <button
+                      onClick={() => onSelectTense('confusing-adverbs')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'confusing-adverbs'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Confusing Adverbs
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('sentence-adverbs')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'sentence-adverbs'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Sentence Adverbs
+                    </button>
+                  </div>
+                )}
+
+                {/* Writing B2 */}
+                <button
+                  onClick={() => toggleSection('Upper-Intermediate-Writing')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Writing Skills</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Upper-Intermediate-Writing'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Upper-Intermediate-Writing'] && (
+                  <div className="ml-3 space-y-0.5">
+                    <button
+                      onClick={() => onSelectTense('email-writing-b2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'email-writing-b2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Email Writing Examples
                     </button>
                   </div>
                 )}

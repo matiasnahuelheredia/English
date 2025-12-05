@@ -4,6 +4,7 @@ import { getVocabularyByTopic } from '../data/vocabularyData';
 import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
+import ExamView3 from './ExamView3';
 import Introduction from './Introduction';
 import ConflictWarfareExercise from './ConflictWarfareExercise';
 import AdjectivesExercise from './AdjectivesExercise';
@@ -11,6 +12,8 @@ import PhonesTechnologyExercise from './PhonesTechnologyExercise';
 import ManagerialReportsExercise from './ManagerialReportsExercise';
 import ConfusingAdverbsExercise from './ConfusingAdverbsExercise';
 import SentenceAdverbsExercise from './SentenceAdverbsExercise';
+import EmailWritingB1 from './EmailWritingB1';
+import EmailWritingB2 from './EmailWritingB2';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -48,6 +51,21 @@ const ExerciseView = ({ tenseId }) => {
     return <SentenceAdverbsExercise />;
   }
 
+  // Si es email-writing-b1, mostrar el componente EmailWritingB1
+  if (tenseId === 'email-writing-b1') {
+    return <EmailWritingB1 />;
+  }
+
+  // Si es email-writing-b1, mostrar el componente EmailWritingB1
+  if (tenseId === 'email-writing-b1') {
+    return <EmailWritingB1 />;
+  }
+
+  // Si es email-writing-b2, mostrar el componente EmailWritingB2
+  if (tenseId === 'email-writing-b2') {
+    return <EmailWritingB2 />;
+  }
+
   // Si es un ejercicio de tipo match, usar el componente especializado
   if (tenseId === 'weather-match') {
     return <MatchExercise tenseId={tenseId} />;
@@ -61,6 +79,11 @@ const ExerciseView = ({ tenseId }) => {
   // Si es el examen 2 (cybersecurity), usar el componente ExamView2
   if (tenseId === 'exam2') {
     return <ExamView2 />;
+  }
+
+  // Si es el examen 3 (final exam), usar el componente ExamView3
+  if (tenseId === 'exam3') {
+    return <ExamView3 />;
   }
 
   const [exercises, setExercises] = useState([]);
