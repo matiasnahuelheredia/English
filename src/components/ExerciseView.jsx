@@ -15,6 +15,9 @@ import SentenceAdverbsExercise from './SentenceAdverbsExercise';
 import EmailWritingB1 from './EmailWritingB1';
 import EmailWritingB2 from './EmailWritingB2';
 import StoryTellingB2 from './StoryTellingB2';
+import LinkingWordsB2 from './LinkingWordsB2';
+import PersonalQuestionsB2 from './PersonalQuestionsB2';
+import PictureDescriptionB2 from './PictureDescriptionB2';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -70,6 +73,21 @@ const ExerciseView = ({ tenseId }) => {
   // Si es story-telling-b2, mostrar el componente StoryTellingB2
   if (tenseId === 'story-telling-b2') {
     return <StoryTellingB2 />;
+  }
+
+  // Si es linking-words-b2, mostrar el componente LinkingWordsB2
+  if (tenseId === 'linking-words-b2') {
+    return <LinkingWordsB2 />;
+  }
+
+  // Si es personal-questions-b2, mostrar el componente PersonalQuestionsB2
+  if (tenseId === 'personal-questions-b2') {
+    return <PersonalQuestionsB2 />;
+  }
+
+  // Si es picture-description-b2, mostrar el componente PictureDescriptionB2
+  if (tenseId === 'picture-description-b2') {
+    return <PictureDescriptionB2 />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
@@ -212,7 +230,7 @@ const ExerciseView = ({ tenseId }) => {
     setFeedback(null);
     setIsReversed(true);
     setShowAnswer(false);
-    setCountdown(20);
+    setCountdown(4);
     setStats({ correct: 0, incorrect: 0 });
     
     if (loadedExercises.length > 0) {
@@ -250,7 +268,7 @@ const ExerciseView = ({ tenseId }) => {
     setUserAnswers([]);
     setFeedback(null);
     setShowAnswer(false);
-    setCountdown(20);
+    setCountdown(4);
     // Reset remaining exercises when changing direction
     if (isVocabulary) {
       setRemainingVocabExercises([...exercises]);
@@ -273,7 +291,7 @@ const ExerciseView = ({ tenseId }) => {
       setUserAnswers([]);
       setFeedback(null);
       setShowAnswer(false);
-      setCountdown(20);
+      setCountdown(4);
       
       // Iniciar countdown inicial solo para vocabulario
       if (isVocabulary && exercise.englishWord) {
@@ -376,9 +394,9 @@ const ExerciseView = ({ tenseId }) => {
           loadNewQuestion();
         }, 5000);
       } else {
-        // Si es incorrecta, iniciar countdown y timer para mostrar respuesta después de 20 segundos
-        setCountdown(20);
-        let currentCount = 20;
+        // Si es incorrecta, iniciar countdown y timer para mostrar respuesta después de 4 segundos
+        setCountdown(4);
+        let currentCount = 4;
         
         feedbackIntervalRef.current = setInterval(() => {
           currentCount -= 1;
@@ -392,7 +410,7 @@ const ExerciseView = ({ tenseId }) => {
         feedbackTimerRef.current = setTimeout(() => {
           setShowAnswer(true);
           clearInterval(feedbackIntervalRef.current);
-        }, 20000);
+        }, 4000);
       }
       
       return;

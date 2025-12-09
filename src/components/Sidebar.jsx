@@ -1,30 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Sidebar = ({ selectedTense, onSelectTense }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const [expandedSections, setExpandedSections] = useState({
-    'Intermediate': false,
-    'Intermediate-Vocabulary': false,
-    'Intermediate-Grammar': false,
-    'Intermediate-Writing': false,
-    'Upper-Intermediate': true,
-    'Upper-Intermediate-Grammar': false,
-    'Upper-Intermediate-Writing': false,
-    'Tiempos Verbales': true,
-    'Present': true,
-    'Past': false,
-    'Future': false,
-    'Conditionals': false,
-    'Question Forms': false,
-    'Mixed Practice': false,
-    'Vocabulary': false,
-    'Advanced': false,
-    'Advanced-Writing': false,
-    'Advanced-Vocabulary': false,
-    'Weather Exercise': false,
-    'Exam': false,
-    'Exam 2': false
+  
+  // Recuperar las secciones expandidas desde localStorage
+  const [expandedSections, setExpandedSections] = useState(() => {
+    const saved = localStorage.getItem('expandedSections');
+    if (saved) {
+      return JSON.parse(saved);
+    }
+    // Valores por defecto si no hay nada guardado
+    return {
+      'Intermediate': false,
+      'Intermediate-Vocabulary': false,
+      'Intermediate-Grammar': false,
+      'Intermediate-Writing': false,
+      'Upper-Intermediate': true,
+      'Upper-Intermediate-Writing': false,
+      'Tiempos Verbales': true,
+      'Present': true,
+      'Past': false,
+      'Future': false,
+      'Conditionals': false,
+      'Question Forms': false,
+      'Mixed Practice': false,
+      'Vocabulary': false,
+      'Advanced': false,
+      'Advanced-Writing': false,
+      'Advanced-Vocabulary': false,
+      'Weather Exercise': false,
+      'Exam': false,
+      'Exam 2': false
+    };
   });
+
+  // Guardar en localStorage cada vez que cambien las secciones expandidas
+  useEffect(() => {
+    localStorage.setItem('expandedSections', JSON.stringify(expandedSections));
+  }, [expandedSections]);
 
   const tenses = [
     { id: 'present-simple', name: 'Present Simple', category: 'Present' },
@@ -76,9 +89,21 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 bg-htb-card text-htb-text p-2 rounded-lg hover:bg-htb-green hover:text-htb-bg transition-all"
+        className="md:hidden fixed top-4 left-4 z-50 bg-htb-green text-htb-bg p-3 rounded-lg shadow-lg hover:bg-green-600 transition-all"
+        aria-label="Toggle menu"
       >
-        <span className="text-xl">{isOpen ? '✕' : '☰'}</span>
+        <svg 
+          className="w-6 h-6" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          {isOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
       </button>
 
       <div
@@ -494,42 +519,6 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                   </div>
                 )}
 
-                {/* Grammar B2 */}
-                <button
-                  onClick={() => toggleSection('Upper-Intermediate-Grammar')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
-                >
-                  <span className="text-htb-text-dim">Grammar</span>
-                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Upper-Intermediate-Grammar'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-
-                {expandedSections['Upper-Intermediate-Grammar'] && (
-                  <div className="ml-3 space-y-0.5">
-                    <button
-                      onClick={() => onSelectTense('confusing-adverbs')}
-                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
-                        selectedTense === 'confusing-adverbs'
-                          ? 'bg-htb-green text-htb-bg font-medium'
-                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
-                      }`}
-                    >
-                      Confusing Adverbs
-                    </button>
-                    <button
-                      onClick={() => onSelectTense('sentence-adverbs')}
-                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
-                        selectedTense === 'sentence-adverbs'
-                          ? 'bg-htb-green text-htb-bg font-medium'
-                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
-                      }`}
-                    >
-                      Sentence Adverbs
-                    </button>
-                  </div>
-                )}
-
                 {/* Writing B2 */}
                 <button
                   onClick={() => toggleSection('Upper-Intermediate-Writing')}
@@ -562,6 +551,36 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       }`}
                     >
                       Story Telling Examples
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('linking-words-b2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'linking-words-b2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Linking Words & Connectors
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('personal-questions-b2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'personal-questions-b2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Personal Questions & Interview
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('picture-description-b2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'picture-description-b2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Picture Description
                     </button>
                   </div>
                 )}
