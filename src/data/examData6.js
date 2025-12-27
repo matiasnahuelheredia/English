@@ -295,7 +295,7 @@ export const examData6 = {
           sentence: "By next Monday, she'll have decided / be deciding what to do.",
           options: ["she'll have decided", "be deciding"],
           correctAnswer: "she'll have decided",
-          explanation: 'Future Perfect con "by next Monday" = decisión completa antes.'
+          explanation: 'Future Perfect with "by next Monday" = decision complete before.'
         },
         {
           id: 6,
@@ -309,14 +309,14 @@ export const examData6 = {
           sentence: "They won't finish on time. They're efficient rarely / rarely efficient.",
           options: ["efficient rarely", "rarely efficient"],
           correctAnswer: 'rarely efficient',
-          explanation: 'Adverbio "rarely" antes de adjetivo "efficient".'
+          explanation: 'Adverb "rarely" before adjective "efficient".'
         },
         {
           id: 8,
           sentence: "Peter doesn't cook, and neither will / does his brother.",
           options: ['will', 'does'],
           correctAnswer: 'does',
-          explanation: '"Neither + auxiliary" con mismo tiempo (doesn\'t = presente → does).'
+          explanation: '"Neither + auxiliary" with same tense (doesn\'t = present → does).'
         },
         {
           id: 9,
@@ -330,7 +330,7 @@ export const examData6 = {
           sentence: "I hate running, but my sister does / doesn't.",
           options: ['does', "doesn't"],
           correctAnswer: "doesn't",
-          explanation: '"But" indica contraste. Si yo odio, ella también (doesn\'t hate = le gusta o no odia).'
+          explanation: '"But" indicates contrast. If I hate, she also (doesn\'t hate = likes or doesn\'t hate).'
         }
       ]
     },
@@ -345,56 +345,56 @@ export const examData6 = {
           sentence: "We're expecting a massive s_______ tonight with thunder and lightning.",
           firstLetter: 's',
           correctAnswer: 'storm',
-          explanation: '"Storm" (tormenta) con truenos y relámpagos.'
+          explanation: '"Storm" with thunder and lightning.'
         },
         {
           id: 2,
           sentence: 'His skin is very s_______ to sunlight. He burns easily.',
           firstLetter: 's',
           correctAnswer: 'sensitive',
-          explanation: '"Sensitive" = sensible/delicado.'
+          explanation: '"Sensitive" = sensitive/delicate.'
         },
         {
           id: 3,
           sentence: 'You need to f_______ in your personal details on this application.',
           firstLetter: 'f',
           correctAnswer: 'fill',
-          explanation: '"Fill in" = rellenar/completar.'
+          explanation: '"Fill in" = fill in/complete.'
         },
         {
           id: 4,
           sentence: "He's very a_______-minded. He can never focus on one thing.",
           firstLetter: 'a',
           correctAnswer: 'absent',
-          explanation: '"Absent-minded" = distraído, despistado.'
+          explanation: '"Absent-minded" = distracted, absent-minded.'
         },
         {
           id: 5,
           sentence: 'The smoke was so t_______ we could barely breathe.',
           firstLetter: 't',
           correctAnswer: 'thick',
-          explanation: '"Thick" = espeso/denso.'
+          explanation: '"Thick" = thick/dense.'
         },
         {
           id: 6,
           sentence: "'Is your jacket made of real l_______?' 'No, it's faux leather.'",
           firstLetter: 'l',
           correctAnswer: 'leather',
-          explanation: '"Leather" = cuero.'
+          explanation: '"Leather" = leather material.'
         },
         {
           id: 7,
           sentence: 'I prefer w_______ seats on planes so I can see the view.',
           firstLetter: 'w',
           correctAnswer: 'window',
-          explanation: '"Window seat" = asiento junto a ventana.'
+          explanation: '"Window seat" = seat next to the window.'
         },
         {
           id: 8,
           sentence: 'The nurse took my blood p_______ twice to make sure it was accurate.',
           firstLetter: 'p',
           correctAnswer: 'pressure',
-          explanation: '"Blood pressure" = presión arterial.'
+          explanation: '"Blood pressure" = blood pressure/arterial pressure.'
         }
       ]
     }

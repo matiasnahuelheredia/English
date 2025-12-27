@@ -2144,7 +2144,7 @@ const exercisesData = {
       ],
       options: ['brush', 'brushes', 'brushing'],
       correctAnswer: 'brush',
-      explanation: 'We use "brush" con "I" en Present Simple. "Always" indica un hábito regular.'
+      explanation: 'We use "brush" with "I" in Present Simple. "Always" indicates a regular habit.'
     },
     {
       sentenceParts: [
@@ -2376,7 +2376,7 @@ const exercisesData = {
       ],
       options: ['forgetting', 'forget', 'forgets'],
       correctAnswer: 'forgetting',
-      explanation: 'We use Present Continuous con "always" para criticar un hábito repetitivo que nos molesta.'
+      explanation: 'We use Present Continuous with "always" to criticize a repetitive habit that annoys us.'
     },
     {
       sentenceParts: [
@@ -2388,7 +2388,7 @@ const exercisesData = {
       ],
       options: ['are', 'is'],
       correctAnswer: 'are',
-      explanation: 'We use "are" con "you" para preguntar sobre pensamientos en este momento.'
+      explanation: 'We use "are" with "you" to ask about thoughts at this moment.'
     },
     {
       sentenceParts: [
@@ -2398,7 +2398,7 @@ const exercisesData = {
       ],
       options: ['are developing', 'develop', 'develops'],
       correctAnswer: 'are developing',
-      explanation: 'We use Present Continuous para actividades en progreso en el período actual (aunque no en este momento exacto).'
+      explanation: 'We use Present Continuous for activities in progress in the current period (though not at this exact moment).'
     },
     {
       sentenceParts: [
@@ -2408,7 +2408,7 @@ const exercisesData = {
       ],
       options: ['is hiring', 'hires', 'hire'],
       correctAnswer: 'is hiring',
-      explanation: 'We use Present Continuous para planes futuros ya organizados con "next week".'
+      explanation: 'We use Present Continuous for future plans already organized with "next week".'
     }
   ],
 
@@ -2421,7 +2421,7 @@ const exercisesData = {
       ],
       options: ['went', 'go', 'gone'],
       correctAnswer: 'went',
-      explanation: 'We use "went" (Past Simple) porque "last year" indica un tiempo specific en el pasado. La acción está completamente terminada.'
+      explanation: 'We use "went" (Past Simple) because "last year" indicates a specific time in the past. The action is completely finished.'
     },
     {
       sentenceParts: [
@@ -2431,7 +2431,7 @@ const exercisesData = {
       ],
       options: ['completed', 'complete', 'completes'],
       correctAnswer: 'completed',
-      explanation: 'We use "completed" porque "yesterday" es un marcador temporal del pasado que requiere Past Simple.'
+      explanation: 'We use "completed" because "yesterday" is a past time marker that requires Past Simple.'
     },
     {
       sentenceParts: [
@@ -2441,7 +2441,7 @@ const exercisesData = {
       ],
       options: ['deployed', 'deploy', 'deploys'],
       correctAnswer: 'deployed',
-      explanation: 'We use "deployed" porque "in 2020" es un tiempo specific en el pasado y la acción está completa.'
+      explanation: 'We use "deployed" because "in 2020" is a specific time in the past and the action is complete.'
     },
     {
       sentenceParts: [
@@ -2450,7 +2450,7 @@ const exercisesData = {
         { type: 'text', content: '(attend) a cybersecurity webinar.' }
       ],
       correctAnswer: ['attended'],
-      explanation: 'Past Simple: verb + ed (regular verbs). We use "attended" porque "last night" es un tiempo specific y completado en el pasado.'
+      explanation: 'Past Simple: verb + ed (regular verbs). We use "attended" because "last night" is a specific and completed time in the past.'
     },
     {
       sentenceParts: [
@@ -2459,7 +2459,7 @@ const exercisesData = {
         { type: 'text', content: '(you/compromise) last month?' }
       ],
       correctAnswer: ['did you compromise'],
-      explanation: 'Past Simple question: Did + subject + verb (base form). "Did" ya indica el pasado, por eso el verbo va en forma base.'
+      explanation: 'Past Simple question: Did + subject + verb (base form). "Did" already indicates the past, that is why the verb goes in base form.'
     },
     {
       sentenceParts: [
@@ -2468,7 +2468,7 @@ const exercisesData = {
         { type: 'text', content: '(not/come) to my party yesterday.' }
       ],
       correctAnswer: ["didn't come", 'did not come'],
-      explanation: 'Past Simple negativo: did not (didn\'t) + verb (base form). La acción no ocurrió en un tiempo specific del pasado.'
+      explanation: 'Past Simple negative: did not (did not) + verb (base form). The action did not occur at a specific time in the past.'
     },
     {
       sentenceParts: [
@@ -2478,7 +2478,7 @@ const exercisesData = {
       ],
       options: ['ate', 'eat', 'eats'],
       correctAnswer: 'ate',
-      explanation: 'We use "ate" (Past Simple irregular) porque "last week" indica un tiempo terminado en el pasado.'
+      explanation: 'We use "ate" (Past Simple irregular) because "last week" indicates a finished time in the past.'
     },
     {
       sentenceParts: [
@@ -2488,7 +2488,7 @@ const exercisesData = {
       ],
       options: ['studied', 'study', 'studies'],
       correctAnswer: 'studied',
-      explanation: 'We use "studied" porque la acción de estudiar está completamente terminada en el pasado.'
+      explanation: 'We use "studied" because the action of studying is completely finished in the past.'
     },
     {
       sentenceParts: [
@@ -2498,7 +2498,7 @@ const exercisesData = {
       ],
       options: ['watch', 'watched', 'watches'],
       correctAnswer: 'watch',
-      explanation: 'Después de "Did" usamos el infinitivo del verbo sin "to". "Did" ya indica el pasado.'
+      explanation: 'After "Did" we use the verb infinitive without "to". "Did" already indicates the past.'
     },
     {
       sentenceParts: [
@@ -2508,7 +2508,7 @@ const exercisesData = {
       ],
       options: ['lived', 'live', 'lives'],
       correctAnswer: 'lived',
-      explanation: 'We use "lived" porque "50 years ago" es un tiempo specific terminado en el pasado.'
+      explanation: 'We use "lived" because "50 years ago" is a specific finished time in the past.'
     },
     {
       sentenceParts: [
@@ -2518,7 +2518,7 @@ const exercisesData = {
       ],
       options: ['started', 'start', 'starts'],
       correctAnswer: 'started',
-      explanation: 'We use Past Simple porque hablamos de un evento specific que ocurrió en el pasado.'
+      explanation: 'We use Past Simple because we are talking about a specific event that occurred in the past.'
     },
     {
       sentenceParts: [
@@ -2528,7 +2528,7 @@ const exercisesData = {
       ],
       options: ["didn't", "don't", "doesn't"],
       correctAnswer: "didn't",
-      explanation: 'We use "didn\'t" para la forma negativa en Past Simple. "Yesterday" confirma que es pasado.'
+      explanation: 'We use "did not" for the negative form in Past Simple. "Yesterday" confirms that it is past.'
     },
     {
       sentenceParts: [
@@ -2540,7 +2540,7 @@ const exercisesData = {
       ],
       options: ['did', 'do'],
       correctAnswer: 'did',
-      explanation: 'We use "did" para formar preguntas en Past Simple con "last summer".'
+      explanation: 'We use "did" to form questions in Past Simple with "last summer".'
     },
     {
       sentenceParts: [
@@ -2550,7 +2550,7 @@ const exercisesData = {
       ],
       options: ['lost', 'lose', 'loses'],
       correctAnswer: 'lost',
-      explanation: 'We use "lost" (Past Simple irregular) porque "this morning" (si ya pasó) es un tiempo terminado.'
+      explanation: 'We use "lost" (Past Simple irregular) because "this morning" (if already past) is a finished time.'
     },
     {
       sentenceParts: [
@@ -2560,7 +2560,7 @@ const exercisesData = {
       ],
       options: ['played', 'play', 'plays'],
       correctAnswer: 'played',
-      explanation: 'We use "played" porque la actividad de la tarde ya terminó (está en el pasado).'
+      explanation: 'We use "played" because the afternoon activity has already finished (it is in the past).'
     },
     {
       sentenceParts: [
@@ -2570,7 +2570,7 @@ const exercisesData = {
       ],
       options: ['met', 'meet', 'meets'],
       correctAnswer: 'met',
-      explanation: 'We use "met" (Past Simple irregular) porque el encuentro ocurrió en un tiempo specific del pasado (college).'
+      explanation: 'We use "met" (Past Simple irregular) because the meeting occurred at a specific time in the past (college).'
     },
     {
       sentenceParts: [
@@ -2580,7 +2580,7 @@ const exercisesData = {
       ],
       options: ['got', 'get', 'gets'],
       correctAnswer: 'got',
-      explanation: 'We use "got" porque "in 2015" es una fecha específica en el pasado.'
+      explanation: 'We use "got" because "in 2015" is a specific date in the past.'
     },
     {
       sentenceParts: [
@@ -2590,7 +2590,7 @@ const exercisesData = {
       ],
       options: ['arrived', 'arrive', 'arrives'],
       correctAnswer: 'arrived',
-      explanation: 'We use "arrived" porque "yesterday" indica un momento specific y completado en el pasado.'
+      explanation: 'We use "arrived" because "yesterday" indicates a specific and completed moment in the past.'
     },
     {
       sentenceParts: [
@@ -2600,7 +2600,7 @@ const exercisesData = {
       ],
       options: ['taught', 'teach', 'teaches'],
       correctAnswer: 'taught',
-      explanation: 'We use "taught" (Past Simple irregular) porque la acción ocurrió cuando tenía 18 años (pasado specific).'
+      explanation: 'We use "taught" (Past Simple irregular) because the action occurred when I was 18 (specific past).'
     },
     {
       sentenceParts: [
@@ -2610,7 +2610,7 @@ const exercisesData = {
       ],
       options: ['had', 'have', 'has'],
       correctAnswer: 'had',
-      explanation: 'We use "had" porque la boda es un evento del pasado que ya terminó.'
+      explanation: 'We use "had" because the wedding is a past event that has already finished.'
     },
     {
       sentenceParts: [
@@ -2620,7 +2620,7 @@ const exercisesData = {
       ],
       options: ['sang', 'sing', 'sings'],
       correctAnswer: 'sang',
-      explanation: 'We use "sang" (Past Simple irregular) porque el concierto es un evento pasado completo.'
+      explanation: 'We use "sang" (Past Simple irregular) because the concert is a complete past event.'
     }
   ],
 
@@ -2631,7 +2631,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['yet.', "hasn't", 'started', 'The', 'film']),
       correctAnswer: ['The', 'film', "hasn't", 'started', 'yet.'],
-      explanation: 'Present Perfect negativo: Subject + haven\'t/hasn\'t + past participle. "Yet" se usa en negativas y preguntas para indicar que algo no ha ocurrido hasta ahora.'
+      explanation: 'Present Perfect negative: Subject + have not/has not + past participle. "Yet" is used in negatives and questions to indicate that something has not occurred until now.'
     },
     {
       sentenceParts: [
@@ -2639,7 +2639,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['you', 'How', 'long', 'did', 'Oxford?', 'stay', 'in']),
       correctAnswer: ['How', 'long', 'did', 'you', 'stay', 'in', 'Oxford?'],
-      explanation: 'Past Simple pregunta: How long + did + subject + verb. We use Past Simple porque la estancia en Oxford ya terminó (acción completa en el pasado).'
+      explanation: 'Past Simple question: How long + did + subject + verb. We use Past Simple because the stay in Oxford has already finished (complete action in the past).'
     },
     {
       sentenceParts: [
@@ -2647,7 +2647,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['your', 'Have', 'finished', 'homework', 'yet?', 'you']),
       correctAnswer: ['Have', 'you', 'finished', 'your', 'homework', 'yet?'],
-      explanation: 'Present Perfect pregunta: Have/Has + subject + past participle. "Yet" en preguntas significa "ya" y sugiere que esperamos que la acción esté completa pronto.'
+      explanation: 'Present Perfect question: Have/Has + subject + past participle. "Yet" in questions means "already" and suggests we expect the action to be complete soon.'
     },
     {
       sentenceParts: [
@@ -2655,7 +2655,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['arrived', 'Laura', 'the', 'at', 'has', 'just', 'airport.']),
       correctAnswer: ['Laura', 'has', 'just', 'arrived', 'at', 'the', 'airport.'],
-      explanation: 'Present Perfect con "just": Subject + has/have + just + past participle. "Just" indica que la acción ocurrió muy recientemente y es relevante ahora.'
+      explanation: 'Present Perfect with "just": Subject + has/have + just + past participle. "Just" indicates that the action occurred very recently and is relevant now.'
     },
     {
       sentenceParts: [
@@ -2663,7 +2663,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['years', 'ago.', 'We', 'here', 'moved', 'three']),
       correctAnswer: ['We', 'moved', 'here', 'three', 'years', 'ago.'],
-      explanation: 'Past Simple: Subject + verb (past). We use Past Simple porque "ago" siempre indica un tiempo specific terminado en el pasado.'
+      explanation: 'Past Simple: Subject + verb (past). We use Past Simple because "ago" always indicates a specific finished time in the past.'
     },
     {
       sentenceParts: [
@@ -2671,7 +2671,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['been', 'to', 'has', 'USA.', 'Peter', 'never', 'the']),
       correctAnswer: ['Peter', 'has', 'never', 'been', 'to', 'the', 'USA.'],
-      explanation: 'Present Perfect con "never": Subject + has/have + never + past participle. "Never" indica una life experience (nunca en toda su vida hasta ahora).'
+      explanation: 'Present Perfect with "never": Subject + has/have + never + past participle. "Never" indicates a life experience (never in his entire life until now).'
     }
   ],
 
@@ -2684,7 +2684,7 @@ const exercisesData = {
       ],
       options: ['will execute', 'execute', 'executed'],
       correctAnswer: 'will execute',
-      explanation: 'We use "will execute" (Future Simple) porque "tomorrow" indica una acción futura. "Will" expresa una decisión o promesa.'
+      explanation: 'We use "will execute" (Future Simple) because "tomorrow" indicates a future action. "Will" expresses a decision or promise.'
     },
     {
       sentenceParts: [
@@ -2694,7 +2694,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para expresar una predicción sobre el futuro basada en lo que creemos que va a pasar.'
+      explanation: 'We use "will" to express a prediction about the future based on what we believe will happen.'
     },
     {
       sentenceParts: [
@@ -2704,7 +2704,7 @@ const exercisesData = {
       ],
       options: ['will participate', 'participate', 'participated'],
       correctAnswer: 'will participate',
-      explanation: 'We use "will participate" porque "next Friday" es un tiempo futuro specific.'
+      explanation: 'We use "will participate" because "next Friday" is a specific future time.'
     },
     {
       sentenceParts: [
@@ -2714,7 +2714,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para hacer una predicción sobre amenazas futuras basada en análisis.'
+      explanation: 'We use "will" to make a prediction about future threats based on analysis.'
     },
     {
       sentenceParts: [
@@ -2724,7 +2724,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'am'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para expresar una promesa o ofrecimiento espontáneo de ayuda.'
+      explanation: 'We use "will" to express a promise or spontaneous offer of help.'
     },
     {
       sentenceParts: [
@@ -2734,7 +2734,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para hablar de un evento futuro programado o esperado.'
+      explanation: 'We use "will" to talk about a scheduled or expected future event.'
     },
     {
       sentenceParts: [
@@ -2744,7 +2744,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'are'],
       correctAnswer: 'will',
-      explanation: 'We use "will" con "I think" para expresar una opinión o predicción sobre el futuro.'
+      explanation: 'We use "will" with "I think" to express an opinion or prediction about the future.'
     },
     {
       sentenceParts: [
@@ -2754,7 +2754,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'are'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para hacer una predicción sobre cuándo regresarán.'
+      explanation: 'We use "will" to make a prediction about when they will return.'
     },
     {
       sentenceParts: [
@@ -2764,7 +2764,7 @@ const exercisesData = {
       ],
       options: ["won't", 'will', "isn't"],
       correctAnswer: "won't",
-      explanation: 'We use "won\'t" (will not) para hacer una predicción negativa sobre la duración.'
+      explanation: 'We use "will not" (will not) to make a negative prediction about the duration.'
     },
     {
       sentenceParts: [
@@ -2774,7 +2774,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'We use "will" con "maybe" para expresar una posibilidad futura incierta.'
+      explanation: 'We use "will" with "maybe" to express an uncertain future possibility.'
     },
     {
       sentenceParts: [
@@ -2784,7 +2784,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'am'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para hablar de una edad futura en una fecha específica.'
+      explanation: 'We use "will" to talk about a future age on a specific date.'
     },
     {
       sentenceParts: [
@@ -2794,7 +2794,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para hechos o certezas sobre el futuro (como eventos naturales predecibles).'
+      explanation: 'We use "will" for facts or certainties about the future (such as predictable natural events).'
     },
     {
       sentenceParts: [
@@ -2804,7 +2804,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'are'],
       correctAnswer: 'will',
-      explanation: 'We use "will" con "I\'m sure" para expresar confianza sobre un resultado futuro.'
+      explanation: 'We use "will" with "I\'m sure" to express confidence about a future result.'
     },
     {
       sentenceParts: [
@@ -2813,7 +2813,7 @@ const exercisesData = {
         { type: 'text', content: '(visit) my grandmother.' }
       ],
       correctAnswer: ['will visit', "'ll visit"],
-      explanation: 'Future Simple: will + verb (base form). We use "will visit" para una decisión o plan futuro.'
+      explanation: 'Future Simple: will + verb (base form). We use "will visit" for a future decision or plan.'
     },
     {
       sentenceParts: [
@@ -2822,7 +2822,7 @@ const exercisesData = {
         { type: 'text', content: '(rain) tomorrow.' }
       ],
       correctAnswer: ['will rain', "'ll rain"],
-      explanation: 'Future Simple con "I think": will + verb. Expresamos una predicción sobre el futuro basada en nuestra opinión.'
+      explanation: 'Future Simple with "I think": will + verb. We express a prediction about the future based on our opinion.'
     },
     {
       sentenceParts: [
@@ -2831,7 +2831,7 @@ const exercisesData = {
         { type: 'text', content: '(not/be) at home tonight.' }
       ],
       correctAnswer: ['will not be', "won't be", "will not be"],
-      explanation: 'Future Simple negativo: will not (won\'t) + verb. Hacemos una predicción negativa sobre el futuro.'
+      explanation: 'Future Simple negative: will not (will not) + verb. We make a negative prediction about the future.'
     },
     {
       sentenceParts: [
@@ -2841,7 +2841,7 @@ const exercisesData = {
       ],
       options: ["won't", 'will', 'are'],
       correctAnswer: "won't",
-      explanation: 'We use "won\'t" para hacer una predicción negativa sobre tener tiempo suficiente.'
+      explanation: 'We use "will not" to make a negative prediction about having enough time.'
     },
     {
       sentenceParts: [
@@ -2851,7 +2851,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'We use "will" con "probably" para expresar una predicción con alta probabilidad.'
+      explanation: 'We use "will" with "probably" to express a prediction with high probability.'
     },
     {
       sentenceParts: [
@@ -2861,7 +2861,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'We use "will" para hacer una predicción sobre el clima futuro.'
+      explanation: 'We use "will" to make a prediction about future weather.'
     }
   ],
 
@@ -2874,7 +2874,7 @@ const exercisesData = {
       ],
       options: ['will be lying', 'will lie', 'am lying'],
       correctAnswer: 'will be lying',
-      explanation: 'We use "will be lying" (Future Continuous) porque indica una acción that will be in progress en un momento specific del futuro (mañana a esta hora).'
+      explanation: 'We use "will be lying" (Future Continuous) because it indicates an action that will be in progress at a specific moment in the future (tomorrow at this time).'
     },
     {
       sentenceParts: [
@@ -2884,7 +2884,7 @@ const exercisesData = {
       ],
       options: ['will be having', 'will have', 'are having'],
       correctAnswer: 'will be having',
-      explanation: 'We use "will be having" porque describes an action that will be in progress a las 8 PM (un momento specific en el futuro).'
+      explanation: 'We use "will be having" because it describes an action that will be in progress at 8 PM (a specific moment in the future).'
     },
     {
       sentenceParts: [
@@ -2894,7 +2894,7 @@ const exercisesData = {
       ],
       options: ['will be studying', 'will study', 'studies'],
       correctAnswer: 'will be studying',
-      explanation: 'We use "will be studying" porque indica una actividad continua que ocurrirá durante todo el fin de semana en el futuro.'
+      explanation: 'We use "will be studying" because it indicates a continuous activity that will occur throughout the entire weekend in the future.'
     },
     {
       sentenceParts: [
@@ -2904,7 +2904,7 @@ const exercisesData = {
       ],
       options: ['will be living', 'will live', 'live'],
       correctAnswer: 'will be living',
-      explanation: 'We use "will be living" para enfatizar que la acción de vivir estará en progreso durante el próximo mes.'
+      explanation: 'We use "will be living" to emphasize that the action of living will be in progress during next month.'
     },
     {
       sentenceParts: [
@@ -2914,7 +2914,7 @@ const exercisesData = {
       ],
       options: ['will be', 'will', 'am'],
       correctAnswer: 'will be',
-      explanation: 'We use "will be" (Future Continuous con verbo "be") porque indica que la reunión estará en progreso a las 10 AM.'
+      explanation: 'We use "will be" (Future Continuous with verb "be") because it indicates that the meeting will be in progress at 10 AM.'
     },
     {
       sentenceParts: [
@@ -2924,7 +2924,7 @@ const exercisesData = {
       ],
       options: ['will be working', 'will work', 'works'],
       correctAnswer: 'will be working',
-      explanation: 'We use "will be working" porque enfatiza que la acción estará en progreso at that moment specific del futuro (el próximo año a esta hora).'
+      explanation: 'We use "will be working" because it emphasizes that the action will be in progress at that specific moment in the future (next year at this time).'
     },
     {
       sentenceParts: [
@@ -2934,7 +2934,7 @@ const exercisesData = {
       ],
       options: ['will be finishing', 'will finish', 'finish'],
       correctAnswer: 'will be finishing',
-      explanation: 'We use "will be finishing" porque la acción de terminar el informe estará en progreso cuando llegues.'
+      explanation: 'We use "will be finishing" because the action of finishing the report will be in progress when you arrive.'
     },
     {
       sentenceParts: [
@@ -2944,7 +2944,7 @@ const exercisesData = {
       ],
       options: ['will be celebrating', 'will celebrate', 'celebrate'],
       correctAnswer: 'will be celebrating',
-      explanation: 'We use "will be celebrating" porque describes an action that will be in progress a medianoche.'
+      explanation: 'We use "will be celebrating" because it describes an action that will be in progress at midnight.'
     },
     {
       sentenceParts: [
@@ -2954,7 +2954,7 @@ const exercisesData = {
       ],
       options: ['will be listening', 'will listen', 'listen'],
       correctAnswer: 'will be listening',
-      explanation: 'We use "will be listening" para enfatizar que estas acciones estarán en progreso mañana por la tarde.'
+      explanation: 'We use "will be listening" to emphasize that these actions will be in progress tomorrow afternoon.'
     },
     {
       sentenceParts: [
@@ -2964,7 +2964,7 @@ const exercisesData = {
       ],
       options: ['will be leaving', 'will leave', 'leave'],
       correctAnswer: 'will be leaving',
-      explanation: 'We use "will be leaving" porque la partida estará en progreso mañana a esta hora.'
+      explanation: 'We use "will be leaving" because the departure will be in progress tomorrow at this time.'
     },
     {
       sentenceParts: [
@@ -2974,7 +2974,7 @@ const exercisesData = {
       ],
       options: ['will be doing', 'will do', 'do'],
       correctAnswer: 'will be doing',
-      explanation: 'We use "will be doing" porque la tarea estará en progreso a las 5 PM.'
+      explanation: 'We use "will be doing" because the task will be in progress at 5 PM.'
     },
     {
       sentenceParts: [
@@ -2984,7 +2984,7 @@ const exercisesData = {
       ],
       options: ['will be speaking', 'will speak', 'speaks'],
       correctAnswer: 'will be speaking',
-      explanation: 'We use "will be speaking" porque describe una actividad continua durante todo el viernes.'
+      explanation: 'We use "will be speaking" because it describes a continuous activity throughout Friday.'
     },
     {
       sentenceParts: [
@@ -2994,7 +2994,7 @@ const exercisesData = {
       ],
       options: ['will be waiting', 'will wait', 'wait'],
       correctAnswer: 'will be waiting',
-      explanation: 'We use "will be waiting" porque estaré esperando cuando aterrices (action in progress at that moment futuro).'
+      explanation: 'We use "will be waiting" because I will be waiting when you land (action in progress at that future moment).'
     },
     {
       sentenceParts: [
@@ -3004,7 +3004,7 @@ const exercisesData = {
       ],
       options: ['will be moving', 'will move', 'move'],
       correctAnswer: 'will be moving',
-      explanation: 'We use "will be moving" para enfatizar que la mudanza será un proceso en progreso la próxima semana.'
+      explanation: 'We use "will be moving" to emphasize that the move will be an ongoing process next week.'
     },
     {
       sentenceParts: [
@@ -3014,7 +3014,7 @@ const exercisesData = {
       ],
       options: ['will be preparing', 'will prepare', 'prepares'],
       correctAnswer: 'will be preparing',
-      explanation: 'We use "will be preparing" porque la preparación estará en progreso al mediodía.'
+      explanation: 'We use "will be preparing" because the preparation will be in progress at noon.'
     }
   ],
 
@@ -3027,7 +3027,7 @@ const exercisesData = {
       ],
       options: ['will have graduated', 'will graduate', 'graduate'],
       correctAnswer: 'will have graduated',
-      explanation: 'We use "will have graduated" (Future Perfect) porque la acción will be complete before a momento specific en el futuro (junio próximo).'
+      explanation: 'We use "will have graduated" (Future Perfect) because the action will be complete before a specific moment in the future (next June).'
     },
     {
       sentenceParts: [
@@ -3037,7 +3037,7 @@ const exercisesData = {
       ],
       options: ['will have finished', 'will finish', 'finishes'],
       correctAnswer: 'will have finished',
-      explanation: 'We use "will have finished" porque la acción de terminar el libro estará completa antes de que llegues.'
+      explanation: 'We use "will have finished" because the action of finishing the book will be complete before you arrive.'
     },
     {
       sentenceParts: [
@@ -3047,7 +3047,7 @@ const exercisesData = {
       ],
       options: ['will have found', 'will find', 'find'],
       correctAnswer: 'will have found',
-      explanation: 'We use "will have found" porque predecimos que the action will be complete antes del año 2030.'
+      explanation: 'We use "will have found" because we predict that the action will be complete before the year 2030.'
     },
     {
       sentenceParts: [
@@ -3057,7 +3057,7 @@ const exercisesData = {
       ],
       options: ['will have been married', 'will be married', 'are married'],
       correctAnswer: 'will have been married',
-      explanation: 'We use "will have been married" porque el período de 10 años se completará el próximo mes.'
+      explanation: 'We use "will have been married" because the 10-year period will be completed next month.'
     },
     {
       sentenceParts: [
@@ -3067,7 +3067,7 @@ const exercisesData = {
       ],
       options: ['will have traveled', 'will travel', 'travel'],
       correctAnswer: 'will have traveled',
-      explanation: 'We use "will have traveled" porque la acción de viajar a cinco países estará completa at the end del año.'
+      explanation: 'We use "will have traveled" because the action of traveling to five countries will be complete at the end of the year.'
     },
     {
       sentenceParts: [
@@ -3077,7 +3077,7 @@ const exercisesData = {
       ],
       options: ['will have completed', 'will complete', 'complete'],
       correctAnswer: 'will have completed',
-      explanation: 'We use "will have completed" porque todos los exámenes estarán terminados antes del viernes.'
+      explanation: 'We use "will have completed" because all exams will be finished before Friday.'
     },
     {
       sentenceParts: [
@@ -3087,7 +3087,7 @@ const exercisesData = {
       ],
       options: ['will have built', 'will build', 'build'],
       correctAnswer: 'will have built',
-      explanation: 'We use "will have built" porque el muro estará construido antes de mañana por la mañana.'
+      explanation: 'We use "will have built" because the wall will be built before tomorrow morning.'
     },
     {
       sentenceParts: [
@@ -3097,7 +3097,7 @@ const exercisesData = {
       ],
       options: ['will have cooked', 'will cook', 'cooks'],
       correctAnswer: 'will have cooked',
-      explanation: 'We use "will have cooked" porque la cena estará preparada antes de que lleguemos a casa.'
+      explanation: 'We use "will have cooked" because dinner will be prepared before we arrive home.'
     },
     {
       sentenceParts: [
@@ -3107,7 +3107,7 @@ const exercisesData = {
       ],
       options: ['will have worked', 'will work', 'works'],
       correctAnswer: 'will have worked',
-      explanation: 'We use "will have worked" porque el período de 20 años se completará en diciembre.'
+      explanation: 'We use "will have worked" because the 20-year period will be completed in December.'
     },
     {
       sentenceParts: [
@@ -3117,7 +3117,7 @@ const exercisesData = {
       ],
       options: ['will have bought', 'will buy', 'buy'],
       correctAnswer: 'will have bought',
-      explanation: 'We use "will have bought" porque la compra estará completa antes del próximo año a esta hora.'
+      explanation: 'We use "will have bought" because the purchase will be complete before next year at this time.'
     },
     {
       sentenceParts: [
@@ -3127,7 +3127,7 @@ const exercisesData = {
       ],
       options: ['will have finished', 'will finish', 'finish'],
       correctAnswer: 'will have finished',
-      explanation: 'We use "will have finished" porque el proyecto estará terminado antes de la fecha límite.'
+      explanation: 'We use "will have finished" because the project will be finished before the deadline.'
     },
     {
       sentenceParts: [
@@ -3137,7 +3137,7 @@ const exercisesData = {
       ],
       options: ['will have washed', 'will wash', 'wash'],
       correctAnswer: 'will have washed',
-      explanation: 'We use "will have washed" porque los platos estarán lavados antes de las 8 PM.'
+      explanation: 'We use "will have washed" because the dishes will be washed before 8 PM.'
     },
     {
       sentenceParts: [
@@ -3147,7 +3147,7 @@ const exercisesData = {
       ],
       options: ['will have hired', 'will hire', 'hires'],
       correctAnswer: 'will have hired',
-      explanation: 'We use "will have hired" porque la contratación de 1000 empleados estará completa antes del próximo año.'
+      explanation: 'We use "will have hired" because the hiring of 1000 employees will be complete before next year.'
     }
   ],
 
@@ -3161,7 +3161,7 @@ const exercisesData = {
         { type: 'text', content: "(block) the connection." }
       ],
       correctAnswer: ['detects', 'will block'],
-      explanation: 'First Conditional: If + Present Simple, will + infinitive. We use "detects" (presente simple) en la condición y "will block" (futuro simple) en el resultado. Expresa una situación real y posible en el futuro.'
+      explanation: 'First Conditional: If + Present Simple, will + infinitive. We use "detects" (present simple) in the condition and "will block" (future simple) in the result. Expresses a real and possible situation in the future.'
     },
     {
       sentenceParts: [
@@ -3172,7 +3172,7 @@ const exercisesData = {
         { type: 'text', content: "(report) the vulnerability." }
       ],
       correctAnswer: ['will be', 'report'],
-      explanation: 'First Conditional: resultado + if + condición. "Will be" es el resultado futuro y "report" es la condición en presente simple. La condición es posible y realista.'
+      explanation: 'First Conditional: result + if + condition. "Will be" is the future result and "report" is the condition in present simple. The condition is possible and realistic.'
     },
     {
       sentenceParts: [
@@ -3183,7 +3183,7 @@ const exercisesData = {
         { type: 'text', content: "(get) hacked." }
       ],
       correctAnswer: ["don't update", 'will get'],
-      explanation: 'First Conditional negativo: If + don\'t/doesn\'t + verbo, will + infinitive. "Don\'t update" es presente simple negativo y "will get" es el resultado futuro.'
+      explanation: 'First Conditional negative: If + don\'t/doesn\'t + verb, will + infinitive. "Don\'t update" is present simple negative and "will get" is the future result.'
     },
     {
       sentenceParts: [
@@ -3194,7 +3194,7 @@ const exercisesData = {
         { type: 'text', content: "(need) to investigate." }
       ],
       correctAnswer: ['bypasses', 'will need'],
-      explanation: 'First Conditional: If + presente simple, will + infinitive. "Bypasses" (tercera persona) + "will need" (futuro). Situación futura posible.'
+      explanation: 'First Conditional: If + present simple, will + infinitive. "Bypasses" (third person) + "will need" (future). Possible future situation.'
     },
     {
       sentenceParts: [
@@ -3205,7 +3205,7 @@ const exercisesData = {
         { type: 'text', content: "(win) the lottery?" }
       ],
       correctAnswer: ['will you do', 'win'],
-      explanation: 'First Conditional en pregunta: What + will + sujeto + verbo + if + presente simple. "Will you do" es la asks about el futuro y "win" es la condición en presente.'
+      explanation: 'First Conditional question: What + will + subject + verb + if + present simple. "Will you do" asks about the future and "win" is the condition in present.'
     },
     {
       sentenceParts: [
@@ -3216,7 +3216,7 @@ const exercisesData = {
         { type: 'text', content: "(tell) him about the party." }
       ],
       correctAnswer: ['see', 'will tell'],
-      explanation: 'First Conditional: "see" (presente simple) describe una condición posible, y "will tell" es la acción futura que resultará de esa condición.'
+      explanation: 'First Conditional: "see" (present simple) describes a possible condition, and "will tell" is the future action that will result from that condition.'
     },
     {
       sentenceParts: [
@@ -3227,7 +3227,7 @@ const exercisesData = {
         { type: 'text', content: "(succeed)." }
       ],
       correctAnswer: ['work', 'will succeed'],
-      explanation: 'First Conditional: If + presente simple, will + infinitive. Expresa una consecuencia probable del trabajo duro.'
+      explanation: 'First Conditional: If + present simple, will + infinitive. Expresses a probable consequence of hard work.'
     },
     {
       sentenceParts: [
@@ -3238,7 +3238,7 @@ const exercisesData = {
         { type: 'text', content: "(be) nice." }
       ],
       correctAnswer: ['will go', 'is'],
-      explanation: 'First Conditional: "will go" es el plan futuro e "is" (presente simple) es la condición que debe cumplirse.'
+      explanation: 'First Conditional: "will go" is the future plan and "is" (present simple) is the condition that must be met.'
     },
     {
       sentenceParts: [
@@ -3249,7 +3249,7 @@ const exercisesData = {
         { type: 'text', content: "(feel) hungry later." }
       ],
       correctAnswer: ["doesn't eat", 'will feel'],
-      explanation: 'First Conditional negativo: "doesn\'t eat" (tercera persona) + "will feel". Causa y efecto futuro probable.'
+      explanation: 'First Conditional negative: "doesn\'t eat" (third person) + "will feel". Probable future cause and effect.'
     },
     {
       sentenceParts: [
@@ -3271,7 +3271,7 @@ const exercisesData = {
         { type: 'text', content: "(help) you with your homework." }
       ],
       correctAnswer: ['have', 'will help'],
-      explanation: 'First Conditional: "have" (presente) + "will help". Expresa una promesa condicional.'
+      explanation: 'First Conditional: "have" (present) + "will help". Expresses a conditional promise.'
     }
   ],
 
@@ -3285,7 +3285,7 @@ const exercisesData = {
         { type: 'text', content: "(work) for a top cybersecurity firm." }
       ],
       correctAnswer: ['had', 'would work'],
-      explanation: 'Second Conditional: If + Past Simple, would + infinitive. We use "had" para la condición hipotética. Describe situaciones hipotéticas o poco probables en el presente/futuro.'
+      explanation: 'Second Conditional: If + Past Simple, would + infinitive. We use "had" for the hypothetical condition. Describes hypothetical or unlikely situations in the present/future.'
     },
     {
       sentenceParts: [
@@ -3296,7 +3296,7 @@ const exercisesData = {
         { type: 'text', content: "(practice) more." }
       ],
       correctAnswer: ['would get', 'practiced'],
-      explanation: 'Second Conditional: resultado + if + condición. "Would get" expresa el resultado hipotético y "practiced" (pasado simple) la condición irreal o improbable.'
+      explanation: 'Second Conditional: result + if + condition. "Would get" expresses the hypothetical result and "practiced" (past simple) is the unreal or unlikely condition.'
     },
     {
       sentenceParts: [
@@ -3307,7 +3307,7 @@ const exercisesData = {
         { type: 'text', content: "(exploit) it so easily." }
       ],
       correctAnswer: ["weren't", "wouldn't exploit"],
-      explanation: 'Second Conditional negativo: If + weren\'t + verbo, wouldn\'t + infinitive. "Weren\'t" es la condición hipotética negativa y "wouldn\'t exploit" es el resultado.'
+      explanation: 'Second Conditional negative: If + weren\'t + verb, wouldn\'t + infinitive. "Weren\'t" is the negative hypothetical condition and "wouldn\'t exploit" is the result.'
     },
     {
       sentenceParts: [
@@ -3351,7 +3351,7 @@ const exercisesData = {
         { type: 'text', content: "(buy) a big house." }
       ],
       correctAnswer: ['won', 'would buy'],
-      explanation: 'Second Conditional: "won" (pasado) + "would buy". Situación hipotética improbable sobre ganar la lotería.'
+      explanation: 'Second Conditional: "won" (past) + "would buy". Hypothetical unlikely situation about winning the lottery.'
     },
     {
       sentenceParts: [
@@ -3384,7 +3384,7 @@ const exercisesData = {
         { type: 'text', content: "(buy) it." }
       ],
       correctAnswer: ["weren't", 'would buy'],
-      explanation: 'Second Conditional negativo: "weren\'t" (forma correcta para todas las personas) + "would buy".'
+      explanation: 'Second Conditional negative: "weren\'t" (correct form for all persons) + "would buy".'
     },
     {
       sentenceParts: [
@@ -3409,7 +3409,7 @@ const exercisesData = {
         { type: 'text', content: "(patch) it." }
       ],
       correctAnswer: ['had known', 'would have patched'],
-      explanation: 'Third Conditional: If + Past Perfect, would have + past participle. "Had known" y "would have patched" hablan de una situación pasada que no ocurrió. Expresa arrepentimiento o situaciones imposibles de cambiar.'
+      explanation: 'Third Conditional: If + Past Perfect, would have + past participle. "Had known" and "would have patched" talk about a past situation that didn\'t occur. Expresses regret or impossible situations to change.'
     },
     {
       sentenceParts: [
@@ -3420,7 +3420,7 @@ const exercisesData = {
         { type: 'text', content: "(implement) 2FA." }
       ],
       correctAnswer: ["wouldn't have suffered", 'had implemented'],
-      explanation: 'Third Conditional negativo: "wouldn\'t have suffered" (resultado que no pasó) + "had implemented" (condición que no se cumplió en el pasado).'
+      explanation: 'Third Conditional negative: "wouldn\'t have suffered" (result that didn\'t happen) + "had implemented" (condition that wasn\'t met in the past).'
     },
     {
       sentenceParts: [
@@ -3431,7 +3431,7 @@ const exercisesData = {
         { type: 'text', content: "(win) the CTF competition." }
       ],
       correctAnswer: ['had practiced', 'would have won'],
-      explanation: 'Third Conditional: "had practiced" + "would have won". Habla de algo que no pasó en el pasado y su resultado (que tampoco ocurrió).'
+      explanation: 'Third Conditional: "had practiced" + "would have won". Talks about something that didn\'t happen in the past and its result (which also didn\'t occur).'
     },
     {
       sentenceParts: [
@@ -3453,7 +3453,7 @@ const exercisesData = {
         { type: 'text', content: "(not get) sick." }
       ],
       correctAnswer: ["hadn't eaten", "wouldn't have gotten"],
-      explanation: 'Third Conditional doble negativo: "hadn\'t eaten" (no comió, pero lo hizo) + "wouldn\'t have gotten" (no se habría enfermado, pero se enfermó).'
+      explanation: 'Third Conditional double negative: "hadn\'t eaten" (didn\'t eat, but did) + "wouldn\'t have gotten" (wouldn\'t have gotten sick, but did).'
     },
     {
       sentenceParts: [
@@ -3464,7 +3464,7 @@ const exercisesData = {
         { type: 'text', content: "(have) enough money." }
       ],
       correctAnswer: ['would have bought', 'had had'],
-      explanation: 'Third Conditional: "would have bought" + "had had" (doble "had" porque es el pasado perfecto de "have"). Habla de una oportunidad perdida en el pasado.'
+      explanation: 'Third Conditional: "would have bought" + "had had" (double "had" because it\'s the past perfect of "have"). Talks about a lost opportunity in the past.'
     },
     {
       sentenceParts: [
@@ -3475,7 +3475,7 @@ const exercisesData = {
         { type: 'text', content: "(help) you." }
       ],
       correctAnswer: ['had told', 'would have helped'],
-      explanation: 'Third Conditional: "had told" + "would have helped". Expresa arrepentimiento por algo que no ocurrió en el pasado.'
+      explanation: 'Third Conditional: "had told" + "would have helped". Expresses regret for something that didn\'t happen in the past.'
     },
     {
       sentenceParts: [
@@ -3486,7 +3486,7 @@ const exercisesData = {
         { type: 'text', content: "(take) a taxi." }
       ],
       correctAnswer: ["wouldn't have been", 'had taken'],
-      explanation: 'Third Conditional negativo: "wouldn\'t have been" + "had taken". Lamenta una decisión pasada que causó llegar tarde.'
+      explanation: 'Third Conditional negative: "wouldn\'t have been" + "had taken". Regrets a past decision that caused being late.'
     },
     {
       sentenceParts: [
@@ -3497,7 +3497,7 @@ const exercisesData = {
         { type: 'text', content: "(afford) the trip." }
       ],
       correctAnswer: ['had saved', 'could have afforded'],
-      explanation: 'Third Conditional con modal: "had saved" + "could have afforded". Usa "could" en lugar de "would" para expresar posibilidad perdida.'
+      explanation: 'Third Conditional with modal: "had saved" + "could have afforded". Uses "could" instead of "would" to express lost possibility.'
     },
     {
       sentenceParts: [
@@ -3508,7 +3508,7 @@ const exercisesData = {
         { type: 'text', content: "(avoid) the problem." }
       ],
       correctAnswer: ['had listened', 'would have avoided'],
-      explanation: 'Third Conditional: "had listened" + "would have avoided". Crítica a una decisión pasada que causó problemas.'
+      explanation: 'Third Conditional: "had listened" + "would have avoided". Criticizes a past decision that caused problems.'
     },
     {
       sentenceParts: [
@@ -3519,7 +3519,7 @@ const exercisesData = {
         { type: 'text', content: "(remind) me." }
       ],
       correctAnswer: ["wouldn't have forgotten", 'had reminded'],
-      explanation: 'Third Conditional: "wouldn\'t have forgotten" + "had reminded". Implica que olvidó porque no le recordaron.'
+      explanation: 'Third Conditional: "wouldn\'t have forgotten" + "had reminded". Implies that they forgot because nobody reminded them.'
     }
   ],
 
@@ -3530,7 +3530,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['Should I tell her how I feel'],
-      explanation: 'Modal question: Should + subject + verb + object + how + subject + verb. Las preguntas con modales ponen el modal antes del sujeto.'
+      explanation: 'Modal question: Should + subject + verb + object + how + subject + verb. Questions with modals put the modal before the subject.'
     },
     {
       sentenceParts: [
@@ -3538,7 +3538,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['How long have you known your best friend'],
-      explanation: 'Present Perfect question: How long + have + subject + past participle. "How long" pregunta por duración.'
+      explanation: 'Present Perfect question: How long + have + subject + past participle. "How long" asks for duration.'
     },
     {
       sentenceParts: [
@@ -3594,7 +3594,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['Do you remember where the restaurant is'],
-      explanation: 'Indirect question: Do you remember + where + subject + verb. El orden es afirmativo después de "where" en preguntas indirectas.'
+      explanation: 'Indirect question: Do you remember + where + subject + verb. The order is affirmative after "where" in indirect questions.'
     },
     {
       sentenceParts: [
@@ -3602,7 +3602,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['Who does the housework in your family'],
-      explanation: 'Question with "Who": Who + does + noun + preposition + possessive + noun. "Who" actúa como sujeto de la pregunta.'
+      explanation: 'Question with "Who": Who + does + noun + preposition + possessive + noun. "Who" acts as the subject of the question.'
     },
     {
       sentenceParts: [
@@ -3610,7 +3610,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['How long have you been studying English'],
-      explanation: 'Present Perfect Continuous question: How long + have + subject + been + verb-ing. Question por la duración de una acción continua.'
+      explanation: 'Present Perfect Continuous question: How long + have + subject + been + verb-ing. Question for the duration of a continuous action.'
     },
     {
       sentenceParts: [
@@ -3713,7 +3713,7 @@ const exercisesData = {
         { type: 'text', content: 'on Saturdays? (the swimming pool / open)' }
       ],
       correctAnswer: ['the swimming pool opens'],
-      explanation: 'Indirect question: what time + subject + verb. El orden es afirmativo sin auxiliar en preguntas indirectas.'
+      explanation: 'Indirect question: what time + subject + verb. The order is affirmative without auxiliary in indirect questions.'
     },
     {
       sentenceParts: [
@@ -3762,7 +3762,7 @@ const exercisesData = {
       ],
       options: ["'s having", "has", "'s have"],
       correctAnswer: "'s having",
-      explanation: "We use Present Continuous ('s having) porque es una acción temporal que está sucediendo ahora (today). La fiesta está ocurriendo en este momento specific."
+      explanation: "We use Present Continuous (is having) because it is a temporary action that is happening now (today). The party is occurring at this specific moment."
     },
     {
       sentenceParts: [
@@ -3772,7 +3772,7 @@ const exercisesData = {
       ],
       options: ["'re going", "go", "'re go"],
       correctAnswer: "'re going",
-      explanation: "We use Present Continuous ('re going) porque es un plan futuro definido. Tenemos una hora específica (eight o'clock this evening) para esta acción planificada."
+      explanation: "We use Present Continuous (are going) because it is a definite future plan. We have a specific time (eight o'clock this evening) for this planned action."
     },
     {
       sentenceParts: [
@@ -3782,7 +3782,7 @@ const exercisesData = {
       ],
       options: ["doesn't usually celebrate", "isn't usually celebrating", "don't usually celebrate"],
       correctAnswer: "doesn't usually celebrate",
-      explanation: "We use Present Simple negativo (doesn't usually celebrate) because we're talking about a habit o rutina general. 'Usually' es una key word that indicates Present Simple."
+      explanation: "We use Present Simple negative (does not usually celebrate) because we are talking about a general habit or routine. 'Usually' is a key word that indicates Present Simple."
     },
     {
       sentenceParts: [
@@ -3792,7 +3792,7 @@ const exercisesData = {
       ],
       options: ["'m going", "go", "'m go"],
       correctAnswer: "'m going",
-      explanation: "We use Present Continuous ('m going) porque es un plan futuro specific. 'After class today' indica una intención o plan concreto para el futuro cercano."
+      explanation: "We use Present Continuous (am going) because it is a specific future plan. 'After class today' indicates a concrete intention or plan for the near future."
     },
     {
       sentenceParts: [
@@ -3802,7 +3802,7 @@ const exercisesData = {
       ],
       options: ["think", "'m thinking", "thinks"],
       correctAnswer: "think",
-      explanation: "We use Present Simple (think) porque 'think' es un non-action verb (verbo de estado) cuando expresa opinión. Los verbos de estado no se usan en forma continua."
+      explanation: "We use Present Simple (think) because 'think' is a non-action verb (state verb) when expressing opinion. State verbs are not used in continuous form."
     },
     {
       sentenceParts: [
@@ -3812,7 +3812,7 @@ const exercisesData = {
       ],
       options: ["loves", "'s loving", "love"],
       correctAnswer: "loves",
-      explanation: "We use Present Simple (loves) porque 'love' es un non-action verb (verbo de emoción/sentimiento). Los verbos de estado como love, like, hate, etc. normalmente no se usan en forma continua."
+      explanation: "We use Present Simple (loves) because 'love' is a non-action verb (emotion/feeling verb). State verbs like love, like, hate, etc. are normally not used in continuous form."
     }
   ],
 
@@ -3840,7 +3840,7 @@ export const getExercisesByTense = (tenseId) => {
   return shuffleArray(exercises);
 };
 
-// Función auxiliar para obtener el nombre del tiempo verbal en español
+// Helper function to get the verb tense name in Spanish
 const getTenseName = (tenseId) => {
   const tenseNames = {
     'present-perfect': 'Present Perfect',
