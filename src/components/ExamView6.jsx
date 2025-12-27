@@ -26,51 +26,51 @@ const ExamView6 = () => {
   const getSectionHelp = (sectionId) => {
     const helpContent = {
       'narrative-tenses': {
-        title: '📚 Cómo resolver: Narrative Tenses',
+        title: '📚 How to solve: Narrative Tenses',
         example: 'We _______ (have) dinner when the electricity went off.',
         solution: 'were having',
-        explanation: 'En narrativas usamos diferentes tiempos para expresar acciones en el pasado:',
+        explanation: 'In narratives, we use different tenses to express past actions:',
         points: [
-          '🔹 Past Simple: Acciones COMPLETADAS y SECUENCIALES',
-          '   • Se terminaron en el pasado → "I ate dinner, watched TV, and went to bed"',
-          '   • Eventos uno después del otro → "She opened the door, walked in, and sat down"',
-          '   • Palabra clave: "then" (entonces), verbos de acción completa',
+          '🔹 Past Simple: COMPLETED and SEQUENTIAL actions',
+          '   • They finished in the past → "I ate dinner, watched TV, and went to bed"',
+          '   • Events one after another → "She opened the door, walked in, and sat down"',
+          '   • Keyword: "then", complete action verbs',
           '',
-          '🔹 Past Continuous: Acciones EN PROGRESO que fueron INTERRUMPIDAS',
-          '   • Acción larga que estaba pasando → "I was eating when..."',
-          '   • Se combina con Past Simple (interrupción) → "were having dinner when electricity went off"',
-          '   • Palabra clave: "when" + Past Simple, "while" + otra acción continua',
-          '   • Contexto temporal específico → "At 8pm, I was studying"',
+          '🔹 Past Continuous: Actions IN PROGRESS that were INTERRUPTED',
+          '   • Long action that was happening → "I was eating when..."',
+          '   • Combined with Past Simple (interruption) → "were having dinner when electricity went off"',
+          '   • Keyword: "when" + Past Simple, "while" + another continuous action',
+          '   • Specific time context → "At 8pm, I was studying"',
           '',
-          '🔹 Past Perfect: Acción que pasó ANTES de otra acción pasada',
-          '   • Primera acción de dos eventos → "I had eaten (1º) before I watched TV (2º)"',
-          '   • Causa-efecto en el pasado → "They were hungry because they hadn\'t eaten"',
-          '   • Palabra clave: "before", "after", "already", "just", "by the time"',
-          '   • Resultado visible en el pasado → "Someone had broken the window" (ventana rota)',
+          '🔹 Past Perfect: Action that happened BEFORE another past action',
+          '   • First action of two events → "I had eaten (1st) before I watched TV (2nd)"',
+          '   • Cause-effect in the past → "They were hungry because they hadn\'t eaten"',
+          '   • Keyword: "before", "after", "already", "just", "by the time"',
+          '   • Visible result in the past → "Someone had broken the window" (broken window)',
           '',
-          '🔹 Past Perfect Continuous: DURACIÓN de acción antes de otra acción pasada',
-          '   • Énfasis en cuánto tiempo → "I had been waiting for 2 hours when..."',
-          '   • Actividad continua con resultado → "She was tired because she had been running"',
-          '   • Palabra clave: "for" + tiempo, "since" + momento, "How long"',
-          '   • La acción puede continuar o no → "had been studying all night (y seguía cansado)"'
+          '🔹 Past Perfect Continuous: DURATION of action before another past action',
+          '   • Emphasis on how long → "I had been waiting for 2 hours when..."',
+          '   • Continuous activity with result → "She was tired because she had been running"',
+          '   • Keyword: "for" + time, "since" + moment, "How long"',
+          '   • Action may continue or not → "had been studying all night (and still tired)"'
         ],
-        tip: '💡 TRUCO: ¿Interrupción? → Past Continuous. ¿Secuencia? → Past Simple. ¿Primera de dos? → Past Perfect. ¿Duración antes? → Past Perfect Continuous'
+        tip: '💡 TRICK: Interruption? → Past Continuous. Sequence? → Past Simple. First of two? → Past Perfect. Duration before? → Past Perfect Continuous'
       },
       'present-perfect': {
-        title: '📚 Cómo resolver: Present Perfect',
+        title: '📚 How to solve: Present Perfect',
         example: 'How long _______ (you / wait)?',
         solution: 'have you been waiting',
-        explanation: 'Diferencia entre Simple y Continuous:',
+        explanation: 'Difference between Simple and Continuous:',
         points: [
-          '🔹 Simple: Experiencias, resultados, estados → "have known", "have broken"',
-          '🔹 Continuous: Duración, actividad temporal → "have been waiting"',
-          '🔹 Verbos de estado NO usan continuous → know, like, have (poseer)',
-          '🔹 "How long" generalmente usa continuous (excepto verbos de estado)'
+          '🔹 Simple: Experiences, results, states → "have known", "have broken"',
+          '🔹 Continuous: Duration, temporal activity → "have been waiting"',
+          '🔹 State verbs DO NOT use continuous → know, like, have (possess)',
+          '🔹 "How long" generally uses continuous (except state verbs)'
         ],
-        tip: '💡 Si enfatiza DURACIÓN de acción temporal → Continuous. Si es RESULTADO o ESTADO → Simple'
+        tip: '💡 If it emphasizes DURATION of temporal action → Continuous. If it\'s RESULT or STATE → Simple'
       },
       'future-forms': {
-        title: '📚 Cómo resolver: Future Forms',
+        title: '📚 How to solve: Future Forms',
         example: 'This time tomorrow, I\'ll do / I\'ll be doing my exam.',
         solution: 'I\'ll be doing',
         explanation: 'Elige según el contexto:',
