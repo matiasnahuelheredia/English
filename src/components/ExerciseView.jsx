@@ -162,6 +162,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const [remainingVocabExercises, setRemainingVocabExercises] = useState([]);
   const [reorderedWords, setReorderedWords] = useState([]);
   const [availableWords, setAvailableWords] = useState([]);
+  const [reorderedWords, setReorderedWords] = useState([]);
+  const [availableWords, setAvailableWords] = useState([]);
   
   const inputRef = useRef(null);
   const initialTimerRef = useRef(null);
@@ -338,6 +340,24 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       setShowAnswer(false);
       setCountdown(4);
       
+      // Initialize reorder exercise if needed
+      if (exercise.sentenceParts && exercise.sentenceParts[0]?.type === 'reorder') {
+        setReorderedWords([]);
+        setAvailableWords([...exercise.words]);
+      } else {
+        setReorderedWords([]);
+        setAvailableWords([]);
+      }
+      
+      // Initialize reorder exercise if needed
+      if (exercise.sentenceParts && exercise.sentenceParts[0]?.type === 'reorder') {
+        setReorderedWords([]);
+        setAvailableWords([...exercise.words]);
+      } else {
+        setReorderedWords([]);
+        setAvailableWords([]);
+      }
+      
       // Iniciar countdown inicial solo para vocabulario
       if (isVocabulary && exercise.englishWord) {
         startInitialCountdown(exercise);
@@ -380,6 +400,34 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     // Detener el countdown inicial cuando se verifica la respuesta
     clearAllTimers();
     setInitialCountdown(0);
+
+    // Handle reorder exercises
+    if (currentExercise.sentenceParts && currentExercise.sentenceParts[0]?.type === 'reorder') {
+      if (reorderedWords.length !== currentExercise.correctAnswer.length) {
+        setFeedback({
+          isCorrect: false,
+          message: 'Please arrange all the words',
+          correctAnswer: currentExercise.correctAnswer.join(' ')
+        });
+        return;
+      }
+      
+      const isCorrect = JSON.stringify(reorderedWords) === JSON.stringify(currentExercise.correctAnswer);
+      
+      setFeedback({
+        isCorrect,
+        message: isCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
+        correctAnswer: currentExercise.correctAnswer.join(' '),
+        userAnswerText: reorderedWords.join(' ')
+      });
+      
+      setStats(prev => ({
+        correct: prev.correct + (isCorrect ? 1 : 0),
+        incorrect: prev.incorrect + (isCorrect ? 0 : 1)
+      }));
+      
+      return;
+    }
 
     // Para ejercicios de vocabulario
     if (isVocabulary && currentExercise.englishWord) {
@@ -831,7 +879,55 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
               </div>
             )}
             
-            {isVocabulary && currentExercise.englishWord ? (
+            {/* Reorder exercises */}
+            {currentExercise.sentenceParts && currentExercise.sentenceParts[0]?.type === 'reorder' ? (
+              <div className="flex flex-col gap-4">
+                <p className="text-white text-lg font-medium">Arrange the words to form a correct sentence:</p>
+                
+                {/* Answer area - where words are arranged */}
+                <div className="bg-htb-card border-2 border-htb-green rounded-lg p-4 min-h-[80px] flex flex-wrap gap-2 items-center">
+                  {reorderedWords.length === 0 ? (
+                    <span className="text-htb-text-dim italic">Click on words below to build your sentence...</span>
+                  ) : (
+                    reorderedWords.map((word, index) => (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          const newReordered = reorderedWords.filter((_, i) => i !== index);
+                          setReorderedWords(newReordered);
+                          setAvailableWords([...availableWords, word]);
+                        }}
+                        disabled={feedback !== null}
+                        className="bg-htb-green text-htb-bg px-4 py-2 rounded-md font-semibold hover:bg-htb-green-hover transition-colors disabled:opacity-50"
+                      >
+                        {word}
+                      </button>
+                    ))
+                  )}
+                </div>
+                
+                {/* Available words - to select from */}
+                <div>
+                  <p className="text-htb-text text-sm mb-2">Available words:</p>
+                  <div className="bg-htb-sidebar border border-gray-800 rounded-lg p-4 flex flex-wrap gap-2">
+                    {availableWords.map((word, index) => (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          setReorderedWords([...reorderedWords, word]);
+                          const newAvailable = availableWords.filter((_, i) => i !== index);
+                          setAvailableWords(newAvailable);
+                        }}
+                        disabled={feedback !== null}
+                        className="bg-htb-card text-white px-4 py-2 rounded-md border border-gray-700 hover:border-htb-green hover:text-htb-green transition-colors disabled:opacity-50"
+                      >
+                        {word}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : isVocabulary && currentExercise.englishWord ? (
               // Renderizado para vocabulario
               <div className="flex flex-col gap-4">
                 {/* Imagen del vocabulario */}
