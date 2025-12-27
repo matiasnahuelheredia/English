@@ -273,23 +273,23 @@ const ExamView4 = () => {
            (Array.isArray(exercise.correctAnswer) && 
             exercise.correctAnswer.some(ans => userAns.toLowerCase() === ans.toLowerCase())));
         
-        prompt += `**Pregunta ${exerciseIdx + 1}:** ${exercise.sentence}\n`;
-        prompt += `- Mi respuesta: ${userAns} ${wasCorrect ? '✅' : '❌'}\n`;
-        prompt += `- Respuesta correcta: ${correctAns}\n`;
+        prompt += `**Question ${exerciseIdx + 1}:** ${exercise.sentence}\n`;
+        prompt += `- My answer: ${userAns} ${wasCorrect ? '✅' : '❌'}\n`;
+        prompt += `- Correct answer: ${correctAns}\n`;
         if (exercise.explanation) {
-          prompt += `- Explicación: ${exercise.explanation}\n`;
+          prompt += `- Explanation: ${exercise.explanation}\n`;
         }
         prompt += `\n`;
       });
       prompt += `\n`;
     });
 
-    prompt += `\n🎯 POR FAVOR, ANALIZA:\n`;
-    prompt += `1. ¿Qué patrones de errores cometo? (¿problemas con tiempos verbales, preposiciones, vocabulario?)\n`;
-    prompt += `2. ¿Qué conceptos específicos debo reforzar?\n`;
-    prompt += `3. Dame 3-5 ejercicios prácticos específicos para mejorar en mis áreas débiles\n`;
-    prompt += `4. ¿Hay alguna regla gramatical que esté aplicando incorrectamente de forma recurrente?\n\n`;
-    prompt += `Por favor, sé específico y dame ejemplos concretos basados en mis errores.`;
+    prompt += `\n🎯 PLEASE ANALYZE:\n`;
+    prompt += `1. What error patterns do I make? (issues with verb tenses, prepositions, vocabulary?)\n`;
+    prompt += `2. Which specific concepts should I reinforce?\n`;
+    prompt += `3. Give me 3-5 specific practical exercises to improve in my weak areas\n`;
+    prompt += `4. Is there any grammatical rule that I'm consistently applying incorrectly?\n\n`;
+    prompt += `Please be specific and give me concrete examples based on my mistakes.`;
 
     return prompt;
   };
@@ -297,7 +297,7 @@ const ExamView4 = () => {
   const finishExam = () => {
     const unanswered = totalExercises - checkedExercises.size;
     if (unanswered > 0) {
-      if (!window.confirm(`Tienes ${unanswered} pregunta(s) sin responder. ¿Deseas finalizar el examen de todos modos?`)) {
+      if (!window.confirm(`You have ${unanswered} unanswered question(s). Do you want to finish the exam anyway?`)) {
         return;
       }
     }
@@ -308,20 +308,20 @@ const ExamView4 = () => {
     // Create modal with prompt
     const modalContent = `
       <div style="background: #1e2229; padding: 20px; border-radius: 8px; max-width: 800px; margin: 20px auto;">
-        <h2 style="color: #9fef00; margin-bottom: 15px; font-size: 24px;">¡Examen Completado!</h2>
+        <h2 style="color: #9fef00; margin-bottom: 15px; font-size: 24px;">Exam Completed!</h2>
         <div style="background: #1a1d23; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-          <p style="color: white; margin: 5px 0;">✅ Correctas: ${score.correct}</p>
-          <p style="color: white; margin: 5px 0;">❌ Incorrectas: ${score.incorrect}</p>
-          <p style="color: white; margin: 5px 0;">⏭️ Sin responder: ${unanswered}</p>
-          <p style="color: #9fef00; margin: 10px 0 0 0; font-size: 20px; font-weight: bold;">📊 Puntuación: ${percentage}%</p>
+          <p style="color: white; margin: 5px 0;">✅ Correct: ${score.correct}</p>
+          <p style="color: white; margin: 5px 0;">❌ Incorrect: ${score.incorrect}</p>
+          <p style="color: white; margin: 5px 0;">⏭️ Not answered: ${unanswered}</p>
+          <p style="color: #9fef00; margin: 10px 0 0 0; font-size: 20px; font-weight: bold;">📊 Score: ${percentage}%</p>
         </div>
         <div style="background: #1a1d23; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
-          <h3 style="color: #9fef00; margin-bottom: 10px;">🤖 Prompt para IA (ChatGPT, Claude, etc.)</h3>
-          <p style="color: #a8b2d1; margin-bottom: 10px; font-size: 14px;">Copia este texto y pégalo en cualquier IA para obtener un análisis detallado de tus errores:</p>
+          <h3 style="color: #9fef00; margin-bottom: 10px;">🤖 AI Prompt (ChatGPT, Claude, etc.)</h3>
+          <p style="color: #a8b2d1; margin-bottom: 10px; font-size: 14px;">Copy this text and paste it into any AI to get a detailed analysis of your mistakes:</p>
           <textarea id="aiPrompt" readonly style="width: 100%; height: 300px; background: #0a0e14; color: #9fef00; border: 1px solid #9fef00; border-radius: 4px; padding: 10px; font-family: monospace; font-size: 12px; resize: vertical;">${prompt.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
         </div>
-        <button id="copyPrompt" style="background: #9fef00; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-right: 10px;">📋 Copiar Prompt</button>
-        <button id="closeModal" style="background: #a8b2d1; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer;">Cerrar</button>
+        <button id="copyPrompt" style="background: #9fef00; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-right: 10px;">📋 Copy Prompt</button>
+        <button id="closeModal" style="background: #a8b2d1; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer;">Close</button>
       </div>
     `;
     
@@ -334,9 +334,9 @@ const ExamView4 = () => {
       const textarea = document.getElementById('aiPrompt');
       textarea.select();
       document.execCommand('copy');
-      document.getElementById('copyPrompt').textContent = '✅ ¡Copiado!';
+      document.getElementById('copyPrompt').textContent = '✅ Copied!';
       setTimeout(() => {
-        document.getElementById('copyPrompt').textContent = '📋 Copiar Prompt';
+        document.getElementById('copyPrompt').textContent = '📋 Copy Prompt';
       }, 2000);
     };
     

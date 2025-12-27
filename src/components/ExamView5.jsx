@@ -176,7 +176,7 @@ const ExamView5 = () => {
 
   const checkAnswer = () => {
     if (!userAnswer.trim()) {
-      alert('Por favor escribe tu respuesta');
+      alert('Please write your answer');
       return;
     }
 
@@ -502,7 +502,7 @@ const ExamView5 = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-8 text-center">
           <h2 className="text-2xl font-bold mb-4 text-white">Error</h2>
-          <p className="text-htb-text-dim">No se pudo cargar el examen.</p>
+          <p className="text-htb-text-dim">Could not load the exam.</p>
         </div>
       </div>
     );
@@ -517,9 +517,9 @@ const ExamView5 = () => {
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-center mb-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">Examen de Inglés</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">English Exam</h1>
             <p className="text-sm text-htb-text-dim mt-1">
-              Progreso: {completedExercises} / {totalExercises} ejercicios
+              Progress: {completedExercises} / {totalExercises} exercises
             </p>
           </div>
 
@@ -554,10 +554,10 @@ const ExamView5 = () => {
               className="bg-htb-green text-htb-bg px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-htb-green-hover transition-all duration-200 flex items-center gap-1"
             >
               <span>💡</span>
-              <span className="hidden sm:inline">Ayuda</span>
+              <span className="hidden sm:inline">Help</span>
             </button>
             <span className="bg-htb-card border border-htb-green/30 text-htb-green px-3 py-1 rounded-full text-sm font-semibold">
-              Sección {currentSectionIndex + 1}/{sections.length}
+              Section {currentSectionIndex + 1}/{sections.length}
             </span>
           </div>
         </div>
@@ -603,7 +603,7 @@ const ExamView5 = () => {
         <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-semibold text-htb-text-dim">
-              Ejercicio {currentExerciseIndex + 1} de {currentSection.exercises.length}
+              Exercise {currentExerciseIndex + 1} of {currentSection.exercises.length}
             </span>
             <span className="text-xs bg-htb-sidebar border border-htb-green/30 px-3 py-1 rounded-full text-htb-text">
               ID: {currentSection.id}
@@ -628,18 +628,18 @@ const ExamView5 = () => {
                 <p className={`font-bold text-lg mb-2 ${
                   feedback.isCorrect ? 'text-htb-green' : 'text-red-500'
                 }`}>
-                  {feedback.isCorrect ? '¡Correcto!' : 'Incorrecto'}
+                  {feedback.isCorrect ? 'Correct!' : 'Incorrect'}
                 </p>
                 
                 {!feedback.isCorrect && (
                   <p className="text-sm text-htb-text mb-2">
-                    <span className="font-semibold">Respuesta correcta:</span>{' '}
+                    <span className="font-semibold">Correct answer:</span>{' '}
                     <span className="text-htb-green font-semibold">{feedback.correctAnswer}</span>
                   </p>
                 )}
                 
                 <p className="text-sm text-htb-text leading-relaxed">
-                  <span className="font-semibold">Explicación:</span> {feedback.explanation}
+                  <span className="font-semibold">Explanation:</span> {feedback.explanation}
                 </p>
               </div>
             </div>
@@ -654,7 +654,7 @@ const ExamView5 = () => {
               disabled={currentSectionIndex === 0 && currentExerciseIndex === 0}
               className="bg-htb-sidebar hover:bg-gray-700 disabled:bg-gray-800 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:transform-none disabled:opacity-50"
             >
-              ← Anterior
+              ← Previous
             </button>
             
             {!feedback && (
@@ -662,7 +662,7 @@ const ExamView5 = () => {
                 onClick={checkAnswer}
                 className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               >
-                ✓ Verificar
+                ✓ Check
               </button>
             )}
             
