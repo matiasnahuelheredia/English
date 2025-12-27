@@ -162,8 +162,6 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const [remainingVocabExercises, setRemainingVocabExercises] = useState([]);
   const [reorderedWords, setReorderedWords] = useState([]);
   const [availableWords, setAvailableWords] = useState([]);
-  const [reorderedWords, setReorderedWords] = useState([]);
-  const [availableWords, setAvailableWords] = useState([]);
   
   const inputRef = useRef(null);
   const initialTimerRef = useRef(null);
