@@ -176,7 +176,7 @@ const ExamView = () => {
 
   const checkAnswer = () => {
     if (!userAnswer.trim()) {
-      alert('Por favor escribe tu respuesta');
+      alert('Please write your answer');
       return;
     }
 
@@ -254,18 +254,18 @@ const ExamView = () => {
   };
 
   const generateAIPrompt = () => {
-    let prompt = `Actúa como un profesor de inglés nivel B2. He completado un examen y necesito que analices mis errores y me expliques qué conceptos debo reforzar.\n\n`;
-    prompt += `📊 RESULTADOS:\n`;
-    prompt += `- Correctas: ${score.correct}/${totalExercises}\n`;
-    prompt += `- Incorrectas: ${score.incorrect}/${totalExercises}\n`;
-    prompt += `- Puntuación: ${Math.round((score.correct / totalExercises) * 100)}%\n\n`;
-    prompt += `📝 MIS RESPUESTAS:\n\n`;
+    let prompt = `Act as a B2 level English teacher. I have completed an exam and I need you to analyze my mistakes and explain which concepts I should reinforce.\n\n`;
+    prompt += `📊 RESULTS:\n`;
+    prompt += `- Correct: ${score.correct}/${totalExercises}\n`;
+    prompt += `- Incorrect: ${score.incorrect}/${totalExercises}\n`;
+    prompt += `- Score: ${Math.round((score.correct / totalExercises) * 100)}%\n\n`;
+    prompt += `📝 MY ANSWERS:\n\n`;
 
     sections.forEach((section, sectionIdx) => {
       prompt += `## ${section.title}\n\n`;
       section.exercises.forEach((exercise, exerciseIdx) => {
         const exerciseKey = `${sectionIdx}-${exerciseIdx}`;
-        const userAns = allAnswers[exerciseKey] || '(sin responder)';
+        const userAns = allAnswers[exerciseKey] || '(not answered)';
         const correctAns = Array.isArray(exercise.correctAnswer) 
           ? exercise.correctAnswer.join(' / ') 
           : exercise.correctAnswer;
@@ -274,23 +274,23 @@ const ExamView = () => {
            (Array.isArray(exercise.correctAnswer) && 
             exercise.correctAnswer.some(ans => userAns.toLowerCase() === ans.toLowerCase())));
         
-        prompt += `**Pregunta ${exerciseIdx + 1}:** ${exercise.sentence}\n`;
-        prompt += `- Mi respuesta: ${userAns} ${wasCorrect ? '✅' : '❌'}\n`;
-        prompt += `- Respuesta correcta: ${correctAns}\n`;
+        prompt += `**Question ${exerciseIdx + 1}:** ${exercise.sentence}\n`;
+        prompt += `- My answer: ${userAns} ${wasCorrect ? '✅' : '❌'}\n`;
+        prompt += `- Correct answer: ${correctAns}\n`;
         if (exercise.explanation) {
-          prompt += `- Explicación: ${exercise.explanation}\n`;
+          prompt += `- Explanation: ${exercise.explanation}\n`;
         }
         prompt += `\n`;
       });
       prompt += `\n`;
     });
 
-    prompt += `\n🎯 POR FAVOR, ANALIZA:\n`;
-    prompt += `1. ¿Qué patrones de errores cometo? (¿problemas con tiempos verbales, preposiciones, vocabulario?)\n`;
-    prompt += `2. ¿Qué conceptos específicos debo reforzar?\n`;
-    prompt += `3. Dame 3-5 ejercicios prácticos específicos para mejorar en mis áreas débiles\n`;
-    prompt += `4. ¿Hay alguna regla gramatical que esté aplicando incorrectamente de forma recurrente?\n\n`;
-    prompt += `Por favor, sé específico y dame ejemplos concretos basados en mis errores.`;
+    prompt += `\n🎯 PLEASE ANALYZE:\n`;
+    prompt += `1. What error patterns am I making? (problems with verb tenses, prepositions, vocabulary?)\n`;
+    prompt += `2. What specific concepts should I reinforce?\n`;
+    prompt += `3. Give me 3-5 specific practical exercises to improve my weak areas\n`;
+    prompt += `4. Is there any grammatical rule that I am applying incorrectly repeatedly?\n\n`;
+    prompt += `Please be specific and give me concrete examples based on my mistakes.`;
 
     return prompt;
   };
@@ -298,7 +298,7 @@ const ExamView = () => {
   const finishExam = () => {
     const unanswered = totalExercises - checkedExercises.size;
     if (unanswered > 0) {
-      if (!window.confirm(`Tienes ${unanswered} pregunta(s) sin responder. ¿Deseas finalizar el examen de todos modos?`)) {
+      if (!window.confirm(`You have ${unanswered} unanswered question(s). Do you want to finish the exam anyway?`)) {
         return;
       }
     }
@@ -309,20 +309,20 @@ const ExamView = () => {
     // Create modal with prompt
     const modalContent = `
       <div style="background: #1e2229; padding: 20px; border-radius: 8px; max-width: 800px; margin: 20px auto;">
-        <h2 style="color: #9fef00; margin-bottom: 15px; font-size: 24px;">¡Examen Completado!</h2>
+        <h2 style="color: #9fef00; margin-bottom: 15px; font-size: 24px;">Exam Completed!</h2>
         <div style="background: #1a1d23; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-          <p style="color: white; margin: 5px 0;">✅ Correctas: ${score.correct}</p>
-          <p style="color: white; margin: 5px 0;">❌ Incorrectas: ${score.incorrect}</p>
-          <p style="color: white; margin: 5px 0;">⏭️ Sin responder: ${unanswered}</p>
-          <p style="color: #9fef00; margin: 10px 0 0 0; font-size: 20px; font-weight: bold;">📊 Puntuación: ${percentage}%</p>
+          <p style="color: white; margin: 5px 0;">✅ Correct: ${score.correct}</p>
+          <p style="color: white; margin: 5px 0;">❌ Incorrect: ${score.incorrect}</p>
+          <p style="color: white; margin: 5px 0;">⏭️ Not answered: ${unanswered}</p>
+          <p style="color: #9fef00; margin: 10px 0 0 0; font-size: 20px; font-weight: bold;">📊 Score: ${percentage}%</p>
         </div>
         <div style="background: #1a1d23; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
-          <h3 style="color: #9fef00; margin-bottom: 10px;">🤖 Prompt para IA (ChatGPT, Claude, etc.)</h3>
-          <p style="color: #a8b2d1; margin-bottom: 10px; font-size: 14px;">Copia este texto y pégalo en cualquier IA para obtener un análisis detallado de tus errores:</p>
+          <h3 style="color: #9fef00; margin-bottom: 10px;">🤖 AI Prompt (ChatGPT, Claude, etc.)</h3>
+          <p style="color: #a8b2d1; margin-bottom: 10px; font-size: 14px;">Copy this text and paste it into any AI to get a detailed analysis of your mistakes:</p>
           <textarea id="aiPrompt" readonly style="width: 100%; height: 300px; background: #0a0e14; color: #9fef00; border: 1px solid #9fef00; border-radius: 4px; padding: 10px; font-family: monospace; font-size: 12px; resize: vertical;">${prompt.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
         </div>
-        <button id="copyPrompt" style="background: #9fef00; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-right: 10px;">📋 Copiar Prompt</button>
-        <button id="closeModal" style="background: #a8b2d1; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer;">Cerrar</button>
+        <button id="copyPrompt" style="background: #9fef00; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-right: 10px;">📋 Copy Prompt</button>
+        <button id="closeModal" style="background: #a8b2d1; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer;">Close</button>
       </div>
     `;
     
@@ -335,9 +335,9 @@ const ExamView = () => {
       const textarea = document.getElementById('aiPrompt');
       textarea.select();
       document.execCommand('copy');
-      document.getElementById('copyPrompt').textContent = '✅ ¡Copiado!';
+      document.getElementById('copyPrompt').textContent = '✅ Copied!';
       setTimeout(() => {
-        document.getElementById('copyPrompt').textContent = '📋 Copiar Prompt';
+        document.getElementById('copyPrompt').textContent = '📋 Copy Prompt';
       }, 2000);
     };
     
@@ -408,7 +408,7 @@ const ExamView = () => {
       return (
         <div className="space-y-4">
           <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-htb-green mb-2">Palabras disponibles:</p>
+            <p className="text-sm font-semibold text-htb-green mb-2">Available words:</p>
             <div className="flex flex-wrap gap-2">
               {currentExercise.words.map((word, index) => (
                 <span
@@ -423,7 +423,7 @@ const ExamView = () => {
 
           <div className="space-y-2">
             <label className="block text-sm font-semibold text-htb-text">
-              Escribe la oración en el orden correcto:
+              Write the sentence in the correct order:
             </label>
             <input
               ref={inputRef}
@@ -432,7 +432,7 @@ const ExamView = () => {
               onChange={(e) => setUserAnswer(e.target.value)}
               disabled={feedback !== null}
               className="w-full px-4 py-3 border-2 border-gray-700 bg-htb-bg rounded-lg focus:outline-none focus:ring-2 focus:ring-htb-green text-white"
-              placeholder="Escribe tu respuesta..."
+              placeholder="Write your answer..."
               onKeyPress={(e) => e.key === 'Enter' && !feedback && checkAnswer()}
             />
           </div>
@@ -452,7 +452,7 @@ const ExamView = () => {
 
           <div className="space-y-2">
             <label className="block text-sm font-semibold text-htb-text">
-              Completa la palabra (primera letra: {currentExercise.firstLetter.toUpperCase()}):
+              Complete the word (first letter: {currentExercise.firstLetter.toUpperCase()}):
             </label>
             <input
               ref={inputRef}
@@ -481,7 +481,7 @@ const ExamView = () => {
 
         <div className="space-y-2">
           <label className="block text-sm font-semibold text-htb-text">
-            Tu respuesta:
+            Your answer:
           </label>
           <input
             ref={inputRef}
@@ -503,7 +503,7 @@ const ExamView = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-8 text-center">
           <h2 className="text-2xl font-bold mb-4 text-white">Error</h2>
-          <p className="text-htb-text-dim">No se pudo cargar el examen.</p>
+          <p className="text-htb-text-dim">Could not load the exam.</p>
         </div>
       </div>
     );
@@ -518,9 +518,9 @@ const ExamView = () => {
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-center mb-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">Examen de Inglés</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">English Exam</h1>
             <p className="text-sm text-htb-text-dim mt-1">
-              Progreso: {completedExercises} / {totalExercises} ejercicios
+              Progress: {completedExercises} / {totalExercises} exercises
             </p>
           </div>
 
@@ -555,10 +555,10 @@ const ExamView = () => {
               className="bg-htb-green text-htb-bg px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-htb-green-hover transition-all duration-200 flex items-center gap-1"
             >
               <span>💡</span>
-              <span className="hidden sm:inline">Ayuda</span>
+              <span className="hidden sm:inline">Help</span>
             </button>
             <span className="bg-htb-card border border-htb-green/30 text-htb-green px-3 py-1 rounded-full text-sm font-semibold">
-              Sección {currentSectionIndex + 1}/{sections.length}
+              Section {currentSectionIndex + 1}/{sections.length}
             </span>
           </div>
         </div>
@@ -604,7 +604,7 @@ const ExamView = () => {
         <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-semibold text-htb-text-dim">
-              Ejercicio {currentExerciseIndex + 1} de {currentSection.exercises.length}
+              Exercise {currentExerciseIndex + 1} of {currentSection.exercises.length}
             </span>
             <span className="text-xs bg-htb-sidebar border border-htb-green/30 px-3 py-1 rounded-full text-htb-text">
               ID: {currentSection.id}
@@ -629,18 +629,18 @@ const ExamView = () => {
                 <p className={`font-bold text-lg mb-2 ${
                   feedback.isCorrect ? 'text-htb-green' : 'text-red-500'
                 }`}>
-                  {feedback.isCorrect ? '¡Correcto!' : 'Incorrecto'}
+                  {feedback.isCorrect ? 'Correct!' : 'Incorrect'}
                 </p>
                 
                 {!feedback.isCorrect && (
                   <p className="text-sm text-htb-text mb-2">
-                    <span className="font-semibold">Respuesta correcta:</span>{' '}
+                    <span className="font-semibold">Correct answer:</span>{' '}
                     <span className="text-htb-green font-semibold">{feedback.correctAnswer}</span>
                   </p>
                 )}
                 
                 <p className="text-sm text-htb-text leading-relaxed">
-                  <span className="font-semibold">Explicación:</span> {feedback.explanation}
+                  <span className="font-semibold">Explanation:</span> {feedback.explanation}
                 </p>
               </div>
             </div>
@@ -655,7 +655,7 @@ const ExamView = () => {
               disabled={currentSectionIndex === 0 && currentExerciseIndex === 0}
               className="bg-htb-sidebar hover:bg-gray-700 disabled:bg-gray-800 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:transform-none disabled:opacity-50"
             >
-              ← Anterior
+              ← Previous
             </button>
             
             {!feedback && (
@@ -663,7 +663,7 @@ const ExamView = () => {
                 onClick={checkAnswer}
                 className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               >
-                ✓ Verificar
+                ✓ Check
               </button>
             )}
             
@@ -672,7 +672,7 @@ const ExamView = () => {
               disabled={isLastExercise}
               className="bg-htb-sidebar hover:bg-gray-700 disabled:bg-gray-800 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:transform-none disabled:opacity-50"
             >
-              Siguiente →
+              Next →
             </button>
           </div>
           
@@ -681,7 +681,7 @@ const ExamView = () => {
               onClick={finishExam}
               className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
-              🏁 Finalizar Examen
+              🏁 Finish Exam
             </button>
           )}
         </div>
@@ -689,7 +689,7 @@ const ExamView = () => {
 
       {/* Stepper Navigation */}
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4">
-        <p className="text-xs text-htb-text-dim text-center mb-3">Haz clic en cualquier ejercicio para navegar</p>
+        <p className="text-xs text-htb-text-dim text-center mb-3">Click on any exercise to navigate</p>
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
           {sections.map((section, sectionIdx) => 
             section.exercises.map((exercise, exerciseIdx) => {
@@ -721,15 +721,15 @@ const ExamView = () => {
         <div className="mt-3 flex items-center justify-center gap-4 text-xs text-htb-text">
           <div className="flex items-center gap-1">
             <div className="w-4 h-4 bg-htb-green rounded"></div>
-            <span>Actual</span>
+            <span>Current</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-4 h-4 bg-htb-green/20 border border-htb-green/30 rounded"></div>
-            <span>Respondida</span>
+            <span>Answered</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-4 h-4 bg-htb-sidebar border border-gray-700 rounded"></div>
-            <span>Pendiente</span>
+            <span>Pending</span>
           </div>
         </div>
       </div>
