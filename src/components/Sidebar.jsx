@@ -905,6 +905,26 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Have, Have got & Had
                     </button>
+                    <button
+                      onClick={() => onSelectTense('linkers-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'linkers-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Discourse Markers - Linkers
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('pronouns-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'pronouns-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Pronouns
+                    </button>
                   </div>
                 )}
 

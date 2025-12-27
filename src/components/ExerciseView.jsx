@@ -25,6 +25,8 @@ import TalkAboutYourselfB2 from './TalkAboutYourselfB2';
 import JobInterviewB2 from './JobInterviewB2';
 import VerbBeA1Exercise from './VerbBeA1Exercise';
 import HaveHadC1Exercise from './HaveHadC1Exercise';
+import LinkersC1Exercise from './LinkersC1Exercise';
+import PronounsC1Exercise from './PronounsC1Exercise';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -115,6 +117,16 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es have-had-c1, mostrar el componente HaveHadC1Exercise
   if (tenseId === 'have-had-c1') {
     return <HaveHadC1Exercise />;
+  }
+
+  // Si es linkers-c1, mostrar el componente LinkersC1Exercise
+  if (tenseId === 'linkers-c1') {
+    return <LinkersC1Exercise />;
+  }
+
+  // Si es pronouns-c1, mostrar el componente PronounsC1Exercise
+  if (tenseId === 'pronouns-c1') {
+    return <PronounsC1Exercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
