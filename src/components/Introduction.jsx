@@ -1,8 +1,123 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Introduction = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = document.documentElement.scrollHeight;
+
+    const particles = [];
+    const particleCount = 80;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.8;
+        this.vy = (Math.random() - 0.5) * 0.8;
+        this.radius = Math.random() * 2 + 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(155, 245, 80, 0.6)';
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((particle, i) => {
+        particle.update();
+        particle.draw();
+
+        particles.slice(i + 1).forEach(otherParticle => {
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(155, 245, 80, ${0.15 * (1 - distance / 120)})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.stroke();
+          }
+        });
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = document.documentElement.scrollHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="relative">
+      {/* Animated Network Background */}
+      <canvas 
+        ref={canvasRef} 
+        className="fixed top-0 left-0 w-full h-full pointer-events-none"
+        style={{ zIndex: 0 }}
+      />
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-4 py-8">
+      {/* Animated Banner */}
+      <div className="relative bg-htb-card border border-htb-green/30 rounded-lg shadow-2xl mb-6 overflow-hidden" style={{ height: '200px' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-htb-bg/40 to-htb-bg/90"></div>
+        
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
+          <div className="text-center mb-4">
+            <div className="inline-block">
+              <span className="text-5xl font-bold text-htb-green animate-glow-pulse" style={{ textShadow: '0 0 20px rgba(155, 245, 80, 0.6), 0 0 40px rgba(155, 245, 80, 0.3)' }}>
+                Hacking English Practice Platform
+              </span>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-4 animate-fade-in-up">
+            <div className="flex items-center gap-2 bg-htb-sidebar/80 border border-htb-green/30 rounded px-4 py-2">
+              <div className="w-2 h-2 bg-htb-green rounded-full animate-ping"></div>
+              <span className="text-htb-green text-sm font-mono">374 EXERCISES LOADED</span>
+            </div>
+            <div className="flex items-center gap-2 bg-htb-sidebar/80 border border-htb-green/30 rounded px-4 py-2">
+              <div className="w-2 h-2 bg-htb-green rounded-full animate-pulse"></div>
+              <span className="text-htb-green text-sm font-mono">READY TO HACK</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-htb-green/0 via-htb-green to-htb-green/0 animate-pulse"></div>
+      </div>
+
       {/* Welcome Section */}
       <div className="bg-htb-card border border-htb-green/30 rounded-lg shadow-lg p-8 mb-6">
         <div className="flex items-center gap-4 mb-6">
@@ -30,6 +145,38 @@ const Introduction = () => {
           </p>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes glow-pulse {
+          0%, 100% { 
+            opacity: 1;
+            filter: brightness(1);
+          }
+          50% { 
+            opacity: 0.85;
+            filter: brightness(1.2);
+          }
+        }
+        
+        @keyframes fade-in-up {
+          from { 
+            opacity: 0; 
+            transform: translateY(20px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        
+        .animate-glow-pulse {
+          animation: glow-pulse 3s ease-in-out infinite;
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out 0.5s both;
+        }
+      `}</style>
 
       {/* Features Section */}
       <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -202,6 +349,7 @@ const Introduction = () => {
           💡 <span className="text-htb-green font-semibold">Pro Tip:</span> All exercises are designed to help you write better 
           penetration testing reports and communicate effectively in cybersecurity contexts.
         </p>
+      </div>
       </div>
     </div>
   );
