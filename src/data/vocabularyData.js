@@ -238,7 +238,7 @@ export const vocabularyData = {
     {
       englishWord: 'Airline lounge',
       spanishWord: ['sala vip', 'sala de espera de aerolínea', 'lounge'],
-      explanation: '"Airline lounge" significa sala VIP de la aerolínea. Área cómoda para pasajeros frecuentes o primera clase.'
+      explanation: '"Airline lounge" means VIP lounge de la aerolínea. Area cómoda para frequent flyers o first class.'
     },
     {
       englishWord: 'Customs',
@@ -253,7 +253,7 @@ export const vocabularyData = {
     {
       englishWord: 'Baggage reclaim',
       spanishWord: ['recogida de equipaje', 'reclamo de equipaje', 'entrega de equipaje'],
-      explanation: '"Baggage reclaim" significa recogida de equipaje. Área donde recoges tu maleta después del vuelo.'
+      explanation: '"Baggage reclaim" means baggage claim. Area where you pick up your luggage after the flight.'
     },
     {
       englishWord: 'On time',
@@ -331,7 +331,7 @@ export const vocabularyData = {
     {
       englishWord: 'Flood',
       spanishWord: ['inundación', 'desbordamiento'],
-      explanation: '"Flood" significa inundación. Cuando el agua cubre áreas normalmente secas debido a lluvia excesiva.'
+      explanation: '"Flood" means flood. Cuando el agua cubre areas normally dry due to excessive rain.'
     },
     {
       englishWord: 'Hurricane',
@@ -391,7 +391,7 @@ export const vocabularyData = {
     {
       englishWord: 'Rainfall',
       spanishWord: ['precipitación', 'lluvia', 'precipitaciones'],
-      explanation: '"Rainfall" significa precipitación o lluvia. La cantidad de lluvia que cae en un área.'
+      explanation: '"Rainfall" means rainfall o lluvia. La cantidad de lluvia que cae en un area.'
     },
     {
       englishWord: 'Below zero',
@@ -697,7 +697,7 @@ export const vocabularyData = {
     {
       englishWord: 'Arrived in',
       spanishWord: ['llegar a', 'arribar a'],
-      explanation: '"Arrived in" - We arrived IN London last week. Usamos IN con ciudades y países.',
+      explanation: '"Arrived in" - We arrived IN London last week. We use IN con ciudades y países.',
       imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop'
     },
     {
@@ -1353,8 +1353,8 @@ export const vocabularyData = {
     },
     {
       englishWord: 'Pedestrian area',
-      spanishWord: ['zona peatonal', 'área peatonal'],
-      explanation: '"Pedestrian area" significa zona peatonal. You can\'t drive in a pedestrian area.',
+      spanishWord: ['pedestrian zone', 'area peatonal'],
+      explanation: '"Pedestrian area" significa pedestrian zone. You can\'t drive in a pedestrian area.',
       imageUrl: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=400&h=300&fit=crop'
     },
     {
@@ -1566,8 +1566,8 @@ export const vocabularyData = {
     },
     {
       englishWord: 'Eventually',
-      spanishWord: ['finalmente', 'al final', 'eventualmente'],
-      explanation: '"Eventually" significa finalmente o al final. In the end; after a series of events or difficulties.',
+      spanishWord: ['finalmente', 'at the end', 'eventualmente'],
+      explanation: '"Eventually" significa finalmente o at the end. In the end; after a series of events or difficulties.',
       imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop'
     },
     {
@@ -1620,8 +1620,8 @@ export const vocabularyData = {
     },
     {
       englishWord: 'In the end',
-      spanishWord: ['al final', 'finalmente'],
-      explanation: '"In the end" significa al final. Jane agreed to help but in the end she didn\'t turn up at all.',
+      spanishWord: ['at the end', 'finalmente'],
+      explanation: '"In the end" significa at the end. Jane agreed to help but in the end she didn\'t turn up at all.',
       imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop'
     },
     {

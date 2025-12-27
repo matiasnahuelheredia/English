@@ -190,7 +190,7 @@ const ExamView5 = () => {
     } else if (currentSection.type === 'fill-word') {
       isCorrect = userAnswerLower === currentExercise.correctAnswer.toLowerCase();
     } else {
-      // Para ejercicios con múltiples respuestas correctas
+      // For exercises with multiple correct answers
       const correctAnswers = Array.isArray(currentExercise.correctAnswer) 
         ? currentExercise.correctAnswer 
         : [currentExercise.correctAnswer];

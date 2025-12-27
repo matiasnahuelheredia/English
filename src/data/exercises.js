@@ -20,7 +20,7 @@ const exercisesData = {
       ],
       options: ['performed', 'performed OR been performing', 'been performing'],
       correctAnswer: 'performed',
-      explanation: 'Usamos "performed" (Present Perfect Simple) porque estamos preguntando sobre una experiencia en la vida sin importar cuándo ocurrió. No necesitamos la forma continua porque no enfatizamos la duración de la acción.'
+      explanation: 'We use "performed" (Present Perfect Simple) porque estamos preguntando sobre una experiencia en la vida sin importar cuándo ocurrió. No necesitamos la forma continua porque no enfatizamos la duración de la acción.'
     },
     {
       sentenceParts: [
@@ -40,7 +40,7 @@ const exercisesData = {
       ],
       options: ['blocked', 'blocked OR been blocking', 'been blocking'],
       correctAnswer: 'blocked',
-      explanation: 'Usamos "blocked" porque estamos contando acciones completas (cinco ataques). El Present Perfect Simple se usa para acciones repetidas y contables.'
+      explanation: 'We use "blocked" porque estamos contando acciones completas (cinco ataques). El Present Perfect Simple se usa para acciones repetidas y contables.'
     },
     {
       sentenceParts: [
@@ -50,7 +50,7 @@ const exercisesData = {
       ],
       options: ['tried OR been trying', 'tried', 'been trying'],
       correctAnswer: 'been trying',
-      explanation: 'Usamos "been trying" (Present Perfect Continuous) porque enfatizamos la actividad continua que causó la frustración. La duración de la acción es importante aquí.'
+      explanation: 'We use "been trying" (Present Perfect Continuous) porque enfatizamos la actividad continua que causó la frustración. La duración de la acción es importante aquí.'
     },
     {
       sentenceParts: [
@@ -60,7 +60,7 @@ const exercisesData = {
       ],
       options: ['tested OR been testing', 'tested', 'been testing'],
       correctAnswer: 'tested',
-      explanation: 'Usamos "tested" porque se trata de una acción puntual (probar el sistema). "Test" en este sentido no se usa normalmente en forma continua.'
+      explanation: 'We use "tested" porque se trata de una acción puntual (probar el sistema). "Test" en este sentido no se usa normalmente en forma continua.'
     },
     {
       sentenceParts: [
@@ -70,7 +70,7 @@ const exercisesData = {
       ],
       options: ['been discovering', 'discovered', 'discovered OR been discovering'],
       correctAnswer: 'discovered',
-      explanation: 'Usamos "discovered" porque "discover" (encontrar por primera vez) es una acción puntual que no se usa en forma continua en este contexto.'
+      explanation: 'We use "discovered" porque "discover" (encontrar por primera vez) es una acción puntual que no se usa en forma continua en este contexto.'
     },
     {
       sentenceParts: [
@@ -80,7 +80,7 @@ const exercisesData = {
       ],
       options: ['continued OR been continuing', 'been continuing', 'continued'],
       correctAnswer: 'been continuing',
-      explanation: 'Usamos "been continuing" (Present Perfect Continuous) porque enfatizamos la actividad continua desde medianoche. La duración es importante aquí.'
+      explanation: 'We use "been continuing" (Present Perfect Continuous) porque enfatizamos la actividad continua desde medianoche. La duración es importante aquí.'
     },
     {
       sentenceParts: [
@@ -90,7 +90,7 @@ const exercisesData = {
       ],
       options: ['been going', 'gone', 'gone OR been going'],
       correctAnswer: 'gone',
-      explanation: 'Usamos "gone" porque fue a la conferencia y no está aquí ahora. "Gone" implica que la persona no está presente, mientras que "been" implicaría que ya regresó.'
+      explanation: 'We use "gone" porque fue a la conferencia y no está aquí ahora. "Gone" implica que la persona no está presente, mientras que "been" implicaría que ya regresó.'
     },
     {
       sentenceParts: [
@@ -110,7 +110,7 @@ const exercisesData = {
       ],
       options: ['analyzed', 'analyzed OR been analyzing', 'been analyzing'],
       correctAnswer: 'been analyzing',
-      explanation: 'Usamos "been analyzing" (Present Perfect Continuous) porque enfatizamos la actividad continua de analizar durante toda la mañana. Mencionamos el progreso (entrada 15,000) lo que indica duración.'
+      explanation: 'We use "been analyzing" (Present Perfect Continuous) porque enfatizamos la actividad continua de analizar durante toda la mañana. Mencionamos el progreso (entrada 15,000) lo que indica duración.'
     },
     {
       sentenceParts: [
@@ -119,7 +119,7 @@ const exercisesData = {
         { type: 'text', content: '(patch) the server. Can we go live now?' }
       ],
       correctAnswer: ['have patched'],
-      explanation: 'Present Perfect Simple: have/has + past participle. Usamos "have patched" porque la acción acaba de completarse y el resultado es importante ahora (podemos publicar).'
+      explanation: 'Present Perfect Simple: have/has + past participle. We use "have patched" porque la acción acaba de completarse y el resultado es importante ahora (podemos publicar).'
     },
     {
       sentenceParts: [
@@ -149,7 +149,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Usamos "have" con "you" en Present Perfect para preguntar sobre la duración de una acción que comenzó en el pasado y continúa.'
+      explanation: 'We use "have" con "you" en Present Perfect para preguntar sobre la duración de una acción que comenzó en el pasado y continúa.'
     },
     {
       sentenceParts: [
@@ -159,7 +159,7 @@ const exercisesData = {
       ],
       options: ['lost', 'losed', 'been losing'],
       correctAnswer: 'lost',
-      explanation: 'Usamos "lost" (Present Perfect Simple) para indicar que la contraseña está perdida ahora. El resultado presente es importante.'
+      explanation: 'We use "lost" (Present Perfect Simple) para indicar que la contraseña está perdida ahora. El resultado presente es importante.'
     },
     {
       sentenceParts: [
@@ -169,7 +169,7 @@ const exercisesData = {
       ],
       options: ['have been', 'are', 'were'],
       correctAnswer: 'have been',
-      explanation: 'Usamos "have been" porque la duración (10 años) conecta el pasado con el presente. Todavía están en el colectivo.'
+      explanation: 'We use "have been" porque la duración (10 años) conecta el pasado con el presente. Todavía están en el colectivo.'
     },
     {
       sentenceParts: [
@@ -179,7 +179,7 @@ const exercisesData = {
       ],
       options: ['has run', 'ran', 'has been running'],
       correctAnswer: 'has run',
-      explanation: 'Usamos "has run" porque contamos acciones completas en un período que aún no ha terminado ("this morning").'
+      explanation: 'We use "has run" porque contamos acciones completas en un período que aún no ha terminado ("this morning").'
     },
     {
       sentenceParts: [
@@ -189,7 +189,7 @@ const exercisesData = {
       ],
       options: ['have known', 'know', 'knew'],
       correctAnswer: 'have known',
-      explanation: 'Usamos "have known" con "since" para indicar que la acción comenzó en el pasado (primera competencia CTF) y continúa hasta ahora.'
+      explanation: 'We use "have known" con "since" para indicar que la acción comenzó en el pasado (primera competencia CTF) y continúa hasta ahora.'
     },
     {
       sentenceParts: [
@@ -199,7 +199,7 @@ const exercisesData = {
       ],
       options: ["hasn't found", "didn't find", 'is not finding'],
       correctAnswer: "hasn't found",
-      explanation: 'Usamos "hasn\'t found" con "recently" para hablar de un período reciente hasta el presente.'
+      explanation: 'We use "hasn\'t found" con "recently" para hablar de un período reciente hasta el presente.'
     },
     {
       sentenceParts: [
@@ -211,7 +211,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Preguntamos sobre experiencias en pentesting usando Present Perfect con "How many".'
+      explanation: 'Questionmos sobre experiencias en pentesting usando Present Perfect con "How many".'
     },
     {
       sentenceParts: [
@@ -222,7 +222,7 @@ const exercisesData = {
       ],
       options: ['has', 'have'],
       correctAnswer: 'has',
-      explanation: 'Usamos "has" con tercera persona singular. "Already" se usa con Present Perfect para indicar que algo sucedió antes de lo esperado.'
+      explanation: 'We use "has" con tercera persona singular. "Already" se usa con Present Perfect para indicar que algo sucedió antes de lo esperado.'
     },
     {
       sentenceParts: [
@@ -232,7 +232,7 @@ const exercisesData = {
       ],
       options: ['been', 'gone', 'went'],
       correctAnswer: 'been',
-      explanation: 'Usamos "been" (no "gone") porque regresamos de la conferencia. "Gone" implicaría que todavía estamos allí.'
+      explanation: 'We use "been" (no "gone") porque regresamos de la conferencia. "Gone" implicaría que todavía estamos allí.'
     },
     {
       sentenceParts: [
@@ -242,7 +242,7 @@ const exercisesData = {
       ],
       options: ['has stolen', 'stole', 'steals'],
       correctAnswer: 'has stolen',
-      explanation: 'Usamos Present Perfect porque el resultado presente es visible (no hay datos) pero no sabemos exactamente cuándo pasó.'
+      explanation: 'We use Present Perfect porque el resultado presente es visible (no hay datos) pero no sabemos exactamente cuándo pasó.'
     },
     {
       sentenceParts: [
@@ -252,7 +252,7 @@ const exercisesData = {
       ],
       options: ['has launched', 'launched', 'launches'],
       correctAnswer: 'has launched',
-      explanation: 'Usamos Present Perfect para noticias recientes o logros cuando el tiempo exacto no es importante.'
+      explanation: 'We use Present Perfect para noticias recientes o logros cuando el tiempo exacto no es importante.'
     },
     {
       sentenceParts: [
@@ -262,7 +262,7 @@ const exercisesData = {
       ],
       options: ['has been sending', 'sent', 'sends'],
       correctAnswer: 'has been sending',
-      explanation: 'Usamos Present Perfect Continuous con "for hours" para enfatizar la duración de una actividad que continúa.'
+      explanation: 'We use Present Perfect Continuous con "for hours" para enfatizar la duración de una actividad que continúa.'
     },
     {
       sentenceParts: [
@@ -272,7 +272,7 @@ const exercisesData = {
       ],
       options: ['made', 'make', 'making'],
       correctAnswer: 'made',
-      explanation: 'Usamos "made" en Present Perfect para hablar sobre un logro o cambio visible hasta ahora.'
+      explanation: 'We use "made" en Present Perfect to talk about un logro o cambio visible hasta ahora.'
     },
     {
       sentenceParts: [
@@ -282,7 +282,7 @@ const exercisesData = {
       ],
       options: ['been waiting', 'waited', 'wait'],
       correctAnswer: 'been waiting',
-      explanation: 'Usamos Present Perfect Continuous con "for 30 minutes" para enfatizar la duración de una acción que continúa.'
+      explanation: 'We use Present Perfect Continuous con "for 30 minutes" para enfatizar la duración de una acción que continúa.'
     },
     {
       sentenceParts: [
@@ -292,7 +292,7 @@ const exercisesData = {
       ],
       options: ['identified', 'been identifying', 'identified OR been identifying'],
       correctAnswer: 'identified',
-      explanation: 'Present Perfect Simple para reportar hallazgos específicos durante el pentesting.'
+      explanation: 'Present Perfect Simple para reportar hallazgos specifics durante el pentesting.'
     },
     {
       sentenceParts: [
@@ -312,7 +312,7 @@ const exercisesData = {
       ],
       options: ['detected', 'been detecting', 'detected OR been detecting'],
       correctAnswer: 'detected',
-      explanation: 'Usamos Present Perfect Simple porque contamos hallazgos específicos hasta ahora.'
+      explanation: 'We use Present Perfect Simple porque contamos hallazgos specifics hasta ahora.'
     },
     {
       sentenceParts: [
@@ -322,7 +322,7 @@ const exercisesData = {
       ],
       options: ['dumped', 'been dumping', 'dumped OR been dumping'],
       correctAnswer: 'dumped',
-      explanation: 'Pregunta sobre una acción específica completada, típica en informes de pentesting.'
+      explanation: 'Question sobre una acción específica completada, típica en informes de pentesting.'
     },
     {
       sentenceParts: [
@@ -332,7 +332,7 @@ const exercisesData = {
       ],
       options: ['implemented', 'been implementing', 'implemented OR been implementing'],
       correctAnswer: 'implemented',
-      explanation: 'Usamos Present Perfect para describir un problema persistente sin tiempo específico.'
+      explanation: 'We use Present Perfect para describir un problema persistente sin tiempo specific.'
     },
     {
       sentenceParts: [
@@ -352,7 +352,7 @@ const exercisesData = {
       ],
       options: ['logged', 'been logging', 'logged OR been logging'],
       correctAnswer: 'been logging',
-      explanation: 'Actividad continua de registro desde un punto específico en el pasado.'
+      explanation: 'Actividad continua de registro desde un punto specific en el pasado.'
     },
     {
       sentenceParts: [
@@ -362,7 +362,7 @@ const exercisesData = {
       ],
       options: ['blocked', 'been blocking', 'blocked OR been blocking'],
       correctAnswer: 'blocked',
-      explanation: 'Pregunta sobre acciones específicas completadas en un período que continúa (today).'
+      explanation: 'Question sobre acciones específicas completadas en un período que continúa (today).'
     },
     {
       sentenceParts: [
@@ -372,7 +372,7 @@ const exercisesData = {
       ],
       options: ['achieved', 'been achieving', 'achieved OR been achieving'],
       correctAnswer: 'achieved',
-      explanation: 'Logro específico en pentesting reportado con Present Perfect Simple.'
+      explanation: 'Logro specific en pentesting reportado con Present Perfect Simple.'
     },
     {
       sentenceParts: [
@@ -392,7 +392,7 @@ const exercisesData = {
       ],
       options: ['detected', 'been detecting', 'detected OR been detecting'],
       correctAnswer: 'detected',
-      explanation: 'Contamos eventos específicos en un período que aún continúa (this week).'
+      explanation: 'Contamos eventos specifics en un período que aún continúa (this week).'
     },
     {
       sentenceParts: [
@@ -402,7 +402,7 @@ const exercisesData = {
       ],
       options: ['executed', 'been executing', 'executed OR been executing'],
       correctAnswer: 'executed',
-      explanation: 'Pregunta sobre experiencia en pentesting sin tiempo específico.'
+      explanation: 'Question sobre experiencia en pentesting sin tiempo specific.'
     },
     {
       sentenceParts: [
@@ -422,7 +422,7 @@ const exercisesData = {
       ],
       options: ['shown', 'been showing', 'shown OR been showing'],
       correctAnswer: 'shown',
-      explanation: 'Hallazgos específicos reportados con Present Perfect Simple.'
+      explanation: 'Hallazgos specifics reportados con Present Perfect Simple.'
     },
     {
       sentenceParts: [
@@ -442,7 +442,7 @@ const exercisesData = {
       ],
       options: ['compromised', 'been compromising', 'compromised OR been compromising'],
       correctAnswer: 'compromised',
-      explanation: 'Pregunta cuantitativa sobre resultados específicos del pentesting.'
+      explanation: 'Question cuantitativa sobre resultados specifics del pentesting.'
     },
     {
       sentenceParts: [
@@ -492,7 +492,7 @@ const exercisesData = {
       ],
       options: ['gained', 'been gaining', 'gained OR been gaining'],
       correctAnswer: 'gained',
-      explanation: 'Logro reciente específico en el pentesting con "just".'
+      explanation: 'Logro reciente specific en el pentesting con "just".'
     },
     {
       sentenceParts: [
@@ -512,7 +512,7 @@ const exercisesData = {
       ],
       options: ['defined', 'been defining', 'defined OR been defining'],
       correctAnswer: 'defined',
-      explanation: 'Pregunta sobre una tarea específica completada antes del test.'
+      explanation: 'Question sobre una tarea específica completada antes del test.'
     },
     {
       sentenceParts: [
@@ -532,7 +532,7 @@ const exercisesData = {
       ],
       options: ['discovered', 'been discovering', 'discovered OR been discovering'],
       correctAnswer: 'discovered',
-      explanation: 'Resultado específico de reconocimiento con herramienta.'
+      explanation: 'Resultado specific de reconocimiento con herramienta.'
     },
     {
       sentenceParts: [
@@ -562,7 +562,7 @@ const exercisesData = {
       ],
       options: ['existed', 'been existing', 'existed OR been existing'],
       correctAnswer: 'existed',
-      explanation: 'Pregunta sobre duración de una vulnerabilidad en el sistema.'
+      explanation: 'Question sobre duración de una vulnerabilidad en el sistema.'
     },
     {
       sentenceParts: [
@@ -592,7 +592,7 @@ const exercisesData = {
       ],
       options: ['uncovered', 'been uncovering', 'uncovered OR been uncovering'],
       correctAnswer: 'uncovered',
-      explanation: 'Hallazgo específico descubierto durante la evaluación.'
+      explanation: 'Hallazgo specific descubierto durante la evaluación.'
     },
     {
       sentenceParts: [
@@ -602,7 +602,7 @@ const exercisesData = {
       ],
       options: ['seen', 'been seeing', 'seen OR been seeing'],
       correctAnswer: 'seen',
-      explanation: 'Experiencia extrema reportada sin tiempo específico.'
+      explanation: 'Experiencia extrema reportada sin tiempo specific.'
     },
     {
       sentenceParts: [
@@ -735,7 +735,7 @@ const exercisesData = {
       ],
       options: ['have been scanning', 'have scanned', 'am scanning'],
       correctAnswer: 'have been scanning',
-      explanation: 'Usamos Present Perfect Continuous "have been scanning" para enfatizar la duración de una acción que comenzó en el pasado y continúa hasta ahora.'
+      explanation: 'We use Present Perfect Continuous "have been scanning" para enfatizar la duración de una acción que comenzó en el pasado y continúa hasta ahora.'
     },
     {
       sentenceParts: [
@@ -745,7 +745,7 @@ const exercisesData = {
       ],
       options: ['has been learning', 'has learned', 'is learning'],
       correctAnswer: 'has been learning',
-      explanation: 'Usamos "has been learning" para enfatizar la actividad continua durante los cinco años.'
+      explanation: 'We use "has been learning" para enfatizar la actividad continua durante los cinco años.'
     },
     {
       sentenceParts: [
@@ -757,7 +757,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Preguntamos con "How long have you been working" sobre la duración de trabajar en este exploit.'
+      explanation: 'Questionmos con "How long have you been working" sobre la duración de trabajar en este exploit.'
     },
     {
       sentenceParts: [
@@ -767,7 +767,7 @@ const exercisesData = {
       ],
       options: ['have been cracking', 'have cracked', 'are cracking'],
       correctAnswer: 'have been cracking',
-      explanation: 'Usamos "have been cracking" para enfatizar la actividad continua durante todo el día.'
+      explanation: 'We use "have been cracking" para enfatizar la actividad continua durante todo el día.'
     },
     {
       sentenceParts: [
@@ -777,7 +777,7 @@ const exercisesData = {
       ],
       options: ['been monitoring', 'monitored', 'monitoring'],
       correctAnswer: 'been monitoring',
-      explanation: 'Usamos Present Perfect Continuous para explicar la causa de ojos cansados (actividad reciente continua).'
+      explanation: 'We use Present Perfect Continuous para explicar la causa de ojos cansados (actividad reciente continua).'
     },
     {
       sentenceParts: [
@@ -787,7 +787,7 @@ const exercisesData = {
       ],
       options: ['has been doing', 'has done', 'does'],
       correctAnswer: 'has been doing',
-      explanation: 'Usamos "has been doing" con "lately" para una actividad repetida en el período reciente.'
+      explanation: 'We use "has been doing" con "lately" para una actividad repetida en el período reciente.'
     },
     {
       sentenceParts: [
@@ -796,7 +796,7 @@ const exercisesData = {
         { type: 'text', content: '(you/wait) for the exploit to compile?' }
       ],
       correctAnswer: ['have you been waiting'],
-      explanation: 'Present Perfect Continuous question: How long + have/has + subject + been + verb-ing. Preguntamos por la duración de una acción que continúa.'
+      explanation: 'Present Perfect Continuous question: How long + have/has + subject + been + verb-ing. Questionmos por la duración de una acción que continúa.'
     },
     {
       sentenceParts: [
@@ -808,7 +808,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Preguntamos "What have you been debugging?" para entender la causa del cansancio (actividad reciente).'
+      explanation: 'Questionmos "What have you been debugging?" para entender la causa del cansancio (actividad reciente).'
     },
     {
       sentenceParts: [
@@ -818,7 +818,7 @@ const exercisesData = {
       ],
       options: ['have been planning', 'have planned', 'are planning'],
       correctAnswer: 'have been planning',
-      explanation: 'Usamos "have been planning" para enfatizar el proceso continuo de planificación durante meses.'
+      explanation: 'We use "have been planning" para enfatizar el proceso continuo de planificación durante meses.'
     },
     {
       sentenceParts: [
@@ -828,7 +828,7 @@ const exercisesData = {
       ],
       options: ['have been triggering', 'have triggered', 'are triggering'],
       correctAnswer: 'have been triggering',
-      explanation: 'Usamos "have been triggering" para enfatizar lo molesto de una acción repetida durante toda la mañana.'
+      explanation: 'We use "have been triggering" para enfatizar lo molesto de una acción repetida durante toda la mañana.'
     },
     {
       sentenceParts: [
@@ -838,7 +838,7 @@ const exercisesData = {
       ],
       options: ['have been trying', 'have tried', 'am trying'],
       correctAnswer: 'have been trying',
-      explanation: 'Usamos "have been trying" para enfatizar los intentos repetidos durante toda la semana.'
+      explanation: 'We use "have been trying" para enfatizar los intentos repetidos durante toda la semana.'
     },
     {
       sentenceParts: [
@@ -858,7 +858,7 @@ const exercisesData = {
       ],
       options: ['been running', 'run', 'running'],
       correctAnswer: 'been running',
-      explanation: 'Pregunta sobre duración de actividad continua de pentesting.'
+      explanation: 'Question sobre duración de actividad continua de pentesting.'
     },
     {
       sentenceParts: [
@@ -868,7 +868,7 @@ const exercisesData = {
       ],
       options: ['been capturing', 'captured', 'capturing'],
       correctAnswer: 'been capturing',
-      explanation: 'Proceso continuo de captura durante período específico.'
+      explanation: 'Proceso continuo de captura durante período specific.'
     },
     {
       sentenceParts: [
@@ -878,7 +878,7 @@ const exercisesData = {
       ],
       options: ['been recording', 'recorded', 'recording'],
       correctAnswer: 'been recording',
-      explanation: 'Actividad continua de monitoreo durante todo el mes.'
+      explanation: 'Actividad continua de monitoring durante todo el mes.'
     },
     {
       sentenceParts: [
@@ -898,7 +898,7 @@ const exercisesData = {
       ],
       options: ['been doing', 'done', 'doing'],
       correctAnswer: 'been doing',
-      explanation: 'Pregunta sobre actividad continua reciente con herramienta.'
+      explanation: 'Question sobre actividad continua reciente con herramienta.'
     },
     {
       sentenceParts: [
@@ -958,7 +958,7 @@ const exercisesData = {
       ],
       options: ['been running', 'run', 'running'],
       correctAnswer: 'been running',
-      explanation: 'Pregunta sobre duración de compromiso del sistema.'
+      explanation: 'Question sobre duración de compromiso del sistema.'
     },
     {
       sentenceParts: [
@@ -1008,7 +1008,7 @@ const exercisesData = {
       ],
       options: ['been using', 'used', 'using'],
       correctAnswer: 'been using',
-      explanation: 'Pregunta sobre técnicas empleadas durante el ataque.'
+      explanation: 'Question sobre técnicas empleadas durante el ataque.'
     },
     {
       sentenceParts: [
@@ -1068,7 +1068,7 @@ const exercisesData = {
       ],
       options: ['been doing', 'done', 'doing'],
       correctAnswer: 'been doing',
-      explanation: 'Pregunta sobre duración de actividad de crackeo.'
+      explanation: 'Question sobre duración de actividad de crackeo.'
     },
     {
       sentenceParts: [
@@ -1128,7 +1128,7 @@ const exercisesData = {
       ],
       options: ['been deploying', 'deployed', 'deploying'],
       correctAnswer: 'been deploying',
-      explanation: 'Pregunta sobre actividad continua de testing.'
+      explanation: 'Question sobre actividad continua de testing.'
     },
     {
       sentenceParts: [
@@ -1188,7 +1188,7 @@ const exercisesData = {
       ],
       options: ['been operating', 'operated', 'operating'],
       correctAnswer: 'been operating',
-      explanation: 'Pregunta sobre duración de presencia de APT.'
+      explanation: 'Question sobre duración de presencia de APT.'
     },
     {
       sentenceParts: [
@@ -1241,7 +1241,7 @@ const exercisesData = {
       ],
       options: ['was monitoring', 'monitored', 'monitor'],
       correctAnswer: 'was monitoring',
-      explanation: 'Usamos Past Continuous "was monitoring" para una acción en progreso interrumpida por otra acción en el pasado.'
+      explanation: 'We use Past Continuous "was monitoring" para una action in progress interrupted by another action en el pasado.'
     },
     {
       sentenceParts: [
@@ -1251,7 +1251,7 @@ const exercisesData = {
       ],
       options: ['were conducting', 'conducted', 'conduct'],
       correctAnswer: 'were conducting',
-      explanation: 'Usamos "were conducting" para describir una acción que estaba en progreso a una hora específica del pasado.'
+      explanation: 'We use "were conducting" para describir una acción que estaba en progreso a una hora específica del pasado.'
     },
     {
       sentenceParts: [
@@ -1263,7 +1263,7 @@ const exercisesData = {
       ],
       options: ['were', 'was'],
       correctAnswer: 'were',
-      explanation: 'Preguntamos "What were you doing" sobre una acción en progreso en un momento específico del pasado.'
+      explanation: 'Questionmos "What were you doing" sobre una action in progress en un momento specific del pasado.'
     },
     {
       sentenceParts: [
@@ -1273,7 +1273,7 @@ const exercisesData = {
       ],
       options: ['was happening', 'happened', 'happens'],
       correctAnswer: 'was happening',
-      explanation: 'Usamos "was happening" para describir un ataque que estaba en progreso cuando ocurrió otra acción.'
+      explanation: 'We use "was happening" para describir un ataque que estaba en progreso cuando ocurrió otra acción.'
     },
     {
       sentenceParts: [
@@ -1285,7 +1285,7 @@ const exercisesData = {
       ],
       options: ['was testing', 'tested'],
       correctAnswer: 'was testing',
-      explanation: 'Usamos Past Continuous para dos acciones simultáneas en progreso en el pasado.'
+      explanation: 'We use Past Continuous para dos acciones simultáneas en progreso en el pasado.'
     },
     {
       sentenceParts: [
@@ -1295,7 +1295,7 @@ const exercisesData = {
       ],
       options: ['were running', 'ran', 'run'],
       correctAnswer: 'were running',
-      explanation: 'Usamos "were watching" para una acción en progreso que fue interrumpida (apagón).'
+      explanation: 'We use "were watching" para una action in progress que fue interrumpida (apagón).'
     },
     {
       sentenceParts: [
@@ -1305,7 +1305,7 @@ const exercisesData = {
       ],
       options: ['was listening', 'listened', 'listens'],
       correctAnswer: 'was listening',
-      explanation: 'Usamos "was listening" para una actividad continua durante un período específico del pasado.'
+      explanation: 'We use "was listening" para una actividad continua durante un período specific del pasado.'
     },
     {
       sentenceParts: [
@@ -1314,7 +1314,7 @@ const exercisesData = {
         { type: 'text', content: '(have) dinner with friends.' }
       ],
       correctAnswer: ['were having'],
-      explanation: 'Past Continuous: was/were + verb-ing. Usamos "were having" para describir una acción en progreso a una hora específica del pasado.'
+      explanation: 'Past Continuous: was/were + verb-ing. We use "were having" para describir una action in progress a una hora específica del pasado.'
     },
     {
       sentenceParts: [
@@ -1323,7 +1323,7 @@ const exercisesData = {
         { type: 'text', content: '(you/do) when I called you?' }
       ],
       correctAnswer: ['were you doing'],
-      explanation: 'Past Continuous question: What + was/were + subject + verb-ing. Preguntamos sobre una acción en progreso cuando ocurrió otra (la llamada).'
+      explanation: 'Past Continuous question: What + was/were + subject + verb-ing. Questionmos sobre una action in progress cuando ocurrió otra (la llamada).'
     },
     {
       sentenceParts: [
@@ -1333,7 +1333,7 @@ const exercisesData = {
       ],
       options: ['were playing', 'played', 'play'],
       correctAnswer: 'were playing',
-      explanation: 'Usamos "were playing" para describir una actividad en progreso durante la mañana.'
+      explanation: 'We use "were playing" para describir una actividad en progreso durante la mañana.'
     },
     {
       sentenceParts: [
@@ -1343,7 +1343,7 @@ const exercisesData = {
       ],
       options: ['was thinking', 'thought', 'think'],
       correctAnswer: 'was thinking',
-      explanation: 'Usamos "was thinking" para una actividad mental que estaba en progreso justo antes de ahora.'
+      explanation: 'We use "was thinking" para una actividad mental que estaba en progreso justo antes de ahora.'
     },
     {
       sentenceParts: [
@@ -1353,7 +1353,7 @@ const exercisesData = {
       ],
       options: ['were listening', 'listened', 'listen'],
       correctAnswer: 'were listening',
-      explanation: 'Usamos "were listening" para una acción en progreso cuando llegué (otra acción).'
+      explanation: 'We use "were listening" para una action in progress cuando llegué (otra acción).'
     },
     {
       sentenceParts: [
@@ -1363,7 +1363,7 @@ const exercisesData = {
       ],
       options: ['was reviewing', 'reviewed', 'reviews'],
       correctAnswer: 'was reviewing',
-      explanation: 'Acción en progreso interrumpida por la alerta en informe.'
+      explanation: 'Action in progress interrumpida por la alerta en informe.'
     },
     {
       sentenceParts: [
@@ -1373,7 +1373,7 @@ const exercisesData = {
       ],
       options: ['was extracting', 'extracted', 'extracts'],
       correctAnswer: 'was extracting',
-      explanation: 'Actividad en progreso en momento específico del ataque.'
+      explanation: 'Actividad en progreso en momento specific del ataque.'
     },
     {
       sentenceParts: [
@@ -1383,7 +1383,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Pregunta sobre estado del firewall durante incidente.'
+      explanation: 'Question sobre estado del firewall durante incidente.'
     },
     {
       sentenceParts: [
@@ -1413,7 +1413,7 @@ const exercisesData = {
       ],
       options: ['was encrypting', 'encrypted', 'encrypts'],
       correctAnswer: 'was encrypting',
-      explanation: 'Actividad de ransomware en progreso en momento específico.'
+      explanation: 'Actividad de ransomware en progreso en momento specific.'
     },
     {
       sentenceParts: [
@@ -1443,7 +1443,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Pregunta sobre actividad específica del atacante.'
+      explanation: 'Question sobre actividad específica del atacante.'
     },
     {
       sentenceParts: [
@@ -1483,7 +1483,7 @@ const exercisesData = {
       ],
       options: ['were deploying', 'deployed', 'deploy'],
       correctAnswer: 'were deploying',
-      explanation: 'Acción en progreso durante el compromiso.'
+      explanation: 'Action in progress durante el compromiso.'
     },
     {
       sentenceParts: [
@@ -1513,7 +1513,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Pregunta sobre estado de protección durante incidente.'
+      explanation: 'Question sobre estado de protección durante incidente.'
     },
     {
       sentenceParts: [
@@ -1533,7 +1533,7 @@ const exercisesData = {
       ],
       options: ['was running', 'ran', 'runs'],
       correctAnswer: 'was running',
-      explanation: 'Tráfico anómalo en momento específico reportado.'
+      explanation: 'Tráfico anómalo en momento specific reportado.'
     },
     {
       sentenceParts: [
@@ -1543,7 +1543,7 @@ const exercisesData = {
       ],
       options: ['was writing', 'wrote', 'write'],
       correctAnswer: 'was writing',
-      explanation: 'Redacción en progreso cuando surgieron hallazgos.'
+      explanation: 'Redaction in progress cuando surgieron hallazgos.'
     },
     {
       sentenceParts: [
@@ -1563,7 +1563,7 @@ const exercisesData = {
       ],
       options: ['was researching', 'researched', 'researches'],
       correctAnswer: 'was researching',
-      explanation: 'Investigación en curso en momento específico.'
+      explanation: 'Investigación en curso en momento specific.'
     },
     {
       sentenceParts: [
@@ -1583,7 +1583,7 @@ const exercisesData = {
       ],
       options: ['were', 'was', 'are'],
       correctAnswer: 'were',
-      explanation: 'Pregunta sobre herramientas en uso durante fase.'
+      explanation: 'Question sobre herramientas en uso durante fase.'
     },
     {
       sentenceParts: [
@@ -1653,7 +1653,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Pregunta sobre telemetría durante compromiso.'
+      explanation: 'Question sobre telemetría durante compromiso.'
     },
     {
       sentenceParts: [
@@ -1713,7 +1713,7 @@ const exercisesData = {
       ],
       options: ['were', 'was', 'are'],
       correctAnswer: 'were',
-      explanation: 'Pregunta sobre IOCs presentes durante incidente.'
+      explanation: 'Question sobre IOCs presentes durante incidente.'
     },
     {
       sentenceParts: [
@@ -1757,7 +1757,7 @@ const exercisesData = {
       ],
       options: ['had', 'have'],
       correctAnswer: 'had',
-      explanation: 'Usamos Past Perfect "had left" para una acción que ocurrió antes de otra acción en el pasado (antes de que yo llegara).'
+      explanation: 'We use Past Perfect "had left" para una acción que ocurrió antes de otra acción en el pasado (antes de que yo llegara).'
     },
     {
       sentenceParts: [
@@ -1769,7 +1769,7 @@ const exercisesData = {
       ],
       options: ['had', 'has'],
       correctAnswer: 'had',
-      explanation: 'Usamos "had never tried" para una experiencia (o falta de ella) antes de un momento específico del pasado.'
+      explanation: 'We use "had never tried" para una experiencia (o falta de ella) antes de un momento specific del pasado.'
     },
     {
       sentenceParts: [
@@ -1781,7 +1781,7 @@ const exercisesData = {
       ],
       options: ['had', 'have'],
       correctAnswer: 'had',
-      explanation: 'Usamos "had just finished" para una acción recién completada antes de otra acción en el pasado.'
+      explanation: 'We use "had just finished" para una acción recién completada antes de otra acción en el pasado.'
     },
     {
       sentenceParts: [
@@ -1791,7 +1791,7 @@ const exercisesData = {
       ],
       options: ['had been driving', 'had driven', 'drove'],
       correctAnswer: 'had been driving',
-      explanation: 'Usamos Past Perfect Continuous para enfatizar la duración de una acción antes de encontrar el lugar.'
+      explanation: 'We use Past Perfect Continuous para enfatizar la duración de una acción antes de encontrar el lugar.'
     },
     {
       sentenceParts: [
@@ -1801,7 +1801,7 @@ const exercisesData = {
       ],
       options: ["hadn't slept", "didn't sleep", "hasn't slept"],
       correctAnswer: "hadn't slept",
-      explanation: 'Usamos "hadn\'t slept" para explicar la causa (en el pasado) de estar cansado.'
+      explanation: 'We use "hadn\'t slept" para explicar la causa (en el pasado) de estar cansado.'
     },
     {
       sentenceParts: [
@@ -1811,7 +1811,7 @@ const exercisesData = {
       ],
       options: ['had seen', 'saw', 'have seen'],
       correctAnswer: 'had seen',
-      explanation: 'Usamos "had seen" para una experiencia que ocurrió antes de verla de nuevo.'
+      explanation: 'We use "had seen" para una experiencia que ocurrió antes de verla de nuevo.'
     },
     {
       sentenceParts: [
@@ -1821,7 +1821,7 @@ const exercisesData = {
       ],
       options: ['had left', 'left', 'have left'],
       correctAnswer: 'had left',
-      explanation: 'Usamos "had left" porque dejar las llaves ocurrió antes de llegar a casa y darme cuenta.'
+      explanation: 'We use "had left" porque dejar las llaves ocurrió antes de llegar a casa y darme cuenta.'
     },
     {
       sentenceParts: [
@@ -1831,7 +1831,7 @@ const exercisesData = {
       ],
       options: ['had studied', 'studied', 'has studied'],
       correctAnswer: 'had studied',
-      explanation: 'Usamos "had studied" para una acción (estudiar) que ocurrió antes de otra acción (mudarse).'
+      explanation: 'We use "had studied" para una action (estudiar) que ocurrió antes de otra action (mudarse).'
     },
     {
       sentenceParts: [
@@ -1843,7 +1843,7 @@ const exercisesData = {
       ],
       options: ['had', 'has'],
       correctAnswer: 'had',
-      explanation: 'Usamos "had already left" porque el tren se fue antes de que llegáramos.'
+      explanation: 'We use "had already left" porque el tren se fue antes de que llegáramos.'
     },
     {
       sentenceParts: [
@@ -1853,7 +1853,7 @@ const exercisesData = {
       ],
       options: ['had finished', 'finished', 'have finished'],
       correctAnswer: 'had finished',
-      explanation: 'Usamos "had finished" porque terminar la tarea ocurrió antes de salir.'
+      explanation: 'We use "had finished" porque terminar la tarea ocurrió antes de salir.'
     }
   ],
 
@@ -1866,7 +1866,7 @@ const exercisesData = {
       ],
       options: ['had been waiting', 'had waited', 'was waiting'],
       correctAnswer: 'had been waiting',
-      explanation: 'Usamos Past Perfect Continuous para enfatizar la duración de esperar antes de que ella llegara.'
+      explanation: 'We use Past Perfect Continuous para enfatizar la duración de esperar antes de que ella llegara.'
     },
     {
       sentenceParts: [
@@ -1876,7 +1876,7 @@ const exercisesData = {
       ],
       options: ['had been dating', 'had dated', 'were dating'],
       correctAnswer: 'had been dating',
-      explanation: 'Usamos "had been dating" para enfatizar la duración de 5 años antes del matrimonio.'
+      explanation: 'We use "had been dating" para enfatizar la duración de 5 años antes del matrimonio.'
     },
     {
       sentenceParts: [
@@ -1886,7 +1886,7 @@ const exercisesData = {
       ],
       options: ['had been studying', 'had studied', 'was studying'],
       correctAnswer: 'had been studying',
-      explanation: 'Usamos "had been studying" para explicar la causa del cansancio (actividad continua antes).'
+      explanation: 'We use "had been studying" para explicar la causa del cansancio (actividad continua antes).'
     },
     {
       sentenceParts: [
@@ -1898,7 +1898,7 @@ const exercisesData = {
       ],
       options: ['had', 'have'],
       correctAnswer: 'had',
-      explanation: 'Preguntamos sobre la duración de estudiar inglés antes de mudarse (Past Perfect Continuous).'
+      explanation: 'Questionmos sobre la duración de estudiar inglés antes de mudarse (Past Perfect Continuous).'
     },
     {
       sentenceParts: [
@@ -1908,7 +1908,7 @@ const exercisesData = {
       ],
       options: ['had been raining', 'had rained', 'was raining'],
       correctAnswer: 'had been raining',
-      explanation: 'Usamos "had been raining" para enfatizar la duración de lluvia antes de que parara.'
+      explanation: 'We use "had been raining" para enfatizar la duración de lluvia antes de que parara.'
     },
     {
       sentenceParts: [
@@ -1918,7 +1918,7 @@ const exercisesData = {
       ],
       options: ['had been living', 'had lived', 'were living'],
       correctAnswer: 'had been living',
-      explanation: 'Usamos "had been living" para enfatizar la duración de vivir allí antes del descubrimiento.'
+      explanation: 'We use "had been living" para enfatizar la duración de vivir allí antes del descubrimiento.'
     },
     {
       sentenceParts: [
@@ -1928,7 +1928,7 @@ const exercisesData = {
       ],
       options: ['had been walking', 'had walked', 'was walking'],
       correctAnswer: 'had been walking',
-      explanation: 'Usamos "had been walking" para explicar la causa del dolor (caminar todo el día antes).'
+      explanation: 'We use "had been walking" para explicar la causa del dolor (caminar todo el día antes).'
     },
     {
       sentenceParts: [
@@ -1938,7 +1938,7 @@ const exercisesData = {
       ],
       options: ['had been preparing', 'had prepared', 'were preparing'],
       correctAnswer: 'had been preparing',
-      explanation: 'Usamos "had been preparing" para enfatizar el proceso continuo de preparación durante semanas.'
+      explanation: 'We use "had been preparing" para enfatizar el proceso continuo de preparación durante semanas.'
     }
   ],
 
@@ -1951,7 +1951,7 @@ const exercisesData = {
       ],
       options: ['will have been working', 'will have worked', 'will be working'],
       correctAnswer: 'will have been working',
-      explanation: 'Usamos Future Perfect Continuous para enfatizar la duración (10 años) que se completará en el futuro.'
+      explanation: 'We use Future Perfect Continuous para enfatizar la duración (10 años) que se completará en el futuro.'
     },
     {
       sentenceParts: [
@@ -1961,7 +1961,7 @@ const exercisesData = {
       ],
       options: ['will have been waiting', 'will have waited', 'will be waiting'],
       correctAnswer: 'will have been waiting',
-      explanation: 'Usamos "will have been waiting" para enfatizar la duración de espera cuando llegues.'
+      explanation: 'We use "will have been waiting" para enfatizar la duración de espera cuando llegues.'
     },
     {
       sentenceParts: [
@@ -1971,7 +1971,7 @@ const exercisesData = {
       ],
       options: ['will have been studying', 'will have studied', 'will be studying'],
       correctAnswer: 'will have been studying',
-      explanation: 'Usamos "will have been studying" para enfatizar la duración continua hasta diciembre.'
+      explanation: 'We use "will have been studying" para enfatizar la duración continua hasta diciembre.'
     },
     {
       sentenceParts: [
@@ -1981,7 +1981,7 @@ const exercisesData = {
       ],
       options: ['will have been married', 'will have married', 'will be married'],
       correctAnswer: 'will have been married',
-      explanation: 'Usamos "will have been married" para un período de 20 años que se completará el próximo mes.'
+      explanation: 'We use "will have been married" para un período de 20 años que se completará el próximo mes.'
     },
     {
       sentenceParts: [
@@ -1991,7 +1991,7 @@ const exercisesData = {
       ],
       options: ['will have been working', 'will have worked', 'will be working'],
       correctAnswer: 'will have been working',
-      explanation: 'Usamos "will have been working" para enfatizar 8 horas continuas de trabajo hasta las 6 PM.'
+      explanation: 'We use "will have been working" para enfatizar 8 horas continuas de trabajo hasta las 6 PM.'
     }
   ],
 
@@ -2004,7 +2004,7 @@ const exercisesData = {
       ],
       options: ['studies', 'study', 'studying'],
       correctAnswer: 'studies',
-      explanation: 'Usamos "studies" porque es tercera persona singular (she) y el Present Simple requiere añadir -es/-s al verbo. Describe una rutina habitual.'
+      explanation: 'We use "studies" porque es tercera persona singular (she) y el Present Simple requiere añadir -es/-s al verbo. Describe una rutina habitual.'
     },
     {
       sentenceParts: [
@@ -2014,7 +2014,7 @@ const exercisesData = {
       ],
       options: ['lives', 'live', 'living'],
       correctAnswer: 'live',
-      explanation: 'Usamos "live" porque "they" es plural y en Present Simple no se añade -s. Describe un estado permanente.'
+      explanation: 'We use "live" porque "they" es plural y en Present Simple no se añade -s. Describe un estado permanente.'
     },
     {
       sentenceParts: [
@@ -2024,7 +2024,7 @@ const exercisesData = {
       ],
       options: ['boil', 'boils', 'boiling'],
       correctAnswer: 'boils',
-      explanation: 'Usamos "boils" porque "water" es tercera persona singular y describe una verdad universal o hecho científico.'
+      explanation: 'We use "boils" porque "water" es tercera persona singular y describe una verdad universal o hecho científico.'
     },
     {
       sentenceParts: [
@@ -2034,7 +2034,7 @@ const exercisesData = {
       ],
       options: ['drinks', 'drink', 'drinking'],
       correctAnswer: 'drink',
-      explanation: 'Usamos "drink" porque "I" no requiere -s en Present Simple. Describe un hábito regular.'
+      explanation: 'We use "drink" porque "I" no requiere -s en Present Simple. Describe un hábito regular.'
     },
     {
       sentenceParts: [
@@ -2044,7 +2044,7 @@ const exercisesData = {
       ],
       options: ['go', 'goes', 'going'],
       correctAnswer: 'goes',
-      explanation: 'Usamos "goes" porque "he" es tercera persona singular. "Usually" indica una acción habitual, típica del Present Simple.'
+      explanation: 'We use "goes" porque "he" es tercera persona singular. "Usually" indica una acción habitual, típica del Present Simple.'
     },
     {
       sentenceParts: [
@@ -2054,7 +2054,7 @@ const exercisesData = {
       ],
       options: ['rise', 'rises', 'rising'],
       correctAnswer: 'rises',
-      explanation: 'Usamos "rises" porque es una verdad universal. "The sun" es tercera persona singular.'
+      explanation: 'We use "rises" porque es una verdad universal. "The sun" es tercera persona singular.'
     },
     {
       sentenceParts: [
@@ -2064,7 +2064,7 @@ const exercisesData = {
       ],
       options: ['lives', 'live', 'living'],
       correctAnswer: 'live',
-      explanation: 'Usamos "live" porque "my parents" es plural y describe un estado permanente.'
+      explanation: 'We use "live" porque "my parents" es plural y describe un estado permanente.'
     },
     {
       sentenceParts: [
@@ -2074,7 +2074,7 @@ const exercisesData = {
       ],
       options: ['open', 'opens', 'opening'],
       correctAnswer: 'opens',
-      explanation: 'Usamos "opens" porque "the store" es tercera persona singular y describe un horario regular.'
+      explanation: 'We use "opens" porque "the store" es tercera persona singular y describe un horario regular.'
     },
     {
       sentenceParts: [
@@ -2084,7 +2084,7 @@ const exercisesData = {
       ],
       options: ['like', 'likes', 'liking'],
       correctAnswer: 'like',
-      explanation: 'Usamos "like" porque "dogs" es plural. Describe una verdad general sobre los perros.'
+      explanation: 'We use "like" porque "dogs" es plural. Describe una verdad general sobre los perros.'
     },
     {
       sentenceParts: [
@@ -2094,7 +2094,7 @@ const exercisesData = {
       ],
       options: ['work', 'works', 'working'],
       correctAnswer: 'works',
-      explanation: 'Usamos "works" porque "my sister" es tercera persona singular y describe su profesión permanente.'
+      explanation: 'We use "works" porque "my sister" es tercera persona singular y describe su profesión permanente.'
     },
     {
       sentenceParts: [
@@ -2104,7 +2104,7 @@ const exercisesData = {
       ],
       options: ['eat', 'eats', 'eating'],
       correctAnswer: 'eat',
-      explanation: 'Usamos "eat" porque "we" es primera persona plural. Describe una rutina semanal.'
+      explanation: 'We use "eat" porque "we" es primera persona plural. Describe una rutina semanal.'
     },
     {
       sentenceParts: [
@@ -2114,7 +2114,7 @@ const exercisesData = {
       ],
       options: ['revolve', 'revolves', 'revolving'],
       correctAnswer: 'revolves',
-      explanation: 'Usamos "revolves" porque es un hecho científico y "the Earth" es tercera persona singular.'
+      explanation: 'We use "revolves" porque es un hecho científico y "the Earth" es tercera persona singular.'
     },
     {
       sentenceParts: [
@@ -2124,7 +2124,7 @@ const exercisesData = {
       ],
       options: ['love', 'loves', 'loving'],
       correctAnswer: 'love',
-      explanation: 'Usamos "love" porque "children" es plural. Describe una característica general de los niños.'
+      explanation: 'We use "love" porque "children" es plural. Describe una característica general de los niños.'
     },
     {
       sentenceParts: [
@@ -2134,7 +2134,7 @@ const exercisesData = {
       ],
       options: ['sleep', 'sleeps', 'sleeping'],
       correctAnswer: 'sleeps',
-      explanation: 'Usamos "sleeps" porque "my cat" es tercera persona singular. Describe un hábito del gato.'
+      explanation: 'We use "sleeps" porque "my cat" es tercera persona singular. Describe un hábito del gato.'
     },
     {
       sentenceParts: [
@@ -2144,7 +2144,7 @@ const exercisesData = {
       ],
       options: ['brush', 'brushes', 'brushing'],
       correctAnswer: 'brush',
-      explanation: 'Usamos "brush" con "I" en Present Simple. "Always" indica un hábito regular.'
+      explanation: 'We use "brush" con "I" en Present Simple. "Always" indica un hábito regular.'
     },
     {
       sentenceParts: [
@@ -2154,7 +2154,7 @@ const exercisesData = {
       ],
       options: ['put', 'puts', 'putting'],
       correctAnswer: 'puts',
-      explanation: 'Usamos "puts" porque "she" es tercera persona singular. "Never" se usa con Present Simple para hábitos.'
+      explanation: 'We use "puts" porque "she" es tercera persona singular. "Never" se usa con Present Simple para hábitos.'
     },
     {
       sentenceParts: [
@@ -2164,7 +2164,7 @@ const exercisesData = {
       ],
       options: ['start', 'starts', 'starting'],
       correctAnswer: 'starts',
-      explanation: 'Usamos Present Simple "starts" para horarios fijos programados, incluso cuando hablan del futuro.'
+      explanation: 'We use Present Simple "starts" para horarios fijos programados, incluso cuando hablan del futuro.'
     },
     {
       sentenceParts: [
@@ -2174,7 +2174,7 @@ const exercisesData = {
       ],
       options: ['play', 'plays', 'playing'],
       correctAnswer: 'play',
-      explanation: 'Usamos "play" porque "my friends" es plural. "Every weekend" indica una rutina regular.'
+      explanation: 'We use "play" porque "my friends" es plural. "Every weekend" indica una rutina regular.'
     },
     {
       sentenceParts: [
@@ -2184,7 +2184,7 @@ const exercisesData = {
       ],
       options: ['snow', 'snows', 'snowing'],
       correctAnswer: 'snows',
-      explanation: 'Usamos "snows" porque "it" es tercera persona singular. "Often" se usa con Present Simple para frecuencia.'
+      explanation: 'We use "snows" porque "it" es tercera persona singular. "Often" se usa con Present Simple para frecuencia.'
     }
   ],
   
@@ -2197,7 +2197,7 @@ const exercisesData = {
       ],
       options: ['am watching', 'watch', 'watches'],
       correctAnswer: 'am watching',
-      explanation: 'Usamos "am watching" (Present Continuous) porque "right now" indica una acción que está ocurriendo en este momento.'
+      explanation: 'We use "am watching" (Present Continuous) porque "right now" indica una acción que está ocurriendo en este momento.'
     },
     {
       sentenceParts: [
@@ -2207,7 +2207,7 @@ const exercisesData = {
       ],
       options: ['are cooking', 'cook', 'cooks'],
       correctAnswer: 'are cooking',
-      explanation: 'Usamos "are cooking" porque "at the moment" indica que la acción está en progreso ahora mismo.'
+      explanation: 'We use "are cooking" porque "at the moment" indica que la acción está en progreso ahora mismo.'
     },
     {
       sentenceParts: [
@@ -2217,7 +2217,7 @@ const exercisesData = {
       ],
       options: ['is studying', 'studies', 'study'],
       correctAnswer: 'is studying',
-      explanation: 'Usamos "is studying" porque "these days" indica una acción temporal que está ocurriendo en el período actual.'
+      explanation: 'We use "is studying" porque "these days" indica una acción temporal que está ocurriendo en el período actual.'
     },
     {
       sentenceParts: [
@@ -2227,7 +2227,7 @@ const exercisesData = {
       ],
       options: ['is raining', 'rains', 'rain'],
       correctAnswer: 'is raining',
-      explanation: 'Usamos "is raining" porque "Look!" indica que la acción está ocurriendo ahora y queremos que alguien la observe.'
+      explanation: 'We use "is raining" porque "Look!" indica que la acción está ocurriendo ahora y queremos que alguien la observe.'
     },
     {
       sentenceParts: [
@@ -2237,7 +2237,7 @@ const exercisesData = {
       ],
       options: ['are working', 'work', 'works'],
       correctAnswer: 'are working',
-      explanation: 'Usamos "are working" porque "this month" indica una acción temporal en progreso durante este período.'
+      explanation: 'We use "are working" porque "this month" indica una acción temporal en progreso durante este período.'
     },
     {
       sentenceParts: [
@@ -2246,7 +2246,7 @@ const exercisesData = {
         { type: 'text', content: '(study) for my English test.' }
       ],
       correctAnswer: ['am studying', "'m studying"],
-      explanation: 'Present Continuous: am/is/are + verb-ing. Usamos "am studying" porque "right now" indica una acción en progreso en este momento exacto.'
+      explanation: 'Present Continuous: am/is/are + verb-ing. We use "am studying" porque "right now" indica una action in progress en este momento exacto.'
     },
     {
       sentenceParts: [
@@ -2264,7 +2264,7 @@ const exercisesData = {
         { type: 'text', content: '(you/do) this weekend?' }
       ],
       correctAnswer: ['are you doing', "'re you doing"],
-      explanation: 'Present Continuous para planes futuros: What + am/is/are + subject + verb-ing. Preguntamos por planes ya organizados.'
+      explanation: 'Present Continuous para planes futuros: What + am/is/are + subject + verb-ing. Questionmos por planes ya organizados.'
     },
     {
       sentenceParts: [
@@ -2274,7 +2274,7 @@ const exercisesData = {
       ],
       options: ['is sleeping', 'sleeps', 'sleep'],
       correctAnswer: 'is sleeping',
-      explanation: 'Usamos "is sleeping" porque la acción está ocurriendo en este momento y pedimos silencio por esa razón.'
+      explanation: 'We use "is sleeping" porque la acción está ocurriendo en este momento y pedimos silencio por esa razón.'
     },
     {
       sentenceParts: [
@@ -2284,7 +2284,7 @@ const exercisesData = {
       ],
       options: ['am taking', 'take', 'takes'],
       correctAnswer: 'am taking',
-      explanation: 'Usamos "am taking" porque la acción está en progreso en este momento específico.'
+      explanation: 'We use "am taking" porque la acción está en progreso en este momento specific.'
     },
     {
       sentenceParts: [
@@ -2294,7 +2294,7 @@ const exercisesData = {
       ],
       options: ['are visiting', 'visit', 'visits'],
       correctAnswer: 'are visiting',
-      explanation: 'Usamos Present Continuous para planes futuros ya confirmados con "tomorrow".'
+      explanation: 'We use Present Continuous para planes futuros ya confirmados con "tomorrow".'
     },
     {
       sentenceParts: [
@@ -2306,7 +2306,7 @@ const exercisesData = {
       ],
       options: ['are', 'is'],
       correctAnswer: 'are',
-      explanation: 'Usamos "are" con "you" en Present Continuous para preguntar sobre una acción en progreso ahora.'
+      explanation: 'We use "are" con "you" en Present Continuous para preguntar sobre una action in progress ahora.'
     },
     {
       sentenceParts: [
@@ -2316,7 +2316,7 @@ const exercisesData = {
       ],
       options: ['are playing', 'play', 'plays'],
       correctAnswer: 'are playing',
-      explanation: 'Usamos "are playing" porque "now" indica que la acción está ocurriendo en este momento.'
+      explanation: 'We use "are playing" porque "now" indica que la acción está ocurriendo en este momento.'
     },
     {
       sentenceParts: [
@@ -2326,7 +2326,7 @@ const exercisesData = {
       ],
       options: ['checking', 'check', 'checks'],
       correctAnswer: 'checking',
-      explanation: 'Usamos Present Continuous con "always" para expresar una queja sobre un hábito molesto.'
+      explanation: 'We use Present Continuous con "always" para expresar una queja sobre un hábito molesto.'
     },
     {
       sentenceParts: [
@@ -2336,7 +2336,7 @@ const exercisesData = {
       ],
       options: ['is rising', 'rises', 'rise'],
       correctAnswer: 'is rising',
-      explanation: 'Usamos "is rising" para describir un cambio que está ocurriendo en este período.'
+      explanation: 'We use "is rising" para describir un cambio que está ocurriendo en este período.'
     },
     {
       sentenceParts: [
@@ -2346,7 +2346,7 @@ const exercisesData = {
       ],
       options: ['are traveling', 'travel', 'travels'],
       correctAnswer: 'are traveling',
-      explanation: 'Usamos Present Continuous para planes de futuro ya organizados con "this summer".'
+      explanation: 'We use Present Continuous para planes de futuro ya organizados con "this summer".'
     },
     {
       sentenceParts: [
@@ -2356,7 +2356,7 @@ const exercisesData = {
       ],
       options: ['is knocking', 'knocks', 'knock'],
       correctAnswer: 'is knocking',
-      explanation: 'Usamos "is knocking" porque "Listen!" indica que la acción está ocurriendo ahora mismo.'
+      explanation: 'We use "is knocking" porque "Listen!" indica que la acción está ocurriendo ahora mismo.'
     },
     {
       sentenceParts: [
@@ -2366,7 +2366,7 @@ const exercisesData = {
       ],
       options: ['is getting', 'gets', 'get'],
       correctAnswer: 'is getting',
-      explanation: 'Usamos Present Continuous para describir un cambio o desarrollo gradual que está en progreso.'
+      explanation: 'We use Present Continuous para describir un cambio o desarrollo gradual que está en progreso.'
     },
     {
       sentenceParts: [
@@ -2376,7 +2376,7 @@ const exercisesData = {
       ],
       options: ['forgetting', 'forget', 'forgets'],
       correctAnswer: 'forgetting',
-      explanation: 'Usamos Present Continuous con "always" para criticar un hábito repetitivo que nos molesta.'
+      explanation: 'We use Present Continuous con "always" para criticar un hábito repetitivo que nos molesta.'
     },
     {
       sentenceParts: [
@@ -2388,7 +2388,7 @@ const exercisesData = {
       ],
       options: ['are', 'is'],
       correctAnswer: 'are',
-      explanation: 'Usamos "are" con "you" para preguntar sobre pensamientos en este momento.'
+      explanation: 'We use "are" con "you" para preguntar sobre pensamientos en este momento.'
     },
     {
       sentenceParts: [
@@ -2398,7 +2398,7 @@ const exercisesData = {
       ],
       options: ['are developing', 'develop', 'develops'],
       correctAnswer: 'are developing',
-      explanation: 'Usamos Present Continuous para actividades en progreso en el período actual (aunque no en este momento exacto).'
+      explanation: 'We use Present Continuous para actividades en progreso en el período actual (aunque no en este momento exacto).'
     },
     {
       sentenceParts: [
@@ -2408,7 +2408,7 @@ const exercisesData = {
       ],
       options: ['is hiring', 'hires', 'hire'],
       correctAnswer: 'is hiring',
-      explanation: 'Usamos Present Continuous para planes futuros ya organizados con "next week".'
+      explanation: 'We use Present Continuous para planes futuros ya organizados con "next week".'
     }
   ],
 
@@ -2421,7 +2421,7 @@ const exercisesData = {
       ],
       options: ['went', 'go', 'gone'],
       correctAnswer: 'went',
-      explanation: 'Usamos "went" (Past Simple) porque "last year" indica un tiempo específico en el pasado. La acción está completamente terminada.'
+      explanation: 'We use "went" (Past Simple) porque "last year" indica un tiempo specific en el pasado. La acción está completamente terminada.'
     },
     {
       sentenceParts: [
@@ -2431,7 +2431,7 @@ const exercisesData = {
       ],
       options: ['completed', 'complete', 'completes'],
       correctAnswer: 'completed',
-      explanation: 'Usamos "completed" porque "yesterday" es un marcador temporal del pasado que requiere Past Simple.'
+      explanation: 'We use "completed" porque "yesterday" es un marcador temporal del pasado que requiere Past Simple.'
     },
     {
       sentenceParts: [
@@ -2441,7 +2441,7 @@ const exercisesData = {
       ],
       options: ['deployed', 'deploy', 'deploys'],
       correctAnswer: 'deployed',
-      explanation: 'Usamos "deployed" porque "in 2020" es un tiempo específico en el pasado y la acción está completa.'
+      explanation: 'We use "deployed" porque "in 2020" es un tiempo specific en el pasado y la acción está completa.'
     },
     {
       sentenceParts: [
@@ -2450,7 +2450,7 @@ const exercisesData = {
         { type: 'text', content: '(attend) a cybersecurity webinar.' }
       ],
       correctAnswer: ['attended'],
-      explanation: 'Past Simple: verb + ed (regular verbs). Usamos "attended" porque "last night" es un tiempo específico y completado en el pasado.'
+      explanation: 'Past Simple: verb + ed (regular verbs). We use "attended" porque "last night" es un tiempo specific y completado en el pasado.'
     },
     {
       sentenceParts: [
@@ -2468,7 +2468,7 @@ const exercisesData = {
         { type: 'text', content: '(not/come) to my party yesterday.' }
       ],
       correctAnswer: ["didn't come", 'did not come'],
-      explanation: 'Past Simple negativo: did not (didn\'t) + verb (base form). La acción no ocurrió en un tiempo específico del pasado.'
+      explanation: 'Past Simple negativo: did not (didn\'t) + verb (base form). La acción no ocurrió en un tiempo specific del pasado.'
     },
     {
       sentenceParts: [
@@ -2478,7 +2478,7 @@ const exercisesData = {
       ],
       options: ['ate', 'eat', 'eats'],
       correctAnswer: 'ate',
-      explanation: 'Usamos "ate" (Past Simple irregular) porque "last week" indica un tiempo terminado en el pasado.'
+      explanation: 'We use "ate" (Past Simple irregular) porque "last week" indica un tiempo terminado en el pasado.'
     },
     {
       sentenceParts: [
@@ -2488,7 +2488,7 @@ const exercisesData = {
       ],
       options: ['studied', 'study', 'studies'],
       correctAnswer: 'studied',
-      explanation: 'Usamos "studied" porque la acción de estudiar está completamente terminada en el pasado.'
+      explanation: 'We use "studied" porque la acción de estudiar está completamente terminada en el pasado.'
     },
     {
       sentenceParts: [
@@ -2508,7 +2508,7 @@ const exercisesData = {
       ],
       options: ['lived', 'live', 'lives'],
       correctAnswer: 'lived',
-      explanation: 'Usamos "lived" porque "50 years ago" es un tiempo específico terminado en el pasado.'
+      explanation: 'We use "lived" porque "50 years ago" es un tiempo specific terminado en el pasado.'
     },
     {
       sentenceParts: [
@@ -2518,7 +2518,7 @@ const exercisesData = {
       ],
       options: ['started', 'start', 'starts'],
       correctAnswer: 'started',
-      explanation: 'Usamos Past Simple porque hablamos de un evento específico que ocurrió en el pasado.'
+      explanation: 'We use Past Simple porque hablamos de un evento specific que ocurrió en el pasado.'
     },
     {
       sentenceParts: [
@@ -2528,7 +2528,7 @@ const exercisesData = {
       ],
       options: ["didn't", "don't", "doesn't"],
       correctAnswer: "didn't",
-      explanation: 'Usamos "didn\'t" para la forma negativa en Past Simple. "Yesterday" confirma que es pasado.'
+      explanation: 'We use "didn\'t" para la forma negativa en Past Simple. "Yesterday" confirma que es pasado.'
     },
     {
       sentenceParts: [
@@ -2540,7 +2540,7 @@ const exercisesData = {
       ],
       options: ['did', 'do'],
       correctAnswer: 'did',
-      explanation: 'Usamos "did" para formar preguntas en Past Simple con "last summer".'
+      explanation: 'We use "did" para formar preguntas en Past Simple con "last summer".'
     },
     {
       sentenceParts: [
@@ -2550,7 +2550,7 @@ const exercisesData = {
       ],
       options: ['lost', 'lose', 'loses'],
       correctAnswer: 'lost',
-      explanation: 'Usamos "lost" (Past Simple irregular) porque "this morning" (si ya pasó) es un tiempo terminado.'
+      explanation: 'We use "lost" (Past Simple irregular) porque "this morning" (si ya pasó) es un tiempo terminado.'
     },
     {
       sentenceParts: [
@@ -2560,7 +2560,7 @@ const exercisesData = {
       ],
       options: ['played', 'play', 'plays'],
       correctAnswer: 'played',
-      explanation: 'Usamos "played" porque la actividad de la tarde ya terminó (está en el pasado).'
+      explanation: 'We use "played" porque la actividad de la tarde ya terminó (está en el pasado).'
     },
     {
       sentenceParts: [
@@ -2570,7 +2570,7 @@ const exercisesData = {
       ],
       options: ['met', 'meet', 'meets'],
       correctAnswer: 'met',
-      explanation: 'Usamos "met" (Past Simple irregular) porque el encuentro ocurrió en un tiempo específico del pasado (college).'
+      explanation: 'We use "met" (Past Simple irregular) porque el encuentro ocurrió en un tiempo specific del pasado (college).'
     },
     {
       sentenceParts: [
@@ -2580,7 +2580,7 @@ const exercisesData = {
       ],
       options: ['got', 'get', 'gets'],
       correctAnswer: 'got',
-      explanation: 'Usamos "got" porque "in 2015" es una fecha específica en el pasado.'
+      explanation: 'We use "got" porque "in 2015" es una fecha específica en el pasado.'
     },
     {
       sentenceParts: [
@@ -2590,7 +2590,7 @@ const exercisesData = {
       ],
       options: ['arrived', 'arrive', 'arrives'],
       correctAnswer: 'arrived',
-      explanation: 'Usamos "arrived" porque "yesterday" indica un momento específico y completado en el pasado.'
+      explanation: 'We use "arrived" porque "yesterday" indica un momento specific y completado en el pasado.'
     },
     {
       sentenceParts: [
@@ -2600,7 +2600,7 @@ const exercisesData = {
       ],
       options: ['taught', 'teach', 'teaches'],
       correctAnswer: 'taught',
-      explanation: 'Usamos "taught" (Past Simple irregular) porque la acción ocurrió cuando tenía 18 años (pasado específico).'
+      explanation: 'We use "taught" (Past Simple irregular) porque la acción ocurrió cuando tenía 18 años (pasado specific).'
     },
     {
       sentenceParts: [
@@ -2610,7 +2610,7 @@ const exercisesData = {
       ],
       options: ['had', 'have', 'has'],
       correctAnswer: 'had',
-      explanation: 'Usamos "had" porque la boda es un evento del pasado que ya terminó.'
+      explanation: 'We use "had" porque la boda es un evento del pasado que ya terminó.'
     },
     {
       sentenceParts: [
@@ -2620,7 +2620,7 @@ const exercisesData = {
       ],
       options: ['sang', 'sing', 'sings'],
       correctAnswer: 'sang',
-      explanation: 'Usamos "sang" (Past Simple irregular) porque el concierto es un evento pasado completo.'
+      explanation: 'We use "sang" (Past Simple irregular) porque el concierto es un evento pasado completo.'
     }
   ],
 
@@ -2639,7 +2639,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['you', 'How', 'long', 'did', 'Oxford?', 'stay', 'in']),
       correctAnswer: ['How', 'long', 'did', 'you', 'stay', 'in', 'Oxford?'],
-      explanation: 'Past Simple pregunta: How long + did + subject + verb. Usamos Past Simple porque la estancia en Oxford ya terminó (acción completa en el pasado).'
+      explanation: 'Past Simple pregunta: How long + did + subject + verb. We use Past Simple porque la estancia en Oxford ya terminó (acción completa en el pasado).'
     },
     {
       sentenceParts: [
@@ -2663,7 +2663,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['years', 'ago.', 'We', 'here', 'moved', 'three']),
       correctAnswer: ['We', 'moved', 'here', 'three', 'years', 'ago.'],
-      explanation: 'Past Simple: Subject + verb (past). Usamos Past Simple porque "ago" siempre indica un tiempo específico terminado en el pasado.'
+      explanation: 'Past Simple: Subject + verb (past). We use Past Simple porque "ago" siempre indica un tiempo specific terminado en el pasado.'
     },
     {
       sentenceParts: [
@@ -2671,7 +2671,7 @@ const exercisesData = {
       ],
       words: shuffleArray(['been', 'to', 'has', 'USA.', 'Peter', 'never', 'the']),
       correctAnswer: ['Peter', 'has', 'never', 'been', 'to', 'the', 'USA.'],
-      explanation: 'Present Perfect con "never": Subject + has/have + never + past participle. "Never" indica una experiencia de vida (nunca en toda su vida hasta ahora).'
+      explanation: 'Present Perfect con "never": Subject + has/have + never + past participle. "Never" indica una life experience (nunca en toda su vida hasta ahora).'
     }
   ],
 
@@ -2684,7 +2684,7 @@ const exercisesData = {
       ],
       options: ['will execute', 'execute', 'executed'],
       correctAnswer: 'will execute',
-      explanation: 'Usamos "will execute" (Future Simple) porque "tomorrow" indica una acción futura. "Will" expresa una decisión o promesa.'
+      explanation: 'We use "will execute" (Future Simple) porque "tomorrow" indica una acción futura. "Will" expresa una decisión o promesa.'
     },
     {
       sentenceParts: [
@@ -2694,7 +2694,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para expresar una predicción sobre el futuro basada en lo que creemos que va a pasar.'
+      explanation: 'We use "will" para expresar una predicción sobre el futuro basada en lo que creemos que va a pasar.'
     },
     {
       sentenceParts: [
@@ -2704,7 +2704,7 @@ const exercisesData = {
       ],
       options: ['will participate', 'participate', 'participated'],
       correctAnswer: 'will participate',
-      explanation: 'Usamos "will participate" porque "next Friday" es un tiempo futuro específico.'
+      explanation: 'We use "will participate" porque "next Friday" es un tiempo futuro specific.'
     },
     {
       sentenceParts: [
@@ -2714,7 +2714,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para hacer una predicción sobre amenazas futuras basada en análisis.'
+      explanation: 'We use "will" para hacer una predicción sobre amenazas futuras basada en análisis.'
     },
     {
       sentenceParts: [
@@ -2724,7 +2724,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'am'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para expresar una promesa o ofrecimiento espontáneo de ayuda.'
+      explanation: 'We use "will" para expresar una promesa o ofrecimiento espontáneo de ayuda.'
     },
     {
       sentenceParts: [
@@ -2734,7 +2734,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para hablar de un evento futuro programado o esperado.'
+      explanation: 'We use "will" para hablar de un evento futuro programado o esperado.'
     },
     {
       sentenceParts: [
@@ -2744,7 +2744,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'are'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" con "I think" para expresar una opinión o predicción sobre el futuro.'
+      explanation: 'We use "will" con "I think" para expresar una opinión o predicción sobre el futuro.'
     },
     {
       sentenceParts: [
@@ -2754,7 +2754,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'are'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para hacer una predicción sobre cuándo regresarán.'
+      explanation: 'We use "will" para hacer una predicción sobre cuándo regresarán.'
     },
     {
       sentenceParts: [
@@ -2764,7 +2764,7 @@ const exercisesData = {
       ],
       options: ["won't", 'will', "isn't"],
       correctAnswer: "won't",
-      explanation: 'Usamos "won\'t" (will not) para hacer una predicción negativa sobre la duración.'
+      explanation: 'We use "won\'t" (will not) para hacer una predicción negativa sobre la duración.'
     },
     {
       sentenceParts: [
@@ -2774,7 +2774,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" con "maybe" para expresar una posibilidad futura incierta.'
+      explanation: 'We use "will" con "maybe" para expresar una posibilidad futura incierta.'
     },
     {
       sentenceParts: [
@@ -2784,7 +2784,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'am'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para hablar de una edad futura en una fecha específica.'
+      explanation: 'We use "will" para hablar de una edad futura en una fecha específica.'
     },
     {
       sentenceParts: [
@@ -2794,7 +2794,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para hechos o certezas sobre el futuro (como eventos naturales predecibles).'
+      explanation: 'We use "will" para hechos o certezas sobre el futuro (como eventos naturales predecibles).'
     },
     {
       sentenceParts: [
@@ -2804,7 +2804,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'are'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" con "I\'m sure" para expresar confianza sobre un resultado futuro.'
+      explanation: 'We use "will" con "I\'m sure" para expresar confianza sobre un resultado futuro.'
     },
     {
       sentenceParts: [
@@ -2813,7 +2813,7 @@ const exercisesData = {
         { type: 'text', content: '(visit) my grandmother.' }
       ],
       correctAnswer: ['will visit', "'ll visit"],
-      explanation: 'Future Simple: will + verb (base form). Usamos "will visit" para una decisión o plan futuro.'
+      explanation: 'Future Simple: will + verb (base form). We use "will visit" para una decisión o plan futuro.'
     },
     {
       sentenceParts: [
@@ -2841,7 +2841,7 @@ const exercisesData = {
       ],
       options: ["won't", 'will', 'are'],
       correctAnswer: "won't",
-      explanation: 'Usamos "won\'t" para hacer una predicción negativa sobre tener tiempo suficiente.'
+      explanation: 'We use "won\'t" para hacer una predicción negativa sobre tener tiempo suficiente.'
     },
     {
       sentenceParts: [
@@ -2851,7 +2851,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" con "probably" para expresar una predicción con alta probabilidad.'
+      explanation: 'We use "will" con "probably" para expresar una predicción con alta probabilidad.'
     },
     {
       sentenceParts: [
@@ -2861,7 +2861,7 @@ const exercisesData = {
       ],
       options: ['will', "won't", 'is'],
       correctAnswer: 'will',
-      explanation: 'Usamos "will" para hacer una predicción sobre el clima futuro.'
+      explanation: 'We use "will" para hacer una predicción sobre el clima futuro.'
     }
   ],
 
@@ -2874,7 +2874,7 @@ const exercisesData = {
       ],
       options: ['will be lying', 'will lie', 'am lying'],
       correctAnswer: 'will be lying',
-      explanation: 'Usamos "will be lying" (Future Continuous) porque indica una acción que estará en progreso en un momento específico del futuro (mañana a esta hora).'
+      explanation: 'We use "will be lying" (Future Continuous) porque indica una acción that will be in progress en un momento specific del futuro (mañana a esta hora).'
     },
     {
       sentenceParts: [
@@ -2884,7 +2884,7 @@ const exercisesData = {
       ],
       options: ['will be having', 'will have', 'are having'],
       correctAnswer: 'will be having',
-      explanation: 'Usamos "will be having" porque describe una acción que estará en progreso a las 8 PM (un momento específico en el futuro).'
+      explanation: 'We use "will be having" porque describes an action that will be in progress a las 8 PM (un momento specific en el futuro).'
     },
     {
       sentenceParts: [
@@ -2894,7 +2894,7 @@ const exercisesData = {
       ],
       options: ['will be studying', 'will study', 'studies'],
       correctAnswer: 'will be studying',
-      explanation: 'Usamos "will be studying" porque indica una actividad continua que ocurrirá durante todo el fin de semana en el futuro.'
+      explanation: 'We use "will be studying" porque indica una actividad continua que ocurrirá durante todo el fin de semana en el futuro.'
     },
     {
       sentenceParts: [
@@ -2904,7 +2904,7 @@ const exercisesData = {
       ],
       options: ['will be living', 'will live', 'live'],
       correctAnswer: 'will be living',
-      explanation: 'Usamos "will be living" para enfatizar que la acción de vivir estará en progreso durante el próximo mes.'
+      explanation: 'We use "will be living" para enfatizar que la acción de vivir estará en progreso durante el próximo mes.'
     },
     {
       sentenceParts: [
@@ -2914,7 +2914,7 @@ const exercisesData = {
       ],
       options: ['will be', 'will', 'am'],
       correctAnswer: 'will be',
-      explanation: 'Usamos "will be" (Future Continuous con verbo "be") porque indica que la reunión estará en progreso a las 10 AM.'
+      explanation: 'We use "will be" (Future Continuous con verbo "be") porque indica que la reunión estará en progreso a las 10 AM.'
     },
     {
       sentenceParts: [
@@ -2924,7 +2924,7 @@ const exercisesData = {
       ],
       options: ['will be working', 'will work', 'works'],
       correctAnswer: 'will be working',
-      explanation: 'Usamos "will be working" porque enfatiza que la acción estará en progreso en ese momento específico del futuro (el próximo año a esta hora).'
+      explanation: 'We use "will be working" porque enfatiza que la acción estará en progreso at that moment specific del futuro (el próximo año a esta hora).'
     },
     {
       sentenceParts: [
@@ -2934,7 +2934,7 @@ const exercisesData = {
       ],
       options: ['will be finishing', 'will finish', 'finish'],
       correctAnswer: 'will be finishing',
-      explanation: 'Usamos "will be finishing" porque la acción de terminar el informe estará en progreso cuando llegues.'
+      explanation: 'We use "will be finishing" porque la acción de terminar el informe estará en progreso cuando llegues.'
     },
     {
       sentenceParts: [
@@ -2944,7 +2944,7 @@ const exercisesData = {
       ],
       options: ['will be celebrating', 'will celebrate', 'celebrate'],
       correctAnswer: 'will be celebrating',
-      explanation: 'Usamos "will be celebrating" porque describe una acción que estará en progreso a medianoche.'
+      explanation: 'We use "will be celebrating" porque describes an action that will be in progress a medianoche.'
     },
     {
       sentenceParts: [
@@ -2954,7 +2954,7 @@ const exercisesData = {
       ],
       options: ['will be listening', 'will listen', 'listen'],
       correctAnswer: 'will be listening',
-      explanation: 'Usamos "will be listening" para enfatizar que estas acciones estarán en progreso mañana por la tarde.'
+      explanation: 'We use "will be listening" para enfatizar que estas acciones estarán en progreso mañana por la tarde.'
     },
     {
       sentenceParts: [
@@ -2964,7 +2964,7 @@ const exercisesData = {
       ],
       options: ['will be leaving', 'will leave', 'leave'],
       correctAnswer: 'will be leaving',
-      explanation: 'Usamos "will be leaving" porque la partida estará en progreso mañana a esta hora.'
+      explanation: 'We use "will be leaving" porque la partida estará en progreso mañana a esta hora.'
     },
     {
       sentenceParts: [
@@ -2974,7 +2974,7 @@ const exercisesData = {
       ],
       options: ['will be doing', 'will do', 'do'],
       correctAnswer: 'will be doing',
-      explanation: 'Usamos "will be doing" porque la tarea estará en progreso a las 5 PM.'
+      explanation: 'We use "will be doing" porque la tarea estará en progreso a las 5 PM.'
     },
     {
       sentenceParts: [
@@ -2984,7 +2984,7 @@ const exercisesData = {
       ],
       options: ['will be speaking', 'will speak', 'speaks'],
       correctAnswer: 'will be speaking',
-      explanation: 'Usamos "will be speaking" porque describe una actividad continua durante todo el viernes.'
+      explanation: 'We use "will be speaking" porque describe una actividad continua durante todo el viernes.'
     },
     {
       sentenceParts: [
@@ -2994,7 +2994,7 @@ const exercisesData = {
       ],
       options: ['will be waiting', 'will wait', 'wait'],
       correctAnswer: 'will be waiting',
-      explanation: 'Usamos "will be waiting" porque estaré esperando cuando aterrices (acción en progreso en ese momento futuro).'
+      explanation: 'We use "will be waiting" porque estaré esperando cuando aterrices (action in progress at that moment futuro).'
     },
     {
       sentenceParts: [
@@ -3004,7 +3004,7 @@ const exercisesData = {
       ],
       options: ['will be moving', 'will move', 'move'],
       correctAnswer: 'will be moving',
-      explanation: 'Usamos "will be moving" para enfatizar que la mudanza será un proceso en progreso la próxima semana.'
+      explanation: 'We use "will be moving" para enfatizar que la mudanza será un proceso en progreso la próxima semana.'
     },
     {
       sentenceParts: [
@@ -3014,7 +3014,7 @@ const exercisesData = {
       ],
       options: ['will be preparing', 'will prepare', 'prepares'],
       correctAnswer: 'will be preparing',
-      explanation: 'Usamos "will be preparing" porque la preparación estará en progreso al mediodía.'
+      explanation: 'We use "will be preparing" porque la preparación estará en progreso al mediodía.'
     }
   ],
 
@@ -3027,7 +3027,7 @@ const exercisesData = {
       ],
       options: ['will have graduated', 'will graduate', 'graduate'],
       correctAnswer: 'will have graduated',
-      explanation: 'Usamos "will have graduated" (Future Perfect) porque la acción estará completa antes de un momento específico en el futuro (junio próximo).'
+      explanation: 'We use "will have graduated" (Future Perfect) porque la acción will be complete before a momento specific en el futuro (junio próximo).'
     },
     {
       sentenceParts: [
@@ -3037,7 +3037,7 @@ const exercisesData = {
       ],
       options: ['will have finished', 'will finish', 'finishes'],
       correctAnswer: 'will have finished',
-      explanation: 'Usamos "will have finished" porque la acción de terminar el libro estará completa antes de que llegues.'
+      explanation: 'We use "will have finished" porque la acción de terminar el libro estará completa antes de que llegues.'
     },
     {
       sentenceParts: [
@@ -3047,7 +3047,7 @@ const exercisesData = {
       ],
       options: ['will have found', 'will find', 'find'],
       correctAnswer: 'will have found',
-      explanation: 'Usamos "will have found" porque predecimos que la acción estará completa antes del año 2030.'
+      explanation: 'We use "will have found" porque predecimos que the action will be complete antes del año 2030.'
     },
     {
       sentenceParts: [
@@ -3057,7 +3057,7 @@ const exercisesData = {
       ],
       options: ['will have been married', 'will be married', 'are married'],
       correctAnswer: 'will have been married',
-      explanation: 'Usamos "will have been married" porque el período de 10 años se completará el próximo mes.'
+      explanation: 'We use "will have been married" porque el período de 10 años se completará el próximo mes.'
     },
     {
       sentenceParts: [
@@ -3067,7 +3067,7 @@ const exercisesData = {
       ],
       options: ['will have traveled', 'will travel', 'travel'],
       correctAnswer: 'will have traveled',
-      explanation: 'Usamos "will have traveled" porque la acción de viajar a cinco países estará completa al final del año.'
+      explanation: 'We use "will have traveled" porque la acción de viajar a cinco países estará completa at the end del año.'
     },
     {
       sentenceParts: [
@@ -3077,7 +3077,7 @@ const exercisesData = {
       ],
       options: ['will have completed', 'will complete', 'complete'],
       correctAnswer: 'will have completed',
-      explanation: 'Usamos "will have completed" porque todos los exámenes estarán terminados antes del viernes.'
+      explanation: 'We use "will have completed" porque todos los exámenes estarán terminados antes del viernes.'
     },
     {
       sentenceParts: [
@@ -3087,7 +3087,7 @@ const exercisesData = {
       ],
       options: ['will have built', 'will build', 'build'],
       correctAnswer: 'will have built',
-      explanation: 'Usamos "will have built" porque el muro estará construido antes de mañana por la mañana.'
+      explanation: 'We use "will have built" porque el muro estará construido antes de mañana por la mañana.'
     },
     {
       sentenceParts: [
@@ -3097,7 +3097,7 @@ const exercisesData = {
       ],
       options: ['will have cooked', 'will cook', 'cooks'],
       correctAnswer: 'will have cooked',
-      explanation: 'Usamos "will have cooked" porque la cena estará preparada antes de que lleguemos a casa.'
+      explanation: 'We use "will have cooked" porque la cena estará preparada antes de que lleguemos a casa.'
     },
     {
       sentenceParts: [
@@ -3107,7 +3107,7 @@ const exercisesData = {
       ],
       options: ['will have worked', 'will work', 'works'],
       correctAnswer: 'will have worked',
-      explanation: 'Usamos "will have worked" porque el período de 20 años se completará en diciembre.'
+      explanation: 'We use "will have worked" porque el período de 20 años se completará en diciembre.'
     },
     {
       sentenceParts: [
@@ -3117,7 +3117,7 @@ const exercisesData = {
       ],
       options: ['will have bought', 'will buy', 'buy'],
       correctAnswer: 'will have bought',
-      explanation: 'Usamos "will have bought" porque la compra estará completa antes del próximo año a esta hora.'
+      explanation: 'We use "will have bought" porque la compra estará completa antes del próximo año a esta hora.'
     },
     {
       sentenceParts: [
@@ -3127,7 +3127,7 @@ const exercisesData = {
       ],
       options: ['will have finished', 'will finish', 'finish'],
       correctAnswer: 'will have finished',
-      explanation: 'Usamos "will have finished" porque el proyecto estará terminado antes de la fecha límite.'
+      explanation: 'We use "will have finished" porque el proyecto estará terminado antes de la fecha límite.'
     },
     {
       sentenceParts: [
@@ -3137,7 +3137,7 @@ const exercisesData = {
       ],
       options: ['will have washed', 'will wash', 'wash'],
       correctAnswer: 'will have washed',
-      explanation: 'Usamos "will have washed" porque los platos estarán lavados antes de las 8 PM.'
+      explanation: 'We use "will have washed" porque los platos estarán lavados antes de las 8 PM.'
     },
     {
       sentenceParts: [
@@ -3147,7 +3147,7 @@ const exercisesData = {
       ],
       options: ['will have hired', 'will hire', 'hires'],
       correctAnswer: 'will have hired',
-      explanation: 'Usamos "will have hired" porque la contratación de 1000 empleados estará completa antes del próximo año.'
+      explanation: 'We use "will have hired" porque la contratación de 1000 empleados estará completa antes del próximo año.'
     }
   ],
 
@@ -3161,7 +3161,7 @@ const exercisesData = {
         { type: 'text', content: "(block) the connection." }
       ],
       correctAnswer: ['detects', 'will block'],
-      explanation: 'First Conditional: If + Present Simple, will + infinitive. Usamos "detects" (presente simple) en la condición y "will block" (futuro simple) en el resultado. Expresa una situación real y posible en el futuro.'
+      explanation: 'First Conditional: If + Present Simple, will + infinitive. We use "detects" (presente simple) en la condición y "will block" (futuro simple) en el resultado. Expresa una situación real y posible en el futuro.'
     },
     {
       sentenceParts: [
@@ -3205,7 +3205,7 @@ const exercisesData = {
         { type: 'text', content: "(win) the lottery?" }
       ],
       correctAnswer: ['will you do', 'win'],
-      explanation: 'First Conditional en pregunta: What + will + sujeto + verbo + if + presente simple. "Will you do" es la pregunta sobre el futuro y "win" es la condición en presente.'
+      explanation: 'First Conditional en pregunta: What + will + sujeto + verbo + if + presente simple. "Will you do" es la asks about el futuro y "win" es la condición en presente.'
     },
     {
       sentenceParts: [
@@ -3285,7 +3285,7 @@ const exercisesData = {
         { type: 'text', content: "(work) for a top cybersecurity firm." }
       ],
       correctAnswer: ['had', 'would work'],
-      explanation: 'Second Conditional: If + Past Simple, would + infinitive. Usamos "had" para la condición hipotética. Describe situaciones hipotéticas o poco probables en el presente/futuro.'
+      explanation: 'Second Conditional: If + Past Simple, would + infinitive. We use "had" para la condición hipotética. Describe situaciones hipotéticas o poco probables en el presente/futuro.'
     },
     {
       sentenceParts: [
@@ -3554,7 +3554,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['What are you thinking about'],
-      explanation: 'Present Continuous question: What + are + subject + verb-ing + preposition. "Think about" necesita la preposición al final.'
+      explanation: 'Present Continuous question: What + are + subject + verb-ing + preposition. "Think about" necesita la preposición at the end.'
     },
     {
       sentenceParts: [
@@ -3570,7 +3570,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['What kind of music does Jane like listening to'],
-      explanation: 'Present Simple question: What kind of + noun + does + subject + like + verb-ing + preposition. La preposición "to" va al final.'
+      explanation: 'Present Simple question: What kind of + noun + does + subject + like + verb-ing + preposition. La preposición "to" va at the end.'
     },
     {
       sentenceParts: [
@@ -3610,7 +3610,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['How long have you been studying English'],
-      explanation: 'Present Perfect Continuous question: How long + have + subject + been + verb-ing. Pregunta por la duración de una acción continua.'
+      explanation: 'Present Perfect Continuous question: How long + have + subject + been + verb-ing. Question por la duración de una acción continua.'
     },
     {
       sentenceParts: [
@@ -3634,7 +3634,7 @@ const exercisesData = {
         { type: 'input', content: '' }
       ],
       correctAnswer: ['Why are you crying'],
-      explanation: 'Present Continuous question: Why + are + subject + verb-ing. Pregunta sobre la razón de una acción en progreso.'
+      explanation: 'Present Continuous question: Why + are + subject + verb-ing. Question sobre la razón de una action in progress.'
     },
     {
       sentenceParts: [
@@ -3762,7 +3762,7 @@ const exercisesData = {
       ],
       options: ["'s having", "has", "'s have"],
       correctAnswer: "'s having",
-      explanation: "Usamos Present Continuous ('s having) porque es una acción temporal que está sucediendo ahora (today). La fiesta está ocurriendo en este momento específico."
+      explanation: "We use Present Continuous ('s having) porque es una acción temporal que está sucediendo ahora (today). La fiesta está ocurriendo en este momento specific."
     },
     {
       sentenceParts: [
@@ -3772,7 +3772,7 @@ const exercisesData = {
       ],
       options: ["'re going", "go", "'re go"],
       correctAnswer: "'re going",
-      explanation: "Usamos Present Continuous ('re going) porque es un plan futuro definido. Tenemos una hora específica (eight o'clock this evening) para esta acción planificada."
+      explanation: "We use Present Continuous ('re going) porque es un plan futuro definido. Tenemos una hora específica (eight o'clock this evening) para esta acción planificada."
     },
     {
       sentenceParts: [
@@ -3782,7 +3782,7 @@ const exercisesData = {
       ],
       options: ["doesn't usually celebrate", "isn't usually celebrating", "don't usually celebrate"],
       correctAnswer: "doesn't usually celebrate",
-      explanation: "Usamos Present Simple negativo (doesn't usually celebrate) porque hablamos de un hábito o rutina general. 'Usually' es una palabra clave que indica Present Simple."
+      explanation: "We use Present Simple negativo (doesn't usually celebrate) because we're talking about a habit o rutina general. 'Usually' es una key word that indicates Present Simple."
     },
     {
       sentenceParts: [
@@ -3792,7 +3792,7 @@ const exercisesData = {
       ],
       options: ["'m going", "go", "'m go"],
       correctAnswer: "'m going",
-      explanation: "Usamos Present Continuous ('m going) porque es un plan futuro específico. 'After class today' indica una intención o plan concreto para el futuro cercano."
+      explanation: "We use Present Continuous ('m going) porque es un plan futuro specific. 'After class today' indica una intención o plan concreto para el futuro cercano."
     },
     {
       sentenceParts: [
@@ -3802,7 +3802,7 @@ const exercisesData = {
       ],
       options: ["think", "'m thinking", "thinks"],
       correctAnswer: "think",
-      explanation: "Usamos Present Simple (think) porque 'think' es un non-action verb (verbo de estado) cuando expresa opinión. Los verbos de estado no se usan en forma continua."
+      explanation: "We use Present Simple (think) porque 'think' es un non-action verb (verbo de estado) cuando expresa opinión. Los verbos de estado no se usan en forma continua."
     },
     {
       sentenceParts: [
@@ -3812,7 +3812,7 @@ const exercisesData = {
       ],
       options: ["loves", "'s loving", "love"],
       correctAnswer: "loves",
-      explanation: "Usamos Present Simple (loves) porque 'love' es un non-action verb (verbo de emoción/sentimiento). Los verbos de estado como love, like, hate, etc. normalmente no se usan en forma continua."
+      explanation: "We use Present Simple (loves) porque 'love' es un non-action verb (verbo de emoción/sentimiento). Los verbos de estado como love, like, hate, etc. normalmente no se usan en forma continua."
     }
   ],
 

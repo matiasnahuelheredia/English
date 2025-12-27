@@ -1,4 +1,4 @@
-// Complete Exam 3 - Preguntas similares al Exam 1
+// Complete Exam 3 - Questions similares al Exam 1
 
 export const examData5 = {
   sections: [
@@ -11,49 +11,49 @@ export const examData5 = {
           id: 1,
           sentence: 'I _______ (read) a book when the phone started ringing.',
           correctAnswer: ['was reading', 'was reading a book'],
-          explanation: 'Usamos Past Continuous "was reading" porque describe una acción en progreso interrumpida por otra (phone started ringing).'
+          explanation: 'We use Past Continuous "was reading" because it describes an action in progress interrumpida por otra (phone started ringing).'
         },
         {
           id: 2,
           sentence: 'They _______ (practice) for weeks when the competition was finally announced.',
           correctAnswer: ['had been practicing', 'had been practising'],
-          explanation: 'Usamos Past Perfect Continuous porque enfatiza la duración antes de otra acción pasada.'
+          explanation: 'We use Past Perfect Continuous because it emphasizes the duration antes de otra acción pasada.'
         },
         {
           id: 3,
           sentence: 'She closed the window and _______ (turn) off the lights.',
           correctAnswer: ['turned'],
-          explanation: 'Usamos Past Simple porque son acciones secuenciales completadas (closed... and turned).'
+          explanation: 'We use Past Simple porque son acciones secuenciales completadas (closed... and turned).'
         },
         {
           id: 4,
           sentence: "He _______ (not understand) the instructions because the teacher hadn't explained them clearly.",
           correctAnswer: ["didn't understand", "did not understand"],
-          explanation: 'Usamos Past Simple porque describe un estado en un momento específico del pasado.'
+          explanation: 'We use Past Simple because it describes a state at a specific moment in the past.'
         },
         {
           id: 5,
           sentence: "When I saw him yesterday, he _______ (wear) a strange hat.",
           correctAnswer: ['was wearing'],
-          explanation: 'Usamos Past Continuous porque describe lo que estaba pasando en ese momento específico.'
+          explanation: 'We use Past Continuous because it describes what was happening at that moment specific.'
         },
         {
           id: 6,
           sentence: "We were shocked when we heard the news because we _______ (not hear) anything about it before.",
           correctAnswer: ["hadn't heard", "had not heard"],
-          explanation: 'Usamos Past Perfect porque la falta de información ocurrió antes del shock.'
+          explanation: 'We use Past Perfect porque la falta de información ocurrió antes del shock.'
         },
         {
           id: 7,
           sentence: 'She felt dizzy because she _______ (stand) in the sun for too long.',
           correctAnswer: ['had been standing'],
-          explanation: 'Usamos Past Perfect Continuous porque enfatiza la duración que causó el mareo.'
+          explanation: 'We use Past Perfect Continuous because it emphasizes the duration que causó el mareo.'
         },
         {
           id: 8,
           sentence: 'When the teacher entered the classroom, he noticed that someone _______ (break) the window.',
           correctAnswer: ['had broken'],
-          explanation: 'Usamos Past Perfect porque la rotura ocurrió antes de que el profesor entrara.'
+          explanation: 'We use Past Perfect porque la rotura ocurrió antes de que el profesor entrara.'
         }
       ]
     },
@@ -66,37 +66,37 @@ export const examData5 = {
           id: 1,
           sentence: 'We _______ (be) friends since primary school.',
           correctAnswer: ['have been'],
-          explanation: 'Usamos Present Perfect Simple porque "be" es un verbo de estado.'
+          explanation: 'We use Present Perfect Simple porque "be" es un verbo de estado.'
         },
         {
           id: 2,
           sentence: 'How long _______ (she / learn) German?',
           correctAnswer: ['has she been learning'],
-          explanation: 'Usamos Present Perfect Continuous porque enfatiza duración de actividad temporal.'
+          explanation: 'We use Present Perfect Continuous porque enfatiza duración de actividad temporal.'
         },
         {
           id: 3,
           sentence: '_______ (they / ever / climb) a mountain?',
           correctAnswer: ['Have they ever climbed'],
-          explanation: 'Usamos Present Perfect Simple porque pregunta sobre experiencia de vida.'
+          explanation: 'We use Present Perfect Simple because it asks about life experience.'
         },
         {
           id: 4,
           sentence: "My hands hurt because I _______ (type) for hours!",
           correctAnswer: ['have been typing'],
-          explanation: 'Usamos Present Perfect Continuous porque enfatiza actividad continua que causa el dolor.'
+          explanation: 'We use Present Perfect Continuous porque enfatiza actividad continua que causa el dolor.'
         },
         {
           id: 5,
           sentence: 'How long _______ (you / have) that phone?',
           correctAnswer: ['have you had'],
-          explanation: 'Usamos Present Perfect Simple porque "have" (poseer) es verbo de estado.'
+          explanation: 'We use Present Perfect Simple porque "have" (poseer) es verbo de estado.'
         },
         {
           id: 6,
           sentence: "This is the first time she _______ (drive) a manual car.",
           correctAnswer: ['has driven'],
-          explanation: 'Usamos Present Perfect Simple con "This is the first/second time...".'
+          explanation: 'We use Present Perfect Simple con "This is the first/second time...".'
         },
         {
           id: 7,
@@ -108,7 +108,7 @@ export const examData5 = {
           id: 8,
           sentence: 'I _______ (never / fly) in a helicopter.',
           correctAnswer: ['have never flown'],
-          explanation: 'Usamos Present Perfect Simple porque expresa experiencia (o falta) hasta el presente.'
+          explanation: 'We use Present Perfect Simple porque expresa experiencia (o falta) hasta el presente.'
         }
       ]
     },
@@ -123,7 +123,7 @@ export const examData5 = {
           sentence: "At 9 AM tomorrow, I'll meet / I'll be meeting with the clients.",
           options: ["I'll meet", "I'll be meeting"],
           correctAnswer: "I'll be meeting",
-          explanation: 'Future Continuous porque describe acción en progreso en momento específico futuro.'
+          explanation: 'Future Continuous because it describes an action in progress at a specific future moment.'
         },
         {
           id: 2,
@@ -144,7 +144,7 @@ export const examData5 = {
           sentence: "This time tomorrow, we'll have flown / we'll be flying over the Atlantic Ocean.",
           options: ["we'll have flown", "we'll be flying"],
           correctAnswer: "we'll be flying",
-          explanation: 'Future Continuous describe acción en progreso en momento específico futuro.'
+          explanation: 'Future Continuous describes an action in progress at a specific moment futuro.'
         },
         {
           id: 5,
@@ -158,7 +158,7 @@ export const examData5 = {
           sentence: "Good luck with your interview! I'll be thinking / I'll have thought about you.",
           options: ["I'll be thinking", "I'll have thought"],
           correctAnswer: "I'll be thinking",
-          explanation: 'Future Continuous describe acción en progreso durante evento futuro.'
+          explanation: 'Future Continuous describe action in progress during future event.'
         }
       ]
     },
@@ -196,13 +196,13 @@ export const examData5 = {
           id: 5,
           words: ['are', 'week', 'They', 'next', 'Paris', 'visiting'],
           correctAnswer: 'They are visiting Paris next week',
-          explanation: 'Expresión temporal "next week" al final.'
+          explanation: 'Expresión temporal "next week" at the end.'
         },
         {
           id: 6,
           words: ['rain', 'at', 'it', 'the', 'Thankfully', 'all', 'beach', "didn't"],
           correctAnswer: "Thankfully it didn't rain at all at the beach",
-          explanation: '"Thankfully" al principio, "at all" después del verbo, "at the beach" al final.'
+          explanation: '"Thankfully" al principio, "at all" después del verbo, "at the beach" at the end.'
         }
       ]
     },
@@ -217,7 +217,7 @@ export const examData5 = {
           sentence: 'Has anyone ever / even seen a ghost?',
           options: ['ever', 'even'],
           correctAnswer: 'ever',
-          explanation: '"Ever" se usa en preguntas sobre experiencias.'
+          explanation: '"Ever" is used in questions sobre experiencias.'
         },
         {
           id: 2,
@@ -252,7 +252,7 @@ export const examData5 = {
           sentence: 'The bullet nearly / near missed his head.',
           options: ['nearly', 'near'],
           correctAnswer: 'nearly',
-          explanation: '"Nearly" = casi (adverbio).'
+          explanation: '"Nearly" = casi (adverb).'
         }
       ]
     },

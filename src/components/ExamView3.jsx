@@ -143,7 +143,7 @@ const ExamView3 = () => {
       prompt += `## ${section.title}\n\n`;
       section.exercises.forEach((exercise, exerciseIdx) => {
         const exerciseKey = `${sectionIdx}-${exerciseIdx}`;
-        const userAns = allAnswers[exerciseKey] || '(sin responder)';
+        const userAns = allAnswers[exerciseKey] || '(not answered)';
         const correctAns = Array.isArray(exercise.correctAnswer) 
           ? exercise.correctAnswer.join(' / ') 
           : exercise.correctAnswer;

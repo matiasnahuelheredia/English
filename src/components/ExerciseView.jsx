@@ -373,7 +373,7 @@ const ExerciseView = ({ tenseId }) => {
       if (!answer || answer.trim() === '') {
         setFeedback({
           isCorrect: false,
-          message: 'Por favor completa la respuesta',
+          message: 'Please completa la respuesta',
           correctAnswer: isReversed ? currentExercise.englishWord : (Array.isArray(currentExercise.spanishWord) ? currentExercise.spanishWord.join(', ') : currentExercise.spanishWord)
         });
         return;
@@ -451,7 +451,7 @@ const ExerciseView = ({ tenseId }) => {
       if (!userAnswers || userAnswers.length === 0 || userAnswers.every(ans => !ans || ans.trim() === '')) {
         setFeedback({
           isCorrect: false,
-          message: 'Por favor completa todas las respuestas',
+          message: 'Please completa todas las respuestas',
           correctAnswer: currentExercise.correctAnswer.join(' ... ')
         });
         return;
@@ -482,7 +482,7 @@ const ExerciseView = ({ tenseId }) => {
       if (!userAnswers || userAnswers.length === 0 || userAnswers.some(ans => ans === undefined || ans === '' || ans === '-1')) {
         setFeedback({
           isCorrect: false,
-          message: 'Por favor completa todas las respuestas'
+          message: 'Please completa todas las respuestas'
         });
         return;
       }
@@ -506,7 +506,7 @@ const ExerciseView = ({ tenseId }) => {
       if (answer === undefined || answer === '' || answer === '-1') {
         setFeedback({
           isCorrect: false,
-          message: 'Por favor selecciona una respuesta'
+          message: 'Please selecciona una respuesta'
         });
         return;
       }
@@ -978,7 +978,7 @@ const ExerciseView = ({ tenseId }) => {
                 {!feedback.isCorrect && showAnswer && (
                   <>
                     <p className="text-base text-htb-text mt-3">
-                      <strong>Respuesta correcta:</strong> {feedback.correctAnswer}
+                      <strong>Correct answer:</strong> {feedback.correctAnswer}
                     </p>
                     {feedback.userAnswerText && (
                       <p className="text-base text-htb-text mt-2">
@@ -990,7 +990,7 @@ const ExerciseView = ({ tenseId }) => {
                 {!isVocabulary && !feedback.isCorrect && (
                   <>
                     <p className="text-base text-htb-text mt-3">
-                      <strong>Respuesta correcta:</strong> {feedback.correctAnswer}
+                      <strong>Correct answer:</strong> {feedback.correctAnswer}
                     </p>
                     {feedback.userAnswerText && (
                       <p className="text-base text-htb-text mt-2">

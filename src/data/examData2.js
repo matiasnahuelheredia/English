@@ -11,49 +11,49 @@ export const examData2 = {
           id: 1,
           sentence: 'The hacker _______ (access) our database when the firewall suddenly blocked him.',
           correctAnswer: ['was accessing'],
-          explanation: 'Usamos Past Continuous "was accessing" porque describe una acción en progreso (el acceso del hacker) que fue interrumpida por otra acción (el firewall lo bloqueó).'
+          explanation: 'We use Past Continuous "was accessing" because it describes an action in progress (the hacker\'s access) that was interrupted by another action (the firewall blocked it).'
         },
         {
           id: 2,
           sentence: 'The IT team _______ (monitor) the network for hours when they detected the breach.',
           correctAnswer: ['had been monitoring'],
-          explanation: 'Usamos Past Perfect Continuous "had been monitoring" porque enfatiza la duración de una acción (monitoreo) que ocurrió antes de otra acción pasada (detectaron la brecha).'
+          explanation: 'We use Past Perfect Continuous "had been monitoring" because it emphasizes the duration of an action (monitoring) that occurred before another past action (detected the breach).'
         },
         {
           id: 3,
           sentence: 'The security analyst discovered the malware and immediately _______ (report) it to management.',
           correctAnswer: ['reported'],
-          explanation: 'Usamos Past Simple "reported" porque son dos acciones secuenciales completadas en el pasado (descubrió... y reportó).'
+          explanation: 'We use Past Simple "reported" porque are two sequential actions completed in the past (descubrió... y reportó).'
         },
         {
           id: 4,
           sentence: "The system _______ (not respond) to commands because the ransomware had encrypted all files.",
           correctAnswer: ["wasn't responding", "was not responding"],
-          explanation: 'Usamos Past Continuous negativo "wasn\'t responding" porque describe un estado en progreso en un momento específico del pasado, causado por una acción anterior (ransomware).'
+          explanation: 'We use Past Continuous negativo "wasn\'t responding" porque describe un state in progress en un momento specific del pasado, caused by a previous action (ransomware).'
         },
         {
           id: 5,
           sentence: "When we arrived at the office, the attackers _______ (steal) confidential data for over two hours.",
           correctAnswer: ['had been stealing'],
-          explanation: 'Usamos Past Perfect Continuous "had been stealing" porque enfatiza la duración de una acción que ocurrió antes de otra acción pasada (llegamos).'
+          explanation: 'We use Past Perfect Continuous "had been stealing" because it emphasizes the duration of an action that occurred before another past action (llegamos).'
         },
         {
           id: 6,
           sentence: "The employees _______ (not know) about the phishing attack until the security team sent the warning email.",
           correctAnswer: ["didn't know", "did not know"],
-          explanation: 'Usamos Past Simple negativo "didn\'t know" porque describe un estado que cambió en un momento específico del pasado (hasta que enviaron el email).'
+          explanation: 'We use Past Simple negativo "didn\'t know" porque describe un estado that changed at a momento specific del pasado (until they sent el email).'
         },
         {
           id: 7,
           sentence: 'Our team was frustrated because we _______ (try) to patch the vulnerability for weeks without success.',
           correctAnswer: ['had been trying'],
-          explanation: 'Usamos Past Perfect Continuous "had been trying" porque enfatiza la duración de un esfuerzo continuo antes del momento de frustración.'
+          explanation: 'We use Past Perfect Continuous "had been trying" porque enfatiza la duración de un esfuerzo continuo antes del momento de frustración.'
         },
         {
           id: 8,
           sentence: 'When I checked my email, I realized that I _______ (click) on a malicious link earlier.',
           correctAnswer: ['had clicked'],
-          explanation: 'Usamos Past Perfect "had clicked" porque la acción de hacer clic ocurrió antes de darse cuenta (realized).'
+          explanation: 'We use Past Perfect "had clicked" porque la acción de hacer clic ocurrió antes de darse cuenta (realized).'
         }
       ]
     },
@@ -72,31 +72,31 @@ export const examData2 = {
           id: 2,
           sentence: 'How long _______ (the hackers / attack) our servers?',
           correctAnswer: ['have the hackers been attacking'],
-          explanation: 'Usamos Present Perfect Continuous "have been attacking" porque pregunta por la duración de una acción que continúa o acaba de terminar.'
+          explanation: 'We use Present Perfect Continuous "have been attacking" porque pregunta por la duración de una acción que continúa o acaba de terminar.'
         },
         {
           id: 3,
           sentence: '_______ (you / ever / experience) a DDoS attack on your website?',
           correctAnswer: ['Have you ever experienced'],
-          explanation: 'Usamos Present Perfect Simple "Have you ever experienced" porque pregunta sobre una experiencia de vida sin enfatizar duración.'
+          explanation: 'We use Present Perfect Simple "Have you ever experienced" porque asks about una life experience without emphasizing duration.'
         },
         {
           id: 4,
           sentence: "The security team is exhausted because they _______ (investigate) the incident all night!",
           correctAnswer: ['have been investigating'],
-          explanation: 'Usamos Present Perfect Continuous "have been investigating" porque enfatiza la actividad continua que causó el cansancio actual.'
+          explanation: 'We use Present Perfect Continuous "have been investigating" porque enfatiza la actividad continua que causó el cansancio actual.'
         },
         {
           id: 5,
           sentence: 'How long _______ (this antivirus software / protect) your computer?',
           correctAnswer: ['has this antivirus software protected'],
-          explanation: 'Usamos Present Perfect Simple "has protected" porque "protect" en este contexto es más un estado continuo que una acción temporal.'
+          explanation: 'We use Present Perfect Simple "has protected" porque "protect" en este contexto es más un estado continuo que una acción temporal.'
         },
         {
           id: 6,
           sentence: "This is the third time this month we _______ (detect) malware on employee devices.",
           correctAnswer: ['have detected'],
-          explanation: 'Usamos Present Perfect Simple "have detected" porque se usa con "This is the first/second/third time...".'
+          explanation: 'We use Present Perfect Simple "have detected" porque se usa con "This is the first/second/third time...".'
         },
         {
           id: 7,
@@ -108,7 +108,7 @@ export const examData2 = {
           id: 8,
           sentence: 'I _______ (never / see) such a sophisticated cyber attack before!',
           correctAnswer: ['have never seen'],
-          explanation: 'Usamos Present Perfect Simple "have never seen" porque expresa una experiencia (o falta de ella) hasta el presente.'
+          explanation: 'We use Present Perfect Simple "have never seen" porque expresa una experiencia (o falta de ella) hasta el presente.'
         }
       ]
     },
@@ -123,42 +123,42 @@ export const examData2 = {
           sentence: "This time next week, our team will install / will be installing the new security patches.",
           options: ["will install", "will be installing"],
           correctAnswer: "will be installing",
-          explanation: 'Usamos Future Continuous "will be installing" porque describe una acción en progreso en un momento específico del futuro (this time next week).'
+          explanation: 'We use Future Continuous "will be installing" porque describe una action in progress en un momento specific del futuro (this time next week).'
         },
         {
           id: 2,
           sentence: "By Friday, the IT department will have finished / will be finishing the security audit.",
           options: ['will have finished', 'will be finishing'],
           correctAnswer: 'will have finished',
-          explanation: 'Usamos Future Perfect "will have finished" porque la acción estará completa antes de un tiempo específico (by Friday).'
+          explanation: 'We use Future Perfect "will have finished" porque la acción will be complete before a tiempo specific (by Friday).'
         },
         {
           id: 3,
           sentence: "We won't have implemented / won't be implementing blockchain security until next year.",
           options: ["won't have implemented", "won't be implementing"],
           correctAnswer: "won't be implementing",
-          explanation: 'Usamos Future Continuous negativo "won\'t be implementing" para expresar un plan futuro que no se realizará en ese período.'
+          explanation: 'We use Future Continuous negativo "won\'t be implementing" para expresar un plan futuro que no se realizará en ese período.'
         },
         {
           id: 4,
           sentence: "At 3pm tomorrow, the penetration testers will have tested / will be testing our network vulnerabilities.",
           options: ["will have tested", "will be testing"],
           correctAnswer: "will be testing",
-          explanation: 'Usamos Future Continuous "will be testing" porque describe una acción en progreso a una hora específica del futuro (at 3pm).'
+          explanation: 'We use Future Continuous "will be testing" porque describe una action in progress at a specific time in the future (at 3pm).'
         },
         {
           id: 5,
           sentence: "I hope we will have patched / will be patching all critical vulnerabilities by the end of the month.",
           options: ["will have patched", "will be patching"],
           correctAnswer: "will have patched",
-          explanation: 'Usamos Future Perfect "will have patched" porque expresa que la acción estará completa antes de un tiempo futuro específico.'
+          explanation: 'We use Future Perfect "will have patched" porque expresa que la acción will be complete before a tiempo futuro specific.'
         },
         {
           id: 6,
           sentence: "Good luck with the security certification exam! I will be thinking / will have thought of you.",
           options: ["will be thinking", "will have thought"],
           correctAnswer: "will be thinking",
-          explanation: 'Usamos Future Continuous "will be thinking" porque describe una acción que estará en progreso durante el evento futuro.'
+          explanation: 'We use Future Continuous "will be thinking" porque describes an action that will be in progress during the future event.'
         }
       ]
     },
@@ -172,19 +172,19 @@ export const examData2 = {
           id: 1,
           words: ['is', 'Our firewall', 'updated', 'automatically', 'always'],
           correctAnswer: 'Our firewall is always automatically updated',
-          explanation: 'El adverbio de frecuencia "always" va después del verbo "be" (is). El adverbio de modo "automatically" va después del adverbio de frecuencia.'
+          explanation: 'El adverb de frecuencia "always" va después del verbo "be" (is). El adverb de modo "automatically" va después del adverb de frecuencia.'
         },
         {
           id: 2,
           words: ['we', 'had', 'backup', 'created', 'Fortunately', 'a'],
           correctAnswer: 'Fortunately we had created a backup',
-          explanation: 'El adverbio de opinión "Fortunately" va al principio. Luego: sujeto + verbo en pasado perfecto + objeto.'
+          explanation: 'El adverb de opinión "Fortunately" va al principio. Luego: sujeto + verbo en pasado perfecto + objeto.'
         },
         {
           id: 3,
           words: ['phishing emails', 'The employees', 'receive', 'rarely'],
           correctAnswer: 'The employees rarely receive phishing emails',
-          explanation: 'El adverbio de frecuencia "rarely" va antes del verbo principal "receive".'
+          explanation: 'El adverb de frecuencia "rarely" va antes del verbo principal "receive".'
         },
         {
           id: 4,
@@ -196,13 +196,13 @@ export const examData2 = {
           id: 5,
           words: ['next', 'Monday', "We're", 'implementing', 'zero-trust architecture'],
           correctAnswer: "We're implementing zero-trust architecture next Monday",
-          explanation: 'La expresión temporal "next Monday" va al final. Orden: sujeto + verbo + objeto + tiempo.'
+          explanation: 'La expresión temporal "next Monday" va at the end. Orden: sujeto + verbo + objeto + tiempo.'
         },
         {
           id: 6,
           words: ['the', 'much', 'week', 'passwords', 'this', 'Surprisingly', "didn't", 'change', 'users'],
           correctAnswer: "Surprisingly the users didn't change passwords much this week",
-          explanation: '"Surprisingly" va al principio. "Much" modifica al verbo "change", y "this week" va al final como expresión temporal.'
+          explanation: '"Surprisingly" va al principio. "Much" modifica al verbo "change", y "this week" va at the end como expresión temporal.'
         }
       ]
     },
@@ -217,7 +217,7 @@ export const examData2 = {
           sentence: 'Have you ever / even tried using a password manager?',
           options: ['ever', 'even'],
           correctAnswer: 'ever',
-          explanation: '"Ever" se usa en preguntas sobre experiencias. "Even" significa "incluso".'
+          explanation: '"Ever" is used in questions sobre experiencias. "Even" means "even".'
         },
         {
           id: 2,
@@ -238,21 +238,21 @@ export const examData2 = {
           sentence: "It's been hours and the vulnerability scan yet / still hasn't finished.",
           options: ['yet', 'still'],
           correctAnswer: 'still',
-          explanation: '"Still" se usa en oraciones negativas para expresar que algo continúa. "Yet" iría al final.'
+          explanation: '"Still" is used in oraciones negativas to express that something continues. "Yet" iría at the end.'
         },
         {
           id: 5,
           sentence: 'The team disagreed at the end / in the end about the best security protocol, but they chose the strongest one.',
           options: ['at the end', 'in the end'],
           correctAnswer: 'in the end',
-          explanation: '"In the end" significa "finalmente". "At the end" se refiere al final de algo específico.'
+          explanation: '"In the end" significa "finalmente". "At the end" se refiere at the end de algo specific.'
         },
         {
           id: 6,
           sentence: 'The hacker nearly / near breached our defenses but our IDS stopped the attack.',
           options: ['nearly', 'near'],
           correctAnswer: 'nearly',
-          explanation: '"Nearly" significa "casi" (adverbio). "Near" significa "cerca" (preposición/adjetivo).'
+          explanation: '"Nearly" means "almost" (adverb). "Near" means "near" (preposición/adjetivo).'
         }
       ]
     },
@@ -281,7 +281,7 @@ export const examData2 = {
           sentence: "A: Our company implemented MFA last month.\nB: Did / Have they? That's excellent for security!",
           options: ['Did', 'Have'],
           correctAnswer: 'Did',
-          explanation: 'Usamos "Did they?" para responder a un verbo en Past Simple (implemented).'
+          explanation: 'We use "Did they?" para responder a un verbo en Past Simple (implemented).'
         },
         {
           id: 4,
@@ -295,7 +295,7 @@ export const examData2 = {
           sentence: "By 5pm, the security team will have completed / will be completing the vulnerability assessment.",
           options: ["will have completed", "will be completing"],
           correctAnswer: "will have completed",
-          explanation: 'Usamos Future Perfect "will have completed" con "by 5pm" para indicar que la acción estará completa antes de ese momento.'
+          explanation: 'We use Future Perfect "will have completed" con "by 5pm" para indicar que the action will be complete antes de ese momento.'
         },
         {
           id: 6,
@@ -309,28 +309,28 @@ export const examData2 = {
           sentence: "The hacker won't be caught easily. He's clever always / always clever.",
           options: ["clever always", "always clever"],
           correctAnswer: 'always clever',
-          explanation: 'El adverbio de frecuencia "always" va antes del adjetivo "clever".'
+          explanation: 'El adverb de frecuencia "always" va antes del adjetivo "clever".'
         },
         {
           id: 8,
           sentence: "I don't trust cloud storage, and neither will / does my colleague.",
           options: ['will', 'does'],
           correctAnswer: 'does',
-          explanation: 'Usamos "neither + does" porque la primera oración usa "don\'t" (presente simple).'
+          explanation: 'We use "neither + does" porque la primera oración usa "don\'t" (presente simple).'
         },
         {
           id: 9,
           sentence: 'I did warn / warned you about that suspicious email. You should have listened!',
           options: ['did warn', 'warned'],
           correctAnswer: 'did warn',
-          explanation: 'Usamos "did + infinitive" para enfatizar. "I did warn you" = "Sí te advertí" (énfasis).'
+          explanation: 'We use "did + infinitive" para enfatizar. "I did warn you" = "Sí te advertí" (énfasis).'
         },
         {
           id: 10,
           sentence: "I hate weak passwords, but my manager does / doesn't.",
           options: ['does', "doesn't"],
           correctAnswer: "doesn't",
-          explanation: '"But" indica contraste. Si yo las odio, mi manager NO las odia. Usamos "doesn\'t" para el contraste.'
+          explanation: '"But" indica contraste. Si yo las odio, mi manager NO las odia. We use "doesn\'t" para el contraste.'
         }
       ]
     },

@@ -252,7 +252,7 @@ export const examData6 = {
           sentence: 'The train nearly / near derailed but the conductor regained control.',
           options: ['nearly', 'near'],
           correctAnswer: 'nearly',
-          explanation: '"Nearly" = casi (adverbio).'
+          explanation: '"Nearly" = casi (adverb).'
         }
       ]
     },

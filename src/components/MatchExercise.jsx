@@ -46,7 +46,7 @@ const MatchExercise = ({ tenseId }) => {
     const answeredCount = Object.keys(userAnswers).length;
 
     if (answeredCount < totalDefinitions) {
-      alert('Por favor completa todas las respuestas antes de verificar.');
+      alert('Please completa todas las respuestas antes de verificar.');
       return;
     }
 

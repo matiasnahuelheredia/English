@@ -26,7 +26,7 @@ const ExamView2 = () => {
   const getSectionHelp = (sectionId) => {
     const helpContent = {
       'cybersecurity-narrative': {
-        title: '📚 Cómo resolver: Narrative Tenses (Cybersecurity)',
+        title: '📚 How to solve: Narrative Tenses (Cybersecurity)',
         example: 'The hacker _______ (access) our database when the firewall blocked him.',
         solution: 'was accessing',
         explanation: 'En narrativas de seguridad usamos diferentes tiempos para describir incidentes:',
@@ -34,48 +34,48 @@ const ExamView2 = () => {
           '🔹 Past Simple: Acciones de seguridad COMPLETADAS y SECUENCIALES',
           '   • Eventos del incidente uno tras otro → "detected the breach, blocked access, sent alert"',
           '   • Acciones completas → "The firewall blocked the attack"',
-          '   • Palabra clave: "then" (entonces), secuencia de eventos',
+          '   • Key word: "then" (entonces), secuencia de eventos',
           '',
           '🔹 Past Continuous: Ataques EN PROGRESO que fueron INTERRUMPIDOS',
           '   • Ataque en curso → "The hacker was accessing when..."',
           '   • Se combina con Past Simple (interrupción) → "was downloading files when firewall blocked"',
-          '   • Palabra clave: "when" + acción que interrumpe, "while" + otra acción continua',
-          '   • Momento específico → "At 3am, the malware was spreading"',
+          '   • Key word: "when" + acción que interrumpe, "while" + otra acción continua',
+          '   • Momento specific → "At 3am, the malware was spreading"',
           '',
           '🔹 Past Perfect: Vulnerabilidad que existía ANTES del ataque',
           '   • Primera acción de dos eventos → "They had exposed (1º) the port before the attack (2º)"',
           '   • Causa del incidente → "The breach succeeded because they hadn\'t updated the patch"',
-          '   • Palabra clave: "before", "after", "already", "by the time"',
+          '   • Key word: "before", "after", "already", "by the time"',
           '   • Estado previo → "Someone had stolen the credentials" (antes del acceso)',
           '',
           '🔹 Past Perfect Continuous: DURACIÓN del ataque antes de detección',
-          '   • Énfasis en tiempo del ataque → "had been running for hours when detected"',
+          '   • Emphasis on tiempo del ataque → "had been running for hours when detected"',
           '   • Actividad continua → "The malware had been encrypting files since midnight"',
-          '   • Palabra clave: "for" + duración, "since" + momento inicial',
+          '   • Key word: "for" + duración, "since" + momento inicial',
           '   • Impacto acumulado → "had been stealing data for weeks (mucho daño)"'
         ],
         tip: '💡 CONTEXTO DE SEGURIDAD: ¿Ataque interrumpido? → Past Continuous. ¿Pasos del incidente? → Past Simple. ¿Vulnerabilidad previa? → Past Perfect. ¿Tiempo del ataque? → Past Perfect Continuous'
       },
       'cybersecurity-present-perfect': {
-        title: '📚 Cómo resolver: Present Perfect (Cybersecurity)',
+        title: '📚 How to solve: Present Perfect (Cybersecurity)',
         example: 'How long _______ (the system / be) under attack?',
         solution: 'has the system been',
         explanation: 'En contexto de seguridad:',
         points: [
           '🔹 Simple: Experiencias de ataques, vulnerabilidades detectadas → "have experienced"',
-          '🔹 Continuous: Duración de monitoreo, investigación → "have been investigating"',
+          '🔹 Continuous: Duración de monitoring, investigación → "have been investigating"',
           '🔹 Verbos de estado: use (usar), protect (proteger) → pueden ser simple o continuous',
-          '🔹 "How long" con ataques/monitoreo activo → Continuous'
+          '🔹 "How long" con ataques/monitoring activo → Continuous'
         ],
         tip: '💡 Si enfatiza DURACIÓN de investigación/ataque → Continuous. Si es RESULTADO detectado → Simple'
       },
       'cybersecurity-future': {
-        title: '📚 Cómo resolver: Future Forms (Cybersecurity)',
+        title: '📚 How to solve: Future Forms (Cybersecurity)',
         example: 'By Friday, we will install / will have installed the security patches.',
         solution: 'will have installed',
         explanation: 'En planificación de seguridad:',
         points: [
-          '🔹 Future Continuous: Instalación/escaneo en progreso en momento específico',
+          '🔹 Future Continuous: Instalación/escaneo en progreso en momento specific',
           '🔹 Future Perfect: Parches/auditorías completadas ANTES de deadline',
           '🔹 "By [date/time]" con seguridad → Future Perfect (completado)',
           '🔹 "At [time]" durante mantenimiento → Future Continuous (en progreso)'
@@ -83,10 +83,10 @@ const ExamView2 = () => {
         tip: '💡 Deadlines de seguridad usan "by" → Future Perfect. Ventanas de mantenimiento → Continuous'
       },
       'cybersecurity-word-order': {
-        title: '📚 Cómo resolver: Word Order (Cybersecurity)',
+        title: '📚 How to solve: Word Order (Cybersecurity)',
         example: 'is / Our firewall / updated / automatically / always',
         solution: 'Our firewall is always automatically updated',
-        explanation: 'Orden de adverbios en contexto técnico:',
+        explanation: 'Orden de adverbs en contexto técnico:',
         points: [
           '🔹 Frecuencia (always, rarely): DESPUÉS de BE, ANTES de otros verbos',
           '🔹 Opinión (Fortunately, Surprisingly): Al PRINCIPIO',
@@ -96,7 +96,7 @@ const ExamView2 = () => {
         tip: '💡 En seguridad: Sistema + BE + Frecuencia + Modo + Acción + Tiempo'
       },
       'cybersecurity-adverbs': {
-        title: '📚 Cómo resolver: Adverbs (Cybersecurity)',
+        title: '📚 How to solve: Adverbs (Cybersecurity)',
         example: 'Have you ever / even tried penetration testing?',
         solution: 'ever',
         explanation: 'Adverbios en contexto de seguridad:',
@@ -105,13 +105,13 @@ const ExamView2 = () => {
           '🔹 specially (diseñado específicamente) vs especially (particularmente vulnerable)',
           '🔹 hardly (apenas detectado) vs hard (trabajar intensamente)',
           '🔹 still (aún vulnerable) vs yet (todavía no parcheado - final)',
-          '🔹 in the end (finalmente bloqueamos) vs at the end (al final del escaneo)',
+          '🔹 in the end (finalmente bloqueamos) vs at the end (at the end del escaneo)',
           '🔹 nearly (casi hackeado) vs near (cerca del servidor)'
         ],
-        tip: '💡 Contexto técnico: lee toda la frase, piensa en SIGNIFICADO de seguridad'
+        tip: '💡 Technical context: read the whole sentence, think about MEANING de seguridad'
       },
       'cybersecurity-mixed': {
-        title: '📚 Cómo resolver: Mixed Grammar (Cybersecurity)',
+        title: '📚 How to solve: Mixed Grammar (Cybersecurity)',
         example: 'Your network doesn\'t have encryption, does / doesn\'t it?',
         solution: 'does',
         explanation: 'Gramática variada en ciberseguridad:',
@@ -125,7 +125,7 @@ const ExamView2 = () => {
         tip: '💡 En seguridad, el énfasis es crítico - "did warn", "does matter"'
       },
       'cybersecurity-vocabulary': {
-        title: '📚 Cómo resolver: Cybersecurity Vocabulary',
+        title: '📚 How to solve: Cybersecurity Vocabulary',
         example: 'A f_______ monitors and controls network traffic.',
         solution: 'firewall',
         explanation: 'Vocabulario esencial de ciberseguridad:',
@@ -152,7 +152,7 @@ const ExamView2 = () => {
     setUserAnswer(savedAnswer);
     setFeedback(null);
     
-    // Enfocar el input cuando cambia la pregunta
+    // Focus input when question changes
     if (inputRef.current) {
       inputRef.current.focus();
     }
@@ -161,12 +161,12 @@ const ExamView2 = () => {
   // Navegación con teclas de flecha
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Flecha derecha: siguiente pregunta
+      // Right arrow: next question
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         nextExercise();
       }
-      // Flecha izquierda: pregunta anterior
+      // Left arrow: previous question
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
         previousExercise();
@@ -193,7 +193,7 @@ const ExamView2 = () => {
     } else if (currentSection.type === 'fill-word') {
       isCorrect = userAnswerLower === currentExercise.correctAnswer.toLowerCase();
     } else {
-      // Para ejercicios con múltiples respuestas correctas
+      // For exercises with multiple correct answers
       const correctAnswers = Array.isArray(currentExercise.correctAnswer) 
         ? currentExercise.correctAnswer 
         : [currentExercise.correctAnswer];
@@ -267,7 +267,7 @@ const ExamView2 = () => {
       prompt += `## ${section.title}\n\n`;
       section.exercises.forEach((exercise, exerciseIdx) => {
         const exerciseKey = `${sectionIdx}-${exerciseIdx}`;
-        const userAns = allAnswers[exerciseKey] || '(sin responder)';
+        const userAns = allAnswers[exerciseKey] || '(not answered)';
         const correctAns = Array.isArray(exercise.correctAnswer) 
           ? exercise.correctAnswer.join(' / ') 
           : exercise.correctAnswer;

@@ -1,4 +1,4 @@
-// Complete Exam 2 - Preguntas similares al Exam 1
+// Complete Exam 2 - Questions similares al Exam 1
 
 export const examData4 = {
   sections: [
@@ -11,49 +11,49 @@ export const examData4 = {
           id: 1,
           sentence: 'They _______ (watch) a movie when someone knocked on the door.',
           correctAnswer: ['were watching', 'were watching a movie'],
-          explanation: 'Usamos Past Continuous "were watching" porque describe una acción en progreso que fue interrumpida por otra acción (when someone knocked).'
+          explanation: 'We use Past Continuous "were watching" because it describes an action in progress that was interrupted by another action (when someone knocked).'
         },
         {
           id: 2,
           sentence: 'She _______ (work) on the project for months when her boss finally approved it.',
           correctAnswer: ['had been working'],
-          explanation: 'Usamos Past Perfect Continuous "had been working" porque enfatiza la duración de una acción que ocurrió antes de otra acción pasada (approved).'
+          explanation: 'We use Past Perfect Continuous "had been working" because it emphasizes the duration of an action that occurred before another past action (approved).'
         },
         {
           id: 3,
           sentence: 'He opened the door and _______ (walk) into the room.',
           correctAnswer: ['walked'],
-          explanation: 'Usamos Past Simple "walked" porque son dos acciones secuenciales completadas en el pasado (opened... and walked).'
+          explanation: 'We use Past Simple "walked" porque are two sequential actions completed in the past (opened... and walked).'
         },
         {
           id: 4,
           sentence: "She _______ (not know) about the party because nobody had invited her.",
           correctAnswer: ["didn't know", "did not know"],
-          explanation: 'Usamos Past Simple "didn\'t know" porque describe un estado en un momento específico del pasado.'
+          explanation: 'We use Past Simple "didn\'t know" porque describe un estado en un momento specific del pasado.'
         },
         {
           id: 5,
           sentence: "When I called her, she _______ (cook) dinner for the guests.",
           correctAnswer: ['was cooking'],
-          explanation: 'Usamos Past Continuous "was cooking" porque describe una acción en progreso en un momento específico del pasado (when I called).'
+          explanation: 'We use Past Continuous "was cooking" because it describes an action in progress en un momento specific del pasado (when I called).'
         },
         {
           id: 6,
           sentence: "They were confused when the alarm went off because they _______ (not set) it.",
           correctAnswer: ["weren't expecting it to ring", "hadn't set"],
-          explanation: 'Usamos Past Perfect "hadn\'t set" porque la acción de no configurar la alarma ocurrió antes de que sonara.'
+          explanation: 'We use Past Perfect "hadn\'t set" porque la acción de no configurar la alarma ocurrió antes de que sonara.'
         },
         {
           id: 7,
           sentence: 'He was exhausted because he _______ (train) for the marathon for hours.',
           correctAnswer: ['had been training'],
-          explanation: 'Usamos Past Perfect Continuous "had been training" porque enfatiza la duración de una acción que causó el cansancio.'
+          explanation: 'We use Past Perfect Continuous "had been training" because it emphasizes the duration of an action que causó el cansancio.'
         },
         {
           id: 8,
           sentence: 'When she arrived at the station, she discovered that she _______ (leave) her ticket at home.',
           correctAnswer: ['had left'],
-          explanation: 'Usamos Past Perfect "had left" porque la acción de dejar el ticket ocurrió antes de descubrirlo (discovered).'
+          explanation: 'We use Past Perfect "had left" porque la acción de dejar el ticket ocurrió antes de descubrirlo (discovered).'
         }
       ]
     },
@@ -66,37 +66,37 @@ export const examData4 = {
           id: 1,
           sentence: 'I _______ (live) in this city since I was born.',
           correctAnswer: ['have lived'],
-          explanation: 'Usamos Present Perfect Simple "have lived" porque "live" en este contexto es un verbo de estado que describe una situación continua.'
+          explanation: 'We use Present Perfect Simple "have lived" porque "live" en este contexto es un verbo de estado que describe una situación continua.'
         },
         {
           id: 2,
           sentence: 'How long _______ (you / study) English?',
           correctAnswer: ['have you been studying'],
-          explanation: 'Usamos Present Perfect Continuous "have you been studying" porque enfatiza la duración de una actividad temporal.'
+          explanation: 'We use Present Perfect Continuous "have you been studying" porque enfatiza la duración de una actividad temporal.'
         },
         {
           id: 3,
           sentence: '_______ (you / ever / visit) Paris?',
           correctAnswer: ['Have you ever visited'],
-          explanation: 'Usamos Present Perfect Simple "Have you ever visited" porque pregunta sobre una experiencia de vida.'
+          explanation: 'We use Present Perfect Simple "Have you ever visited" porque asks about una life experience.'
         },
         {
           id: 4,
           sentence: "I'm tired because I _______ (run) for an hour!",
           correctAnswer: ['have been running'],
-          explanation: 'Usamos Present Perfect Continuous "have been running" porque enfatiza la actividad continua que causó el cansancio.'
+          explanation: 'We use Present Perfect Continuous "have been running" porque enfatiza la actividad continua que causó el cansancio.'
         },
         {
           id: 5,
           sentence: 'How long _______ (your son / own) that car?',
           correctAnswer: ['has your son owned'],
-          explanation: 'Usamos Present Perfect Simple "has your son owned" porque "own" (poseer) es un verbo de estado.'
+          explanation: 'We use Present Perfect Simple "has your son owned" porque "own" (poseer) es un verbo de estado.'
         },
         {
           id: 6,
           sentence: "This is the first time I _______ (try) sushi.",
           correctAnswer: ['have tried'],
-          explanation: 'Usamos Present Perfect Simple "have tried" porque se usa con "This is the first/second time...".'
+          explanation: 'We use Present Perfect Simple "have tried" porque se usa con "This is the first/second time...".'
         },
         {
           id: 7,
@@ -108,7 +108,7 @@ export const examData4 = {
           id: 8,
           sentence: 'We _______ (never / eat) at this restaurant before.',
           correctAnswer: ['have never eaten'],
-          explanation: 'Usamos Present Perfect Simple "have never eaten" porque expresa una experiencia (o falta de ella) hasta el presente.'
+          explanation: 'We use Present Perfect Simple "have never eaten" porque expresa una experiencia (o falta de ella) hasta el presente.'
         }
       ]
     },
@@ -123,42 +123,42 @@ export const examData4 = {
           sentence: "This time next week, I'll take / I'll be taking my final exam!",
           options: ["I'll take", "I'll be taking"],
           correctAnswer: "I'll be taking",
-          explanation: 'Usamos Future Continuous "I\'ll be taking" porque describe una acción en progreso en un momento específico del futuro (this time next week).'
+          explanation: 'We use Future Continuous "I\'ll be taking" porque describe una action in progress en un momento specific del futuro (this time next week).'
         },
         {
           id: 2,
           sentence: "By 5 PM today, will we have completed / be completing this project?",
           options: ['will we have completed', 'be completing'],
           correctAnswer: 'will we have completed',
-          explanation: 'Usamos Future Perfect "will we have completed" porque pregunta si la acción estará completa antes de un tiempo específico (by 5 PM).'
+          explanation: 'We use Future Perfect "will we have completed" porque pregunta si la acción will be complete before a tiempo specific (by 5 PM).'
         },
         {
           id: 3,
           sentence: "They won't have traveled / won't be traveling next month – they cancelled their trip.",
           options: ["won't have traveled", "won't be traveling"],
           correctAnswer: "won't be traveling",
-          explanation: 'Usamos Future Continuous negativo "won\'t be traveling" para expresar un plan que no se realizará.'
+          explanation: 'We use Future Continuous negativo "won\'t be traveling" para expresar un plan que no se realizará.'
         },
         {
           id: 4,
           sentence: "At 8 AM tomorrow, I'll have started / I'll be starting my new job.",
           options: ["I'll have started", "I'll be starting"],
           correctAnswer: "I'll be starting",
-          explanation: 'Usamos Future Continuous "I\'ll be starting" porque describe una acción en progreso a una hora específica del futuro.'
+          explanation: 'We use Future Continuous "I\'ll be starting" porque describe una action in progress at a specific time in the future.'
         },
         {
           id: 5,
           sentence: "By 2030, scientists will have discovered / will be discovering a cure for cancer.",
           options: ["will have discovered", "will be discovering"],
           correctAnswer: "will have discovered",
-          explanation: 'Usamos Future Perfect "will have discovered" porque expresa una acción que estará completa antes de un tiempo futuro (by 2030).'
+          explanation: 'We use Future Perfect "will have discovered" porque expresa una acción que will be complete before a tiempo futuro (by 2030).'
         },
         {
           id: 6,
           sentence: "Don't worry about the presentation! I'll be supporting / I'll have supported you.",
           options: ["I'll be supporting", "I'll have supported"],
           correctAnswer: "I'll be supporting",
-          explanation: 'Usamos Future Continuous "I\'ll be supporting" porque describe una acción que estará en progreso durante el evento futuro.'
+          explanation: 'We use Future Continuous "I\'ll be supporting" porque describes an action that will be in progress during the future event.'
         }
       ]
     },
@@ -172,31 +172,31 @@ export const examData4 = {
           id: 1,
           words: ['Sarah', 'is', 'on', 'time', 'for', 'always', 'meetings'],
           correctAnswer: 'Sarah is always on time for meetings',
-          explanation: 'El adverbio de frecuencia "always" va después del verbo "be". Orden: Sujeto + be + adverb + complemento.'
+          explanation: 'El adverb de frecuencia "always" va después del verbo "be". Orden: Sujeto + be + adverb + complemento.'
         },
         {
           id: 2,
           words: ['had', 'Unfortunately', 'we', 'the', 'missed', 'train'],
           correctAnswer: 'Unfortunately we had missed the train',
-          explanation: 'El adverbio de opinión "Unfortunately" va al principio de la oración. Luego: sujeto + verbo + objeto.'
+          explanation: 'El adverb de opinión "Unfortunately" va al principio de la oración. Luego: sujeto + verbo + objeto.'
         },
         {
           id: 3,
           words: ['boss', 'My', 'complains', 'never', 'late', 'about', 'arriving'],
           correctAnswer: 'My boss never complains about arriving late',
-          explanation: 'El adverbio de frecuencia "never" va antes del verbo principal "complains".'
+          explanation: 'El adverb de frecuencia "never" va antes del verbo principal "complains".'
         },
         {
           id: 4,
           words: ['The', 'were', 'decorated', 'rooms', 'beautifully', 'hotel'],
           correctAnswer: 'The hotel rooms were beautifully decorated',
-          explanation: 'El adverbio "beautifully" modifica al participio "decorated". Orden: Sujeto + be + adverb + participio.'
+          explanation: 'El adverb "beautifully" modifica al participio "decorated". Orden: Sujeto + be + adverb + participio.'
         },
         {
           id: 5,
           words: ['month', 'They', 'moving', 'next', 'are', 'house', 'to', 'a', 'new'],
           correctAnswer: 'They are moving to a new house next month',
-          explanation: 'La expresión temporal "next month" va al final. Orden: Sujeto + verbo + complemento + tiempo.'
+          explanation: 'La expresión temporal "next month" va at the end. Orden: Sujeto + verbo + complemento + tiempo.'
         },
         {
           id: 6,
@@ -217,7 +217,7 @@ export const examData4 = {
           sentence: 'Have you ever / even been to Japan?',
           options: ['ever', 'even'],
           correctAnswer: 'ever',
-          explanation: '"Ever" se usa en preguntas para hablar sobre experiencias. "Even" significa "incluso".'
+          explanation: '"Ever" is used in questions to talk about experiences. "Even" means "even".'
         },
         {
           id: 2,
@@ -238,21 +238,21 @@ export const examData4 = {
           sentence: "It's 11 PM and he yet / still hasn't finished his homework.",
           options: ['yet', 'still'],
           correctAnswer: 'still',
-          explanation: '"Still" se usa para expresar que algo continúa. "Yet" se usa al final de negativas y preguntas.'
+          explanation: '"Still" se usa to express that something continues. "Yet" se usa at the end de negativas y preguntas.'
         },
         {
           id: 5,
           sentence: 'We had many problems but at the end / in the end everything worked out fine.',
           options: ['at the end', 'in the end'],
           correctAnswer: 'in the end',
-          explanation: '"In the end" significa "finalmente". "At the end" se refiere al final de algo específico.'
+          explanation: '"In the end" significa "finalmente". "At the end" se refiere at the end de algo specific.'
         },
         {
           id: 6,
           sentence: 'The car nearly / near crashed into the wall but the driver stopped just in time.',
           options: ['nearly', 'near'],
           correctAnswer: 'nearly',
-          explanation: '"Nearly" significa "casi" (adverbio). "Near" significa "cerca".'
+          explanation: '"Nearly" means "almost" (adverb). "Near" means "near".'
         }
       ]
     },
@@ -281,7 +281,7 @@ export const examData4 = {
           sentence: "A: They bought a new car yesterday.\nB: Did / Have they? What model?",
           options: ['Did', 'Have'],
           correctAnswer: 'Did',
-          explanation: 'Usamos "Did they?" para responder a Past Simple (bought). "Have they?" se usa con Present Perfect.'
+          explanation: 'We use "Did they?" para responder a Past Simple (bought). "Have they?" se usa con Present Perfect.'
         },
         {
           id: 4,
@@ -295,7 +295,7 @@ export const examData4 = {
           sentence: "By the time you arrive, we'll have finished / be finishing lunch.",
           options: ["we'll have finished", "be finishing"],
           correctAnswer: "we'll have finished",
-          explanation: 'Usamos Future Perfect "will have finished" con "by the time" para indicar acción completa antes de ese momento.'
+          explanation: 'We use Future Perfect "will have finished" con "by the time" para indicar acción completa antes de ese momento.'
         },
         {
           id: 6,
@@ -309,28 +309,28 @@ export const examData4 = {
           sentence: "Lisa won't arrive early. She's punctual rarely / rarely punctual.",
           options: ["punctual rarely", "rarely punctual"],
           correctAnswer: 'rarely punctual',
-          explanation: 'El adverbio "rarely" va antes del adjetivo "punctual". Orden: adverb + adjective.'
+          explanation: 'El adverb "rarely" va antes del adjetivo "punctual". Orden: adverb + adjective.'
         },
         {
           id: 8,
           sentence: "Tom doesn't drink coffee, and neither will / does his wife.",
           options: ['will', 'does'],
           correctAnswer: 'does',
-          explanation: 'Usamos "neither + auxiliary + subject" con el mismo tiempo. Como usa "doesn\'t" (presente), usamos "does".'
+          explanation: 'We use "neither + auxiliary + subject" con el mismo tiempo. Como usa "doesn\'t" (presente), usamos "does".'
         },
         {
           id: 9,
           sentence: 'I did send / sent you the email. Check your spam folder.',
           options: ['did send', 'sent'],
           correctAnswer: 'did send',
-          explanation: 'Usamos "did + infinitive" para enfatizar. "I did send" = "Sí lo envié" (énfasis).'
+          explanation: 'We use "did + infinitive" para enfatizar. "I did send" = "Sí lo envié" (énfasis).'
         },
         {
           id: 10,
           sentence: "I enjoy horror movies, but my friend does / doesn't.",
           options: ['does', "doesn't"],
           correctAnswer: "doesn't",
-          explanation: '"But" indica contraste. Si a mí me gusta, a mi amigo NO. Usamos "doesn\'t" para el contraste.'
+          explanation: '"But" indica contraste. Si a mí me gusta, a mi amigo NO. We use "doesn\'t" para el contraste.'
         }
       ]
     },
