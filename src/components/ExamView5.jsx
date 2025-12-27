@@ -253,12 +253,12 @@ const ExamView5 = () => {
   };
 
   const generateAIPrompt = () => {
-    let prompt = `Actúa como un profesor de inglés nivel B2. He completado un examen y necesito que analices mis errores y me expliques qué conceptos debo reforzar.\n\n`;
-    prompt += `📊 RESULTADOS:\n`;
-    prompt += `- Correctas: ${score.correct}/${totalExercises}\n`;
-    prompt += `- Incorrectas: ${score.incorrect}/${totalExercises}\n`;
-    prompt += `- Puntuación: ${Math.round((score.correct / totalExercises) * 100)}%\n\n`;
-    prompt += `📝 MIS RESPUESTAS:\n\n`;
+    let prompt = `Act as a B2 level English teacher. I have completed an exam and I need you to analyze my mistakes and explain which concepts I should reinforce.\n\n`;
+    prompt += `📊 RESULTS:\n`;
+    prompt += `- Correct: ${score.correct}/${totalExercises}\n`;
+    prompt += `- Incorrect: ${score.incorrect}/${totalExercises}\n`;
+    prompt += `- Score: ${Math.round((score.correct / totalExercises) * 100)}%\n\n`;
+    prompt += `📝 MY ANSWERS:\n\n`;
 
     sections.forEach((section, sectionIdx) => {
       prompt += `## ${section.title}\n\n`;
@@ -407,7 +407,7 @@ const ExamView5 = () => {
       return (
         <div className="space-y-4">
           <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-htb-green mb-2">Palabras disponibles:</p>
+            <p className="text-sm font-semibold text-htb-green mb-2">Available words:</p>
             <div className="flex flex-wrap gap-2">
               {currentExercise.words.map((word, index) => (
                 <span
@@ -422,7 +422,7 @@ const ExamView5 = () => {
 
           <div className="space-y-2">
             <label className="block text-sm font-semibold text-htb-text">
-              Escribe la oración en el orden correcto:
+              Write the sentence in the correct order:
             </label>
             <input
               ref={inputRef}
@@ -451,7 +451,7 @@ const ExamView5 = () => {
 
           <div className="space-y-2">
             <label className="block text-sm font-semibold text-htb-text">
-              Completa la palabra (primera letra: {currentExercise.firstLetter.toUpperCase()}):
+              Complete the word (first letter: {currentExercise.firstLetter.toUpperCase()}):
             </label>
             <input
               ref={inputRef}
@@ -480,7 +480,7 @@ const ExamView5 = () => {
 
         <div className="space-y-2">
           <label className="block text-sm font-semibold text-htb-text">
-            Tu respuesta:
+            Your answer:
           </label>
           <input
             ref={inputRef}
@@ -489,7 +489,7 @@ const ExamView5 = () => {
             onChange={(e) => setUserAnswer(e.target.value)}
             disabled={feedback !== null}
             className="w-full px-4 py-3 border-2 border-gray-700 bg-htb-bg rounded-lg focus:outline-none focus:ring-2 focus:ring-htb-green text-white"
-            placeholder="Escribe tu respuesta..."
+            placeholder="Write your answer..."
             onKeyPress={(e) => e.key === 'Enter' && !feedback && checkAnswer()}
           />
         </div>
@@ -671,7 +671,7 @@ const ExamView5 = () => {
               disabled={isLastExercise}
               className="bg-htb-sidebar hover:bg-gray-700 disabled:bg-gray-800 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:transform-none disabled:opacity-50"
             >
-              Siguiente →
+              Next →
             </button>
           </div>
           
@@ -680,7 +680,7 @@ const ExamView5 = () => {
               onClick={finishExam}
               className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
-              🏁 Finalizar Examen
+              🏁 Finish Exam
             </button>
           )}
         </div>
@@ -688,7 +688,7 @@ const ExamView5 = () => {
 
       {/* Stepper Navigation */}
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4">
-        <p className="text-xs text-htb-text-dim text-center mb-3">Haz clic en cualquier ejercicio para navegar</p>
+        <p className="text-xs text-htb-text-dim text-center mb-3">Click on any exercise to navigate</p>
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
           {sections.map((section, sectionIdx) => 
             section.exercises.map((exercise, exerciseIdx) => {
@@ -720,15 +720,15 @@ const ExamView5 = () => {
         <div className="mt-3 flex items-center justify-center gap-4 text-xs text-htb-text">
           <div className="flex items-center gap-1">
             <div className="w-4 h-4 bg-htb-green rounded"></div>
-            <span>Actual</span>
+            <span>Current</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-4 h-4 bg-htb-green/20 border border-htb-green/30 rounded"></div>
-            <span>Respondida</span>
+            <span>Answered</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-4 h-4 bg-htb-sidebar border border-gray-700 rounded"></div>
-            <span>Pendiente</span>
+            <span>Pending</span>
           </div>
         </div>
       </div>
