@@ -1288,6 +1288,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       Expressions and Idioms
                     </button>
                     <button
+                      onClick={() => onSelectTense('utensils-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'utensils-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Utensils
+                    </button>
+                    <button
                       onClick={() => onSelectTense('adjectives')}
                       className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
                         selectedTense === 'adjectives'

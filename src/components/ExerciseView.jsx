@@ -59,6 +59,7 @@ import VerbsPhrasesC1Exercise from './VerbsPhrasesC1Exercise';
 import AnimalsBirdsInsectsC1Exercise from './AnimalsBirdsInsectsC1Exercise';
 import AnimalIssuesC1Exercise from './AnimalIssuesC1Exercise';
 import ExpressionsIdiomsC1Exercise from './ExpressionsIdiomsC1Exercise';
+import UtensilsC1Exercise from './UtensilsC1Exercise';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -314,6 +315,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es expressions-idioms-c1, mostrar el componente ExpressionsIdiomsC1Exercise
   if (tenseId === 'expressions-idioms-c1') {
     return <ExpressionsIdiomsC1Exercise />;
+  }
+
+  // Si es utensils-c1, mostrar el componente UtensilsC1Exercise
+  if (tenseId === 'utensils-c1') {
+    return <UtensilsC1Exercise />;
   }
 
   // Si es adjectives-c1, mostrar el componente AdjectivesC1Exercise
