@@ -38,6 +38,9 @@ import VerbObjectInfinitiveGerundC1Exercise from './VerbObjectInfinitiveGerundC1
 import ConditionalSentencesC1Exercise from './ConditionalSentencesC1Exercise';
 import PermissionObligationC1Exercise from './PermissionObligationC1Exercise';
 import VerbsSensesC1Exercise from './VerbsSensesC1Exercise';
+import GerundsInfinitivesC1Exercise from './GerundsInfinitivesC1Exercise';
+import FuturePlansC1Exercise from './FuturePlansC1Exercise';
+import EllipsisC1Exercise from './EllipsisC1Exercise';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -193,6 +196,21 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es verbs-senses-c1, mostrar el componente VerbsSensesC1Exercise
   if (tenseId === 'verbs-senses-c1') {
     return <VerbsSensesC1Exercise />;
+  }
+
+  // Si es gerunds-infinitives-c1, mostrar el componente GerundsInfinitivesC1Exercise
+  if (tenseId === 'gerunds-infinitives-c1') {
+    return <GerundsInfinitivesC1Exercise />;
+  }
+
+  // Si es future-plans-c1, mostrar el componente FuturePlansC1Exercise
+  if (tenseId === 'future-plans-c1') {
+    return <FuturePlansC1Exercise />;
+  }
+
+  // Si es ellipsis-c1, mostrar el componente EllipsisC1Exercise
+  if (tenseId === 'ellipsis-c1') {
+    return <EllipsisC1Exercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado

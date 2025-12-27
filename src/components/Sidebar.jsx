@@ -1035,6 +1035,36 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Verbs of the Senses
                     </button>
+                    <button
+                      onClick={() => onSelectTense('gerunds-infinitives-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'gerunds-infinitives-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Gerunds & Infinitives
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('future-plans-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'future-plans-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Future Plans & Arrangements
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('ellipsis-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'ellipsis-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Ellipsis
+                    </button>
                   </div>
                 )}
 
