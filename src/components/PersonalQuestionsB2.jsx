@@ -227,31 +227,31 @@ const PersonalQuestionsB2 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-8">
+    <div className="min-h-screen bg-htb-bg text-white p-4 sm:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+        <div className="mb-8 sm:mb-12 text-center">
+          <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-htb-green">
             B2 Personal Questions & Answers
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+          <p className="text-lg sm:text-xl text-htb-text max-w-3xl mx-auto mb-6">
             Practice answering common personal and interview questions with detailed sample answers.
             Learn how to structure responses, use advanced vocabulary, and speak naturally at B2 level.
           </p>
-          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <div className="bg-blue-900/30 border border-blue-500/50 rounded-lg p-4">
-              <p className="text-blue-200 text-sm">
-                💡 <strong>Tip:</strong> Don't memorize answers! Use these as examples to develop your own authentic responses.
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
+              <p className="text-htb-text text-sm">
+                💡 <strong className="text-htb-green">Tip:</strong> Don't memorize answers! Use these as examples to develop your own authentic responses.
               </p>
             </div>
-            <div className="bg-green-900/30 border border-green-500/50 rounded-lg p-4">
-              <p className="text-green-200 text-sm">
-                🎯 <strong>Strategy:</strong> Include specific details and examples to make your answers more interesting and believable.
+            <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
+              <p className="text-htb-text text-sm">
+                🎯 <strong className="text-htb-green">Strategy:</strong> Include specific details and examples to make your answers more interesting and believable.
               </p>
             </div>
-            <div className="bg-purple-900/30 border border-purple-500/50 rounded-lg p-4">
-              <p className="text-purple-200 text-sm">
-                📝 <strong>Practice:</strong> Record yourself answering these questions to improve fluency and pronunciation.
+            <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
+              <p className="text-htb-text text-sm">
+                📝 <strong className="text-htb-green">Practice:</strong> Record yourself answering these questions to improve fluency and pronunciation.
               </p>
             </div>
           </div>
@@ -259,13 +259,13 @@ const PersonalQuestionsB2 = () => {
 
         {/* Question Categories */}
         {questionCategories.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="mb-12">
-            <div className={`${category.color} p-6 rounded-t-lg border-b-4 border-green-500`}>
+          <div key={categoryIndex} className="mb-8 sm:mb-12">
+            <div className="bg-htb-sidebar p-4 sm:p-6 rounded-t-lg border-b-4 border-htb-green">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-4xl">{category.icon}</span>
-                <h2 className="text-3xl font-bold">{category.category}</h2>
+                <span className="text-3xl sm:text-4xl">{category.icon}</span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white">{category.category}</h2>
               </div>
-              <p className="text-gray-200 text-lg">{category.description}</p>
+              <p className="text-htb-text text-base sm:text-lg">{category.description}</p>
             </div>
 
             <div className="space-y-4 mt-6">
@@ -277,21 +277,21 @@ const PersonalQuestionsB2 = () => {
                 return (
                   <div
                     key={questionIndex}
-                    className="bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:border-green-500 transition-all duration-300"
+                    className="bg-htb-card border border-gray-800 rounded-lg overflow-hidden hover:border-htb-green transition-all duration-300"
                   >
                     {/* Question Header */}
                     <button
                       onClick={() => toggleQuestion(categoryIndex, questionIndex)}
-                      className="w-full p-6 flex items-center justify-between hover:bg-gray-800/70 transition-colors"
+                      className="w-full p-4 sm:p-6 flex items-center justify-between hover:bg-htb-sidebar transition-colors"
                     >
-                      <div className="flex items-center gap-4">
-                        <span className="text-2xl">{isExpanded ? '📖' : '❓'}</span>
-                        <h3 className="text-xl font-bold text-green-400 text-left">
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <span className="text-xl sm:text-2xl">{isExpanded ? '📖' : '❓'}</span>
+                        <h3 className="text-lg sm:text-xl font-bold text-htb-green text-left">
                           {item.question}
                         </h3>
                       </div>
                       <svg
-                        className={`w-6 h-6 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                        className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform ${isExpanded ? 'rotate-180' : ''} text-htb-green`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -302,18 +302,18 @@ const PersonalQuestionsB2 = () => {
 
                     {/* Expanded Content */}
                     {isExpanded && (
-                      <div className="p-6 pt-0 space-y-6">
+                      <div className="p-4 sm:p-6 pt-0 space-y-4 sm:space-y-6">
                         {/* Sample Answer */}
-                        <div className="bg-gray-900/50 p-5 rounded-lg border-l-4 border-green-500">
+                        <div className="bg-htb-sidebar p-4 sm:p-5 rounded-lg border-l-4 border-htb-green">
                           <div className="flex justify-between items-start mb-3">
-                            <h4 className="text-lg font-semibold text-blue-300">📝 Sample Answer:</h4>
+                            <h4 className="text-base sm:text-lg font-semibold text-htb-green">📝 Sample Answer:</h4>
                             <button
                               onClick={() => copyToClipboard(item.sampleAnswer, `answer-${uniqueIndex}`)}
-                              className="text-gray-400 hover:text-green-400 transition-colors"
+                              className="text-htb-text-dim hover:text-htb-green transition-colors"
                               title="Copy answer"
                             >
                               {copiedIndex === `answer-${uniqueIndex}` ? (
-                                <span className="text-green-400 text-sm">✓ Copied!</span>
+                                <span className="text-htb-green text-sm">✓ Copied!</span>
                               ) : (
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -321,19 +321,19 @@ const PersonalQuestionsB2 = () => {
                               )}
                             </button>
                           </div>
-                          <p className="text-gray-200 leading-relaxed italic">
+                          <p className="text-htb-text text-sm sm:text-base leading-relaxed italic">
                             "{item.sampleAnswer}"
                           </p>
                         </div>
 
                         {/* Key Vocabulary */}
-                        <div className="bg-purple-900/20 p-4 rounded-lg">
-                          <h4 className="text-md font-semibold text-purple-300 mb-3">🔑 Key Vocabulary & Expressions:</h4>
+                        <div className="bg-htb-sidebar border border-gray-800 p-4 rounded-lg">
+                          <h4 className="text-sm sm:text-md font-semibold text-htb-green mb-3">🔑 Key Vocabulary & Expressions:</h4>
                           <div className="flex flex-wrap gap-2">
                             {item.keyVocabulary.map((vocab, vIdx) => (
                               <span
                                 key={vIdx}
-                                className="bg-purple-900/50 text-purple-200 px-3 py-1 rounded-full text-sm border border-purple-500/30"
+                                className="bg-htb-card text-htb-text px-3 py-1 rounded-full text-xs sm:text-sm border border-gray-800"
                               >
                                 {vocab}
                               </span>
@@ -342,12 +342,12 @@ const PersonalQuestionsB2 = () => {
                         </div>
 
                         {/* Grammar Points */}
-                        <div className="bg-blue-900/20 p-4 rounded-lg">
-                          <h4 className="text-md font-semibold text-blue-300 mb-3">📚 Grammar Points:</h4>
+                        <div className="bg-htb-sidebar border border-gray-800 p-4 rounded-lg">
+                          <h4 className="text-sm sm:text-md font-semibold text-htb-green mb-3">📚 Grammar Points:</h4>
                           <ul className="space-y-2">
                             {item.grammarPoints.map((point, gIdx) => (
-                              <li key={gIdx} className="text-gray-200 flex items-start gap-2">
-                                <span className="text-blue-400 mt-1">▸</span>
+                              <li key={gIdx} className="text-htb-text text-sm sm:text-base flex items-start gap-2">
+                                <span className="text-htb-green mt-1">▸</span>
                                 <span>{point}</span>
                               </li>
                             ))}
@@ -355,9 +355,9 @@ const PersonalQuestionsB2 = () => {
                         </div>
 
                         {/* Tips */}
-                        <div className="bg-green-900/20 p-4 rounded-lg border border-green-500/30">
-                          <h4 className="text-md font-semibold text-green-300 mb-2">💡 Answer Tips:</h4>
-                          <p className="text-gray-200 text-sm">{item.tips}</p>
+                        <div className="bg-htb-sidebar border border-htb-green/30 p-4 rounded-lg">
+                          <h4 className="text-sm sm:text-md font-semibold text-htb-green mb-2">💡 Answer Tips:</h4>
+                          <p className="text-htb-text text-xs sm:text-sm">{item.tips}</p>
                         </div>
                       </div>
                     )}
@@ -369,12 +369,12 @@ const PersonalQuestionsB2 = () => {
         ))}
 
         {/* General Tips Section */}
-        <div className="mt-12 bg-gradient-to-r from-green-900/30 to-blue-900/30 border border-green-500/50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold mb-6 text-green-400">General Tips for Answering Personal Questions</h2>
-          <div className="grid md:grid-cols-2 gap-6 text-gray-200">
+        <div className="mt-8 sm:mt-12 bg-htb-sidebar border border-htb-green/30 rounded-lg p-4 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-htb-green">General Tips for Answering Personal Questions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-htb-text">
             <div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-300">✓ Do:</h3>
-              <ul className="space-y-2 list-disc list-inside">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-htb-green">✓ Do:</h3>
+              <ul className="space-y-2 list-disc list-inside text-sm sm:text-base">
                 <li>Be specific and give examples to support your points</li>
                 <li>Use a variety of tenses appropriately (past, present, future)</li>
                 <li>Include feelings and personal reflections</li>
@@ -385,8 +385,8 @@ const PersonalQuestionsB2 = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3 text-red-300">✗ Don't:</h3>
-              <ul className="space-y-2 list-disc list-inside">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-red-400">✗ Don't:</h3>
+              <ul className="space-y-2 list-disc list-inside text-sm sm:text-base">
                 <li>Give one-word or very short answers</li>
                 <li>Memorize answers word-for-word (sounds unnatural)</li>
                 <li>Use only simple vocabulary and grammar</li>
@@ -400,42 +400,42 @@ const PersonalQuestionsB2 = () => {
         </div>
 
         {/* Interview-Specific Tips */}
-        <div className="mt-8 bg-red-900/20 border border-red-500/50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold mb-6 text-red-400">Job Interview Success Tips</h2>
-          <div className="space-y-4 text-gray-200">
-            <div className="bg-gray-800/50 p-4 rounded">
-              <h4 className="text-lg font-semibold text-yellow-300 mb-2">🎯 STAR Method</h4>
-              <p className="mb-2">For behavioral questions, use the STAR structure:</p>
-              <ul className="list-disc list-inside space-y-1 ml-4">
+        <div className="mt-6 sm:mt-8 bg-htb-sidebar border border-htb-green/30 rounded-lg p-4 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-htb-green">Job Interview Success Tips</h2>
+          <div className="space-y-4 text-htb-text">
+            <div className="bg-htb-card border border-gray-800 p-4 rounded">
+              <h4 className="text-base sm:text-lg font-semibold text-htb-green mb-2">🎯 STAR Method</h4>
+              <p className="mb-2 text-sm sm:text-base">For behavioral questions, use the STAR structure:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4 text-sm sm:text-base">
                 <li><strong>Situation:</strong> Set the context</li>
                 <li><strong>Task:</strong> Describe your responsibility</li>
                 <li><strong>Action:</strong> Explain what you did</li>
                 <li><strong>Result:</strong> Share the outcomes and what you learned</li>
               </ul>
             </div>
-            <div className="bg-gray-800/50 p-4 rounded">
-              <h4 className="text-lg font-semibold text-yellow-300 mb-2">🔍 Research is Key</h4>
-              <p>Before the interview, research the company thoroughly: their values, recent news, products/services, and culture. Reference this knowledge in your answers to show genuine interest.</p>
+            <div className="bg-htb-card border border-gray-800 p-4 rounded">
+              <h4 className="text-base sm:text-lg font-semibold text-htb-green mb-2">🔍 Research is Key</h4>
+              <p className="text-sm sm:text-base">Before the interview, research the company thoroughly: their values, recent news, products/services, and culture. Reference this knowledge in your answers to show genuine interest.</p>
             </div>
-            <div className="bg-gray-800/50 p-4 rounded">
-              <h4 className="text-lg font-semibold text-yellow-300 mb-2">💬 Body Language Matters</h4>
-              <p>Maintain eye contact, sit up straight, smile, and use hand gestures naturally. Your non-verbal communication is just as important as your words.</p>
+            <div className="bg-htb-card border border-gray-800 p-4 rounded">
+              <h4 className="text-base sm:text-lg font-semibold text-htb-green mb-2">💬 Body Language Matters</h4>
+              <p className="text-sm sm:text-base">Maintain eye contact, sit up straight, smile, and use hand gestures naturally. Your non-verbal communication is just as important as your words.</p>
             </div>
-            <div className="bg-gray-800/50 p-4 rounded">
-              <h4 className="text-lg font-semibold text-yellow-300 mb-2">⏰ Practice Timing</h4>
-              <p>Aim for 1-2 minute answers for most questions. Too short seems unprepared; too long can lose the interviewer's attention. Practice timing yourself!</p>
+            <div className="bg-htb-card border border-gray-800 p-4 rounded">
+              <h4 className="text-base sm:text-lg font-semibold text-htb-green mb-2">⏰ Practice Timing</h4>
+              <p className="text-sm sm:text-base">Aim for 1-2 minute answers for most questions. Too short seems unprepared; too long can lose the interviewer's attention. Practice timing yourself!</p>
             </div>
           </div>
         </div>
 
         {/* Practice Suggestion */}
-        <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-500/50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4 text-purple-300">Ready to Practice?</h2>
-          <p className="text-gray-200 mb-4">
+        <div className="mt-6 sm:mt-8 bg-htb-sidebar border border-htb-green/30 rounded-lg p-4 sm:p-8 text-center">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-htb-green">Ready to Practice?</h2>
+          <p className="text-htb-text mb-4 text-sm sm:text-base">
             Record yourself answering these questions and compare your responses to the sample answers. 
             Focus on using natural intonation, appropriate vocabulary, and clear structure.
           </p>
-          <p className="text-sm text-gray-400 italic">
+          <p className="text-xs sm:text-sm text-htb-text-dim italic">
             Total questions covered: {questionCategories.reduce((acc, cat) => acc + cat.questions.length, 0)} across {questionCategories.length} categories
           </p>
         </div>
