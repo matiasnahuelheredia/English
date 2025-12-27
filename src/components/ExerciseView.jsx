@@ -41,6 +41,9 @@ import VerbsSensesC1Exercise from './VerbsSensesC1Exercise';
 import GerundsInfinitivesC1Exercise from './GerundsInfinitivesC1Exercise';
 import FuturePlansC1Exercise from './FuturePlansC1Exercise';
 import EllipsisC1Exercise from './EllipsisC1Exercise';
+import CompoundPossessiveNounsC1Exercise from './CompoundPossessiveNounsC1Exercise';
+import CleftSentencesC1Exercise from './CleftSentencesC1Exercise';
+import RelativeClausesC1Exercise from './RelativeClausesC1Exercise';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -211,6 +214,21 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es ellipsis-c1, mostrar el componente EllipsisC1Exercise
   if (tenseId === 'ellipsis-c1') {
     return <EllipsisC1Exercise />;
+  }
+
+  // Si es compound-possessive-nouns-c1, mostrar el componente CompoundPossessiveNounsC1Exercise
+  if (tenseId === 'compound-possessive-nouns-c1') {
+    return <CompoundPossessiveNounsC1Exercise />;
+  }
+
+  // Si es cleft-sentences-c1, mostrar el componente CleftSentencesC1Exercise
+  if (tenseId === 'cleft-sentences-c1') {
+    return <CleftSentencesC1Exercise />;
+  }
+
+  // Si es relative-clauses-c1, mostrar el componente RelativeClausesC1Exercise
+  if (tenseId === 'relative-clauses-c1') {
+    return <RelativeClausesC1Exercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado

@@ -1065,8 +1065,38 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Ellipsis
                     </button>
+                    <button
+                      onClick={() => onSelectTense('compound-possessive-nouns-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'compound-possessive-nouns-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Compound & Possessive Nouns
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('cleft-sentences-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'cleft-sentences-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Cleft Sentences
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('relative-clauses-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'relative-clauses-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Relative Clauses
+                    </button>
                   </div>
-                )}
+                )}}}}
 
                 {/* Writing Skills */}
                 <button
