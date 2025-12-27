@@ -28,21 +28,21 @@ const ExamView3 = () => {
     setUserAnswer(savedAnswer);
     setFeedback(null);
     
-    // Enfocar el input cuando cambia la pregunta
+    // Focus input when question changes
     if (inputRef.current) {
       inputRef.current.focus();
     }
   }, [currentSectionIndex, currentExerciseIndex]);
 
-  // Navegación con teclas de flecha
+  // Navigation with arrow keys
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Flecha derecha: siguiente pregunta
+      // Right arrow: next question
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         nextExercise();
       }
-      // Flecha izquierda: pregunta anterior
+      // Left arrow: previous question
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
         previousExercise();
@@ -69,7 +69,7 @@ const ExamView3 = () => {
     } else if (currentSection.type === 'fill-word') {
       isCorrect = userAnswerLower === currentExercise.correctAnswer.toLowerCase();
     } else {
-      // Para ejercicios con múltiples respuestas correctas
+      // For exercises with multiple correct answers
       const correctAnswers = Array.isArray(currentExercise.correctAnswer) 
         ? currentExercise.correctAnswer 
         : [currentExercise.correctAnswer];
