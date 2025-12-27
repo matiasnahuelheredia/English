@@ -109,27 +109,30 @@ const VerbBeA1Exercise = () => {
   const score = showResults ? calculateScore() : null;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          1A Verb <em>be</em> (singular); <em>I</em> and <em>you</em> (1)
-        </h1>
+    <div className="max-w-4xl mx-auto px-2 sm:px-4">
+      <div className="bg-htb-card rounded-lg border border-gray-800 p-4 sm:p-6 mb-4 sm:mb-6">
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex-1">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+              1A Verb <em className="text-htb-green">be</em> (singular); <em className="text-htb-green">I</em> and <em className="text-htb-green">you</em> (1)
+            </h2>
+            <p className="text-sm sm:text-base text-htb-text-dim">Choose the correct answer.</p>
+          </div>
+        </div>
 
         {showResults && (
-          <div className="mb-6 p-4 rounded-lg bg-blue-50 border-2 border-blue-300">
-            <p className="text-xl font-semibold text-gray-800 mb-2">
+          <div className="mb-6 p-4 rounded-lg bg-htb-sidebar border-2 border-htb-green">
+            <p className="text-xl font-semibold text-white mb-2">
               Score: {score}/6
             </p>
-            <ul className="list-disc list-inside text-gray-700">
+            <ul className="list-disc list-inside text-htb-text">
               <li>0-5 Please try again.</li>
               <li>6/6 - Well done!</li>
             </ul>
           </div>
         )}
 
-        <p className="text-gray-700 mb-6 font-medium">Choose the correct answer.</p>
-
-        <ol className="space-y-4 mb-6">
+        <div className="space-y-4 mb-6">
           {questions.map((question, index) => {
             const status = getAnswerStatus(question.id);
             const isCorrect = status === 'correct';
@@ -137,54 +140,55 @@ const VerbBeA1Exercise = () => {
             const shouldShowAnswer = status === 'show-answer';
 
             return (
-              <li key={question.id} className="flex items-center gap-2 text-lg">
-                <span className="text-gray-700">{question.text}</span>
+              <div key={question.id} className="flex items-center gap-2 text-base sm:text-lg bg-htb-sidebar p-3 rounded-lg border border-gray-800">
+                <span className="text-htb-text font-medium">{index + 1}.</span>
+                <span className="text-htb-text">{question.text}</span>
                 <select
                   id={question.id}
                   value={shouldShowAnswer ? question.correctAnswer : answers[question.id]}
                   onChange={(e) => handleAnswerChange(question.id, e.target.value)}
                   disabled={showAnswers}
-                  className={`px-3 py-1 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    isCorrect ? 'border-green-500 bg-green-50' :
-                    isIncorrect ? 'border-red-500 bg-red-50' :
-                    shouldShowAnswer ? 'border-blue-500 bg-blue-50' :
-                    'border-gray-300'
+                  className={`px-3 py-1.5 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-htb-green bg-htb-bg text-white transition-colors ${
+                    isCorrect ? 'border-htb-green bg-htb-green/20' :
+                    isIncorrect ? 'border-red-500 bg-red-500/20' :
+                    shouldShowAnswer ? 'border-htb-green bg-htb-green/20' :
+                    'border-gray-700 hover:border-htb-green/50'
                   }`}
                 >
                   {question.options.map((option, idx) => (
-                    <option key={idx} value={option === '...' ? '' : option}>
+                    <option key={idx} value={option === '...' ? '' : option} className="bg-htb-bg text-white">
                       {option}
                     </option>
                   ))}
                 </select>
                 {isCorrect && (
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-htb-green font-bold text-xl">✓</span>
                 )}
                 {isIncorrect && (
-                  <span className="text-red-600 font-bold">✗</span>
+                  <span className="text-red-500 font-bold text-xl">✗</span>
                 )}
-                <span className="text-gray-700">{question.afterText}</span>
-              </li>
+                <span className="text-htb-text">{question.afterText}</span>
+              </div>
             );
           })}
-        </ol>
+        </div>
 
         <div className="flex flex-wrap gap-3">
           <button
             onClick={handleScore}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="px-6 py-2 bg-htb-green text-htb-bg rounded-lg font-medium hover:bg-htb-green/90 transition-colors focus:outline-none focus:ring-2 focus:ring-htb-green focus:ring-offset-2 focus:ring-offset-htb-bg"
           >
             Score
           </button>
           <button
             onClick={handleStartAgain}
-            className="px-6 py-2 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            className="px-6 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-htb-bg border border-gray-600"
           >
             Start again
           </button>
           <button
             onClick={handleShowAnswers}
-            className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            className="px-6 py-2 bg-htb-sidebar text-htb-green rounded-lg font-medium hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-htb-green focus:ring-offset-2 focus:ring-offset-htb-bg border border-htb-green/30"
           >
             Show answers
           </button>
