@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Introduction = () => {
+  const navigate = useNavigate();
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -334,10 +336,10 @@ const Introduction = () => {
           Choose a topic from the sidebar to begin your journey toward mastering English for cybersecurity!
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-          <button className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
+          <button onClick={() => navigate('/exercise/present-simple')} className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
             🎯 Start with Present Simple
           </button>
-          <button className="bg-htb-sidebar hover:bg-gray-700 border border-htb-green/30 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
+          <button onClick={() => navigate('/exam/1')} className="bg-htb-sidebar hover:bg-gray-700 border border-htb-green/30 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
             📝 Take a Practice Exam
           </button>
         </div>
