@@ -44,6 +44,20 @@ import EllipsisC1Exercise from './EllipsisC1Exercise';
 import CompoundPossessiveNounsC1Exercise from './CompoundPossessiveNounsC1Exercise';
 import CleftSentencesC1Exercise from './CleftSentencesC1Exercise';
 import RelativeClausesC1Exercise from './RelativeClausesC1Exercise';
+import AdjectivesC1Exercise from './AdjectivesC1Exercise';
+import IdiomsC1Exercise from './IdiomsC1Exercise';
+import WorkVocabularyC1Exercise from './WorkVocabularyC1Exercise';
+import PhrasalVerbsC1Exercise from './PhrasalVerbsC1Exercise';
+import SoundsVoiceC1Exercise from './SoundsVoiceC1Exercise';
+import TimeExpressionsC1Exercise from './TimeExpressionsC1Exercise';
+import PrepositionsC1Exercise from './PrepositionsC1Exercise';
+import MoneyVocabularyC1Exercise from './MoneyVocabularyC1Exercise';
+import PhonesTechnologyC1Exercise from './PhonesTechnologyC1Exercise';
+import NegativePrefixesC1Exercise from './NegativePrefixesC1Exercise';
+import PrefixesMeaningsC1Exercise from './PrefixesMeaningsC1Exercise';
+import VerbsPhrasesC1Exercise from './VerbsPhrasesC1Exercise';
+import AnimalsBirdsInsectsC1Exercise from './AnimalsBirdsInsectsC1Exercise';
+import AnimalIssuesC1Exercise from './AnimalIssuesC1Exercise';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -229,6 +243,76 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es relative-clauses-c1, mostrar el componente RelativeClausesC1Exercise
   if (tenseId === 'relative-clauses-c1') {
     return <RelativeClausesC1Exercise />;
+  }
+
+  // Si es idioms-c1, mostrar el componente IdiomsC1Exercise
+  if (tenseId === 'idioms-c1') {
+    return <IdiomsC1Exercise />;
+  }
+
+  // Si es work-vocabulary-c1, mostrar el componente WorkVocabularyC1Exercise
+  if (tenseId === 'work-vocabulary-c1') {
+    return <WorkVocabularyC1Exercise />;
+  }
+
+  // Si es phrasal-verbs-c1, mostrar el componente PhrasalVerbsC1Exercise
+  if (tenseId === 'phrasal-verbs-c1') {
+    return <PhrasalVerbsC1Exercise />;
+  }
+
+  // Si es sounds-voice-c1, mostrar el componente SoundsVoiceC1Exercise
+  if (tenseId === 'sounds-voice-c1') {
+    return <SoundsVoiceC1Exercise />;
+  }
+
+  // Si es time-expressions-c1, mostrar el componente TimeExpressionsC1Exercise
+  if (tenseId === 'time-expressions-c1') {
+    return <TimeExpressionsC1Exercise />;
+  }
+
+  // Si es prepositions-c1, mostrar el componente PrepositionsC1Exercise
+  if (tenseId === 'prepositions-c1') {
+    return <PrepositionsC1Exercise />;
+  }
+
+  // Si es money-vocabulary-c1, mostrar el componente MoneyVocabularyC1Exercise
+  if (tenseId === 'money-vocabulary-c1') {
+    return <MoneyVocabularyC1Exercise />;
+  }
+
+  // Si es phones-technology-c1, mostrar el componente PhonesTechnologyC1Exercise
+  if (tenseId === 'phones-technology-c1') {
+    return <PhonesTechnologyC1Exercise />;
+  }
+
+  // Si es negative-prefixes-c1, mostrar el componente NegativePrefixesC1Exercise
+  if (tenseId === 'negative-prefixes-c1') {
+    return <NegativePrefixesC1Exercise />;
+  }
+
+  // Si es prefixes-meanings-c1, mostrar el componente PrefixesMeaningsC1Exercise
+  if (tenseId === 'prefixes-meanings-c1') {
+    return <PrefixesMeaningsC1Exercise />;
+  }
+
+  // Si es verbs-phrases-c1, mostrar el componente VerbsPhrasesC1Exercise
+  if (tenseId === 'verbs-phrases-c1') {
+    return <VerbsPhrasesC1Exercise />;
+  }
+
+  // Si es animals-birds-insects-c1, mostrar el componente AnimalsBirdsInsectsC1Exercise
+  if (tenseId === 'animals-birds-insects-c1') {
+    return <AnimalsBirdsInsectsC1Exercise />;
+  }
+
+  // Si es animal-issues-c1, mostrar el componente AnimalIssuesC1Exercise
+  if (tenseId === 'animal-issues-c1') {
+    return <AnimalIssuesC1Exercise />;
+  }
+
+  // Si es adjectives-c1, mostrar el componente AdjectivesC1Exercise
+  if (tenseId === 'adjectives-c1') {
+    return <AdjectivesC1Exercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado

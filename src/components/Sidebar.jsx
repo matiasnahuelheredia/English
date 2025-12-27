@@ -1138,6 +1138,146 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                 {expandedSections['Advanced-Vocabulary'] && (
                   <div className="ml-3 space-y-0.5">
                     <button
+                      onClick={() => onSelectTense('adjectives-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'adjectives-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Adjectives
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('idioms-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'idioms-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Idioms
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('work-vocabulary-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'work-vocabulary-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Work
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('phrasal-verbs-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'phrasal-verbs-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Phrasal Verbs
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('sounds-voice-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'sounds-voice-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Sounds and the Human Voice
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('time-expressions-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'time-expressions-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Time Expressions
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('prepositions-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'prepositions-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Prepositions
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('money-vocabulary-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'money-vocabulary-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Money
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('phones-technology-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'phones-technology-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Phones and Technology (New)
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('negative-prefixes-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'negative-prefixes-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Negative Prefixes
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('prefixes-meanings-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'prefixes-meanings-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Prefixes with Other Meanings
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('verbs-phrases-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'verbs-phrases-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Verbs and Verb Phrases
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('animals-birds-insects-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'animals-birds-insects-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Animals, Birds & Insects
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('animal-issues-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'animal-issues-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Animal Issues
+                    </button>
+                    <button
                       onClick={() => onSelectTense('adjectives')}
                       className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
                         selectedTense === 'adjectives'
@@ -1145,7 +1285,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                           : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                       }`}
                     >
-                      Adjectives
+                      Adjectives (Old)
                     </button>
                     <button
                       onClick={() => onSelectTense('conflict-warfare')}
