@@ -149,21 +149,21 @@ const ExamView = () => {
     setUserAnswer(savedAnswer);
     setFeedback(null);
     
-    // Enfocar el input cuando cambia la pregunta
+    // Focus input when question changes
     if (inputRef.current) {
       inputRef.current.focus();
     }
   }, [currentSectionIndex, currentExerciseIndex]);
 
-  // Navegación con teclas de flecha
+  // Navigation with arrow keys
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Flecha derecha: siguiente pregunta
+      // Right arrow: next question
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         nextExercise();
       }
-      // Flecha izquierda: pregunta anterior
+      // Left arrow: previous question
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
         previousExercise();
