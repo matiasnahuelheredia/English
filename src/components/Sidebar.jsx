@@ -925,6 +925,116 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Pronouns
                     </button>
+                    <button
+                      onClick={() => onSelectTense('past-tenses-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'past-tenses-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      The Past: Habitual Events
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('get-verb-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'get-verb-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Get (verb)
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('discourse-markers-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'discourse-markers-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Discourse Markers
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('speculation-deduction-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'speculation-deduction-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Speculation & Deduction
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('inversion-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'inversion-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Inversion
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('distancing-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'distancing-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Distancing
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('unreal-past-tenses-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'unreal-past-tenses-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Unreal Past Tenses
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('verb-object-infinitive-gerund-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'verb-object-infinitive-gerund-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Verb + Object + Inf/Ger
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('conditional-sentences-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'conditional-sentences-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Conditional Sentences
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('permission-obligation-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'permission-obligation-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Permission & Obligation
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('verbs-senses-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'verbs-senses-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Verbs of the Senses
+                    </button>
                   </div>
                 )}
 

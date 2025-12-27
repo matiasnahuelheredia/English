@@ -27,6 +27,17 @@ import VerbBeA1Exercise from './VerbBeA1Exercise';
 import HaveHadC1Exercise from './HaveHadC1Exercise';
 import LinkersC1Exercise from './LinkersC1Exercise';
 import PronounsC1Exercise from './PronounsC1Exercise';
+import PastTensesC1Exercise from './PastTensesC1Exercise';
+import GetVerbC1Exercise from './GetVerbC1Exercise';
+import DiscourseMarkersC1Exercise from './DiscourseMarkersC1Exercise';
+import SpeculationDeductionC1Exercise from './SpeculationDeductionC1Exercise';
+import InversionC1Exercise from './InversionC1Exercise';
+import DistancingC1Exercise from './DistancingC1Exercise';
+import UnrealPastTensesC1Exercise from './UnrealPastTensesC1Exercise';
+import VerbObjectInfinitiveGerundC1Exercise from './VerbObjectInfinitiveGerundC1Exercise';
+import ConditionalSentencesC1Exercise from './ConditionalSentencesC1Exercise';
+import PermissionObligationC1Exercise from './PermissionObligationC1Exercise';
+import VerbsSensesC1Exercise from './VerbsSensesC1Exercise';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -127,6 +138,61 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es pronouns-c1, mostrar el componente PronounsC1Exercise
   if (tenseId === 'pronouns-c1') {
     return <PronounsC1Exercise />;
+  }
+
+  // Si es past-tenses-c1, mostrar el componente PastTensesC1Exercise
+  if (tenseId === 'past-tenses-c1') {
+    return <PastTensesC1Exercise />;
+  }
+
+  // Si es get-verb-c1, mostrar el componente GetVerbC1Exercise
+  if (tenseId === 'get-verb-c1') {
+    return <GetVerbC1Exercise />;
+  }
+
+  // Si es discourse-markers-c1, mostrar el componente DiscourseMarkersC1Exercise
+  if (tenseId === 'discourse-markers-c1') {
+    return <DiscourseMarkersC1Exercise />;
+  }
+
+  // Si es speculation-deduction-c1, mostrar el componente SpeculationDeductionC1Exercise
+  if (tenseId === 'speculation-deduction-c1') {
+    return <SpeculationDeductionC1Exercise />;
+  }
+
+  // Si es inversion-c1, mostrar el componente InversionC1Exercise
+  if (tenseId === 'inversion-c1') {
+    return <InversionC1Exercise />;
+  }
+
+  // Si es distancing-c1, mostrar el componente DistancingC1Exercise
+  if (tenseId === 'distancing-c1') {
+    return <DistancingC1Exercise />;
+  }
+
+  // Si es unreal-past-tenses-c1, mostrar el componente UnrealPastTensesC1Exercise
+  if (tenseId === 'unreal-past-tenses-c1') {
+    return <UnrealPastTensesC1Exercise />;
+  }
+
+  // Si es verb-object-infinitive-gerund-c1, mostrar el componente VerbObjectInfinitiveGerundC1Exercise
+  if (tenseId === 'verb-object-infinitive-gerund-c1') {
+    return <VerbObjectInfinitiveGerundC1Exercise />;
+  }
+
+  // Si es conditional-sentences-c1, mostrar el componente ConditionalSentencesC1Exercise
+  if (tenseId === 'conditional-sentences-c1') {
+    return <ConditionalSentencesC1Exercise />;
+  }
+
+  // Si es permission-obligation-c1, mostrar el componente PermissionObligationC1Exercise
+  if (tenseId === 'permission-obligation-c1') {
+    return <PermissionObligationC1Exercise />;
+  }
+
+  // Si es verbs-senses-c1, mostrar el componente VerbsSensesC1Exercise
+  if (tenseId === 'verbs-senses-c1') {
+    return <VerbsSensesC1Exercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
