@@ -77,9 +77,9 @@ const MatchExercise = ({ tenseId }) => {
 
   if (!exercise) {
     return (
-      <div className="bg-white rounded-lg shadow-md p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Weather Exercise</h2>
-        <p className="text-gray-600">Loading exercise...</p>
+      <div className="bg-htb-card border border-gray-800 rounded-lg p-8 text-center">
+        <h2 className="text-2xl font-bold mb-4 text-white">Weather Exercise</h2>
+        <p className="text-htb-text-dim">Loading exercise...</p>
       </div>
     );
   }
@@ -90,40 +90,40 @@ const MatchExercise = ({ tenseId }) => {
 
   return (
     <div className="max-w-4xl mx-auto px-2 sm:px-4">
-      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
+      <div className="bg-htb-card rounded-lg border border-gray-800 p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Weather Exercise</h2>
-            <p className="text-sm sm:text-base text-gray-600">{exercise.instruction}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Weather Exercise</h2>
+            <p className="text-sm sm:text-base text-htb-text-dim">{exercise.instruction}</p>
           </div>
 
           <div className="flex items-center gap-4 text-sm ml-4">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <span className="font-semibold text-green-700">{stats.correct}</span>
-              <span className="text-gray-600">Correct</span>
+              <div className="w-3 h-3 rounded-full bg-htb-green"></div>
+              <span className="font-semibold text-htb-green">{stats.correct}</span>
+              <span className="text-htb-text-dim">Correct</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <span className="font-semibold text-red-700">{stats.incorrect}</span>
-              <span className="text-gray-600">Incorrect</span>
+              <span className="font-semibold text-red-500">{stats.incorrect}</span>
+              <span className="text-htb-text-dim">Incorrect</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+      <div className="bg-htb-card rounded-lg border border-gray-800 p-4 sm:p-6">
         {/* Available Words Bank */}
-        <div className="mb-6 p-4 bg-gray-50 border-2 border-gray-300 rounded-lg">
-          <h3 className="text-sm font-semibold text-gray-700 mb-3 uppercase">Available Words</h3>
+        <div className="mb-6 p-4 bg-htb-sidebar border-2 border-gray-700 rounded-lg">
+          <h3 className="text-sm font-semibold text-htb-text mb-3 uppercase">Available Words</h3>
           <div className="flex flex-wrap gap-2">
             {availableWords.map((word, index) => (
               <button
                 key={index}
                 className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
                   isWordUsed(word)
-                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-50'
-                    : 'bg-blue-500 text-white hover:bg-blue-600 hover:shadow-lg transform hover:scale-105'
+                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed opacity-50'
+                    : 'bg-htb-green text-htb-bg hover:bg-htb-green/90 hover:shadow-lg transform hover:scale-105'
                 }`}
                 disabled={isWordUsed(word) || feedback}
               >
@@ -146,13 +146,13 @@ const MatchExercise = ({ tenseId }) => {
                 className={`p-4 border-2 rounded-lg transition-all duration-300 ${
                   feedback
                     ? isCorrect
-                      ? 'border-green-500 bg-green-50'
-                      : 'border-red-500 bg-red-50'
-                    : 'border-gray-300 hover:border-blue-400'
+                      ? 'border-htb-green bg-htb-green/10'
+                      : 'border-red-500 bg-red-500/10'
+                    : 'border-gray-700 hover:border-htb-green/50 bg-htb-sidebar'
                 }`}
               >
                 <div className="flex items-start gap-4">
-                  <span className="font-bold text-lg text-gray-700 min-w-[30px]">{definition.id}.</span>
+                  <span className="font-bold text-lg text-htb-text min-w-[30px]">{definition.id}.</span>
                   
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
@@ -161,18 +161,19 @@ const MatchExercise = ({ tenseId }) => {
                         value={selectedWord || ''}
                         onChange={(e) => handleWordClick(e.target.value, definition.id)}
                         disabled={feedback !== null}
-                        className={`px-4 py-2 border-2 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[180px] ${
+                        className={`px-4 py-2 border-2 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-htb-green min-w-[180px] bg-htb-bg ${
                           selectedWord
-                            ? 'bg-blue-100 border-blue-400 text-blue-700'
-                            : 'bg-white border-gray-300'
+                            ? 'border-htb-green text-htb-green'
+                            : 'border-gray-700 text-htb-text'
                         }`}
                       >
-                        <option value="">-- Select word --</option>
+                        <option value="" className="bg-htb-bg text-htb-text">-- Select word --</option>
                         {availableWords.map((word) => (
                           <option 
                             key={word} 
                             value={word}
                             disabled={isWordUsed(word) && userAnswers[definition.id] !== word}
+                            className="bg-htb-bg text-htb-text"
                           >
                             {word}
                           </option>
@@ -186,11 +187,11 @@ const MatchExercise = ({ tenseId }) => {
                       )}
                     </div>
 
-                    <p className="text-gray-700 italic">({definition.text})</p>
+                    <p className="text-htb-text italic">({definition.text})</p>
 
                     {showCorrectAnswer && (
-                      <p className="mt-2 text-sm text-green-700 font-semibold">
-                        Correct answer: <span className="text-green-800">{definition.answer}</span>
+                      <p className="mt-2 text-sm text-htb-green font-semibold">
+                        Correct answer: <span className="text-htb-green">{definition.answer}</span>
                       </p>
                     )}
                   </div>
@@ -205,14 +206,14 @@ const MatchExercise = ({ tenseId }) => {
           {!feedback ? (
             <button
               onClick={checkAnswers}
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              className="bg-htb-green hover:bg-htb-green/90 text-htb-bg px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
               Check Answers
             </button>
           ) : (
             <button
               onClick={nextExercise}
-              className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              className="bg-htb-green hover:bg-htb-green/90 text-htb-bg px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
               Next Exercise
             </button>
@@ -221,15 +222,15 @@ const MatchExercise = ({ tenseId }) => {
 
         {/* Feedback Summary */}
         {feedback && (
-          <div className="mt-6 p-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200">
-            <h3 className="font-bold text-lg mb-2 text-blue-900">Results</h3>
-            <p className="text-gray-700">
-              <span className="text-green-600 font-bold">{feedback.correct}</span> correct,{' '}
-              <span className="text-red-600 font-bold">{feedback.incorrect}</span> incorrect out of {exercise.definitions.length}
+          <div className="mt-6 p-4 rounded-lg bg-htb-sidebar border-2 border-htb-green/30">
+            <h3 className="font-bold text-lg mb-2 text-white">Results</h3>
+            <p className="text-htb-text">
+              <span className="text-htb-green font-bold">{feedback.correct}</span> correct,{' '}
+              <span className="text-red-500 font-bold">{feedback.incorrect}</span> incorrect out of {exercise.definitions.length}
             </p>
-            <div className="mt-2 h-4 bg-gray-200 rounded-full overflow-hidden">
+            <div className="mt-2 h-4 bg-gray-700 rounded-full overflow-hidden">
               <div
-                className="h-full bg-green-500 transition-all duration-500"
+                className="h-full bg-htb-green transition-all duration-500"
                 style={{ width: `${(feedback.correct / exercise.definitions.length) * 100}%` }}
               ></div>
             </div>
