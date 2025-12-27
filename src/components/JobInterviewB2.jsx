@@ -368,224 +368,222 @@ const JobInterviewB2 = () => {
   const progress = ((currentQuestionIndex + 1) / interviewQuestions.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 p-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-6 border border-white/20">
-          <h1 className="text-4xl font-bold text-white mb-4">Job Interview Practice - B2</h1>
-          <p className="text-blue-100 text-lg mb-4">
-            Practice answering common job interview questions in English. Read each question carefully, think about your answer, then click "Show Recommendation" to see expert advice and sample answers.
-          </p>
-          
-          {/* Progress Bar */}
-          <div className="mt-6">
-            <div className="flex justify-between text-sm text-blue-200 mb-2">
-              <span>Progress</span>
-              <span>Question {currentQuestionIndex + 1} of {interviewQuestions.length}</span>
-            </div>
-            <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-              <div 
-                className="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full transition-all duration-500 ease-out"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <div className="mt-2 text-sm text-blue-200">
-              {answeredQuestions.length} questions reviewed
-            </div>
+    <div className="max-w-5xl mx-auto px-2 sm:px-4">
+      {/* Header */}
+      <div className="bg-htb-card rounded-lg border border-gray-800 p-6 sm:p-8 mb-4 sm:mb-6">
+        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Job Interview Practice - B2</h1>
+        <p className="text-htb-text text-base sm:text-lg mb-4">
+          Practice answering common job interview questions in English. Read each question carefully, think about your answer, then click "Show Recommendation" to see expert advice and sample answers.
+        </p>
+        
+        {/* Progress Bar */}
+        <div className="mt-6">
+          <div className="flex justify-between text-sm text-htb-text-dim mb-2">
+            <span>Progress</span>
+            <span>Question {currentQuestionIndex + 1} of {interviewQuestions.length}</span>
+          </div>
+          <div className="w-full bg-htb-sidebar rounded-full h-3 overflow-hidden">
+            <div 
+              className="bg-htb-green h-3 rounded-full transition-all duration-500 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <div className="mt-2 text-sm text-htb-text-dim">
+            {answeredQuestions.length} questions reviewed
           </div>
         </div>
+      </div>
 
-        {/* Question Card */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-6 border border-white/20">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 bg-purple-600/50 rounded-full text-white text-sm font-semibold mb-4">
-              {currentQuestion.category}
-            </span>
-            <h2 className="text-3xl font-bold text-white mb-2">
-              Question #{currentQuestion.id}
-            </h2>
-          </div>
+      {/* Question Card */}
+      <div className="bg-htb-card rounded-lg border border-gray-800 p-6 sm:p-8 mb-4 sm:mb-6">
+        <div className="mb-6">
+          <span className="inline-block px-4 py-2 bg-htb-sidebar border border-htb-green/30 rounded-lg text-htb-green text-sm font-semibold mb-4">
+            {currentQuestion.category}
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+            Question #{currentQuestion.id}
+          </h2>
+        </div>
 
-          <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-xl p-8 mb-6 border-l-4 border-blue-400">
-            <p className="text-2xl text-white font-medium leading-relaxed">
-              "{currentQuestion.question}"
-            </p>
-          </div>
+        <div className="bg-htb-sidebar rounded-lg p-6 sm:p-8 mb-6 border-l-4 border-htb-green">
+          <p className="text-xl sm:text-2xl text-white font-medium leading-relaxed">
+            "{currentQuestion.question}"
+          </p>
+        </div>
 
-          {/* Think About Section */}
-          <div className="bg-amber-900/30 rounded-xl p-6 mb-6 border border-amber-400/30">
-            <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-              <span>💭</span> Take a moment to think...
-            </h3>
-            <ul className="space-y-2 text-amber-100">
-              <li>• How would you answer this question?</li>
-              <li>• What examples from your experience could you share?</li>
-              <li>• What key points would you want to highlight?</li>
-            </ul>
-          </div>
+        {/* Think About Section */}
+        <div className="bg-htb-sidebar/50 rounded-lg p-6 mb-6 border border-gray-700">
+          <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span>💭</span> Take a moment to think...
+          </h3>
+          <ul className="space-y-2 text-htb-text">
+            <li>• How would you answer this question?</li>
+            <li>• What examples from your experience could you share?</li>
+            <li>• What key points would you want to highlight?</li>
+          </ul>
+        </div>
 
-          {/* Show Recommendation Button */}
-          {!showRecommendation && (
-            <button
-              onClick={handleShowRecommendation}
-              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-green-500 hover:to-emerald-500 transition-all transform hover:scale-105 shadow-lg"
-            >
-              Show Recommendation & Sample Answer
-            </button>
-          )}
+        {/* Show Recommendation Button */}
+        {!showRecommendation && (
+          <button
+            onClick={handleShowRecommendation}
+            className="w-full bg-htb-green text-htb-bg py-4 px-6 rounded-lg font-semibold text-lg hover:bg-htb-green/90 transition-all transform hover:scale-105 shadow-lg"
+          >
+            Show Recommendation & Sample Answer
+          </button>
+        )}
 
-          {/* Recommendation Section */}
-          {showRecommendation && (
-            <div className="space-y-6 animate-fadeIn">
-              {/* Main Recommendation */}
-              <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-xl p-6 border border-green-400/30">
-                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                  <span>💡</span> How to Answer This Question
-                </h3>
-                <p className="text-green-100 leading-relaxed">
-                  {currentQuestion.recommendation}
+        {/* Recommendation Section */}
+        {showRecommendation && (
+          <div className="space-y-6 animate-fadeIn">
+            {/* Main Recommendation */}
+            <div className="bg-htb-sidebar rounded-lg p-6 border border-htb-green/30">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <span>💡</span> How to Answer This Question
+              </h3>
+              <p className="text-htb-text leading-relaxed">
+                {currentQuestion.recommendation}
+              </p>
+            </div>
+
+            {/* Tips */}
+            <div className="bg-htb-sidebar rounded-lg p-6 border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <span>✨</span> Key Tips
+              </h3>
+              <ul className="space-y-2">
+                {currentQuestion.tips.map((tip, index) => (
+                  <li key={index} className="text-htb-text flex items-start gap-2">
+                    <span className="text-htb-green mt-1">▸</span>
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Sample Answer */}
+            <div className="bg-htb-sidebar rounded-lg p-6 border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <span>🎯</span> Sample Answer
+              </h3>
+              <div className="bg-htb-bg rounded-lg p-5 border-l-4 border-htb-green">
+                <p className="text-htb-text leading-relaxed italic">
+                  "{currentQuestion.sampleAnswer}"
                 </p>
               </div>
+            </div>
 
-              {/* Tips */}
-              <div className="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 rounded-xl p-6 border border-blue-400/30">
+            {/* Sample Questions (for question 21) */}
+            {currentQuestion.sampleQuestions && (
+              <div className="bg-htb-sidebar rounded-lg p-6 border border-gray-700">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span>✨</span> Key Tips
+                  <span>❓</span> Good Questions to Ask
                 </h3>
                 <ul className="space-y-2">
-                  {currentQuestion.tips.map((tip, index) => (
-                    <li key={index} className="text-blue-100 flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▸</span>
-                      <span>{tip}</span>
+                  {currentQuestion.sampleQuestions.map((q, index) => (
+                    <li key={index} className="text-htb-text flex items-start gap-2">
+                      <span className="text-htb-green mt-1">•</span>
+                      <span>{q}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-
-              {/* Sample Answer */}
-              <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-xl p-6 border border-purple-400/30">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span>🎯</span> Sample Answer
-                </h3>
-                <div className="bg-black/30 rounded-lg p-5 border-l-4 border-purple-400">
-                  <p className="text-white leading-relaxed italic">
-                    "{currentQuestion.sampleAnswer}"
-                  </p>
-                </div>
-              </div>
-
-              {/* Sample Questions (for question 21) */}
-              {currentQuestion.sampleQuestions && (
-                <div className="bg-gradient-to-r from-teal-900/40 to-cyan-900/40 rounded-xl p-6 border border-teal-400/30">
-                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                    <span>❓</span> Good Questions to Ask
-                  </h3>
-                  <ul className="space-y-2">
-                    {currentQuestion.sampleQuestions.map((q, index) => (
-                      <li key={index} className="text-teal-100 flex items-start gap-2">
-                        <span className="text-teal-400 mt-1">•</span>
-                        <span>{q}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-
-        {/* Navigation */}
-        <div className="flex justify-between items-center gap-4">
-          <button
-            onClick={handlePrevious}
-            disabled={currentQuestionIndex === 0}
-            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
-              currentQuestionIndex === 0
-                ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-md border border-white/20'
-            }`}
-          >
-            <span>←</span> Previous Question
-          </button>
-
-          <div className="text-center">
-            <div className="text-white font-semibold">
-              {currentQuestionIndex + 1} / {interviewQuestions.length}
-            </div>
-            <div className="text-blue-200 text-sm">
-              {Math.round(progress)}% Complete
-            </div>
-          </div>
-
-          <button
-            onClick={handleNext}
-            disabled={currentQuestionIndex === interviewQuestions.length - 1}
-            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
-              currentQuestionIndex === interviewQuestions.length - 1
-                ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg'
-            }`}
-          >
-            Next Question <span>→</span>
-          </button>
-        </div>
-
-        {/* Completion Message */}
-        {currentQuestionIndex === interviewQuestions.length - 1 && showRecommendation && (
-          <div className="mt-6 bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-xl p-6 border border-green-400/30">
-            <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2">
-              <span>🎉</span> Congratulations!
-            </h3>
-            <p className="text-green-100 text-lg">
-              You've reviewed all {interviewQuestions.length} interview questions! Remember to practice your answers out loud and adapt these examples to your own experiences. Good luck with your interview!
-            </p>
+            )}
           </div>
         )}
+      </div>
 
-        {/* General Tips Section */}
-        <div className="mt-6 bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-          <h3 className="text-2xl font-bold text-white mb-4">📌 General Interview Tips</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-blue-900/30 rounded-lg p-4 border border-blue-400/30">
-              <h4 className="font-bold text-white mb-2">Before the Interview</h4>
-              <ul className="space-y-1 text-blue-100 text-sm">
-                <li>• Research the company thoroughly</li>
-                <li>• Prepare examples for common questions</li>
-                <li>• Practice answers out loud</li>
-                <li>• Prepare questions to ask them</li>
-                <li>• Plan your outfit and route</li>
-              </ul>
-            </div>
-            <div className="bg-purple-900/30 rounded-lg p-4 border border-purple-400/30">
-              <h4 className="font-bold text-white mb-2">During the Interview</h4>
-              <ul className="space-y-1 text-purple-100 text-sm">
-                <li>• Arrive 10-15 minutes early</li>
-                <li>• Make eye contact and smile</li>
-                <li>• Listen carefully to questions</li>
-                <li>• Take a moment to think before answering</li>
-                <li>• Ask for clarification if needed</li>
-              </ul>
-            </div>
-            <div className="bg-green-900/30 rounded-lg p-4 border border-green-400/30">
-              <h4 className="font-bold text-white mb-2">Body Language</h4>
-              <ul className="space-y-1 text-green-100 text-sm">
-                <li>• Sit up straight</li>
-                <li>• Use natural hand gestures</li>
-                <li>• Maintain good eye contact</li>
-                <li>• Smile when appropriate</li>
-                <li>• Show enthusiasm</li>
-              </ul>
-            </div>
-            <div className="bg-amber-900/30 rounded-lg p-4 border border-amber-400/30">
-              <h4 className="font-bold text-white mb-2">After the Interview</h4>
-              <ul className="space-y-1 text-amber-100 text-sm">
-                <li>• Send a thank-you email within 24 hours</li>
-                <li>• Reflect on what went well</li>
-                <li>• Note questions you struggled with</li>
-                <li>• Follow up if you don't hear back</li>
-                <li>• Stay positive regardless of outcome</li>
-              </ul>
-            </div>
+      {/* Navigation */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+        <button
+          onClick={handlePrevious}
+          disabled={currentQuestionIndex === 0}
+          className={`w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${
+            currentQuestionIndex === 0
+              ? 'bg-gray-700 text-gray-500 cursor-not-allowed border border-gray-600'
+              : 'bg-htb-sidebar text-white hover:bg-gray-700 border border-gray-700'
+          }`}
+        >
+          <span>←</span> Previous Question
+        </button>
+
+        <div className="text-center">
+          <div className="text-white font-semibold">
+            {currentQuestionIndex + 1} / {interviewQuestions.length}
+          </div>
+          <div className="text-htb-text-dim text-sm">
+            {Math.round(progress)}% Complete
+          </div>
+        </div>
+
+        <button
+          onClick={handleNext}
+          disabled={currentQuestionIndex === interviewQuestions.length - 1}
+          className={`w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${
+            currentQuestionIndex === interviewQuestions.length - 1
+              ? 'bg-gray-700 text-gray-500 cursor-not-allowed border border-gray-600'
+              : 'bg-htb-green text-htb-bg hover:bg-htb-green/90 shadow-lg'
+          }`}
+        >
+          Next Question <span>→</span>
+        </button>
+      </div>
+
+      {/* Completion Message */}
+      {currentQuestionIndex === interviewQuestions.length - 1 && showRecommendation && (
+        <div className="mb-6 bg-htb-sidebar rounded-lg p-6 border border-htb-green">
+          <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+            <span>🎉</span> Congratulations!
+          </h3>
+          <p className="text-htb-text text-lg">
+            You've reviewed all {interviewQuestions.length} interview questions! Remember to practice your answers out loud and adapt these examples to your own experiences. Good luck with your interview!
+          </p>
+        </div>
+      )}
+
+      {/* General Tips Section */}
+      <div className="bg-htb-card rounded-lg border border-gray-800 p-6 sm:p-8">
+        <h3 className="text-2xl font-bold text-white mb-4">📌 General Interview Tips</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-htb-sidebar rounded-lg p-4 border border-gray-700">
+            <h4 className="font-bold text-white mb-2">Before the Interview</h4>
+            <ul className="space-y-1 text-htb-text text-sm">
+              <li>• Research the company thoroughly</li>
+              <li>• Prepare examples for common questions</li>
+              <li>• Practice answers out loud</li>
+              <li>• Prepare questions to ask them</li>
+              <li>• Plan your outfit and route</li>
+            </ul>
+          </div>
+          <div className="bg-htb-sidebar rounded-lg p-4 border border-gray-700">
+            <h4 className="font-bold text-white mb-2">During the Interview</h4>
+            <ul className="space-y-1 text-htb-text text-sm">
+              <li>• Arrive 10-15 minutes early</li>
+              <li>• Make eye contact and smile</li>
+              <li>• Listen carefully to questions</li>
+              <li>• Take a moment to think before answering</li>
+              <li>• Ask for clarification if needed</li>
+            </ul>
+          </div>
+          <div className="bg-htb-sidebar rounded-lg p-4 border border-gray-700">
+            <h4 className="font-bold text-white mb-2">Body Language</h4>
+            <ul className="space-y-1 text-htb-text text-sm">
+              <li>• Sit up straight</li>
+              <li>• Use natural hand gestures</li>
+              <li>• Maintain good eye contact</li>
+              <li>• Smile when appropriate</li>
+              <li>• Show enthusiasm</li>
+            </ul>
+          </div>
+          <div className="bg-htb-sidebar rounded-lg p-4 border border-gray-700">
+            <h4 className="font-bold text-white mb-2">After the Interview</h4>
+            <ul className="space-y-1 text-htb-text text-sm">
+              <li>• Send a thank-you email within 24 hours</li>
+              <li>• Reflect on what went well</li>
+              <li>• Note questions you struggled with</li>
+              <li>• Follow up if you don't hear back</li>
+              <li>• Stay positive regardless of outcome</li>
+            </ul>
           </div>
         </div>
       </div>
