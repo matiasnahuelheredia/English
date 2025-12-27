@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getExamSections, getTotalExercises } from '../data/examData';
+import SuccessModal from './SuccessModal';
+import { useSuccess } from '../hooks/useSuccess';
 
 const ExamView = () => {
   const [sections] = useState(getExamSections());
@@ -12,6 +14,9 @@ const ExamView = () => {
   const [showHelp, setShowHelp] = useState(false);
   const [allAnswers, setAllAnswers] = useState({});
   const [checkedExercises, setCheckedExercises] = useState(new Set());
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const inputRef = useRef(null);
+  const { celebrate } = useSuccess();
 
   const currentSection = sections[currentSectionIndex];
   const currentExercise = currentSection?.exercises[currentExerciseIndex];
@@ -143,7 +148,31 @@ const ExamView = () => {
     const savedAnswer = allAnswers[exerciseKey] || '';
     setUserAnswer(savedAnswer);
     setFeedback(null);
+    
+    // Enfocar el input cuando cambia la pregunta
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   }, [currentSectionIndex, currentExerciseIndex]);
+
+  // Navegación con teclas de flecha
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Flecha derecha: siguiente pregunta
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextExercise();
+      }
+      // Flecha izquierda: pregunta anterior
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        previousExercise();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentSectionIndex, currentExerciseIndex, sections]);
 
   const checkAnswer = () => {
     if (!userAnswer.trim()) {
@@ -190,6 +219,9 @@ const ExamView = () => {
     if (!alreadyChecked) {
       if (isCorrect) {
         setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
+        // Celebrar con confetti, sonido y modal
+        celebrate();
+        setShowSuccessModal(true);
       } else {
         setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
       }
@@ -221,6 +253,48 @@ const ExamView = () => {
     setCurrentExerciseIndex(exerciseIdx);
   };
 
+  const generateAIPrompt = () => {
+    let prompt = `Actúa como un profesor de inglés nivel B2. He completado un examen y necesito que analices mis errores y me expliques qué conceptos debo reforzar.\n\n`;
+    prompt += `📊 RESULTADOS:\n`;
+    prompt += `- Correctas: ${score.correct}/${totalExercises}\n`;
+    prompt += `- Incorrectas: ${score.incorrect}/${totalExercises}\n`;
+    prompt += `- Puntuación: ${Math.round((score.correct / totalExercises) * 100)}%\n\n`;
+    prompt += `📝 MIS RESPUESTAS:\n\n`;
+
+    sections.forEach((section, sectionIdx) => {
+      prompt += `## ${section.title}\n\n`;
+      section.exercises.forEach((exercise, exerciseIdx) => {
+        const exerciseKey = `${sectionIdx}-${exerciseIdx}`;
+        const userAns = allAnswers[exerciseKey] || '(sin responder)';
+        const correctAns = Array.isArray(exercise.correctAnswer) 
+          ? exercise.correctAnswer.join(' / ') 
+          : exercise.correctAnswer;
+        const wasCorrect = checkedExercises.has(exerciseKey) && 
+          (userAns.toLowerCase() === correctAns.toLowerCase() || 
+           (Array.isArray(exercise.correctAnswer) && 
+            exercise.correctAnswer.some(ans => userAns.toLowerCase() === ans.toLowerCase())));
+        
+        prompt += `**Pregunta ${exerciseIdx + 1}:** ${exercise.sentence}\n`;
+        prompt += `- Mi respuesta: ${userAns} ${wasCorrect ? '✅' : '❌'}\n`;
+        prompt += `- Respuesta correcta: ${correctAns}\n`;
+        if (exercise.explanation) {
+          prompt += `- Explicación: ${exercise.explanation}\n`;
+        }
+        prompt += `\n`;
+      });
+      prompt += `\n`;
+    });
+
+    prompt += `\n🎯 POR FAVOR, ANALIZA:\n`;
+    prompt += `1. ¿Qué patrones de errores cometo? (¿problemas con tiempos verbales, preposiciones, vocabulario?)\n`;
+    prompt += `2. ¿Qué conceptos específicos debo reforzar?\n`;
+    prompt += `3. Dame 3-5 ejercicios prácticos específicos para mejorar en mis áreas débiles\n`;
+    prompt += `4. ¿Hay alguna regla gramatical que esté aplicando incorrectamente de forma recurrente?\n\n`;
+    prompt += `Por favor, sé específico y dame ejemplos concretos basados en mis errores.`;
+
+    return prompt;
+  };
+
   const finishExam = () => {
     const unanswered = totalExercises - checkedExercises.size;
     if (unanswered > 0) {
@@ -228,7 +302,48 @@ const ExamView = () => {
         return;
       }
     }
-    alert(`¡Examen completado!\n\nCorrectas: ${score.correct}\nIncorrectas: ${score.incorrect}\nSin responder: ${unanswered}\nPuntuación: ${Math.round((score.correct / totalExercises) * 100)}%`);
+    
+    const prompt = generateAIPrompt();
+    const percentage = Math.round((score.correct / totalExercises) * 100);
+    
+    // Create modal with prompt
+    const modalContent = `
+      <div style="background: #1e2229; padding: 20px; border-radius: 8px; max-width: 800px; margin: 20px auto;">
+        <h2 style="color: #9fef00; margin-bottom: 15px; font-size: 24px;">¡Examen Completado!</h2>
+        <div style="background: #1a1d23; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+          <p style="color: white; margin: 5px 0;">✅ Correctas: ${score.correct}</p>
+          <p style="color: white; margin: 5px 0;">❌ Incorrectas: ${score.incorrect}</p>
+          <p style="color: white; margin: 5px 0;">⏭️ Sin responder: ${unanswered}</p>
+          <p style="color: #9fef00; margin: 10px 0 0 0; font-size: 20px; font-weight: bold;">📊 Puntuación: ${percentage}%</p>
+        </div>
+        <div style="background: #1a1d23; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+          <h3 style="color: #9fef00; margin-bottom: 10px;">🤖 Prompt para IA (ChatGPT, Claude, etc.)</h3>
+          <p style="color: #a8b2d1; margin-bottom: 10px; font-size: 14px;">Copia este texto y pégalo en cualquier IA para obtener un análisis detallado de tus errores:</p>
+          <textarea id="aiPrompt" readonly style="width: 100%; height: 300px; background: #0a0e14; color: #9fef00; border: 1px solid #9fef00; border-radius: 4px; padding: 10px; font-family: monospace; font-size: 12px; resize: vertical;">${prompt.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+        </div>
+        <button id="copyPrompt" style="background: #9fef00; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-right: 10px;">📋 Copiar Prompt</button>
+        <button id="closeModal" style="background: #a8b2d1; color: #1a1d23; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer;">Cerrar</button>
+      </div>
+    `;
+    
+    const modal = document.createElement('div');
+    modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); z-index: 9999; overflow-y: auto; padding: 20px;';
+    modal.innerHTML = modalContent;
+    document.body.appendChild(modal);
+    
+    document.getElementById('copyPrompt').onclick = () => {
+      const textarea = document.getElementById('aiPrompt');
+      textarea.select();
+      document.execCommand('copy');
+      document.getElementById('copyPrompt').textContent = '✅ ¡Copiado!';
+      setTimeout(() => {
+        document.getElementById('copyPrompt').textContent = '📋 Copiar Prompt';
+      }, 2000);
+    };
+    
+    document.getElementById('closeModal').onclick = () => {
+      document.body.removeChild(modal);
+    };
   };
 
   const highlightKeywords = (text) => {
@@ -311,6 +426,7 @@ const ExamView = () => {
               Escribe la oración en el orden correcto:
             </label>
             <input
+              ref={inputRef}
               type="text"
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
@@ -339,6 +455,7 @@ const ExamView = () => {
               Completa la palabra (primera letra: {currentExercise.firstLetter.toUpperCase()}):
             </label>
             <input
+              ref={inputRef}
               type="text"
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
@@ -367,6 +484,7 @@ const ExamView = () => {
             Tu respuesta:
           </label>
           <input
+            ref={inputRef}
             type="text"
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
@@ -615,6 +733,13 @@ const ExamView = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal de éxito */}
+      <SuccessModal 
+        isOpen={showSuccessModal} 
+        onClose={() => setShowSuccessModal(false)}
+        message="Excellent! Correct Answer!"
+      />
     </div>
   );
 };

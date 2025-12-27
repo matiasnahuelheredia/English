@@ -566,6 +566,32 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                     >
                       Linking Words & Connectors
                     </button>
+                  </div>
+                )}
+
+                {/* Speaking B2 */}
+                <button
+                  onClick={() => toggleSection('Upper-Intermediate-Speaking')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Speaking Skills</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Upper-Intermediate-Speaking'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Upper-Intermediate-Speaking'] && (
+                  <div className="ml-3 space-y-0.5">
+                    <button
+                      onClick={() => onSelectTense('talk-about-yourself-b2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'talk-about-yourself-b2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Talk About Yourself
+                    </button>
                     <button
                       onClick={() => onSelectTense('personal-questions-b2')}
                       className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
@@ -585,6 +611,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       }`}
                     >
                       Picture Description
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('job-interview-b2')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'job-interview-b2'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Job Interview Practice
                     </button>
                   </div>
                 )}
@@ -620,7 +656,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                   onClick={() => toggleSection('Exam')}
                   className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                 >
-                  <span className="text-htb-text-dim">Exam</span>
+                  <span className="text-htb-text-dim">Complete Exams</span>
                   <svg className={`w-3 h-3 transition-transform ${expandedSections['Exam'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -636,7 +672,37 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                           : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                       }`}
                     >
-                      Complete Exam
+                      Complete Exam 1
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('exam4')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'exam4'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Complete Exam 2
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('exam5')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'exam5'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Complete Exam 3
+                    </button>
+                    <button
+                      onClick={() => onSelectTense('exam6')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'exam6'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Complete Exam 4
                     </button>
                   </div>
                 )}

@@ -172,7 +172,7 @@ const PictureDescriptionB2 = () => {
       id: 2,
       title: "Airport Terminal",
       category: "Airport",
-      imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=800&h=600&fit=crop",
       description: "Travelers in an airport terminal with luggage",
       sampleDescription: "In this photograph, I can see a busy airport terminal with several travelers making their way through the departure or arrival area. The scene captures the typical hustle and bustle of modern air travel, with people at various stages of their journey.\n\nIn the foreground, there's a woman pulling a suitcase behind her, dressed in casual travel clothing - probably comfortable clothes chosen specifically for a long flight. She appears to be walking purposefully, perhaps heading to check-in or to her departure gate. Behind her, I can see other passengers with their luggage - some pulling rolling suitcases, others carrying backpacks or hand luggage. The diversity of the travelers suggests this is an international airport serving destinations around the world.\n\nThe terminal itself looks modern and spacious, with high ceilings and plenty of natural light coming through large windows. The architecture is typical of contemporary airports - clean, functional, and designed to handle large volumes of passengers efficiently. In the background, I can make out what appears to be flight information displays, check-in counters, or possibly departure gates. The signage is clearly visible, which is essential in airports where people from different countries need to navigate their way around.\n\nWhat's interesting about airport scenes like this is the mix of emotions they represent. Some travelers might be excited about their upcoming vacation or adventure, while others could be feeling stressed about making their flight on time or anxious about the journey ahead. Business travelers might be rushing to catch connecting flights, while families with children are probably managing the chaos of traveling with young ones. The overall atmosphere is one of constant movement and transition - airports are liminal spaces where people are between destinations, neither here nor there, which creates a unique energy.",
       keyVocabulary: [
@@ -285,147 +285,147 @@ const PictureDescriptionB2 = () => {
       category: "Clothes and Fashion",
       imageUrl: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop",
       description: "Person looking at clothes in a boutique window display",
-      sampleDescription: "This photograph presents a scene that will be instantly recognizable to anyone who's been through higher education - a group of students engaged in collaborative study. The image captures what appears to be three or four young adults huddled around a table in what could be a university library, a coffee shop, or a study room, all focused intently on their academic work.\n\nEach student appears to be actively contributing to the discussion. I can observe laptops open, notebooks spread out, and what might be textbooks or printed materials scattered across the workspace. One student seems to be explaining something, perhaps pointing at a screen or a page, while the others are listening attentively, some taking notes. This kind of peer-to-peer learning is incredibly valuable in academic settings, as students often find that explaining concepts to each other reinforces their own understanding.\n\nThe students' expressions suggest a mix of concentration and engagement. They don't look stressed or frustrated, which indicates they might be genuinely enjoying the collaborative process or at least finding it productive. The casual yet focused atmosphere is typical of modern learning environments, where the emphasis is on active participation and group work rather than passive listening.\n\nInterestingly, the diversity in their study materials - combining digital devices with traditional paper-based resources - reflects how contemporary students blend old and new learning methods. Some are typing on their laptops, possibly researching online or writing essays, while others prefer the tactile experience of handwriting notes, which research has shown can aid memory retention.\n\nThe overall setting looks comfortable and conducive to learning, with adequate space for everyone to spread out their materials. The lighting appears to be good, which is essential for extended study sessions to avoid eye strain. What this image really captures is the social aspect of learning - the way that studying doesn't have to be a solitary, isolating activity but can instead be a shared experience that builds both knowledge and friendships.",
+      sampleDescription: "This captivating photograph captures someone examining a fashion boutique's window display, perfectly illustrating the art of window shopping and the powerful role of visual merchandising in retail. The image shows how fashion retailers use their window displays to attract customers and showcase their latest collections in the most appealing way possible.\n\nIn the scene, I can see a person standing in front of a boutique window, clearly engaged by what's displayed inside. The person might be studying the mannequins, which are typically dressed in the store's current seasonal offerings - perhaps spring collections featuring lighter fabrics and brighter colors, or autumn ranges with layered looks and earth tones. Window displays are carefully curated to tell a story about the brand and create desire for the products.\n\nThe boutique itself appears to be an upscale or trendy establishment, as evidenced by the attention to detail in the presentation. The lighting in the window is probably strategic and theatrical, designed to highlight the clothing and create an aspirational atmosphere. Fashion retailers invest significantly in window displays because they serve as silent salespeople, working 24 hours a day to attract passersby and communicate the store's aesthetic and target demographic.\n\nWhat's interesting about window shopping is that it's both a practical activity and a form of entertainment. The person in the photograph might be seriously considering a purchase, perhaps mentally calculating whether the items fit their budget and wardrobe needs. Alternatively, they could simply be enjoying the visual feast of fashion, drawing inspiration for their own style, or keeping up with current trends without any immediate intention to buy.\n\nThe act of window shopping has endured even in our digital age, despite the ease of online shopping. There's something irreplaceable about seeing clothing in person - observing the drape of fabric, imagining how colors might look in natural light, and experiencing the overall ambiance that a physical store creates. For many fashion enthusiasts, browsing boutique windows in fashionable shopping districts is a leisure activity in itself, offering both inspiration and aspiration.",
       keyVocabulary: [
-        "collaborative study",
-        "huddled around",
-        "focused intently",
-        "peer-to-peer learning",
-        "reinforces understanding",
-        "casual yet focused",
-        "active participation",
-        "blend old and new methods",
-        "memory retention",
-        "conducive to learning"
+        "window display",
+        "visual merchandising",
+        "seasonal offerings",
+        "carefully curated",
+        "upscale boutique",
+        "aspirational atmosphere",
+        "silent salespeople",
+        "target demographic",
+        "window shopping",
+        "fashion inspiration"
       ],
       usefulPhrases: [
-        "This photograph presents...",
-        "The image captures...",
-        "I can observe...",
-        "This kind of... is incredibly valuable...",
-        "Their expressions suggest...",
-        "Interestingly...",
-        "What this image really captures is...",
-        "Research has shown that..."
+        "This captivating photograph captures...",
+        "The image shows how...",
+        "I can see someone...",
+        "The boutique appears to be...",
+        "What's interesting about... is...",
+        "Serves as...",
+        "Has endured even in...",
+        "There's something irreplaceable about..."
       ],
       grammarPoints: [
-        "Present Continuous: 'students are engaging', 'someone is explaining'",
-        "Modal verbs: 'could be', 'might be', 'appears to be'",
-        "Present Perfect: 'research has shown', 'this has become common'",
-        "Gerunds: 'studying doesn't have to be', 'explaining concepts reinforces'"
+        "Present Continuous: 'person is examining', 'retailers are using'",
+        "Modal verbs: 'might be', 'could be', 'would look'",
+        "Present Perfect: 'has endured', 'has become'",
+        "Passive voice: 'are carefully curated', 'is displayed', 'are dressed'"
       ],
-      tips: "For educational scenes, analyze both the visible details and the broader implications of what you see. Comment on learning styles, educational trends, and the social aspects of studying."
+      tips: "When describing fashion and shopping scenes, discuss the visual merchandising techniques, the psychology of window shopping, and how fashion retail creates desire. Connect the physical experience with broader trends in retail."
     },
     {
       id: 6,
-      title: "Outdoor Recreation",
-      category: "Leisure & Outdoor Activities",
-      imageUrl: "https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=800&h=600&fit=crop",
-      description: "People enjoying outdoor recreational activities",
-      sampleDescription: "This refreshing image showcases a group of people thoroughly enjoying themselves in the great outdoors, engaging in what appears to be a hiking or trekking adventure in a scenic natural setting. The photograph beautifully captures the spirit of outdoor recreation and the joy that comes from connecting with nature.\n\nI can see what looks like four or five individuals, possibly friends or family members, navigating through what might be a mountain trail or a forest path. They're all equipped with appropriate outdoor gear - backpacks, comfortable hiking clothes, and what appear to be walking sticks or trekking poles. Their body language exudes enthusiasm and energy; some are smiling broadly, others might be pointing at something interesting in the landscape, suggesting they're having an animated conversation about their surroundings.\n\nThe natural environment around them is spectacular - depending on the specific location, there could be mountains in the background, lush green vegetation, or perhaps a view of valleys below. The sky appears clear and blue, indicating favorable weather conditions for this kind of outdoor activity. The quality of light in the photograph suggests it might be morning or late afternoon, which are generally the best times for hiking when temperatures are more moderate.\n\nWhat's particularly notable about this scene is how it represents a growing trend in modern society - more people are seeking outdoor experiences as a way to disconnect from technology, reduce stress, and improve their physical and mental well-being. Hiking and similar activities offer multiple benefits: cardiovascular exercise, fresh air, exposure to natural beauty, and opportunities for social bonding.\n\nThe group dynamics visible in the image are also worth mentioning. Unlike solo hiking, which can be meditative and introspective, group hiking like this creates a shared adventure. People encourage each other when the trail gets challenging, share the excitement of reaching viewpoints, and create memories together. This social aspect is often what makes outdoor activities so memorable and motivating for many people.",
+      title: "Airport Check-in Counter",
+      category: "Airport",
+      imageUrl: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&h=600&fit=crop",
+      description: "Travelers checking in at airport counter with staff",
+      sampleDescription: "In this photograph, I can see travelers at an airport check-in counter, interacting with airline staff in what appears to be the pre-flight check-in process. This scene represents one of the essential stages of air travel that every passenger must go through before boarding their flight.\n\nAt the counter, there's likely an airline employee - perhaps wearing a uniform with the airline's colors and logo - assisting passengers with their check-in procedures. The staff member is probably checking passports, boarding passes, and luggage tags, while also answering questions about the flight, baggage allowances, or seat assignments. Their professional demeanor and helpful attitude are crucial for creating a positive travel experience, especially for passengers who might be nervous or unfamiliar with air travel procedures.\n\nThe travelers themselves appear to have their luggage with them - suitcases that need to be weighed and checked in for the flight. They might be handing over their travel documents, asking about gate information, or requesting specific services like special meals or wheelchair assistance. The interaction between staff and passengers is an important moment where any travel concerns can be addressed and where the efficiency of the airline service becomes apparent.\n\nThe check-in area itself looks organized and professional, with clear signage indicating different airline counters, departure times, and destinations. Behind the counter, there are probably computer screens where staff can access passenger information, flight details, and baggage handling systems. The overall environment is busy but orderly, designed to process large numbers of passengers efficiently while maintaining service quality.\n\nWhat's interesting about modern airport check-in is how it has evolved with technology. While many passengers now use online check-in or self-service kiosks, the staffed counters remain essential for handling complex situations, checking in oversized luggage, or assisting passengers who need extra help. This human element of airport service is still valued despite increasing automation in the travel industry.",
       keyVocabulary: [
-        "the great outdoors",
-        "scenic natural setting",
-        "outdoor recreation",
-        "connecting with nature",
-        "equipped with gear",
-        "body language exudes",
-        "favorable weather conditions",
-        "growing trend",
-        "reduce stress",
-        "shared adventure"
+        "check-in counter",
+        "airline staff",
+        "pre-flight procedures",
+        "boarding passes",
+        "baggage allowances",
+        "travel documents",
+        "gate information",
+        "professional demeanor",
+        "service quality",
+        "human element"
       ],
       usefulPhrases: [
-        "This refreshing image shows...",
-        "The photograph beautifully captures...",
-        "Their body language exudes...",
-        "The environment is spectacular...",
-        "What's particularly notable is...",
-        "This represents a growing trend...",
-        "Unlike... this creates...",
-        "The social aspect is..."
+        "In this photograph, I can see...",
+        "The scene represents...",
+        "The staff member is probably...",
+        "Their demeanor is crucial for...",
+        "The interaction between... is important",
+        "What's interesting about... is...",
+        "Has evolved with...",
+        "Remains essential for..."
       ],
       grammarPoints: [
-        "Present Continuous: 'they're having', 'people are seeking'",
-        "Present Perfect: 'have equipped themselves', 'has become popular'",
-        "Comparatives: 'more moderate', 'better times', 'more people'",
-        "Conditional language: 'could be', 'might be', 'appears to be'"
+        "Present Continuous: 'staff are assisting', 'passengers are checking in'",
+        "Modal verbs: 'might be', 'probably', 'appears to be'",
+        "Present Perfect: 'has evolved', 'have arrived'",
+        "Passive voice: 'are checked', 'is designed', 'are indicated'"
       ],
-      tips: "For outdoor scenes, describe the environment in detail, comment on the weather and time of day, and discuss why such activities are important in modern life. Show awareness of health and social benefits."
+      tips: "When describing airport check-in scenes, focus on the interaction between staff and passengers, the procedures involved, and how technology has changed the check-in process while maintaining the importance of human service."
     },
     {
       id: 7,
-      title: "Restaurant or Café Scene",
-      category: "Social & Dining",
-      imageUrl: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop",
-      description: "People dining and socializing in a restaurant setting",
-      sampleDescription: "This inviting photograph captures a convivial dining scene in what appears to be a trendy restaurant or café, where a group of friends or colleagues are gathered around a table, clearly enjoying both the food and each other's company. The image perfectly encapsulates the social and cultural importance of dining out in contemporary society.\n\nThe group consists of approximately four to six people, seated around a table that's laden with various dishes, drinks, and possibly shared plates that suggest a communal dining experience. The style of eating - with multiple dishes in the center of the table - might indicate they're enjoying tapas, mezze, or family-style dining, which are all popular formats that encourage sharing and interaction. I can observe that the diners are engaged in animated conversation, with some people gesturing expressively, others laughing, and everyone appearing relaxed and comfortable.\n\nThe restaurant's ambiance looks warm and welcoming, with what seems to be soft, atmospheric lighting that creates an intimate feel. The décor might feature modern elements - perhaps exposed brick, wooden tables, or industrial-style fixtures - which are characteristic of contemporary urban dining establishments. The overall aesthetic suggests this is the type of place that focuses not just on serving food, but on creating an experience.\n\nWhat's interesting to note is the diversity in the group - they appear to be people from different backgrounds coming together, which is one of the beautiful aspects of food culture: it brings people together across divides. Some diners might be taking photos of the food with their phones, which has become a ubiquitous part of the modern dining experience, especially in photogenic restaurants.\n\nThe food itself appears to be presented with care and attention to detail, suggesting this might be a place that takes its cuisine seriously. The fact that the group has ordered multiple dishes to share indicates they're planning to spend a considerable amount of time here, making it a social occasion rather than just a quick meal. This leisurely approach to dining, where the focus is on conversation and companionship as much as on the food, represents a dining philosophy that values quality time and meaningful social connections.",
+      title: "Snowy Winter Day",
+      category: "Weather",
+      imageUrl: "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=800&h=600&fit=crop",
+      description: "People walking in snowy winter weather conditions",
+      sampleDescription: "This striking photograph captures a winter scene where people are navigating through snowy weather conditions. The image beautifully illustrates how winter weather dramatically transforms the urban or suburban landscape and affects people's daily routines and activities.\n\nIn the scene, I can see pedestrians bundled up in heavy winter clothing - thick coats, scarves, hats, and gloves - all essential for protecting themselves from the cold temperatures. Their clothing is likely in darker colors, which tend to be more practical in winter, though some might have bright-colored accessories that stand out against the white snow. The way people are walking suggests they're being careful about their footing, as snow and ice can make surfaces slippery and dangerous.\n\nThe snow itself is quite prominent in the photograph - it might be actively falling, creating that characteristic grey-white atmosphere of a snowy day, or it could be covering the ground in a thick white blanket that muffles sounds and creates a peaceful, almost magical quality. Trees and buildings in the background are probably dusted with snow, and the overall color palette of the image is likely muted and cool, dominated by whites, greys, and blues.\n\nWhat's particularly interesting about winter weather is how it affects people's behavior and mood. Some people might look cold and uncomfortable, hurrying to reach their destination and escape the harsh conditions. Others might appear more relaxed, perhaps enjoying the beauty of the snowfall despite the inconvenience. Winter weather can be both challenging and enchanting - while it creates difficulties for transportation and daily activities, it also transforms familiar environments into something new and visually stunning.\n\nSnowy weather also brings practical challenges: roads become hazardous, public transport can be delayed, and simple tasks like walking to work become more time-consuming and physically demanding. However, for many people, especially in countries where snow is seasonal, these first snowfalls of winter can evoke feelings of nostalgia and excitement, reminding them of childhood snow days and winter holidays.",
       keyVocabulary: [
-        "convivial dining scene",
-        "trendy restaurant",
-        "communal dining experience",
-        "animated conversation",
-        "warm and welcoming ambiance",
-        "atmospheric lighting",
-        "contemporary urban establishments",
-        "food culture",
-        "attention to detail",
-        "meaningful social connections"
+        "winter scene",
+        "snowy weather conditions",
+        "bundled up",
+        "heavy winter clothing",
+        "slippery and dangerous",
+        "thick white blanket",
+        "muted color palette",
+        "harsh conditions",
+        "transportation challenges",
+        "feelings of nostalgia"
       ],
       usefulPhrases: [
-        "This inviting photograph shows...",
-        "The image perfectly encapsulates...",
-        "The group consists of...",
-        "I can observe that...",
-        "The ambiance looks...",
-        "What's interesting to note is...",
-        "The fact that... indicates...",
-        "This represents a philosophy that..."
+        "This striking photograph captures...",
+        "The image illustrates how...",
+        "I can see people...",
+        "The snow creates...",
+        "What's particularly interesting is...",
+        "Weather affects...",
+        "Some people might... while others...",
+        "It brings both... and..."
       ],
       grammarPoints: [
-        "Present Continuous: 'people are enjoying', 'diners are engaged'",
-        "Present Perfect: 'has become ubiquitous', 'have ordered'",
-        "Relative clauses: 'a place that focuses', 'dishes that suggest'",
-        "Modal verbs: 'might indicate', 'could be', 'appears to be'"
+        "Present Continuous: 'people are walking', 'snow is falling'",
+        "Modal verbs: 'might be', 'could be', 'can be'",
+        "Passive voice: 'are covered', 'is transformed'",
+        "Present Perfect: 'has transformed', 'has created'"
       ],
-      tips: "When describing dining scenes, discuss the food, the atmosphere, the social dynamics, and the cultural significance of the meal. Note details about table arrangements and eating styles."
+      tips: "When describing snowy weather, focus on how it affects people's clothing, movement, and behavior. Describe the visual transformation of the environment and discuss both the challenges and beauty of winter weather."
     },
     {
       id: 8,
-      title: "Public Transportation",
-      category: "Urban Life & Commuting",
-      imageUrl: "https://images.unsplash.com/photo-1530099486328-e021101a494a?w=800&h=600&fit=crop",
-      description: "People commuting on public transport",
-      sampleDescription: "This candid photograph offers a glimpse into the daily reality of urban commuting, showing a diverse group of passengers aboard what appears to be a subway train, bus, or other form of public transportation. The image is particularly interesting because it captures the varied ways people occupy their time during their daily commutes, revealing much about contemporary urban life.\n\nThe passengers visible in the frame represent a cross-section of city dwellers - there might be professionals in business attire heading to or from work, students with backpacks, and perhaps elderly residents going about their daily errands. What's immediately striking is how most people, if not all, seem to be absorbed in their own worlds, creating what sociologists call 'civil inattention' - a phenomenon where people in close proximity deliberately ignore each other to maintain a sense of privacy in public spaces.\n\nMany of the passengers appear to be looking at their smartphones, which has become the default activity during commutes. Some might be reading - whether physical books, e-readers, or news on their phones. A few people might have headphones or earbuds in, listening to music, podcasts, or audiobooks, creating personal sound bubbles that help them psychologically separate from the shared public space. The body language is typically reserved and closed-off, with people trying to minimize their physical presence in the crowded environment.\n\nThe interior of the vehicle looks functional rather than luxurious, which is typical of public transport systems worldwide. The lighting might be fluorescent, creating a somewhat harsh but practical illumination. Through the windows, if visible, there might be glimpses of the urban landscape passing by - buildings, streets, other vehicles.\n\nWhat this image really illustrates is the paradox of modern urban life: we're physically closer to more people than at any point in human history, yet we're often more isolated and disconnected. The commute, which many people find tedious or stressful, has become a kind of transitional space between home and work life. Some research suggests that how people use this time - whether for productivity, relaxation, or mindless scrolling - can significantly impact their overall well-being and job satisfaction.",
+      title: "Hospital Emergency Room",
+      category: "Illnesses and Injuries",
+      imageUrl: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&h=600&fit=crop",
+      description: "Medical staff attending to patients in emergency setting",
+      sampleDescription: "This powerful photograph captures the intense environment of a hospital emergency room, where medical professionals are attending to patients in urgent situations. The image effectively conveys the critical nature of emergency healthcare and the dedication of medical staff who work in these high-pressure environments.\n\nIn the scene, I can see medical staff - likely nurses, doctors, or emergency medical technicians - wearing scrubs, which are the standard uniform in healthcare settings. Their scrubs might be in various colors, as different hospitals use different color-coding systems to distinguish between departments or roles. The staff appear focused and purposeful in their movements, demonstrating the professional competence that's essential in emergency situations where every second counts.\n\nThe emergency room environment looks clinical and functional, with medical equipment visible throughout - perhaps monitors displaying vital signs, IV stands, medical carts stocked with supplies, and diagnostic equipment. The lighting is typically bright and fluorescent, ensuring optimal visibility for medical procedures and patient assessment. The atmosphere conveys a sense of urgency and efficiency, as emergency rooms must be prepared to handle multiple patients with varying degrees of medical need simultaneously.\n\nWhat's particularly striking about this setting is the contrast between the routine nature of the work for the medical professionals and the potentially life-changing circumstances for the patients. For healthcare workers, this is their workplace, where they apply their training and experience daily. However, for patients and their families, arriving at the emergency room often represents a moment of crisis, fear, and vulnerability.\n\nThe emergency room serves as a critical gateway to healthcare services, providing immediate care for accidents, sudden illnesses, and acute medical conditions. The staff must be skilled not only in medical procedures but also in triage - determining which patients need immediate attention - and in communicating with distressed patients and family members. This environment demands excellent teamwork, quick decision-making abilities, and emotional resilience, as healthcare professionals regularly face challenging situations that require both technical expertise and human compassion.",
       keyVocabulary: [
-        "daily reality",
-        "urban commuting",
-        "cross-section of city dwellers",
-        "civil inattention",
-        "absorbed in their own worlds",
-        "personal sound bubbles",
-        "reserved body language",
-        "transitional space",
-        "paradox of modern life",
-        "overall well-being"
+        "emergency room",
+        "medical professionals",
+        "high-pressure environment",
+        "wearing scrubs",
+        "clinical and functional",
+        "vital signs monitors",
+        "sense of urgency",
+        "triage process",
+        "acute medical conditions",
+        "emotional resilience"
       ],
       usefulPhrases: [
-        "This candid photograph offers...",
-        "The image is particularly interesting because...",
-        "What's immediately striking is...",
-        "The body language is typically...",
-        "What this image really illustrates is...",
-        "Research suggests that...",
-        "Has become the default...",
-        "Creating what sociologists call..."
+        "This powerful photograph captures...",
+        "The image conveys...",
+        "I can see medical staff...",
+        "The environment looks...",
+        "What's particularly striking is...",
+        "The contrast between... and...",
+        "Serves as a critical...",
+        "Demands both... and..."
       ],
       grammarPoints: [
-        "Present Continuous: 'people are looking', 'passengers are commuting'",
-        "Present Perfect: 'has become the default', 'have created'",
-        "Modal verbs: 'might be', 'could be', 'appears to be'",
-        "Gerunds: 'using this time', 'commuting has become'"
+        "Present Continuous: 'staff are attending', 'monitors are displaying'",
+        "Modal verbs: 'must be', 'might be', 'can see'",
+        "Present Perfect: 'has arrived', 'have faced'",
+        "Passive voice: 'are attended', 'is required', 'must be prepared'"
       ],
-      tips: "For public transport scenes, observe people's behaviors, discuss social phenomena, and reflect on modern urban life. Use sociological or psychological concepts if appropriate to show analytical depth."
+      tips: "When describing medical emergency settings, focus on the professionalism of staff, the clinical environment, the contrast between routine work and critical situations, and the human element. Show sensitivity while maintaining analytical depth."
     }
   ];
 

@@ -5,6 +5,9 @@ import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
 import ExamView3 from './ExamView3';
+import ExamView4 from './ExamView4';
+import ExamView5 from './ExamView5';
+import ExamView6 from './ExamView6';
 import Introduction from './Introduction';
 import ConflictWarfareExercise from './ConflictWarfareExercise';
 import AdjectivesExercise from './AdjectivesExercise';
@@ -18,6 +21,8 @@ import StoryTellingB2 from './StoryTellingB2';
 import LinkingWordsB2 from './LinkingWordsB2';
 import PersonalQuestionsB2 from './PersonalQuestionsB2';
 import PictureDescriptionB2 from './PictureDescriptionB2';
+import TalkAboutYourselfB2 from './TalkAboutYourselfB2';
+import JobInterviewB2 from './JobInterviewB2';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -90,6 +95,16 @@ const ExerciseView = ({ tenseId }) => {
     return <PictureDescriptionB2 />;
   }
 
+  // Si es talk-about-yourself-b2, mostrar el componente TalkAboutYourselfB2
+  if (tenseId === 'talk-about-yourself-b2') {
+    return <TalkAboutYourselfB2 />;
+  }
+
+  // Si es job-interview-b2, mostrar el componente JobInterviewB2
+  if (tenseId === 'job-interview-b2') {
+    return <JobInterviewB2 />;
+  }
+
   // Si es un ejercicio de tipo match, usar el componente especializado
   if (tenseId === 'weather-match') {
     return <MatchExercise tenseId={tenseId} />;
@@ -108,6 +123,21 @@ const ExerciseView = ({ tenseId }) => {
   // Si es el examen 3 (final exam), usar el componente ExamView3
   if (tenseId === 'exam3') {
     return <ExamView3 />;
+  }
+
+  // Si es el examen 4 (Complete Exam 2), usar el componente ExamView4
+  if (tenseId === 'exam4') {
+    return <ExamView4 />;
+  }
+
+  // Si es el examen 5 (Complete Exam 3), usar el componente ExamView5
+  if (tenseId === 'exam5') {
+    return <ExamView5 />;
+  }
+
+  // Si es el examen 6 (Complete Exam 4), usar el componente ExamView6
+  if (tenseId === 'exam6') {
+    return <ExamView6 />;
   }
 
   const [exercises, setExercises] = useState([]);

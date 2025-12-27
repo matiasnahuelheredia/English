@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getExam3Sections, getTotalExam3Exercises } from '../data/examData3';
+import { getExam6Sections, getTotalExam6Exercises } from '../data/examData6';
 import SuccessModal from './SuccessModal';
 import { useSuccess } from '../hooks/useSuccess';
 
-const ExamView3 = () => {
-  const [sections] = useState(getExam3Sections());
+const ExamView6 = () => {
+  const [sections] = useState(getExam6Sections());
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [feedback, setFeedback] = useState(null);
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [completedExercises, setCompletedExercises] = useState(0);
+  const [showHelp, setShowHelp] = useState(false);
   const [allAnswers, setAllAnswers] = useState({});
   const [checkedExercises, setCheckedExercises] = useState(new Set());
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -19,8 +20,128 @@ const ExamView3 = () => {
 
   const currentSection = sections[currentSectionIndex];
   const currentExercise = currentSection?.exercises[currentExerciseIndex];
-  const totalExercises = getTotalExam3Exercises();
+  const totalExercises = getTotalExam6Exercises();
   const progress = (completedExercises / totalExercises) * 100;
+
+  const getSectionHelp = (sectionId) => {
+    const helpContent = {
+      'narrative-tenses': {
+        title: '📚 Cómo resolver: Narrative Tenses',
+        example: 'We _______ (have) dinner when the electricity went off.',
+        solution: 'were having',
+        explanation: 'En narrativas usamos diferentes tiempos para expresar acciones en el pasado:',
+        points: [
+          '🔹 Past Simple: Acciones COMPLETADAS y SECUENCIALES',
+          '   • Se terminaron en el pasado → "I ate dinner, watched TV, and went to bed"',
+          '   • Eventos uno después del otro → "She opened the door, walked in, and sat down"',
+          '   • Palabra clave: "then" (entonces), verbos de acción completa',
+          '',
+          '🔹 Past Continuous: Acciones EN PROGRESO que fueron INTERRUMPIDAS',
+          '   • Acción larga que estaba pasando → "I was eating when..."',
+          '   • Se combina con Past Simple (interrupción) → "were having dinner when electricity went off"',
+          '   • Palabra clave: "when" + Past Simple, "while" + otra acción continua',
+          '   • Contexto temporal específico → "At 8pm, I was studying"',
+          '',
+          '🔹 Past Perfect: Acción que pasó ANTES de otra acción pasada',
+          '   • Primera acción de dos eventos → "I had eaten (1º) before I watched TV (2º)"',
+          '   • Causa-efecto en el pasado → "They were hungry because they hadn\'t eaten"',
+          '   • Palabra clave: "before", "after", "already", "just", "by the time"',
+          '   • Resultado visible en el pasado → "Someone had broken the window" (ventana rota)',
+          '',
+          '🔹 Past Perfect Continuous: DURACIÓN de acción antes de otra acción pasada',
+          '   • Énfasis en cuánto tiempo → "I had been waiting for 2 hours when..."',
+          '   • Actividad continua con resultado → "She was tired because she had been running"',
+          '   • Palabra clave: "for" + tiempo, "since" + momento, "How long"',
+          '   • La acción puede continuar o no → "had been studying all night (y seguía cansado)"'
+        ],
+        tip: '💡 TRUCO: ¿Interrupción? → Past Continuous. ¿Secuencia? → Past Simple. ¿Primera de dos? → Past Perfect. ¿Duración antes? → Past Perfect Continuous'
+      },
+      'present-perfect': {
+        title: '📚 Cómo resolver: Present Perfect',
+        example: 'How long _______ (you / wait)?',
+        solution: 'have you been waiting',
+        explanation: 'Diferencia entre Simple y Continuous:',
+        points: [
+          '🔹 Simple: Experiencias, resultados, estados → "have known", "have broken"',
+          '🔹 Continuous: Duración, actividad temporal → "have been waiting"',
+          '🔹 Verbos de estado NO usan continuous → know, like, have (poseer)',
+          '🔹 "How long" generalmente usa continuous (excepto verbos de estado)'
+        ],
+        tip: '💡 Si enfatiza DURACIÓN de acción temporal → Continuous. Si es RESULTADO o ESTADO → Simple'
+      },
+      'future-forms': {
+        title: '📚 Cómo resolver: Future Forms',
+        example: 'This time tomorrow, I\'ll do / I\'ll be doing my exam.',
+        solution: 'I\'ll be doing',
+        explanation: 'Elige según el contexto:',
+        points: [
+          '🔹 Future Continuous: Acción en progreso en momento específico → "I\'ll be doing"',
+          '🔹 Future Perfect: Acción completa ANTES de tiempo futuro → "will have finished by 3pm"',
+          '🔹 "This time tomorrow/next week" → Future Continuous',
+          '🔹 "By (time/date)" → Future Perfect'
+        ],
+        tip: '💡 Busca indicadores de tiempo: "at this time", "by then", "when you arrive"'
+      },
+      'word-order': {
+        title: '📚 Cómo resolver: Word Order',
+        example: 'is / Fiona / for / late / class / often',
+        solution: 'Fiona is often late for class',
+        explanation: 'Posición de adverbios en inglés:',
+        points: [
+          '🔹 Frecuencia (often, always, rarely): DESPUÉS de BE, ANTES de otros verbos',
+          '🔹 Opinión (Luckily, Fortunately): Al PRINCIPIO de la oración',
+          '🔹 Modo (happily, quickly): Después del verbo o al final',
+          '🔹 Tiempo (yesterday, next week): Al FINAL de la oración'
+        ],
+        tip: '💡 Orden básico: Sujeto + (BE) + Adverbio de frecuencia + Verbo + Complemento + Tiempo'
+      },
+      'adverbs': {
+        title: '📚 Cómo resolver: Adverbs',
+        example: 'Have you ever / even tried sushi?',
+        solution: 'ever',
+        explanation: 'Adverbios confusos:',
+        points: [
+          '🔹 ever (preguntas: ¿alguna vez?) vs even (incluso)',
+          '🔹 specially (específicamente para) vs especially (particularmente)',
+          '🔹 hard (con esfuerzo) vs hardly (apenas)',
+          '🔹 still (todavía) vs yet (todavía - final de frase negativa/pregunta)',
+          '🔹 in the end (finalmente) vs at the end (al final de algo)',
+          '🔹 nearly (casi) vs near (cerca)'
+        ],
+        tip: '💡 Lee la oración completa y piensa en el SIGNIFICADO, no solo la gramática'
+      },
+      'mixed-grammar': {
+        title: '📚 Cómo resolver: Mixed Grammar',
+        example: 'Your brother doesn\'t smoke, does / doesn\'t he?',
+        solution: 'does',
+        explanation: 'Reglas variadas de gramática:',
+        points: [
+          '🔹 The + adjective = grupo general → "The rich" (no "people")',
+          '🔹 Question tags: Oración negativa → tag positivo (y viceversa)',
+          '🔹 Such + a/an + adj + noun → "such a good time"',
+          '🔹 Auxiliar en respuestas cortas debe coincidir con el tiempo',
+          '🔹 "did + infinitive" para ENFATIZAR → "I did tell you!"'
+        ],
+        tip: '💡 Cada ejercicio tiene su propia regla - lee con atención el contexto'
+      },
+      'vocabulary': {
+        title: '📚 Cómo resolver: Vocabulary',
+        example: 'We\'re having another h_______ this month. It\'s been over 35 degrees.',
+        solution: 'heatwave',
+        explanation: 'Estrategia para completar palabras:',
+        points: [
+          '🔹 Lee el CONTEXTO completo - las pistas están en la oración',
+          '🔹 Usa la primera letra como guía inicial',
+          '🔹 Piensa en palabras relacionadas al tema (clima, salud, viajes)',
+          '🔹 Verifica que la palabra tenga sentido gramaticalmente',
+          '🔹 Común en exámenes: heatwave, allergic, fill, open-minded, thick, leather, aisle, pressure'
+        ],
+        tip: '💡 El contexto SIEMPRE da la pista - ejemplo: "35 degrees" → habla de calor → heatwave'
+      }
+    };
+
+    return helpContent[sectionId] || null;
+  };
 
   useEffect(() => {
     const exerciseKey = `${currentSectionIndex}-${currentExerciseIndex}`;
@@ -396,9 +517,9 @@ const ExamView3 = () => {
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-center mb-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">📝 B2 Final Exam</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">Examen de Inglés</h1>
             <p className="text-sm text-htb-text-dim mt-1">
-              Grammar & Vocabulary Assessment
+              Progreso: {completedExercises} / {totalExercises} ejercicios
             </p>
           </div>
 
@@ -428,13 +549,54 @@ const ExamView3 = () => {
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-xl sm:text-2xl font-bold text-white">{currentSection.title}</h2>
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowHelp(!showHelp)}
+              className="bg-htb-green text-htb-bg px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-htb-green-hover transition-all duration-200 flex items-center gap-1"
+            >
+              <span>💡</span>
+              <span className="hidden sm:inline">Ayuda</span>
+            </button>
             <span className="bg-htb-card border border-htb-green/30 text-htb-green px-3 py-1 rounded-full text-sm font-semibold">
-              Section {currentSectionIndex + 1}/{sections.length}
+              Sección {currentSectionIndex + 1}/{sections.length}
             </span>
           </div>
         </div>
         <p className="text-htb-text text-sm sm:text-base">{currentSection.instruction}</p>
       </div>
+
+      {/* Help Panel */}
+      {showHelp && getSectionHelp(currentSection.id) && (
+        <div className="bg-htb-card border-2 border-htb-green/50 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6 animate-fadeIn">
+          <div className="flex items-start justify-between mb-3">
+            <h3 className="text-lg font-bold text-white">{getSectionHelp(currentSection.id).title}</h3>
+            <button
+              onClick={() => setShowHelp(false)}
+              className="text-htb-text-dim hover:text-white font-bold text-xl"
+            >
+              ✕
+            </button>
+          </div>
+          
+          <div className="bg-htb-sidebar border border-htb-green/20 rounded-lg p-4 mb-3">
+            <p className="text-sm font-semibold text-htb-text mb-2">📝 Ejemplo:</p>
+            <p className="text-htb-text mb-1">{getSectionHelp(currentSection.id).example}</p>
+            <p className="text-htb-green font-semibold">✓ Solución: {getSectionHelp(currentSection.id).solution}</p>
+          </div>
+
+          <div className="mb-3">
+            <p className="text-sm font-semibold text-white mb-2">{getSectionHelp(currentSection.id).explanation}</p>
+            <ul className="space-y-1">
+              {getSectionHelp(currentSection.id).points.map((point, index) => (
+                <li key={index} className="text-sm text-htb-text">{point}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-3">
+            <p className="text-sm text-htb-green font-medium">{getSectionHelp(currentSection.id).tip}</p>
+          </div>
+        </div>
+      )}
 
       {/* Exercise Content */}
       <div className="bg-htb-card border border-gray-800 rounded-lg shadow-md p-4 sm:p-6 mb-6">
@@ -580,4 +742,4 @@ const ExamView3 = () => {
   );
 };
 
-export default ExamView3;
+export default ExamView6;
