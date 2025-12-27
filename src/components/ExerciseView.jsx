@@ -23,6 +23,7 @@ import PersonalQuestionsB2 from './PersonalQuestionsB2';
 import PictureDescriptionB2 from './PictureDescriptionB2';
 import TalkAboutYourselfB2 from './TalkAboutYourselfB2';
 import JobInterviewB2 from './JobInterviewB2';
+import VerbBeA1Exercise from './VerbBeA1Exercise';
 
 const ExerciseView = ({ tenseId }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -103,6 +104,11 @@ const ExerciseView = ({ tenseId }) => {
   // Si es job-interview-b2, mostrar el componente JobInterviewB2
   if (tenseId === 'job-interview-b2') {
     return <JobInterviewB2 />;
+  }
+
+  // Si es verb-be-a1, mostrar el componente VerbBeA1Exercise
+  if (tenseId === 'verb-be-a1') {
+    return <VerbBeA1Exercise />;
   }
 
   // Si es un ejercicio de tipo match, usar el componente especializado
@@ -373,7 +379,7 @@ const ExerciseView = ({ tenseId }) => {
       if (!answer || answer.trim() === '') {
         setFeedback({
           isCorrect: false,
-          message: 'Please completa la respuesta',
+          message: 'Please complete your answer',
           correctAnswer: isReversed ? currentExercise.englishWord : (Array.isArray(currentExercise.spanishWord) ? currentExercise.spanishWord.join(', ') : currentExercise.spanishWord)
         });
         return;
@@ -393,7 +399,7 @@ const ExerciseView = ({ tenseId }) => {
 
       setFeedback({
         isCorrect,
-        message: isCorrect ? '¡Correcto! ' + currentExercise.explanation : 'Incorrecto. ' + currentExercise.explanation,
+        message: isCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: correctAnswers.join(' / '),
         userAnswerText: answer
       });
@@ -413,7 +419,7 @@ const ExerciseView = ({ tenseId }) => {
         // Mostrar mensaje si completó todos
         if (updatedRemaining.length === 0) {
           setTimeout(() => {
-            alert('¡Felicitaciones! Has completado todas las palabras correctamente. 🎉\n\nEstadísticas finales:\nCorrectas: ' + (stats.correct + 1) + '\nIncorrectas: ' + stats.incorrect);
+            alert('Congratulations! You have completed all words correctly. 🎉\n\nFinal statistics:\nCorrect: ' + (stats.correct + 1) + '\nIncorrect: ' + stats.incorrect);
             // Reiniciar el vocabulario
             setRemainingVocabExercises([...exercises]);
             setStats({ correct: 0, incorrect: 0 });
@@ -451,7 +457,7 @@ const ExerciseView = ({ tenseId }) => {
       if (!userAnswers || userAnswers.length === 0 || userAnswers.every(ans => !ans || ans.trim() === '')) {
         setFeedback({
           isCorrect: false,
-          message: 'Please completa todas las respuestas',
+          message: 'Please complete all answers',
           correctAnswer: currentExercise.correctAnswer.join(' ... ')
         });
         return;
@@ -465,7 +471,7 @@ const ExerciseView = ({ tenseId }) => {
 
       setFeedback({
         isCorrect: allCorrect,
-        message: allCorrect ? '¡Correcto! ' + currentExercise.explanation : 'Incorrecto. ' + currentExercise.explanation,
+        message: allCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: currentExercise.correctAnswer.join(' ... '),
         userAnswerText: userAnswers.join(' ... '),
         tense: currentExercise.tense
@@ -482,7 +488,7 @@ const ExerciseView = ({ tenseId }) => {
       if (!userAnswers || userAnswers.length === 0 || userAnswers.some(ans => ans === undefined || ans === '' || ans === '-1')) {
         setFeedback({
           isCorrect: false,
-          message: 'Please completa todas las respuestas'
+          message: 'Please complete all answers'
         });
         return;
       }
@@ -495,7 +501,7 @@ const ExerciseView = ({ tenseId }) => {
 
       setFeedback({
         isCorrect: allCorrect,
-        message: allCorrect ? '¡Correcto! ' + currentExercise.explanation : 'Incorrecto. ' + currentExercise.explanation,
+        message: allCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: currentExercise.correctAnswer,
         tense: currentExercise.tense
       });
@@ -506,7 +512,7 @@ const ExerciseView = ({ tenseId }) => {
       if (answer === undefined || answer === '' || answer === '-1') {
         setFeedback({
           isCorrect: false,
-          message: 'Please selecciona una respuesta'
+          message: 'Please select an answer'
         });
         return;
       }
@@ -516,7 +522,7 @@ const ExerciseView = ({ tenseId }) => {
 
       setFeedback({
         isCorrect,
-        message: isCorrect ? '¡Correcto! ' + currentExercise.explanation : 'Incorrecto. ' + currentExercise.explanation,
+        message: isCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: currentExercise.correctAnswer,
         tense: currentExercise.tense
       });
@@ -564,7 +570,7 @@ const ExerciseView = ({ tenseId }) => {
       'business': 'Business - Vocabulary',
       'present-perfect-past-simple-2': 'Present Perfect & Past Simple (2) - Word Order',
     };
-    return titles[tenseId] || 'Ejercicios';
+    return titles[tenseId] || 'Exercises';
   };
 
   const getTenseStructure = () => {
@@ -679,7 +685,7 @@ const ExerciseView = ({ tenseId }) => {
     return (
       <div className="bg-htb-card border border-gray-800 rounded-lg p-8 text-center">
         <h2 className="text-2xl font-bold mb-4 text-white">{getTenseTitle()}</h2>
-        <p className="text-htb-text-dim">Cargando ejercicio...</p>
+        <p className="text-htb-text-dim">Loading exercise...</p>
       </div>
     );
   }
@@ -693,11 +699,11 @@ const ExerciseView = ({ tenseId }) => {
             <p className="text-sm sm:text-base text-htb-text-dim">
               {isVocabulary
                 ? (isReversed 
-                    ? 'Traduce la siguiente palabra del español al inglés.'
-                    : 'Traduce la siguiente palabra del inglés al español.')
+                    ? 'Translate the following word from Spanish to English.'
+                    : 'Translate the following word from English to Spanish.')
                 : (tenseId === 'question-forms'
-                    ? 'Ordena las palabras en el orden correcto para formar la pregunta.'
-                    : 'Completa la siguiente oración seleccionando la opción correcta.')}
+                    ? 'Arrange the words in the correct order to form the question.'
+                    : 'Complete the following sentence by selecting the correct option.')}
             </p>
           </div>
         </div>
@@ -710,7 +716,7 @@ const ExerciseView = ({ tenseId }) => {
               <div className="flex items-center gap-2">
                 <span className="text-2xl">📚</span>
                 <div>
-                  <p className="text-sm font-semibold text-htb-green">Palabras por aprender</p>
+                  <p className="text-sm font-semibold text-htb-green">Words to learn</p>
                   <p className="text-2xl font-bold text-white">{remainingVocabExercises.length} / {exercises.length}</p>
                 </div>
               </div>
@@ -721,12 +727,12 @@ const ExerciseView = ({ tenseId }) => {
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-htb-green"></div>
                 <span className="font-semibold text-htb-green">{stats.correct}</span>
-                <span className="text-htb-text-dim">Correctas</span>
+                <span className="text-htb-text-dim">Correct</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <span className="font-semibold text-red-500">{stats.incorrect}</span>
-                <span className="text-htb-text-dim">Incorrectas</span>
+                <span className="text-htb-text-dim">Incorrect</span>
               </div>
             </div>
             
@@ -767,7 +773,7 @@ const ExerciseView = ({ tenseId }) => {
                 />
               </button>
               <span className="text-xs sm:text-sm font-medium text-htb-text">
-                Cambiar dirección
+                Change direction
               </span>
             </div>
           </div>
@@ -778,25 +784,25 @@ const ExerciseView = ({ tenseId }) => {
           <div className="mt-4 bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-htb-green text-xl">📖</span>
-              <h3 className="text-sm font-bold text-htb-green uppercase tracking-wide">Estructura Gramatical</h3>
+              <h3 className="text-sm font-bold text-htb-green uppercase tracking-wide">Grammar Structure</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
               <div className="bg-htb-card rounded p-3 border border-gray-800">
-                <p className="font-semibold text-htb-green mb-1">✓ Afirmativa</p>
+                <p className="font-semibold text-htb-green mb-1">✓ Affirmative</p>
                 <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().affirmative}</p>
               </div>
               <div className="bg-htb-card rounded p-3 border border-gray-800">
-                <p className="font-semibold text-red-500 mb-1">✗ Negativa</p>
+                <p className="font-semibold text-red-500 mb-1">✗ Negative</p>
                 <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().negative}</p>
               </div>
               <div className="bg-htb-card rounded p-3 border border-gray-800">
-                <p className="font-semibold text-blue-400 mb-1">? Interrogativa</p>
+                <p className="font-semibold text-blue-400 mb-1">? Interrogative</p>
                 <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().interrogative}</p>
               </div>
             </div>
             <div className="mt-3 bg-htb-sidebar border border-htb-green/30 rounded p-2">
               <p className="text-xs text-htb-text-dim">
-                <span className="font-semibold text-htb-green">Ejemplo:</span> 
+                <span className="font-semibold text-htb-green">Example:</span> 
                 <span className="ml-1 text-htb-text italic">{getTenseStructure().example}</span>
               </p>
             </div>
@@ -811,7 +817,7 @@ const ExerciseView = ({ tenseId }) => {
             {isVocabulary && initialCountdown > 0 && !feedback && (
               <div className="mb-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
                 <p className="text-sm text-htb-green">
-                  ⏱️ Tienes <span className="font-bold text-htb-green text-lg">{initialCountdown}</span> segundo{initialCountdown !== 1 ? 's' : ''} para responder
+                  ⏱️ You have <span className="font-bold text-htb-green text-lg">{initialCountdown}</span> second{initialCountdown !== 1 ? 's' : ''} to answer
                 </p>
               </div>
             )}
@@ -840,7 +846,7 @@ const ExerciseView = ({ tenseId }) => {
                 {imageLoading && (
                   <div className="flex justify-center mb-4">
                     <div className="w-full max-w-md h-48 sm:h-56 md:h-64 bg-htb-sidebar animate-pulse flex items-center justify-center rounded-lg border border-gray-800">
-                      <span className="text-htb-text-dim">Cargando imagen...</span>
+                      <span className="text-htb-text-dim">Loading image...</span>
                     </div>
                   </div>
                 )}
@@ -857,7 +863,7 @@ const ExerciseView = ({ tenseId }) => {
                   value={userAnswer || ''}
                   onChange={(e) => handleAnswerChange(e.target.value)}
                   className="border border-gray-300 rounded px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-htb-green w-full bg-htb-bg text-white"
-                  placeholder="Tu respuesta..."
+                  placeholder="Your answer..."
                   disabled={feedback !== null}
                   onKeyPress={(e) => {
                     if (e.key === 'Enter' && !feedback) {
@@ -919,7 +925,7 @@ const ExerciseView = ({ tenseId }) => {
             {isVocabulary && showAnswer && !feedback && (
               <div className="mt-4 p-4 rounded-md bg-htb-sidebar border border-htb-green/30">
                 <p className="font-semibold text-htb-green text-base mb-2">
-                  💡 Respuesta:
+                  💡 Answer:
                 </p>
                 <p className="text-white text-base">
                   {isReversed 
@@ -948,7 +954,7 @@ const ExerciseView = ({ tenseId }) => {
             {isVocabulary && feedback && feedback.isCorrect && (
               <div className="mt-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
                 <p className="text-sm text-htb-green">
-                  ⏳ Cargando siguiente pregunta en 5 segundos...
+                  ⏳ Loading next question in 5 seconds...
                 </p>
               </div>
             )}
@@ -966,7 +972,7 @@ const ExerciseView = ({ tenseId }) => {
                     feedback.isCorrect ? 'text-htb-green' : 'text-red-500'
                   }`}
                 >
-                  {feedback.isCorrect ? '✓ Correcto' : '✗ Incorrecto'}
+                  {feedback.isCorrect ? '✓ Correct' : '✗ Incorrect'}
                 </p>
                 {/* Mostrar el tiempo verbal solo en Mixed Tenses */}
                 {tenseId === 'mixed-tenses' && feedback.tense && (
@@ -1008,7 +1014,7 @@ const ExerciseView = ({ tenseId }) => {
                   onClick={checkAnswer}
                   className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
                 >
-                  Verificar respuesta
+                  Check answer
                 </button>
               ) : (
                 <>
@@ -1018,7 +1024,7 @@ const ExerciseView = ({ tenseId }) => {
                       onClick={loadNewQuestion}
                       className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
                     >
-                      Siguiente pregunta →
+                      Next question →
                     </button>
                   )}
                 </>

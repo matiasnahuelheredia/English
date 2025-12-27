@@ -11,6 +11,8 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     }
     // Valores por defecto si no hay nada guardado
     return {
+      'Beginner': false,
+      'Beginner-Grammar': false,
       'Intermediate': false,
       'Intermediate-Vocabulary': false,
       'Intermediate-Grammar': false,
@@ -142,6 +144,64 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               <span>📖</span>
               <span>Introduction</span>
             </button>
+          </div>
+
+          {/* A1 BEGINNER */}
+          <div>
+            <button
+              onClick={() => toggleSection('Beginner')}
+              className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card text-htb-text transition-colors"
+            >
+              <div className="flex items-center gap-3">
+                <span>🌱</span>
+                <span>A1 - Beginner</span>
+              </div>
+              <svg
+                className={`w-4 h-4 transition-transform ${
+                  expandedSections['Beginner'] ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {expandedSections['Beginner'] && (
+              <div className="mt-1 ml-6 space-y-1">
+                <button
+                  onClick={() => toggleSection('Beginner-Grammar')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card text-htb-text-dim transition-colors"
+                >
+                  <span>📝 Grammar</span>
+                  <svg
+                    className={`w-3 h-3 transition-transform ${
+                      expandedSections['Beginner-Grammar'] ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {expandedSections['Beginner-Grammar'] && (
+                  <div className="ml-4 space-y-1">
+                    <button
+                      onClick={() => onSelectTense('verb-be-a1')}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                        selectedTense === 'verb-be-a1'
+                          ? 'bg-htb-green text-htb-bg'
+                          : 'hover:bg-htb-card text-htb-text-dim'
+                      }`}
+                    >
+                      1A Verb be (singular)
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* B1 INTERMEDIATE */}

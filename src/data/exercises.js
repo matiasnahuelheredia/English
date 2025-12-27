@@ -1,6 +1,6 @@
-// Base de datos de ejercicios para cada tiempo verbal
+// Exercise database for each verb tense
 
-// Función para mezclar arrays aleatoriamente
+// Function to randomly shuffle arrays
 const shuffleArray = (array) => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -20,7 +20,7 @@ const exercisesData = {
       ],
       options: ['performed', 'performed OR been performing', 'been performing'],
       correctAnswer: 'performed',
-      explanation: 'We use "performed" (Present Perfect Simple) porque estamos preguntando sobre una experiencia en la vida sin importar cuándo ocurrió. No necesitamos la forma continua porque no enfatizamos la duración de la acción.'
+      explanation: 'We use "performed" (Present Perfect Simple) because we are asking about a life experience regardless of when it happened. We don\'t need the continuous form because we don\'t emphasize the duration of the action.'
     },
     {
       sentenceParts: [
@@ -30,7 +30,7 @@ const exercisesData = {
       ],
       options: ['worked OR been working', 'been working', 'worked'],
       correctAnswer: 'worked OR been working',
-      explanation: 'Ambas formas son correctas. "Has worked" enfatiza el resultado (siguen trabajando), mientras que "has been working" enfatiza la continuidad de la acción desde enero hasta ahora.'
+      explanation: 'Both forms are correct. "Has worked" emphasizes the result (they continue working), while "has been working" emphasizes the continuity of the action from January until now.'
     },
     {
       sentenceParts: [
@@ -40,7 +40,7 @@ const exercisesData = {
       ],
       options: ['blocked', 'blocked OR been blocking', 'been blocking'],
       correctAnswer: 'blocked',
-      explanation: 'We use "blocked" porque estamos contando acciones completas (cinco ataques). El Present Perfect Simple se usa para acciones repetidas y contables.'
+      explanation: 'We use "blocked" because we are counting complete actions (five attacks). Present Perfect Simple is used for repeated and countable actions.'
     },
     {
       sentenceParts: [
@@ -50,7 +50,7 @@ const exercisesData = {
       ],
       options: ['tried OR been trying', 'tried', 'been trying'],
       correctAnswer: 'been trying',
-      explanation: 'We use "been trying" (Present Perfect Continuous) porque enfatizamos la actividad continua que causó la frustración. La duración de la acción es importante aquí.'
+      explanation: 'We use "been trying" (Present Perfect Continuous) because we emphasize the continuous activity that caused the frustration. The duration of the action is important here.'
     },
     {
       sentenceParts: [
@@ -60,7 +60,7 @@ const exercisesData = {
       ],
       options: ['tested OR been testing', 'tested', 'been testing'],
       correctAnswer: 'tested',
-      explanation: 'We use "tested" porque se trata de una acción puntual (probar el sistema). "Test" en este sentido no se usa normalmente en forma continua.'
+      explanation: 'We use "tested" because it\'s a punctual action (testing the system). "Test" in this sense is not normally used in continuous form.'
     },
     {
       sentenceParts: [
@@ -70,7 +70,7 @@ const exercisesData = {
       ],
       options: ['been discovering', 'discovered', 'discovered OR been discovering'],
       correctAnswer: 'discovered',
-      explanation: 'We use "discovered" porque "discover" (encontrar por primera vez) es una acción puntual que no se usa en forma continua en este contexto.'
+      explanation: 'We use "discovered" because "discover" (finding for the first time) is a punctual action that is not used in continuous form in this context.'
     },
     {
       sentenceParts: [
@@ -80,7 +80,7 @@ const exercisesData = {
       ],
       options: ['continued OR been continuing', 'been continuing', 'continued'],
       correctAnswer: 'been continuing',
-      explanation: 'We use "been continuing" (Present Perfect Continuous) porque enfatizamos la actividad continua desde medianoche. La duración es importante aquí.'
+      explanation: 'We use "been continuing" (Present Perfect Continuous) because we emphasize the continuous activity since midnight. Duration is important here.'
     },
     {
       sentenceParts: [
@@ -90,7 +90,7 @@ const exercisesData = {
       ],
       options: ['been going', 'gone', 'gone OR been going'],
       correctAnswer: 'gone',
-      explanation: 'We use "gone" porque fue a la conferencia y no está aquí ahora. "Gone" implica que la persona no está presente, mientras que "been" implicaría que ya regresó.'
+      explanation: 'We use "gone" because he went to the conference and is not here now. "Gone" implies that the person is not present, while "been" would imply that he already returned.'
     },
     {
       sentenceParts: [
@@ -100,7 +100,7 @@ const exercisesData = {
       ],
       options: ['worked', 'been working', 'worked OR been working'],
       correctAnswer: 'worked OR been working',
-      explanation: 'Ambas formas son correctas. "Has worked" enfatiza el estado/resultado (trabaja remotamente), mientras que "has been working" enfatiza la continuidad de la situación desde la pandemia.'
+      explanation: 'Both forms are correct. "Has worked" emphasizes the state/result (works remotely), while "has been working" emphasizes the continuity of the situation since the pandemic.'
     },
     {
       sentenceParts: [
@@ -110,7 +110,7 @@ const exercisesData = {
       ],
       options: ['analyzed', 'analyzed OR been analyzing', 'been analyzing'],
       correctAnswer: 'been analyzing',
-      explanation: 'We use "been analyzing" (Present Perfect Continuous) porque enfatizamos la actividad continua de analizar durante toda la mañana. Mencionamos el progreso (entrada 15,000) lo que indica duración.'
+      explanation: 'We use "been analyzing" (Present Perfect Continuous) because we emphasize the continuous activity of analyzing throughout the entire morning. We mention the progress (entry 15,000) which indicates duration.'
     },
     {
       sentenceParts: [
@@ -119,7 +119,7 @@ const exercisesData = {
         { type: 'text', content: '(patch) the server. Can we go live now?' }
       ],
       correctAnswer: ['have patched'],
-      explanation: 'Present Perfect Simple: have/has + past participle. We use "have patched" porque la acción acaba de completarse y el resultado es importante ahora (podemos publicar).'
+      explanation: 'Present Perfect Simple: have/has + past participle. We use "have patched" because the action has just been completed and the result is important now (we can go live).'
     },
     {
       sentenceParts: [
@@ -128,7 +128,7 @@ const exercisesData = {
         { type: 'text', content: '(infiltrate) systems for five years.' }
       ],
       correctAnswer: ['has infiltrated', 'has been infiltrating'],
-      explanation: 'Ambas formas son correctas. "Has infiltrated" o "has been infiltrating" porque la duración (cinco años) conecta el pasado con el presente.'
+      explanation: 'Both forms are correct. "Has infiltrated" or "has been infiltrating" because the duration (five years) connects the past with the present.'
     },
     {
       sentenceParts: [
@@ -137,7 +137,7 @@ const exercisesData = {
         { type: 'text', content: '(never/crack) a 256-bit encryption before.' }
       ],
       correctAnswer: ['have never cracked', "haven't cracked"],
-      explanation: 'Present Perfect con "never": have/has + never + past participle. Hablamos de una experiencia en ciberseguridad hasta ahora.'
+      explanation: 'Present Perfect with "never": have/has + never + past participle. We talk about a cybersecurity experience up to now.'
     },
     {
       sentenceParts: [
@@ -149,7 +149,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'We use "have" con "you" en Present Perfect para preguntar sobre la duración de una acción que comenzó en el pasado y continúa.'
+      explanation: 'We use "have" with "you" in Present Perfect to ask about the duration of an action that began in the past and continues.'
     },
     {
       sentenceParts: [
@@ -159,7 +159,7 @@ const exercisesData = {
       ],
       options: ['lost', 'losed', 'been losing'],
       correctAnswer: 'lost',
-      explanation: 'We use "lost" (Present Perfect Simple) para indicar que la contraseña está perdida ahora. El resultado presente es importante.'
+      explanation: 'We use "lost" (Present Perfect Simple) to indicate that the password is lost now. The present result is important.'
     },
     {
       sentenceParts: [
@@ -169,7 +169,7 @@ const exercisesData = {
       ],
       options: ['have been', 'are', 'were'],
       correctAnswer: 'have been',
-      explanation: 'We use "have been" porque la duración (10 años) conecta el pasado con el presente. Todavía están en el colectivo.'
+      explanation: 'We use "have been" because the duration (10 years) connects the past with the present. They are still in the collective.'
     },
     {
       sentenceParts: [
@@ -179,7 +179,7 @@ const exercisesData = {
       ],
       options: ['has run', 'ran', 'has been running'],
       correctAnswer: 'has run',
-      explanation: 'We use "has run" porque contamos acciones completas en un período que aún no ha terminado ("this morning").'
+      explanation: 'We use "has run" because we count complete actions in a period that has not yet ended ("this morning").'
     },
     {
       sentenceParts: [
@@ -189,7 +189,7 @@ const exercisesData = {
       ],
       options: ['have known', 'know', 'knew'],
       correctAnswer: 'have known',
-      explanation: 'We use "have known" con "since" para indicar que la acción comenzó en el pasado (primera competencia CTF) y continúa hasta ahora.'
+      explanation: 'We use "have known" with "since" to indicate that the action began in the past (first CTF competition) and continues until now.'
     },
     {
       sentenceParts: [
@@ -199,7 +199,7 @@ const exercisesData = {
       ],
       options: ["hasn't found", "didn't find", 'is not finding'],
       correctAnswer: "hasn't found",
-      explanation: 'We use "hasn\'t found" con "recently" para hablar de un período reciente hasta el presente.'
+      explanation: 'We use "hasn\'t found" with "recently" to talk about a recent period up to the present.'
     },
     {
       sentenceParts: [
@@ -211,7 +211,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Questionmos sobre experiencias en pentesting usando Present Perfect con "How many".'
+      explanation: 'We ask about pentesting experiences using Present Perfect with "How many".'
     },
     {
       sentenceParts: [
@@ -222,7 +222,7 @@ const exercisesData = {
       ],
       options: ['has', 'have'],
       correctAnswer: 'has',
-      explanation: 'We use "has" con tercera persona singular. "Already" se usa con Present Perfect para indicar que algo sucedió antes de lo esperado.'
+      explanation: 'We use "has" with third person singular. "Already" is used with Present Perfect to indicate that something happened earlier than expected.'
     },
     {
       sentenceParts: [
@@ -232,7 +232,7 @@ const exercisesData = {
       ],
       options: ['been', 'gone', 'went'],
       correctAnswer: 'been',
-      explanation: 'We use "been" (no "gone") porque regresamos de la conferencia. "Gone" implicaría que todavía estamos allí.'
+      explanation: 'We use "been" (not "gone") because we returned from the conference. "Gone" would imply that we are still there.'
     },
     {
       sentenceParts: [
@@ -242,7 +242,7 @@ const exercisesData = {
       ],
       options: ['has stolen', 'stole', 'steals'],
       correctAnswer: 'has stolen',
-      explanation: 'We use Present Perfect porque el resultado presente es visible (no hay datos) pero no sabemos exactamente cuándo pasó.'
+      explanation: 'We use Present Perfect because the present result is visible (there is no data) but we don\'t know exactly when it happened.'
     },
     {
       sentenceParts: [
@@ -262,7 +262,7 @@ const exercisesData = {
       ],
       options: ['has been sending', 'sent', 'sends'],
       correctAnswer: 'has been sending',
-      explanation: 'We use Present Perfect Continuous con "for hours" para enfatizar la duración de una actividad que continúa.'
+      explanation: 'We use Present Perfect Continuous with "for hours" to emphasize the duration of an activity that continues.'
     },
     {
       sentenceParts: [
@@ -282,7 +282,7 @@ const exercisesData = {
       ],
       options: ['been waiting', 'waited', 'wait'],
       correctAnswer: 'been waiting',
-      explanation: 'We use Present Perfect Continuous con "for 30 minutes" para enfatizar la duración de una acción que continúa.'
+      explanation: 'We use Present Perfect Continuous with "for 30 minutes" to emphasize the duration of an action that continues.'
     },
     {
       sentenceParts: [
@@ -292,7 +292,7 @@ const exercisesData = {
       ],
       options: ['identified', 'been identifying', 'identified OR been identifying'],
       correctAnswer: 'identified',
-      explanation: 'Present Perfect Simple para reportar hallazgos specifics durante el pentesting.'
+      explanation: 'Present Perfect Simple to report specific findings during pentesting.'
     },
     {
       sentenceParts: [
@@ -302,7 +302,7 @@ const exercisesData = {
       ],
       options: ['attempted', 'been attempting', 'attempted OR been attempting'],
       correctAnswer: 'been attempting',
-      explanation: 'Present Perfect Continuous enfatiza la actividad continua de intentar escalar privilegios.'
+      explanation: 'Present Perfect Continuous emphasizes the continuous activity of attempting privilege escalation.'
     },
     {
       sentenceParts: [
@@ -312,7 +312,7 @@ const exercisesData = {
       ],
       options: ['detected', 'been detecting', 'detected OR been detecting'],
       correctAnswer: 'detected',
-      explanation: 'We use Present Perfect Simple porque contamos hallazgos specifics hasta ahora.'
+      explanation: 'We use Present Perfect Simple because we count specific findings up to now.'
     },
     {
       sentenceParts: [
@@ -322,7 +322,7 @@ const exercisesData = {
       ],
       options: ['dumped', 'been dumping', 'dumped OR been dumping'],
       correctAnswer: 'dumped',
-      explanation: 'Question sobre una acción específica completada, típica en informes de pentesting.'
+      explanation: 'Question about a specific completed action, typical in pentesting reports.'
     },
     {
       sentenceParts: [
@@ -332,7 +332,7 @@ const exercisesData = {
       ],
       options: ['implemented', 'been implementing', 'implemented OR been implementing'],
       correctAnswer: 'implemented',
-      explanation: 'We use Present Perfect para describir un problema persistente sin tiempo specific.'
+      explanation: 'We use Present Perfect to describe a persistent problem without specific time.'
     },
     {
       sentenceParts: [
@@ -342,7 +342,7 @@ const exercisesData = {
       ],
       options: ['tested', 'been testing', 'tested OR been testing'],
       correctAnswer: 'been testing',
-      explanation: 'Present Perfect Continuous enfatiza la actividad continua de testing durante la sesión.'
+      explanation: 'Present Perfect Continuous emphasizes the continuous testing activity throughout the session.'
     },
     {
       sentenceParts: [
@@ -352,7 +352,7 @@ const exercisesData = {
       ],
       options: ['logged', 'been logging', 'logged OR been logging'],
       correctAnswer: 'been logging',
-      explanation: 'Actividad continua de registro desde un punto specific en el pasado.'
+      explanation: 'Continuous logging activity from a specific point in the past.'
     },
     {
       sentenceParts: [
@@ -362,7 +362,7 @@ const exercisesData = {
       ],
       options: ['blocked', 'been blocking', 'blocked OR been blocking'],
       correctAnswer: 'blocked',
-      explanation: 'Question sobre acciones específicas completadas en un período que continúa (today).'
+      explanation: 'Question about specific completed actions in a period that continues (today).'
     },
     {
       sentenceParts: [
@@ -372,7 +372,7 @@ const exercisesData = {
       ],
       options: ['achieved', 'been achieving', 'achieved OR been achieving'],
       correctAnswer: 'achieved',
-      explanation: 'Logro specific en pentesting reportado con Present Perfect Simple.'
+      explanation: 'Specific achievement in pentesting reported with Present Perfect Simple.'
     },
     {
       sentenceParts: [
@@ -382,7 +382,7 @@ const exercisesData = {
       ],
       options: ['used', 'been using', 'used OR been using'],
       correctAnswer: 'used OR been using',
-      explanation: 'Ambas formas son correctas para describir experiencia con herramientas.'
+      explanation: 'Both forms are correct to describe experience with tools.'
     },
     {
       sentenceParts: [
@@ -392,7 +392,7 @@ const exercisesData = {
       ],
       options: ['detected', 'been detecting', 'detected OR been detecting'],
       correctAnswer: 'detected',
-      explanation: 'Contamos eventos specifics en un período que aún continúa (this week).'
+      explanation: 'We count specific events in a period that still continues (this week).'
     },
     {
       sentenceParts: [
@@ -402,7 +402,7 @@ const exercisesData = {
       ],
       options: ['executed', 'been executing', 'executed OR been executing'],
       correctAnswer: 'executed',
-      explanation: 'Question sobre experiencia en pentesting sin tiempo specific.'
+      explanation: 'Question about pentesting experience without specific time.'
     },
     {
       sentenceParts: [
@@ -412,7 +412,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Estado continuo desde el pasado hasta ahora en el informe.'
+      explanation: 'Continuous state from the past until now in the report.'
     },
     {
       sentenceParts: [
@@ -422,7 +422,7 @@ const exercisesData = {
       ],
       options: ['shown', 'been showing', 'shown OR been showing'],
       correctAnswer: 'shown',
-      explanation: 'Hallazgos specifics reportados con Present Perfect Simple.'
+      explanation: 'Specific findings reported with Present Perfect Simple.'
     },
     {
       sentenceParts: [
@@ -432,7 +432,7 @@ const exercisesData = {
       ],
       options: ['deployed', 'been deploying', 'deployed OR been deploying'],
       correctAnswer: 'deployed',
-      explanation: 'Acción específica que no se ha completado, reportada con "yet".'
+      explanation: 'Specific action that has not been completed, reported with "yet".'
     },
     {
       sentenceParts: [
@@ -442,7 +442,7 @@ const exercisesData = {
       ],
       options: ['compromised', 'been compromising', 'compromised OR been compromising'],
       correctAnswer: 'compromised',
-      explanation: 'Question cuantitativa sobre resultados specifics del pentesting.'
+      explanation: 'Quantitative question about specific pentesting results.'
     },
     {
       sentenceParts: [
@@ -452,7 +452,7 @@ const exercisesData = {
       ],
       options: ['exposed', 'been exposing', 'exposed OR been exposing'],
       correctAnswer: 'been exposing',
-      explanation: 'Actividad continua problemática identificada durante el assessment.'
+      explanation: 'Problematic continuous activity identified during the assessment.'
     },
     {
       sentenceParts: [
@@ -462,7 +462,7 @@ const exercisesData = {
       ],
       options: ['applied', 'been applying', 'applied OR been applying'],
       correctAnswer: 'applied',
-      explanation: 'Acción completada reportada en el informe de remediación.'
+      explanation: 'Completed action reported in the remediation report.'
     },
     {
       sentenceParts: [
@@ -472,7 +472,7 @@ const exercisesData = {
       ],
       options: ['revealed', 'been revealing', 'revealed OR been revealing'],
       correctAnswer: 'revealed',
-      explanation: 'Hallazgos revelados durante el test, uso típico en informes.'
+      explanation: 'Findings revealed during the test, typical use in reports.'
     },
     {
       sentenceParts: [
@@ -482,7 +482,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Estado negativo identificado en el assessment de seguridad.'
+      explanation: 'Negative state identified in security assessment.'
     },
     {
       sentenceParts: [
@@ -492,7 +492,7 @@ const exercisesData = {
       ],
       options: ['gained', 'been gaining', 'gained OR been gaining'],
       correctAnswer: 'gained',
-      explanation: 'Logro reciente specific en el pentesting con "just".'
+      explanation: 'Recent specific achievement in pentesting with "just".'
     },
     {
       sentenceParts: [
@@ -502,7 +502,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Vulnerabilidad persistente identificada en todo el sistema.'
+      explanation: 'Persistent vulnerability identified throughout the system.'
     },
     {
       sentenceParts: [
@@ -512,7 +512,7 @@ const exercisesData = {
       ],
       options: ['defined', 'been defining', 'defined OR been defining'],
       correctAnswer: 'defined',
-      explanation: 'Question sobre una tarea específica completada antes del test.'
+      explanation: 'Question about a specific task completed before the test.'
     },
     {
       sentenceParts: [
@@ -522,7 +522,7 @@ const exercisesData = {
       ],
       options: ['remediated', 'been remediating', 'remediated OR been remediating'],
       correctAnswer: 'remediated',
-      explanation: 'Acción completada de corrección de vulnerabilidades reportada.'
+      explanation: 'Completed action of vulnerability remediation reported.'
     },
     {
       sentenceParts: [
@@ -532,7 +532,7 @@ const exercisesData = {
       ],
       options: ['discovered', 'been discovering', 'discovered OR been discovering'],
       correctAnswer: 'discovered',
-      explanation: 'Resultado specific de reconocimiento con herramienta.'
+      explanation: 'Specific reconnaissance result with tool.'
     },
     {
       sentenceParts: [
@@ -542,7 +542,7 @@ const exercisesData = {
       ],
       options: ['improved', 'been improving', 'improved OR been improving'],
       correctAnswer: 'been improving',
-      explanation: 'Proceso continuo de mejora desde un evento pasado.'
+      explanation: 'Continuous improvement process since a past event.'
     },
     {
       sentenceParts: [
@@ -552,7 +552,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Hallazgo pasivo reportado en evaluación de seguridad.'
+      explanation: 'Passive finding reported in security assessment.'
     },
     {
       sentenceParts: [
@@ -562,7 +562,7 @@ const exercisesData = {
       ],
       options: ['existed', 'been existing', 'existed OR been existing'],
       correctAnswer: 'existed',
-      explanation: 'Question sobre duración de una vulnerabilidad en el sistema.'
+      explanation: 'Question about duration of a vulnerability in the system.'
     },
     {
       sentenceParts: [
@@ -572,7 +572,7 @@ const exercisesData = {
       ],
       options: ['worked', 'been working', 'worked OR been working'],
       correctAnswer: 'worked',
-      explanation: 'Resultado exitoso de prueba de exploit reportado.'
+      explanation: 'Successful exploit test result reported.'
     },
     {
       sentenceParts: [
@@ -582,7 +582,7 @@ const exercisesData = {
       ],
       options: ['proven', 'been proving', 'proven OR been proving'],
       correctAnswer: 'proven',
-      explanation: 'Evaluación basada en experiencia acumulada con la herramienta.'
+      explanation: 'Evaluation based on accumulated experience with the tool.'
     },
     {
       sentenceParts: [
@@ -592,7 +592,7 @@ const exercisesData = {
       ],
       options: ['uncovered', 'been uncovering', 'uncovered OR been uncovering'],
       correctAnswer: 'uncovered',
-      explanation: 'Hallazgo specific descubierto durante la evaluación.'
+      explanation: 'Specific finding discovered during the evaluation.'
     },
     {
       sentenceParts: [
@@ -612,7 +612,7 @@ const exercisesData = {
       ],
       options: ['responded', 'been responding', 'responded OR been responding'],
       correctAnswer: 'responded',
-      explanation: 'Acción específica del objetivo durante reconocimiento.'
+      explanation: 'Specific action by the target during reconnaissance.'
     },
     {
       sentenceParts: [
@@ -622,7 +622,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Falta de acción identificada en revisión de controles.'
+      explanation: 'Lack of action identified in controls review.'
     },
     {
       sentenceParts: [
@@ -632,7 +632,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Estado continuo de una vulnerabilidad conocida.'
+      explanation: 'Continuous state of a known vulnerability.'
     },
     {
       sentenceParts: [
@@ -642,7 +642,7 @@ const exercisesData = {
       ],
       options: ['exploited', 'been exploiting', 'exploited OR been exploiting'],
       correctAnswer: 'been exploiting',
-      explanation: 'Actividad continua de atacantes desde un punto en el pasado.'
+      explanation: 'Continuous activity by attackers from a point in the past.'
     },
     {
       sentenceParts: [
@@ -652,7 +652,7 @@ const exercisesData = {
       ],
       options: ['documented', 'been documenting', 'documented OR been documenting'],
       correctAnswer: 'documented',
-      explanation: 'Acción completada de documentar hallazgos en el informe.'
+      explanation: 'Completed action of documenting findings in the report.'
     },
     {
       sentenceParts: [
@@ -662,7 +662,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Control de seguridad faltante identificado en el test.'
+      explanation: 'Missing security control identified in the test.'
     },
     {
       sentenceParts: [
@@ -672,7 +672,7 @@ const exercisesData = {
       ],
       options: ['detected', 'been detecting', 'detected OR been detecting'],
       correctAnswer: 'detected',
-      explanation: 'Capacidad de detección demostrada durante el ejercicio.'
+      explanation: 'Detection capability demonstrated during the exercise.'
     },
     {
       sentenceParts: [
@@ -682,7 +682,7 @@ const exercisesData = {
       ],
       options: ['confirmed', 'been confirming', 'confirmed OR been confirming'],
       correctAnswer: 'confirmed',
-      explanation: 'Verificación específica de vulnerabilidad en múltiples puntos.'
+      explanation: 'Specific verification of vulnerability at multiple points.'
     },
     {
       sentenceParts: [
@@ -692,7 +692,7 @@ const exercisesData = {
       ],
       options: ['taken', 'been taking', 'taken OR been taking'],
       correctAnswer: 'taken',
-      explanation: 'Duración del proyecto reportada con justificación.'
+      explanation: 'Project duration reported with justification.'
     },
     {
       sentenceParts: [
@@ -702,7 +702,7 @@ const exercisesData = {
       ],
       options: ['existed', 'been existing', 'existed OR been existing'],
       correctAnswer: 'existed',
-      explanation: 'Ausencia completa de control de seguridad reportada.'
+      explanation: 'Complete absence of security control reported.'
     },
     {
       sentenceParts: [
@@ -712,7 +712,7 @@ const exercisesData = {
       ],
       options: ['improved', 'been improving', 'improved OR been improving'],
       correctAnswer: 'improved',
-      explanation: 'Cambio positivo comparado con evaluación anterior.'
+      explanation: 'Positive change compared to previous assessment.'
     },
     {
       sentenceParts: [
@@ -722,7 +722,7 @@ const exercisesData = {
       ],
       options: ['been', 'been being', 'is'],
       correctAnswer: 'been',
-      explanation: 'Práctica insegura identificada en revisión de datos.'
+      explanation: 'Insecure practice identified in data review.'
     }
   ],
   
@@ -735,7 +735,7 @@ const exercisesData = {
       ],
       options: ['have been scanning', 'have scanned', 'am scanning'],
       correctAnswer: 'have been scanning',
-      explanation: 'We use Present Perfect Continuous "have been scanning" para enfatizar la duración de una acción que comenzó en el pasado y continúa hasta ahora.'
+      explanation: 'We use Present Perfect Continuous "have been scanning" to emphasize the duration of an action that began in the past and continues until now.'
     },
     {
       sentenceParts: [
@@ -745,7 +745,7 @@ const exercisesData = {
       ],
       options: ['has been learning', 'has learned', 'is learning'],
       correctAnswer: 'has been learning',
-      explanation: 'We use "has been learning" para enfatizar la actividad continua durante los cinco años.'
+      explanation: 'We use "has been learning" to emphasize the continuous activity during the five years.'
     },
     {
       sentenceParts: [
@@ -757,7 +757,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Questionmos con "How long have you been working" sobre la duración de trabajar en este exploit.'
+      explanation: 'We ask with "How long have you been working" about the duration of working on this exploit.'
     },
     {
       sentenceParts: [
@@ -767,7 +767,7 @@ const exercisesData = {
       ],
       options: ['have been cracking', 'have cracked', 'are cracking'],
       correctAnswer: 'have been cracking',
-      explanation: 'We use "have been cracking" para enfatizar la actividad continua durante todo el día.'
+      explanation: 'We use "have been cracking" to emphasize the continuous activity throughout the entire day.'
     },
     {
       sentenceParts: [
@@ -777,7 +777,7 @@ const exercisesData = {
       ],
       options: ['been monitoring', 'monitored', 'monitoring'],
       correctAnswer: 'been monitoring',
-      explanation: 'We use Present Perfect Continuous para explicar la causa de ojos cansados (actividad reciente continua).'
+      explanation: 'We use Present Perfect Continuous to explain the cause of tired eyes (recent continuous activity).'
     },
     {
       sentenceParts: [
@@ -787,7 +787,7 @@ const exercisesData = {
       ],
       options: ['has been doing', 'has done', 'does'],
       correctAnswer: 'has been doing',
-      explanation: 'We use "has been doing" con "lately" para una actividad repetida en el período reciente.'
+      explanation: 'We use "has been doing" with "lately" for a repeated activity in the recent period.'
     },
     {
       sentenceParts: [
@@ -796,7 +796,7 @@ const exercisesData = {
         { type: 'text', content: '(you/wait) for the exploit to compile?' }
       ],
       correctAnswer: ['have you been waiting'],
-      explanation: 'Present Perfect Continuous question: How long + have/has + subject + been + verb-ing. Questionmos por la duración de una acción que continúa.'
+      explanation: 'Present Perfect Continuous question: How long + have/has + subject + been + verb-ing. We ask about the duration of an action that continues.'
     },
     {
       sentenceParts: [
@@ -808,7 +808,7 @@ const exercisesData = {
       ],
       options: ['have', 'has'],
       correctAnswer: 'have',
-      explanation: 'Questionmos "What have you been debugging?" para entender la causa del cansancio (actividad reciente).'
+      explanation: 'We ask "What have you been debugging?" to understand the cause of tiredness (recent activity).'
     },
     {
       sentenceParts: [
@@ -818,7 +818,7 @@ const exercisesData = {
       ],
       options: ['have been planning', 'have planned', 'are planning'],
       correctAnswer: 'have been planning',
-      explanation: 'We use "have been planning" para enfatizar el proceso continuo de planificación durante meses.'
+      explanation: 'We use "have been planning" to emphasize the continuous planning process during months.'
     },
     {
       sentenceParts: [
@@ -828,7 +828,7 @@ const exercisesData = {
       ],
       options: ['have been triggering', 'have triggered', 'are triggering'],
       correctAnswer: 'have been triggering',
-      explanation: 'We use "have been triggering" para enfatizar lo molesto de una acción repetida durante toda la mañana.'
+      explanation: 'We use "have been triggering" to emphasize how annoying a repeated action is throughout the entire morning.'
     },
     {
       sentenceParts: [
@@ -838,7 +838,7 @@ const exercisesData = {
       ],
       options: ['have been trying', 'have tried', 'am trying'],
       correctAnswer: 'have been trying',
-      explanation: 'We use "have been trying" para enfatizar los intentos repetidos durante toda la semana.'
+      explanation: 'We use "have been trying" to emphasize the repeated attempts throughout the entire week.'
     },
     {
       sentenceParts: [
@@ -848,7 +848,7 @@ const exercisesData = {
       ],
       options: ['been using', 'used', 'using'],
       correctAnswer: 'been using',
-      explanation: 'Actividad continua desde el inicio del engagement hasta ahora.'
+      explanation: 'Continuous activity from the start of the engagement until now.'
     },
     {
       sentenceParts: [
@@ -858,7 +858,7 @@ const exercisesData = {
       ],
       options: ['been running', 'run', 'running'],
       correctAnswer: 'been running',
-      explanation: 'Question sobre duración de actividad continua de pentesting.'
+      explanation: 'Question about duration of continuous pentesting activity.'
     },
     {
       sentenceParts: [
@@ -868,7 +868,7 @@ const exercisesData = {
       ],
       options: ['been capturing', 'captured', 'capturing'],
       correctAnswer: 'been capturing',
-      explanation: 'Proceso continuo de captura durante período specific.'
+      explanation: 'Continuous capture process during specific period.'
     },
     {
       sentenceParts: [
@@ -878,7 +878,7 @@ const exercisesData = {
       ],
       options: ['been recording', 'recorded', 'recording'],
       correctAnswer: 'been recording',
-      explanation: 'Actividad continua de monitoring durante todo el mes.'
+      explanation: 'Continuous monitoring activity throughout the entire month.'
     },
     {
       sentenceParts: [
@@ -888,7 +888,7 @@ const exercisesData = {
       ],
       options: ['been running', 'run', 'running'],
       correctAnswer: 'been running',
-      explanation: 'Ejecución continua de herramienta desde la mañana.'
+      explanation: 'Continuous tool execution since morning.'
     },
     {
       sentenceParts: [
@@ -898,7 +898,7 @@ const exercisesData = {
       ],
       options: ['been doing', 'done', 'doing'],
       correctAnswer: 'been doing',
-      explanation: 'Question sobre actividad continua reciente con herramienta.'
+      explanation: 'Question about recent continuous activity with tool.'
     },
     {
       sentenceParts: [
@@ -908,7 +908,7 @@ const exercisesData = {
       ],
       options: ['been generating', 'generated', 'generating'],
       correctAnswer: 'been generating',
-      explanation: 'Problema continuo durante toda la duración del test.'
+      explanation: 'Continuous problem throughout the entire test duration.'
     },
     {
       sentenceParts: [
@@ -918,7 +918,7 @@ const exercisesData = {
       ],
       options: ['been probing', 'probed', 'probing'],
       correctAnswer: 'been probing',
-      explanation: 'Actividad maliciosa continua durante varios días.'
+      explanation: 'Continuous malicious activity over several days.'
     },
     {
       sentenceParts: [
@@ -928,7 +928,7 @@ const exercisesData = {
       ],
       options: ['been monitoring', 'monitored', 'monitoring'],
       correctAnswer: 'been monitoring',
-      explanation: 'Monitoreo continuo ininterrumpido durante semanas.'
+      explanation: 'Continuous uninterrupted monitoring for weeks.'
     },
     {
       sentenceParts: [
@@ -938,7 +938,7 @@ const exercisesData = {
       ],
       options: ['been conducting', 'conducted', 'conducting'],
       correctAnswer: 'been conducting',
-      explanation: 'Investigación continua durante período prolongado.'
+      explanation: 'Continuous investigation over an extended period.'
     },
     {
       sentenceParts: [
@@ -948,7 +948,7 @@ const exercisesData = {
       ],
       options: ['been executing', 'executed', 'executing'],
       correctAnswer: 'been executing',
-      explanation: 'Ejecución continua desde el momento del despliegue.'
+      explanation: 'Continuous execution since deployment.'
     },
     {
       sentenceParts: [
@@ -958,7 +958,7 @@ const exercisesData = {
       ],
       options: ['been running', 'run', 'running'],
       correctAnswer: 'been running',
-      explanation: 'Question sobre duración de compromiso del sistema.'
+      explanation: 'Question about duration of system compromise.'
     },
     {
       sentenceParts: [
@@ -968,7 +968,7 @@ const exercisesData = {
       ],
       options: ['been testing', 'tested', 'testing'],
       correctAnswer: 'been testing',
-      explanation: 'Testing continuo durante toda la tarde.'
+      explanation: 'Continuous testing throughout the entire afternoon.'
     },
     {
       sentenceParts: [
@@ -978,7 +978,7 @@ const exercisesData = {
       ],
       options: ['been consuming', 'consumed', 'consuming'],
       correctAnswer: 'been consuming',
-      explanation: 'Actividad maliciosa continua sin detección.'
+      explanation: 'Continuous malicious activity without detection.'
     },
     {
       sentenceParts: [
@@ -988,7 +988,7 @@ const exercisesData = {
       ],
       options: ['been analyzing', 'analyzed', 'analyzing'],
       correctAnswer: 'been analyzing',
-      explanation: 'Análisis continuo desde el momento de divulgación.'
+      explanation: 'Continuous analysis since disclosure.'
     },
     {
       sentenceParts: [
@@ -998,7 +998,7 @@ const exercisesData = {
       ],
       options: ['been sending', 'sent', 'sending'],
       correctAnswer: 'been sending',
-      explanation: 'Comunicación continua de comando y control.'
+      explanation: 'Continuous command and control communication.'
     },
     {
       sentenceParts: [
@@ -1008,7 +1008,7 @@ const exercisesData = {
       ],
       options: ['been using', 'used', 'using'],
       correctAnswer: 'been using',
-      explanation: 'Question sobre técnicas empleadas durante el ataque.'
+      explanation: 'Question about techniques employed during the attack.'
     },
     {
       sentenceParts: [
@@ -1018,7 +1018,7 @@ const exercisesData = {
       ],
       options: ['been generating', 'generated', 'generating'],
       correctAnswer: 'been generating',
-      explanation: 'Proceso continuo de fuzzing durante horas.'
+      explanation: 'Continuous fuzzing process for hours.'
     },
     {
       sentenceParts: [
@@ -1028,7 +1028,7 @@ const exercisesData = {
       ],
       options: ['been adopting', 'adopted', 'adopting'],
       correctAnswer: 'been adopting',
-      explanation: 'Tendencia continua observada en threat intelligence.'
+      explanation: 'Continuous trend observed in threat intelligence.'
     },
     {
       sentenceParts: [
@@ -1038,7 +1038,7 @@ const exercisesData = {
       ],
       options: ['been scanning', 'scanned', 'scanning'],
       correctAnswer: 'been scanning',
-      explanation: 'Escaneo continuo desde medianoche hasta ahora.'
+      explanation: 'Continuous scanning from midnight until now.'
     },
     {
       sentenceParts: [
@@ -1048,7 +1048,7 @@ const exercisesData = {
       ],
       options: ['been trying', 'tried', 'trying'],
       correctAnswer: 'been trying',
-      explanation: 'Esfuerzo continuo de ingeniería inversa.'
+      explanation: 'Continuous reverse engineering effort.'
     },
     {
       sentenceParts: [
@@ -1058,7 +1058,7 @@ const exercisesData = {
       ],
       options: ['been detecting', 'detected', 'detecting'],
       correctAnswer: 'been detecting',
-      explanation: 'Detección continua por sistema de endpoint.'
+      explanation: 'Continuous detection by endpoint system.'
     },
     {
       sentenceParts: [
@@ -1068,7 +1068,7 @@ const exercisesData = {
       ],
       options: ['been doing', 'done', 'doing'],
       correctAnswer: 'been doing',
-      explanation: 'Question sobre duración de actividad de crackeo.'
+      explanation: 'Question about duration of cracking activity.'
     },
     {
       sentenceParts: [
@@ -1078,7 +1078,7 @@ const exercisesData = {
       ],
       options: ['been performing', 'performed', 'performing'],
       correctAnswer: 'been performing',
-      explanation: 'Enumeración continua durante todo el día.'
+      explanation: 'Continuous enumeration throughout the entire day.'
     },
     {
       sentenceParts: [
@@ -1088,7 +1088,7 @@ const exercisesData = {
       ],
       options: ['been testing', 'tested', 'testing'],
       correctAnswer: 'been testing',
-      explanation: 'Testing automatizado continuo desde la semana pasada.'
+      explanation: 'Continuous automated testing since last week.'
     },
     {
       sentenceParts: [
@@ -1098,7 +1098,7 @@ const exercisesData = {
       ],
       options: ['been hardening', 'hardened', 'hardening'],
       correctAnswer: 'been hardening',
-      explanation: 'Proceso continuo de endurecimiento de seguridad.'
+      explanation: 'Continuous security hardening process.'
     },
     {
       sentenceParts: [
@@ -1108,7 +1108,7 @@ const exercisesData = {
       ],
       options: ['been launching', 'launched', 'launching'],
       correctAnswer: 'been launching',
-      explanation: 'Campañas continuas de phishing en curso.'
+      explanation: 'Ongoing continuous phishing campaigns.'
     },
     {
       sentenceParts: [
@@ -1118,7 +1118,7 @@ const exercisesData = {
       ],
       options: ['been conducting', 'conducted', 'conducting'],
       correctAnswer: 'been conducting',
-      explanation: 'Actividad regular continua de búsqueda de amenazas.'
+      explanation: 'Regular continuous threat hunting activity.'
     },
     {
       sentenceParts: [
@@ -1128,7 +1128,7 @@ const exercisesData = {
       ],
       options: ['been deploying', 'deployed', 'deploying'],
       correctAnswer: 'been deploying',
-      explanation: 'Question sobre actividad continua de testing.'
+      explanation: 'Question about continuous testing activity.'
     },
     {
       sentenceParts: [
@@ -1138,7 +1138,7 @@ const exercisesData = {
       ],
       options: ['been spreading', 'spread', 'spreading'],
       correctAnswer: 'been spreading',
-      explanation: 'Propagación continua de malware en la red.'
+      explanation: 'Continuous malware propagation across the network.'
     },
     {
       sentenceParts: [
@@ -1148,7 +1148,7 @@ const exercisesData = {
       ],
       options: ['been reviewing', 'reviewed', 'reviewing'],
       correctAnswer: 'been reviewing',
-      explanation: 'Revisión continua de código fuente.'
+      explanation: 'Continuous source code review.'
     },
     {
       sentenceParts: [
@@ -1158,7 +1158,7 @@ const exercisesData = {
       ],
       options: ['been behaving', 'behaved', 'behaving'],
       correctAnswer: 'been behaving',
-      explanation: 'Comportamiento continuo anómalo desde reconocimiento.'
+      explanation: 'Continuous anomalous behavior since reconnaissance.'
     },
     {
       sentenceParts: [
@@ -1168,7 +1168,7 @@ const exercisesData = {
       ],
       options: ['been developing', 'developed', 'developing'],
       correctAnswer: 'been developing',
-      explanation: 'Desarrollo continuo de modelos de negocio criminal.'
+      explanation: 'Continuous development of criminal business models.'
     },
     {
       sentenceParts: [
@@ -1178,7 +1178,7 @@ const exercisesData = {
       ],
       options: ['been refining', 'refined', 'refining'],
       correctAnswer: 'been refining',
-      explanation: 'Proceso continuo de refinamiento desde actualización.'
+      explanation: 'Continuous refinement process since update.'
     },
     {
       sentenceParts: [
@@ -1188,7 +1188,7 @@ const exercisesData = {
       ],
       options: ['been operating', 'operated', 'operating'],
       correctAnswer: 'been operating',
-      explanation: 'Question sobre duración de presencia de APT.'
+      explanation: 'Question about duration of APT presence.'
     },
     {
       sentenceParts: [
@@ -1198,7 +1198,7 @@ const exercisesData = {
       ],
       options: ['been applying', 'applied', 'applying'],
       correctAnswer: 'been applying',
-      explanation: 'Aplicación continua de técnicas OSINT.'
+      explanation: 'Continuous application of OSINT techniques.'
     },
     {
       sentenceParts: [
@@ -1208,7 +1208,7 @@ const exercisesData = {
       ],
       options: ['been growing', 'grown', 'growing'],
       correctAnswer: 'been growing',
-      explanation: 'Crecimiento continuo observado en análisis.'
+      explanation: 'Continuous growth observed in analysis.'
     },
     {
       sentenceParts: [
@@ -1218,7 +1218,7 @@ const exercisesData = {
       ],
       options: ['been updating', 'updated', 'updating'],
       correctAnswer: 'been updating',
-      explanation: 'Actualización continua de firmas de amenazas.'
+      explanation: 'Continuous update of threat signatures.'
     },
     {
       sentenceParts: [
@@ -1228,7 +1228,7 @@ const exercisesData = {
       ],
       options: ['been surviving', 'survived', 'surviving'],
       correctAnswer: 'been surviving',
-      explanation: 'Persistencia continua demostrada a través de reinicios.'
+      explanation: 'Continuous persistence demonstrated through reboots.'
     }
   ],
 
@@ -1241,7 +1241,7 @@ const exercisesData = {
       ],
       options: ['was monitoring', 'monitored', 'monitor'],
       correctAnswer: 'was monitoring',
-      explanation: 'We use Past Continuous "was monitoring" para una action in progress interrupted by another action en el pasado.'
+      explanation: 'We use Past Continuous "was monitoring" for an action in progress interrupted by another action in the past.'
     },
     {
       sentenceParts: [
@@ -1251,7 +1251,7 @@ const exercisesData = {
       ],
       options: ['were conducting', 'conducted', 'conduct'],
       correctAnswer: 'were conducting',
-      explanation: 'We use "were conducting" para describir una acción que estaba en progreso a una hora específica del pasado.'
+      explanation: 'We use "were conducting" to describe an action that was in progress at a specific time in the past.'
     },
     {
       sentenceParts: [
@@ -1263,7 +1263,7 @@ const exercisesData = {
       ],
       options: ['were', 'was'],
       correctAnswer: 'were',
-      explanation: 'Questionmos "What were you doing" sobre una action in progress en un momento specific del pasado.'
+      explanation: 'We ask "What were you doing" about an action in progress at a specific moment in the past.'
     },
     {
       sentenceParts: [
@@ -1273,7 +1273,7 @@ const exercisesData = {
       ],
       options: ['was happening', 'happened', 'happens'],
       correctAnswer: 'was happening',
-      explanation: 'We use "was happening" para describir un ataque que estaba en progreso cuando ocurrió otra acción.'
+      explanation: 'We use "was happening" to describe an attack that was in progress when another action occurred.'
     },
     {
       sentenceParts: [
@@ -1285,7 +1285,7 @@ const exercisesData = {
       ],
       options: ['was testing', 'tested'],
       correctAnswer: 'was testing',
-      explanation: 'We use Past Continuous para dos acciones simultáneas en progreso en el pasado.'
+      explanation: 'We use Past Continuous for two simultaneous actions in progress in the past.'
     },
     {
       sentenceParts: [
@@ -1295,7 +1295,7 @@ const exercisesData = {
       ],
       options: ['were running', 'ran', 'run'],
       correctAnswer: 'were running',
-      explanation: 'We use "were watching" para una action in progress que fue interrumpida (apagón).'
+      explanation: 'We use "were running" for an action in progress that was interrupted (power outage).'
     },
     {
       sentenceParts: [
@@ -1305,7 +1305,7 @@ const exercisesData = {
       ],
       options: ['was listening', 'listened', 'listens'],
       correctAnswer: 'was listening',
-      explanation: 'We use "was listening" para una actividad continua durante un período specific del pasado.'
+      explanation: 'We use "was listening" for a continuous activity during a specific period in the past.'
     },
     {
       sentenceParts: [
@@ -1314,7 +1314,7 @@ const exercisesData = {
         { type: 'text', content: '(have) dinner with friends.' }
       ],
       correctAnswer: ['were having'],
-      explanation: 'Past Continuous: was/were + verb-ing. We use "were having" para describir una action in progress a una hora específica del pasado.'
+      explanation: 'Past Continuous: was/were + verb-ing. We use "were having" to describe an action in progress at a specific time in the past.'
     },
     {
       sentenceParts: [
@@ -1323,7 +1323,7 @@ const exercisesData = {
         { type: 'text', content: '(you/do) when I called you?' }
       ],
       correctAnswer: ['were you doing'],
-      explanation: 'Past Continuous question: What + was/were + subject + verb-ing. Questionmos sobre una action in progress cuando ocurrió otra (la llamada).'
+      explanation: 'Past Continuous question: What + was/were + subject + verb-ing. We ask about an action in progress when another occurred (the call).'
     },
     {
       sentenceParts: [
@@ -1333,7 +1333,7 @@ const exercisesData = {
       ],
       options: ['were playing', 'played', 'play'],
       correctAnswer: 'were playing',
-      explanation: 'We use "were playing" para describir una actividad en progreso durante la mañana.'
+      explanation: 'We use "were playing" to describe an activity in progress during the morning.'
     },
     {
       sentenceParts: [
@@ -1343,7 +1343,7 @@ const exercisesData = {
       ],
       options: ['was thinking', 'thought', 'think'],
       correctAnswer: 'was thinking',
-      explanation: 'We use "was thinking" para una actividad mental que estaba en progreso justo antes de ahora.'
+      explanation: 'We use "was thinking" for a mental activity that was in progress just before now.'
     },
     {
       sentenceParts: [
@@ -1353,7 +1353,7 @@ const exercisesData = {
       ],
       options: ['were listening', 'listened', 'listen'],
       correctAnswer: 'were listening',
-      explanation: 'We use "were listening" para una action in progress cuando llegué (otra acción).'
+      explanation: 'We use "were listening" for an action in progress when I arrived (another action).'
     },
     {
       sentenceParts: [
@@ -1363,7 +1363,7 @@ const exercisesData = {
       ],
       options: ['was reviewing', 'reviewed', 'reviews'],
       correctAnswer: 'was reviewing',
-      explanation: 'Action in progress interrumpida por la alerta en informe.'
+      explanation: 'Action in progress interrupted by the alert in report.'
     },
     {
       sentenceParts: [
@@ -1373,7 +1373,7 @@ const exercisesData = {
       ],
       options: ['was extracting', 'extracted', 'extracts'],
       correctAnswer: 'was extracting',
-      explanation: 'Actividad en progreso en momento specific del ataque.'
+      explanation: 'Activity in progress at specific moment of the attack.'
     },
     {
       sentenceParts: [
@@ -1383,7 +1383,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Question sobre estado del firewall durante incidente.'
+      explanation: 'Question about firewall state during incident.'
     },
     {
       sentenceParts: [
@@ -1393,7 +1393,7 @@ const exercisesData = {
       ],
       options: ['were testing', 'tested', 'test'],
       correctAnswer: 'were testing',
-      explanation: 'Dos acciones simultáneas durante pentesting.'
+      explanation: 'Two simultaneous actions during pentesting.'
     },
     {
       sentenceParts: [
@@ -1403,7 +1403,7 @@ const exercisesData = {
       ],
       options: ['was sleeping', 'slept', 'sleeps'],
       correctAnswer: 'was sleeping',
-      explanation: 'Estado del IDS durante ejecución del ataque.'
+      explanation: 'IDS state during attack execution.'
     },
     {
       sentenceParts: [
@@ -1413,7 +1413,7 @@ const exercisesData = {
       ],
       options: ['was encrypting', 'encrypted', 'encrypts'],
       correctAnswer: 'was encrypting',
-      explanation: 'Actividad de ransomware en progreso en momento specific.'
+      explanation: 'Ransomware activity in progress at specific moment.'
     },
     {
       sentenceParts: [
@@ -1423,7 +1423,7 @@ const exercisesData = {
       ],
       options: ['was investigating', 'investigated', 'investigates'],
       correctAnswer: 'was investigating',
-      explanation: 'Investigación en progreso interrumpida por llamada.'
+      explanation: 'Investigation in progress interrupted by call.'
     },
     {
       sentenceParts: [
@@ -1433,7 +1433,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Proceso en ejecución cuando ocurrió el fallo.'
+      explanation: 'Process running when the failure occurred.'
     },
     {
       sentenceParts: [
@@ -1443,7 +1443,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Question sobre actividad específica del atacante.'
+      explanation: 'Question about specific attacker activity.'
     },
     {
       sentenceParts: [
@@ -1453,7 +1453,7 @@ const exercisesData = {
       ],
       options: ['were visiting', 'visited', 'visit'],
       correctAnswer: 'were visiting',
-      explanation: 'Actividad en progreso detectada en logs.'
+      explanation: 'Activity in progress detected in logs.'
     },
     {
       sentenceParts: [
@@ -1463,7 +1463,7 @@ const exercisesData = {
       ],
       options: ['were employing', 'employed', 'employ'],
       correctAnswer: 'were employing',
-      explanation: 'Técnicas en uso durante la evaluación.'
+      explanation: 'Techniques in use during the assessment.'
     },
     {
       sentenceParts: [
@@ -1473,7 +1473,7 @@ const exercisesData = {
       ],
       options: ['was responding', 'responded', 'responds'],
       correctAnswer: 'was responding',
-      explanation: 'Estado de la base de datos durante el ataque.'
+      explanation: 'Database state during the attack.'
     },
     {
       sentenceParts: [
@@ -1483,7 +1483,7 @@ const exercisesData = {
       ],
       options: ['were deploying', 'deployed', 'deploy'],
       correctAnswer: 'were deploying',
-      explanation: 'Action in progress durante el compromiso.'
+      explanation: 'Action in progress during the compromise.'
     },
     {
       sentenceParts: [
@@ -1493,7 +1493,7 @@ const exercisesData = {
       ],
       options: ['was running', 'ran', 'runs'],
       correctAnswer: 'was running',
-      explanation: 'Escaneo en progreso interrumpido por caída del objetivo.'
+      explanation: 'Scan in progress interrupted by target going offline.'
     },
     {
       sentenceParts: [
@@ -1503,7 +1503,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Contexto del fallo durante explotación.'
+      explanation: 'Failure context during exploitation.'
     },
     {
       sentenceParts: [
@@ -1513,7 +1513,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Question sobre estado de protección durante incidente.'
+      explanation: 'Question about protection state during incident.'
     },
     {
       sentenceParts: [
@@ -1523,7 +1523,7 @@ const exercisesData = {
       ],
       options: ['was enumerating', 'enumerated', 'enumerates'],
       correctAnswer: 'was enumerating',
-      explanation: 'Enumeración en progreso cuando fueron detectados.'
+      explanation: 'Enumeration in progress when they were detected.'
     },
     {
       sentenceParts: [
@@ -1533,7 +1533,7 @@ const exercisesData = {
       ],
       options: ['was running', 'ran', 'runs'],
       correctAnswer: 'was running',
-      explanation: 'Tráfico anómalo en momento specific reportado.'
+      explanation: 'Anomalous traffic at specific moment reported.'
     },
     {
       sentenceParts: [
@@ -1543,7 +1543,7 @@ const exercisesData = {
       ],
       options: ['was writing', 'wrote', 'write'],
       correctAnswer: 'was writing',
-      explanation: 'Redaction in progress cuando surgieron hallazgos.'
+      explanation: 'Writing in progress when findings emerged.'
     },
     {
       sentenceParts: [
@@ -1553,7 +1553,7 @@ const exercisesData = {
       ],
       options: ['was sending', 'sent', 'sends'],
       correctAnswer: 'was sending',
-      explanation: 'Comunicación en progreso al momento del bloqueo.'
+      explanation: 'Communication in progress at the moment of blocking.'
     },
     {
       sentenceParts: [
@@ -1563,7 +1563,7 @@ const exercisesData = {
       ],
       options: ['was researching', 'researched', 'researches'],
       correctAnswer: 'was researching',
-      explanation: 'Investigación en curso en momento specific.'
+      explanation: 'Research in progress at specific moment.'
     },
     {
       sentenceParts: [
@@ -1573,7 +1573,7 @@ const exercisesData = {
       ],
       options: ['was executing', 'executed', 'executes'],
       correctAnswer: 'was executing',
-      explanation: 'Ejecución interrumpida por detección de AV.'
+      explanation: 'Execution interrupted by AV detection.'
     },
     {
       sentenceParts: [
@@ -1583,7 +1583,7 @@ const exercisesData = {
       ],
       options: ['were', 'was', 'are'],
       correctAnswer: 'were',
-      explanation: 'Question sobre herramientas en uso durante fase.'
+      explanation: 'Question about tools in use during phase.'
     },
     {
       sentenceParts: [
@@ -1593,7 +1593,7 @@ const exercisesData = {
       ],
       options: ['was entering', 'entered', 'enters'],
       correctAnswer: 'was entering',
-      explanation: 'Acción de víctima en progreso durante ataque.'
+      explanation: 'Victim action in progress during attack.'
     },
     {
       sentenceParts: [
@@ -1603,7 +1603,7 @@ const exercisesData = {
       ],
       options: ['were', 'was', 'are'],
       correctAnswer: 'were',
-      explanation: 'Distracción durante ataque multi-vector.'
+      explanation: 'Distraction during multi-vector attack.'
     },
     {
       sentenceParts: [
@@ -1613,7 +1613,7 @@ const exercisesData = {
       ],
       options: ['was running', 'ran', 'runs'],
       correctAnswer: 'was running',
-      explanation: 'Fuzzing en progreso cuando se encontró vulnerabilidad.'
+      explanation: 'Fuzzing in progress when vulnerability was found.'
     },
     {
       sentenceParts: [
@@ -1623,7 +1623,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Estado crítico de logging durante incidente.'
+      explanation: 'Critical logging state during incident.'
     },
     {
       sentenceParts: [
@@ -1633,7 +1633,7 @@ const exercisesData = {
       ],
       options: ['was sleeping', 'slept', 'sleeps'],
       correctAnswer: 'was sleeping',
-      explanation: 'Momento del ataque durante horario no laboral.'
+      explanation: 'Attack timing during non-business hours.'
     },
     {
       sentenceParts: [
@@ -1643,7 +1643,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Exfiltración continua durante período extendido.'
+      explanation: 'Continuous exfiltration over extended period.'
     },
     {
       sentenceParts: [
@@ -1653,7 +1653,7 @@ const exercisesData = {
       ],
       options: ['was', 'were', 'is'],
       correctAnswer: 'was',
-      explanation: 'Question sobre telemetría durante compromiso.'
+      explanation: 'Question about telemetry during compromise.'
     },
     {
       sentenceParts: [
@@ -1663,7 +1663,7 @@ const exercisesData = {
       ],
       options: ['was using', 'used', 'uses'],
       correctAnswer: 'was using',
-      explanation: 'Técnica en uso descubierta durante análisis.'
+      explanation: 'Technique in use discovered during analysis.'
     },
     {
       sentenceParts: [
@@ -1673,7 +1673,7 @@ const exercisesData = {
       ],
       options: ['were', 'was', 'are'],
       correctAnswer: 'were',
-      explanation: 'Explotación iniciada durante divulgación.'
+      explanation: 'Exploitation initiated during disclosure.'
     },
     {
       sentenceParts: [
@@ -1683,7 +1683,7 @@ const exercisesData = {
       ],
       options: ['was logging', 'logged', 'logs'],
       correctAnswer: 'was logging',
-      explanation: 'Registro activo durante revisión de honeypot.'
+      explanation: 'Active logging during honeypot review.'
     },
     {
       sentenceParts: [
@@ -1693,7 +1693,7 @@ const exercisesData = {
       ],
       options: ['was updating', 'updated', 'updates'],
       correctAnswer: 'was updating',
-      explanation: 'Actualización en progreso en momento relevante.'
+      explanation: 'Update in progress at relevant moment.'
     },
     {
       sentenceParts: [
@@ -1703,7 +1703,7 @@ const exercisesData = {
       ],
       options: ['was attempting', 'attempted', 'attempts'],
       correctAnswer: 'was attempting',
-      explanation: 'Intento en progreso interrumpido por firewall.'
+      explanation: 'Attempt in progress interrupted by firewall.'
     },
     {
       sentenceParts: [
@@ -1713,7 +1713,7 @@ const exercisesData = {
       ],
       options: ['were', 'was', 'are'],
       correctAnswer: 'were',
-      explanation: 'Question sobre IOCs presentes durante incidente.'
+      explanation: 'Question about IOCs present during incident.'
     },
     {
       sentenceParts: [
@@ -1723,7 +1723,7 @@ const exercisesData = {
       ],
       options: ['were tracking', 'tracked', 'track'],
       correctAnswer: 'were tracking',
-      explanation: 'Seguimiento en curso de campaña maliciosa.'
+      explanation: 'Ongoing tracking of malicious campaign.'
     },
     {
       sentenceParts: [
@@ -1733,7 +1733,7 @@ const exercisesData = {
       ],
       options: ['was being exploited', 'exploited', 'exploits'],
       correctAnswer: 'was being exploited',
-      explanation: 'Explotación activa en momento de parche.'
+      explanation: 'Active exploitation at time of patch.'
     },
     {
       sentenceParts: [
@@ -1743,7 +1743,7 @@ const exercisesData = {
       ],
       options: ['were communicating', 'communicated', 'communicate'],
       correctAnswer: 'were communicating',
-      explanation: 'Comunicación en progreso durante ejercicio.'
+      explanation: 'Communication in progress during exercise.'
     }
   ],
 
@@ -1757,7 +1757,7 @@ const exercisesData = {
       ],
       options: ['had', 'have'],
       correctAnswer: 'had',
-      explanation: 'We use Past Perfect "had left" para una acción que ocurrió antes de otra acción en el pasado (antes de que yo llegara).'
+      explanation: 'We use Past Perfect "had left" for an action that occurred before another action in the past (before I arrived).'
     },
     {
       sentenceParts: [
@@ -1769,7 +1769,7 @@ const exercisesData = {
       ],
       options: ['had', 'has'],
       correctAnswer: 'had',
-      explanation: 'We use "had never tried" para una experiencia (o falta de ella) antes de un momento specific del pasado.'
+      explanation: 'We use "had never tried" for an experience (or lack thereof) before a specific moment in the past.'
     },
     {
       sentenceParts: [
@@ -1781,7 +1781,7 @@ const exercisesData = {
       ],
       options: ['had', 'have'],
       correctAnswer: 'had',
-      explanation: 'We use "had just finished" para una acción recién completada antes de otra acción en el pasado.'
+      explanation: 'We use "had just finished" for an action recently completed before another action in the past.'
     },
     {
       sentenceParts: [
@@ -1791,7 +1791,7 @@ const exercisesData = {
       ],
       options: ['had been driving', 'had driven', 'drove'],
       correctAnswer: 'had been driving',
-      explanation: 'We use Past Perfect Continuous para enfatizar la duración de una acción antes de encontrar el lugar.'
+      explanation: 'We use Past Perfect Continuous to emphasize the duration of an action before finding the place.'
     },
     {
       sentenceParts: [
@@ -1801,7 +1801,7 @@ const exercisesData = {
       ],
       options: ["hadn't slept", "didn't sleep", "hasn't slept"],
       correctAnswer: "hadn't slept",
-      explanation: 'We use "hadn\'t slept" para explicar la causa (en el pasado) de estar cansado.'
+      explanation: 'We use "hadn\'t slept" to explain the cause (in the past) of being tired.'
     },
     {
       sentenceParts: [
@@ -1811,7 +1811,7 @@ const exercisesData = {
       ],
       options: ['had seen', 'saw', 'have seen'],
       correctAnswer: 'had seen',
-      explanation: 'We use "had seen" para una experiencia que ocurrió antes de verla de nuevo.'
+      explanation: 'We use "had seen" for an experience that occurred before seeing it again.'
     },
     {
       sentenceParts: [
@@ -1821,7 +1821,7 @@ const exercisesData = {
       ],
       options: ['had left', 'left', 'have left'],
       correctAnswer: 'had left',
-      explanation: 'We use "had left" porque dejar las llaves ocurrió antes de llegar a casa y darme cuenta.'
+      explanation: 'We use "had left" because leaving the keys occurred before arriving home and realizing.'
     },
     {
       sentenceParts: [
@@ -1831,7 +1831,7 @@ const exercisesData = {
       ],
       options: ['had studied', 'studied', 'has studied'],
       correctAnswer: 'had studied',
-      explanation: 'We use "had studied" para una action (estudiar) que ocurrió antes de otra action (mudarse).'
+      explanation: 'We use "had studied" for an action (studying) that occurred before another action (moving).'
     },
     {
       sentenceParts: [
@@ -1843,7 +1843,7 @@ const exercisesData = {
       ],
       options: ['had', 'has'],
       correctAnswer: 'had',
-      explanation: 'We use "had already left" porque el tren se fue antes de que llegáramos.'
+      explanation: 'We use "had already left" because the train left before we arrived.'
     },
     {
       sentenceParts: [
@@ -1853,7 +1853,7 @@ const exercisesData = {
       ],
       options: ['had finished', 'finished', 'have finished'],
       correctAnswer: 'had finished',
-      explanation: 'We use "had finished" porque terminar la tarea ocurrió antes de salir.'
+      explanation: 'We use "had finished" because finishing homework occurred before going out.'
     }
   ],
 
@@ -1866,7 +1866,7 @@ const exercisesData = {
       ],
       options: ['had been waiting', 'had waited', 'was waiting'],
       correctAnswer: 'had been waiting',
-      explanation: 'We use Past Perfect Continuous para enfatizar la duración de esperar antes de que ella llegara.'
+      explanation: 'We use Past Perfect Continuous to emphasize the duration of waiting before she arrived.'
     },
     {
       sentenceParts: [
@@ -1876,7 +1876,7 @@ const exercisesData = {
       ],
       options: ['had been dating', 'had dated', 'were dating'],
       correctAnswer: 'had been dating',
-      explanation: 'We use "had been dating" para enfatizar la duración de 5 años antes del matrimonio.'
+      explanation: 'We use "had been dating" to emphasize the duration of 5 years before the marriage.'
     },
     {
       sentenceParts: [
@@ -1886,7 +1886,7 @@ const exercisesData = {
       ],
       options: ['had been studying', 'had studied', 'was studying'],
       correctAnswer: 'had been studying',
-      explanation: 'We use "had been studying" para explicar la causa del cansancio (actividad continua antes).'
+      explanation: 'We use "had been studying" to explain the cause of tiredness (continuous activity before).'
     },
     {
       sentenceParts: [
@@ -1898,7 +1898,7 @@ const exercisesData = {
       ],
       options: ['had', 'have'],
       correctAnswer: 'had',
-      explanation: 'Questionmos sobre la duración de estudiar inglés antes de mudarse (Past Perfect Continuous).'
+      explanation: 'We ask about the duration of studying English before moving (Past Perfect Continuous).'
     },
     {
       sentenceParts: [
@@ -1908,7 +1908,7 @@ const exercisesData = {
       ],
       options: ['had been raining', 'had rained', 'was raining'],
       correctAnswer: 'had been raining',
-      explanation: 'We use "had been raining" para enfatizar la duración de lluvia antes de que parara.'
+      explanation: 'We use "had been raining" to emphasize the duration of rain before it stopped.'
     },
     {
       sentenceParts: [
@@ -1918,7 +1918,7 @@ const exercisesData = {
       ],
       options: ['had been living', 'had lived', 'were living'],
       correctAnswer: 'had been living',
-      explanation: 'We use "had been living" para enfatizar la duración de vivir allí antes del descubrimiento.'
+      explanation: 'We use "had been living" to emphasize the duration of living there before the discovery.'
     },
     {
       sentenceParts: [
@@ -1928,7 +1928,7 @@ const exercisesData = {
       ],
       options: ['had been walking', 'had walked', 'was walking'],
       correctAnswer: 'had been walking',
-      explanation: 'We use "had been walking" para explicar la causa del dolor (caminar todo el día antes).'
+      explanation: 'We use "had been walking" to explain the cause of pain (walking all day before).'
     },
     {
       sentenceParts: [
@@ -1938,7 +1938,7 @@ const exercisesData = {
       ],
       options: ['had been preparing', 'had prepared', 'were preparing'],
       correctAnswer: 'had been preparing',
-      explanation: 'We use "had been preparing" para enfatizar el proceso continuo de preparación durante semanas.'
+      explanation: 'We use "had been preparing" to emphasize the continuous preparation process for weeks.'
     }
   ],
 
@@ -1951,7 +1951,7 @@ const exercisesData = {
       ],
       options: ['will have been working', 'will have worked', 'will be working'],
       correctAnswer: 'will have been working',
-      explanation: 'We use Future Perfect Continuous para enfatizar la duración (10 años) que se completará en el futuro.'
+      explanation: 'We use Future Perfect Continuous to emphasize the duration (10 years) that will be completed in the future.'
     },
     {
       sentenceParts: [
@@ -1961,7 +1961,7 @@ const exercisesData = {
       ],
       options: ['will have been waiting', 'will have waited', 'will be waiting'],
       correctAnswer: 'will have been waiting',
-      explanation: 'We use "will have been waiting" para enfatizar la duración de espera cuando llegues.'
+      explanation: 'We use "will have been waiting" to emphasize the duration of waiting when you arrive.'
     },
     {
       sentenceParts: [
@@ -1971,7 +1971,7 @@ const exercisesData = {
       ],
       options: ['will have been studying', 'will have studied', 'will be studying'],
       correctAnswer: 'will have been studying',
-      explanation: 'We use "will have been studying" para enfatizar la duración continua hasta diciembre.'
+      explanation: 'We use "will have been studying" to emphasize the continuous duration until December.'
     },
     {
       sentenceParts: [
@@ -1981,7 +1981,7 @@ const exercisesData = {
       ],
       options: ['will have been married', 'will have married', 'will be married'],
       correctAnswer: 'will have been married',
-      explanation: 'We use "will have been married" para un período de 20 años que se completará el próximo mes.'
+      explanation: 'We use "will have been married" for a period of 20 years that will be completed next month.'
     },
     {
       sentenceParts: [
@@ -1991,7 +1991,7 @@ const exercisesData = {
       ],
       options: ['will have been working', 'will have worked', 'will be working'],
       correctAnswer: 'will have been working',
-      explanation: 'We use "will have been working" para enfatizar 8 horas continuas de trabajo hasta las 6 PM.'
+      explanation: 'We use "will have been working" to emphasize 8 continuous hours of work until 6 PM.'
     }
   ],
 
@@ -2004,7 +2004,7 @@ const exercisesData = {
       ],
       options: ['studies', 'study', 'studying'],
       correctAnswer: 'studies',
-      explanation: 'We use "studies" porque es tercera persona singular (she) y el Present Simple requiere añadir -es/-s al verbo. Describe una rutina habitual.'
+      explanation: 'We use "studies" because it is third person singular (she) and Present Simple requires adding -es/-s to the verb. Describes a habitual routine.'
     },
     {
       sentenceParts: [
@@ -2014,7 +2014,7 @@ const exercisesData = {
       ],
       options: ['lives', 'live', 'living'],
       correctAnswer: 'live',
-      explanation: 'We use "live" porque "they" es plural y en Present Simple no se añade -s. Describe un estado permanente.'
+      explanation: 'We use "live" because "they" is plural and in Present Simple we don\'t add -s. Describes a permanent state.'
     },
     {
       sentenceParts: [
@@ -2024,7 +2024,7 @@ const exercisesData = {
       ],
       options: ['boil', 'boils', 'boiling'],
       correctAnswer: 'boils',
-      explanation: 'We use "boils" porque "water" es tercera persona singular y describe una verdad universal o hecho científico.'
+      explanation: 'We use "boils" because "water" is third person singular and describes a universal truth or scientific fact.'
     },
     {
       sentenceParts: [
@@ -2034,7 +2034,7 @@ const exercisesData = {
       ],
       options: ['drinks', 'drink', 'drinking'],
       correctAnswer: 'drink',
-      explanation: 'We use "drink" porque "I" no requiere -s en Present Simple. Describe un hábito regular.'
+      explanation: 'We use "drink" because "I" doesn\'t require -s in Present Simple. Describes a regular habit.'
     },
     {
       sentenceParts: [
@@ -2044,7 +2044,7 @@ const exercisesData = {
       ],
       options: ['go', 'goes', 'going'],
       correctAnswer: 'goes',
-      explanation: 'We use "goes" porque "he" es tercera persona singular. "Usually" indica una acción habitual, típica del Present Simple.'
+      explanation: 'We use "goes" because "he" is third person singular. "Usually" indicates a habitual action, typical of Present Simple.'
     },
     {
       sentenceParts: [
@@ -2054,7 +2054,7 @@ const exercisesData = {
       ],
       options: ['rise', 'rises', 'rising'],
       correctAnswer: 'rises',
-      explanation: 'We use "rises" porque es una verdad universal. "The sun" es tercera persona singular.'
+      explanation: 'We use "rises" because it\'s a universal truth. "The sun" is third person singular.'
     },
     {
       sentenceParts: [
@@ -2064,7 +2064,7 @@ const exercisesData = {
       ],
       options: ['lives', 'live', 'living'],
       correctAnswer: 'live',
-      explanation: 'We use "live" porque "my parents" es plural y describe un estado permanente.'
+      explanation: 'We use "live" because "my parents" is plural and describes a permanent state.'
     },
     {
       sentenceParts: [
@@ -2074,7 +2074,7 @@ const exercisesData = {
       ],
       options: ['open', 'opens', 'opening'],
       correctAnswer: 'opens',
-      explanation: 'We use "opens" porque "the store" es tercera persona singular y describe un horario regular.'
+      explanation: 'We use "opens" because "the store" is third person singular and describes a regular schedule.'
     },
     {
       sentenceParts: [
@@ -2084,7 +2084,7 @@ const exercisesData = {
       ],
       options: ['like', 'likes', 'liking'],
       correctAnswer: 'like',
-      explanation: 'We use "like" porque "dogs" es plural. Describe una verdad general sobre los perros.'
+      explanation: 'We use "like" because "dogs" is plural. Describes a general truth about dogs.'
     },
     {
       sentenceParts: [
@@ -2094,7 +2094,7 @@ const exercisesData = {
       ],
       options: ['work', 'works', 'working'],
       correctAnswer: 'works',
-      explanation: 'We use "works" porque "my sister" es tercera persona singular y describe su profesión permanente.'
+      explanation: 'We use "works" because "my sister" is third person singular and describes her permanent profession.'
     },
     {
       sentenceParts: [
@@ -2104,7 +2104,7 @@ const exercisesData = {
       ],
       options: ['eat', 'eats', 'eating'],
       correctAnswer: 'eat',
-      explanation: 'We use "eat" porque "we" es primera persona plural. Describe una rutina semanal.'
+      explanation: 'We use "eat" because "we" is first person plural. Describes a weekly routine.'
     },
     {
       sentenceParts: [
@@ -2114,7 +2114,7 @@ const exercisesData = {
       ],
       options: ['revolve', 'revolves', 'revolving'],
       correctAnswer: 'revolves',
-      explanation: 'We use "revolves" porque es un hecho científico y "the Earth" es tercera persona singular.'
+      explanation: 'We use "revolves" because it\'s a scientific fact and "the Earth" is third person singular.'
     },
     {
       sentenceParts: [
@@ -2124,7 +2124,7 @@ const exercisesData = {
       ],
       options: ['love', 'loves', 'loving'],
       correctAnswer: 'love',
-      explanation: 'We use "love" porque "children" es plural. Describe una característica general de los niños.'
+      explanation: 'We use "love" because "children" is plural. Describes a general characteristic of children.'
     },
     {
       sentenceParts: [
@@ -2134,7 +2134,7 @@ const exercisesData = {
       ],
       options: ['sleep', 'sleeps', 'sleeping'],
       correctAnswer: 'sleeps',
-      explanation: 'We use "sleeps" porque "my cat" es tercera persona singular. Describe un hábito del gato.'
+      explanation: 'We use "sleeps" because "my cat" is third person singular. Describes a cat\'s habit.'
     },
     {
       sentenceParts: [
@@ -2154,7 +2154,7 @@ const exercisesData = {
       ],
       options: ['put', 'puts', 'putting'],
       correctAnswer: 'puts',
-      explanation: 'We use "puts" porque "she" es tercera persona singular. "Never" se usa con Present Simple para hábitos.'
+      explanation: 'We use "puts" because "she" is third person singular. "Never" is used with Present Simple for habits.'
     },
     {
       sentenceParts: [
@@ -2174,7 +2174,7 @@ const exercisesData = {
       ],
       options: ['play', 'plays', 'playing'],
       correctAnswer: 'play',
-      explanation: 'We use "play" porque "my friends" es plural. "Every weekend" indica una rutina regular.'
+      explanation: 'We use "play" because "my friends" is plural. "Every weekend" indicates a regular routine.'
     },
     {
       sentenceParts: [
@@ -2184,7 +2184,7 @@ const exercisesData = {
       ],
       options: ['snow', 'snows', 'snowing'],
       correctAnswer: 'snows',
-      explanation: 'We use "snows" porque "it" es tercera persona singular. "Often" se usa con Present Simple para frecuencia.'
+      explanation: 'We use "snows" because "it" is third person singular. "Often" is used with Present Simple for frequency.'
     }
   ],
   
@@ -2197,7 +2197,7 @@ const exercisesData = {
       ],
       options: ['am watching', 'watch', 'watches'],
       correctAnswer: 'am watching',
-      explanation: 'We use "am watching" (Present Continuous) porque "right now" indica una acción que está ocurriendo en este momento.'
+      explanation: 'We use "am watching" (Present Continuous) because "right now" indicates an action that is happening at this moment.'
     },
     {
       sentenceParts: [
@@ -2207,7 +2207,7 @@ const exercisesData = {
       ],
       options: ['are cooking', 'cook', 'cooks'],
       correctAnswer: 'are cooking',
-      explanation: 'We use "are cooking" porque "at the moment" indica que la acción está en progreso ahora mismo.'
+      explanation: 'We use "are cooking" because "at the moment" indicates that the action is in progress right now.'
     },
     {
       sentenceParts: [
@@ -2217,7 +2217,7 @@ const exercisesData = {
       ],
       options: ['is studying', 'studies', 'study'],
       correctAnswer: 'is studying',
-      explanation: 'We use "is studying" porque "these days" indica una acción temporal que está ocurriendo en el período actual.'
+      explanation: 'We use "is studying" because "these days" indicates a temporary action that is occurring in the current period.'
     },
     {
       sentenceParts: [
@@ -2227,7 +2227,7 @@ const exercisesData = {
       ],
       options: ['is raining', 'rains', 'rain'],
       correctAnswer: 'is raining',
-      explanation: 'We use "is raining" porque "Look!" indica que la acción está ocurriendo ahora y queremos que alguien la observe.'
+      explanation: 'We use "is raining" because "Look!" indicates that the action is happening now and we want someone to observe it.'
     },
     {
       sentenceParts: [
@@ -2237,7 +2237,7 @@ const exercisesData = {
       ],
       options: ['are working', 'work', 'works'],
       correctAnswer: 'are working',
-      explanation: 'We use "are working" porque "this month" indica una acción temporal en progreso durante este período.'
+      explanation: 'We use "are working" because "this month" indicates a temporary action in progress during this period.'
     },
     {
       sentenceParts: [
@@ -2246,7 +2246,7 @@ const exercisesData = {
         { type: 'text', content: '(study) for my English test.' }
       ],
       correctAnswer: ['am studying', "'m studying"],
-      explanation: 'Present Continuous: am/is/are + verb-ing. We use "am studying" porque "right now" indica una action in progress en este momento exacto.'
+      explanation: 'Present Continuous: am/is/are + verb-ing. We use "am studying" because "right now" indicates an action in progress at this exact moment.'
     },
     {
       sentenceParts: [
@@ -2255,7 +2255,7 @@ const exercisesData = {
         { type: 'text', content: '(not/listen) to the teacher right now.' }
       ],
       correctAnswer: ['are not listening', "aren't listening", 'are not listening'],
-      explanation: 'Present Continuous negativo: am/is/are + not + verb-ing. La acción está ocurriendo (o no está ocurriendo) en este momento.'
+      explanation: 'Present Continuous negative: am/is/are + not + verb-ing. The action is happening (or not happening) at this moment.'
     },
     {
       sentenceParts: [
@@ -2264,7 +2264,7 @@ const exercisesData = {
         { type: 'text', content: '(you/do) this weekend?' }
       ],
       correctAnswer: ['are you doing', "'re you doing"],
-      explanation: 'Present Continuous para planes futuros: What + am/is/are + subject + verb-ing. Questionmos por planes ya organizados.'
+      explanation: 'Present Continuous for future plans: What + am/is/are + subject + verb-ing. We ask about already organized plans.'
     },
     {
       sentenceParts: [
@@ -2274,7 +2274,7 @@ const exercisesData = {
       ],
       options: ['is sleeping', 'sleeps', 'sleep'],
       correctAnswer: 'is sleeping',
-      explanation: 'We use "is sleeping" porque la acción está ocurriendo en este momento y pedimos silencio por esa razón.'
+      explanation: 'We use "is sleeping" because the action is happening at this moment and we ask for silence for that reason.'
     },
     {
       sentenceParts: [
@@ -2284,7 +2284,7 @@ const exercisesData = {
       ],
       options: ['am taking', 'take', 'takes'],
       correctAnswer: 'am taking',
-      explanation: 'We use "am taking" porque la acción está en progreso en este momento specific.'
+      explanation: 'We use "am taking" because the action is in progress at this specific moment.'
     },
     {
       sentenceParts: [
@@ -2294,7 +2294,7 @@ const exercisesData = {
       ],
       options: ['are visiting', 'visit', 'visits'],
       correctAnswer: 'are visiting',
-      explanation: 'We use Present Continuous para planes futuros ya confirmados con "tomorrow".'
+      explanation: 'We use Present Continuous for future plans already confirmed with "tomorrow".'
     },
     {
       sentenceParts: [
@@ -2306,7 +2306,7 @@ const exercisesData = {
       ],
       options: ['are', 'is'],
       correctAnswer: 'are',
-      explanation: 'We use "are" con "you" en Present Continuous para preguntar sobre una action in progress ahora.'
+      explanation: 'We use "are" with "you" in Present Continuous to ask about an action in progress now.'
     },
     {
       sentenceParts: [
@@ -2316,7 +2316,7 @@ const exercisesData = {
       ],
       options: ['are playing', 'play', 'plays'],
       correctAnswer: 'are playing',
-      explanation: 'We use "are playing" porque "now" indica que la acción está ocurriendo en este momento.'
+      explanation: 'We use "are playing" because "now" indicates that the action is happening at this moment.'
     },
     {
       sentenceParts: [
@@ -2326,7 +2326,7 @@ const exercisesData = {
       ],
       options: ['checking', 'check', 'checks'],
       correctAnswer: 'checking',
-      explanation: 'We use Present Continuous con "always" para expresar una queja sobre un hábito molesto.'
+      explanation: 'We use Present Continuous with "always" to express a complaint about an annoying habit.'
     },
     {
       sentenceParts: [
@@ -2336,7 +2336,7 @@ const exercisesData = {
       ],
       options: ['is rising', 'rises', 'rise'],
       correctAnswer: 'is rising',
-      explanation: 'We use "is rising" para describir un cambio que está ocurriendo en este período.'
+      explanation: 'We use "is rising" to describe a change that is occurring in this period.'
     },
     {
       sentenceParts: [
@@ -2346,7 +2346,7 @@ const exercisesData = {
       ],
       options: ['are traveling', 'travel', 'travels'],
       correctAnswer: 'are traveling',
-      explanation: 'We use Present Continuous para planes de futuro ya organizados con "this summer".'
+      explanation: 'We use Present Continuous for future plans already organized with "this summer".'
     },
     {
       sentenceParts: [
@@ -2356,7 +2356,7 @@ const exercisesData = {
       ],
       options: ['is knocking', 'knocks', 'knock'],
       correctAnswer: 'is knocking',
-      explanation: 'We use "is knocking" porque "Listen!" indica que la acción está ocurriendo ahora mismo.'
+      explanation: 'We use "is knocking" because "Listen!" indicates that the action is happening right now.'
     },
     {
       sentenceParts: [
@@ -2366,7 +2366,7 @@ const exercisesData = {
       ],
       options: ['is getting', 'gets', 'get'],
       correctAnswer: 'is getting',
-      explanation: 'We use Present Continuous para describir un cambio o desarrollo gradual que está en progreso.'
+      explanation: 'We use Present Continuous to describe a gradual change or development in progress.'
     },
     {
       sentenceParts: [

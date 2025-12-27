@@ -46,7 +46,7 @@ const MatchExercise = ({ tenseId }) => {
     const answeredCount = Object.keys(userAnswers).length;
 
     if (answeredCount < totalDefinitions) {
-      alert('Please completa todas las respuestas antes de verificar.');
+      alert('Please complete all answers before verifying.');
       return;
     }
 
@@ -79,7 +79,7 @@ const MatchExercise = ({ tenseId }) => {
     return (
       <div className="bg-white rounded-lg shadow-md p-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Weather Exercise</h2>
-        <p className="text-gray-600">Cargando ejercicio...</p>
+        <p className="text-gray-600">Loading exercise...</p>
       </div>
     );
   }
@@ -101,12 +101,12 @@ const MatchExercise = ({ tenseId }) => {
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
               <span className="font-semibold text-green-700">{stats.correct}</span>
-              <span className="text-gray-600">Correctas</span>
+              <span className="text-gray-600">Correct</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <span className="font-semibold text-red-700">{stats.incorrect}</span>
-              <span className="text-gray-600">Incorrectas</span>
+              <span className="text-gray-600">Incorrect</span>
             </div>
           </div>
         </div>
