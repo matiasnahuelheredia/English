@@ -882,6 +882,32 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
 
             {expandedSections['Advanced'] && (
               <div className="ml-3 mt-1 space-y-1">
+                {/* Grammar */}
+                <button
+                  onClick={() => toggleSection('Advanced-Grammar')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                >
+                  <span className="text-htb-text-dim">Grammar</span>
+                  <svg className={`w-3 h-3 transition-transform ${expandedSections['Advanced-Grammar'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {expandedSections['Advanced-Grammar'] && (
+                  <div className="ml-3 space-y-0.5">
+                    <button
+                      onClick={() => onSelectTense('have-had-c1')}
+                      className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                        selectedTense === 'have-had-c1'
+                          ? 'bg-htb-green text-htb-bg font-medium'
+                          : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                      }`}
+                    >
+                      Have, Have got & Had
+                    </button>
+                  </div>
+                )}
+
                 {/* Writing Skills */}
                 <button
                   onClick={() => toggleSection('Advanced-Writing')}
