@@ -1096,7 +1096,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       Relative Clauses
                     </button>
                   </div>
-                )}}}}
+                )}
 
                 {/* Writing Skills */}
                 <button
