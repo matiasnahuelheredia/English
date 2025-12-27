@@ -210,7 +210,10 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               onClick={() => toggleSection('Intermediate')}
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
             >
-              <span className="text-htb-text">Intermediate B1</span>
+              <div className="flex items-center gap-3">
+                <span>🌿</span>
+                <span className="text-htb-text">Intermediate B1</span>
+              </div>
               <svg className={`w-4 h-4 transition-transform ${expandedSections['Intermediate'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -308,7 +311,10 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               onClick={() => toggleSection('Upper-Intermediate')}
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
             >
-              <span className="text-htb-text">Upper-Intermediate B2</span>
+              <div className="flex items-center gap-3">
+                <span>🌳</span>
+                <span className="text-htb-text">Upper-Intermediate B2</span>
+              </div>
               <svg className={`w-4 h-4 transition-transform ${expandedSections['Upper-Intermediate'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -812,7 +818,10 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               onClick={() => toggleSection('Advanced')}
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
             >
-              <span className="text-htb-text">Advanced C1</span>
+              <div className="flex items-center gap-3">
+                <span>🚀</span>
+                <span className="text-htb-text">Advanced C1</span>
+              </div>
               <svg className={`w-4 h-4 transition-transform ${expandedSections['Advanced'] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
