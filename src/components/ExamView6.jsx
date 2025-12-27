@@ -73,70 +73,70 @@ const ExamView6 = () => {
         title: '📚 How to solve: Future Forms',
         example: 'This time tomorrow, I\'ll do / I\'ll be doing my exam.',
         solution: 'I\'ll be doing',
-        explanation: 'Elige según el contexto:',
+        explanation: 'Choose according to context:',
         points: [
-          '🔹 Future Continuous: Acción en progreso en momento específico → "I\'ll be doing"',
-          '🔹 Future Perfect: Acción completa ANTES de tiempo futuro → "will have finished by 3pm"',
+          '🔹 Future Continuous: Action in progress at specific moment → "I\'ll be doing"',
+          '🔹 Future Perfect: Action completed BEFORE future time → "will have finished by 3pm"',
           '🔹 "This time tomorrow/next week" → Future Continuous',
           '🔹 "By (time/date)" → Future Perfect'
         ],
-        tip: '💡 Busca indicadores de tiempo: "at this time", "by then", "when you arrive"'
+        tip: '💡 Look for time indicators: "at this time", "by then", "when you arrive"'
       },
       'word-order': {
-        title: '📚 Cómo resolver: Word Order',
+        title: '📚 How to solve: Word Order',
         example: 'is / Fiona / for / late / class / often',
         solution: 'Fiona is often late for class',
-        explanation: 'Posición de adverbios en inglés:',
+        explanation: 'Position of adverbs in English:',
         points: [
-          '🔹 Frecuencia (often, always, rarely): DESPUÉS de BE, ANTES de otros verbos',
-          '🔹 Opinión (Luckily, Fortunately): Al PRINCIPIO de la oración',
-          '🔹 Modo (happily, quickly): Después del verbo o al final',
-          '🔹 Tiempo (yesterday, next week): Al FINAL de la oración'
+          '🔹 Frequency (often, always, rarely): AFTER BE, BEFORE other verbs',
+          '🔹 Opinion (Luckily, Fortunately): At the BEGINNING of the sentence',
+          '🔹 Manner (happily, quickly): After the verb or at the end',
+          '🔹 Time (yesterday, next week): At the END of the sentence'
         ],
-        tip: '💡 Orden básico: Sujeto + (BE) + Adverbio de frecuencia + Verbo + Complemento + Tiempo'
+        tip: '💡 Basic order: Subject + (BE) + Frequency adverb + Verb + Complement + Time'
       },
       'adverbs': {
-        title: '📚 Cómo resolver: Adverbs',
+        title: '📚 How to solve: Adverbs',
         example: 'Have you ever / even tried sushi?',
         solution: 'ever',
-        explanation: 'Adverbios confusos:',
+        explanation: 'Confusing adverbs:',
         points: [
-          '🔹 ever (preguntas: ¿alguna vez?) vs even (incluso)',
-          '🔹 specially (específicamente para) vs especially (particularmente)',
-          '🔹 hard (con esfuerzo) vs hardly (apenas)',
-          '🔹 still (todavía) vs yet (todavía - final de frase negativa/pregunta)',
-          '🔹 in the end (finalmente) vs at the end (al final de algo)',
-          '🔹 nearly (casi) vs near (cerca)'
+          '🔹 ever (questions: ever?) vs even (even)',
+          '🔹 specially (specifically for) vs especially (particularly)',
+          '🔹 hard (with effort) vs hardly (barely)',
+          '🔹 still (still) vs yet (yet - end of negative sentence/question)',
+          '🔹 in the end (finally) vs at the end (at the end of something)',
+          '🔹 nearly (almost) vs near (near)'
         ],
-        tip: '💡 Lee la oración completa y piensa en el SIGNIFICADO, no solo la gramática'
+        tip: '💡 Read the whole sentence and think about the MEANING, not just the grammar'
       },
       'mixed-grammar': {
-        title: '📚 Cómo resolver: Mixed Grammar',
+        title: '📚 How to solve: Mixed Grammar',
         example: 'Your brother doesn\'t smoke, does / doesn\'t he?',
         solution: 'does',
-        explanation: 'Reglas variadas de gramática:',
+        explanation: 'Various grammar rules:',
         points: [
-          '🔹 The + adjective = grupo general → "The rich" (no "people")',
-          '🔹 Question tags: Oración negativa → tag positivo (y viceversa)',
+          '🔹 The + adjective = general group → "The rich" (no "people")',
+          '🔹 Question tags: Negative sentence → positive tag (and vice versa)',
           '🔹 Such + a/an + adj + noun → "such a good time"',
-          '🔹 Auxiliar en respuestas cortas debe coincidir con el tiempo',
-          '🔹 "did + infinitive" para ENFATIZAR → "I did tell you!"'
+          '🔹 Auxiliary in short answers must match the tense',
+          '🔹 "did + infinitive" to EMPHASIZE → "I did tell you!"'
         ],
-        tip: '💡 Cada ejercicio tiene su propia regla - lee con atención el contexto'
+        tip: '💡 Each exercise has its own rule - read the context carefully'
       },
       'vocabulary': {
-        title: '📚 Cómo resolver: Vocabulary',
+        title: '📚 How to solve: Vocabulary',
         example: 'We\'re having another h_______ this month. It\'s been over 35 degrees.',
         solution: 'heatwave',
-        explanation: 'Estrategia para completar palabras:',
+        explanation: 'Strategy for completing words:',
         points: [
-          '🔹 Lee el CONTEXTO completo - las pistas están en la oración',
-          '🔹 Usa la primera letra como guía inicial',
-          '🔹 Piensa en palabras relacionadas al tema (clima, salud, viajes)',
-          '🔹 Verifica que la palabra tenga sentido gramaticalmente',
-          '🔹 Común en exámenes: heatwave, allergic, fill, open-minded, thick, leather, aisle, pressure'
+          '🔹 Read the complete CONTEXT - the clues are in the sentence',
+          '🔹 Use the first letter as an initial guide',
+          '🔹 Think of words related to the topic (weather, health, travel)',
+          '🔹 Verify that the word makes sense grammatically',
+          '🔹 Common in exams: heatwave, allergic, fill, open-minded, thick, leather, aisle, pressure'
         ],
-        tip: '💡 El contexto SIEMPRE da la pista - ejemplo: "35 degrees" → habla de calor → heatwave'
+        tip: '💡 The context ALWAYS gives the clue - example: "35 degrees" → talks about heat → heatwave'
       }
     };
 
@@ -149,21 +149,21 @@ const ExamView6 = () => {
     setUserAnswer(savedAnswer);
     setFeedback(null);
     
-    // Enfocar el input cuando cambia la pregunta
+    // Focus input when question changes
     if (inputRef.current) {
       inputRef.current.focus();
     }
   }, [currentSectionIndex, currentExerciseIndex]);
 
-  // Navegación con teclas de flecha
+  // Navigation with arrow keys
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Flecha derecha: siguiente pregunta
+      // Right arrow: next question
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         nextExercise();
       }
-      // Flecha izquierda: pregunta anterior
+      // Left arrow: previous question
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
         previousExercise();
@@ -264,7 +264,7 @@ const ExamView6 = () => {
       prompt += `## ${section.title}\n\n`;
       section.exercises.forEach((exercise, exerciseIdx) => {
         const exerciseKey = `${sectionIdx}-${exerciseIdx}`;
-        const userAns = allAnswers[exerciseKey] || '(sin responder)';
+        const userAns = allAnswers[exerciseKey] || '(not answered)';
         const correctAns = Array.isArray(exercise.correctAnswer) 
           ? exercise.correctAnswer.join(' / ') 
           : exercise.correctAnswer;

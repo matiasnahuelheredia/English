@@ -1,4 +1,4 @@
-// Complete Exam 4 - Preguntas similares al Exam 1
+// Complete Exam 6 - Questions similar to Exam 1
 
 export const examData6 = {
   sections: [
@@ -11,49 +11,49 @@ export const examData6 = {
           id: 1,
           sentence: 'She _______ (sleep) when the alarm clock went off.',
           correctAnswer: ['was sleeping'],
-          explanation: 'Usamos Past Continuous porque describe acción en progreso interrumpida por otra.'
+          explanation: 'We use Past Continuous because it describes an action in progress interrupted by another.'
         },
         {
           id: 2,
           sentence: 'He _______ (wait) for the bus for ages when it finally arrived.',
           correctAnswer: ['had been waiting'],
-          explanation: 'Usamos Past Perfect Continuous porque enfatiza duración antes de otra acción pasada.'
+          explanation: 'We use Past Perfect Continuous because it emphasizes duration before another past action.'
         },
         {
           id: 3,
           sentence: 'They packed their bags and _______ (leave) the hotel.',
           correctAnswer: ['left'],
-          explanation: 'Usamos Past Simple porque son acciones secuenciales completadas.'
+          explanation: 'We use Past Simple because they are sequential completed actions.'
         },
         {
           id: 4,
           sentence: "She _______ (not recognize) him because he had changed so much.",
           correctAnswer: ["didn't recognize", "did not recognize"],
-          explanation: 'Usamos Past Simple porque describe un estado en momento específico del pasado.'
+          explanation: 'We use Past Simple because it describes a state at a specific moment in the past.'
         },
         {
           id: 5,
           sentence: "When the guests arrived, we _______ (prepare) the dinner.",
           correctAnswer: ['were preparing'],
-          explanation: 'Usamos Past Continuous porque describe acción en progreso en momento específico.'
+          explanation: 'We use Past Continuous because it describes an action in progress at a specific moment.'
         },
         {
           id: 6,
           sentence: "They were angry because we _______ (not inform) them about the changes.",
           correctAnswer: ["hadn't informed", "had not informed"],
-          explanation: 'Usamos Past Perfect porque la falta de información ocurrió antes del enojo.'
+          explanation: 'We use Past Perfect because the lack of information occurred before the anger.'
         },
         {
           id: 7,
           sentence: 'His legs ached because he _______ (run) all afternoon.',
           correctAnswer: ['had been running'],
-          explanation: 'Usamos Past Perfect Continuous porque enfatiza duración que causó el dolor.'
+          explanation: 'We use Past Perfect Continuous because it emphasizes duration that caused the pain.'
         },
         {
           id: 8,
           sentence: 'When I got to the cinema, I realized I _______ (buy) the wrong tickets.',
           correctAnswer: ['had bought'],
-          explanation: 'Usamos Past Perfect porque la compra incorrecta ocurrió antes de darse cuenta.'
+          explanation: 'We use Past Perfect because the wrong purchase occurred before realizing it.'
         }
       ]
     },
@@ -66,49 +66,49 @@ export const examData6 = {
           id: 1,
           sentence: 'They _______ (work) together since 2015.',
           correctAnswer: ['have worked', 'have been working'],
-          explanation: 'Ambas formas son correctas. Simple enfatiza el hecho, Continuous enfatiza la duración.'
+          explanation: 'Both forms are correct. Simple emphasizes the fact, Continuous emphasizes duration.'
         },
         {
           id: 2,
           sentence: 'How long _______ (he / play) the guitar?',
           correctAnswer: ['has he been playing'],
-          explanation: 'Usamos Present Perfect Continuous porque enfatiza duración de actividad.'
+          explanation: 'We use Present Perfect Continuous because it emphasizes duration of activity.'
         },
         {
           id: 3,
           sentence: '_______ (she / ever / travel) to Asia?',
           correctAnswer: ['Has she ever traveled', 'Has she ever travelled'],
-          explanation: 'Usamos Present Perfect Simple porque pregunta sobre experiencia de vida.'
+          explanation: 'We use Present Perfect Simple because it asks about life experience.'
         },
         {
           id: 4,
           sentence: "My eyes are sore because I _______ (stare) at the screen all day!",
           correctAnswer: ['have been staring'],
-          explanation: 'Usamos Present Perfect Continuous porque enfatiza actividad que causa el dolor.'
+          explanation: 'We use Present Perfect Continuous because it emphasizes activity that causes the pain.'
         },
         {
           id: 5,
           sentence: 'How long _______ (they / know) the password?',
           correctAnswer: ['have they known'],
-          explanation: 'Usamos Present Perfect Simple porque "know" es verbo de estado.'
+          explanation: 'We use Present Perfect Simple because "know" is a state verb.'
         },
         {
           id: 6,
           sentence: "This is the first time he _______ (cook) dinner for us.",
           correctAnswer: ['has cooked'],
-          explanation: 'Usamos Present Perfect Simple con "This is the first/second time...".'
+          explanation: 'We use Present Perfect Simple with "This is the first/second time...".'
         },
         {
           id: 7,
           sentence: 'They _______ (not visit) their grandparents much this year.',
           correctAnswer: ["haven't visited", "have not visited", "haven't been visiting", "have not been visiting"],
-          explanation: 'Ambas formas correctas. Simple = resultado, Continuous = falta de actividad.'
+          explanation: 'Both forms correct. Simple = result, Continuous = lack of activity.'
         },
         {
           id: 8,
           sentence: 'We _______ (never / stay) at a 5-star hotel before.',
           correctAnswer: ['have never stayed'],
-          explanation: 'Usamos Present Perfect Simple porque expresa experiencia hasta el presente.'
+          explanation: 'We use Present Perfect Simple because it expresses experience until the present.'
         }
       ]
     },
@@ -123,42 +123,42 @@ export const examData6 = {
           sentence: "This time next month, they'll open / they'll be opening their new restaurant!",
           options: ["they'll open", "they'll be opening"],
           correctAnswer: "they'll be opening",
-          explanation: 'Future Continuous porque describe acción en progreso en momento específico futuro.'
+          explanation: 'Future Continuous because it describes an action in progress at a specific future moment.'
         },
         {
           id: 2,
           sentence: "By Friday, will you have submitted / be submitting your assignment?",
           options: ['will you have submitted', 'be submitting'],
           correctAnswer: 'will you have submitted',
-          explanation: 'Future Perfect con "by Friday" = acción completa antes de ese momento.'
+          explanation: 'Future Perfect with "by Friday" = action completed before that moment.'
         },
         {
           id: 3,
           sentence: "I won't have come / won't be coming to work tomorrow – I have a doctor's appointment.",
           options: ["won't have come", "won't be coming"],
           correctAnswer: "won't be coming",
-          explanation: 'Future Continuous negativo expresa plan que no se realizará.'
+          explanation: 'Negative Future Continuous expresses a plan that won\'t be carried out.'
         },
         {
           id: 4,
           sentence: "At midnight tonight, we'll have celebrated / we'll be celebrating New Year's Eve!",
           options: ["we'll have celebrated", "we'll be celebrating"],
           correctAnswer: "we'll be celebrating",
-          explanation: 'Future Continuous describe acción en progreso en momento específico.'
+          explanation: 'Future Continuous describes an action in progress at a specific moment.'
         },
         {
           id: 5,
           sentence: "By the end of the year, they will have moved / will be moving to their new house.",
           options: ["will have moved", "will be moving"],
           correctAnswer: "will have moved",
-          explanation: 'Future Perfect porque acción estará completa antes de fin de año.'
+          explanation: 'Future Perfect because the action will be completed before the end of the year.'
         },
         {
           id: 6,
           sentence: "Don't worry about the test! I'll be helping / I'll have helped you prepare.",
           options: ["I'll be helping", "I'll have helped"],
           correctAnswer: "I'll be helping",
-          explanation: 'Future Continuous describe acción en progreso durante preparación.'
+          explanation: 'Future Continuous describes an action in progress during preparation.'
         }
       ]
     },
@@ -172,37 +172,37 @@ export const examData6 = {
           id: 1,
           words: ['is', 'Tom', 'busy', 'usually', 'weekends', 'on'],
           correctAnswer: 'Tom is usually busy on weekends',
-          explanation: 'Adverbio "usually" después de "be".'
+          explanation: 'Adverb "usually" after "be".'
         },
         {
           id: 2,
           words: ['Thankfully', 'one', 'was', 'no', 'injured'],
           correctAnswer: 'Thankfully no one was injured',
-          explanation: 'Adverbio de opinión "Thankfully" al principio.'
+          explanation: 'Opinion adverb "Thankfully" at the beginning.'
         },
         {
           id: 3,
           words: ['drinks', 'He', 'coffee', 'hardly', 'ever'],
           correctAnswer: 'He hardly ever drinks coffee',
-          explanation: 'Adverbios de frecuencia "hardly ever" antes del verbo principal.'
+          explanation: 'Frequency adverbs "hardly ever" before the main verb.'
         },
         {
           id: 4,
           words: ['was', 'carefully', 'The', 'planned', 'trip'],
           correctAnswer: 'The trip was carefully planned',
-          explanation: 'Adverbio "carefully" modifica participio "planned".'
+          explanation: 'Adverb "carefully" modifies participle "planned".'
         },
         {
           id: 5,
           words: ['next', 'having', 'month', "We're", 'a', 'wedding'],
           correctAnswer: "We're having a wedding next month",
-          explanation: 'Expresión temporal "next month" al final.'
+          explanation: 'Time expression "next month" at the end.'
         },
         {
           id: 6,
           words: ['late', 'arrive', 'Amazingly', 'the', 'all', "didn't", 'guests'],
           correctAnswer: "Amazingly all the guests didn't arrive late",
-          explanation: '"Amazingly" al principio, resto en orden normal.'
+          explanation: '"Amazingly" at the beginning, rest in normal order.'
         }
       ]
     },
@@ -217,35 +217,35 @@ export const examData6 = {
           sentence: 'Have you ever / even been skydiving?',
           options: ['ever', 'even'],
           correctAnswer: 'ever',
-          explanation: '"Ever" se usa en preguntas sobre experiencias.'
+          explanation: '"Ever" is used in questions about experiences.'
         },
         {
           id: 2,
           sentence: 'This tool was especially / specially developed for surgeons.',
           options: ['especially', 'specially'],
           correctAnswer: 'specially',
-          explanation: '"Specially" = específicamente para un propósito.'
+          explanation: '"Specially" = specifically for a purpose.'
         },
         {
           id: 3,
           sentence: "She studied hard / hardly for the exam and got an A.",
           options: ['hard', 'hardly'],
           correctAnswer: 'hard',
-          explanation: '"Hard" = con esfuerzo. "Hardly" = apenas.'
+          explanation: '"Hard" = with effort. "Hardly" = barely.'
         },
         {
           id: 4,
           sentence: "It's past midnight and he yet / still hasn't called.",
           options: ['yet', 'still'],
           correctAnswer: 'still',
-          explanation: '"Still" expresa que algo continúa.'
+          explanation: '"Still" expresses that something continues.'
         },
         {
           id: 5,
           sentence: 'We had many setbacks but at the end / in the end we succeeded.',
           options: ['at the end', 'in the end'],
           correctAnswer: 'in the end',
-          explanation: '"In the end" = finalmente.'
+          explanation: '"In the end" = finally.'
         },
         {
           id: 6,
