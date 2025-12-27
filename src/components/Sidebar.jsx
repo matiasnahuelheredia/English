@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Sidebar = ({ selectedTense, onSelectTense }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
   
   // Recuperar las secciones expandidas desde localStorage
   const [expandedSections, setExpandedSections] = useState(() => {
@@ -87,6 +88,18 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
     }));
   };
 
+  // Helper function to check if an item matches search
+  const matchesSearch = (text) => {
+    if (!searchQuery) return true;
+    return text.toLowerCase().includes(searchQuery.toLowerCase());
+  };
+
+  // Check if any child in a section matches search
+  const sectionHasMatch = (items) => {
+    if (!searchQuery) return true;
+    return items.some(item => matchesSearch(item.name || item));
+  };
+
   return (
     <>
       <button
@@ -131,23 +144,57 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
         <div className="md:hidden h-16"></div>
 
         <div className="flex-1 overflow-y-auto p-4 space-y-1">
-          {/* INTRODUCTION */}
-          <div>
-            <button
-              onClick={() => onSelectTense('introduction')}
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                selectedTense === 'introduction'
-                  ? 'bg-htb-green text-htb-bg'
-                  : 'hover:bg-htb-card text-htb-text'
-              }`}
-            >
-              <span>📖</span>
-              <span>Introduction</span>
-            </button>
+          {/* SEARCH BAR */}
+          <div className="mb-4">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search exercises..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-htb-sidebar border border-gray-700 rounded-lg px-4 py-2 pl-10 text-sm text-white placeholder-htb-text-dim focus:outline-none focus:ring-2 focus:ring-htb-green focus:border-htb-green transition-all"
+              />
+              <svg 
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-htb-text-dim"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-htb-text-dim hover:text-htb-green transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
           </div>
 
+          {/* INTRODUCTION */}
+          {matchesSearch('Introduction') && (
+            <div>
+              <button
+                onClick={() => onSelectTense('introduction')}
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  selectedTense === 'introduction'
+                    ? 'bg-htb-green text-htb-bg'
+                    : 'hover:bg-htb-card text-htb-text'
+                }`}
+              >
+                <span>📖</span>
+                <span>Introduction</span>
+              </button>
+            </div>
+          )}
+
           {/* A1 BEGINNER */}
-          <div>
+          {(matchesSearch('Beginner') || matchesSearch('Verb be') || matchesSearch('A1')) && (
+            <div>
             <button
               onClick={() => toggleSection('Beginner')}
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card text-htb-text transition-colors"
@@ -203,9 +250,11 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               </div>
             )}
           </div>
+          )}
 
           {/* B1 INTERMEDIATE */}
-          <div>
+          {(matchesSearch('Intermediate') || matchesSearch('B1') || matchesSearch('Cinema') || matchesSearch('Education') || matchesSearch('Food') || matchesSearch('Present Perfect') || matchesSearch('Email Writing')) && (
+            <div>
             <button
               onClick={() => toggleSection('Intermediate')}
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
@@ -304,9 +353,11 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               </div>
             )}
           </div>
+          )}
 
           {/* B2 UPPER-INTERMEDIATE */}
-          <div>
+          {(matchesSearch('Upper') || matchesSearch('Intermediate') || matchesSearch('B2') || matchesSearch('Present') || matchesSearch('Past') || matchesSearch('Future') || matchesSearch('Conditional') || matchesSearch('Tenses') || matchesSearch('Email') || matchesSearch('Story') || matchesSearch('Job Interview')) && (
+            <div>
             <button
               onClick={() => toggleSection('Upper-Intermediate')}
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
@@ -811,9 +862,11 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               </div>
             )}
           </div>
+          )}
 
           {/* ADVANCED C1 */}
-          <div>
+          {(matchesSearch('Advanced') || matchesSearch('C1') || matchesSearch('Managerial') || matchesSearch('Adverbs') || matchesSearch('Phones') || matchesSearch('Technology')) && (
+            <div>
             <button
               onClick={() => toggleSection('Advanced')}
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card transition-colors"
@@ -903,6 +956,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
               </div>
             )}
           </div>
+          )}
         </div>
       </div>
 

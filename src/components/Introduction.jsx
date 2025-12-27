@@ -89,28 +89,28 @@ const Introduction = () => {
         style={{ zIndex: 0 }}
       />
       
-      <div className="relative z-10 max-w-4xl mx-auto px-4 py-8">
+      <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
       {/* Animated Banner */}
-      <div className="relative bg-htb-card border border-htb-green/30 rounded-lg shadow-2xl mb-6 overflow-hidden" style={{ height: '200px' }}>
+      <div className="relative bg-htb-card border border-htb-green/30 rounded-lg shadow-2xl mb-4 sm:mb-6 overflow-hidden" style={{ minHeight: '160px', height: 'auto' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-htb-bg/40 to-htb-bg/90"></div>
         
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
-          <div className="text-center mb-4">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 py-6 sm:px-6">
+          <div className="text-center mb-3 sm:mb-4">
             <div className="inline-block">
-              <span className="text-5xl font-bold text-htb-green animate-glow-pulse" style={{ textShadow: '0 0 20px rgba(155, 245, 80, 0.6), 0 0 40px rgba(155, 245, 80, 0.3)' }}>
+              <span className="text-2xl sm:text-4xl lg:text-5xl font-bold text-htb-green animate-glow-pulse leading-tight" style={{ textShadow: '0 0 20px rgba(155, 245, 80, 0.6), 0 0 40px rgba(155, 245, 80, 0.3)' }}>
                 Hacking English Practice Platform
               </span>
             </div>
           </div>
           
-          <div className="flex items-center gap-4 animate-fade-in-up">
-            <div className="flex items-center gap-2 bg-htb-sidebar/80 border border-htb-green/30 rounded px-4 py-2">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 animate-fade-in-up w-full sm:w-auto">
+            <div className="flex items-center gap-2 bg-htb-sidebar/80 border border-htb-green/30 rounded px-3 sm:px-4 py-1.5 sm:py-2 w-full sm:w-auto justify-center">
               <div className="w-2 h-2 bg-htb-green rounded-full animate-ping"></div>
-              <span className="text-htb-green text-sm font-mono">374 EXERCISES LOADED</span>
+              <span className="text-htb-green text-xs sm:text-sm font-mono">374 EXERCISES LOADED</span>
             </div>
-            <div className="flex items-center gap-2 bg-htb-sidebar/80 border border-htb-green/30 rounded px-4 py-2">
+            <div className="flex items-center gap-2 bg-htb-sidebar/80 border border-htb-green/30 rounded px-3 sm:px-4 py-1.5 sm:py-2 w-full sm:w-auto justify-center">
               <div className="w-2 h-2 bg-htb-green rounded-full animate-pulse"></div>
-              <span className="text-htb-green text-sm font-mono">READY TO HACK</span>
+              <span className="text-htb-green text-xs sm:text-sm font-mono">READY TO HACK</span>
             </div>
           </div>
         </div>
@@ -119,14 +119,14 @@ const Introduction = () => {
       </div>
 
       {/* Welcome Section */}
-      <div className="bg-htb-card border border-htb-green/30 rounded-lg shadow-lg p-8 mb-6">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-htb-green rounded-lg flex items-center justify-center">
-            <span className="text-htb-bg text-3xl font-bold">E</span>
+      <div className="bg-htb-card border border-htb-green/30 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-4 sm:mb-6">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4 sm:mb-6">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-htb-green rounded-lg flex items-center justify-center shrink-0">
+            <span className="text-htb-bg text-2xl sm:text-3xl font-bold">E</span>
           </div>
-          <div>
-            <h1 className="text-3xl font-bold text-white mb-2">Welcome to the Hacking Practice Platform</h1>
-            <p className="text-htb-text">Master English through Cybersecurity Scenarios</p>
+          <div className="text-center sm:text-left">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">Welcome to the Hacking Practice Platform</h1>
+            <p className="text-sm sm:text-base text-htb-text">Master English through Cybersecurity Scenarios</p>
           </div>
         </div>
 
@@ -179,13 +179,13 @@ const Introduction = () => {
       `}</style>
 
       {/* Features Section */}
-      <div className="grid md:grid-cols-2 gap-6 mb-6">
-        <div className="bg-htb-card border border-gray-800 rounded-lg p-6 hover:border-htb-green/30 transition-all">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-htb-green/20 rounded flex items-center justify-center">
-              <span className="text-htb-green text-xl">📚</span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+        <div className="bg-htb-card border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-htb-green/30 transition-all">
+          <div className="flex items-center gap-3 mb-3 sm:mb-4">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-htb-green/20 rounded flex items-center justify-center shrink-0">
+              <span className="text-htb-green text-lg sm:text-xl">📚</span>
             </div>
-            <h3 className="text-xl font-bold text-white">374+ Exercises</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">374+ Exercises</h3>
           </div>
           <p className="text-htb-text text-sm">
             Comprehensive coverage of all verb tenses, conditionals, and question forms with examples 
@@ -234,9 +234,9 @@ const Introduction = () => {
       </div>
 
       {/* Topics Covered */}
-      <div className="bg-htb-card border border-gray-800 rounded-lg p-6 mb-6">
-        <h2 className="text-2xl font-bold text-white mb-4">📖 Topics Covered</h2>
-        <div className="grid md:grid-cols-3 gap-4">
+      <div className="bg-htb-card border border-gray-800 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">📖 Topics Covered</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div>
             <h4 className="text-htb-green font-semibold mb-2">Present Tenses</h4>
             <ul className="space-y-1 text-sm text-htb-text">
@@ -268,12 +268,12 @@ const Introduction = () => {
       </div>
 
       {/* Cybersecurity Scenarios */}
-      <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-6 mb-6">
-        <h2 className="text-2xl font-bold text-white mb-4">🎯 Example Scenarios</h2>
+      <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">🎯 Example Scenarios</h2>
         <div className="space-y-3">
-          <div className="bg-htb-card border border-gray-800 rounded p-4">
-            <p className="text-htb-green font-semibold mb-1">Present Perfect:</p>
-            <p className="text-htb-text text-sm italic">
+          <div className="bg-htb-card border border-gray-800 rounded p-3 sm:p-4">
+            <p className="text-htb-green font-semibold mb-1 text-sm sm:text-base">Present Perfect:</p>
+            <p className="text-htb-text text-xs sm:text-sm italic">
               "The security team <span className="text-white font-semibold">has discovered</span> a critical SQL injection vulnerability in the login form."
             </p>
           </div>
@@ -293,11 +293,11 @@ const Introduction = () => {
       </div>
 
       {/* How to Use */}
-      <div className="bg-htb-card border border-gray-800 rounded-lg p-6 mb-6">
-        <h2 className="text-2xl font-bold text-white mb-4">🚀 How to Get Started</h2>
+      <div className="bg-htb-card border border-gray-800 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">🚀 How to Get Started</h2>
         <div className="space-y-3 text-htb-text">
-          <div className="flex items-start gap-3">
-            <div className="w-8 h-8 bg-htb-green text-htb-bg rounded-full flex items-center justify-center font-bold shrink-0">1</div>
+          <div className="flex items-start gap-2 sm:gap-3">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-htb-green text-htb-bg rounded-full flex items-center justify-center font-bold shrink-0 text-sm sm:text-base">1</div>
             <div>
               <p className="font-semibold text-white">Choose a Grammar Topic</p>
               <p className="text-sm">Select from Present, Past, Future tenses, or Conditionals in the sidebar</p>
@@ -328,16 +328,16 @@ const Introduction = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-r from-htb-green/10 to-htb-green/5 border border-htb-green/50 rounded-lg p-8 text-center">
-        <h2 className="text-2xl font-bold text-white mb-3">Ready to Start?</h2>
-        <p className="text-htb-text mb-6">
+      <div className="bg-gradient-to-r from-htb-green/10 to-htb-green/5 border border-htb-green/50 rounded-lg p-6 sm:p-8 text-center">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Ready to Start?</h2>
+        <p className="text-sm sm:text-base text-htb-text mb-4 sm:mb-6">
           Choose a topic from the sidebar to begin your journey toward mastering English for cybersecurity!
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <button className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
             🎯 Start with Present Simple
           </button>
-          <button className="bg-htb-sidebar hover:bg-gray-700 border border-htb-green/30 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+          <button className="bg-htb-sidebar hover:bg-gray-700 border border-htb-green/30 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
             📝 Take a Practice Exam
           </button>
         </div>
