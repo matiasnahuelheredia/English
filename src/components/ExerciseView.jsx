@@ -160,6 +160,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const [vocabularyImage, setVocabularyImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
   const [remainingVocabExercises, setRemainingVocabExercises] = useState([]);
+  const [reorderedWords, setReorderedWords] = useState([]);
+  const [availableWords, setAvailableWords] = useState([]);
   
   const inputRef = useRef(null);
   const initialTimerRef = useRef(null);
@@ -268,11 +270,18 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     setShowAnswer(false);
     setCountdown(4);
     setStats({ correct: 0, incorrect: 0 });
+    setReorderedWords([]);
+    setAvailableWords([]);
     
     if (loadedExercises.length > 0) {
       const randomIndex = Math.floor(Math.random() * loadedExercises.length);
       const exercise = loadedExercises[randomIndex];
       setCurrentExercise(exercise);
+      
+      // Initialize reorder exercise
+      if (exercise.sentenceParts && exercise.sentenceParts[0]?.type === 'reorder') {
+        setAvailableWords([...exercise.words]);
+      }
       
       if (isVocabTopic) {
         startInitialCountdown(exercise);
