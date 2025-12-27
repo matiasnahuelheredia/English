@@ -38,7 +38,7 @@ function App() {
 
   return (
     <Layout selectedTense={selectedTense} onSelectTense={setSelectedTense}>
-      <ExerciseView tenseId={selectedTense} />
+      <ExerciseView tenseId={selectedTense} onSelectTense={setSelectedTense} />
     </Layout>
   );
 }

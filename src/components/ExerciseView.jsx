@@ -25,10 +25,10 @@ import TalkAboutYourselfB2 from './TalkAboutYourselfB2';
 import JobInterviewB2 from './JobInterviewB2';
 import VerbBeA1Exercise from './VerbBeA1Exercise';
 
-const ExerciseView = ({ tenseId }) => {
+const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
   if (tenseId === 'introduction') {
-    return <Introduction />;
+    return <Introduction onSelectTense={onSelectTense} />;
   }
 
   // Si es conflict-warfare, mostrar el componente ConflictWarfareExercise
