@@ -83,6 +83,7 @@ const JobInterviewB2 = () => {
           newSegments.push({
             text: match[0],
             tense: tensePattern.tense,
+            usage: tensePattern.usage,
             color: tensePattern.color,
             hoverColor: tensePattern.hoverColor,
           });

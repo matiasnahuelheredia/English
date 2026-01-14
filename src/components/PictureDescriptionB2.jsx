@@ -82,6 +82,7 @@ const PictureDescriptionB2 = () => {
             newSegments.push({
               text: matches[i],
               tense: pattern.name,
+              usage: pattern.usage,
               color: pattern.color,
               hoverColor: pattern.hoverColor,
             });
