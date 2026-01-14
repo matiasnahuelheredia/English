@@ -12,14 +12,16 @@ const PictureDescriptionB2 = () => {
     const tensePatterns = [
       {
         name: 'Past Perfect Continuous',
-        usage: 'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
+        usage:
+          'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
         regex: /\b(had been \w+ing)\b/gi,
         color: 'bg-purple-600',
         hoverColor: 'hover:bg-purple-500',
       },
       {
         name: 'Past Perfect',
-        usage: 'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
+        usage:
+          'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
         regex:
           /\b(had (?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known|brought|kept|held|met|heard|told|become|begun|written|spoken|driven|eaten|drunk|sung|run|sat|stood|understood|meant|sent|spent|built|caught|taught|fought|bought|sold|worn|won|lost|paid|said|read|put|cut|set|let|hit|hurt|shut|cost|spread)\w*)\b/gi,
         color: 'bg-indigo-600',
@@ -27,21 +29,24 @@ const PictureDescriptionB2 = () => {
       },
       {
         name: 'Past Continuous',
-        usage: 'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
+        usage:
+          'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
         regex: /\b(was|were)\s+(\w+ing)\b/gi,
         color: 'bg-blue-600',
         hoverColor: 'hover:bg-blue-500',
       },
       {
         name: 'Present Perfect Continuous',
-        usage: 'Used to emphasize the duration of an action that started in the past and continues now, or has just finished with visible results.',
+        usage:
+          'Used to emphasize the duration of an action that started in the past and continues now, or has just finished with visible results.',
         regex: /\b(has|have)\s+been\s+(\w+ing)\b/gi,
         color: 'bg-green-600',
         hoverColor: 'hover:bg-green-500',
       },
       {
         name: 'Present Perfect',
-        usage: 'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
+        usage:
+          'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
         regex:
           /\b(has|have)\s+(?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known|brought|kept|held|met|heard|told|become|begun|written|spoken|driven|eaten|drunk|sung|run|sat|stood|understood|meant|sent|spent|built|caught|taught|fought|bought|sold|worn|won|lost|paid|said|read|put|cut|set|let|hit|hurt|shut|cost|spread)\w*/gi,
         color: 'bg-yellow-600',
@@ -49,7 +54,8 @@ const PictureDescriptionB2 = () => {
       },
       {
         name: 'Modal Perfect',
-        usage: 'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
+        usage:
+          'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
         regex:
           /\b(could|would|should|might|may|must)\s+have\s+(?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known)\w*/gi,
         color: 'bg-red-600',
@@ -97,9 +103,13 @@ const PictureDescriptionB2 = () => {
         >
           {segment.text}
           {hoveredTense?.index === i && (
-            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-gray-900 text-white text-xs rounded z-50 border-2 border-htb-green shadow-lg max-w-xs w-64">
-              <div className="font-bold mb-1 text-htb-green">{segment.tense}</div>
-              <div className="text-gray-300 font-normal text-xs leading-relaxed">{segment.usage}</div>
+            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg text-white text-xs rounded-lg z-50 border-2 border-htb-green shadow-xl w-80 max-w-sm">
+              <div className="font-bold mb-1.5 text-sm text-htb-green">
+                {segment.tense}
+              </div>
+              <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">
+                {segment.usage}
+              </div>
               <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
             </span>
           )}

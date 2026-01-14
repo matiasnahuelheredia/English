@@ -11,7 +11,8 @@ const StoryTellingB2 = () => {
       {
         pattern: /\b(had\s+been\s+\w+ing)\b/gi,
         tense: 'Past Perfect Continuous',
-        usage: 'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
+        usage:
+          'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
         color: 'bg-blue-500/20 border-b-2 border-blue-500',
         hoverColor: 'bg-blue-500/40',
       },
@@ -20,7 +21,8 @@ const StoryTellingB2 = () => {
         pattern:
           /\b(had\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
         tense: 'Past Perfect',
-        usage: 'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
+        usage:
+          'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
         color: 'bg-purple-500/20 border-b-2 border-purple-500',
         hoverColor: 'bg-purple-500/40',
       },
@@ -28,7 +30,8 @@ const StoryTellingB2 = () => {
       {
         pattern: /\b((?:was|were)\s+\w+ing)\b/gi,
         tense: 'Past Continuous',
-        usage: 'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
+        usage:
+          'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
         color: 'bg-yellow-500/20 border-b-2 border-yellow-500',
         hoverColor: 'bg-yellow-500/40',
       },
@@ -37,7 +40,8 @@ const StoryTellingB2 = () => {
         pattern:
           /\b((?:would|could|should|might|must)\s+have\s+\w+(?:ed|en))\b/gi,
         tense: 'Modal Perfect',
-        usage: 'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
+        usage:
+          'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
         color: 'bg-pink-500/20 border-b-2 border-pink-500',
         hoverColor: 'bg-pink-500/40',
       },
@@ -46,7 +50,8 @@ const StoryTellingB2 = () => {
         pattern:
           /\b((?:arrived|started|noticed|dropped|picked|handed|learned|cleared|found|tucked|compelled|passed|insisted|walked|felt|heard|turned|stood|stared|told|realized|admitted|decided|spent|taught|changed|seemed|happened|asked|answered|looked|watched|listened|tried|helped|worked|lived|studied|opened|closed|moved|stopped|waited|talked|walked|played|showed|called|needed|wanted|stayed|died|killed|saved|traveled|travelled|visited|created|finished|completed|changed|formed|formed|used|caused))\b/gi,
         tense: 'Past Simple',
-        usage: 'Used to describe completed actions in the past. The main narrative tense for telling stories and describing past events.',
+        usage:
+          'Used to describe completed actions in the past. The main narrative tense for telling stories and describing past events.',
         color: 'bg-green-500/20 border-b-2 border-green-500',
         hoverColor: 'bg-green-500/40',
       },
@@ -55,7 +60,8 @@ const StoryTellingB2 = () => {
         pattern:
           /\b(went|came|saw|got|made|took|gave|said|knew|thought|found|told|became|left|met|sat|stood|began|ran|wrote|spoke|broke|chose|ate|drank|drove|flew|wore|fell|rose|grew|threw|won|lost|built|spent|sent|kept|felt|held|meant|paid|put|read|rode|rang|sang|swam|sank|shook|shot|shut|slept|slid|sold|spoke|stole|stuck|struck|swore|swept|taught|tore|understood|woke|wrote)\b/gi,
         tense: 'Past Simple (irregular)',
-        usage: 'Used to describe completed actions in the past with irregular verb forms. The main narrative tense for telling stories.',
+        usage:
+          'Used to describe completed actions in the past with irregular verb forms. The main narrative tense for telling stories.',
         color: 'bg-green-600/20 border-b-2 border-green-600',
         hoverColor: 'bg-green-600/40',
       },
@@ -134,9 +140,9 @@ const StoryTellingB2 = () => {
               >
                 {segment.text}
                 {hoveredTense === `${pIndex}-${sIndex}` && (
-                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-10 shadow-lg font-semibold max-w-xs w-64">
-                    <div className="font-bold mb-1">{segment.tense}</div>
-                    <div className="text-gray-300 font-normal text-xs leading-relaxed">{segment.usage}</div>
+                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-50 shadow-xl font-semibold w-80 max-w-sm">
+                    <div className="font-bold mb-1.5 text-sm">{segment.tense}</div>
+                    <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">{segment.usage}</div>
                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
                   </span>
                 )}
