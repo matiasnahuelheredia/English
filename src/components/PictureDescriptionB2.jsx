@@ -10,13 +10,51 @@ const PictureDescriptionB2 = () => {
   const [hoveredSignal, setHoveredSignal] = useState(null);
 
   const signalWordsPatterns = [
-    { words: ['for', 'since', 'how long'], tense: 'Duration (Perfect Continuous)', color: 'bg-emerald-200 text-emerald-900' },
-    { words: ['already', 'just', 'yet', 'ever', 'never', 'recently', 'lately', 'so far', 'up to now'], tense: 'Present Perfect', color: 'bg-indigo-200 text-indigo-900' },
-    { words: ['before', 'after', 'by the time', 'until', 'when'], tense: 'Past Perfect / Sequence', color: 'bg-purple-200 text-purple-900' },
-    { words: ['while', 'when', 'as', 'at that moment', 'at that time'], tense: 'Past Continuous / Background', color: 'bg-yellow-200 text-yellow-900' },
-    { words: ['yesterday', 'ago', 'last week', 'last month', 'last year'], tense: 'Past Simple', color: 'bg-orange-200 text-orange-900' },
-    { words: ['by', 'by then', 'by now', 'by that time'], tense: 'Perfect (Future/Past)', color: 'bg-pink-200 text-pink-900' },
-    { words: ['next week', 'next month', 'next year', 'tomorrow'], tense: 'Future', color: 'bg-blue-200 text-blue-900' },
+    {
+      words: ['for', 'since', 'how long'],
+      tense: 'Duration (Perfect Continuous)',
+      color: 'bg-emerald-200 text-emerald-900',
+    },
+    {
+      words: [
+        'already',
+        'just',
+        'yet',
+        'ever',
+        'never',
+        'recently',
+        'lately',
+        'so far',
+        'up to now',
+      ],
+      tense: 'Present Perfect',
+      color: 'bg-indigo-200 text-indigo-900',
+    },
+    {
+      words: ['before', 'after', 'by the time', 'until', 'when'],
+      tense: 'Past Perfect / Sequence',
+      color: 'bg-purple-200 text-purple-900',
+    },
+    {
+      words: ['while', 'when', 'as', 'at that moment', 'at that time'],
+      tense: 'Past Continuous / Background',
+      color: 'bg-yellow-200 text-yellow-900',
+    },
+    {
+      words: ['yesterday', 'ago', 'last week', 'last month', 'last year'],
+      tense: 'Past Simple',
+      color: 'bg-orange-200 text-orange-900',
+    },
+    {
+      words: ['by', 'by then', 'by now', 'by that time'],
+      tense: 'Perfect (Future/Past)',
+      color: 'bg-pink-200 text-pink-900',
+    },
+    {
+      words: ['next week', 'next month', 'next year', 'tomorrow'],
+      tense: 'Future',
+      color: 'bg-blue-200 text-blue-900',
+    },
   ];
 
   const highlightSignalWords = (text) => {
@@ -25,8 +63,8 @@ const PictureDescriptionB2 = () => {
     let currentPos = 0;
 
     const allPatterns = [];
-    signalWordsPatterns.forEach(pattern => {
-      pattern.words.forEach(word => {
+    signalWordsPatterns.forEach((pattern) => {
+      pattern.words.forEach((word) => {
         allPatterns.push({ word, ...pattern });
       });
     });
@@ -37,7 +75,10 @@ const PictureDescriptionB2 = () => {
       let matchIndex = currentText.length;
 
       for (const pattern of allPatterns) {
-        const regex = new RegExp(`\\b${pattern.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+        const regex = new RegExp(
+          `\\b${pattern.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`,
+          'gi'
+        );
         const match = regex.exec(currentText.slice(currentPos));
         if (match && match.index < matchIndex) {
           matchIndex = match.index;
@@ -50,11 +91,13 @@ const PictureDescriptionB2 = () => {
           text: foundMatch.matchText,
           isSignal: true,
           tense: foundMatch.tense,
-          color: foundMatch.color
+          color: foundMatch.color,
         });
         currentPos += foundMatch.matchText.length;
       } else {
-        const endPos = foundMatch ? currentPos + matchIndex : currentText.length;
+        const endPos = foundMatch
+          ? currentPos + matchIndex
+          : currentText.length;
         const textChunk = currentText.slice(currentPos, endPos);
         if (textChunk) {
           segments.push({ text: textChunk, isSignal: false });
@@ -96,7 +139,7 @@ const PictureDescriptionB2 = () => {
           'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
         auxiliary: 'was/were',
         verbForm: 'verb + -ing (present participle)',
-        timeWords: 'while, when, at that moment, at 5 o\'clock yesterday',
+        timeWords: "while, when, at that moment, at 5 o'clock yesterday",
         regex: /\b(was|were)\s+(\w+ing)\b/gi,
         color: 'bg-blue-600',
         hoverColor: 'hover:bg-blue-500',
@@ -118,7 +161,8 @@ const PictureDescriptionB2 = () => {
           'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
         auxiliary: 'have/has',
         verbForm: 'past participle (3rd form)',
-        timeWords: 'just, already, yet, ever, never, recently, lately, so far, up to now',
+        timeWords:
+          'just, already, yet, ever, never, recently, lately, so far, up to now',
         regex:
           /\b(has|have)\s+(?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known|brought|kept|held|met|heard|told|become|begun|written|spoken|driven|eaten|drunk|sung|run|sat|stood|understood|meant|sent|spent|built|caught|taught|fought|bought|sold|worn|won|lost|paid|said|read|put|cut|set|let|hit|hurt|shut|cost|spread)\w*/gi,
         color: 'bg-yellow-600',

@@ -7,13 +7,51 @@ const PersonalQuestionsB2 = () => {
   const [hoveredSignal, setHoveredSignal] = useState(null);
 
   const signalWordsPatterns = [
-    { words: ['for', 'since', 'how long'], tense: 'Duration (Perfect Continuous)', color: 'bg-emerald-200 text-emerald-900' },
-    { words: ['already', 'just', 'yet', 'ever', 'never', 'recently', 'lately', 'so far', 'up to now'], tense: 'Present Perfect', color: 'bg-indigo-200 text-indigo-900' },
-    { words: ['before', 'after', 'by the time', 'until', 'when'], tense: 'Past Perfect / Sequence', color: 'bg-purple-200 text-purple-900' },
-    { words: ['while', 'when', 'as', 'at that moment', 'at that time'], tense: 'Past Continuous / Background', color: 'bg-yellow-200 text-yellow-900' },
-    { words: ['yesterday', 'ago', 'last week', 'last month', 'last year'], tense: 'Past Simple', color: 'bg-orange-200 text-orange-900' },
-    { words: ['by', 'by then', 'by now', 'by that time'], tense: 'Perfect (Future/Past)', color: 'bg-pink-200 text-pink-900' },
-    { words: ['next week', 'next month', 'next year', 'tomorrow'], tense: 'Future', color: 'bg-blue-200 text-blue-900' },
+    {
+      words: ['for', 'since', 'how long'],
+      tense: 'Duration (Perfect Continuous)',
+      color: 'bg-emerald-200 text-emerald-900',
+    },
+    {
+      words: [
+        'already',
+        'just',
+        'yet',
+        'ever',
+        'never',
+        'recently',
+        'lately',
+        'so far',
+        'up to now',
+      ],
+      tense: 'Present Perfect',
+      color: 'bg-indigo-200 text-indigo-900',
+    },
+    {
+      words: ['before', 'after', 'by the time', 'until', 'when'],
+      tense: 'Past Perfect / Sequence',
+      color: 'bg-purple-200 text-purple-900',
+    },
+    {
+      words: ['while', 'when', 'as', 'at that moment', 'at that time'],
+      tense: 'Past Continuous / Background',
+      color: 'bg-yellow-200 text-yellow-900',
+    },
+    {
+      words: ['yesterday', 'ago', 'last week', 'last month', 'last year'],
+      tense: 'Past Simple',
+      color: 'bg-orange-200 text-orange-900',
+    },
+    {
+      words: ['by', 'by then', 'by now', 'by that time'],
+      tense: 'Perfect (Future/Past)',
+      color: 'bg-pink-200 text-pink-900',
+    },
+    {
+      words: ['next week', 'next month', 'next year', 'tomorrow'],
+      tense: 'Future',
+      color: 'bg-blue-200 text-blue-900',
+    },
   ];
 
   const highlightSignalWords = (text) => {
@@ -22,8 +60,8 @@ const PersonalQuestionsB2 = () => {
     let currentPos = 0;
 
     const allPatterns = [];
-    signalWordsPatterns.forEach(pattern => {
-      pattern.words.forEach(word => {
+    signalWordsPatterns.forEach((pattern) => {
+      pattern.words.forEach((word) => {
         allPatterns.push({ word, ...pattern });
       });
     });
@@ -34,7 +72,10 @@ const PersonalQuestionsB2 = () => {
       let matchIndex = currentText.length;
 
       for (const pattern of allPatterns) {
-        const regex = new RegExp(`\\b${pattern.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+        const regex = new RegExp(
+          `\\b${pattern.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`,
+          'gi'
+        );
         const match = regex.exec(currentText.slice(currentPos));
         if (match && match.index < matchIndex) {
           matchIndex = match.index;
@@ -47,11 +88,13 @@ const PersonalQuestionsB2 = () => {
           text: foundMatch.matchText,
           isSignal: true,
           tense: foundMatch.tense,
-          color: foundMatch.color
+          color: foundMatch.color,
         });
         currentPos += foundMatch.matchText.length;
       } else {
-        const endPos = foundMatch ? currentPos + matchIndex : currentText.length;
+        const endPos = foundMatch
+          ? currentPos + matchIndex
+          : currentText.length;
         const textChunk = currentText.slice(currentPos, endPos);
         if (textChunk) {
           segments.push({ text: textChunk, isSignal: false });

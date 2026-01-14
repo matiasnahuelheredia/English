@@ -6,13 +6,51 @@ const EmailWritingB1 = () => {
   const [hoveredSignal, setHoveredSignal] = useState(null);
 
   const signalWordsPatterns = [
-    { words: ['for', 'since', 'how long'], tense: 'Duration (Perfect Continuous)', color: 'bg-emerald-200 text-emerald-900' },
-    { words: ['already', 'just', 'yet', 'ever', 'never', 'recently', 'lately', 'so far', 'up to now'], tense: 'Present Perfect', color: 'bg-indigo-200 text-indigo-900' },
-    { words: ['before', 'after', 'by the time', 'until', 'when'], tense: 'Past Perfect / Sequence', color: 'bg-purple-200 text-purple-900' },
-    { words: ['while', 'when', 'as', 'at that moment', 'at that time'], tense: 'Past Continuous / Background', color: 'bg-yellow-200 text-yellow-900' },
-    { words: ['yesterday', 'ago', 'last week', 'last month', 'last year'], tense: 'Past Simple', color: 'bg-orange-200 text-orange-900' },
-    { words: ['by', 'by then', 'by now', 'by that time'], tense: 'Perfect (Future/Past)', color: 'bg-pink-200 text-pink-900' },
-    { words: ['next week', 'next month', 'next year', 'tomorrow'], tense: 'Future', color: 'bg-blue-200 text-blue-900' },
+    {
+      words: ['for', 'since', 'how long'],
+      tense: 'Duration (Perfect Continuous)',
+      color: 'bg-emerald-200 text-emerald-900',
+    },
+    {
+      words: [
+        'already',
+        'just',
+        'yet',
+        'ever',
+        'never',
+        'recently',
+        'lately',
+        'so far',
+        'up to now',
+      ],
+      tense: 'Present Perfect',
+      color: 'bg-indigo-200 text-indigo-900',
+    },
+    {
+      words: ['before', 'after', 'by the time', 'until', 'when'],
+      tense: 'Past Perfect / Sequence',
+      color: 'bg-purple-200 text-purple-900',
+    },
+    {
+      words: ['while', 'when', 'as', 'at that moment', 'at that time'],
+      tense: 'Past Continuous / Background',
+      color: 'bg-yellow-200 text-yellow-900',
+    },
+    {
+      words: ['yesterday', 'ago', 'last week', 'last month', 'last year'],
+      tense: 'Past Simple',
+      color: 'bg-orange-200 text-orange-900',
+    },
+    {
+      words: ['by', 'by then', 'by now', 'by that time'],
+      tense: 'Perfect (Future/Past)',
+      color: 'bg-pink-200 text-pink-900',
+    },
+    {
+      words: ['next week', 'next month', 'next year', 'tomorrow'],
+      tense: 'Future',
+      color: 'bg-blue-200 text-blue-900',
+    },
   ];
 
   const highlightSignalWords = (text) => {
@@ -21,8 +59,8 @@ const EmailWritingB1 = () => {
     let currentPos = 0;
 
     const allPatterns = [];
-    signalWordsPatterns.forEach(pattern => {
-      pattern.words.forEach(word => {
+    signalWordsPatterns.forEach((pattern) => {
+      pattern.words.forEach((word) => {
         allPatterns.push({ word, ...pattern });
       });
     });
@@ -33,7 +71,10 @@ const EmailWritingB1 = () => {
       let matchIndex = currentText.length;
 
       for (const pattern of allPatterns) {
-        const regex = new RegExp(`\\b${pattern.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+        const regex = new RegExp(
+          `\\b${pattern.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`,
+          'gi'
+        );
         const match = regex.exec(currentText.slice(currentPos));
         if (match && match.index < matchIndex) {
           matchIndex = match.index;
@@ -46,11 +87,13 @@ const EmailWritingB1 = () => {
           text: foundMatch.matchText,
           isSignal: true,
           tense: foundMatch.tense,
-          color: foundMatch.color
+          color: foundMatch.color,
         });
         currentPos += foundMatch.matchText.length;
       } else {
-        const endPos = foundMatch ? currentPos + matchIndex : currentText.length;
+        const endPos = foundMatch
+          ? currentPos + matchIndex
+          : currentText.length;
         const textChunk = currentText.slice(currentPos, endPos);
         if (textChunk) {
           segments.push({ text: textChunk, isSignal: false });
@@ -208,16 +251,19 @@ const EmailWritingB1 = () => {
               const signalSegments = highlightSignalWords(segment);
               return (
                 <span key={sIndex}>
-                  {signalSegments.map((sig, sigIndex) => 
+                  {signalSegments.map((sig, sigIndex) =>
                     sig.isSignal ? (
                       <span
                         key={`${sIndex}-${sigIndex}`}
                         className={`${sig.color} px-1.5 py-0.5 rounded font-semibold cursor-help relative inline-block`}
-                        onMouseEnter={() => setHoveredSignal(`${pIndex}-${sIndex}-${sigIndex}`)}
+                        onMouseEnter={() =>
+                          setHoveredSignal(`${pIndex}-${sIndex}-${sigIndex}`)
+                        }
                         onMouseLeave={() => setHoveredSignal(null)}
                       >
                         {sig.text}
-                        {hoveredSignal === `${pIndex}-${sIndex}-${sigIndex}` && (
+                        {hoveredSignal ===
+                          `${pIndex}-${sIndex}-${sigIndex}` && (
                           <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-50 shadow-xl font-semibold w-64 whitespace-nowrap">
                             <div className="font-bold text-sm">{sig.tense}</div>
                             <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
