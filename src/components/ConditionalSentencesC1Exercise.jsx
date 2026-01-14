@@ -117,47 +117,114 @@ const ConditionalSentencesC1Exercise = () => {
 
           {/* Help section */}
           <div className="mb-6 p-5 bg-htb-sidebar border border-htb-green/20 rounded-lg">
-            <h2 className="text-xl font-bold text-htb-green mb-3">📚 When to use Conditional Sentences</h2>
-            
+            <h2 className="text-xl font-bold text-htb-green mb-3">
+              📚 When to use Conditional Sentences
+            </h2>
+
             <div className="space-y-3 text-gray-300">
               <div className="bg-htb-bg p-3 rounded">
-                <p className="font-semibold text-htb-green mb-1">Zero Conditional (If + present, present)</p>
-                <p className="text-sm">Use for <strong>general truths</strong> and <strong>facts</strong>.</p>
-                <p className="text-sm italic text-gray-400">Example: If you heat water to 100°C, it boils.</p>
+                <p className="font-semibold text-htb-green mb-1">
+                  Zero Conditional (If + present, present)
+                </p>
+                <p className="text-sm">
+                  Use for <strong>general truths</strong> and{' '}
+                  <strong>facts</strong>.
+                </p>
+                <p className="text-sm italic text-gray-400">
+                  Example: If you heat water to 100°C, it boils.
+                </p>
               </div>
 
               <div className="bg-htb-bg p-3 rounded">
-                <p className="font-semibold text-htb-green mb-1">First Conditional (If + present, will/can/may)</p>
-                <p className="text-sm">Use for <strong>real</strong> and <strong>possible situations</strong> in the future.</p>
-                <p className="text-sm italic text-gray-400">Example: If you can't understand the instructions, phone the help line.</p>
+                <p className="font-semibold text-htb-green mb-1">
+                  First Conditional (If + present, will/can/may)
+                </p>
+                <p className="text-sm">
+                  Use for <strong>real</strong> and{' '}
+                  <strong>possible situations</strong> in the future.
+                </p>
+                <p className="text-sm italic text-gray-400">
+                  Example: If you can't understand the instructions, phone the
+                  help line.
+                </p>
               </div>
 
               <div className="bg-htb-bg p-3 rounded">
-                <p className="font-semibold text-htb-green mb-1">Second Conditional (If + past simple, would/could/might)</p>
-                <p className="text-sm">Use for <strong>hypothetical</strong> or <strong>unlikely situations</strong> in the present/future.</p>
-                <p className="text-sm italic text-gray-400">Example: If I were you, I'd get one from somewhere else.</p>
+                <p className="font-semibold text-htb-green mb-1">
+                  Second Conditional (If + past simple, would/could/might)
+                </p>
+                <p className="text-sm">
+                  Use for <strong>hypothetical</strong> or{' '}
+                  <strong>unlikely situations</strong> in the present/future.
+                </p>
+                <p className="text-sm italic text-gray-400">
+                  Example: If I were you, I'd get one from somewhere else.
+                </p>
               </div>
 
               <div className="bg-htb-bg p-3 rounded">
-                <p className="font-semibold text-htb-green mb-1">Third Conditional (If + past perfect, would have/could have)</p>
-                <p className="text-sm">Use for <strong>unreal situations</strong> in the <strong>past</strong> (things that didn't happen).</p>
-                <p className="text-sm italic text-gray-400">Example: If it hadn't been stopped sooner, the fire would have got out of control.</p>
+                <p className="font-semibold text-htb-green mb-1">
+                  Third Conditional (If + past perfect, would have/could have)
+                </p>
+                <p className="text-sm">
+                  Use for <strong>unreal situations</strong> in the{' '}
+                  <strong>past</strong> (things that didn't happen).
+                </p>
+                <p className="text-sm italic text-gray-400">
+                  Example: If it hadn't been stopped sooner, the fire would have
+                  got out of control.
+                </p>
               </div>
 
               <div className="bg-htb-bg p-3 rounded">
-                <p className="font-semibold text-htb-green mb-1">Mixed Conditionals</p>
-                <p className="text-sm">Use when the <strong>time in each clause is different</strong> (past condition → present result, or present condition → past result).</p>
-                <p className="text-sm italic text-gray-400">Example: If I had studied harder (past), I would be a doctor now (present).</p>
+                <p className="font-semibold text-htb-green mb-1">
+                  Mixed Conditionals
+                </p>
+                <p className="text-sm">
+                  Use when the <strong>time in each clause is different</strong>{' '}
+                  (past condition → present result, or present condition → past
+                  result).
+                </p>
+                <p className="text-sm italic text-gray-400">
+                  Example: If I had studied harder (past), I would be a doctor
+                  now (present).
+                </p>
               </div>
 
               <div className="bg-htb-bg p-3 rounded">
-                <p className="font-semibold text-htb-green mb-1">Alternative conditionals (unless, as long as, providing, suppose, etc.)</p>
-                <p className="text-sm"><strong>Unless</strong> = if not | <strong>As long as / Providing</strong> = only if | <strong>Suppose</strong> = imagine if</p>
-                <p className="text-sm italic text-gray-400">Example: As long as it still works, I don't care how old it is.</p>
+                <p className="font-semibold text-htb-green mb-1">
+                  Alternative conditionals (unless, as long as, providing,
+                  suppose, etc.)
+                </p>
+                <p className="text-sm">
+                  <strong>Unless</strong> = if not |{' '}
+                  <strong>As long as / Providing</strong> = only if |{' '}
+                  <strong>Suppose</strong> = imagine if
+                </p>
+                <p className="text-sm italic text-gray-400">
+                  Example: As long as it still works, I don't care how old it
+                  is.
+                </p>
               </div>
             </div>
           </div>
 
+          <p className="text-htb-text mb-6 font-semibold">
+            Match the beginning and the end of the sentences.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
+            {/* Left side */}
+            <div className="space-y-3">
+              <h3 className="text-htb-green font-semibold mb-3">
+                Sentence beginnings:
+              </h3>
+              {leftSide.map((item) => {
+                const status = getMatchStatus(item.id);
+                const isSelected = selectedLeft === item.id;
+                const matchedRight = matches[item.id];
+
+                return (
                   <div key={item.id}>
                     <button
                       onClick={() => handleLeftClick(item.id)}
