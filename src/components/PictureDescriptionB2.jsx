@@ -14,6 +14,9 @@ const PictureDescriptionB2 = () => {
         name: 'Past Perfect Continuous',
         usage:
           'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
+        auxiliary: 'had been',
+        verbForm: 'verb + -ing (present participle)',
+        timeWords: 'for, since, before, when',
         regex: /\b(had been \w+ing)\b/gi,
         color: 'bg-purple-600',
         hoverColor: 'hover:bg-purple-500',
@@ -22,6 +25,9 @@ const PictureDescriptionB2 = () => {
         name: 'Past Perfect',
         usage:
           'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
+        auxiliary: 'had',
+        verbForm: 'past participle (3rd form)',
+        timeWords: 'before, after, already, just, never, ever, by the time',
         regex:
           /\b(had (?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known|brought|kept|held|met|heard|told|become|begun|written|spoken|driven|eaten|drunk|sung|run|sat|stood|understood|meant|sent|spent|built|caught|taught|fought|bought|sold|worn|won|lost|paid|said|read|put|cut|set|let|hit|hurt|shut|cost|spread)\w*)\b/gi,
         color: 'bg-indigo-600',
@@ -31,6 +37,9 @@ const PictureDescriptionB2 = () => {
         name: 'Past Continuous',
         usage:
           'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
+        auxiliary: 'was/were',
+        verbForm: 'verb + -ing (present participle)',
+        timeWords: 'while, when, at that moment, at 5 o\'clock yesterday',
         regex: /\b(was|were)\s+(\w+ing)\b/gi,
         color: 'bg-blue-600',
         hoverColor: 'hover:bg-blue-500',
@@ -39,6 +48,9 @@ const PictureDescriptionB2 = () => {
         name: 'Present Perfect Continuous',
         usage:
           'Used to emphasize the duration of an action that started in the past and continues now, or has just finished with visible results.',
+        auxiliary: 'have/has been',
+        verbForm: 'verb + -ing (present participle)',
+        timeWords: 'for, since, how long, lately, recently',
         regex: /\b(has|have)\s+been\s+(\w+ing)\b/gi,
         color: 'bg-green-600',
         hoverColor: 'hover:bg-green-500',
@@ -47,6 +59,9 @@ const PictureDescriptionB2 = () => {
         name: 'Present Perfect',
         usage:
           'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
+        auxiliary: 'have/has',
+        verbForm: 'past participle (3rd form)',
+        timeWords: 'just, already, yet, ever, never, recently, lately, so far, up to now',
         regex:
           /\b(has|have)\s+(?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known|brought|kept|held|met|heard|told|become|begun|written|spoken|driven|eaten|drunk|sung|run|sat|stood|understood|meant|sent|spent|built|caught|taught|fought|bought|sold|worn|won|lost|paid|said|read|put|cut|set|let|hit|hurt|shut|cost|spread)\w*/gi,
         color: 'bg-yellow-600',
@@ -56,6 +71,9 @@ const PictureDescriptionB2 = () => {
         name: 'Modal Perfect',
         usage:
           'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
+        auxiliary: 'modal + have',
+        verbForm: 'past participle (3rd form)',
+        timeWords: 'by now, by then, by that time',
         regex:
           /\b(could|would|should|might|may|must)\s+have\s+(?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known)\w*/gi,
         color: 'bg-red-600',
@@ -83,6 +101,9 @@ const PictureDescriptionB2 = () => {
               text: matches[i],
               tense: pattern.name,
               usage: pattern.usage,
+              auxiliary: pattern.auxiliary,
+              verbForm: pattern.verbForm,
+              timeWords: pattern.timeWords,
               color: pattern.color,
               hoverColor: pattern.hoverColor,
             });
@@ -104,12 +125,26 @@ const PictureDescriptionB2 = () => {
         >
           {segment.text}
           {hoveredTense?.index === i && (
-            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg text-white text-xs rounded-lg z-50 border-2 border-htb-green shadow-xl w-80 max-w-sm">
-              <div className="font-bold mb-1.5 text-sm text-htb-green">
+            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-3 bg-htb-bg text-white text-xs rounded-lg z-50 border-2 border-htb-green shadow-xl w-96 max-w-md">
+              <div className="font-bold mb-2 text-sm text-htb-green">
                 {segment.tense}
               </div>
-              <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">
+              <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal mb-3">
                 {segment.usage}
+              </div>
+              <div className="border-t border-htb-green/30 pt-2 space-y-1.5">
+                <div className="flex items-start gap-2">
+                  <span className="text-blue-400 font-bold">Auxiliar:</span>
+                  <span className="text-blue-300">{segment.auxiliary}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-green-400 font-bold">Verbo:</span>
+                  <span className="text-green-300">{segment.verbForm}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">Tiempo:</span>
+                  <span className="text-yellow-300">{segment.timeWords}</span>
+                </div>
               </div>
               <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
             </span>

@@ -19,6 +19,9 @@ const TalkAboutYourselfB2 = () => {
         tense: 'Past Perfect Continuous',
         usage:
           'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
+        auxiliary: 'had been',
+        verbForm: 'verb + -ing (present participle)',
+        timeWords: 'for, since, before, when',
         color: 'bg-blue-500/20 border-b-2 border-blue-500',
         hoverColor: 'bg-blue-500/40',
       },
@@ -28,6 +31,9 @@ const TalkAboutYourselfB2 = () => {
         tense: 'Past Perfect',
         usage:
           'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
+        auxiliary: 'had',
+        verbForm: 'past participle (3rd form)',
+        timeWords: 'before, after, already, just, never, ever, by the time',
         color: 'bg-purple-500/20 border-b-2 border-purple-500',
         hoverColor: 'bg-purple-500/40',
       },
@@ -36,6 +42,9 @@ const TalkAboutYourselfB2 = () => {
         tense: 'Past Continuous',
         usage:
           'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
+        auxiliary: 'was/were',
+        verbForm: 'verb + -ing (present participle)',
+        timeWords: 'while, when, at that moment, at 5 o\'clock yesterday',
         color: 'bg-yellow-500/20 border-b-2 border-yellow-500',
         hoverColor: 'bg-yellow-500/40',
       },
@@ -44,6 +53,9 @@ const TalkAboutYourselfB2 = () => {
         tense: 'Present Perfect Continuous',
         usage:
           'Used to emphasize the duration of an action that started in the past and continues now, or has just finished with visible results.',
+        auxiliary: 'have/has been',
+        verbForm: 'verb + -ing (present participle)',
+        timeWords: 'for, since, how long, lately, recently',
         color: 'bg-cyan-500/20 border-b-2 border-cyan-500',
         hoverColor: 'bg-cyan-500/40',
       },
@@ -53,6 +65,9 @@ const TalkAboutYourselfB2 = () => {
         tense: 'Present Perfect',
         usage:
           'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
+        auxiliary: 'have/has',
+        verbForm: 'past participle (3rd form)',
+        timeWords: 'just, already, yet, ever, never, recently, lately, so far, up to now',
         color: 'bg-indigo-500/20 border-b-2 border-indigo-500',
         hoverColor: 'bg-indigo-500/40',
       },
@@ -62,6 +77,9 @@ const TalkAboutYourselfB2 = () => {
         tense: 'Modal Perfect',
         usage:
           'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
+        auxiliary: 'modal + have',
+        verbForm: 'past participle (3rd form)',
+        timeWords: 'by now, by then, by that time',
         color: 'bg-pink-500/20 border-b-2 border-pink-500',
         hoverColor: 'bg-pink-500/40',
       },
@@ -89,6 +107,9 @@ const TalkAboutYourselfB2 = () => {
             text: match[0],
             tense: tensePattern.tense,
             usage: tensePattern.usage,
+            auxiliary: tensePattern.auxiliary,
+            verbForm: tensePattern.verbForm,
+            timeWords: tensePattern.timeWords,
             color: tensePattern.color,
             hoverColor: tensePattern.hoverColor,
           });
@@ -113,10 +134,24 @@ const TalkAboutYourselfB2 = () => {
         >
           {segment.text}
           {hoveredTense === sIndex && (
-            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-50 shadow-xl font-semibold w-80 max-w-sm">
-              <div className="font-bold mb-1.5 text-sm">{segment.tense}</div>
-              <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">
+            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-3 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-50 shadow-xl font-semibold w-96 max-w-md">
+              <div className="font-bold mb-2 text-sm">{segment.tense}</div>
+              <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal mb-3">
                 {segment.usage}
+              </div>
+              <div className="border-t border-htb-green/30 pt-2 space-y-1.5">
+                <div className="flex items-start gap-2">
+                  <span className="text-blue-400 font-bold">Auxiliar:</span>
+                  <span className="text-blue-300">{segment.auxiliary}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-green-400 font-bold">Verbo:</span>
+                  <span className="text-green-300">{segment.verbForm}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">Tiempo:</span>
+                  <span className="text-yellow-300">{segment.timeWords}</span>
+                </div>
               </div>
               <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
             </span>
