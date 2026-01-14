@@ -10,49 +10,59 @@ const EmailWritingB2 = () => {
       {
         pattern: /\b(had\s+been\s+\w+ing)\b/gi,
         tense: 'Past Perfect Continuous',
+        usage: 'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
         color: 'bg-blue-500/20 border-b-2 border-blue-500',
-        hoverColor: 'bg-blue-500/40'
+        hoverColor: 'bg-blue-500/40',
       },
       {
-        pattern: /\b(had\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
+        pattern:
+          /\b(had\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
         tense: 'Past Perfect',
+        usage: 'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
         color: 'bg-purple-500/20 border-b-2 border-purple-500',
-        hoverColor: 'bg-purple-500/40'
+        hoverColor: 'bg-purple-500/40',
       },
       {
         pattern: /\b((?:was|were)\s+\w+ing)\b/gi,
         tense: 'Past Continuous',
+        usage: 'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
         color: 'bg-yellow-500/20 border-b-2 border-yellow-500',
-        hoverColor: 'bg-yellow-500/40'
+        hoverColor: 'bg-yellow-500/40',
       },
       {
         pattern: /\b((?:have|has|haven't|hasn't)\s+been\s+\w+ing)\b/gi,
         tense: 'Present Perfect Continuous',
+        usage: 'Used to emphasize the duration of an action that started in the past and continues now, or has just finished with visible results.',
         color: 'bg-cyan-500/20 border-b-2 border-cyan-500',
-        hoverColor: 'bg-cyan-500/40'
+        hoverColor: 'bg-cyan-500/40',
       },
       {
-        pattern: /\b((?:have|has|haven't|hasn't|'ve|'s)\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
+        pattern:
+          /\b((?:have|has|haven't|hasn't|'ve|'s)\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
         tense: 'Present Perfect',
+        usage: 'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
         color: 'bg-indigo-500/20 border-b-2 border-indigo-500',
-        hoverColor: 'bg-indigo-500/40'
+        hoverColor: 'bg-indigo-500/40',
       },
       {
-        pattern: /\b((?:would|could|should|might|must)\s+have\s+\w+(?:ed|en))\b/gi,
+        pattern:
+          /\b((?:would|could|should|might|must)\s+have\s+\w+(?:ed|en))\b/gi,
         tense: 'Modal Perfect',
+        usage: 'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
         color: 'bg-pink-500/20 border-b-2 border-pink-500',
-        hoverColor: 'bg-pink-500/40'
+        hoverColor: 'bg-pink-500/40',
       },
       {
         pattern: /\b((?:will|'ll)\s+(?:be\s+\w+ing|have\s+\w+(?:ed|en)))\b/gi,
         tense: 'Future Perfect/Continuous',
+        usage: 'Used to describe actions that will be completed or in progress at a specific time in the future.',
         color: 'bg-orange-500/20 border-b-2 border-orange-500',
-        hoverColor: 'bg-orange-500/40'
-      }
+        hoverColor: 'bg-orange-500/40',
+      },
     ];
 
     const paragraphs = text.split('\n\n');
-    
+
     return paragraphs.map((paragraph, pIndex) => {
       if (!paragraph.trim()) return null;
 
@@ -60,16 +70,17 @@ const EmailWritingB2 = () => {
 
       tensePatterns.forEach((tensePattern) => {
         const newSegments = [];
-        
+
         segments.forEach((segment) => {
           if (typeof segment !== 'string' && segment.tense) {
             newSegments.push(segment);
             return;
           }
 
-          const textToProcess = typeof segment === 'string' ? segment : segment.text;
+          const textToProcess =
+            typeof segment === 'string' ? segment : segment.text;
           const matches = [...textToProcess.matchAll(tensePattern.pattern)];
-          
+
           if (matches.length === 0) {
             newSegments.push(segment);
             return;
@@ -86,7 +97,7 @@ const EmailWritingB2 = () => {
               text: match[0],
               tense: tensePattern.tense,
               color: tensePattern.color,
-              hoverColor: tensePattern.hoverColor
+              hoverColor: tensePattern.hoverColor,
             });
 
             lastIndex = match.index + match[0].length;
@@ -112,15 +123,18 @@ const EmailWritingB2 = () => {
               <span
                 key={sIndex}
                 className={`relative cursor-help transition-all duration-200 ${
-                  hoveredTense === `${pIndex}-${sIndex}` ? segment.hoverColor : segment.color
+                  hoveredTense === `${pIndex}-${sIndex}`
+                    ? segment.hoverColor
+                    : segment.color
                 }`}
                 onMouseEnter={() => setHoveredTense(`${pIndex}-${sIndex}`)}
                 onMouseLeave={() => setHoveredTense(null)}
               >
                 {segment.text}
                 {hoveredTense === `${pIndex}-${sIndex}` && (
-                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs whitespace-nowrap z-10 shadow-lg font-semibold">
-                    {segment.tense}
+                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-10 shadow-lg font-semibold max-w-xs w-64">
+                    <div className="font-bold mb-1">{segment.tense}</div>
+                    <div className="text-gray-300 font-normal text-xs leading-relaxed">{segment.usage}</div>
                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
                   </span>
                 )}
@@ -139,7 +153,8 @@ const EmailWritingB2 = () => {
       category: 'Informal',
       subject: 'News!',
       to: 'johnstons586@gmail.com',
-      situation: 'You haven\'t been in touch with your friend Sue for a while because you\'ve been ill. Write an informal email catching up and asking for hotel recommendations.',
+      situation:
+        "You haven't been in touch with your friend Sue for a while because you've been ill. Write an informal email catching up and asking for hotel recommendations.",
       email: `Hi Sue,
 
 Sorry that I haven\'t been in touch for a while, but I\'ve been ill. I got flu last week and I had a temperature of 39°C, so I\'ve been in bed for four days. I\'m feeling a bit better today, so I\'ve been catching up on my emails. Luckily, my classes at university don\'t start till next week.
@@ -158,9 +173,9 @@ Anna
 
 PS Please reply to this email address. I\'ve stopped using the old Yahoo one.`,
       keyPhrases: [
-        'Sorry that I haven\'t been in touch',
-        'I\'ve been ill',
-        'I\'m feeling a bit better',
+        "Sorry that I haven't been in touch",
+        "I've been ill",
+        "I'm feeling a bit better",
         'catching up on my emails',
         'How are you?',
         'What have you been doing?',
@@ -168,19 +183,19 @@ PS Please reply to this email address. I\'ve stopped using the old Yahoo one.`,
         'has just started',
         'I have some good news',
         'Could you recommend',
-        'Do you think you\'ll be able to',
+        "Do you think you'll be able to",
         'Hope to hear from you soon',
-        'Take care'
+        'Take care',
       ],
       structure: [
         '1. Greeting: Informal opening with apology',
         '2. Explanation: Reason for not being in touch',
         '3. Current status: Update on recovery',
-        '4. Questions: Ask about friend\'s life',
+        "4. Questions: Ask about friend's life",
         '5. Family news: Update on brother',
         '6. Main request: Conference and hotel recommendation',
         '7. Additional request: Ask to meet up',
-        '8. Closing: Friendly sign-off with PS'
+        '8. Closing: Friendly sign-off with PS',
       ],
       grammarFocus: [
         'Present Perfect: "haven\'t been in touch", "I\'ve been ill"',
@@ -189,8 +204,8 @@ PS Please reply to this email address. I\'ve stopped using the old Yahoo one.`,
         'Present Continuous for future: "I\'m going to a conference"',
         'Modal verbs: "Could you recommend", "Do you think you\'ll be able"',
         'Time expressions: "for a while", "for four days", "so far"',
-        'Informal contractions throughout'
-      ]
+        'Informal contractions throughout',
+      ],
     },
     {
       id: 2,
@@ -198,7 +213,8 @@ PS Please reply to this email address. I\'ve stopped using the old Yahoo one.`,
       category: 'Informal',
       subject: 'Long time no see!',
       to: 'mike.taylor@email.com',
-      situation: 'You want to organize a reunion with old university friends. Write an informal email suggesting dates and asking for ideas.',
+      situation:
+        'You want to organize a reunion with old university friends. Write an informal email suggesting dates and asking for ideas.',
       email: `Hey Mike!
 
 I can\'t believe it\'s been almost two years since we all graduated! Time really does fly, doesn\'t it? I\'ve been thinking about this for ages, and I reckon it\'s about time we got the old gang back together for a proper reunion.
@@ -220,30 +236,30 @@ Alex
 
 PS How\'s the new job going? You never did tell me how the interview went!`,
       keyPhrases: [
-        'I can\'t believe it\'s been',
+        "I can't believe it's been",
         'Time really does fly',
-        'I\'ve been thinking about this for ages',
-        'it\'s about time we',
+        "I've been thinking about this for ages",
+        "it's about time we",
         'I bumped into',
         'we were reminiscing about',
         'Remember that time we',
-        'I was wondering if you\'d be up for',
-        'I\'m thinking maybe',
+        "I was wondering if you'd be up for",
+        "I'm thinking maybe",
         'What do you reckon?',
         'Have you got any better ideas?',
         'Let me know what you think',
-        'Missing the old days'
+        'Missing the old days',
       ],
       structure: [
         '1. Opening: Exclamatory greeting and time reference',
         '2. Purpose: Suggest reunion',
         '3. Shared memory: Reminisce about university',
-        '4. Details: Propose dates and who\'s interested',
+        "4. Details: Propose dates and who's interested",
         '5. Options: Suggest possible locations',
         '6. Request input: Ask for opinions and ideas',
         '7. Additional question: About other friends',
         '8. Call to action: Request response',
-        '9. Closing: Nostalgic sign-off with PS'
+        '9. Closing: Nostalgic sign-off with PS',
       ],
       grammarFocus: [
         'Present Perfect: "it\'s been almost two years", "I\'ve been thinking"',
@@ -252,8 +268,8 @@ PS How\'s the new job going? You never did tell me how the interview went!`,
         'Modal verbs: "would be", "could do", "could set up"',
         'Conditional: "If you\'re keen"',
         'Question forms: "What do you reckon?", "Have you got?"',
-        'Informal phrasal verbs: "get up to", "set up", "track down"'
-      ]
+        'Informal phrasal verbs: "get up to", "set up", "track down"',
+      ],
     },
     {
       id: 3,
@@ -261,7 +277,8 @@ PS How\'s the new job going? You never did tell me how the interview went!`,
       category: 'Informal',
       subject: 'So sorry I missed your party!',
       to: 'rachel.green@email.com',
-      situation: 'You missed your friend\'s birthday party due to unexpected circumstances. Write an informal email apologizing and explaining what happened.',
+      situation:
+        "You missed your friend's birthday party due to unexpected circumstances. Write an informal email apologizing and explaining what happened.",
       email: `Dear Rachel,
 
 I am SO sorry I missed your birthday party on Saturday! I\'ve been feeling absolutely terrible about it all weekend. I bet you\'re wondering what on earth happened, so let me explain.
@@ -283,8 +300,8 @@ Emma
 PS Tell me you saved me a piece of that cake!`,
       keyPhrases: [
         'I am SO sorry',
-        'I\'ve been feeling absolutely terrible',
-        'I bet you\'re wondering',
+        "I've been feeling absolutely terrible",
+        "I bet you're wondering",
         'let me explain',
         'Everything was going fine',
         'was literally about to',
@@ -294,21 +311,21 @@ PS Tell me you saved me a piece of that cake!`,
         'it was such chaos',
         'By the time',
         'I felt awful',
-        'I\'d love to',
+        "I'd love to",
         'to make up for it',
-        'I hope you can forgive me'
+        'I hope you can forgive me',
       ],
       structure: [
         '1. Apology: Strong opening apology',
-        '2. Acknowledgment: Recognize reader\'s curiosity',
+        "2. Acknowledgment: Recognize reader's curiosity",
         '3. Explanation: Describe what went wrong',
-        '4. Further apology: Explain why didn\'t message',
+        "4. Further apology: Explain why didn't message",
         '5. Details: Full account of the situation',
         '6. Expression of regret: Show you know you missed out',
         '7. Interest in event: Ask about the party',
         '8. Offer to make amends: Suggest dinner',
         '9. Final apology: Reinforce sincerity',
-        '10. Light-hearted PS: Keep it friendly'
+        '10. Light-hearted PS: Keep it friendly',
       ],
       grammarFocus: [
         'Present Perfect Continuous: "I\'ve been feeling"',
@@ -318,8 +335,8 @@ PS Tell me you saved me a piece of that cake!`,
         'Past Simple: sequence of events',
         'By the time + Past Perfect: "By the time I got her back"',
         'Emphatic DO: "I am SO sorry"',
-        'Future arrangement: "Are you free any evening?"'
-      ]
+        'Future arrangement: "Are you free any evening?"',
+      ],
     },
     {
       id: 9,
@@ -327,7 +344,8 @@ PS Tell me you saved me a piece of that cake!`,
       category: 'Networking',
       subject: 'Following up from the Digital Innovation Conference',
       to: 'james.wilson@email.com',
-      situation: 'You\'ve just received some exciting news about a job promotion. Write an informal email sharing the news with your close friend.',
+      situation:
+        "You've just received some exciting news about a job promotion. Write an informal email sharing the news with your close friend.",
       email: `Hi James!
 
 I\'ve got some massive news and I just had to tell you straight away! You know how I\'ve been working my socks off at the marketing agency for the past three years? Well, it\'s finally paid off – they\'ve offered me the Creative Director position! I still can\'t quite believe it!
@@ -350,21 +368,21 @@ Sophie
 
 PS Remember when we were at uni and I said I\'d be running a creative agency by the time I was 30? Not quite there yet, but this is definitely a step in the right direction!`,
       keyPhrases: [
-        'I\'ve got some massive news',
+        "I've got some massive news",
         'I just had to tell you',
-        'You know how I\'ve been',
-        'it\'s finally paid off',
-        'I still can\'t quite believe it',
+        "You know how I've been",
+        "it's finally paid off",
+        "I still can't quite believe it",
         'I was absolutely bricking it',
         'she started going on about',
         'she just came out with it',
         'I never expected it to be',
         'The only slight downside is',
-        'I\'m not complaining',
-        'I\'ve been absolutely buzzing',
+        "I'm not complaining",
+        "I've been absolutely buzzing",
         'We polished off',
         'I wanted you to be one of the first to know',
-        'Drinks are on me'
+        'Drinks are on me',
       ],
       structure: [
         '1. Exciting opening: Build anticipation',
@@ -376,7 +394,7 @@ PS Remember when we were at uni and I said I\'d be running a creative agency by 
         '7. Celebration story: Share how you celebrated',
         '8. Personal touch: Acknowledge importance of friendship',
         '9. Invitation: Suggest celebration',
-        '10. Nostalgic PS: Reference shared past'
+        '10. Nostalgic PS: Reference shared past',
       ],
       grammarFocus: [
         'Present Perfect Continuous: "I\'ve been working my socks off"',
@@ -386,8 +404,8 @@ PS Remember when we were at uni and I said I\'d be running a creative agency by 
         'Present Perfect: "I\'ve been hoping", "I\'ve been buzzing"',
         'Future: "I\'ll have to travel", "I\'ll get my own team"',
         'Informal expressions: "working my socks off", "Mental, right?"',
-        'Colloquial past: "We polished off the whole thing"'
-      ]
+        'Colloquial past: "We polished off the whole thing"',
+      ],
     },
     {
       id: 10,
@@ -395,7 +413,8 @@ PS Remember when we were at uni and I said I\'d be running a creative agency by 
       category: 'Academic/Funding',
       subject: 'Follow-up on Research Grant Application REF: ENV2025-847',
       to: 'lisa.martinez@email.com',
-      situation: 'You\'re facing a difficult decision about whether to accept a job offer abroad. Write an informal email to your friend asking for advice.',
+      situation:
+        "You're facing a difficult decision about whether to accept a job offer abroad. Write an informal email to your friend asking for advice.",
       email: `Hey Lisa,
 
 I hope you\'re doing well! I\'m writing because I could really use some advice from someone who knows me well, and you\'re always so good at seeing things clearly.
@@ -420,22 +439,22 @@ Claire
 
 PS How are things with you anyway? I feel like I\'ve been so wrapped up in my own drama that I haven\'t asked how you are!`,
       keyPhrases: [
-        'I hope you\'re doing well',
+        "I hope you're doing well",
         'I could really use some advice',
-        'here\'s the situation',
-        'On paper, it\'s everything',
-        'But here\'s the thing',
-        'I\'ve been going round in circles',
-        'I honestly don\'t know what to do',
+        "here's the situation",
+        "On paper, it's everything",
+        "But here's the thing",
+        "I've been going round in circles",
+        "I honestly don't know what to do",
         'Part of me is thinking... But then another part',
-        'I can tell he\'s gutted',
+        "I can tell he's gutted",
         'What would you do if you were in my position?',
         'How did you cope with',
         'Did you ever regret',
-        'I\'ve got to give them an answer',
-        'I\'m running out of time',
+        "I've got to give them an answer",
+        "I'm running out of time",
         'Any words of wisdom would be massively appreciated',
-        'Sorry for dumping all this on you'
+        'Sorry for dumping all this on you',
       ],
       structure: [
         '1. Greeting: Friendly opening',
@@ -444,12 +463,12 @@ PS How are things with you anyway? I feel like I\'ve been so wrapped up in my ow
         '4. The dilemma: Explain the concerns',
         '5. Personal complications: Mention relationship',
         '6. Internal conflict: Show indecision',
-        '7. Others\' reactions: Family and partner\'s views',
+        "7. Others' reactions: Family and partner's views",
         '8. Direct questions: Ask for specific advice',
         '9. Deadline: Create urgency',
         '10. Appreciation: Thank in advance',
         '11. Self-awareness: Acknowledge taking up time',
-        '12. PS: Show you care about them too'
+        '12. PS: Show you care about them too',
       ],
       grammarFocus: [
         'Present Perfect: "I\'ve been offered", "I\'ve been seeing Tom"',
@@ -460,8 +479,8 @@ PS How are things with you anyway? I feel like I\'ve been so wrapped up in my ow
         'Future: "when will I ever get"',
         'Present Continuous for complaints: "Mum\'s already worrying"',
         'Have got to: "I\'ve got to give them an answer"',
-        'Question forms for advice: "How did you cope?", "Did you regret?"'
-      ]
+        'Question forms for advice: "How did you cope?", "Did you regret?"',
+      ],
     },
     {
       id: 6,
@@ -469,7 +488,8 @@ PS How are things with you anyway? I feel like I\'ve been so wrapped up in my ow
       category: 'Informal',
       subject: 'We need to talk about the flat...',
       to: 'danny.brown@email.com',
-      situation: 'You share a flat with someone who has been leaving the kitchen messy and making noise late at night. Write an informal email addressing these issues diplomatically.',
+      situation:
+        'You share a flat with someone who has been leaving the kitchen messy and making noise late at night. Write an informal email addressing these issues diplomatically.',
       email: `Hey Danny,
 
 Hope you\'re having a good week! Listen, I wanted to have a quick chat about a couple of things regarding the flat. I know we\'re both super busy with work and everything, but there are a few issues that have been bothering me lately, and I thought it would be better to clear the air rather than let things fester.
@@ -489,19 +509,19 @@ Let me know what you think? Maybe we could grab a pint this weekend and have a p
 Cheers,
 Matt`,
       keyPhrases: [
-        'Hope you\'re having a good week',
+        "Hope you're having a good week",
         'I wanted to have a quick chat',
         'I thought it would be better to clear the air',
         'rather than let things fester',
-        'I\'ve noticed that',
-        'it\'s been getting a bit much',
-        'I know I\'m not perfect either',
+        "I've noticed that",
+        "it's been getting a bit much",
+        "I know I'm not perfect either",
         'Maybe we could agree on',
         'I feel a bit awkward bringing this up',
         'which is totally fine, but',
-        'I\'m not saying you can\'t',
-        'I really don\'t want this to come across as',
-        'Let me know what you think'
+        "I'm not saying you can't",
+        "I really don't want this to come across as",
+        'Let me know what you think',
       ],
       structure: [
         '1. Friendly opening: Set positive tone',
@@ -513,7 +533,7 @@ Matt`,
         '7. Clarification: Show understanding and flexibility',
         '8. Alternative solutions: Offer compromises',
         '9. Reassurance: Emphasize good relationship',
-        '10. Call to action: Suggest face-to-face chat'
+        '10. Call to action: Suggest face-to-face chat',
       ],
       grammarFocus: [
         'Present Perfect Continuous: "have been bothering me", "have been struggling"',
@@ -523,8 +543,8 @@ Matt`,
         'Conditional: "if you could keep it down"',
         'Gerunds: "bothering me", "bringing this up", "having a go"',
         'Informal phrasal verbs: "clear the air", "piling up", "clean up", "come across as"',
-        'British slang: "mingin", "knackered", "having a go"'
-      ]
+        'British slang: "mingin", "knackered", "having a go"',
+      ],
     },
     {
       id: 7,
@@ -532,7 +552,8 @@ Matt`,
       category: 'Informal',
       subject: 'You HAVE to come visit!',
       to: 'chloe.parker@email.com',
-      situation: 'You\'ve moved to a new city and want to invite your best friend to come visit and explore the area with you.',
+      situation:
+        "You've moved to a new city and want to invite your best friend to come visit and explore the area with you.",
       email: `Hi Chloe!
 
 I can\'t believe I\'ve been here in Barcelona for two months already – time\'s absolutely flying! I\'m finally settled in properly now, and I\'ve been meaning to write to you for ages about coming to visit. So here it is – you NEED to come out here!
@@ -559,22 +580,22 @@ Laura
 
 PS I\'ve already planned a whole weekend itinerary in my head. I\'m that excited!`,
       keyPhrases: [
-        'I can\'t believe',
-        'time\'s absolutely flying',
-        'I\'ve been meaning to',
+        "I can't believe",
+        "time's absolutely flying",
+        "I've been meaning to",
         'you NEED to',
         'I keep thinking',
         'Remember how we were',
-        'It\'s mind-blowing',
+        "It's mind-blowing",
         'We could literally',
-        'I\'ve already got a whole list',
+        "I've already got a whole list",
         'What about sometime in',
         'You could stay with me, obviously',
-        'I know you\'ve been saying for ages',
+        "I know you've been saying for ages",
         'This could be perfect timing',
         'What do you reckon?',
-        'I\'m literally free whenever',
-        'Can\'t wait to hear back'
+        "I'm literally free whenever",
+        "Can't wait to hear back",
       ],
       structure: [
         '1. Opening: Time reference and excitement',
@@ -584,9 +605,9 @@ PS I\'ve already planned a whole weekend itinerary in my head. I\'m that excited
         '5. Weather and beach: Additional attractions',
         '6. Logistics: Dates and flight costs',
         '7. Accommodation options: Both free and paid',
-        '8. Personal appeal: Reference friend\'s needs',
+        "8. Personal appeal: Reference friend's needs",
         '9. Call to action: Ask for decision',
-        '10. Enthusiastic closing with PS'
+        '10. Enthusiastic closing with PS',
       ],
       grammarFocus: [
         'Present Perfect: "I\'ve been here", "I\'ve been exploring"',
@@ -596,8 +617,8 @@ PS I\'ve already planned a whole weekend itinerary in my head. I\'m that excited
         'Emphatic structures: "you NEED to", "literally eat our way"',
         'Future arrangements: "I can help you find"',
         'Superlatives: "the best patatas bravas", "the most amazing tapas bars"',
-        'Informal contractions throughout'
-      ]
+        'Informal contractions throughout',
+      ],
     },
     {
       id: 8,
@@ -605,7 +626,8 @@ PS I\'ve already planned a whole weekend itinerary in my head. I\'m that excited
       category: 'Informal',
       subject: 'Huge favour to ask...',
       to: 'ben.hughes@email.com',
-      situation: 'You need to borrow your friend\'s camping equipment for a trip. Write an informal email asking if you can borrow it.',
+      situation:
+        "You need to borrow your friend's camping equipment for a trip. Write an informal email asking if you can borrow it.",
       email: `Hey Ben,
 
 How\'s it going? Hope all\'s well with you! I\'m writing to ask you a massive favour, so feel free to say no if it\'s not convenient – I\'ll completely understand.
@@ -628,23 +650,23 @@ Josh
 
 PS If you\'ve got any camping tips for a complete beginner, I\'m all ears! I\'ve been watching YouTube videos but I\'m still slightly terrified I\'m going to end up sleeping in a puddle or something.`,
       keyPhrases: [
-        'How\'s it going?',
-        'Hope all\'s well with you',
+        "How's it going?",
+        "Hope all's well with you",
         'to ask you a massive favour',
         'feel free to say no',
-        'I\'ll completely understand',
+        "I'll completely understand",
         'Basically',
         'The thing is',
-        'I was wondering if there\'s any chance',
-        'I\'m mainly looking for',
-        'if you\'ve got one going spare',
+        "I was wondering if there's any chance",
+        "I'm mainly looking for",
+        "if you've got one going spare",
         'To be honest',
-        'I haven\'t got a clue',
-        'Obviously, I\'d take really good care',
-        'I\'d be more than happy to',
-        'I know it\'s a big ask',
-        'I\'d totally get it if',
-        'No pressure at all'
+        "I haven't got a clue",
+        "Obviously, I'd take really good care",
+        "I'd be more than happy to",
+        "I know it's a big ask",
+        "I'd totally get it if",
+        'No pressure at all',
       ],
       structure: [
         '1. Casual greeting: Establish friendly tone',
@@ -655,8 +677,8 @@ PS If you\'ve got any camping tips for a complete beginner, I\'m all ears! I\'ve
         '6. Additional request: Ask for extras and advice',
         '7. Reassurance: Promise to take care of items',
         '8. Offer reciprocation: Suggest ways to return favour',
-        '9. Understanding exit: Acknowledge it\'s okay to refuse',
-        '10. Casual closing with helpful PS'
+        "9. Understanding exit: Acknowledge it's okay to refuse",
+        '10. Casual closing with helpful PS',
       ],
       grammarFocus: [
         'Present Perfect: "have decided", "I\'ve never been", "you\'ve got"',
@@ -666,8 +688,8 @@ PS If you\'ve got any camping tips for a complete beginner, I\'m all ears! I\'ve
         'Modal verbs: "could borrow", "might need", "might be"',
         'Present Continuous for future: "I\'m writing to ask"',
         'Gerunds: "sleeping in a tent", "buying everything new"',
-        'Informal expressions: "going spare", "just shout", "I\'m all ears"'
-      ]
+        'Informal expressions: "going spare", "just shout", "I\'m all ears"',
+      ],
     },
     {
       id: 9,
@@ -675,7 +697,8 @@ PS If you\'ve got any camping tips for a complete beginner, I\'m all ears! I\'ve
       category: 'Informal',
       subject: 'CONGRATULATIONS!!!',
       to: 'amy.roberts@email.com',
-      situation: 'Your friend just completed a marathon after months of training. Write an informal email congratulating them.',
+      situation:
+        'Your friend just completed a marathon after months of training. Write an informal email congratulating them.',
       email: `AMY!!!
 
 I just saw your post on Instagram – YOU DID IT! I\'m so incredibly proud of you! Running a full marathon is absolutely insane, and you smashed it!
@@ -703,9 +726,9 @@ Kate
 PS Please tell me you\'ve got the medal on permanent display somewhere. If I\'d run 42 kilometers, I\'d probably sleep wearing it!`,
       keyPhrases: [
         'YOU DID IT!',
-        'I\'m so incredibly proud of you',
+        "I'm so incredibly proud of you",
         'you smashed it',
-        'I\'ve been following',
+        "I've been following",
         'your dedication has been so inspiring',
         'you just kept going',
         'That takes some serious',
@@ -713,11 +736,11 @@ PS Please tell me you\'ve got the medal on permanent display somewhere. If I\'d 
         'How are you feeling now?',
         'You must be absolutely',
         'That must have been',
-        'So what\'s next for you?',
-        'Knowing you, you\'re probably',
+        "So what's next for you?",
+        "Knowing you, you're probably",
         'We definitely need to celebrate',
         'You deserve to',
-        'You should be ridiculously proud'
+        'You should be ridiculously proud',
       ],
       structure: [
         '1. Enthusiastic opening: Show excitement',
@@ -729,7 +752,7 @@ PS Please tell me you\'ve got the medal on permanent display somewhere. If I\'d 
         '7. Future plans: Ask about next goals',
         '8. Celebration offer: Suggest dinner treat',
         '9. Summary praise: Emphasize accomplishment',
-        '10. Fun sign-off with playful PS'
+        '10. Fun sign-off with playful PS',
       ],
       grammarFocus: [
         'Present Perfect: "I\'ve been following", "you\'ve got"',
@@ -739,8 +762,8 @@ PS Please tell me you\'ve got the medal on permanent display somewhere. If I\'d 
         'Future: "you\'re probably already eyeing up"',
         'Emphatic structures: "absolutely insane", "so incredibly proud"',
         'Question forms: "How are you feeling?", "Were you crying?"',
-        'Informal intensifiers: "absolutely", "ridiculously", "so"'
-      ]
+        'Informal intensifiers: "absolutely", "ridiculously", "so"',
+      ],
     },
     {
       id: 10,
@@ -748,7 +771,8 @@ PS Please tell me you\'ve got the medal on permanent display somewhere. If I\'d 
       category: 'Informal',
       subject: 'Some not-so-great news...',
       to: 'ollie.thompson@email.com',
-      situation: 'You\'ve just found out you didn\'t get a job you really wanted. Write an informal email to your close friend sharing the disappointment.',
+      situation:
+        "You've just found out you didn't get a job you really wanted. Write an informal email to your close friend sharing the disappointment.",
       email: `Hey Ollie,
 
 I hope you\'re doing alright. I\'ve got some disappointing news that I wanted to share with you – I didn\'t get the job at the design agency I\'d been interviewing for. Just got the rejection email this morning and I\'m feeling pretty gutted about it, to be honest.
@@ -774,23 +798,23 @@ Jordan
 PS If you fancy meeting up for a pint sometime this week, I could definitely use some company and distraction!`,
       keyPhrases: [
         'Some disappointing news',
-        'I\'m feeling pretty gutted',
+        "I'm feeling pretty gutted",
         'to be honest',
-        'I really thought I\'d nailed',
+        "I really thought I'd nailed",
         'you know?',
         'all my answers seemed to go down well',
         'I was actually expecting',
         'But nope',
-        'What\'s frustrating is',
-        'I\'ve been working really hard',
-        'it\'s still not enough',
-        'I know I shouldn\'t take it too personally',
-        'it\'s hard not to feel',
-        'I\'d already started imagining',
+        "What's frustrating is",
+        "I've been working really hard",
+        "it's still not enough",
+        "I know I shouldn't take it too personally",
+        "it's hard not to feel",
+        "I'd already started imagining",
         'I was getting way ahead of myself',
         'I just needed to vent',
         'who gets it',
-        'Thanks for listening to me moan'
+        'Thanks for listening to me moan',
       ],
       structure: [
         '1. Opening: Check on friend then introduce bad news',
@@ -804,7 +828,7 @@ PS If you fancy meeting up for a pint sometime this week, I could definitely use
         '9. Seeking advice: Ask how friend coped',
         '10. Plan forward: Mention self-care',
         '11. Appreciation: Thank for listening',
-        '12. Hopeful PS: Suggest meeting up'
+        '12. Hopeful PS: Suggest meeting up',
       ],
       grammarFocus: [
         'Present Perfect: "I\'ve got", "I\'ve been working", "I\'ve taken on"',
@@ -814,16 +838,17 @@ PS If you fancy meeting up for a pint sometime this week, I could definitely use
         'Present Continuous: "I\'m feeling", "I\'m swinging between"',
         'Gerunds: "getting ahead of myself", "job hunting", "listening to me moan"',
         'Would for habitual past in mind: "I\'d love to work on"',
-        'Conditional: "if you fancy meeting up"'
-      ]
+        'Conditional: "if you fancy meeting up"',
+      ],
     },
     {
       id: 11,
       title: 'Informal Email - Making Plans with Friends',
       category: 'Informal',
-      subject: 'Beach weekend - who\'s in?',
+      subject: "Beach weekend - who's in?",
       to: 'group.friends@email.com',
-      situation: 'You want to organize a beach trip with a group of friends. Write an informal email proposing the idea and coordinating details.',
+      situation:
+        'You want to organize a beach trip with a group of friends. Write an informal email proposing the idea and coordinating details.',
       email: `Hey everyone!
 
 Right, so I\'ve had an idea that I think you\'re all going to love. The weather forecast for next weekend is looking absolutely gorgeous – sunny and 25°C – and I reckon we should make the most of it before summer properly ends. How do you all fancy a day trip to Brighton beach on Saturday?
@@ -855,21 +880,21 @@ Mia
 
 PS If it absolutely pours with rain and the whole thing\'s a disaster, I take zero responsibility. I\'m just the ideas person! 😂`,
       keyPhrases: [
-        'Right, so I\'ve had an idea',
-        'I think you\'re all going to love',
+        "Right, so I've had an idea",
+        "I think you're all going to love",
         'I reckon we should',
         'How do you all fancy',
-        'I know it\'s a bit last minute, but hear me out',
-        'Here\'s what I\'m thinking',
-        'Doesn\'t that sound perfect?',
-        'So who\'s up for it?',
+        "I know it's a bit last minute, but hear me out",
+        "Here's what I'm thinking",
+        "Doesn't that sound perfect?",
+        "So who's up for it?",
         'I need to know',
         'A few practical things to sort out',
         'can you let me know ASAP?',
-        'Would be gutted if you couldn\'t make it',
+        "Would be gutted if you couldn't make it",
         'No excuses!',
         'Let me know what you think',
-        'Fingers crossed for'
+        'Fingers crossed for',
       ],
       structure: [
         '1. Enthusiastic opening: Grab attention with idea',
@@ -882,7 +907,7 @@ PS If it absolutely pours with rain and the whole thing\'s a disaster, I take ze
         '8. Checklist: What to bring',
         '9. Personal mentions: Address individuals',
         '10. Coordination plan: WhatsApp group',
-        '11. Playful closing with disclaimer PS'
+        '11. Playful closing with disclaimer PS',
       ],
       grammarFocus: [
         'Present Continuous for future: "I\'m thinking", "the weather\'s looking"',
@@ -892,8 +917,8 @@ PS If it absolutely pours with rain and the whole thing\'s a disaster, I take ze
         'Present Perfect: "I\'ve had an idea", "I\'ve already checked"',
         'Imperative for instructions: "Bring", "Let me know"',
         'Question tags implied: "Doesn\'t that sound perfect?"',
-        'Informal contractions and colloquialisms throughout'
-      ]
+        'Informal contractions and colloquialisms throughout',
+      ],
     },
     {
       id: 12,
@@ -901,7 +926,8 @@ PS If it absolutely pours with rain and the whole thing\'s a disaster, I take ze
       category: 'Informal',
       subject: 'Need to talk... (nothing serious!)',
       to: 'jessica.lee@email.com',
-      situation: 'You\'re having some confusion about a new relationship and need advice from your close friend. Write an informal email asking for perspective.',
+      situation:
+        "You're having some confusion about a new relationship and need advice from your close friend. Write an informal email asking for perspective.",
       email: `Hey Jess,
 
 Hope you\'re good! I\'m writing because I could really do with some advice about the whole situation with Mark, and you\'re basically the only person I trust to be brutally honest with me without judging.
@@ -934,24 +960,24 @@ Charlotte
 PS Please tell me I\'m not being completely crazy!`,
       keyPhrases: [
         'I could really do with some advice',
-        'you\'re basically the only person',
+        "you're basically the only person",
         'to be brutally honest with me',
         'things have been going really well',
         'On paper, it all sounds great, right?',
-        'But here\'s the thing that\'s been bugging me',
+        "But here's the thing that's been bugging me",
         'which is fair enough',
         'So clearly he CAN',
-        'I\'ve tried bringing it up casually',
+        "I've tried bringing it up casually",
         'Which might be true',
         'The thing is',
-        'I don\'t want to come across as',
+        "I don't want to come across as",
         'Am I overthinking this?',
         'You know I have a tendency to',
         'Or is this a genuine red flag',
         'What would you do in my situation?',
-        'you\'ll tell me straight',
-        'I don\'t want to project',
-        'My brain\'s just been going round in circles'
+        "you'll tell me straight",
+        "I don't want to project",
+        "My brain's just been going round in circles",
       ],
       structure: [
         '1. Casual opening with purpose',
@@ -959,13 +985,13 @@ PS Please tell me I\'m not being completely crazy!`,
         '3. The problem: Inconsistent communication',
         '4. Evidence: Specific examples',
         '5. Attempted solution: Tried discussing casually',
-        '6. Internal conflict: Don\'t want to seem needy',
+        "6. Internal conflict: Don't want to seem needy",
         '7. Self-awareness: Question own perception',
         '8. Direct questions: Seek specific advice',
         '9. Past context: Reference previous relationship',
         '10. Apology for length',
         '11. Request to meet: Face-to-face chat',
-        '12. Appreciation with vulnerable PS'
+        '12. Appreciation with vulnerable PS',
       ],
       grammarFocus: [
         'Present Perfect Continuous: "things have been going", "that\'s been bugging"',
@@ -975,16 +1001,17 @@ PS Please tell me I\'m not being completely crazy!`,
         'Reported speech: "saying something like"',
         'Emphatic structures: "clearly he CAN text", "is it really that hard"',
         'Question forms for advice: multiple question types',
-        'Gerunds and infinitives: "without judging", "to be brutally honest"'
-      ]
+        'Gerunds and infinitives: "without judging", "to be brutally honest"',
+      ],
     },
     {
       id: 13,
-      title: 'Informal Email - Explaining Why You\'re Leaving a Job',
+      title: "Informal Email - Explaining Why You're Leaving a Job",
       category: 'Informal',
       subject: 'Big news (finally!)',
       to: 'marcus.davies@email.com',
-      situation: 'You\'ve decided to quit your job and want to tell your work friend before you officially hand in your notice. Write an informal email explaining your decision.',
+      situation:
+        "You've decided to quit your job and want to tell your work friend before you officially hand in your notice. Write an informal email explaining your decision.",
       email: `Hey Marcus,
 
 I wanted to give you a heads up about something before it becomes office gossip – I\'ve decided to hand in my notice. I know this might come as a bit of a shock, especially since I\'ve been here for nearly four years, but I\'ve been thinking about it for months and I\'ve finally made up my mind.
@@ -1015,22 +1042,22 @@ PS Seriously though, keep it quiet until Monday. I don\'t need Karen from HR hun
         'I wanted to give you a heads up',
         'before it becomes office gossip',
         'this might come as a bit of a shock',
-        'I\'ve been thinking about it for months',
-        'I\'ve finally made up my mind',
+        "I've been thinking about it for months",
+        "I've finally made up my mind",
         'Please keep this between us',
         'I wanted you to hear it from me first',
         'rather than through the grapevine',
-        'Don\'t get me wrong',
-        'there are things I\'ll genuinely miss',
+        "Don't get me wrong",
+        "there are things I'll genuinely miss",
         'I feel completely stuck',
         'day in, day out',
-        'I\'ve been fobbed off',
+        "I've been fobbed off",
         'The final straw came',
         'That really stung',
-        'I haven\'t got another job lined up yet',
+        "I haven't got another job lined up yet",
         'which I know is a bit risky',
-        'I\'m genuinely going to miss',
-        'keep it quiet'
+        "I'm genuinely going to miss",
+        'keep it quiet',
       ],
       structure: [
         '1. Heads up: Announce decision privately',
@@ -1045,7 +1072,7 @@ PS Seriously though, keep it quiet until Monday. I don\'t need Karen from HR hun
         '10. Personal sentiment: Will miss the friend',
         '11. Maintain connection: Suggest staying in touch',
         '12. Immediate plans: Offer to meet',
-        '13. Reminder PS: Reinforce confidentiality'
+        '13. Reminder PS: Reinforce confidentiality',
       ],
       grammarFocus: [
         'Present Perfect: "I\'ve decided", "I\'ve been thinking", "You\'ve been"',
@@ -1055,8 +1082,8 @@ PS Seriously though, keep it quiet until Monday. I don\'t need Karen from HR hun
         'Modal perfects: "might come", "would you do"',
         'Gerunds: "before becoming", "about progressing", "without our conversations"',
         'Passive voice: "I\'ve been fobbed off", "I\'ve been feeling burned out"',
-        'Informal phrasal verbs: "hand in", "keep quiet", "hang around", "figure out"'
-      ]
+        'Informal phrasal verbs: "hand in", "keep quiet", "hang around", "figure out"',
+      ],
     },
     {
       id: 14,
@@ -1064,7 +1091,8 @@ PS Seriously though, keep it quiet until Monday. I don\'t need Karen from HR hun
       category: 'Informal',
       subject: 'Long time no speak!',
       to: 'kelly.anderson@email.com',
-      situation: 'You haven\'t been in touch with an old friend for over a year. Write an informal email reconnecting and catching up.',
+      situation:
+        "You haven't been in touch with an old friend for over a year. Write an informal email reconnecting and catching up.",
       email: `Hey Kelly!
 
 I know, I know – it\'s been absolutely ages since we last spoke, and I\'m completely rubbish for not staying in touch better. I was scrolling through old photos on my phone the other day and came across that hilarious one of us at your 25th birthday party (you know, the one where we both thought wearing matching unicorn onesies was a brilliant idea 😂), and it made me realize how much I\'ve missed having you in my life.
@@ -1093,26 +1121,26 @@ Emma x
 
 PS I still have that book you lent me about two years ago. I promise I\'ll actually bring it if we meet up! (I know, I know, I\'m the worst!)`,
       keyPhrases: [
-        'it\'s been absolutely ages',
-        'I\'m completely rubbish for',
+        "it's been absolutely ages",
+        "I'm completely rubbish for",
         'it made me realize',
         'How have you been?',
-        'What\'s been going on',
-        'I\'ve been meaning to',
+        "What's been going on",
+        "I've been meaning to",
         'you know how it is',
         'the longer you leave it, the more awkward it feels',
         'which is stupid really',
         'So much has happened',
         'Where do I even start?',
-        'you\'ll never guess what',
+        "you'll never guess what",
         'enough about me rambling on',
         'I really want to hear',
         'Are you still',
         'or am I completely out of the loop?',
         'stop me if this is too presumptuous',
         'not just say... but actually',
-        'I\'d genuinely love to',
-        'no pressure if'
+        "I'd genuinely love to",
+        'no pressure if',
       ],
       structure: [
         '1. Apologetic opening: Acknowledge time gap',
@@ -1126,7 +1154,7 @@ PS I still have that book you lent me about two years ago. I promise I\'ll actua
         '9. Specific questions: Probe for details',
         '10. Concrete proposal: Suggest actual meetup',
         '11. Flexibility: Offer options and understanding',
-        '12. Warm closing with playful PS'
+        '12. Warm closing with playful PS',
       ],
       grammarFocus: [
         'Present Perfect: "it\'s been ages", "I\'ve been meaning to"',
@@ -1137,8 +1165,8 @@ PS I still have that book you lent me about two years ago. I promise I\'ll actua
         'Conditional: "if we meet up", "if you fancy it"',
         'Gerunds: "about rambling", "at keeping in touch"',
         'Question forms: variety of question structures',
-        'Informal time expressions: "absolutely ages", "months and months"'
-      ]
+        'Informal time expressions: "absolutely ages", "months and months"',
+      ],
     },
     {
       id: 15,
@@ -1146,7 +1174,8 @@ PS I still have that book you lent me about two years ago. I promise I\'ll actua
       category: 'Informal',
       subject: 'Re: Wedding invitation',
       to: 'hannah.foster@email.com',
-      situation: 'A colleague has invited you to their wedding but you can\'t attend due to prior commitments. Write a diplomatic informal email declining the invitation.',
+      situation:
+        "A colleague has invited you to their wedding but you can't attend due to prior commitments. Write a diplomatic informal email declining the invitation.",
       email: `Dear Hannah,
 
 Thank you so much for the wedding invitation! I was absolutely thrilled to receive it – the design is gorgeous, and I can only imagine how excited you both must be getting as the big day approaches. I\'ve been looking at the date on my calendar ever since the envelope arrived, desperately hoping I\'d be able to make it work.
@@ -1176,23 +1205,23 @@ PS Please send me some photos afterwards – I\'d love to see how it all turns o
         'Thank you so much for',
         'I was absolutely thrilled to receive',
         'I can only imagine how excited',
-        'Unfortunately, I\'m gutted to say',
+        "Unfortunately, I'm gutted to say",
         'I genuinely feel terrible about this',
         'especially because I know how meaningful',
         'The timing has just worked out horribly',
-        'we\'ve had this planned for absolutely ages',
-        'obviously I can\'t bail on that',
+        "we've had this planned for absolutely ages",
+        "obviously I can't bail on that",
         'I was honestly going back and forth',
         'whether I could somehow do both',
         'I realized that',
         'doing neither thing properly',
         'I really want you to know',
-        'it\'s nothing to do with not wanting to be there',
-        'I just genuinely can\'t make the logistics work',
-        'Please don\'t feel like you need to',
-        'I\'d really love to',
-        'if you\'re up for it',
-        'I hope you have the most incredible'
+        "it's nothing to do with not wanting to be there",
+        "I just genuinely can't make the logistics work",
+        "Please don't feel like you need to",
+        "I'd really love to",
+        "if you're up for it",
+        'I hope you have the most incredible',
       ],
       structure: [
         '1. Grateful opening: Thank for invitation',
@@ -1201,11 +1230,11 @@ PS Please send me some photos afterwards – I\'d love to see how it all turns o
         '4. Explanation: Valid prior commitment',
         '5. Considered alternatives: Show you tried to make it work',
         '6. Reassurance: Not a rejection of them personally',
-        '7. Practical point: Don\'t save a spot',
+        "7. Practical point: Don't save a spot",
         '8. Alternative offer: Suggest celebration later',
         '9. Well wishes: Heartfelt congratulations',
         '10. Apology: Reinforce regret',
-        '11. Sweet PS: Request photos and compliment'
+        '11. Sweet PS: Request photos and compliment',
       ],
       grammarFocus: [
         'Present Perfect Continuous: "I\'ve been looking"',
@@ -1216,8 +1245,8 @@ PS Please send me some photos afterwards – I\'d love to see how it all turns o
         'Conditional: "if you\'re up for it"',
         'Passive voice: "I was absolutely thrilled"',
         'Reported thought: "I realized that trying to squeeze it in would mean"',
-        'Emphatic adverbs: "absolutely", "genuinely", "definitely"'
-      ]
+        'Emphatic adverbs: "absolutely", "genuinely", "definitely"',
+      ],
     },
     {
       id: 16,
@@ -1225,7 +1254,8 @@ PS Please send me some photos afterwards – I\'d love to see how it all turns o
       category: 'Formal Business',
       subject: 'Proposal for Partnership and Contract Terms Review',
       to: 'director@techcorp.com',
-      situation: 'You are negotiating a business partnership with a technology company. Write a formal email proposing contract modifications and discussing terms.',
+      situation:
+        'You are negotiating a business partnership with a technology company. Write a formal email proposing contract modifications and discussing terms.',
       email: `Dear Ms. Richardson,
 
 Thank you for your comprehensive proposal regarding the potential partnership between our organizations. Having reviewed the terms outlined in your document, I would like to address several points that require further discussion before we can proceed.
@@ -1257,7 +1287,7 @@ Director of Strategic Partnerships`,
         'I must emphasize that',
         'I would welcome the opportunity',
         'at your earliest convenience',
-        'should either of these suit your schedule'
+        'should either of these suit your schedule',
       ],
       structure: [
         '1. Opening: Acknowledge receipt and thank for proposal',
@@ -1266,15 +1296,15 @@ Director of Strategic Partnerships`,
         '4. Third point: Termination clause recommendation',
         '5. Positive reinforcement: Maintain enthusiasm',
         '6. Call to action: Request meeting with specific times',
-        '7. Professional closing with optimistic tone'
+        '7. Professional closing with optimistic tone',
       ],
       grammarFocus: [
         'Passive voice: "outlined in your document"',
         'Conditional structures: "should either party wish"',
         'Modal verbs for diplomacy: "would", "could", "might"',
         'Present perfect: "Having reviewed", "I have noticed"',
-        'Relative clauses: "that require further discussion"'
-      ]
+        'Relative clauses: "that require further discussion"',
+      ],
     },
     {
       id: 17,
@@ -1282,7 +1312,8 @@ Director of Strategic Partnerships`,
       category: 'Academic',
       subject: 'Invitation to Collaborate on Climate Research Project',
       to: 'dr.mitchell@university.edu',
-      situation: 'You are a researcher inviting a colleague from another university to collaborate on a research project about climate change.',
+      situation:
+        'You are a researcher inviting a colleague from another university to collaborate on a research project about climate change.',
       email: `Dear Dr. Mitchell,
 
 I hope this email finds you well. I am writing to you following our stimulating conversation at the Environmental Sciences Conference in Berlin last month. Your presentation on marine ecosystem degradation was both enlightening and deeply relevant to the research project I am currently developing.
@@ -1315,7 +1346,7 @@ Institute for Climate Studies`,
         'I genuinely believe that',
         'If this opportunity interests you',
         'I would be delighted to',
-        'I look forward to hearing your thoughts'
+        'I look forward to hearing your thoughts',
       ],
       structure: [
         '1. Warm opening: Reference previous meeting',
@@ -1324,23 +1355,25 @@ Institute for Climate Studies`,
         '4. Details: Describe collaboration structure',
         '5. Logistics: Budget, trips, positions available',
         '6. Acknowledgment: Recognize time commitment',
-        '7. Next steps: Suggest video call for discussion'
+        '7. Next steps: Suggest video call for discussion',
       ],
       grammarFocus: [
         'Past participle adjectives: "stimulating", "enlightening"',
         'Would for polite offers: "would involve", "would focus"',
         'Conditional clauses: "should you wish to spend"',
         'Gerunds: "combining", "analyzing", "facilitating"',
-        'Complex noun phrases: "the correlation between... across..."'
-      ]
+        'Complex noun phrases: "the correlation between... across..."',
+      ],
     },
     {
       id: 18,
       title: 'Formal Email - Diplomatic Complaint',
       category: 'Formal Complaint',
-      subject: 'Formal Complaint Regarding Service Disruption and Compensation Request',
+      subject:
+        'Formal Complaint Regarding Service Disruption and Compensation Request',
       to: 'customer.relations@globalairways.com',
-      situation: 'Your international flight was severely delayed causing you to miss an important business meeting. Write a detailed formal complaint requesting compensation.',
+      situation:
+        'Your international flight was severely delayed causing you to miss an important business meeting. Write a detailed formal complaint requesting compensation.',
       email: `Dear Customer Relations Manager,
 
 I am writing to lodge a formal complaint regarding the unacceptable level of service I experienced on flight GA347 from London Heathrow to Singapore on November 28th, 2025. The series of failures I encountered has resulted in both significant financial loss and considerable professional embarrassment.
@@ -1390,7 +1423,7 @@ Frequent Flyer Number: GA8472951`,
         'This experience has severely undermined',
         'I expect a comprehensive response',
         'Should I not receive',
-        'I trust you will treat this matter'
+        'I trust you will treat this matter',
       ],
       structure: [
         '1. Opening: State complaint with flight details',
@@ -1402,7 +1435,7 @@ Frequent Flyer Number: GA8472951`,
         '7. Specific demands: Numbered list of compensation',
         '8. Context: Loyal customer status',
         '9. Warning: Escalation if not resolved',
-        '10. Professional closing'
+        '10. Professional closing',
       ],
       grammarFocus: [
         'Past perfect: "had promoted", "had to forfeit"',
@@ -1410,16 +1443,18 @@ Frequent Flyer Number: GA8472951`,
         'Reported speech: "I was informed that"',
         'Conditional clauses: "Should I not receive"',
         'Participle clauses: "making it impossible", "resulting in"',
-        'Complex sentences with subordination'
-      ]
+        'Complex sentences with subordination',
+      ],
     },
     {
       id: 19,
       title: 'Semi-formal Email - Professional Networking',
       category: 'Networking',
-      subject: 'Following Up from TechInnovate Summit - Potential Collaboration',
+      subject:
+        'Following Up from TechInnovate Summit - Potential Collaboration',
       to: 'anna.kowalski@innovativetech.com',
-      situation: 'You met a potential business contact at a conference. Write a follow-up email to maintain the connection and explore collaboration opportunities.',
+      situation:
+        'You met a potential business contact at a conference. Write a follow-up email to maintain the connection and explore collaboration opportunities.',
       email: `Dear Anna,
 
 I hope this message finds you well and that you've recovered from the whirlwind that was the TechInnovate Summit! I wanted to reach out following our conversation at the networking dinner on Wednesday evening, as I've been giving considerable thought to the ideas we discussed.
@@ -1443,19 +1478,19 @@ GreenTech Solutions Ltd.`,
       keyPhrases: [
         'I hope this message finds you well',
         'I wanted to reach out following',
-        'I\'ve been giving considerable thought to',
+        "I've been giving considerable thought to",
         'Your insights into... were particularly fascinating',
         'It strikes me that',
         'As I mentioned during our discussion',
         'I wonder whether there might be scope for',
         'Imagine, for instance',
-        'I appreciate that you\'re undoubtedly busy',
+        "I appreciate that you're undoubtedly busy",
         'if this concept resonates with you',
         'I would love to explore',
         'In the meantime',
-        'Please don\'t feel obliged to',
+        "Please don't feel obliged to",
         'I thoroughly enjoyed',
-        'I genuinely believe'
+        'I genuinely believe',
       ],
       structure: [
         '1. Friendly opening: Reference to conference',
@@ -1467,7 +1502,7 @@ GreenTech Solutions Ltd.`,
         '7. Respect for time: Acknowledge busy schedule',
         '8. Meeting suggestion: Offer specific options',
         '9. Attachment: Provide additional information',
-        '10. Warm closing: Keep door open for future contact'
+        '10. Warm closing: Keep door open for future contact',
       ],
       grammarFocus: [
         'Present perfect continuous: "has been developing"',
@@ -1475,8 +1510,8 @@ GreenTech Solutions Ltd.`,
         'Conditional sentences: "if this concept resonates"',
         'Gerunds after prepositions: "exploring how", "creating"',
         'Phrasal verbs: "reach out", "pile up", "stay in touch"',
-        'Emphatic structures: "precisely where", "it strikes me that"'
-      ]
+        'Emphatic structures: "precisely where", "it strikes me that"',
+      ],
     },
     {
       id: 20,
@@ -1484,7 +1519,8 @@ GreenTech Solutions Ltd.`,
       category: 'Academic/Funding',
       subject: 'Follow-up on Research Grant Application REF: ENV2025-847',
       to: 'grants@research-foundation.org',
-      situation: 'You submitted a research grant application three months ago and haven\'t received a response. Write a polite but assertive follow-up email.',
+      situation:
+        "You submitted a research grant application three months ago and haven't received a response. Write a polite but assertive follow-up email.",
       email: `Dear Grants Committee,
 
 I am writing to inquire about the status of my research grant application (Reference: ENV2025-847), which I submitted on August 15th, 2025, for the Environmental Sciences Research Fund. According to the timeline published on your website, decisions were to be communicated by mid-November, and I note that we are now approaching mid-December.
@@ -1526,19 +1562,19 @@ Application Submitted: August 15, 2025`,
         'I simply wish to understand',
         'Thank you for taking the time',
         'I recognize that you must be dealing with',
-        'at your earliest convenience'
+        'at your earliest convenience',
       ],
       structure: [
         '1. Opening: Reference application and timeline',
         '2. Context: Briefly describe research significance',
-        '3. Understanding: Acknowledge committee\'s workload',
+        "3. Understanding: Acknowledge committee's workload",
         '4. Problem: Explain practical difficulties caused',
         '5. Specific impacts: Detail consequences of delay',
         '6. Request: Ask for timeline or guidance',
         '7. Alternative mention: Note other funding options',
         '8. Reassurance: Clarify not pressuring decision',
         '9. Appreciation: Thank for their work',
-        '10. Closing: Professional sign-off with details'
+        '10. Closing: Professional sign-off with details',
       ],
       grammarFocus: [
         'Present perfect passive: "were to be communicated"',
@@ -1547,9 +1583,9 @@ Application Submitted: August 15, 2025`,
         'Conditional structures: "If the evaluation process..."',
         'Relative clauses: "that we had provisionally reserved"',
         'Modal verbs: "might expect", "may need to", "would welcome"',
-        'Discourse markers: "However", "Specifically", "Alternatively"'
-      ]
-    }
+        'Discourse markers: "However", "Specifically", "Alternatively"',
+      ],
+    },
   ];
 
   const currentExample = emailExamples[selectedEmail];
@@ -1561,9 +1597,12 @@ Application Submitted: August 15, 2025`,
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">📧</span>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">B2 Email Writing Examples</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">
+              B2 Email Writing Examples
+            </h1>
             <p className="text-sm text-htb-text-dim mt-1">
-              Advanced professional and academic email writing with complex structures and sophisticated language
+              Advanced professional and academic email writing with complex
+              structures and sophisticated language
             </p>
           </div>
         </div>
@@ -1582,22 +1621,26 @@ Application Submitted: August 15, 2025`,
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <p className={`text-sm font-semibold ${
-                    selectedEmail === index ? 'text-htb-green' : 'text-white'
-                  }`}>
+                  <p
+                    className={`text-sm font-semibold ${
+                      selectedEmail === index ? 'text-htb-green' : 'text-white'
+                    }`}
+                  >
                     {example.title}
                   </p>
-                  <span className={`text-xs px-2 py-0.5 rounded-full inline-block mt-1 ${
-                    example.category === 'Formal Business' 
-                      ? 'bg-blue-500/20 text-blue-400'
-                      : example.category === 'Academic'
-                      ? 'bg-purple-500/20 text-purple-400'
-                      : example.category === 'Formal Complaint'
-                      ? 'bg-red-500/20 text-red-400'
-                      : example.category === 'Networking'
-                      ? 'bg-green-500/20 text-green-400'
-                      : 'bg-yellow-500/20 text-yellow-400'
-                  }`}>
+                  <span
+                    className={`text-xs px-2 py-0.5 rounded-full inline-block mt-1 ${
+                      example.category === 'Formal Business'
+                        ? 'bg-blue-500/20 text-blue-400'
+                        : example.category === 'Academic'
+                        ? 'bg-purple-500/20 text-purple-400'
+                        : example.category === 'Formal Complaint'
+                        ? 'bg-red-500/20 text-red-400'
+                        : example.category === 'Networking'
+                        ? 'bg-green-500/20 text-green-400'
+                        : 'bg-yellow-500/20 text-yellow-400'
+                    }`}
+                  >
                     {example.category}
                   </span>
                 </div>
@@ -1627,11 +1670,15 @@ Application Submitted: August 15, 2025`,
           <div className="bg-htb-card border border-gray-800 rounded-lg p-4">
             <div className="space-y-2 text-sm">
               <div className="flex border-b border-gray-700 pb-2">
-                <span className="font-semibold text-htb-text-dim w-20">To:</span>
+                <span className="font-semibold text-htb-text-dim w-20">
+                  To:
+                </span>
                 <span className="text-htb-green">{currentExample.to}</span>
               </div>
               <div className="flex">
-                <span className="font-semibold text-htb-text-dim w-20">Subject:</span>
+                <span className="font-semibold text-htb-text-dim w-20">
+                  Subject:
+                </span>
                 <span className="text-white">{currentExample.subject}</span>
               </div>
             </div>
@@ -1641,7 +1688,9 @@ Application Submitted: August 15, 2025`,
           <div className="bg-htb-card border border-htb-green/30 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-xl">🎨</span>
-              <h3 className="text-sm font-bold text-htb-green">Hover over colored text to see tenses</h3>
+              <h3 className="text-sm font-bold text-htb-green">
+                Hover over colored text to see tenses
+              </h3>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
               <div className="flex items-center gap-2">
@@ -1729,7 +1778,9 @@ Application Submitted: August 15, 2025`,
           <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-xl">📚</span>
-              <h3 className="text-lg font-bold text-htb-green">Grammar Focus</h3>
+              <h3 className="text-lg font-bold text-htb-green">
+                Grammar Focus
+              </h3>
             </div>
             <ul className="space-y-2 text-sm text-htb-text">
               {currentExample.grammarFocus.map((item, index) => (
@@ -1747,10 +1798,14 @@ Application Submitted: August 15, 2025`,
             <ul className="space-y-2 text-sm text-htb-text">
               <li>• Use complex sentence structures with subordination</li>
               <li>• Employ a wide range of cohesive devices</li>
-              <li>• Demonstrate precise vocabulary and idiomatic expressions</li>
+              <li>
+                • Demonstrate precise vocabulary and idiomatic expressions
+              </li>
               <li>• Maintain consistent register throughout</li>
               <li>• Use passive voice and nominalisation appropriately</li>
-              <li>• Show ability to argue, persuade, and negotiate diplomatically</li>
+              <li>
+                • Show ability to argue, persuade, and negotiate diplomatically
+              </li>
               <li>• Incorporate conditional and hypothetical language</li>
               <li>• Use discourse markers to structure longer texts</li>
             </ul>
@@ -1761,13 +1816,21 @@ Application Submitted: August 15, 2025`,
       {/* Navigation */}
       <div className="mt-6 flex justify-between">
         <button
-          onClick={() => setSelectedEmail(selectedEmail > 0 ? selectedEmail - 1 : emailExamples.length - 1)}
+          onClick={() =>
+            setSelectedEmail(
+              selectedEmail > 0 ? selectedEmail - 1 : emailExamples.length - 1
+            )
+          }
           className="bg-htb-sidebar hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 transition-all duration-200"
         >
           ← Previous Example
         </button>
         <button
-          onClick={() => setSelectedEmail(selectedEmail < emailExamples.length - 1 ? selectedEmail + 1 : 0)}
+          onClick={() =>
+            setSelectedEmail(
+              selectedEmail < emailExamples.length - 1 ? selectedEmail + 1 : 0
+            )
+          }
           className="bg-htb-sidebar hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 transition-all duration-200"
         >
           Next Example →

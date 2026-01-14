@@ -11,49 +11,59 @@ const StoryTellingB2 = () => {
       {
         pattern: /\b(had\s+been\s+\w+ing)\b/gi,
         tense: 'Past Perfect Continuous',
+        usage: 'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
         color: 'bg-blue-500/20 border-b-2 border-blue-500',
-        hoverColor: 'bg-blue-500/40'
+        hoverColor: 'bg-blue-500/40',
       },
       // Past Perfect: had + past participle
       {
-        pattern: /\b(had\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
+        pattern:
+          /\b(had\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
         tense: 'Past Perfect',
+        usage: 'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
         color: 'bg-purple-500/20 border-b-2 border-purple-500',
-        hoverColor: 'bg-purple-500/40'
+        hoverColor: 'bg-purple-500/40',
       },
       // Past Continuous: was/were + verb-ing
       {
         pattern: /\b((?:was|were)\s+\w+ing)\b/gi,
         tense: 'Past Continuous',
+        usage: 'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
         color: 'bg-yellow-500/20 border-b-2 border-yellow-500',
-        hoverColor: 'bg-yellow-500/40'
+        hoverColor: 'bg-yellow-500/40',
       },
       // Modal Perfect: would/could/should + have + past participle
       {
-        pattern: /\b((?:would|could|should|might|must)\s+have\s+\w+(?:ed|en))\b/gi,
+        pattern:
+          /\b((?:would|could|should|might|must)\s+have\s+\w+(?:ed|en))\b/gi,
         tense: 'Modal Perfect',
+        usage: 'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
         color: 'bg-pink-500/20 border-b-2 border-pink-500',
-        hoverColor: 'bg-pink-500/40'
+        hoverColor: 'bg-pink-500/40',
       },
       // Past Simple (irregular verbs - some common ones)
       {
-        pattern: /\b((?:arrived|started|noticed|dropped|picked|handed|learned|cleared|found|tucked|compelled|passed|insisted|walked|felt|heard|turned|stood|stared|told|realized|admitted|decided|spent|taught|changed|seemed|happened|asked|answered|looked|watched|listened|tried|helped|worked|lived|studied|opened|closed|moved|stopped|waited|talked|walked|played|showed|called|needed|wanted|stayed|died|killed|saved|traveled|travelled|visited|created|finished|completed|changed|formed|formed|used|caused))\b/gi,
+        pattern:
+          /\b((?:arrived|started|noticed|dropped|picked|handed|learned|cleared|found|tucked|compelled|passed|insisted|walked|felt|heard|turned|stood|stared|told|realized|admitted|decided|spent|taught|changed|seemed|happened|asked|answered|looked|watched|listened|tried|helped|worked|lived|studied|opened|closed|moved|stopped|waited|talked|walked|played|showed|called|needed|wanted|stayed|died|killed|saved|traveled|travelled|visited|created|finished|completed|changed|formed|formed|used|caused))\b/gi,
         tense: 'Past Simple',
+        usage: 'Used to describe completed actions in the past. The main narrative tense for telling stories and describing past events.',
         color: 'bg-green-500/20 border-b-2 border-green-500',
-        hoverColor: 'bg-green-500/40'
+        hoverColor: 'bg-green-500/40',
       },
       // Past Simple irregular (went, came, saw, etc.)
       {
-        pattern: /\b(went|came|saw|got|made|took|gave|said|knew|thought|found|told|became|left|met|sat|stood|began|ran|wrote|spoke|broke|chose|ate|drank|drove|flew|wore|fell|rose|grew|threw|won|lost|built|spent|sent|kept|felt|held|meant|paid|put|read|rode|rang|sang|swam|sank|shook|shot|shut|slept|slid|sold|spoke|stole|stuck|struck|swore|swept|taught|tore|understood|woke|wrote)\b/gi,
+        pattern:
+          /\b(went|came|saw|got|made|took|gave|said|knew|thought|found|told|became|left|met|sat|stood|began|ran|wrote|spoke|broke|chose|ate|drank|drove|flew|wore|fell|rose|grew|threw|won|lost|built|spent|sent|kept|felt|held|meant|paid|put|read|rode|rang|sang|swam|sank|shook|shot|shut|slept|slid|sold|spoke|stole|stuck|struck|swore|swept|taught|tore|understood|woke|wrote)\b/gi,
         tense: 'Past Simple (irregular)',
+        usage: 'Used to describe completed actions in the past with irregular verb forms. The main narrative tense for telling stories.',
         color: 'bg-green-600/20 border-b-2 border-green-600',
-        hoverColor: 'bg-green-600/40'
-      }
+        hoverColor: 'bg-green-600/40',
+      },
     ];
 
     // Dividir el texto en párrafos
     const paragraphs = text.split('\n\n');
-    
+
     return paragraphs.map((paragraph, pIndex) => {
       if (!paragraph.trim()) return null;
 
@@ -62,16 +72,17 @@ const StoryTellingB2 = () => {
       // Aplicar todos los patrones
       tensePatterns.forEach((tensePattern) => {
         const newSegments = [];
-        
+
         segments.forEach((segment) => {
           if (typeof segment !== 'string' && segment.tense) {
             newSegments.push(segment);
             return;
           }
 
-          const textToProcess = typeof segment === 'string' ? segment : segment.text;
+          const textToProcess =
+            typeof segment === 'string' ? segment : segment.text;
           const matches = [...textToProcess.matchAll(tensePattern.pattern)];
-          
+
           if (matches.length === 0) {
             newSegments.push(segment);
             return;
@@ -88,7 +99,7 @@ const StoryTellingB2 = () => {
               text: match[0],
               tense: tensePattern.tense,
               color: tensePattern.color,
-              hoverColor: tensePattern.hoverColor
+              hoverColor: tensePattern.hoverColor,
             });
 
             lastIndex = match.index + match[0].length;
@@ -114,15 +125,18 @@ const StoryTellingB2 = () => {
               <span
                 key={sIndex}
                 className={`relative cursor-help transition-all duration-200 ${
-                  hoveredTense === `${pIndex}-${sIndex}` ? segment.hoverColor : segment.color
+                  hoveredTense === `${pIndex}-${sIndex}`
+                    ? segment.hoverColor
+                    : segment.color
                 }`}
                 onMouseEnter={() => setHoveredTense(`${pIndex}-${sIndex}`)}
                 onMouseLeave={() => setHoveredTense(null)}
               >
                 {segment.text}
                 {hoveredTense === `${pIndex}-${sIndex}` && (
-                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs whitespace-nowrap z-10 shadow-lg font-semibold">
-                    {segment.tense}
+                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-10 shadow-lg font-semibold max-w-xs w-64">
+                    <div className="font-bold mb-1">{segment.tense}</div>
+                    <div className="text-gray-300 font-normal text-xs leading-relaxed">{segment.usage}</div>
                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
                   </span>
                 )}
@@ -168,7 +182,7 @@ That chance encounter at Heathrow changed my perspective on life. Marie and Pier
         'Descriptive language and sensory details',
         'Direct and reported speech',
         'Time expressions and sequencers',
-        'Complex sentence structures'
+        'Complex sentence structures',
       ],
       grammarHighlights: [
         'Past Perfect: "had been the most exhausting" - experience before arrival',
@@ -177,15 +191,15 @@ That chance encounter at Heathrow changed my perspective on life. Marie and Pier
         'Past Simple: "I picked it up and handed it back" - sequence of completed actions',
         'Modal verb: "would certainly have thought" - hypothetical past',
         'Passive voice: "had been invited to present"',
-        'Reported speech: "informing her that the next available flight wouldn\'t depart"'
+        'Reported speech: "informing her that the next available flight wouldn\'t depart"',
       ],
       vocabularyFocus: [
         'Travel: shuttling, connecting flight, passport control',
         'Descriptive: exhausting, worn, seemingly endless',
         'Emotions: anxious, struck, compelled, unfazed',
         'Academic: groundbreaking, minimally invasive, precision',
-        'Time expressions: By the time, when we finally arrived'
-      ]
+        'Time expressions: By the time, when we finally arrived',
+      ],
     },
     {
       id: 2,
@@ -224,7 +238,7 @@ I haven't climbed Scafell Pike since that day, but I've never forgotten the less
         'Sequential connectors',
         'Vivid sensory details',
         'Reflective conclusion',
-        'Mix of action and reflection'
+        'Mix of action and reflection',
       ],
       grammarHighlights: [
         'Past Perfect Continuous: "had been darkening" - ongoing action before past event',
@@ -233,15 +247,15 @@ I haven't climbed Scafell Pike since that day, but I've never forgotten the less
         'Past Simple: "disaster struck" - main narrative event',
         'Modal perfect: "nothing had prepared me" - past ability/experience',
         'Passive voice: "had been alerted" - focus on action',
-        'Time clauses: "By the time they winched us off"'
+        'Time clauses: "By the time they winched us off"',
       ],
       vocabularyFocus: [
         'Weather: torrential downpour, howling wind, drizzle',
         'Climbing: handholds, rockface, ledge, traverse',
         'Emotions: horror, panic, traumatized, hopeless',
         'Adjectives: treacherously, hostile, unforgiving',
-        'Intensity: ferocity, desperately, acutely aware'
-      ]
+        'Intensity: ferocity, desperately, acutely aware',
+      ],
     },
     {
       id: 3,
@@ -276,7 +290,7 @@ That interview went better than any I'd had before. My honesty about the shirt i
         'Time expressions and sequencers',
         'Reflective narrative voice',
         'Professional vocabulary',
-        'Emotional progression'
+        'Emotional progression',
       ],
       grammarHighlights: [
         'Past Perfect Continuous: "had been preparing" - ongoing action before interview',
@@ -285,15 +299,15 @@ That interview went better than any I'd had before. My honesty about the shirt i
         'Past Perfect: "had indeed put" - realization about earlier action',
         'Modal perfect: "I couldn\'t simply turn" - past impossibility',
         'Past Perfect: "hadn\'t even arrived" - reported information',
-        'Conditional: "that would be too embarrassing" - hypothetical situation'
+        'Conditional: "that would be too embarrassing" - hypothetical situation',
       ],
       vocabularyFocus: [
         'Professional: rehearsing, position, Marketing Director',
         'Emotions: bemused, determined, flustered, apologetic',
         'Descriptive: prominently, frantically, cramped, disheveled',
         'Formal: scheduled to begin, minor wardrobe malfunction',
-        'Idiomatic: get the better of me, wanted the ground to swallow me'
-      ]
+        'Idiomatic: get the better of me, wanted the ground to swallow me',
+      ],
     },
     {
       id: 4,
@@ -334,7 +348,7 @@ I did go to that reunion expecting to find the past, but what I found instead wa
         'Emotional vocabulary',
         'Reported and direct speech',
         'Descriptive language',
-        'Philosophical reflection'
+        'Philosophical reflection',
       ],
       grammarHighlights: [
         'Past Perfect: "Twenty-five years had passed" - timeframe before narrative',
@@ -343,15 +357,15 @@ I did go to that reunion expecting to find the past, but what I found instead wa
         'Past Perfect: "had been extensively renovated" - passive perfect',
         'Modal perfect: "would have recognized" - hypothetical recognition',
         'Past Perfect: "I\'d been carrying" - ongoing mental state',
-        'Conditional: "what would have happened if I\'d stayed"'
+        'Conditional: "what would have happened if I\'d stayed"',
       ],
       vocabularyFocus: [
         'Temporal: inseparable, gradually faded, eventually',
         'Academic: pursuing a PhD, groundbreaking papers',
         'Emotional: haunting, sparkled, profound, closure',
         'Descriptive: extensively renovated, unfamiliar corridors',
-        'Reflective: unspoken words, fundamental connection'
-      ]
+        'Reflective: unspoken words, fundamental connection',
+      ],
     },
     {
       id: 5,
@@ -388,7 +402,7 @@ Sometimes, I think about how well we know the people closest to us. We see one v
         'Reported speech and thoughts',
         'Complex temporal relationships',
         'Emotional and reflective language',
-        'Historical vocabulary'
+        'Historical vocabulary',
       ],
       grammarHighlights: [
         'Past Perfect Continuous: "had been clearing" - action before discovery',
@@ -397,16 +411,16 @@ Sometimes, I think about how well we know the people closest to us. We see one v
         'Past Perfect: "had been killed" - event before earlier event',
         'Modal perfect: "I\'d never known existed" - past state of knowledge',
         'Past Perfect: "she\'d carried this secret" - ongoing past action',
-        'Past Simple: "I decided not to share" - narrative decision'
+        'Past Simple: "I decided not to share" - narrative decision',
       ],
       vocabularyFocus: [
         'Historical: the Resistance, occupied France, liberation',
         'Descriptive: tarnished, faded, fragments, decorated',
         'Emotional: compelled, devastated, overwhelmed, profound',
         'Mystery: mysteries, revealing, discovery, hidden depths',
-        'Academic/Formal: decipher, inhabited, donated'
-      ]
-    }
+        'Academic/Formal: decipher, inhabited, donated',
+      ],
+    },
   ];
 
   const currentStory = stories[selectedStory];
@@ -418,9 +432,12 @@ Sometimes, I think about how well we know the people closest to us. We see one v
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">📖</span>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">B2 Story Telling</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">
+              B2 Story Telling
+            </h1>
             <p className="text-sm text-htb-text-dim mt-1">
-              Narrative writing examples demonstrating B2 level grammar and vocabulary
+              Narrative writing examples demonstrating B2 level grammar and
+              vocabulary
             </p>
           </div>
         </div>
@@ -439,16 +456,20 @@ Sometimes, I think about how well we know the people closest to us. We see one v
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <p className={`text-sm font-semibold mb-1 ${
-                    selectedStory === index ? 'text-htb-green' : 'text-white'
-                  }`}>
+                  <p
+                    className={`text-sm font-semibold mb-1 ${
+                      selectedStory === index ? 'text-htb-green' : 'text-white'
+                    }`}
+                  >
                     {story.title}
                   </p>
                   <div className="flex items-center gap-2 text-xs">
                     <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-400">
                       {story.genre}
                     </span>
-                    <span className="text-htb-text-dim">{story.wordCount} words</span>
+                    <span className="text-htb-text-dim">
+                      {story.wordCount} words
+                    </span>
                   </div>
                 </div>
                 {selectedStory === index && (
@@ -486,7 +507,9 @@ Sometimes, I think about how well we know the people closest to us. We see one v
           <div className="bg-htb-card border border-htb-green/30 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-xl">🎨</span>
-              <h3 className="text-sm font-bold text-htb-green">Hover over colored text to see tenses</h3>
+              <h3 className="text-sm font-bold text-htb-green">
+                Hover over colored text to see tenses
+              </h3>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
               <div className="flex items-center gap-2">
@@ -518,7 +541,9 @@ Sometimes, I think about how well we know the people closest to us. We see one v
 
           {/* Story text */}
           <div className="bg-htb-card border border-gray-800 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-htb-green mb-4">{currentStory.title}</h2>
+            <h2 className="text-2xl font-bold text-htb-green mb-4">
+              {currentStory.title}
+            </h2>
             <div className="text-htb-text leading-relaxed text-base">
               {highlightTenses(currentStory.story)}
             </div>
@@ -555,7 +580,9 @@ Sometimes, I think about how well we know the people closest to us. We see one v
           <div className="bg-htb-card border border-gray-800 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-xl">📚</span>
-              <h3 className="text-lg font-bold text-white">Grammar Highlights</h3>
+              <h3 className="text-lg font-bold text-white">
+                Grammar Highlights
+              </h3>
             </div>
             <div className="space-y-2 text-xs max-h-80 overflow-y-auto">
               {currentStory.grammarHighlights.map((highlight, index) => (
@@ -573,11 +600,15 @@ Sometimes, I think about how well we know the people closest to us. We see one v
           <div className="bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-xl">💬</span>
-              <h3 className="text-lg font-bold text-htb-green">Vocabulary Focus</h3>
+              <h3 className="text-lg font-bold text-htb-green">
+                Vocabulary Focus
+              </h3>
             </div>
             <div className="space-y-2 text-sm text-htb-text">
               {currentStory.vocabularyFocus.map((vocab, index) => (
-                <div key={index} className="text-htb-text">• {vocab}</div>
+                <div key={index} className="text-htb-text">
+                  • {vocab}
+                </div>
               ))}
             </div>
           </div>
@@ -586,7 +617,9 @@ Sometimes, I think about how well we know the people closest to us. We see one v
           <div className="bg-htb-card border border-gray-800 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-xl">💡</span>
-              <h3 className="text-lg font-bold text-white">B2 Narrative Tips</h3>
+              <h3 className="text-lg font-bold text-white">
+                B2 Narrative Tips
+              </h3>
             </div>
             <ul className="space-y-2 text-sm text-htb-text">
               <li>• Use variety of past tenses to show time relationships</li>
@@ -605,13 +638,21 @@ Sometimes, I think about how well we know the people closest to us. We see one v
       {/* Navigation */}
       <div className="mt-6 flex justify-between">
         <button
-          onClick={() => setSelectedStory(selectedStory > 0 ? selectedStory - 1 : stories.length - 1)}
+          onClick={() =>
+            setSelectedStory(
+              selectedStory > 0 ? selectedStory - 1 : stories.length - 1
+            )
+          }
           className="bg-htb-sidebar hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 transition-all duration-200"
         >
           ← Previous Story
         </button>
         <button
-          onClick={() => setSelectedStory(selectedStory < stories.length - 1 ? selectedStory + 1 : 0)}
+          onClick={() =>
+            setSelectedStory(
+              selectedStory < stories.length - 1 ? selectedStory + 1 : 0
+            )
+          }
           className="bg-htb-sidebar hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 transition-all duration-200"
         >
           Next Story →
