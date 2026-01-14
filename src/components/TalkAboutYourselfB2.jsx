@@ -10,6 +10,53 @@ const TalkAboutYourselfB2 = () => {
     tips: false,
     examples: false
   });
+  const [hoveredTense, setHoveredTense] = useState(null);
+
+  const highlightTenses = (text) => {
+    const tensePatterns = [
+      { pattern: /\b(had\s+been\s+\w+ing)\b/gi, tense: 'Past Perfect Continuous', color: 'bg-blue-500/20 border-b-2 border-blue-500', hoverColor: 'bg-blue-500/40' },
+      { pattern: /\b(had\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi, tense: 'Past Perfect', color: 'bg-purple-500/20 border-b-2 border-purple-500', hoverColor: 'bg-purple-500/40' },
+      { pattern: /\b((?:was|were)\s+\w+ing)\b/gi, tense: 'Past Continuous', color: 'bg-yellow-500/20 border-b-2 border-yellow-500', hoverColor: 'bg-yellow-500/40' },
+      { pattern: /\b((?:have|has|haven't|hasn't)\s+been\s+\w+ing)\b/gi, tense: 'Present Perfect Continuous', color: 'bg-cyan-500/20 border-b-2 border-cyan-500', hoverColor: 'bg-cyan-500/40' },
+      { pattern: /\b((?:have|has|haven't|hasn't|'ve|'s)\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi, tense: 'Present Perfect', color: 'bg-indigo-500/20 border-b-2 border-indigo-500', hoverColor: 'bg-indigo-500/40' },
+      { pattern: /\b((?:would|could|should|might|must)\s+have\s+\w+(?:ed|en))\b/gi, tense: 'Modal Perfect', color: 'bg-pink-500/20 border-b-2 border-pink-500', hoverColor: 'bg-pink-500/40' }
+    ];
+    let segments = [text];
+    tensePatterns.forEach((tensePattern) => {
+      const newSegments = [];
+      segments.forEach((segment) => {
+        if (typeof segment !== 'string' && segment.tense) { newSegments.push(segment); return; }
+        const textToProcess = typeof segment === 'string' ? segment : segment.text;
+        const matches = [...textToProcess.matchAll(tensePattern.pattern)];
+        if (matches.length === 0) { newSegments.push(segment); return; }
+        let lastIndex = 0;
+        matches.forEach((match) => {
+          const beforeText = textToProcess.substring(lastIndex, match.index);
+          if (beforeText) newSegments.push(beforeText);
+          newSegments.push({ text: match[0], tense: tensePattern.tense, color: tensePattern.color, hoverColor: tensePattern.hoverColor });
+          lastIndex = match.index + match[0].length;
+        });
+        const afterText = textToProcess.substring(lastIndex);
+        if (afterText) newSegments.push(afterText);
+      });
+      segments = newSegments;
+    });
+    return segments.map((segment, sIndex) => {
+      if (typeof segment === 'string') return <span key={sIndex}>{segment}</span>;
+      return (
+        <span key={sIndex} className={`relative cursor-help transition-all duration-200 ${hoveredTense === sIndex ? segment.hoverColor : segment.color}`}
+          onMouseEnter={() => setHoveredTense(sIndex)} onMouseLeave={() => setHoveredTense(null)}>
+          {segment.text}
+          {hoveredTense === sIndex && (
+            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs whitespace-nowrap z-10 shadow-lg font-semibold">
+              {segment.tense}
+              <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
+            </span>
+          )}
+        </span>
+      );
+    });
+  };
 
   const toggleSection = (section) => {
     setExpandedSections(prev => ({
@@ -416,10 +463,10 @@ const TalkAboutYourselfB2 = () => {
                   </div>
 
                   <div className="bg-htb-card rounded-lg p-3 border border-htb-border">
-                    <h4 className="font-semibold text-htb-green text-sm mb-2">Sample sentences:</h4>
+                    <h4 className="font-semibold text-htb-green text-sm mb-2">Sample sentences: <span className="text-xs text-htb-text-dim">(Hover tenses)</span></h4>
                     <div className="space-y-2 text-htb-text text-sm">
                       {topic.sampleSentences.map((sentence, i) => (
-                        <p key={i} className="italic">"{sentence}"</p>
+                        <p key={i} className="italic">"{highlightTenses(sentence)}"</p>
                       ))}
                     </div>
                   </div>

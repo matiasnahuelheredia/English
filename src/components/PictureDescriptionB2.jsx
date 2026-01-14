@@ -6,6 +6,94 @@ const PictureDescriptionB2 = () => {
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [showSampleDescription, setShowSampleDescription] = useState(false);
   const [copiedId, setCopiedId] = useState(null);
+  const [hoveredTense, setHoveredTense] = useState(null);
+
+  const highlightTenses = (text) => {
+    const tensePatterns = [
+      {
+        name: 'Past Perfect Continuous',
+        regex: /\b(had been \w+ing)\b/gi,
+        color: 'bg-purple-600',
+        hoverColor: 'hover:bg-purple-500'
+      },
+      {
+        name: 'Past Perfect',
+        regex: /\b(had (?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known|brought|kept|held|met|heard|told|become|begun|written|spoken|driven|eaten|drunk|sung|run|sat|stood|understood|meant|sent|spent|built|caught|taught|fought|bought|sold|worn|won|lost|paid|said|read|put|cut|set|let|hit|hurt|shut|cost|spread)\w*)\b/gi,
+        color: 'bg-indigo-600',
+        hoverColor: 'hover:bg-indigo-500'
+      },
+      {
+        name: 'Past Continuous',
+        regex: /\b(was|were)\s+(\w+ing)\b/gi,
+        color: 'bg-blue-600',
+        hoverColor: 'hover:bg-blue-500'
+      },
+      {
+        name: 'Present Perfect Continuous',
+        regex: /\b(has|have)\s+been\s+(\w+ing)\b/gi,
+        color: 'bg-green-600',
+        hoverColor: 'hover:bg-green-500'
+      },
+      {
+        name: 'Present Perfect',
+        regex: /\b(has|have)\s+(?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known|brought|kept|held|met|heard|told|become|begun|written|spoken|driven|eaten|drunk|sung|run|sat|stood|understood|meant|sent|spent|built|caught|taught|fought|bought|sold|worn|won|lost|paid|said|read|put|cut|set|let|hit|hurt|shut|cost|spread)\w*/gi,
+        color: 'bg-yellow-600',
+        hoverColor: 'hover:bg-yellow-500'
+      },
+      {
+        name: 'Modal Perfect',
+        regex: /\b(could|would|should|might|may|must)\s+have\s+(?:been|done|gone|seen|made|taken|given|come|found|thought|left|felt|known)\w*/gi,
+        color: 'bg-red-600',
+        hoverColor: 'hover:bg-red-500'
+      }
+    ];
+
+    let segments = [{ text, tense: null }];
+
+    tensePatterns.forEach(pattern => {
+      let newSegments = [];
+      segments.forEach(segment => {
+        if (segment.tense) {
+          newSegments.push(segment);
+          return;
+        }
+
+        const parts = segment.text.split(pattern.regex);
+        const matches = segment.text.match(pattern.regex) || [];
+
+        parts.forEach((part, i) => {
+          if (part) newSegments.push({ text: part, tense: null });
+          if (matches[i]) {
+            newSegments.push({
+              text: matches[i],
+              tense: pattern.name,
+              color: pattern.color,
+              hoverColor: pattern.hoverColor
+            });
+          }
+        });
+      });
+      segments = newSegments;
+    });
+
+    return segments.map((segment, i) => 
+      segment.tense ? (
+        <span
+          key={i}
+          className={`${segment.color} ${segment.hoverColor} px-1 rounded cursor-pointer relative`}
+          onMouseEnter={() => setHoveredTense({ tense: segment.tense, index: i })}
+          onMouseLeave={() => setHoveredTense(null)}
+        >
+          {segment.text}
+          {hoveredTense?.index === i && (
+            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-gray-900 text-white text-xs rounded whitespace-nowrap z-50 border border-htb-green">
+              {segment.tense}
+            </span>
+          )}
+        </span>
+      ) : segment.text
+    );
+  };
 
   // Timer effect
   useEffect(() => {
@@ -667,9 +755,10 @@ const PictureDescriptionB2 = () => {
                         {copiedId === 'sample' ? '✓ Copied!' : '📋 Copy'}
                       </button>
                     </div>
+                    <p className="text-xs text-gray-400 mb-2 italic">(Hover over colored text to see tenses)</p>
                     <div className="bg-gray-700 p-4 rounded max-h-96 overflow-y-auto">
                       <p className="text-gray-300 whitespace-pre-line">
-                        {currentExercise.sampleDescription}
+                        {highlightTenses(currentExercise.sampleDescription)}
                       </p>
                     </div>
                   </div>
