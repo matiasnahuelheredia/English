@@ -7,6 +7,63 @@ const PictureDescriptionB2 = () => {
   const [showSampleDescription, setShowSampleDescription] = useState(false);
   const [copiedId, setCopiedId] = useState(null);
   const [hoveredTense, setHoveredTense] = useState(null);
+  const [hoveredSignal, setHoveredSignal] = useState(null);
+
+  const signalWordsPatterns = [
+    { words: ['for', 'since', 'how long'], tense: 'Duration (Perfect Continuous)', color: 'bg-emerald-200 text-emerald-900' },
+    { words: ['already', 'just', 'yet', 'ever', 'never', 'recently', 'lately', 'so far', 'up to now'], tense: 'Present Perfect', color: 'bg-indigo-200 text-indigo-900' },
+    { words: ['before', 'after', 'by the time', 'until', 'when'], tense: 'Past Perfect / Sequence', color: 'bg-purple-200 text-purple-900' },
+    { words: ['while', 'when', 'as', 'at that moment', 'at that time'], tense: 'Past Continuous / Background', color: 'bg-yellow-200 text-yellow-900' },
+    { words: ['yesterday', 'ago', 'last week', 'last month', 'last year'], tense: 'Past Simple', color: 'bg-orange-200 text-orange-900' },
+    { words: ['by', 'by then', 'by now', 'by that time'], tense: 'Perfect (Future/Past)', color: 'bg-pink-200 text-pink-900' },
+    { words: ['next week', 'next month', 'next year', 'tomorrow'], tense: 'Future', color: 'bg-blue-200 text-blue-900' },
+  ];
+
+  const highlightSignalWords = (text) => {
+    let segments = [];
+    let currentText = text;
+    let currentPos = 0;
+
+    const allPatterns = [];
+    signalWordsPatterns.forEach(pattern => {
+      pattern.words.forEach(word => {
+        allPatterns.push({ word, ...pattern });
+      });
+    });
+    allPatterns.sort((a, b) => b.word.length - a.word.length);
+
+    while (currentPos < currentText.length) {
+      let foundMatch = null;
+      let matchIndex = currentText.length;
+
+      for (const pattern of allPatterns) {
+        const regex = new RegExp(`\\b${pattern.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+        const match = regex.exec(currentText.slice(currentPos));
+        if (match && match.index < matchIndex) {
+          matchIndex = match.index;
+          foundMatch = { ...pattern, matchText: match[0], index: match.index };
+        }
+      }
+
+      if (foundMatch && matchIndex === 0) {
+        segments.push({
+          text: foundMatch.matchText,
+          isSignal: true,
+          tense: foundMatch.tense,
+          color: foundMatch.color
+        });
+        currentPos += foundMatch.matchText.length;
+      } else {
+        const endPos = foundMatch ? currentPos + matchIndex : currentText.length;
+        const textChunk = currentText.slice(currentPos, endPos);
+        if (textChunk) {
+          segments.push({ text: textChunk, isSignal: false });
+        }
+        currentPos = endPos;
+      }
+    }
+    return segments;
+  };
 
   const highlightTenses = (text) => {
     const tensePatterns = [
@@ -151,7 +208,29 @@ const PictureDescriptionB2 = () => {
           )}
         </span>
       ) : (
-        segment.text
+        (() => {
+          const signalSegments = highlightSignalWords(segment.text);
+          return signalSegments.map((sig, sigIndex) =>
+            sig.isSignal ? (
+              <span
+                key={`${i}-${sigIndex}`}
+                className={`${sig.color} px-1.5 py-0.5 rounded font-semibold cursor-help relative inline-block`}
+                onMouseEnter={() => setHoveredSignal(`${i}-${sigIndex}`)}
+                onMouseLeave={() => setHoveredSignal(null)}
+              >
+                {sig.text}
+                {hoveredSignal === `${i}-${sigIndex}` && (
+                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg z-50 whitespace-nowrap shadow-lg">
+                    {sig.tense}
+                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></span>
+                  </span>
+                )}
+              </span>
+            ) : (
+              <span key={`${i}-${sigIndex}`}>{sig.text}</span>
+            )
+          );
+        })()
       )
     );
   };

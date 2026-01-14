@@ -3,6 +3,134 @@ import React, { useState } from 'react';
 const EmailWritingB2 = () => {
   const [selectedEmail, setSelectedEmail] = useState(0);
   const [hoveredTense, setHoveredTense] = useState(null);
+  const [hoveredSignal, setHoveredSignal] = useState(null);
+
+  // Signal words patterns
+  const signalWordsPatterns = [
+    {
+      words: ['for', 'since', 'how long'],
+      tense: 'Duration (Perfect Continuous)',
+      color: 'bg-emerald-200 text-emerald-900',
+    },
+    {
+      words: [
+        'already',
+        'just',
+        'yet',
+        'ever',
+        'never',
+        'recently',
+        'lately',
+        'so far',
+        'up to now',
+      ],
+      tense: 'Present Perfect',
+      color: 'bg-indigo-200 text-indigo-900',
+    },
+    {
+      words: ['before', 'after', 'by the time', 'until', 'when'],
+      tense: 'Past Perfect / Sequence',
+      color: 'bg-purple-200 text-purple-900',
+    },
+    {
+      words: ['while', 'when', 'as', 'at that moment', 'at that time'],
+      tense: 'Past Continuous / Background',
+      color: 'bg-yellow-200 text-yellow-900',
+    },
+    {
+      words: [
+        'yesterday',
+        'ago',
+        'last week',
+        'last month',
+        'last year',
+        'in 1990',
+        'in 2020',
+      ],
+      tense: 'Past Simple',
+      color: 'bg-orange-200 text-orange-900',
+    },
+    {
+      words: ['by', 'by then', 'by now', 'by that time', 'by next week'],
+      tense: 'Perfect (Future/Past)',
+      color: 'bg-pink-200 text-pink-900',
+    },
+    {
+      words: [
+        'next week',
+        'next month',
+        'next year',
+        'tomorrow',
+        'in the future',
+      ],
+      tense: 'Future',
+      color: 'bg-blue-200 text-blue-900',
+    },
+  ];
+
+  const highlightSignalWords = (text) => {
+    let result = text;
+    const allWords = [];
+
+    signalWordsPatterns.forEach((pattern) => {
+      pattern.words.forEach((word) => {
+        allWords.push({ word, tense: pattern.tense, color: pattern.color });
+      });
+    });
+
+    // Sort by length (descending) to match longer phrases first
+    allWords.sort((a, b) => b.word.length - a.word.length);
+
+    const segments = [];
+    let currentText = text;
+    let position = 0;
+
+    while (position < currentText.length) {
+      let foundMatch = false;
+
+      for (const item of allWords) {
+        const regex = new RegExp(`\\b${item.word}\\b`, 'gi');
+        const match = currentText.slice(position).match(regex);
+
+        if (match && currentText.slice(position).search(regex) === 0) {
+          segments.push({
+            text: match[0],
+            isSignal: true,
+            tense: item.tense,
+            color: item.color,
+          });
+          position += match[0].length;
+          foundMatch = true;
+          break;
+        }
+      }
+
+      if (!foundMatch) {
+        let nextMatch = currentText.length;
+
+        for (const item of allWords) {
+          const regex = new RegExp(`\\b${item.word}\\b`, 'gi');
+          const match = regex.exec(currentText.slice(position));
+          if (match && match.index < nextMatch) {
+            nextMatch = match.index;
+          }
+        }
+
+        const textChunk = currentText.slice(
+          position,
+          position + (nextMatch === currentText.length ? nextMatch : nextMatch)
+        );
+        if (textChunk) {
+          segments.push({ text: textChunk, isSignal: false });
+        }
+        position += textChunk.length;
+
+        if (position >= currentText.length) break;
+      }
+    }
+
+    return segments;
+  };
 
   // Función para resaltar tenses en el texto
   const highlightTenses = (text) => {
@@ -149,7 +277,35 @@ const EmailWritingB2 = () => {
         <p key={pIndex} className="mb-4">
           {segments.map((segment, sIndex) => {
             if (typeof segment === 'string') {
-              return <span key={sIndex}>{segment}</span>;
+              // Apply signal words highlighting to plain text
+              const signalSegments = highlightSignalWords(segment);
+              return (
+                <span key={sIndex}>
+                  {signalSegments.map((sig, sigIndex) =>
+                    sig.isSignal ? (
+                      <span
+                        key={`${sIndex}-${sigIndex}`}
+                        className={`${sig.color} px-1.5 py-0.5 rounded font-semibold cursor-help relative inline-block`}
+                        onMouseEnter={() =>
+                          setHoveredSignal(`${pIndex}-${sIndex}-${sigIndex}`)
+                        }
+                        onMouseLeave={() => setHoveredSignal(null)}
+                      >
+                        {sig.text}
+                        {hoveredSignal ===
+                          `${pIndex}-${sIndex}-${sigIndex}` && (
+                          <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-50 shadow-xl font-semibold w-64 whitespace-nowrap">
+                            <div className="font-bold text-sm">{sig.tense}</div>
+                            <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
+                          </span>
+                        )}
+                      </span>
+                    ) : (
+                      <span key={`${sIndex}-${sigIndex}`}>{sig.text}</span>
+                    )
+                  )}
+                </span>
+              );
             }
 
             return (
