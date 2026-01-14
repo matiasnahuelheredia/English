@@ -9,7 +9,8 @@ const EmailWritingB1 = () => {
       {
         pattern: /\b(had\s+been\s+\w+ing)\b/gi,
         tense: 'Past Perfect Continuous',
-        usage: 'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
+        usage:
+          'Used to emphasize the duration of an action that was in progress before another past action. Shows how long something had been happening.',
         color: 'bg-blue-500/20 border-b-2 border-blue-500',
         hoverColor: 'bg-blue-500/40',
       },
@@ -17,21 +18,24 @@ const EmailWritingB1 = () => {
         pattern:
           /\b(had\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
         tense: 'Past Perfect',
-        usage: 'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
+        usage:
+          'Used to show that an action was completed before another action or time in the past. Establishes the sequence of past events.',
         color: 'bg-purple-500/20 border-b-2 border-purple-500',
         hoverColor: 'bg-purple-500/40',
       },
       {
         pattern: /\b((?:was|were)\s+\w+ing)\b/gi,
         tense: 'Past Continuous',
-        usage: 'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
+        usage:
+          'Used to describe actions that were in progress at a specific time in the past, or to set the background scene for another past action.',
         color: 'bg-yellow-500/20 border-b-2 border-yellow-500',
         hoverColor: 'bg-yellow-500/40',
       },
       {
         pattern: /\b((?:have|has|haven't|hasn't)\s+been\s+\w+ing)\b/gi,
         tense: 'Present Perfect Continuous',
-        usage: 'Used to emphasize the duration of an action that started in the past and continues now, or has just finished with visible results.',
+        usage:
+          'Used to emphasize the duration of an action that started in the past and continues now, or has just finished with visible results.',
         color: 'bg-cyan-500/20 border-b-2 border-cyan-500',
         hoverColor: 'bg-cyan-500/40',
       },
@@ -39,7 +43,8 @@ const EmailWritingB1 = () => {
         pattern:
           /\b((?:have|has|haven't|hasn't|'ve|'s)\s+(?:been|become|come|done|gone|got|given|known|made|seen|taken|written|completed|passed|arrived|moved|stayed|thrown|laid|put|told|learned|left|met|attended|found|won|lost|built|spent|heard|felt|thought|kept|brought|bought|caught|taught|fought|sought|sold|held|sent|paid|said|worked|lived|studied|traveled|travelled|opened|closed|created|started|finished|changed|used|helped|wanted|needed|liked|loved|hated|tried|planned|happened|seemed|appeared|remembered|forgotten|chosen|spoken|broken|frozen|stolen|hidden|ridden|driven|eaten|drunk|sung|swum|begun|run|sat|stood|understood|grown|shown|drawn|flown|worn|torn|fallen|risen|shaken|beaten|bitten|blown))\b/gi,
         tense: 'Present Perfect',
-        usage: 'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
+        usage:
+          'Used to connect the past with the present. Shows completed actions with present relevance, recent actions, or experiences without specific time.',
         color: 'bg-indigo-500/20 border-b-2 border-indigo-500',
         hoverColor: 'bg-indigo-500/40',
       },
@@ -47,14 +52,16 @@ const EmailWritingB1 = () => {
         pattern:
           /\b((?:would|could|should|might|must)\s+have\s+\w+(?:ed|en))\b/gi,
         tense: 'Modal Perfect',
-        usage: 'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
+        usage:
+          'Used to speculate, express regret, or make deductions about past situations. Shows what was possible, probable, or advisable in the past.',
         color: 'bg-pink-500/20 border-b-2 border-pink-500',
         hoverColor: 'bg-pink-500/40',
       },
       {
         pattern: /\b((?:will|'ll)\s+(?:be\s+\w+ing|have\s+\w+(?:ed|en)))\b/gi,
         tense: 'Future Perfect/Continuous',
-        usage: 'Used to describe actions that will be completed or in progress at a specific time in the future.',
+        usage:
+          'Used to describe actions that will be completed or in progress at a specific time in the future.',
         color: 'bg-orange-500/20 border-b-2 border-orange-500',
         hoverColor: 'bg-orange-500/40',
       },
@@ -133,8 +140,12 @@ const EmailWritingB1 = () => {
                 {segment.text}
                 {hoveredTense === `${pIndex}-${sIndex}` && (
                   <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-50 shadow-xl font-semibold w-80 max-w-sm">
-                    <div className="font-bold mb-1.5 text-sm">{segment.tense}</div>
-                    <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">{segment.usage}</div>
+                    <div className="font-bold mb-1.5 text-sm">
+                      {segment.tense}
+                    </div>
+                    <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">
+                      {segment.usage}
+                    </div>
                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
                   </span>
                 )}
@@ -153,7 +164,8 @@ const EmailWritingB1 = () => {
       category: 'Formal',
       subject: 'Application for Marketing Assistant Position',
       to: 'hr@company.com',
-      situation: 'You are applying for a job as a Marketing Assistant. Write a formal email introducing yourself and explaining why you are interested in the position.',
+      situation:
+        'You are applying for a job as a Marketing Assistant. Write a formal email introducing yourself and explaining why you are interested in the position.',
       email: `Dear Hiring Manager,
 
 I am writing to express my interest in the Marketing Assistant position advertised on your company website. I recently graduated with a degree in Business Administration and I am eager to start my career in marketing.
@@ -178,16 +190,16 @@ Yours sincerely,
         'I have attached',
         'Thank you for considering',
         'I look forward to hearing from you',
-        'Yours sincerely'
+        'Yours sincerely',
       ],
       structure: [
         '1. Opening: State the purpose of your email',
         '2. Body paragraph 1: Introduce yourself and your background',
         '3. Body paragraph 2: Explain your relevant experience',
-        '4. Body paragraph 3: Show interest and explain why you\'re suitable',
+        "4. Body paragraph 3: Show interest and explain why you're suitable",
         '5. Closing: Mention attachments and availability',
-        '6. Sign-off: Use formal closing'
-      ]
+        '6. Sign-off: Use formal closing',
+      ],
     },
     {
       id: 2,
@@ -195,7 +207,8 @@ Yours sincerely,
       category: 'Informal',
       subject: 'Birthday Party This Saturday!',
       to: 'friend@email.com',
-      situation: 'Write an informal email to your friend inviting them to your birthday party.',
+      situation:
+        'Write an informal email to your friend inviting them to your birthday party.',
       email: `Hi Sarah!
 
 How are you? I hope everything is going well with your new job!
@@ -213,13 +226,13 @@ Alex`,
       keyPhrases: [
         'How are you?',
         'I hope everything is going well',
-        'I\'m writing to invite you',
-        'I\'d love for you to come',
-        'You\'re welcome to',
+        "I'm writing to invite you",
+        "I'd love for you to come",
+        "You're welcome to",
         'Let me know',
         'I hope you can make it',
         'It would be great to',
-        'See you soon!'
+        'See you soon!',
       ],
       structure: [
         '1. Greeting: Use informal greeting',
@@ -228,8 +241,8 @@ Alex`,
         '4. Details: Provide time, place, and activities',
         '5. Additional info: Mention they can bring someone',
         '6. Closing: Express hope they can attend',
-        '7. Sign-off: Use friendly closing'
-      ]
+        '7. Sign-off: Use friendly closing',
+      ],
     },
     {
       id: 3,
@@ -237,7 +250,8 @@ Alex`,
       category: 'Semi-formal',
       subject: 'Complaint Regarding Recent Stay - Room 305',
       to: 'manager@hotel.com',
-      situation: 'You stayed at a hotel last week and had several problems. Write a semi-formal email to complain about the issues.',
+      situation:
+        'You stayed at a hotel last week and had several problems. Write a semi-formal email to complain about the issues.',
       email: `Dear Hotel Manager,
 
 I am writing to express my dissatisfaction with my recent stay at your hotel from November 15th to 18th. I was staying in room 305 and unfortunately experienced several problems during my visit.
@@ -264,17 +278,17 @@ Yours faithfully,
         'When I complained',
         'I would appreciate',
         'I look forward to your reply',
-        'Yours faithfully'
+        'Yours faithfully',
       ],
       structure: [
         '1. Opening: State purpose - complaint about stay',
         '2. Problem 1: Air conditioning issue with details',
         '3. Problem 2: Cleaning service problem',
         '4. Problem 3: Restaurant closure',
-        '5. Context: Mention you\'re a regular customer',
+        "5. Context: Mention you're a regular customer",
         '6. Request: Ask for explanation and compensation',
-        '7. Closing: Professional sign-off'
-      ]
+        '7. Closing: Professional sign-off',
+      ],
     },
     {
       id: 4,
@@ -282,7 +296,8 @@ Yours faithfully,
       category: 'Formal',
       subject: 'Inquiry About English Course Enrollment',
       to: 'info@languageschool.com',
-      situation: 'You want to enroll in an English course. Write a formal email requesting information about courses, prices, and schedules.',
+      situation:
+        'You want to enroll in an English course. Write a formal email requesting information about courses, prices, and schedules.',
       email: `Dear Sir or Madam,
 
 I am writing to request information about the English courses offered at your language school. I am particularly interested in improving my business English skills.
@@ -312,7 +327,7 @@ Yours faithfully,
         'I would be grateful if',
         'Thank you for your attention',
         'at your earliest convenience',
-        'Yours faithfully'
+        'Yours faithfully',
       ],
       structure: [
         '1. Opening: State purpose - request information',
@@ -321,8 +336,8 @@ Yours faithfully,
         '4. Personal circumstances: Mention work schedule',
         '5. Additional questions: Teachers and class size',
         '6. Closing: Thank them and request prompt response',
-        '7. Sign-off: Formal closing'
-      ]
+        '7. Sign-off: Formal closing',
+      ],
     },
     {
       id: 5,
@@ -330,7 +345,8 @@ Yours faithfully,
       category: 'Informal',
       subject: 'Thanks for Everything!',
       to: 'bestfriend@email.com',
-      situation: 'Your friend helped you move to a new apartment. Write an informal email thanking them for their help.',
+      situation:
+        'Your friend helped you move to a new apartment. Write an informal email thanking them for their help.',
       email: `Hey Mike!
 
 I just wanted to send you a quick message to say a huge thank you for helping me move last weekend. I honestly don't know what I would have done without you!
@@ -348,14 +364,14 @@ Emma`,
       keyPhrases: [
         'I just wanted to',
         'a huge thank you',
-        'I don\'t know what I would have done without you',
+        "I don't know what I would have done without you",
         'you made the whole process',
         'I really appreciate',
         'I owe you',
         'How about...',
-        'Let me know when you\'re free',
+        "Let me know when you're free",
         'Thanks again',
-        'Speak soon!'
+        'Speak soon!',
       ],
       structure: [
         '1. Greeting: Casual opening',
@@ -364,9 +380,9 @@ Emma`,
         '4. Emphasize appreciation: Show how much it meant',
         '5. Acknowledge sacrifice: Recognize their time',
         '6. Offer reciprocation: Suggest dinner as thanks',
-        '7. Closing: Warm sign-off'
-      ]
-    }
+        '7. Closing: Warm sign-off',
+      ],
+    },
   ];
 
   const currentExample = emailExamples[selectedEmail];
@@ -378,9 +394,12 @@ Emma`,
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">✉️</span>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">B1 Email Writing Examples</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">
+              B1 Email Writing Examples
+            </h1>
             <p className="text-sm text-htb-text-dim mt-1">
-              Professional email writing templates and examples for different situations
+              Professional email writing templates and examples for different
+              situations
             </p>
           </div>
         </div>
@@ -399,18 +418,22 @@ Emma`,
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <p className={`text-sm font-semibold ${
-                    selectedEmail === index ? 'text-htb-green' : 'text-white'
-                  }`}>
+                  <p
+                    className={`text-sm font-semibold ${
+                      selectedEmail === index ? 'text-htb-green' : 'text-white'
+                    }`}
+                  >
                     {example.title}
                   </p>
-                  <span className={`text-xs px-2 py-0.5 rounded-full inline-block mt-1 ${
-                    example.category === 'Formal' 
-                      ? 'bg-blue-500/20 text-blue-400'
-                      : example.category === 'Informal'
-                      ? 'bg-green-500/20 text-green-400'
-                      : 'bg-yellow-500/20 text-yellow-400'
-                  }`}>
+                  <span
+                    className={`text-xs px-2 py-0.5 rounded-full inline-block mt-1 ${
+                      example.category === 'Formal'
+                        ? 'bg-blue-500/20 text-blue-400'
+                        : example.category === 'Informal'
+                        ? 'bg-green-500/20 text-green-400'
+                        : 'bg-yellow-500/20 text-yellow-400'
+                    }`}
+                  >
                     {example.category}
                   </span>
                 </div>
@@ -440,11 +463,15 @@ Emma`,
           <div className="bg-htb-card border border-gray-800 rounded-lg p-4">
             <div className="space-y-2 text-sm">
               <div className="flex border-b border-gray-700 pb-2">
-                <span className="font-semibold text-htb-text-dim w-20">To:</span>
+                <span className="font-semibold text-htb-text-dim w-20">
+                  To:
+                </span>
                 <span className="text-htb-green">{currentExample.to}</span>
               </div>
               <div className="flex">
-                <span className="font-semibold text-htb-text-dim w-20">Subject:</span>
+                <span className="font-semibold text-htb-text-dim w-20">
+                  Subject:
+                </span>
                 <span className="text-white">{currentExample.subject}</span>
               </div>
             </div>
@@ -452,7 +479,9 @@ Emma`,
 
           {/* Email body */}
           <div className="bg-htb-card border border-gray-800 rounded-lg p-6">
-            <p className="text-xs text-gray-400 mb-3 italic">(Hover over colored text to see tenses and usage)</p>
+            <p className="text-xs text-gray-400 mb-3 italic">
+              (Hover over colored text to see tenses and usage)
+            </p>
             <div className="whitespace-pre-line text-htb-text leading-relaxed">
               {highlightTenses(currentExample.email)}
             </div>
@@ -547,13 +576,21 @@ Emma`,
       {/* Navigation */}
       <div className="mt-6 flex justify-between">
         <button
-          onClick={() => setSelectedEmail(selectedEmail > 0 ? selectedEmail - 1 : emailExamples.length - 1)}
+          onClick={() =>
+            setSelectedEmail(
+              selectedEmail > 0 ? selectedEmail - 1 : emailExamples.length - 1
+            )
+          }
           className="bg-htb-sidebar hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 transition-all duration-200"
         >
           ← Previous Example
         </button>
         <button
-          onClick={() => setSelectedEmail(selectedEmail < emailExamples.length - 1 ? selectedEmail + 1 : 0)}
+          onClick={() =>
+            setSelectedEmail(
+              selectedEmail < emailExamples.length - 1 ? selectedEmail + 1 : 0
+            )
+          }
           className="bg-htb-sidebar hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold border border-gray-700 hover:border-htb-green/50 transition-all duration-200"
         >
           Next Example →

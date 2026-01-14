@@ -141,8 +141,12 @@ const StoryTellingB2 = () => {
                 {segment.text}
                 {hoveredTense === `${pIndex}-${sIndex}` && (
                   <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-htb-bg border-2 border-htb-green rounded-lg text-htb-green text-xs z-50 shadow-xl font-semibold w-80 max-w-sm">
-                    <div className="font-bold mb-1.5 text-sm">{segment.tense}</div>
-                    <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">{segment.usage}</div>
+                    <div className="font-bold mb-1.5 text-sm">
+                      {segment.tense}
+                    </div>
+                    <div className="text-gray-300 font-normal text-xs leading-relaxed whitespace-normal">
+                      {segment.usage}
+                    </div>
                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-htb-green"></span>
                   </span>
                 )}
