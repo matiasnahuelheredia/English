@@ -1681,6 +1681,193 @@ export const vocabularyData = {
       explanation: '"Customer" significa cliente. Person who buys goods or services, e.g. from a shop or restaurant.',
       imageUrl: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=300&fit=crop'
     }
+  ],
+  'hacking': [
+    // Core Hacking Terms
+    {
+      englishWord: 'Vulnerability',
+      spanishWord: ['vulnerabilidad', 'debilidad'],
+      explanation: '"Vulnerability" significa vulnerabilidad. A weakness in a system that can be exploited by hackers.',
+      imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Exploit',
+      spanishWord: ['explotar', 'aprovechar', 'exploit'],
+      explanation: '"Exploit" significa explotar o aprovechar una vulnerabilidad. También es un programa que aprovecha una falla de seguridad.',
+      imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Payload',
+      spanishWord: ['carga útil', 'payload', 'carga maliciosa'],
+      explanation: '"Payload" significa carga útil. The malicious code that is delivered and executed on a target system.',
+      imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Backdoor',
+      spanishWord: ['puerta trasera', 'backdoor', 'acceso oculto'],
+      explanation: '"Backdoor" significa puerta trasera. A hidden method of bypassing normal authentication to access a system.',
+      imageUrl: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Rootkit',
+      spanishWord: ['rootkit', 'kit raíz'],
+      explanation: '"Rootkit" es un conjunto de herramientas que permite acceso privilegiado a un sistema mientras oculta su presencia.',
+      imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+    },
+    // Attack Types
+    {
+      englishWord: 'Phishing',
+      spanishWord: ['phishing', 'suplantación de identidad'],
+      explanation: '"Phishing" es una técnica de ingeniería social para robar información mediante correos o sitios web falsos.',
+      imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Ransomware',
+      spanishWord: ['ransomware', 'secuestro de datos'],
+      explanation: '"Ransomware" es malware que cifra archivos y exige un rescate para recuperarlos.',
+      imageUrl: 'https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'DDoS',
+      spanishWord: ['ataque DDoS', 'denegación de servicio distribuido'],
+      explanation: '"DDoS" (Distributed Denial of Service) es un ataque que sobrecarga un servidor con tráfico masivo.',
+      imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'SQL Injection',
+      spanishWord: ['inyección SQL', 'SQL injection'],
+      explanation: '"SQL Injection" es una técnica que aprovecha vulnerabilidades en bases de datos para ejecutar comandos maliciosos.',
+      imageUrl: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Man-in-the-Middle',
+      spanishWord: ['ataque de intermediario', 'hombre en el medio', 'MITM'],
+      explanation: '"Man-in-the-Middle" (MITM) es cuando un atacante intercepta comunicaciones entre dos partes.',
+      imageUrl: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&h=300&fit=crop'
+    },
+    // Security Concepts
+    {
+      englishWord: 'Encryption',
+      spanishWord: ['cifrado', 'encriptación'],
+      explanation: '"Encryption" significa cifrado. The process of encoding data to prevent unauthorized access.',
+      imageUrl: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Firewall',
+      spanishWord: ['cortafuegos', 'firewall'],
+      explanation: '"Firewall" significa cortafuegos. A security system that monitors and controls network traffic.',
+      imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Brute Force',
+      spanishWord: ['fuerza bruta', 'ataque por fuerza bruta'],
+      explanation: '"Brute Force" es una técnica que prueba todas las combinaciones posibles para descifrar contraseñas.',
+      imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Zero-Day',
+      spanishWord: ['día cero', 'zero-day', 'vulnerabilidad de día cero'],
+      explanation: '"Zero-Day" es una vulnerabilidad desconocida que no tiene parche de seguridad disponible.',
+      imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Penetration Testing',
+      spanishWord: ['prueba de penetración', 'pentesting', 'test de intrusión'],
+      explanation: '"Penetration Testing" (pentesting) es una evaluación de seguridad simulando ataques reales.',
+      imageUrl: 'https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&h=300&fit=crop'
+    },
+    // Tools & Techniques
+    {
+      englishWord: 'Enumeration',
+      spanishWord: ['enumeración', 'reconocimiento'],
+      explanation: '"Enumeration" significa enumeración. The process of gathering information about a target system.',
+      imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Footprinting',
+      spanishWord: ['huella digital', 'footprinting', 'reconocimiento pasivo'],
+      explanation: '"Footprinting" es la recopilación de información sobre un objetivo sin interactuar directamente.',
+      imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Port Scanning',
+      spanishWord: ['escaneo de puertos', 'port scanning'],
+      explanation: '"Port Scanning" es la técnica de escanear puertos de red para identificar servicios activos.',
+      imageUrl: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Social Engineering',
+      spanishWord: ['ingeniería social', 'manipulación psicológica'],
+      explanation: '"Social Engineering" es la manipulación de personas para obtener información confidencial.',
+      imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Reverse Shell',
+      spanishWord: ['shell inversa', 'reverse shell', 'shell remota'],
+      explanation: '"Reverse Shell" es una conexión remota donde la víctima inicia la conexión hacia el atacante.',
+      imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop'
+    },
+    // Advanced Terms
+    {
+      englishWord: 'Privilege Escalation',
+      spanishWord: ['escalada de privilegios', 'elevación de privilegios'],
+      explanation: '"Privilege Escalation" es el proceso de obtener permisos de mayor nivel en un sistema comprometido.',
+      imageUrl: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Buffer Overflow',
+      spanishWord: ['desbordamiento de búfer', 'buffer overflow'],
+      explanation: '"Buffer Overflow" es una vulnerabilidad que ocurre cuando un programa escribe datos más allá de un búfer.',
+      imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Malware',
+      spanishWord: ['malware', 'software malicioso', 'virus'],
+      explanation: '"Malware" significa software malicioso. Any software designed to harm or exploit computer systems.',
+      imageUrl: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Trojan Horse',
+      spanishWord: ['caballo de troya', 'troyano'],
+      explanation: '"Trojan Horse" es malware disfrazado de software legítimo que engaña al usuario.',
+      imageUrl: 'https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Botnet',
+      spanishWord: ['botnet', 'red de bots', 'red zombi'],
+      explanation: '"Botnet" es una red de dispositivos infectados controlados remotamente por un atacante.',
+      imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Keylogger',
+      spanishWord: ['keylogger', 'registrador de teclas', 'capturador de teclado'],
+      explanation: '"Keylogger" es software o hardware que registra las teclas pulsadas para robar información.',
+      imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Credential Harvesting',
+      spanishWord: ['recolección de credenciales', 'robo de credenciales'],
+      explanation: '"Credential Harvesting" es el proceso de recopilar nombres de usuario y contraseñas.',
+      imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Lateral Movement',
+      spanishWord: ['movimiento lateral', 'desplazamiento lateral'],
+      explanation: '"Lateral Movement" es el proceso de moverse entre sistemas dentro de una red comprometida.',
+      imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Command and Control',
+      spanishWord: ['comando y control', 'C&C', 'C2'],
+      explanation: '"Command and Control" (C&C o C2) es un servidor usado por atacantes para controlar sistemas comprometidos.',
+      imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop'
+    },
+    {
+      englishWord: 'Steganography',
+      spanishWord: ['esteganografía', 'ocultación de datos'],
+      explanation: '"Steganography" es la técnica de ocultar información dentro de archivos aparentemente normales.',
+      imageUrl: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=300&fit=crop'
+    }
   ]
 };
 

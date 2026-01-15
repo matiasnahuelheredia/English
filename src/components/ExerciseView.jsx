@@ -921,6 +921,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       transport: 'Transport - Vocabulary',
       'word-building': 'Word Building - Vocabulary',
       work: 'Work - Vocabulary',
+      hacking: 'Hacking - Vocabulary',
       'adverbs-phrases': 'Adverbs and Adverbial Phrases - Vocabulary',
       business: 'Business - Vocabulary',
       'present-perfect-past-simple-2':

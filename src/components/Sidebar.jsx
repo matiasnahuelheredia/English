@@ -283,7 +283,7 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
 
                 {expandedSections['Intermediate-Vocabulary'] && (
                   <div className="ml-3 space-y-0.5">
-                    {['cinema', 'dependent-prepositions', 'education', 'food-cooking', 'houses', 'money', 'personality', 'relationships', 'sport', 'the-body', 'transport', 'word-building', 'work'].map((topic) => (
+                    {['cinema', 'dependent-prepositions', 'education', 'food-cooking', 'houses', 'money', 'personality', 'relationships', 'sport', 'the-body', 'transport', 'word-building', 'work', 'hacking'].map((topic) => (
                       <button
                         key={topic}
                         onClick={() => onSelectTense(topic)}
