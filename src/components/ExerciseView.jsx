@@ -378,7 +378,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const [remainingVocabExercises, setRemainingVocabExercises] = useState([]);
   const [reorderedWords, setReorderedWords] = useState([]);
   const [availableWords, setAvailableWords] = useState([]);
-  
+
   const inputRef = useRef(null);
   const initialTimerRef = useRef(null);
   const initialIntervalRef = useRef(null);
@@ -393,7 +393,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       // O usar una URL de búsqueda directa
       const searchTerm = encodeURIComponent(word);
       const imageUrl = `https://source.unsplash.com/featured/400x300/?${searchTerm}`;
-      
+
       setTimeout(() => {
         setVocabularyImage(imageUrl);
         setImageLoading(false);
@@ -418,42 +418,44 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     clearAllTimers();
     setInitialCountdown(20);
     let currentCount = 20;
-    
+
     initialIntervalRef.current = setInterval(() => {
       currentCount -= 1;
       setInitialCountdown(currentCount);
-      
+
       if (currentCount <= 0) {
         clearInterval(initialIntervalRef.current);
       }
     }, 1000);
-    
+
     initialTimerRef.current = setTimeout(() => {
       clearInterval(initialIntervalRef.current);
       setInitialCountdown(0);
-      
+
       // Timeout: mostrar respuesta y contar como incorrecta
       if (exercise && exercise.englishWord) {
         let correctAnswers = [];
         if (isReversed) {
           correctAnswers = [exercise.englishWord];
         } else {
-          correctAnswers = Array.isArray(exercise.spanishWord) ? exercise.spanishWord : [exercise.spanishWord];
+          correctAnswers = Array.isArray(exercise.spanishWord)
+            ? exercise.spanishWord
+            : [exercise.spanishWord];
         }
-        
+
         setFeedback({
           isCorrect: false,
           message: '⏱️ Se acabó el tiempo. ' + exercise.explanation,
           correctAnswer: correctAnswers.join(' / '),
-          userAnswerText: ''
+          userAnswerText: '',
         });
         setShowAnswer(true);
-        
-        setStats(prev => ({
+
+        setStats((prev) => ({
           correct: prev.correct,
-          incorrect: prev.incorrect + 1
+          incorrect: prev.incorrect + 1,
         }));
-        
+
         // Pasar a siguiente pregunta después de 3 segundos
         feedbackTimerRef.current = setTimeout(() => {
           loadNewQuestion();
@@ -464,8 +466,28 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
 
   useEffect(() => {
     clearAllTimers();
-    
-    const vocabTopics = ['clothes-fashion', 'airport', 'weather', 'illnesses-injuries', 'cinema', 'dependent-prepositions', 'education', 'food-cooking', 'houses', 'money', 'personality', 'relationships', 'sport', 'the-body', 'transport', 'word-building', 'work', 'adverbs-phrases', 'business'];
+
+    const vocabTopics = [
+      'clothes-fashion',
+      'airport',
+      'weather',
+      'illnesses-injuries',
+      'cinema',
+      'dependent-prepositions',
+      'education',
+      'food-cooking',
+      'houses',
+      'money',
+      'personality',
+      'relationships',
+      'sport',
+      'the-body',
+      'transport',
+      'word-building',
+      'work',
+      'adverbs-phrases',
+      'business',
+    ];
     const isVocabTopic = vocabTopics.includes(tenseId);
     setIsVocabulary(isVocabTopic);
 
@@ -476,9 +498,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     } else {
       loadedExercises = getExercisesByTense(tenseId);
     }
-    
+
     setExercises(loadedExercises);
-    
+
     setUserAnswer('');
     setUserAnswers([]);
     setFeedback(null);
@@ -488,17 +510,20 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     setStats({ correct: 0, incorrect: 0 });
     setReorderedWords([]);
     setAvailableWords([]);
-    
+
     if (loadedExercises.length > 0) {
       const randomIndex = Math.floor(Math.random() * loadedExercises.length);
       const exercise = loadedExercises[randomIndex];
       setCurrentExercise(exercise);
-      
+
       // Initialize reorder exercise
-      if (exercise.sentenceParts && exercise.sentenceParts[0]?.type === 'reorder') {
+      if (
+        exercise.sentenceParts &&
+        exercise.sentenceParts[0]?.type === 'reorder'
+      ) {
         setAvailableWords([...exercise.words]);
       }
-      
+
       if (isVocabTopic) {
         startInitialCountdown(exercise);
         // Cargar imagen para vocabulario
@@ -512,13 +537,13 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         }
       }
     }
-    
+
     setTimeout(() => {
       if (inputRef.current) {
         inputRef.current.focus();
       }
     }, 100);
-    
+
     return () => clearAllTimers();
   }, [tenseId]);
 
@@ -538,13 +563,14 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   };
 
   const loadNewQuestion = () => {
-    const exercisesToUse = isVocabulary && remainingVocabExercises.length > 0 
-      ? remainingVocabExercises 
-      : exercises;
-    
+    const exercisesToUse =
+      isVocabulary && remainingVocabExercises.length > 0
+        ? remainingVocabExercises
+        : exercises;
+
     if (exercisesToUse.length > 0) {
       clearAllTimers();
-      
+
       const randomIndex = Math.floor(Math.random() * exercisesToUse.length);
       const exercise = exercisesToUse[randomIndex];
       setCurrentExercise(exercise);
@@ -553,25 +579,31 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       setFeedback(null);
       setShowAnswer(false);
       setCountdown(4);
-      
+
       // Initialize reorder exercise if needed
-      if (exercise.sentenceParts && exercise.sentenceParts[0]?.type === 'reorder') {
+      if (
+        exercise.sentenceParts &&
+        exercise.sentenceParts[0]?.type === 'reorder'
+      ) {
         setReorderedWords([]);
         setAvailableWords([...exercise.words]);
       } else {
         setReorderedWords([]);
         setAvailableWords([]);
       }
-      
+
       // Initialize reorder exercise if needed
-      if (exercise.sentenceParts && exercise.sentenceParts[0]?.type === 'reorder') {
+      if (
+        exercise.sentenceParts &&
+        exercise.sentenceParts[0]?.type === 'reorder'
+      ) {
         setReorderedWords([]);
         setAvailableWords([...exercise.words]);
       } else {
         setReorderedWords([]);
         setAvailableWords([]);
       }
-      
+
       // Iniciar countdown inicial solo para vocabulario
       if (isVocabulary && exercise.englishWord) {
         startInitialCountdown(exercise);
@@ -583,7 +615,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           fetchVocabularyImage(exercise.englishWord);
         }
       }
-      
+
       // Hacer focus en el input después de un breve delay
       setTimeout(() => {
         if (inputRef.current) {
@@ -593,7 +625,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     }
   };
 
-  const handleAnswerChange = (selectedValue, inputIndex = null, isDropdown = false) => {
+  const handleAnswerChange = (
+    selectedValue,
+    inputIndex = null,
+    isDropdown = false
+  ) => {
     if (inputIndex !== null || isDropdown) {
       const newAnswers = [...userAnswers];
       newAnswers[inputIndex] = selectedValue;
@@ -616,42 +652,56 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     setInitialCountdown(0);
 
     // Handle reorder exercises
-    if (currentExercise.sentenceParts && currentExercise.sentenceParts[0]?.type === 'reorder') {
+    if (
+      currentExercise.sentenceParts &&
+      currentExercise.sentenceParts[0]?.type === 'reorder'
+    ) {
       if (reorderedWords.length !== currentExercise.correctAnswer.length) {
         setFeedback({
           isCorrect: false,
           message: 'Please arrange all the words',
-          correctAnswer: currentExercise.correctAnswer.join(' ')
+          correctAnswer: currentExercise.correctAnswer.join(' '),
         });
         return;
       }
-      
-      const isCorrect = JSON.stringify(reorderedWords) === JSON.stringify(currentExercise.correctAnswer);
-      
+
+      const isCorrect =
+        JSON.stringify(reorderedWords) ===
+        JSON.stringify(currentExercise.correctAnswer);
+
       setFeedback({
         isCorrect,
-        message: isCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
+        message: isCorrect
+          ? 'Correct! ' + currentExercise.explanation
+          : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: currentExercise.correctAnswer.join(' '),
-        userAnswerText: reorderedWords.join(' ')
+        userAnswerText: reorderedWords.join(' '),
       });
-      
-      setStats(prev => ({
+
+      setStats((prev) => ({
         correct: prev.correct + (isCorrect ? 1 : 0),
-        incorrect: prev.incorrect + (isCorrect ? 0 : 1)
+        incorrect: prev.incorrect + (isCorrect ? 0 : 1),
       }));
-      
+
       return;
     }
 
     // Para ejercicios de vocabulario
     if (isVocabulary && currentExercise.englishWord) {
-      const answer = Array.isArray(userAnswer) && userAnswer.length > 0 ? userAnswer[0] : userAnswer;
-      
+      const answer =
+        Array.isArray(userAnswer) && userAnswer.length > 0
+          ? userAnswer[0]
+          : userAnswer;
+
       if (!answer || answer.trim() === '') {
         setFeedback({
           isCorrect: false,
           message: 'Please complete your answer',
-          correctAnswer: isReversed ? currentExercise.englishWord : (Array.isArray(currentExercise.spanishWord) ? currentExercise.spanishWord.join(', ') : currentExercise.spanishWord)
+          correctAnswer: isReversed
+            ? currentExercise.englishWord
+            : Array.isArray(currentExercise.spanishWord)
+            ? currentExercise.spanishWord.join(', ')
+            : currentExercise.spanishWord,
         });
         return;
       }
@@ -662,41 +712,55 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
 
       if (isReversed) {
         correctAnswers = [currentExercise.englishWord];
-        isCorrect = normalizeAnswer(currentExercise.englishWord) === normalizedUserAnswer;
+        isCorrect =
+          normalizeAnswer(currentExercise.englishWord) === normalizedUserAnswer;
       } else {
-        correctAnswers = Array.isArray(currentExercise.spanishWord) ? currentExercise.spanishWord : [currentExercise.spanishWord];
-        isCorrect = correctAnswers.some(correct => normalizeAnswer(correct) === normalizedUserAnswer);
+        correctAnswers = Array.isArray(currentExercise.spanishWord)
+          ? currentExercise.spanishWord
+          : [currentExercise.spanishWord];
+        isCorrect = correctAnswers.some(
+          (correct) => normalizeAnswer(correct) === normalizedUserAnswer
+        );
       }
 
       setFeedback({
         isCorrect,
-        message: isCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
+        message: isCorrect
+          ? 'Correct! ' + currentExercise.explanation
+          : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: correctAnswers.join(' / '),
-        userAnswerText: answer
+        userAnswerText: answer,
       });
 
       // Actualizar estadísticas
-      setStats(prev => ({
+      setStats((prev) => ({
         correct: prev.correct + (isCorrect ? 1 : 0),
-        incorrect: prev.incorrect + (isCorrect ? 0 : 1)
+        incorrect: prev.incorrect + (isCorrect ? 0 : 1),
       }));
 
       // Si la respuesta es correcta, eliminar del pool y pasar a la siguiente
       if (isCorrect) {
         // Remover el ejercicio actual del pool de vocabulario
-        const updatedRemaining = remainingVocabExercises.filter(ex => ex !== currentExercise);
+        const updatedRemaining = remainingVocabExercises.filter(
+          (ex) => ex !== currentExercise
+        );
         setRemainingVocabExercises(updatedRemaining);
-        
+
         // Mostrar mensaje si completó todos
         if (updatedRemaining.length === 0) {
           setTimeout(() => {
-            alert('Congratulations! You have completed all words correctly. 🎉\n\nFinal statistics:\nCorrect: ' + (stats.correct + 1) + '\nIncorrect: ' + stats.incorrect);
+            alert(
+              'Congratulations! You have completed all words correctly. 🎉\n\nFinal statistics:\nCorrect: ' +
+                (stats.correct + 1) +
+                '\nIncorrect: ' +
+                stats.incorrect
+            );
             // Reiniciar el vocabulario
             setRemainingVocabExercises([...exercises]);
             setStats({ correct: 0, incorrect: 0 });
           }, 100);
         }
-        
+
         feedbackTimerRef.current = setTimeout(() => {
           loadNewQuestion();
         }, 5000);
@@ -704,11 +768,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         // Si es incorrecta, iniciar countdown y timer para mostrar respuesta después de 4 segundos
         setCountdown(4);
         let currentCount = 4;
-        
+
         feedbackIntervalRef.current = setInterval(() => {
           currentCount -= 1;
           setCountdown(currentCount);
-          
+
           if (currentCount <= 0) {
             clearInterval(feedbackIntervalRef.current);
           }
@@ -719,17 +783,21 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           clearInterval(feedbackIntervalRef.current);
         }, 4000);
       }
-      
+
       return;
     }
-    
+
     // Para ejercicios con inputs de texto (array de respuestas)
     if (Array.isArray(currentExercise.correctAnswer)) {
-      if (!userAnswers || userAnswers.length === 0 || userAnswers.every(ans => !ans || ans.trim() === '')) {
+      if (
+        !userAnswers ||
+        userAnswers.length === 0 ||
+        userAnswers.every((ans) => !ans || ans.trim() === '')
+      ) {
         setFeedback({
           isCorrect: false,
           message: 'Please complete all answers',
-          correctAnswer: currentExercise.correctAnswer.join(' ... ')
+          correctAnswer: currentExercise.correctAnswer.join(' ... '),
         });
         return;
       }
@@ -742,24 +810,34 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
 
       setFeedback({
         isCorrect: allCorrect,
-        message: allCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
+        message: allCorrect
+          ? 'Correct! ' + currentExercise.explanation
+          : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: currentExercise.correctAnswer.join(' ... '),
         userAnswerText: userAnswers.join(' ... '),
-        tense: currentExercise.tense
+        tense: currentExercise.tense,
       });
       return;
     }
-    
+
     // Para ejercicios con dropdown (puede ser único o múltiple)
     // Contar cuántos dropdowns hay
-    const dropdownCount = currentExercise.sentenceParts?.filter(p => p.type === 'dropdown').length || 0;
-    
+    const dropdownCount =
+      currentExercise.sentenceParts?.filter((p) => p.type === 'dropdown')
+        .length || 0;
+
     if (dropdownCount > 1) {
       // Múltiples dropdowns: verificar que todos estén completados
-      if (!userAnswers || userAnswers.length === 0 || userAnswers.some(ans => ans === undefined || ans === '' || ans === '-1')) {
+      if (
+        !userAnswers ||
+        userAnswers.length === 0 ||
+        userAnswers.some(
+          (ans) => ans === undefined || ans === '' || ans === '-1'
+        )
+      ) {
         setFeedback({
           isCorrect: false,
-          message: 'Please complete all answers'
+          message: 'Please complete all answers',
         });
         return;
       }
@@ -772,18 +850,21 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
 
       setFeedback({
         isCorrect: allCorrect,
-        message: allCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
+        message: allCorrect
+          ? 'Correct! ' + currentExercise.explanation
+          : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: currentExercise.correctAnswer,
-        tense: currentExercise.tense
+        tense: currentExercise.tense,
       });
     } else {
       // Dropdown único: usar el primer elemento del array o userAnswer
-      const answer = userAnswers && userAnswers.length > 0 ? userAnswers[0] : userAnswer;
-      
+      const answer =
+        userAnswers && userAnswers.length > 0 ? userAnswers[0] : userAnswer;
+
       if (answer === undefined || answer === '' || answer === '-1') {
         setFeedback({
           isCorrect: false,
-          message: 'Please select an answer'
+          message: 'Please select an answer',
         });
         return;
       }
@@ -793,9 +874,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
 
       setFeedback({
         isCorrect,
-        message: isCorrect ? 'Correct! ' + currentExercise.explanation : 'Incorrect. ' + currentExercise.explanation,
+        message: isCorrect
+          ? 'Correct! ' + currentExercise.explanation
+          : 'Incorrect. ' + currentExercise.explanation,
         correctAnswer: currentExercise.correctAnswer,
-        tense: currentExercise.tense
+        tense: currentExercise.tense,
       });
     }
   };
@@ -804,7 +887,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     const titles = {
       'present-simple': 'Present Simple',
       'present-continuous': 'Present Continuous',
-      'present-simple-continuous-mix': 'Present Simple & Continuous Mix - Action and Non-Action Verbs',
+      'present-simple-continuous-mix':
+        'Present Simple & Continuous Mix - Action and Non-Action Verbs',
       'present-perfect': 'Present Perfect',
       'present-perfect-continuous': 'Present Perfect Continuous',
       'past-simple': 'Past Simple',
@@ -821,25 +905,26 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'question-forms': 'Question Forms',
       'mixed-tenses': 'Mixed Tenses - All Practice',
       'clothes-fashion': 'Clothes and Fashion - Vocabulary',
-      'airport': 'Airport - Vocabulary',
-      'weather': 'Weather - Vocabulary',
+      airport: 'Airport - Vocabulary',
+      weather: 'Weather - Vocabulary',
       'illnesses-injuries': 'Illnesses and Injuries - Vocabulary',
-      'cinema': 'Cinema - Vocabulary',
+      cinema: 'Cinema - Vocabulary',
       'dependent-prepositions': 'Dependent Prepositions - Vocabulary',
-      'education': 'Education - Vocabulary',
+      education: 'Education - Vocabulary',
       'food-cooking': 'Food and Cooking - Vocabulary',
-      'houses': 'Houses - Vocabulary',
-      'money': 'Money - Vocabulary',
-      'personality': 'Personality - Vocabulary',
-      'relationships': 'Relationships - Vocabulary',
-      'sport': 'Sport - Vocabulary',
+      houses: 'Houses - Vocabulary',
+      money: 'Money - Vocabulary',
+      personality: 'Personality - Vocabulary',
+      relationships: 'Relationships - Vocabulary',
+      sport: 'Sport - Vocabulary',
       'the-body': 'The Body - Vocabulary',
-      'transport': 'Transport - Vocabulary',
+      transport: 'Transport - Vocabulary',
       'word-building': 'Word Building - Vocabulary',
-      'work': 'Work - Vocabulary',
+      work: 'Work - Vocabulary',
       'adverbs-phrases': 'Adverbs and Adverbial Phrases - Vocabulary',
-      'business': 'Business - Vocabulary',
-      'present-perfect-past-simple-2': 'Present Perfect & Past Simple (2) - Word Order',
+      business: 'Business - Vocabulary',
+      'present-perfect-past-simple-2':
+        'Present Perfect & Past Simple (2) - Word Order',
     };
     return titles[tenseId] || 'Exercises';
   };
@@ -850,104 +935,145 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         affirmative: 'Subject + verb (base form) / verb + s/es (3rd person)',
         negative: 'Subject + do/does + not + verb (base form)',
         interrogative: 'Do/Does + subject + verb (base form)?',
-        example: 'I work / She works / Do you work?'
+        example: 'I work / She works / Do you work?',
+        signalWords:
+          'always, usually, often, sometimes, rarely, never, every day/week/month, on Mondays, once a week',
       },
       'present-continuous': {
         affirmative: 'Subject + am/is/are + verb + ing',
         negative: 'Subject + am/is/are + not + verb + ing',
         interrogative: 'Am/Is/Are + subject + verb + ing?',
-        example: 'I am working / She is working / Are you working?'
+        example: 'I am working / She is working / Are you working?',
+        signalWords:
+          'now, right now, at the moment, currently, today, this week, these days, Look!, Listen!',
       },
       'present-simple-continuous-mix': {
-        affirmative: 'Present Simple: Subject + verb(s) | Present Continuous: Subject + am/is/are + verb+ing',
-        negative: 'Present Simple: don\'t/doesn\'t + verb | Present Continuous: am/is/are + not + verb+ing',
-        interrogative: 'Present Simple: Do/Does + subject + verb? | Present Continuous: Am/Is/Are + subject + verb+ing?',
-        example: 'Action verbs: I\'m eating (now) vs I eat (habit) | Non-action verbs: I like (NOT I\'m liking)'
+        affirmative:
+          'Present Simple: Subject + verb(s) | Present Continuous: Subject + am/is/are + verb+ing',
+        negative:
+          "Present Simple: don't/doesn't + verb | Present Continuous: am/is/are + not + verb+ing",
+        interrogative:
+          'Present Simple: Do/Does + subject + verb? | Present Continuous: Am/Is/Are + subject + verb+ing?',
+        example:
+          "Action verbs: I'm eating (now) vs I eat (habit) | Non-action verbs: I like (NOT I'm liking)",
+        signalWords:
+          'Simple: always, usually, often | Continuous: now, at the moment, currently, Look!',
       },
       'present-perfect': {
         affirmative: 'Subject + have/has + past participle',
         negative: 'Subject + have/has + not + past participle',
         interrogative: 'Have/Has + subject + past participle?',
-        example: 'I have worked / She has worked / Have you worked?'
+        example: 'I have worked / She has worked / Have you worked?',
+        signalWords:
+          'already, just, yet, ever, never, recently, lately, so far, up to now, since, for, this week',
       },
       'present-perfect-continuous': {
         affirmative: 'Subject + have/has + been + verb + ing',
         negative: 'Subject + have/has + not + been + verb + ing',
         interrogative: 'Have/Has + subject + been + verb + ing?',
-        example: 'I have been working / She has been working'
+        example: 'I have been working / She has been working',
+        signalWords:
+          'for, since, how long, all day, all week, all morning, lately, recently',
       },
       'past-simple': {
         affirmative: 'Subject + verb + ed (regular) / irregular form',
         negative: 'Subject + did + not + verb (base form)',
         interrogative: 'Did + subject + verb (base form)?',
-        example: 'I worked / She went / Did you work?'
+        example: 'I worked / She went / Did you work?',
+        signalWords:
+          'yesterday, ago, last week/month/year, in 1990, when, in the past',
       },
       'past-continuous': {
         affirmative: 'Subject + was/were + verb + ing',
         negative: 'Subject + was/were + not + verb + ing',
         interrogative: 'Was/Were + subject + verb + ing?',
-        example: 'I was working / They were working'
+        example: 'I was working / They were working',
+        signalWords:
+          'while, when, as, at that moment, at that time, all day yesterday',
       },
       'past-perfect': {
         affirmative: 'Subject + had + past participle',
         negative: 'Subject + had + not + past participle',
         interrogative: 'Had + subject + past participle?',
-        example: 'I had worked / Had you worked?'
+        example: 'I had worked / Had you worked?',
+        signalWords:
+          'before, after, when, by the time, until, already, just, never',
       },
       'past-perfect-continuous': {
         affirmative: 'Subject + had + been + verb + ing',
         negative: 'Subject + had + not + been + verb + ing',
         interrogative: 'Had + subject + been + verb + ing?',
-        example: 'I had been working / Had you been working?'
+        example: 'I had been working / Had you been working?',
+        signalWords: 'for, since, how long, before, by the time',
       },
       'present-perfect-past-simple-2': {
-        affirmative: 'Present Perfect: have/has + past participle | Past Simple: verb + ed (regular) / irregular form',
-        negative: 'Present Perfect: haven\'t/hasn\'t + past participle | Past Simple: didn\'t + verb (base form)',
-        interrogative: 'Present Perfect: Have/Has + subject + past participle? | Past Simple: Did + subject + verb?',
-        example: 'Present Perfect (experience, unfinished time): I have visited Paris | Past Simple (finished time): I visited Paris in 2020'
+        affirmative:
+          'Present Perfect: have/has + past participle | Past Simple: verb + ed (regular) / irregular form',
+        negative:
+          "Present Perfect: haven't/hasn't + past participle | Past Simple: didn't + verb (base form)",
+        interrogative:
+          'Present Perfect: Have/Has + subject + past participle? | Past Simple: Did + subject + verb?',
+        example:
+          'Present Perfect (experience, unfinished time): I have visited Paris | Past Simple (finished time): I visited Paris in 2020',
+        signalWords:
+          'Perfect: already, yet, just, ever, never, recently | Simple: yesterday, ago, last, in 2020, when',
       },
       'future-simple': {
         affirmative: 'Subject + will + verb (base form)',
-        negative: 'Subject + will + not (won\'t) + verb (base form)',
+        negative: "Subject + will + not (won't) + verb (base form)",
         interrogative: 'Will + subject + verb (base form)?',
-        example: 'I will work / Will you work?'
+        example: 'I will work / Will you work?',
+        signalWords:
+          'tomorrow, next week/month/year, in the future, soon, later, tonight',
       },
       'future-continuous': {
         affirmative: 'Subject + will + be + verb + ing',
         negative: 'Subject + will + not + be + verb + ing',
         interrogative: 'Will + subject + be + verb + ing?',
-        example: 'I will be working / Will you be working?'
+        example: 'I will be working / Will you be working?',
+        signalWords:
+          'at this time tomorrow, at 3pm tomorrow, this time next week, in the future',
       },
       'future-perfect': {
         affirmative: 'Subject + will + have + past participle',
         negative: 'Subject + will + not + have + past participle',
         interrogative: 'Will + subject + have + past participle?',
-        example: 'I will have worked / Will you have worked?'
+        example: 'I will have worked / Will you have worked?',
+        signalWords: 'by, by then, by the time, by next week, by 2030, before',
       },
       'future-perfect-continuous': {
         affirmative: 'Subject + will + have + been + verb + ing',
         negative: 'Subject + will + not + have + been + verb + ing',
         interrogative: 'Will + subject + have + been + verb + ing?',
-        example: 'I will have been working for 10 years'
+        example: 'I will have been working for 10 years',
+        signalWords: 'by, by then, by the time, for, by next week',
       },
       'first-conditional': {
         affirmative: 'If + present simple, will + verb (base form)',
-        negative: 'If + don\'t/doesn\'t + verb, will + not + verb',
+        negative: "If + don't/doesn't + verb, will + not + verb",
         interrogative: 'What + will + subject + verb + if + present?',
-        example: 'If it rains, I will stay home'
+        example: 'If it rains, I will stay home',
+        signalWords:
+          'if, unless, as soon as, when, before, after (real/possible future situations)',
       },
       'second-conditional': {
         affirmative: 'If + past simple, would + verb (base form)',
-        negative: 'If + didn\'t + verb, would + not + verb',
+        negative: "If + didn't + verb, would + not + verb",
         interrogative: 'What + would + subject + verb + if + past?',
-        example: 'If I were rich, I would travel'
+        example: 'If I were rich, I would travel',
+        signalWords:
+          'if, unless (hypothetical/unreal present or future situations)',
       },
       'third-conditional': {
         affirmative: 'If + past perfect, would + have + past participle',
-        negative: 'If + hadn\'t + past participle, wouldn\'t + have + past participle',
-        interrogative: 'What + would + subject + have + done + if + past perfect?',
-        example: 'If I had known, I would have helped'
-      }
+        negative:
+          "If + hadn't + past participle, wouldn't + have + past participle",
+        interrogative:
+          'What + would + subject + have + done + if + past perfect?',
+        example: 'If I had known, I would have helped',
+        signalWords:
+          "if, unless (hypothetical/unreal past situations that didn't happen)",
+      },
     };
     return structures[tenseId] || null;
   };
@@ -955,7 +1081,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   if (!currentExercise) {
     return (
       <div className="bg-htb-card border border-gray-800 rounded-lg p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4 text-white">{getTenseTitle()}</h2>
+        <h2 className="text-2xl font-bold mb-4 text-white">
+          {getTenseTitle()}
+        </h2>
         <p className="text-htb-text-dim">Loading exercise...</p>
       </div>
     );
@@ -966,15 +1094,17 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       <div className="bg-htb-card rounded-lg border border-gray-800 p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{getTenseTitle()}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+              {getTenseTitle()}
+            </h2>
             <p className="text-sm sm:text-base text-htb-text-dim">
               {isVocabulary
-                ? (isReversed 
-                    ? 'Translate the following word from Spanish to English.'
-                    : 'Translate the following word from English to Spanish.')
-                : (tenseId === 'question-forms'
-                    ? 'Arrange the words in the correct order to form the question.'
-                    : 'Complete the following sentence by selecting the correct option.')}
+                ? isReversed
+                  ? 'Translate the following word from Spanish to English.'
+                  : 'Translate the following word from English to Spanish.'
+                : tenseId === 'question-forms'
+                ? 'Arrange the words in the correct order to form the question.'
+                : 'Complete the following sentence by selecting the correct option.'}
             </p>
           </div>
         </div>
@@ -987,46 +1117,72 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
               <div className="flex items-center gap-2">
                 <span className="text-2xl">📚</span>
                 <div>
-                  <p className="text-sm font-semibold text-htb-green">Words to learn</p>
-                  <p className="text-2xl font-bold text-white">{remainingVocabExercises.length} / {exercises.length}</p>
+                  <p className="text-sm font-semibold text-htb-green">
+                    Words to learn
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {remainingVocabExercises.length} / {exercises.length}
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             {/* Estadísticas en tiempo real */}
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs sm:text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-htb-green"></div>
-                <span className="font-semibold text-htb-green">{stats.correct}</span>
+                <span className="font-semibold text-htb-green">
+                  {stats.correct}
+                </span>
                 <span className="text-htb-text-dim">Correct</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <span className="font-semibold text-red-500">{stats.incorrect}</span>
+                <span className="font-semibold text-red-500">
+                  {stats.incorrect}
+                </span>
                 <span className="text-htb-text-dim">Incorrect</span>
               </div>
             </div>
-            
+
             {/* Barra de progreso visual */}
-            {(stats.correct + stats.incorrect) > 0 && (
+            {stats.correct + stats.incorrect > 0 && (
               <div className="w-full max-w-md mx-auto sm:mx-0">
                 <div className="flex h-6 rounded-full overflow-hidden bg-htb-sidebar">
-                  <div 
+                  <div
                     className="bg-htb-green transition-all duration-500 flex items-center justify-center text-xs text-htb-bg font-semibold"
-                    style={{ width: `${(stats.correct / (stats.correct + stats.incorrect)) * 100}%` }}
+                    style={{
+                      width: `${
+                        (stats.correct / (stats.correct + stats.incorrect)) *
+                        100
+                      }%`,
+                    }}
                   >
-                    {stats.correct > 0 && `${Math.round((stats.correct / (stats.correct + stats.incorrect)) * 100)}%`}
+                    {stats.correct > 0 &&
+                      `${Math.round(
+                        (stats.correct / (stats.correct + stats.incorrect)) *
+                          100
+                      )}%`}
                   </div>
-                  <div 
+                  <div
                     className="bg-red-500 transition-all duration-500 flex items-center justify-center text-xs text-white font-semibold"
-                    style={{ width: `${(stats.incorrect / (stats.correct + stats.incorrect)) * 100}%` }}
+                    style={{
+                      width: `${
+                        (stats.incorrect / (stats.correct + stats.incorrect)) *
+                        100
+                      }%`,
+                    }}
                   >
-                    {stats.incorrect > 0 && `${Math.round((stats.incorrect / (stats.correct + stats.incorrect)) * 100)}%`}
+                    {stats.incorrect > 0 &&
+                      `${Math.round(
+                        (stats.incorrect / (stats.correct + stats.incorrect)) *
+                          100
+                      )}%`}
                   </div>
                 </div>
               </div>
             )}
-            
+
             {/* Toggle de dirección */}
             <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3">
               <span className="text-xs sm:text-sm font-medium text-htb-text">
@@ -1039,7 +1195,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
               >
                 <span
                   className={`inline-block h-6 w-6 transform rounded-full transition-transform ${
-                    isReversed ? 'translate-x-9 bg-htb-bg' : 'translate-x-1 bg-white'
+                    isReversed
+                      ? 'translate-x-9 bg-htb-bg'
+                      : 'translate-x-1 bg-white'
                   }`}
                 />
               </button>
@@ -1055,28 +1213,57 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           <div className="mt-4 bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
             <div className="flex items-start gap-2 mb-3">
               <span className="text-htb-green text-xl">📖</span>
-              <h3 className="text-sm font-bold text-htb-green uppercase tracking-wide">Grammar Structure</h3>
+              <h3 className="text-sm font-bold text-htb-green uppercase tracking-wide">
+                Grammar Structure
+              </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
               <div className="bg-htb-card rounded p-3 border border-gray-800">
-                <p className="font-semibold text-htb-green mb-1">✓ Affirmative</p>
-                <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().affirmative}</p>
+                <p className="font-semibold text-htb-green mb-1">
+                  ✓ Affirmative
+                </p>
+                <p className="text-htb-text text-xs leading-relaxed">
+                  {getTenseStructure().affirmative}
+                </p>
               </div>
               <div className="bg-htb-card rounded p-3 border border-gray-800">
                 <p className="font-semibold text-red-500 mb-1">✗ Negative</p>
-                <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().negative}</p>
+                <p className="text-htb-text text-xs leading-relaxed">
+                  {getTenseStructure().negative}
+                </p>
               </div>
               <div className="bg-htb-card rounded p-3 border border-gray-800">
-                <p className="font-semibold text-blue-400 mb-1">? Interrogative</p>
-                <p className="text-htb-text text-xs leading-relaxed">{getTenseStructure().interrogative}</p>
+                <p className="font-semibold text-blue-400 mb-1">
+                  ? Interrogative
+                </p>
+                <p className="text-htb-text text-xs leading-relaxed">
+                  {getTenseStructure().interrogative}
+                </p>
               </div>
             </div>
             <div className="mt-3 bg-htb-sidebar border border-htb-green/30 rounded p-2">
               <p className="text-xs text-htb-text-dim">
-                <span className="font-semibold text-htb-green">Example:</span> 
-                <span className="ml-1 text-htb-text italic">{getTenseStructure().example}</span>
+                <span className="font-semibold text-htb-green">Example:</span>
+                <span className="ml-1 text-htb-text italic">
+                  {getTenseStructure().example}
+                </span>
               </p>
             </div>
+            {getTenseStructure().signalWords && (
+              <div className="mt-3 bg-htb-card border border-htb-green/30 rounded p-3">
+                <div className="flex items-start gap-2">
+                  <span className="text-htb-green text-lg">⏰</span>
+                  <div className="flex-1">
+                    <p className="font-semibold text-htb-green text-xs mb-1.5">
+                      Signal Words / Time Expressions:
+                    </p>
+                    <p className="text-htb-text text-xs leading-relaxed italic">
+                      {getTenseStructure().signalWords}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -1088,26 +1275,37 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
             {isVocabulary && initialCountdown > 0 && !feedback && (
               <div className="mb-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
                 <p className="text-sm text-htb-green">
-                  ⏱️ You have <span className="font-bold text-htb-green text-lg">{initialCountdown}</span> second{initialCountdown !== 1 ? 's' : ''} to answer
+                  ⏱️ You have{' '}
+                  <span className="font-bold text-htb-green text-lg">
+                    {initialCountdown}
+                  </span>{' '}
+                  second{initialCountdown !== 1 ? 's' : ''} to answer
                 </p>
               </div>
             )}
-            
+
             {/* Reorder exercises */}
-            {currentExercise.sentenceParts && currentExercise.sentenceParts[0]?.type === 'reorder' ? (
+            {currentExercise.sentenceParts &&
+            currentExercise.sentenceParts[0]?.type === 'reorder' ? (
               <div className="flex flex-col gap-4">
-                <p className="text-white text-lg font-medium">Arrange the words to form a correct sentence:</p>
-                
+                <p className="text-white text-lg font-medium">
+                  Arrange the words to form a correct sentence:
+                </p>
+
                 {/* Answer area - where words are arranged */}
                 <div className="bg-htb-card border-2 border-htb-green rounded-lg p-4 min-h-[80px] flex flex-wrap gap-2 items-center">
                   {reorderedWords.length === 0 ? (
-                    <span className="text-htb-text-dim italic">Click on words below to build your sentence...</span>
+                    <span className="text-htb-text-dim italic">
+                      Click on words below to build your sentence...
+                    </span>
                   ) : (
                     reorderedWords.map((word, index) => (
                       <button
                         key={index}
                         onClick={() => {
-                          const newReordered = reorderedWords.filter((_, i) => i !== index);
+                          const newReordered = reorderedWords.filter(
+                            (_, i) => i !== index
+                          );
                           setReorderedWords(newReordered);
                           setAvailableWords([...availableWords, word]);
                         }}
@@ -1119,7 +1317,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                     ))
                   )}
                 </div>
-                
+
                 {/* Available words - to select from */}
                 <div>
                   <p className="text-htb-text text-sm mb-2">Available words:</p>
@@ -1129,7 +1327,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                         key={index}
                         onClick={() => {
                           setReorderedWords([...reorderedWords, word]);
-                          const newAvailable = availableWords.filter((_, i) => i !== index);
+                          const newAvailable = availableWords.filter(
+                            (_, i) => i !== index
+                          );
                           setAvailableWords(newAvailable);
                         }}
                         disabled={feedback !== null}
@@ -1148,8 +1348,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                 {vocabularyImage && !imageLoading && (
                   <div className="flex justify-center mb-4">
                     <div className="relative rounded-lg overflow-hidden shadow-lg border-4 border-htb-green w-full max-w-md">
-                      <img 
-                        src={vocabularyImage} 
+                      <img
+                        src={vocabularyImage}
                         alt={currentExercise.englishWord}
                         className="w-full h-48 sm:h-56 md:h-64 object-cover"
                         onError={(e) => {
@@ -1161,20 +1361,25 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                     </div>
                   </div>
                 )}
-                
+
                 {imageLoading && (
                   <div className="flex justify-center mb-4">
                     <div className="w-full max-w-md h-48 sm:h-56 md:h-64 bg-htb-sidebar animate-pulse flex items-center justify-center rounded-lg border border-gray-800">
-                      <span className="text-htb-text-dim">Loading image...</span>
+                      <span className="text-htb-text-dim">
+                        Loading image...
+                      </span>
                     </div>
                   </div>
                 )}
-                
+
                 <span className="text-white font-medium text-base sm:text-lg">
-                  {isReversed 
-                    ? `Translate to English: ${Array.isArray(currentExercise.spanishWord) ? currentExercise.spanishWord[0] : currentExercise.spanishWord}`
-                    : `Translate to Spanish: ${currentExercise.englishWord}`
-                  }
+                  {isReversed
+                    ? `Translate to English: ${
+                        Array.isArray(currentExercise.spanishWord)
+                          ? currentExercise.spanishWord[0]
+                          : currentExercise.spanishWord
+                      }`
+                    : `Translate to Spanish: ${currentExercise.englishWord}`}
                 </span>
                 <input
                   type="text"
@@ -1196,18 +1401,24 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
               <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-3 text-sm sm:text-base">
                 {currentExercise.sentenceParts?.map((part, partIndex) => {
                   if (part.type === 'text') {
-                    return <span key={partIndex} className="text-white text-lg">{part.content}</span>;
+                    return (
+                      <span key={partIndex} className="text-white text-lg">
+                        {part.content}
+                      </span>
+                    );
                   } else if (part.type === 'input') {
                     const inputIndex = currentExercise.sentenceParts
                       .slice(0, partIndex)
-                      .filter(p => p.type === 'input').length;
-                    
+                      .filter((p) => p.type === 'input').length;
+
                     return (
                       <input
                         key={partIndex}
                         type="text"
                         value={userAnswers[inputIndex] || ''}
-                        onChange={(e) => handleAnswerChange(e.target.value, inputIndex)}
+                        onChange={(e) =>
+                          handleAnswerChange(e.target.value, inputIndex)
+                        }
                         className="border border-gray-300 rounded px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-htb-green min-w-[120px] sm:min-w-[150px] bg-htb-bg text-white"
                         placeholder="..."
                         disabled={feedback !== null}
@@ -1217,13 +1428,19 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                     // Dropdown
                     const dropdownIndex = currentExercise.sentenceParts
                       .slice(0, partIndex)
-                      .filter(p => p.type === 'dropdown').length;
-                    
+                      .filter((p) => p.type === 'dropdown').length;
+
                     return (
                       <select
                         key={partIndex}
                         value={userAnswers[dropdownIndex] ?? '-1'}
-                        onChange={(e) => handleAnswerChange(e.target.value, dropdownIndex, true)}
+                        onChange={(e) =>
+                          handleAnswerChange(
+                            e.target.value,
+                            dropdownIndex,
+                            true
+                          )
+                        }
                         className="dropdown-custom text-base"
                         disabled={feedback !== null}
                       >
@@ -1247,12 +1464,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                   💡 Answer:
                 </p>
                 <p className="text-white text-base">
-                  {isReversed 
+                  {isReversed
                     ? currentExercise.englishWord
-                    : (Array.isArray(currentExercise.spanishWord) 
-                        ? currentExercise.spanishWord.join(' / ') 
-                        : currentExercise.spanishWord)
-                  }
+                    : Array.isArray(currentExercise.spanishWord)
+                    ? currentExercise.spanishWord.join(' / ')
+                    : currentExercise.spanishWord}
                 </p>
                 <p className="text-sm text-htb-text-dim mt-2 italic">
                   {currentExercise.explanation}
@@ -1264,7 +1480,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
             {isVocabulary && feedback && !feedback.isCorrect && !showAnswer && (
               <div className="mt-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
                 <p className="text-sm text-htb-text">
-                  Next answer in <span className="font-bold text-htb-green text-lg">{countdown}</span> second{countdown !== 1 ? 's' : ''}
+                  Next answer in{' '}
+                  <span className="font-bold text-htb-green text-lg">
+                    {countdown}
+                  </span>{' '}
+                  second{countdown !== 1 ? 's' : ''}
                 </p>
               </div>
             )}
@@ -1299,7 +1519,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                     📚 {feedback.tense}
                   </p>
                 )}
-                <p className="text-base text-htb-text mt-2">{feedback.message}</p>
+                <p className="text-base text-htb-text mt-2">
+                  {feedback.message}
+                </p>
                 {!feedback.isCorrect && showAnswer && (
                   <>
                     <p className="text-base text-htb-text mt-3">
@@ -1338,7 +1560,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
               ) : (
                 <>
                   {/* Mostrar botón de siguiente pregunta solo si no es vocabulario o si es vocabulario pero ya pasaron los timers */}
-                  {(!isVocabulary || (isVocabulary && !feedback.isCorrect && showAnswer)) && (
+                  {(!isVocabulary ||
+                    (isVocabulary && !feedback.isCorrect && showAnswer)) && (
                     <button
                       onClick={loadNewQuestion}
                       className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
