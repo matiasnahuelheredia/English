@@ -400,7 +400,6 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                         'transport',
                         'word-building',
                         'work',
-                        'hacking',
                       ].map((topic) => (
                         <button
                           key={topic}
@@ -498,6 +497,46 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                         }`}
                       >
                         Email Writing Examples
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Hacking Vocabulary B1 */}
+                  <button
+                    onClick={() => toggleSection('Intermediate-Hacking')}
+                    className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                  >
+                    <span className="text-htb-text-dim">🔒 Hacking Vocabulary</span>
+                    <svg
+                      className={`w-3 h-3 transition-transform ${
+                        expandedSections['Intermediate-Hacking']
+                          ? 'rotate-180'
+                          : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {expandedSections['Intermediate-Hacking'] && (
+                    <div className="ml-3 space-y-0.5">
+                      <button
+                        onClick={() => onSelectTense('hacking')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'hacking'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        Hacking Terms
                       </button>
                     </div>
                   )}
