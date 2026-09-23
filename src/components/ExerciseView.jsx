@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
 import { b1GrammarInfo } from '../data/b1GrammarData';
+import { b2GrammarInfo } from '../data/b2GrammarData';
 import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
@@ -677,8 +678,18 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     setFeedback(null);
   };
 
+  // Normaliza para comparar: minúsculas, espacios, apóstrofo curvo (teclados
+  // del celular) y contracciones negativas ("hadn't" = "had not")
   const normalizeAnswer = (answer) => {
-    return answer.toLowerCase().trim().replace(/\s+/g, ' ');
+    return answer
+      .toLowerCase()
+      .replace(/[\u2018\u2019\u00b4`]/g, "'")
+      .replace(/\bcan't\b|\bcannot\b/g, 'can not')
+      .replace(/\bwon't\b/g, 'will not')
+      .replace(/\bshan't\b/g, 'shall not')
+      .replace(/n't\b/g, ' not')
+      .trim()
+      .replace(/\s+/g, ' ');
   };
 
   const checkAnswer = () => {
@@ -979,7 +990,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'present-perfect-past-simple-2':
         'Present Perfect & Past Simple (2) - Word Order',
     };
-    return titles[tenseId] || b1GrammarInfo[tenseId]?.title || 'Exercises';
+    const info = b1GrammarInfo[tenseId] || b2GrammarInfo[tenseId];
+    return titles[tenseId] || info?.title || 'Exercises';
   };
 
   const getTenseStructure = () => {
@@ -1128,7 +1140,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           "if, unless (hypothetical/unreal past situations that didn't happen)",
       },
     };
-    return structures[tenseId] || b1GrammarInfo[tenseId]?.structure || null;
+    const info = b1GrammarInfo[tenseId] || b2GrammarInfo[tenseId];
+    return structures[tenseId] || info?.structure || null;
   };
 
   if (!currentExercise) {

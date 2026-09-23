@@ -26,6 +26,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
       Intermediate: false,
       'Intermediate-Vocabulary': false,
       'Intermediate-Grammar': false,
+      'Upper-Intermediate-Grammar': false,
       'Intermediate-Writing': false,
       'Upper-Intermediate': true,
       'Upper-Intermediate-Writing': false,
@@ -963,15 +964,15 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     </div>
                   )}
 
-                  {/* Grammar B1 */}
+                  {/* Grammar B2 */}
                   <button
-                    onClick={() => toggleSection('Intermediate-Grammar')}
+                    onClick={() => toggleSection('Upper-Intermediate-Grammar')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
                     <span className="text-htb-text-dim">Grammar</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
-                        expandedSections['Intermediate-Grammar']
+                        expandedSections['Upper-Intermediate-Grammar']
                           ? 'rotate-180'
                           : ''
                       }`}
@@ -988,7 +989,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     </svg>
                   </button>
 
-                  {expandedSections['Intermediate-Grammar'] && (
+                  {expandedSections['Upper-Intermediate-Grammar'] && (
                     <div className="ml-3 space-y-0.5">
                       <button
                         onClick={() => onSelectTense('confusing-adverbs')}
@@ -1010,6 +1011,29 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                       >
                         Sentence Adverbs
                       </button>
+                      {[
+                        { id: 'passive-voice-b2', name: 'Passive Voice' },
+                        { id: 'reported-speech-b2', name: 'Reported Speech' },
+                        { id: 'used-to-b2', name: 'Used to / Be used to' },
+                        { id: 'wish-if-only-b2', name: 'Wish / If only' },
+                        { id: 'modals-deduction-b2', name: 'Modals of Deduction' },
+                        {
+                          id: 'gerunds-infinitives-b2',
+                          name: 'Gerunds & Infinitives',
+                        },
+                      ].map((topic) => (
+                        <button
+                          key={topic.id}
+                          onClick={() => onSelectTense(topic.id)}
+                          className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                            selectedTense === topic.id
+                              ? 'bg-htb-green text-htb-bg font-medium'
+                              : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                          }`}
+                        >
+                          {topic.name}
+                        </button>
+                      ))}
                     </div>
                   )}
 

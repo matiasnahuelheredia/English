@@ -1,5 +1,6 @@
 // Exercise database for each verb tense
 import { b1GrammarExercises } from './b1GrammarData';
+import { b2GrammarExercises } from './b2GrammarData';
 
 // Function to randomly shuffle arrays
 const shuffleArray = (array) => {
@@ -13,6 +14,7 @@ const shuffleArray = (array) => {
 
 const exercisesData = {
   ...b1GrammarExercises,
+  ...b2GrammarExercises,
   'present-perfect': [
     {
       sentenceParts: [
@@ -4350,6 +4352,12 @@ const getTenseName = (tenseId) => {
     'past-continuous-b1': 'Past Continuous (B1)',
     'past-perfect-b1': 'Past Perfect (B1)',
     'narrative-tenses-b1': 'Narrative Tenses (B1)',
+    'passive-voice-b2': 'Passive Voice (B2)',
+    'reported-speech-b2': 'Reported Speech (B2)',
+    'used-to-b2': 'Used to / Be used to (B2)',
+    'wish-if-only-b2': 'Wish / If only (B2)',
+    'modals-deduction-b2': 'Modals of Deduction (B2)',
+    'gerunds-infinitives-b2': 'Gerunds & Infinitives (B2)',
   };
   return tenseNames[tenseId] || tenseId;
 };
