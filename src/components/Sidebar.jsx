@@ -2,6 +2,150 @@ import React, { useState, useEffect } from 'react';
 
 const isMobile = () => window.innerWidth < 768;
 
+// Secciones de un nivel (Tenses, Grammar, Vocabulary, Mixed Practice)
+const LevelSections = ({
+  sections,
+  expandedSections,
+  toggleSection,
+  selectedTense,
+  onSelectTense,
+}) =>
+  sections.map((section) => (
+    <div key={section.key}>
+      <button
+        onClick={() => toggleSection(section.key)}
+        className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card text-htb-text-dim transition-colors"
+      >
+        <span>{section.label}</span>
+        <svg
+          className={`w-3 h-3 transition-transform ${
+            expandedSections[section.key] ? 'rotate-180' : ''
+          }`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+      {expandedSections[section.key] && (
+        <div className="ml-4 space-y-1">
+          {section.items.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => onSelectTense(item.id)}
+              className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                selectedTense === item.id
+                  ? 'bg-htb-green text-htb-bg'
+                  : 'hover:bg-htb-card text-htb-text-dim'
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  ));
+
+const A1_SECTIONS = [
+  {
+    key: 'Beginner-Tenses',
+    label: '⏳ Tenses',
+    items: [
+      { id: 'present-simple-a1', name: 'Present Simple' },
+      { id: 'present-continuous-a1', name: 'Present Continuous' },
+      { id: 'past-simple-a1', name: 'Past Simple (was / were + verbs)' },
+      { id: 'going-to-a1', name: 'Future: be going to' },
+    ],
+  },
+  {
+    key: 'Beginner-Grammar',
+    label: '📝 Grammar',
+    items: [
+      { id: 'verb-be-a1', name: '1A Verb be (singular)' },
+      { id: 'verb-be-all-a1', name: 'Verb be (all forms)' },
+      { id: 'there-is-are-a1', name: 'There is / There are' },
+      { id: 'can-a1', name: "Can / Can't" },
+      { id: 'possessives-a1', name: "Possessives & 's" },
+      { id: 'articles-plurals-a1', name: 'a / an & Plurals' },
+      { id: 'demonstratives-a1', name: 'This / That / These / Those' },
+      { id: 'prepositions-a1', name: 'Prepositions (place & time)' },
+      { id: 'question-words-a1', name: 'Question words' },
+    ],
+  },
+  {
+    key: 'Beginner-Vocabulary',
+    label: '📖 Vocabulary',
+    items: [
+      { id: 'numbers-a1', name: 'Numbers' },
+      { id: 'colours-a1', name: 'Colours' },
+      { id: 'family-a1', name: 'Family' },
+      { id: 'days-months-a1', name: 'Days & Months' },
+      { id: 'food-drinks-a1', name: 'Food & Drinks' },
+      { id: 'jobs-a1', name: 'Jobs' },
+      { id: 'house-a1', name: 'The House' },
+      { id: 'daily-routine-a1', name: 'Daily Routine' },
+    ],
+  },
+  {
+    key: 'Beginner-Mixed',
+    label: '🔀 Mixed Practice',
+    items: [{ id: 'mixed-a1', name: 'All A1 topics mixed' }],
+  },
+];
+
+const A2_SECTIONS = [
+  {
+    key: 'Elementary-Tenses',
+    label: '⏳ Tenses',
+    items: [
+      { id: 'present-simple-continuous-a2', name: 'Present Simple vs Continuous' },
+      { id: 'past-simple-a2', name: 'Past Simple (regular & irregular)' },
+      { id: 'past-continuous-a2', name: 'Past Continuous' },
+      { id: 'present-perfect-a2', name: 'Present Perfect' },
+      { id: 'will-going-to-a2', name: 'Future: will vs going to' },
+    ],
+  },
+  {
+    key: 'Elementary-Grammar',
+    label: '📝 Grammar',
+    items: [
+      { id: 'comparatives-a2', name: 'Comparatives' },
+      { id: 'superlatives-a2', name: 'Superlatives' },
+      { id: 'countable-uncountable-a2', name: 'Some / any / much / many' },
+      { id: 'frequency-adverbs-a2', name: 'Adverbs of frequency' },
+      { id: 'have-to-a2', name: "Have to / Don't have to / Must" },
+      { id: 'should-a2', name: "Should / Shouldn't" },
+      { id: 'object-pronouns-a2', name: 'Object pronouns' },
+    ],
+  },
+  {
+    key: 'Elementary-Vocabulary',
+    label: '📖 Vocabulary',
+    items: [
+      { id: 'weather-a2', name: 'Weather' },
+      { id: 'clothes-a2', name: 'Clothes' },
+      { id: 'transport-a2', name: 'Transport' },
+      { id: 'town-city-a2', name: 'Town & City' },
+      { id: 'feelings-a2', name: 'Feelings' },
+      { id: 'holidays-a2', name: 'Holidays & Travel' },
+      { id: 'health-body-a2', name: 'Health & the Body' },
+      { id: 'shopping-a2', name: 'Shopping' },
+    ],
+  },
+  {
+    key: 'Elementary-Mixed',
+    label: '🔀 Mixed Practice',
+    items: [{ id: 'mixed-a2', name: 'All A2 topics mixed' }],
+  },
+];
+
 const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
   // En el celular el menú arranca cerrado para no tapar el contenido
   const [isOpen, setIsOpen] = useState(() => !isMobile());
@@ -26,6 +170,11 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
       'Beginner-Tenses': false,
       'Beginner-Vocabulary': false,
       'Beginner-Mixed': false,
+      Elementary: false,
+      'Elementary-Tenses': false,
+      'Elementary-Grammar': false,
+      'Elementary-Vocabulary': false,
+      'Elementary-Mixed': false,
       Intermediate: false,
       'Intermediate-Vocabulary': false,
       'Intermediate-Grammar': false,
@@ -308,93 +457,59 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
 
               {expandedSections['Beginner'] && (
                 <div className="mt-1 ml-6 space-y-1">
-                  {[
-                    {
-                      key: 'Beginner-Tenses',
-                      label: '⏳ Tenses',
-                      items: [
-                        { id: 'present-simple-a1', name: 'Present Simple' },
-                        { id: 'present-continuous-a1', name: 'Present Continuous' },
-                        { id: 'past-simple-a1', name: 'Past Simple (was / were + verbs)' },
-                        { id: 'going-to-a1', name: 'Future: be going to' },
-                      ],
-                    },
-                    {
-                      key: 'Beginner-Grammar',
-                      label: '📝 Grammar',
-                      items: [
-                        { id: 'verb-be-a1', name: '1A Verb be (singular)' },
-                        { id: 'verb-be-all-a1', name: 'Verb be (all forms)' },
-                        { id: 'there-is-are-a1', name: 'There is / There are' },
-                        { id: 'can-a1', name: "Can / Can't" },
-                        { id: 'possessives-a1', name: "Possessives & 's" },
-                        { id: 'articles-plurals-a1', name: 'a / an & Plurals' },
-                        { id: 'demonstratives-a1', name: 'This / That / These / Those' },
-                        { id: 'prepositions-a1', name: 'Prepositions (place & time)' },
-                        { id: 'question-words-a1', name: 'Question words' },
-                      ],
-                    },
-                    {
-                      key: 'Beginner-Vocabulary',
-                      label: '📖 Vocabulary',
-                      items: [
-                        { id: 'numbers-a1', name: 'Numbers' },
-                        { id: 'colours-a1', name: 'Colours' },
-                        { id: 'family-a1', name: 'Family' },
-                        { id: 'days-months-a1', name: 'Days & Months' },
-                        { id: 'food-drinks-a1', name: 'Food & Drinks' },
-                        { id: 'jobs-a1', name: 'Jobs' },
-                        { id: 'house-a1', name: 'The House' },
-                        { id: 'daily-routine-a1', name: 'Daily Routine' },
-                      ],
-                    },
-                    {
-                      key: 'Beginner-Mixed',
-                      label: '🔀 Mixed Practice',
-                      items: [{ id: 'mixed-a1', name: 'All A1 topics mixed' }],
-                    },
-                  ].map((section) => (
-                    <div key={section.key}>
-                      <button
-                        onClick={() => toggleSection(section.key)}
-                        className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card text-htb-text-dim transition-colors"
-                      >
-                        <span>{section.label}</span>
-                        <svg
-                          className={`w-3 h-3 transition-transform ${
-                            expandedSections[section.key] ? 'rotate-180' : ''
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-                      {expandedSections[section.key] && (
-                        <div className="ml-4 space-y-1">
-                          {section.items.map((item) => (
-                            <button
-                              key={item.id}
-                              onClick={() => onSelectTense(item.id)}
-                              className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                                selectedTense === item.id
-                                  ? 'bg-htb-green text-htb-bg'
-                                  : 'hover:bg-htb-card text-htb-text-dim'
-                              }`}
-                            >
-                              {item.name}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                  <LevelSections
+                    sections={A1_SECTIONS}
+                    expandedSections={expandedSections}
+                    toggleSection={toggleSection}
+                    selectedTense={selectedTense}
+                    onSelectTense={onSelectTense}
+                  />
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* A2 ELEMENTARY */}
+          {(matchesSearch('Elementary') ||
+            matchesSearch('A2') ||
+            matchesSearch('Comparatives') ||
+            matchesSearch('Weather') ||
+            matchesSearch('Shopping')) && (
+            <div>
+              <button
+                onClick={() => toggleSection('Elementary')}
+                className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card text-htb-text transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span>🌾</span>
+                  <span>A2 - Elementary</span>
+                </div>
+                <svg
+                  className={`w-4 h-4 transition-transform ${
+                    expandedSections['Elementary'] ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {expandedSections['Elementary'] && (
+                <div className="mt-1 ml-6 space-y-1">
+                  <LevelSections
+                    sections={A2_SECTIONS}
+                    expandedSections={expandedSections}
+                    toggleSection={toggleSection}
+                    selectedTense={selectedTense}
+                    onSelectTense={onSelectTense}
+                  />
                 </div>
               )}
             </div>

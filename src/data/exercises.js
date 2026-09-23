@@ -1,5 +1,6 @@
 // Exercise database for each verb tense
 import { a1GrammarExercises } from './a1GrammarData';
+import { a2GrammarExercises } from './a2GrammarData';
 import { b1GrammarExercises } from './b1GrammarData';
 import { b2GrammarExercises } from './b2GrammarData';
 
@@ -15,6 +16,7 @@ const shuffleArray = (array) => {
 
 const exercisesData = {
   ...a1GrammarExercises,
+  ...a2GrammarExercises,
   ...b1GrammarExercises,
   ...b2GrammarExercises,
   'present-perfect': [
@@ -2200,7 +2202,7 @@ const exercisesData = {
     },
   ],
 
-  'future-simple': [
+  'present-simple': [
     {
       sentenceParts: [
         { type: 'text', content: 'She' },
@@ -4310,15 +4312,19 @@ const exercisesData = {
 };
 
 export const getExercisesByTense = (tenseId) => {
-  // A1 Mixed Practice: todos los temas A1 mezclados
-  if (tenseId === 'mixed-a1') {
-    const allA1 = Object.keys(a1GrammarExercises).flatMap((key) =>
-      a1GrammarExercises[key].map((exercise) => ({
+  // Mixed Practice por nivel (A1, A2): todos los temas del nivel mezclados
+  const levelExercises = {
+    'mixed-a1': a1GrammarExercises,
+    'mixed-a2': a2GrammarExercises,
+  }[tenseId];
+  if (levelExercises) {
+    const all = Object.keys(levelExercises).flatMap((key) =>
+      levelExercises[key].map((exercise) => ({
         ...exercise,
         tense: getTenseName(key),
       }))
     );
-    return shuffleArray(allA1);
+    return shuffleArray(all);
   }
 
   // Si es mixed-tenses, mezclar todos los ejercicios de todos los tiempos
@@ -4350,7 +4356,7 @@ const getTenseName = (tenseId) => {
     'past-perfect': 'Past Perfect',
     'past-perfect-continuous': 'Past Perfect Continuous',
     'future-perfect-continuous': 'Future Perfect Continuous',
-    'future-simple': 'Present Simple',
+    'present-simple': 'Present Simple',
     'present-continuous': 'Present Continuous',
     'past-simple': 'Past Simple',
     'future-simple': 'Future Simple',
@@ -4377,6 +4383,18 @@ const getTenseName = (tenseId) => {
     'demonstratives-a1': 'This / That / These / Those (A1)',
     'prepositions-a1': 'Prepositions (A1)',
     'question-words-a1': 'Question words (A1)',
+    'present-simple-continuous-a2': 'Present Simple vs Continuous (A2)',
+    'past-simple-a2': 'Past Simple (A2)',
+    'past-continuous-a2': 'Past Continuous (A2)',
+    'present-perfect-a2': 'Present Perfect (A2)',
+    'will-going-to-a2': 'Will vs Going to (A2)',
+    'comparatives-a2': 'Comparatives (A2)',
+    'superlatives-a2': 'Superlatives (A2)',
+    'countable-uncountable-a2': 'Countable & Uncountable (A2)',
+    'frequency-adverbs-a2': 'Adverbs of frequency (A2)',
+    'have-to-a2': "Have to / Must (A2)",
+    'should-a2': "Should / Shouldn't (A2)",
+    'object-pronouns-a2': 'Object pronouns (A2)',
     'passive-voice-b2': 'Passive Voice (B2)',
     'reported-speech-b2': 'Reported Speech (B2)',
     'used-to-b2': 'Used to / Be used to (B2)',

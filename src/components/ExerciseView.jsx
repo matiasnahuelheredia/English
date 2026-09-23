@@ -3,6 +3,8 @@ import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
 import { a1GrammarInfo } from '../data/a1GrammarData';
 import { a1VocabularyData, a1VocabularyTitles } from '../data/a1VocabularyData';
+import { a2GrammarInfo } from '../data/a2GrammarData';
+import { a2VocabularyData, a2VocabularyTitles } from '../data/a2VocabularyData';
 import { b1GrammarInfo } from '../data/b1GrammarData';
 import { b2GrammarInfo } from '../data/b2GrammarData';
 import MatchExercise from './MatchExercise';
@@ -524,6 +526,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'adverbs-phrases',
       'business',
       ...Object.keys(a1VocabularyData),
+      ...Object.keys(a2VocabularyData),
     ];
     const isVocabTopic = vocabTopics.includes(tenseId);
     setIsVocabulary(isVocabTopic);
@@ -1002,12 +1005,21 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         'Present Perfect & Past Simple (2) - Word Order',
     };
     const info =
-      a1GrammarInfo[tenseId] || b1GrammarInfo[tenseId] || b2GrammarInfo[tenseId];
+      a1GrammarInfo[tenseId] ||
+      a2GrammarInfo[tenseId] ||
+      b1GrammarInfo[tenseId] ||
+      b2GrammarInfo[tenseId];
+    const mixedTitles = {
+      'mixed-a1': 'A1 Mixed Practice',
+      'mixed-a2': 'A2 Mixed Practice',
+    };
     return (
       titles[tenseId] ||
       info?.title ||
       a1VocabularyTitles[tenseId] ||
-      (tenseId === 'mixed-a1' ? 'A1 Mixed Practice' : 'Exercises')
+      a2VocabularyTitles[tenseId] ||
+      mixedTitles[tenseId] ||
+      'Exercises'
     );
   };
 
@@ -1158,7 +1170,10 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       },
     };
     const info =
-      a1GrammarInfo[tenseId] || b1GrammarInfo[tenseId] || b2GrammarInfo[tenseId];
+      a1GrammarInfo[tenseId] ||
+      a2GrammarInfo[tenseId] ||
+      b1GrammarInfo[tenseId] ||
+      b2GrammarInfo[tenseId];
     return structures[tenseId] || info?.structure || null;
   };
 
@@ -1610,7 +1625,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                   {feedback.isCorrect ? '✓ Correct' : '✗ Incorrect'}
                 </p>
                 {/* Mostrar el tiempo verbal solo en Mixed Tenses */}
-                {(tenseId === 'mixed-tenses' || tenseId === 'mixed-a1') &&
+                {['mixed-tenses', 'mixed-a1', 'mixed-a2'].includes(tenseId) &&
                   feedback.tense && (
                   <p className="text-sm text-htb-green font-semibold mt-1 bg-htb-card inline-block px-3 py-1 rounded border border-htb-green/30">
                     📚 {feedback.tense}

@@ -337,7 +337,7 @@ const Introduction = ({ onSelectTense }) => {
           <button onClick={() => onSelectTense('present-simple')} className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
             🎯 Start with Present Simple
           </button>
-          <button onClick={() => onSelectTense('exam-1')} className="bg-htb-sidebar hover:bg-gray-700 border border-htb-green/30 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
+          <button onClick={() => onSelectTense('exam')} className="bg-htb-sidebar hover:bg-gray-700 border border-htb-green/30 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">
             📝 Take a Practice Exam
           </button>
         </div>
