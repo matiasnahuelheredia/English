@@ -2202,7 +2202,7 @@ const exercisesData = {
     },
   ],
 
-  'future-simple': [
+  'present-simple': [
     {
       sentenceParts: [
         { type: 'text', content: 'She' },
@@ -4356,7 +4356,7 @@ const getTenseName = (tenseId) => {
     'past-perfect': 'Past Perfect',
     'past-perfect-continuous': 'Past Perfect Continuous',
     'future-perfect-continuous': 'Future Perfect Continuous',
-    'future-simple': 'Present Simple',
+    'present-simple': 'Present Simple',
     'present-continuous': 'Present Continuous',
     'past-simple': 'Past Simple',
     'future-simple': 'Future Simple',
