@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
+import { a1GrammarInfo } from '../data/a1GrammarData';
+import { a1VocabularyData, a1VocabularyTitles } from '../data/a1VocabularyData';
 import { b1GrammarInfo } from '../data/b1GrammarData';
+import { b2GrammarInfo } from '../data/b2GrammarData';
 import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
@@ -520,6 +523,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'work',
       'adverbs-phrases',
       'business',
+      ...Object.keys(a1VocabularyData),
     ];
     const isVocabTopic = vocabTopics.includes(tenseId);
     setIsVocabulary(isVocabTopic);
@@ -566,6 +570,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         if (exercise.englishWord) {
           if (exercise.imageUrl) {
             setVocabularyImage(exercise.imageUrl);
+            setImageLoading(false);
+          } else if (exercise.emoji) {
+            setVocabularyImage(null);
             setImageLoading(false);
           } else {
             fetchVocabularyImage(exercise.englishWord);
@@ -648,6 +655,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         if (exercise.imageUrl) {
           setVocabularyImage(exercise.imageUrl);
           setImageLoading(false);
+        } else if (exercise.emoji) {
+          setVocabularyImage(null);
+          setImageLoading(false);
         } else {
           fetchVocabularyImage(exercise.englishWord);
         }
@@ -677,8 +687,20 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     setFeedback(null);
   };
 
+  // Normaliza para comparar: minúsculas, tildes ("medico" = "médico"), espacios,
+  // apóstrofo curvo (teclados del celular) y contracciones ("hadn't" = "had not")
   const normalizeAnswer = (answer) => {
-    return answer.toLowerCase().trim().replace(/\s+/g, ' ');
+    return answer
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[\u2018\u2019\u00b4`]/g, "'")
+      .replace(/\bcan't\b|\bcannot\b/g, 'can not')
+      .replace(/\bwon't\b/g, 'will not')
+      .replace(/\bshan't\b/g, 'shall not')
+      .replace(/n't\b/g, ' not')
+      .trim()
+      .replace(/\s+/g, ' ');
   };
 
   const checkAnswer = () => {
@@ -979,7 +1001,14 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'present-perfect-past-simple-2':
         'Present Perfect & Past Simple (2) - Word Order',
     };
-    return titles[tenseId] || b1GrammarInfo[tenseId]?.title || 'Exercises';
+    const info =
+      a1GrammarInfo[tenseId] || b1GrammarInfo[tenseId] || b2GrammarInfo[tenseId];
+    return (
+      titles[tenseId] ||
+      info?.title ||
+      a1VocabularyTitles[tenseId] ||
+      (tenseId === 'mixed-a1' ? 'A1 Mixed Practice' : 'Exercises')
+    );
   };
 
   const getTenseStructure = () => {
@@ -1128,7 +1157,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           "if, unless (hypothetical/unreal past situations that didn't happen)",
       },
     };
-    return structures[tenseId] || b1GrammarInfo[tenseId]?.structure || null;
+    const info =
+      a1GrammarInfo[tenseId] || b1GrammarInfo[tenseId] || b2GrammarInfo[tenseId];
+    return structures[tenseId] || info?.structure || null;
   };
 
   if (!currentExercise) {
@@ -1397,6 +1428,16 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
             ) : isVocabulary && currentExercise.englishWord ? (
               // Renderizado para vocabulario
               <div className="flex flex-col gap-4">
+                {/* Emoji del vocabulario (A1) */}
+                {currentExercise.emoji && (
+                  <div
+                    className="flex justify-center mb-2 text-7xl sm:text-8xl"
+                    aria-hidden="true"
+                  >
+                    {currentExercise.emoji}
+                  </div>
+                )}
+
                 {/* Imagen del vocabulario */}
                 {vocabularyImage && !imageLoading && (
                   <div className="flex justify-center mb-4">
@@ -1569,7 +1610,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                   {feedback.isCorrect ? '✓ Correct' : '✗ Incorrect'}
                 </p>
                 {/* Mostrar el tiempo verbal solo en Mixed Tenses */}
-                {tenseId === 'mixed-tenses' && feedback.tense && (
+                {(tenseId === 'mixed-tenses' || tenseId === 'mixed-a1') &&
+                  feedback.tense && (
                   <p className="text-sm text-htb-green font-semibold mt-1 bg-htb-card inline-block px-3 py-1 rounded border border-htb-green/30">
                     📚 {feedback.tense}
                   </p>

@@ -1,4 +1,5 @@
 // Base de datos de vocabulario con soporte para traducción bidireccional
+import { a1VocabularyData } from './a1VocabularyData';
 
 export const vocabularyData = {
   'clothes-fashion': [
@@ -2439,5 +2440,5 @@ export const vocabularyData = {
 };
 
 export const getVocabularyByTopic = (topicId) => {
-  return vocabularyData[topicId] || [];
+  return vocabularyData[topicId] || a1VocabularyData[topicId] || [];
 };

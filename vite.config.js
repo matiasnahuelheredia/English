@@ -31,6 +31,8 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+        // Descarga de modelos de IA en segundo plano (Background Fetch)
+        importScripts: ['ai-background-fetch.js'],
         // La librería de IA (transformers.js + su .wasm) se baja del CDN al
         // usarla por primera vez y queda guardada para funcionar sin internet
         runtimeCaching: [
