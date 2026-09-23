@@ -75,6 +75,7 @@ import ExpressionsIdiomsC1Exercise from './ExpressionsIdiomsC1Exercise';
 import UtensilsC1Exercise from './UtensilsC1Exercise';
 import TenseCorrectorAI from './TenseCorrectorAI';
 import OfflineMode from './OfflineMode';
+import ReportWritingAI from './ReportWritingAI';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -85,6 +86,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Página para preparar la app para usarla sin conexión
   if (tenseId === 'offline-mode') {
     return <OfflineMode />;
+  }
+
+  // Entrenador de escritura de informes de pentesting con IA
+  if (tenseId === 'report-writing') {
+    return <ReportWritingAI />;
   }
 
   // Si es ai-tense-corrector, mostrar el corrector con IA en el navegador

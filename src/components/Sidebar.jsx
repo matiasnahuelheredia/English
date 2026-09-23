@@ -863,6 +863,16 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                           {topic.name}
                         </button>
                       ))}
+                      <button
+                        onClick={() => onSelectTense('report-writing')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'report-writing'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        📝 Report Writing Trainer (AI)
+                      </button>
                     </div>
                   )}
                 </div>
