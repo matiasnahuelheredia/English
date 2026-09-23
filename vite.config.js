@@ -31,12 +31,16 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
-        // El motor de IA (.wasm) es muy grande para precachear: se guarda al usarlo
+        // La librería de IA (transformers.js + su .wasm) se baja del CDN al
+        // usarla por primera vez y queda guardada para funcionar sin internet
         runtimeCaching: [
           {
-            urlPattern: ({ url }) => url.pathname.endsWith('.wasm'),
+            urlPattern: ({ url }) => url.hostname === 'cdn.jsdelivr.net',
             handler: 'CacheFirst',
-            options: { cacheName: 'ai-wasm' },
+            options: {
+              cacheName: 'ai-library',
+              cacheableResponse: { statuses: [0, 200] },
+            },
           },
         ],
       },
