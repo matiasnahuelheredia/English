@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AI_MODELS, DEFAULT_MODEL_ID } from '../ai/models';
+import {
+  downloadId,
+  getRegistration,
+  isModelCached,
+  startModelDownload,
+} from '../ai/backgroundDownload';
 
 const TENSES = [
   'Present Simple',
@@ -59,7 +65,10 @@ const TenseCorrectorAI = () => {
   const [modelId, setModelId] = useState(getSavedModelId);
   const [tense, setTense] = useState(TENSES[0]);
   const [text, setText] = useState('');
-  const [status, setStatus] = useState('idle'); // idle | loading | ready | working
+  // idle | downloading (en segundo plano) | loading | ready | working
+  const [status, setStatus] = useState('idle');
+  const [bgProgress, setBgProgress] = useState(null);
+  const [bgSupported, setBgSupported] = useState(false);
   const [progress, setProgress] = useState({});
   const [device, setDevice] = useState(null);
   const [partial, setPartial] = useState('');
@@ -69,6 +78,8 @@ const TenseCorrectorAI = () => {
   const workerRef = useRef(null);
   const pendingRef = useRef(null);
   const readyRef = useRef(false);
+  const modelIdRef = useRef(modelId);
+  const bgFetchRef = useRef(null);
 
   const getWorker = () => {
     if (!workerRef.current) {
@@ -110,9 +121,81 @@ const TenseCorrectorAI = () => {
     return () => workerRef.current?.terminate();
   }, []);
 
+  const startWorkerLoad = () => {
+    setBgProgress(null);
+    setStatus('loading');
+    getWorker().postMessage({ type: 'load', modelId: modelIdRef.current });
+  };
+
+  const stopWatchingDownload = () => {
+    if (bgFetchRef.current) {
+      bgFetchRef.current.onprogress = null;
+      bgFetchRef.current = null;
+    }
+  };
+
+  const watchDownload = (bgFetch) => {
+    stopWatchingDownload();
+    bgFetchRef.current = bgFetch;
+    const update = () =>
+      setBgProgress({
+        downloaded: bgFetch.downloaded,
+        total: bgFetch.downloadTotal,
+      });
+    update();
+    bgFetch.onprogress = update;
+    setStatus('downloading');
+  };
+
+  // Si hay una descarga en segundo plano de este modelo, seguir mostrándola
+  useEffect(() => {
+    modelIdRef.current = modelId;
+    let cancelled = false;
+    getRegistration()
+      .then(async (registration) => {
+        if (cancelled) return;
+        setBgSupported(Boolean(registration));
+        const bgFetch = await registration?.backgroundFetch.get(
+          downloadId(modelId)
+        );
+        if (!cancelled && bgFetch && !readyRef.current) watchDownload(bgFetch);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+      stopWatchingDownload();
+    };
+  }, [modelId]);
+
+  // El service worker avisa cuando terminó (o falló) la descarga
+  useEffect(() => {
+    if (!('serviceWorker' in navigator)) return undefined;
+    const onMessage = ({ data }) => {
+      if (data?.id !== downloadId(modelIdRef.current)) return;
+      stopWatchingDownload();
+      if (data.type === 'ai-model-downloaded') {
+        startWorkerLoad();
+      } else if (data.type === 'ai-model-download-failed') {
+        setBgProgress(null);
+        setError(
+          data.failureReason === 'aborted'
+            ? 'Se canceló la descarga.'
+            : 'La descarga falló. Revisá la conexión y el espacio libre, y probá de nuevo.'
+        );
+        setStatus('idle');
+      }
+    };
+    navigator.serviceWorker.addEventListener('message', onMessage);
+    return () =>
+      navigator.serviceWorker.removeEventListener('message', onMessage);
+  }, []);
+
   // Al cambiar de modelo se cierra el worker para liberar la memoria del anterior
   const changeModel = (id) => {
     if (id === modelId || status === 'loading' || status === 'working') return;
+    // Una descarga en segundo plano sigue aunque cambies de modelo
+    stopWatchingDownload();
+    setBgProgress(null);
     try {
       localStorage.setItem(MODEL_STORAGE_KEY, id);
     } catch {
@@ -133,14 +216,36 @@ const TenseCorrectorAI = () => {
 
   const selectedModel = AI_MODELS.find((m) => m.id === modelId);
 
-  const loadModel = () => {
+  const loadModel = async () => {
     setError(null);
-    setStatus('loading');
-    getWorker().postMessage({ type: 'load', modelId });
+    // Con Background Fetch la descarga sigue aunque cambies de app
+    try {
+      const registration = await getRegistration();
+      if (registration && !(await isModelCached(modelId))) {
+        const bgFetch = await startModelDownload(
+          registration,
+          modelId,
+          `Descargando IA para inglés (${selectedModel.name})`
+        );
+        if (bgFetch) {
+          watchDownload(bgFetch);
+          return;
+        }
+      }
+    } catch {
+      // Si Background Fetch falla, se descarga desde la página
+    }
+    startWorkerLoad();
   };
 
   const correct = () => {
     if (!text.trim() || status === 'working' || status === 'loading') return;
+    if (status === 'downloading') return;
+    if (!readyRef.current && bgSupported) {
+      // Primero hay que bajar el modelo (en segundo plano)
+      loadModel();
+      return;
+    }
     setError(null);
     setResult(null);
     setPartial('');
@@ -230,12 +335,50 @@ const TenseCorrectorAI = () => {
             <p className="text-htb-text text-sm mb-2">
               Cargando la IA... {total ? `${formatMB(loaded)} / ${formatMB(total)}` : ''}
             </p>
+            {!bgSupported && percent < 100 && (
+              <p className="text-xs text-yellow-400 mb-2">
+                Tu navegador no permite descargar en segundo plano: no cambies
+                de app ni bloquees la pantalla hasta que termine.
+              </p>
+            )}
             <div className="w-full h-2 bg-htb-sidebar rounded">
               <div
                 className="h-2 bg-htb-green rounded transition-all"
                 style={{ width: `${percent}%` }}
               />
             </div>
+          </div>
+        )}
+
+        {status === 'downloading' && (
+          <div className="mb-6 p-4 rounded-md bg-htb-card border border-htb-green/30">
+            <p className="text-htb-text text-sm mb-2">
+              Descargando "{selectedModel.name}" en segundo plano...{' '}
+              {bgProgress?.downloaded
+                ? bgProgress.total
+                  ? `${formatMB(bgProgress.downloaded)} / ${formatMB(
+                      bgProgress.total
+                    )}`
+                  : formatMB(bgProgress.downloaded)
+                : ''}
+            </p>
+            {bgProgress?.total > 0 && (
+              <div className="w-full h-2 bg-htb-sidebar rounded mb-2">
+                <div
+                  className="h-2 bg-htb-green rounded transition-all"
+                  style={{
+                    width: `${Math.min(
+                      100,
+                      Math.round((bgProgress.downloaded / bgProgress.total) * 100)
+                    )}%`,
+                  }}
+                />
+              </div>
+            )}
+            <p className="text-xs text-htb-text-dim">
+              Podés cambiar de app o bloquear el celular: la descarga sigue y te
+              avisa con una notificación. Cuando termine, la IA se carga sola.
+            </p>
           </div>
         )}
 
@@ -280,7 +423,12 @@ const TenseCorrectorAI = () => {
 
           <button
             onClick={correct}
-            disabled={!text.trim() || status === 'working' || status === 'loading'}
+            disabled={
+              !text.trim() ||
+              status === 'working' ||
+              status === 'loading' ||
+              status === 'downloading'
+            }
             className="mt-4 bg-htb-green hover:bg-htb-green-hover disabled:opacity-50 disabled:cursor-not-allowed text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
           >
             {status === 'working' ? 'Corrigiendo...' : 'Corregir con IA'}
