@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
+import { b1GrammarInfo } from '../data/b1GrammarData';
 import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
@@ -948,7 +949,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'present-perfect-past-simple-2':
         'Present Perfect & Past Simple (2) - Word Order',
     };
-    return titles[tenseId] || 'Exercises';
+    return titles[tenseId] || b1GrammarInfo[tenseId]?.title || 'Exercises';
   };
 
   const getTenseStructure = () => {
@@ -1097,7 +1098,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           "if, unless (hypothetical/unreal past situations that didn't happen)",
       },
     };
-    return structures[tenseId] || null;
+    return structures[tenseId] || b1GrammarInfo[tenseId]?.structure || null;
   };
 
   if (!currentExercise) {

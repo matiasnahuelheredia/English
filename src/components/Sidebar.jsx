@@ -475,6 +475,28 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                       >
                         Present Perfect & Past Simple (2)
                       </button>
+                      {[
+                        { id: 'present-perfect-b1', name: 'Present Perfect' },
+                        { id: 'past-simple-b1', name: 'Past Simple' },
+                        { id: 'past-continuous-b1', name: 'Past Continuous' },
+                        { id: 'past-perfect-b1', name: 'Past Perfect' },
+                        {
+                          id: 'narrative-tenses-b1',
+                          name: 'Narrative Tenses (3 pasts)',
+                        },
+                      ].map((topic) => (
+                        <button
+                          key={topic.id}
+                          onClick={() => onSelectTense(topic.id)}
+                          className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                            selectedTense === topic.id
+                              ? 'bg-htb-green text-htb-bg font-medium'
+                              : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                          }`}
+                        >
+                          {topic.name}
+                        </button>
+                      ))}
                     </div>
                   )}
 
