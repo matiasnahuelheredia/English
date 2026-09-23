@@ -1,3 +1,5 @@
+// Worker genérico: carga un modelo de texto y genera respuestas en el navegador.
+
 // transformers.js se carga desde el CDN en tiempo de ejecución (y el service
 // worker lo guarda para usarlo sin internet). No se empaqueta en el build porque
 // su código minificado dispara un falso positivo del secret scanning de GitHub
@@ -63,32 +65,6 @@ const loadGenerator = (modelId) => {
   return generatorPromise;
 };
 
-const buildMessages = (tense, text) => [
-  {
-    role: 'system',
-    content:
-      'You are an English teacher correcting a Spanish-speaking student. ' +
-      'Fix grammar mistakes in the student text, especially verb tense mistakes. ' +
-      'Keep the meaning and change as little as possible. ' +
-      'Answer ONLY in this exact format:\n' +
-      'CORRECTED: <the corrected text in English>\n' +
-      'EXPLANATION: <a short explanation in Spanish of each mistake, or "Todo correcto" if there are no mistakes>',
-  },
-  {
-    role: 'user',
-    content: `Target tense: ${tense}\nStudent text: ${text}`,
-  },
-];
-
-const parseAnswer = (raw) => {
-  const corrected = raw.match(/CORRECTED:\s*([\s\S]*?)(?:\n\s*EXPLANATION:|$)/i);
-  const explanation = raw.match(/EXPLANATION:\s*([\s\S]*)$/i);
-  return {
-    corrected: corrected ? corrected[1].trim() : raw.trim(),
-    explanation: explanation ? explanation[1].trim() : '',
-  };
-};
-
 self.addEventListener('message', async ({ data }) => {
   try {
     if (data.type === 'load') {
@@ -96,7 +72,8 @@ self.addEventListener('message', async ({ data }) => {
       return;
     }
 
-    if (data.type === 'correct') {
+    // La página arma los mensajes (prompt) y recibe el texto generado
+    if (data.type === 'generate') {
       const generator = await loadGenerator(data.modelId);
       const { TextStreamer } = await loadTransformers();
       let raw = '';
@@ -109,14 +86,14 @@ self.addEventListener('message', async ({ data }) => {
         },
       });
 
-      const output = await generator(buildMessages(data.tense, data.text), {
-        max_new_tokens: 300,
+      const output = await generator(data.messages, {
+        max_new_tokens: data.maxNewTokens ?? 300,
         do_sample: false,
         streamer,
       });
 
       const answer = output[0].generated_text.at(-1).content;
-      self.postMessage({ type: 'result', ...parseAnswer(answer) });
+      self.postMessage({ type: 'result', text: answer });
     }
   } catch (error) {
     self.postMessage({ type: 'error', message: String(error?.message || error) });
