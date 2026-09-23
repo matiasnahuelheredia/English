@@ -810,6 +810,25 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                       >
                         Hacking Terms
                       </button>
+                      {[
+                        { id: 'pentest-findings', name: 'Web Pentest Findings' },
+                        {
+                          id: 'pentest-report',
+                          name: 'Pentest Report Writing',
+                        },
+                      ].map((topic) => (
+                        <button
+                          key={topic.id}
+                          onClick={() => onSelectTense(topic.id)}
+                          className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                            selectedTense === topic.id
+                              ? 'bg-htb-green text-htb-bg font-medium'
+                              : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                          }`}
+                        >
+                          {topic.name}
+                        </button>
+                      ))}
                     </div>
                   )}
                 </div>
