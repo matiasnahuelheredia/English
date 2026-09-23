@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useLocalAI from '../ai/useLocalAI';
 import AIModelPanel from './AIModelPanel';
+import AIGenerationProgress from './AIGenerationProgress';
 
 const TENSES = [
   'Present Simple',
@@ -150,13 +151,7 @@ const TenseCorrectorAI = () => {
           </span>
         </div>
 
-        {ai.status === 'working' && ai.partial && (
-          <div className="mt-4 p-4 rounded-md bg-htb-sidebar border border-htb-green/30">
-            <p className="text-sm text-htb-text-dim whitespace-pre-wrap">
-              {ai.partial}
-            </p>
-          </div>
-        )}
+        <AIGenerationProgress ai={ai} />
 
         {result && (
           <div

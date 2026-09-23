@@ -23,8 +23,13 @@ const loadTransformers = () => {
 // El modelo lo elige la página (ver src/ai/models.js); cada worker carga uno solo
 let generatorPromise = null;
 let loadedModelId = null;
+// Permite detener una generación en curso ("Detener")
+let stoppingCriteria = null;
 
-const pickDevice = async () => {
+const pickDevice = async (preference) => {
+  // "Solo CPU": más lento, pero no satura la placa de video (en algunos
+  // celulares la GPU trabada hace que toda la página se congele)
+  if (preference === 'wasm') return 'wasm';
   try {
     if (navigator.gpu && (await navigator.gpu.requestAdapter())) {
       return 'webgpu';
@@ -35,12 +40,12 @@ const pickDevice = async () => {
   return 'wasm';
 };
 
-const loadGenerator = (modelId) => {
+const loadGenerator = (modelId, devicePreference) => {
   if (!generatorPromise || loadedModelId !== modelId) {
     loadedModelId = modelId;
     generatorPromise = (async () => {
       const { pipeline } = await loadTransformers();
-      const device = await pickDevice();
+      const device = await pickDevice(devicePreference);
       const generator = await pipeline('text-generation', modelId, {
         device,
         dtype: 'q4',
@@ -68,21 +73,36 @@ const loadGenerator = (modelId) => {
 self.addEventListener('message', async ({ data }) => {
   try {
     if (data.type === 'load') {
-      await loadGenerator(data.modelId);
+      await loadGenerator(data.modelId, data.device);
+      return;
+    }
+
+    if (data.type === 'interrupt') {
+      stoppingCriteria?.interrupt();
       return;
     }
 
     // La página arma los mensajes (prompt) y recibe el texto generado
     if (data.type === 'generate') {
-      const generator = await loadGenerator(data.modelId);
-      const { TextStreamer } = await loadTransformers();
+      const generator = await loadGenerator(data.modelId, data.device);
+      const { TextStreamer, InterruptableStoppingCriteria } =
+        await loadTransformers();
+      stoppingCriteria = new InterruptableStoppingCriteria();
       let raw = '';
+      let tokens = 0;
+      let lastPost = 0;
       const streamer = new TextStreamer(generator.tokenizer, {
         skip_prompt: true,
         skip_special_tokens: true,
         callback_function: (chunk) => {
           raw += chunk;
-          self.postMessage({ type: 'partial', text: raw });
+          tokens += 1;
+          // Como mucho ~7 actualizaciones por segundo, para no saturar la página
+          const now = Date.now();
+          if (now - lastPost > 150) {
+            lastPost = now;
+            self.postMessage({ type: 'partial', text: raw, tokens });
+          }
         },
       });
 
@@ -90,12 +110,17 @@ self.addEventListener('message', async ({ data }) => {
         max_new_tokens: data.maxNewTokens ?? 300,
         do_sample: false,
         streamer,
+        stopping_criteria: stoppingCriteria,
       });
+      stoppingCriteria = null;
 
       const answer = output[0].generated_text.at(-1).content;
       self.postMessage({ type: 'result', text: answer });
     }
   } catch (error) {
-    self.postMessage({ type: 'error', message: String(error?.message || error) });
+    self.postMessage({
+      type: 'error',
+      message: String(error?.message || error),
+    });
   }
 });
