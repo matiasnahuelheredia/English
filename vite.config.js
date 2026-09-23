@@ -31,8 +31,19 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+        // El motor de IA (.wasm) es muy grande para precachear: se guarda al usarlo
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.endsWith('.wasm'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'ai-wasm' },
+          },
+        ],
       },
     }),
   ],
+  worker: {
+    format: 'es',
+  },
   base: process.env.NODE_ENV === 'production' ? '/English/' : '/',
 })

@@ -60,11 +60,17 @@ import AnimalsBirdsInsectsC1Exercise from './AnimalsBirdsInsectsC1Exercise';
 import AnimalIssuesC1Exercise from './AnimalIssuesC1Exercise';
 import ExpressionsIdiomsC1Exercise from './ExpressionsIdiomsC1Exercise';
 import UtensilsC1Exercise from './UtensilsC1Exercise';
+import TenseCorrectorAI from './TenseCorrectorAI';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
   if (tenseId === 'introduction') {
     return <Introduction onSelectTense={onSelectTense} />;
+  }
+
+  // Si es ai-tense-corrector, mostrar el corrector con IA en el navegador
+  if (tenseId === 'ai-tense-corrector') {
+    return <TenseCorrectorAI />;
   }
 
   // Si es conflict-warfare, mostrar el componente ConflictWarfareExercise

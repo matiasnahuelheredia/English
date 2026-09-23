@@ -851,6 +851,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       >
                         All Tenses Mixed
                       </button>
+                      <button
+                        onClick={() => onSelectTense('ai-tense-corrector')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'ai-tense-corrector'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        ✨ AI Tense Corrector
+                      </button>
                     </div>
                   )}
 
