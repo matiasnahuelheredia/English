@@ -2,6 +2,7 @@
 import { a1GrammarExercises } from './a1GrammarData';
 import { a2GrammarExercises } from './a2GrammarData';
 import { c2GrammarExercises } from './c2GrammarData';
+import { pentestGrammarExercises } from './pentestGrammarData';
 import { b1GrammarExercises } from './b1GrammarData';
 import { b2GrammarExercises } from './b2GrammarData';
 
@@ -19,6 +20,7 @@ const exercisesData = {
   ...a1GrammarExercises,
   ...a2GrammarExercises,
   ...c2GrammarExercises,
+  ...pentestGrammarExercises,
   ...b1GrammarExercises,
   ...b2GrammarExercises,
   'present-perfect': [
@@ -4319,6 +4321,7 @@ export const getExercisesByTense = (tenseId) => {
     'mixed-a1': a1GrammarExercises,
     'mixed-a2': a2GrammarExercises,
     'mixed-c2': c2GrammarExercises,
+    'mixed-pentest': pentestGrammarExercises,
   }[tenseId];
   if (levelExercises) {
     const all = Object.keys(levelExercises).flatMap((key) =>
@@ -4406,6 +4409,10 @@ const getTenseName = (tenseId) => {
     'participle-clauses-c2': 'Participle Clauses (C2)',
     'advanced-conditionals-c2': 'Advanced Conditionals (C2)',
     'ellipsis-substitution-c2': 'Ellipsis & Substitution (C2)',
+    'report-passive-voice': 'Passive Voice (Report)',
+    'report-recommendations': 'Recommendations (Report)',
+    'report-impact-conditionals': 'Impact / Conditionals (Report)',
+    'report-findings-structures': 'Presenting Findings (Report)',
     'passive-voice-b2': 'Passive Voice (B2)',
     'reported-speech-b2': 'Reported Speech (B2)',
     'used-to-b2': 'Used to / Be used to (B2)',
