@@ -11,6 +11,7 @@ import {
   pentestVocabularyData,
   pentestVocabularyTitles,
 } from '../data/pentestVocabularyData';
+import { pentestGrammarInfo } from '../data/pentestGrammarData';
 import { b1GrammarInfo } from '../data/b1GrammarData';
 import { b2GrammarInfo } from '../data/b2GrammarData';
 import MatchExercise from './MatchExercise';
@@ -74,6 +75,7 @@ import ExpressionsIdiomsC1Exercise from './ExpressionsIdiomsC1Exercise';
 import UtensilsC1Exercise from './UtensilsC1Exercise';
 import TenseCorrectorAI from './TenseCorrectorAI';
 import OfflineMode from './OfflineMode';
+import ReportWritingAI from './ReportWritingAI';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -84,6 +86,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Página para preparar la app para usarla sin conexión
   if (tenseId === 'offline-mode') {
     return <OfflineMode />;
+  }
+
+  // Entrenador de escritura de informes de pentesting con IA
+  if (tenseId === 'report-writing') {
+    return <ReportWritingAI />;
   }
 
   // Si es ai-tense-corrector, mostrar el corrector con IA en el navegador
@@ -1004,11 +1011,13 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       a2GrammarInfo[tenseId] ||
       b1GrammarInfo[tenseId] ||
       b2GrammarInfo[tenseId] ||
-      c2GrammarInfo[tenseId];
+      c2GrammarInfo[tenseId] ||
+      pentestGrammarInfo[tenseId];
     const mixedTitles = {
       'mixed-a1': 'A1 Mixed Practice',
       'mixed-a2': 'A2 Mixed Practice',
       'mixed-c2': 'C2 Mixed Practice',
+      'mixed-pentest': 'Pentest Report Grammar - Mixed',
     };
     return (
       titles[tenseId] ||
@@ -1173,7 +1182,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       a2GrammarInfo[tenseId] ||
       b1GrammarInfo[tenseId] ||
       b2GrammarInfo[tenseId] ||
-      c2GrammarInfo[tenseId];
+      c2GrammarInfo[tenseId] ||
+      pentestGrammarInfo[tenseId];
     return structures[tenseId] || info?.structure || null;
   };
 
@@ -1625,7 +1635,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                   {feedback.isCorrect ? '✓ Correct' : '✗ Incorrect'}
                 </p>
                 {/* Mostrar el tiempo verbal solo en Mixed Tenses */}
-                {['mixed-tenses', 'mixed-a1', 'mixed-a2', 'mixed-c2'].includes(tenseId) &&
+                {['mixed-tenses', 'mixed-a1', 'mixed-a2', 'mixed-c2', 'mixed-pentest'].includes(
+                    tenseId
+                  ) &&
                   feedback.tense && (
                   <p className="text-sm text-htb-green font-semibold mt-1 bg-htb-card inline-block px-3 py-1 rounded border border-htb-green/30">
                     📚 {feedback.tense}

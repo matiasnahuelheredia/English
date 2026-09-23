@@ -829,6 +829,50 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                           {topic.name}
                         </button>
                       ))}
+                      <p className="mt-2 mb-1 px-3 text-[10px] uppercase tracking-wide text-htb-text-dim">
+                        Report Grammar
+                      </p>
+                      {[
+                        { id: 'report-passive-voice', name: 'Passive Voice' },
+                        {
+                          id: 'report-recommendations',
+                          name: 'Recommendations (should / must)',
+                        },
+                        {
+                          id: 'report-impact-conditionals',
+                          name: 'Describing Impact (would / could)',
+                        },
+                        {
+                          id: 'report-findings-structures',
+                          name: 'Presenting Findings',
+                        },
+                        {
+                          id: 'mixed-pentest',
+                          name: '🔀 Report Grammar (mixed)',
+                        },
+                      ].map((topic) => (
+                        <button
+                          key={topic.id}
+                          onClick={() => onSelectTense(topic.id)}
+                          className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                            selectedTense === topic.id
+                              ? 'bg-htb-green text-htb-bg font-medium'
+                              : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                          }`}
+                        >
+                          {topic.name}
+                        </button>
+                      ))}
+                      <button
+                        onClick={() => onSelectTense('report-writing')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'report-writing'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        📝 Report Writing Trainer (AI)
+                      </button>
                     </div>
                   )}
                 </div>
