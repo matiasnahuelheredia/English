@@ -1,4 +1,22 @@
-import { pipeline, TextStreamer } from '@huggingface/transformers';
+// transformers.js se carga desde el CDN en tiempo de ejecución (y el service
+// worker lo guarda para usarlo sin internet). No se empaqueta en el build porque
+// su código minificado dispara un falso positivo del secret scanning de GitHub
+// ("Mistral AI API Key") y bloquea el deploy a gh-pages.
+const TRANSFORMERS_URL =
+  'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.0/dist/transformers.min.js';
+
+let transformersPromise = null;
+const loadTransformers = () => {
+  if (!transformersPromise) {
+    transformersPromise = import(/* @vite-ignore */ TRANSFORMERS_URL).catch(
+      (error) => {
+        transformersPromise = null;
+        throw error;
+      }
+    );
+  }
+  return transformersPromise;
+};
 
 // Modelo pequeño (~500 MB) que corre 100% en el navegador.
 // Se descarga una sola vez y queda guardado en la caché del navegador.
@@ -20,6 +38,7 @@ const pickDevice = async () => {
 const loadGenerator = () => {
   if (!generatorPromise) {
     generatorPromise = (async () => {
+      const { pipeline } = await loadTransformers();
       const device = await pickDevice();
       const generator = await pipeline('text-generation', MODEL_ID, {
         device,
@@ -80,6 +99,7 @@ self.addEventListener('message', async ({ data }) => {
 
     if (data.type === 'correct') {
       const generator = await loadGenerator();
+      const { TextStreamer } = await loadTransformers();
       let raw = '';
       const streamer = new TextStreamer(generator.tokenizer, {
         skip_prompt: true,
