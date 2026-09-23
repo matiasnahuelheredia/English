@@ -883,6 +883,21 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     }
   };
 
+  // En vocabulario, una vez respondida la palabra (o acabado el tiempo),
+  // permitir pasar a la siguiente apretando Enter
+  useEffect(() => {
+    if (!isVocabulary || !feedback) return;
+
+    const handleEnterNext = (e) => {
+      if (e.key !== 'Enter' || e.repeat) return;
+      e.preventDefault();
+      loadNewQuestion();
+    };
+
+    window.addEventListener('keydown', handleEnterNext);
+    return () => window.removeEventListener('keydown', handleEnterNext);
+  }, [isVocabulary, feedback, remainingVocabExercises, exercises, isReversed]);
+
   const getTenseTitle = () => {
     const titles = {
       'present-simple': 'Present Simple',
@@ -1485,7 +1500,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                   <span className="font-bold text-htb-green text-lg">
                     {countdown}
                   </span>{' '}
-                  second{countdown !== 1 ? 's' : ''}
+                  second{countdown !== 1 ? 's' : ''} · press Enter for the next
+                  word
                 </p>
               </div>
             )}
@@ -1494,7 +1510,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
             {isVocabulary && feedback && feedback.isCorrect && (
               <div className="mt-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
                 <p className="text-sm text-htb-green">
-                  ⏳ Loading next question in 5 seconds...
+                  ⏳ Loading next question in 5 seconds... (press Enter to
+                  skip)
                 </p>
               </div>
             )}
@@ -1568,6 +1585,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                       className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
                     >
                       Next question →
+                      {isVocabulary && (
+                        <span className="ml-2 text-xs opacity-70">(Enter)</span>
+                      )}
                     </button>
                   )}
                 </>
