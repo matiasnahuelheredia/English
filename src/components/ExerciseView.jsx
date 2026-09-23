@@ -391,6 +391,32 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const initialIntervalRef = useRef(null);
   const feedbackTimerRef = useRef(null);
   const feedbackIntervalRef = useRef(null);
+  // Mazo mezclado: cada ejercicio sale una vez, en orden aleatorio, antes de repetirse
+  const deckRef = useRef([]);
+
+  const shuffle = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const drawFromDeck = (list, current) => {
+    if (deckRef.current.length === 0) {
+      deckRef.current = shuffle(list);
+      // Evitar que el primero del mazo nuevo sea el mismo que el anterior
+      const last = deckRef.current.length - 1;
+      if (last > 0 && deckRef.current[last] === current) {
+        [deckRef.current[0], deckRef.current[last]] = [
+          deckRef.current[last],
+          deckRef.current[0],
+        ];
+      }
+    }
+    return deckRef.current.pop();
+  };
 
   // Función para obtener imagen relacionada con la palabra
   const fetchVocabularyImage = async (word) => {
@@ -518,9 +544,12 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     setReorderedWords([]);
     setAvailableWords([]);
 
+    deckRef.current = [];
+
     if (loadedExercises.length > 0) {
-      const randomIndex = Math.floor(Math.random() * loadedExercises.length);
-      const exercise = loadedExercises[randomIndex];
+      const exercise = isVocabTopic
+        ? loadedExercises[Math.floor(Math.random() * loadedExercises.length)]
+        : drawFromDeck(loadedExercises, null);
       setCurrentExercise(exercise);
 
       // Initialize reorder exercise
@@ -528,7 +557,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         exercise.sentenceParts &&
         exercise.sentenceParts[0]?.type === 'reorder'
       ) {
-        setAvailableWords([...exercise.words]);
+        setAvailableWords(shuffle(exercise.words));
       }
 
       if (isVocabTopic) {
@@ -578,8 +607,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     if (exercisesToUse.length > 0) {
       clearAllTimers();
 
-      const randomIndex = Math.floor(Math.random() * exercisesToUse.length);
-      const exercise = exercisesToUse[randomIndex];
+      const exercise = isVocabulary
+        ? exercisesToUse[Math.floor(Math.random() * exercisesToUse.length)]
+        : drawFromDeck(exercisesToUse, currentExercise);
       setCurrentExercise(exercise);
       setUserAnswer('');
       setUserAnswers([]);
@@ -593,7 +623,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         exercise.sentenceParts[0]?.type === 'reorder'
       ) {
         setReorderedWords([]);
-        setAvailableWords([...exercise.words]);
+        setAvailableWords(shuffle(exercise.words));
       } else {
         setReorderedWords([]);
         setAvailableWords([]);
@@ -605,7 +635,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         exercise.sentenceParts[0]?.type === 'reorder'
       ) {
         setReorderedWords([]);
-        setAvailableWords([...exercise.words]);
+        setAvailableWords(shuffle(exercise.words));
       } else {
         setReorderedWords([]);
         setAvailableWords([]);
