@@ -18,11 +18,9 @@ const loadTransformers = () => {
   return transformersPromise;
 };
 
-// Modelo pequeño (~500 MB) que corre 100% en el navegador.
-// Se descarga una sola vez y queda guardado en la caché del navegador.
-const MODEL_ID = 'onnx-community/Qwen2.5-0.5B-Instruct';
-
+// El modelo lo elige la página (ver src/ai/models.js); cada worker carga uno solo
 let generatorPromise = null;
+let loadedModelId = null;
 
 const pickDevice = async () => {
   try {
@@ -35,12 +33,13 @@ const pickDevice = async () => {
   return 'wasm';
 };
 
-const loadGenerator = () => {
-  if (!generatorPromise) {
+const loadGenerator = (modelId) => {
+  if (!generatorPromise || loadedModelId !== modelId) {
+    loadedModelId = modelId;
     generatorPromise = (async () => {
       const { pipeline } = await loadTransformers();
       const device = await pickDevice();
-      const generator = await pipeline('text-generation', MODEL_ID, {
+      const generator = await pipeline('text-generation', modelId, {
         device,
         dtype: 'q4',
         progress_callback: (p) => {
@@ -93,12 +92,12 @@ const parseAnswer = (raw) => {
 self.addEventListener('message', async ({ data }) => {
   try {
     if (data.type === 'load') {
-      await loadGenerator();
+      await loadGenerator(data.modelId);
       return;
     }
 
     if (data.type === 'correct') {
-      const generator = await loadGenerator();
+      const generator = await loadGenerator(data.modelId);
       const { TextStreamer } = await loadTransformers();
       let raw = '';
       const streamer = new TextStreamer(generator.tokenizer, {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { AI_MODELS, DEFAULT_MODEL_ID } from '../ai/models';
 
 const TENSES = [
   'Present Simple',
@@ -42,7 +43,20 @@ const PROMPTS = {
 
 const formatMB = (bytes) => `${Math.round(bytes / 1024 / 1024)} MB`;
 
+const MODEL_STORAGE_KEY = 'aiCorrectorModel';
+
+const getSavedModelId = () => {
+  try {
+    const saved = localStorage.getItem(MODEL_STORAGE_KEY);
+    if (AI_MODELS.some((m) => m.id === saved)) return saved;
+  } catch {
+    // Sin localStorage: usar el modelo por defecto
+  }
+  return DEFAULT_MODEL_ID;
+};
+
 const TenseCorrectorAI = () => {
+  const [modelId, setModelId] = useState(getSavedModelId);
   const [tense, setTense] = useState(TENSES[0]);
   const [text, setText] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | ready | working
@@ -96,10 +110,33 @@ const TenseCorrectorAI = () => {
     return () => workerRef.current?.terminate();
   }, []);
 
+  // Al cambiar de modelo se cierra el worker para liberar la memoria del anterior
+  const changeModel = (id) => {
+    if (id === modelId || status === 'loading' || status === 'working') return;
+    try {
+      localStorage.setItem(MODEL_STORAGE_KEY, id);
+    } catch {
+      // No se pudo guardar la preferencia; se usa solo en esta sesión
+    }
+    workerRef.current?.terminate();
+    workerRef.current = null;
+    readyRef.current = false;
+    pendingRef.current = null;
+    setModelId(id);
+    setDevice(null);
+    setProgress({});
+    setPartial('');
+    setResult(null);
+    setError(null);
+    setStatus('idle');
+  };
+
+  const selectedModel = AI_MODELS.find((m) => m.id === modelId);
+
   const loadModel = () => {
     setError(null);
     setStatus('loading');
-    getWorker().postMessage({ type: 'load' });
+    getWorker().postMessage({ type: 'load', modelId });
   };
 
   const correct = () => {
@@ -109,7 +146,12 @@ const TenseCorrectorAI = () => {
     setPartial('');
     pendingRef.current = true;
     setStatus(device ? 'working' : 'loading');
-    getWorker().postMessage({ type: 'correct', tense, text: text.trim() });
+    getWorker().postMessage({
+      type: 'correct',
+      modelId,
+      tense,
+      text: text.trim(),
+    });
   };
 
   const files = Object.values(progress);
@@ -133,12 +175,46 @@ const TenseCorrectorAI = () => {
           ningún servidor.
         </p>
 
+        <div className="mb-6">
+          <p className="text-sm text-htb-text mb-2">Modelo de IA</p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {AI_MODELS.map((m) => (
+              <button
+                key={m.id}
+                onClick={() => changeModel(m.id)}
+                disabled={status === 'loading' || status === 'working'}
+                aria-pressed={m.id === modelId}
+                className={`text-left p-3 rounded-md border transition-colors disabled:cursor-not-allowed ${
+                  m.id === modelId
+                    ? 'border-htb-green bg-htb-card'
+                    : 'border-gray-700 bg-htb-sidebar hover:border-htb-green/50'
+                }`}
+              >
+                <span className="flex items-center justify-between">
+                  <span
+                    className={`font-semibold ${
+                      m.id === modelId ? 'text-htb-green' : 'text-white'
+                    }`}
+                  >
+                    {m.id === modelId ? '● ' : '○ '}
+                    {m.name}
+                  </span>
+                  <span className="text-xs text-htb-text-dim">{m.size}</span>
+                </span>
+                <span className="block text-xs text-htb-text-dim mt-1">
+                  {m.description}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
         {status === 'idle' && !device && (
           <div className="mb-6 p-4 rounded-md bg-htb-card border border-htb-green/30">
             <p className="text-htb-text text-sm mb-3">
-              La primera vez se descarga el modelo de IA (~500 MB). Después
-              queda guardado en el dispositivo y funciona sin internet. Te
-              recomendamos usar Wi-Fi.
+              La primera vez se descarga el modelo "{selectedModel.name}" (
+              {selectedModel.size}). Después queda guardado en el dispositivo y
+              funciona sin internet. Te recomendamos usar Wi-Fi.
             </p>
             <button
               onClick={loadModel}
@@ -165,7 +241,8 @@ const TenseCorrectorAI = () => {
 
         {device && (
           <p className="text-xs text-htb-text-dim mb-4">
-            🟢 IA lista ({device === 'webgpu' ? 'GPU' : 'CPU, puede ser más lenta'})
+            🟢 IA lista: {selectedModel.name} (
+            {device === 'webgpu' ? 'GPU' : 'CPU, puede ser más lenta'})
           </p>
         )}
 
