@@ -40,6 +40,34 @@ const AIModelPanel = ({ ai }) => (
       </div>
     </div>
 
+    <div className="mb-6">
+      <p className="text-sm text-htb-text mb-2">Procesador</p>
+      <div className="flex flex-wrap gap-2">
+        {[
+          { id: 'auto', label: '⚡ Automático (GPU si hay)' },
+          { id: 'wasm', label: '🐢 Solo CPU (más fluido)' },
+        ].map((option) => (
+          <button
+            key={option.id}
+            onClick={() => ai.changeDevicePreference(option.id)}
+            disabled={ai.isBusy}
+            aria-pressed={ai.devicePreference === option.id}
+            className={`text-sm px-3 py-1.5 rounded-md border transition-colors disabled:cursor-not-allowed ${
+              ai.devicePreference === option.id
+                ? 'border-htb-green bg-htb-card text-htb-green'
+                : 'border-gray-700 bg-htb-sidebar text-htb-text-dim hover:border-htb-green/50'
+            }`}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+      <p className="text-xs text-htb-text-dim mt-1">
+        Si la página se traba mientras la IA trabaja, elegí "Solo CPU": tarda
+        más, pero no congela el celular.
+      </p>
+    </div>
+
     {ai.status === 'idle' && !ai.isReady && (
       <div className="mb-6 p-4 rounded-md bg-htb-card border border-htb-green/30">
         <p className="text-htb-text text-sm mb-3">

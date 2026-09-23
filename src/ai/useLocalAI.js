@@ -12,6 +12,18 @@ import {
 // emails con IA.
 
 const MODEL_STORAGE_KEY = 'aiCorrectorModel';
+const DEVICE_STORAGE_KEY = 'aiDevicePreference';
+
+// 'auto' = GPU si hay (más rápido) | 'wasm' = solo CPU (más lento, más fluido)
+const getSavedDevicePreference = () => {
+  try {
+    return localStorage.getItem(DEVICE_STORAGE_KEY) === 'wasm'
+      ? 'wasm'
+      : 'auto';
+  } catch {
+    return 'auto';
+  }
+};
 
 const getSavedModelId = () => {
   try {
@@ -25,6 +37,9 @@ const getSavedModelId = () => {
 
 const useLocalAI = () => {
   const [modelId, setModelId] = useState(getSavedModelId);
+  const [devicePreference, setDevicePreference] = useState(
+    getSavedDevicePreference
+  );
   // idle | downloading (en segundo plano) | loading | ready | working
   const [status, setStatus] = useState('idle');
   const [bgProgress, setBgProgress] = useState(null);
@@ -32,12 +47,16 @@ const useLocalAI = () => {
   const [progress, setProgress] = useState({});
   const [device, setDevice] = useState(null);
   const [partial, setPartial] = useState('');
+  const [generation, setGeneration] = useState(null); // { startedAt, tokens }
   const [error, setError] = useState(null);
 
   const workerRef = useRef(null);
   const pendingRef = useRef(null); // { resolve, reject } de la generación en curso
   const readyRef = useRef(false);
   const modelIdRef = useRef(modelId);
+  const devicePreferenceRef = useRef(devicePreference);
+  const partialRef = useRef('');
+  const stopTimerRef = useRef(null);
   const bgFetchRef = useRef(null);
 
   const getWorker = () => {
@@ -57,13 +76,19 @@ const useLocalAI = () => {
           setDevice(data.device);
           setStatus(pendingRef.current ? 'working' : 'ready');
         } else if (data.type === 'partial') {
+          partialRef.current = data.text;
           setPartial(data.text);
+          setGeneration((prev) => prev && { ...prev, tokens: data.tokens });
         } else if (data.type === 'result') {
+          clearTimeout(stopTimerRef.current);
           pendingRef.current?.resolve(data.text);
           pendingRef.current = null;
           setPartial('');
+          setGeneration(null);
           setStatus('ready');
         } else if (data.type === 'error') {
+          clearTimeout(stopTimerRef.current);
+          setGeneration(null);
           pendingRef.current?.reject(new Error(data.message));
           pendingRef.current = null;
           setError(data.message);
@@ -83,7 +108,11 @@ const useLocalAI = () => {
   const startWorkerLoad = () => {
     setBgProgress(null);
     setStatus('loading');
-    getWorker().postMessage({ type: 'load', modelId: modelIdRef.current });
+    getWorker().postMessage({
+      type: 'load',
+      modelId: modelIdRef.current,
+      device: devicePreferenceRef.current,
+    });
   };
 
   const stopWatchingDownload = () => {
@@ -152,27 +181,49 @@ const useLocalAI = () => {
   const selectedModel = AI_MODELS.find((m) => m.id === modelId);
   const isBusy = status === 'loading' || status === 'working';
 
+  // Cierra el worker (libera la memoria del modelo); hay que volver a cargarlo
+  const resetWorker = () => {
+    workerRef.current?.terminate();
+    workerRef.current = null;
+    readyRef.current = false;
+    pendingRef.current = null;
+    setDevice(null);
+    setProgress({});
+    setPartial('');
+    setGeneration(null);
+    setError(null);
+    setStatus('idle');
+  };
+
+  const savePreference = (key, value) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // No se pudo guardar la preferencia; se usa solo en esta sesión
+    }
+  };
+
   // Al cambiar de modelo se cierra el worker para liberar la memoria del anterior
   const changeModel = (id) => {
     if (id === modelId || isBusy) return;
     // Una descarga en segundo plano sigue aunque cambies de modelo
     stopWatchingDownload();
     setBgProgress(null);
-    try {
-      localStorage.setItem(MODEL_STORAGE_KEY, id);
-    } catch {
-      // No se pudo guardar la preferencia; se usa solo en esta sesión
-    }
-    workerRef.current?.terminate();
-    workerRef.current = null;
-    readyRef.current = false;
-    pendingRef.current = null;
+    savePreference(MODEL_STORAGE_KEY, id);
+    resetWorker();
     setModelId(id);
-    setDevice(null);
-    setProgress({});
-    setPartial('');
-    setError(null);
-    setStatus('idle');
+  };
+
+  // GPU (auto) o solo CPU: hay que recargar el modelo con el otro procesador
+  const changeDevicePreference = (preference) => {
+    if (preference === devicePreference || isBusy) return;
+    savePreference(DEVICE_STORAGE_KEY, preference);
+    devicePreferenceRef.current = preference;
+    setDevicePreference(preference);
+    if (readyRef.current) {
+      resetWorker();
+      startWorkerLoad();
+    }
   };
 
   const loadModel = async () => {
@@ -207,16 +258,37 @@ const useLocalAI = () => {
     }
     setError(null);
     setPartial('');
+    partialRef.current = '';
+    setGeneration({ startedAt: Date.now(), tokens: 0 });
     setStatus(readyRef.current ? 'working' : 'loading');
     return new Promise((resolve, reject) => {
       pendingRef.current = { resolve, reject };
       getWorker().postMessage({
         type: 'generate',
         modelId: modelIdRef.current,
+        device: devicePreferenceRef.current,
         messages,
         maxNewTokens,
       });
     }).catch(() => null);
+  };
+
+  // Detiene la generación y devuelve lo que se escribió hasta ahora. Si el
+  // worker no responde (p. ej. con CPU no atiende mensajes mientras calcula),
+  // se cierra y se usa el texto parcial; el modelo se recarga desde la caché.
+  const stop = () => {
+    if (status !== 'working' || !workerRef.current) return;
+    workerRef.current.postMessage({ type: 'interrupt' });
+    clearTimeout(stopTimerRef.current);
+    stopTimerRef.current = setTimeout(() => {
+      if (!pendingRef.current) return;
+      const pending = pendingRef.current;
+      const text = partialRef.current;
+      resetWorker();
+      pending.resolve(text || null);
+      // Recargar el modelo (ya está en la caché, no se vuelve a descargar)
+      startWorkerLoad();
+    }, 1500);
   };
 
   const files = Object.values(progress);
@@ -239,10 +311,14 @@ const useLocalAI = () => {
       total,
       percent: total ? Math.round((loaded / total) * 100) : 0,
     },
+    devicePreference,
+    changeDevicePreference,
     partial,
+    generation,
     error,
     loadModel,
     generate,
+    stop,
   };
 };
 
