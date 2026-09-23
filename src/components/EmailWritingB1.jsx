@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import EmailAIPractice from './EmailAIPractice';
 
 const EmailWritingB1 = () => {
   const [selectedEmail, setSelectedEmail] = useState(0);
@@ -748,6 +749,9 @@ Emma`,
           </div>
         </div>
       </div>
+
+      {/* Práctica con IA: escribir y corregir un email propio */}
+      <EmailAIPractice example={currentExample} />
 
       {/* Navigation */}
       <div className="mt-6 flex justify-between">
