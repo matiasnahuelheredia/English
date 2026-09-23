@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-const Sidebar = ({ selectedTense, onSelectTense }) => {
-  const [isOpen, setIsOpen] = useState(true);
+const isMobile = () => window.innerWidth < 768;
+
+const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
+  // En el celular el menú arranca cerrado para no tapar el contenido
+  const [isOpen, setIsOpen] = useState(() => !isMobile());
+
+  // Al elegir un ejercicio en el celular, cerrar el menú
+  const onSelectTense = (id) => {
+    selectTense(id);
+    if (isMobile()) setIsOpen(false);
+  };
   const [searchQuery, setSearchQuery] = useState('');
 
   // Recuperar las secciones expandidas desde localStorage
@@ -162,6 +171,13 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
           )}
         </svg>
       </button>
+
+      {isOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-30 bg-black/50"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
 
       <div
         className={`${
