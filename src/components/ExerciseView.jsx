@@ -7,6 +7,10 @@ import { a2GrammarInfo } from '../data/a2GrammarData';
 import { a2VocabularyData, a2VocabularyTitles } from '../data/a2VocabularyData';
 import { c2GrammarInfo } from '../data/c2GrammarData';
 import { c2VocabularyData, c2VocabularyTitles } from '../data/c2VocabularyData';
+import {
+  pentestVocabularyData,
+  pentestVocabularyTitles,
+} from '../data/pentestVocabularyData';
 import { b1GrammarInfo } from '../data/b1GrammarData';
 import { b2GrammarInfo } from '../data/b2GrammarData';
 import MatchExercise from './MatchExercise';
@@ -513,7 +517,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'work',
       'adverbs-phrases',
       'business',
+      'hacking',
       ...Object.keys(a1VocabularyData),
+      ...Object.keys(pentestVocabularyData),
       ...Object.keys(a2VocabularyData),
       ...Object.keys(c2VocabularyData),
     ];
@@ -1010,6 +1016,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       a1VocabularyTitles[tenseId] ||
       a2VocabularyTitles[tenseId] ||
       c2VocabularyTitles[tenseId] ||
+      pentestVocabularyTitles[tenseId] ||
       mixedTitles[tenseId] ||
       'Exercises'
     );
