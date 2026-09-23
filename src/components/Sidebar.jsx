@@ -146,6 +146,46 @@ const A2_SECTIONS = [
   },
 ];
 
+const C2_SECTIONS = [
+  {
+    key: 'Proficiency-Tenses',
+    label: '⏳ Tenses & Aspect',
+    items: [
+      { id: 'future-in-the-past-c2', name: 'Future in the Past' },
+      { id: 'perfect-aspects-c2', name: 'Perfect Aspects' },
+    ],
+  },
+  {
+    key: 'Proficiency-Grammar',
+    label: '📝 Grammar',
+    items: [
+      { id: 'advanced-inversion-c2', name: 'Advanced Inversion' },
+      { id: 'subjunctive-c2', name: 'The Subjunctive' },
+      { id: 'cleft-sentences-c2', name: 'Cleft & Pseudo-cleft Sentences' },
+      { id: 'participle-clauses-c2', name: 'Participle Clauses' },
+      { id: 'advanced-conditionals-c2', name: 'Advanced & Mixed Conditionals' },
+      { id: 'ellipsis-substitution-c2', name: 'Ellipsis & Substitution' },
+    ],
+  },
+  {
+    key: 'Proficiency-Vocabulary',
+    label: '📖 Vocabulary',
+    items: [
+      { id: 'advanced-idioms-c2', name: 'Advanced Idioms' },
+      { id: 'collocations-c2', name: 'Collocations' },
+      { id: 'phrasal-verbs-c2', name: 'Advanced Phrasal Verbs' },
+      { id: 'formal-language-c2', name: 'Formal & Academic Language' },
+      { id: 'nuanced-synonyms-c2', name: 'Nuanced Synonyms' },
+      { id: 'confusing-words-c2', name: 'Commonly Confused Words' },
+    ],
+  },
+  {
+    key: 'Proficiency-Mixed',
+    label: '🔀 Mixed Practice',
+    items: [{ id: 'mixed-c2', name: 'All C2 topics mixed' }],
+  },
+];
+
 const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
   // En el celular el menú arranca cerrado para no tapar el contenido
   const [isOpen, setIsOpen] = useState(() => !isMobile());
@@ -175,6 +215,11 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
       'Elementary-Grammar': false,
       'Elementary-Vocabulary': false,
       'Elementary-Mixed': false,
+      Proficiency: false,
+      'Proficiency-Tenses': false,
+      'Proficiency-Grammar': false,
+      'Proficiency-Vocabulary': false,
+      'Proficiency-Mixed': false,
       Intermediate: false,
       'Intermediate-Vocabulary': false,
       'Intermediate-Grammar': false,
@@ -2105,6 +2150,52 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                       </button>
                     </div>
                   )}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* C2 PROFICIENCY */}
+          {(matchesSearch('Proficiency') ||
+            matchesSearch('C2') ||
+            matchesSearch('Subjunctive') ||
+            matchesSearch('Idioms') ||
+            matchesSearch('Collocations')) && (
+            <div>
+              <button
+                onClick={() => toggleSection('Proficiency')}
+                className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium hover:bg-htb-card text-htb-text transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span>👑</span>
+                  <span>C2 - Proficiency</span>
+                </div>
+                <svg
+                  className={`w-4 h-4 transition-transform ${
+                    expandedSections['Proficiency'] ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {expandedSections['Proficiency'] && (
+                <div className="mt-1 ml-6 space-y-1">
+                  <LevelSections
+                    sections={C2_SECTIONS}
+                    expandedSections={expandedSections}
+                    toggleSection={toggleSection}
+                    selectedTense={selectedTense}
+                    onSelectTense={onSelectTense}
+                  />
                 </div>
               )}
             </div>

@@ -1,6 +1,7 @@
 // Exercise database for each verb tense
 import { a1GrammarExercises } from './a1GrammarData';
 import { a2GrammarExercises } from './a2GrammarData';
+import { c2GrammarExercises } from './c2GrammarData';
 import { b1GrammarExercises } from './b1GrammarData';
 import { b2GrammarExercises } from './b2GrammarData';
 
@@ -17,6 +18,7 @@ const shuffleArray = (array) => {
 const exercisesData = {
   ...a1GrammarExercises,
   ...a2GrammarExercises,
+  ...c2GrammarExercises,
   ...b1GrammarExercises,
   ...b2GrammarExercises,
   'present-perfect': [
@@ -4312,10 +4314,11 @@ const exercisesData = {
 };
 
 export const getExercisesByTense = (tenseId) => {
-  // Mixed Practice por nivel (A1, A2): todos los temas del nivel mezclados
+  // Mixed Practice por nivel (A1, A2, C2): todos los temas del nivel mezclados
   const levelExercises = {
     'mixed-a1': a1GrammarExercises,
     'mixed-a2': a2GrammarExercises,
+    'mixed-c2': c2GrammarExercises,
   }[tenseId];
   if (levelExercises) {
     const all = Object.keys(levelExercises).flatMap((key) =>
@@ -4395,6 +4398,14 @@ const getTenseName = (tenseId) => {
     'have-to-a2': "Have to / Must (A2)",
     'should-a2': "Should / Shouldn't (A2)",
     'object-pronouns-a2': 'Object pronouns (A2)',
+    'future-in-the-past-c2': 'Future in the Past (C2)',
+    'perfect-aspects-c2': 'Perfect Aspects (C2)',
+    'advanced-inversion-c2': 'Advanced Inversion (C2)',
+    'subjunctive-c2': 'Subjunctive (C2)',
+    'cleft-sentences-c2': 'Cleft Sentences (C2)',
+    'participle-clauses-c2': 'Participle Clauses (C2)',
+    'advanced-conditionals-c2': 'Advanced Conditionals (C2)',
+    'ellipsis-substitution-c2': 'Ellipsis & Substitution (C2)',
     'passive-voice-b2': 'Passive Voice (B2)',
     'reported-speech-b2': 'Reported Speech (B2)',
     'used-to-b2': 'Used to / Be used to (B2)',
