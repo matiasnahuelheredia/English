@@ -69,11 +69,17 @@ import AnimalIssuesC1Exercise from './AnimalIssuesC1Exercise';
 import ExpressionsIdiomsC1Exercise from './ExpressionsIdiomsC1Exercise';
 import UtensilsC1Exercise from './UtensilsC1Exercise';
 import TenseCorrectorAI from './TenseCorrectorAI';
+import OfflineMode from './OfflineMode';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
   if (tenseId === 'introduction') {
     return <Introduction onSelectTense={onSelectTense} />;
+  }
+
+  // Página para preparar la app para usarla sin conexión
+  if (tenseId === 'offline-mode') {
+    return <OfflineMode />;
   }
 
   // Si es ai-tense-corrector, mostrar el corrector con IA en el navegador
@@ -425,26 +431,6 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     return deckRef.current.pop();
   };
 
-  // Función para obtener imagen relacionada con la palabra
-  const fetchVocabularyImage = async (word) => {
-    try {
-      setImageLoading(true);
-      // Usar Pexels API sin necesidad de key para imágenes básicas
-      // O usar una URL de búsqueda directa
-      const searchTerm = encodeURIComponent(word);
-      const imageUrl = `https://source.unsplash.com/featured/400x300/?${searchTerm}`;
-
-      setTimeout(() => {
-        setVocabularyImage(imageUrl);
-        setImageLoading(false);
-      }, 100);
-    } catch (error) {
-      console.error('Error loading image:', error);
-      setVocabularyImage(null);
-      setImageLoading(false);
-    }
-  };
-
   // Función para limpiar todos los timers
   const clearAllTimers = () => {
     if (initialTimerRef.current) clearTimeout(initialTimerRef.current);
@@ -577,11 +563,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           if (exercise.imageUrl) {
             setVocabularyImage(exercise.imageUrl);
             setImageLoading(false);
-          } else if (exercise.emoji) {
+          } else {
+            // Sin foto propia: se muestra el emoji (si tiene) o nada. Antes se
+            // pedía a source.unsplash.com, un servicio que ya no existe.
             setVocabularyImage(null);
             setImageLoading(false);
-          } else {
-            fetchVocabularyImage(exercise.englishWord);
           }
         }
       }
@@ -661,11 +647,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         if (exercise.imageUrl) {
           setVocabularyImage(exercise.imageUrl);
           setImageLoading(false);
-        } else if (exercise.emoji) {
+        } else {
+          // Sin foto propia: se muestra el emoji (si tiene) o nada. Antes se
+          // pedía a source.unsplash.com, un servicio que ya no existe.
           setVocabularyImage(null);
           setImageLoading(false);
-        } else {
-          fetchVocabularyImage(exercise.englishWord);
         }
       }
 

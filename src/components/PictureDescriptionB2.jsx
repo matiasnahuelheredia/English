@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+const IMAGE_UNAVAILABLE =
+  'data:image/svg+xml;charset=utf-8,' +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">' +
+      '<rect width="800" height="600" fill="#374151"/>' +
+      '<text x="400" y="300" font-family="sans-serif" font-size="28" fill="#9CA3AF" text-anchor="middle">' +
+      'Imagen no disponible sin conexión</text></svg>'
+  );
+
 const PictureDescriptionB2 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
@@ -912,8 +921,9 @@ const PictureDescriptionB2 = () => {
                 alt={currentExercise.description}
                 className="w-full h-[500px] object-cover"
                 onError={(e) => {
-                  e.target.src =
-                    'https://via.placeholder.com/800x600/374151/9CA3AF?text=Image+Loading...';
+                  // Imagen de reemplazo incluida (funciona sin conexión)
+                  e.target.onerror = null;
+                  e.target.src = IMAGE_UNAVAILABLE;
                 }}
               />
               <div className="p-4">
