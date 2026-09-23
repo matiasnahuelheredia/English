@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-const Sidebar = ({ selectedTense, onSelectTense }) => {
-  const [isOpen, setIsOpen] = useState(true);
+const isMobile = () => window.innerWidth < 768;
+
+const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
+  // En el celular el menú arranca cerrado para no tapar el contenido
+  const [isOpen, setIsOpen] = useState(() => !isMobile());
+
+  // Al elegir un ejercicio en el celular, cerrar el menú
+  const onSelectTense = (id) => {
+    selectTense(id);
+    if (isMobile()) setIsOpen(false);
+  };
   const [searchQuery, setSearchQuery] = useState('');
 
   // Recuperar las secciones expandidas desde localStorage
@@ -162,6 +171,13 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
           )}
         </svg>
       </button>
+
+      {isOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-30 bg-black/50"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
 
       <div
         className={`${
@@ -459,6 +475,28 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                       >
                         Present Perfect & Past Simple (2)
                       </button>
+                      {[
+                        { id: 'present-perfect-b1', name: 'Present Perfect' },
+                        { id: 'past-simple-b1', name: 'Past Simple' },
+                        { id: 'past-continuous-b1', name: 'Past Continuous' },
+                        { id: 'past-perfect-b1', name: 'Past Perfect' },
+                        {
+                          id: 'narrative-tenses-b1',
+                          name: 'Narrative Tenses (3 pasts)',
+                        },
+                      ].map((topic) => (
+                        <button
+                          key={topic.id}
+                          onClick={() => onSelectTense(topic.id)}
+                          className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                            selectedTense === topic.id
+                              ? 'bg-htb-green text-htb-bg font-medium'
+                              : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                          }`}
+                        >
+                          {topic.name}
+                        </button>
+                      ))}
                     </div>
                   )}
 
@@ -850,6 +888,16 @@ const Sidebar = ({ selectedTense, onSelectTense }) => {
                         }`}
                       >
                         All Tenses Mixed
+                      </button>
+                      <button
+                        onClick={() => onSelectTense('ai-tense-corrector')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'ai-tense-corrector'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        ✨ AI Tense Corrector
                       </button>
                     </div>
                   )}

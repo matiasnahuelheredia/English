@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
+import { b1GrammarInfo } from '../data/b1GrammarData';
 import MatchExercise from './MatchExercise';
 import ExamView from './ExamView';
 import ExamView2 from './ExamView2';
@@ -60,11 +61,17 @@ import AnimalsBirdsInsectsC1Exercise from './AnimalsBirdsInsectsC1Exercise';
 import AnimalIssuesC1Exercise from './AnimalIssuesC1Exercise';
 import ExpressionsIdiomsC1Exercise from './ExpressionsIdiomsC1Exercise';
 import UtensilsC1Exercise from './UtensilsC1Exercise';
+import TenseCorrectorAI from './TenseCorrectorAI';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
   if (tenseId === 'introduction') {
     return <Introduction onSelectTense={onSelectTense} />;
+  }
+
+  // Si es ai-tense-corrector, mostrar el corrector con IA en el navegador
+  if (tenseId === 'ai-tense-corrector') {
+    return <TenseCorrectorAI />;
   }
 
   // Si es conflict-warfare, mostrar el componente ConflictWarfareExercise
@@ -384,6 +391,32 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const initialIntervalRef = useRef(null);
   const feedbackTimerRef = useRef(null);
   const feedbackIntervalRef = useRef(null);
+  // Mazo mezclado: cada ejercicio sale una vez, en orden aleatorio, antes de repetirse
+  const deckRef = useRef([]);
+
+  const shuffle = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const drawFromDeck = (list, current) => {
+    if (deckRef.current.length === 0) {
+      deckRef.current = shuffle(list);
+      // Evitar que el primero del mazo nuevo sea el mismo que el anterior
+      const last = deckRef.current.length - 1;
+      if (last > 0 && deckRef.current[last] === current) {
+        [deckRef.current[0], deckRef.current[last]] = [
+          deckRef.current[last],
+          deckRef.current[0],
+        ];
+      }
+    }
+    return deckRef.current.pop();
+  };
 
   // Función para obtener imagen relacionada con la palabra
   const fetchVocabularyImage = async (word) => {
@@ -511,9 +544,12 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     setReorderedWords([]);
     setAvailableWords([]);
 
+    deckRef.current = [];
+
     if (loadedExercises.length > 0) {
-      const randomIndex = Math.floor(Math.random() * loadedExercises.length);
-      const exercise = loadedExercises[randomIndex];
+      const exercise = isVocabTopic
+        ? loadedExercises[Math.floor(Math.random() * loadedExercises.length)]
+        : drawFromDeck(loadedExercises, null);
       setCurrentExercise(exercise);
 
       // Initialize reorder exercise
@@ -521,7 +557,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         exercise.sentenceParts &&
         exercise.sentenceParts[0]?.type === 'reorder'
       ) {
-        setAvailableWords([...exercise.words]);
+        setAvailableWords(shuffle(exercise.words));
       }
 
       if (isVocabTopic) {
@@ -571,8 +607,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     if (exercisesToUse.length > 0) {
       clearAllTimers();
 
-      const randomIndex = Math.floor(Math.random() * exercisesToUse.length);
-      const exercise = exercisesToUse[randomIndex];
+      const exercise = isVocabulary
+        ? exercisesToUse[Math.floor(Math.random() * exercisesToUse.length)]
+        : drawFromDeck(exercisesToUse, currentExercise);
       setCurrentExercise(exercise);
       setUserAnswer('');
       setUserAnswers([]);
@@ -586,7 +623,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         exercise.sentenceParts[0]?.type === 'reorder'
       ) {
         setReorderedWords([]);
-        setAvailableWords([...exercise.words]);
+        setAvailableWords(shuffle(exercise.words));
       } else {
         setReorderedWords([]);
         setAvailableWords([]);
@@ -598,7 +635,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         exercise.sentenceParts[0]?.type === 'reorder'
       ) {
         setReorderedWords([]);
-        setAvailableWords([...exercise.words]);
+        setAvailableWords(shuffle(exercise.words));
       } else {
         setReorderedWords([]);
         setAvailableWords([]);
@@ -883,6 +920,21 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     }
   };
 
+  // En vocabulario, una vez respondida la palabra (o acabado el tiempo),
+  // permitir pasar a la siguiente apretando Enter
+  useEffect(() => {
+    if (!isVocabulary || !feedback) return;
+
+    const handleEnterNext = (e) => {
+      if (e.key !== 'Enter' || e.repeat) return;
+      e.preventDefault();
+      loadNewQuestion();
+    };
+
+    window.addEventListener('keydown', handleEnterNext);
+    return () => window.removeEventListener('keydown', handleEnterNext);
+  }, [isVocabulary, feedback, remainingVocabExercises, exercises, isReversed]);
+
   const getTenseTitle = () => {
     const titles = {
       'present-simple': 'Present Simple',
@@ -927,7 +979,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'present-perfect-past-simple-2':
         'Present Perfect & Past Simple (2) - Word Order',
     };
-    return titles[tenseId] || 'Exercises';
+    return titles[tenseId] || b1GrammarInfo[tenseId]?.title || 'Exercises';
   };
 
   const getTenseStructure = () => {
@@ -1076,7 +1128,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           "if, unless (hypothetical/unreal past situations that didn't happen)",
       },
     };
-    return structures[tenseId] || null;
+    return structures[tenseId] || b1GrammarInfo[tenseId]?.structure || null;
   };
 
   if (!currentExercise) {
@@ -1485,7 +1537,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                   <span className="font-bold text-htb-green text-lg">
                     {countdown}
                   </span>{' '}
-                  second{countdown !== 1 ? 's' : ''}
+                  second{countdown !== 1 ? 's' : ''} · press Enter for the next
+                  word
                 </p>
               </div>
             )}
@@ -1494,7 +1547,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
             {isVocabulary && feedback && feedback.isCorrect && (
               <div className="mt-4 p-3 rounded-md bg-htb-sidebar border border-htb-green/30 text-center">
                 <p className="text-sm text-htb-green">
-                  ⏳ Loading next question in 5 seconds...
+                  ⏳ Loading next question in 5 seconds... (press Enter to
+                  skip)
                 </p>
               </div>
             )}
@@ -1568,6 +1622,9 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                       className="bg-htb-green hover:bg-htb-green-hover text-htb-bg px-6 py-3 rounded-md font-semibold transition-colors"
                     >
                       Next question →
+                      {isVocabulary && (
+                        <span className="ml-2 text-xs opacity-70">(Enter)</span>
+                      )}
                     </button>
                   )}
                 </>

@@ -1,7 +1,49 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['icon.svg', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'English Learning Platform',
+        short_name: 'English',
+        description: 'Practica gramática y vocabulario en inglés',
+        lang: 'es',
+        theme_color: '#141d2b',
+        background_color: '#141d2b',
+        display: 'standalone',
+        orientation: 'portrait',
+        icons: [
+          { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+        ],
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+        // El motor de IA (.wasm) es muy grande para precachear: se guarda al usarlo
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.endsWith('.wasm'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'ai-wasm' },
+          },
+        ],
+      },
+    }),
+  ],
+  worker: {
+    format: 'es',
+  },
   base: process.env.NODE_ENV === 'production' ? '/English/' : '/',
 })
