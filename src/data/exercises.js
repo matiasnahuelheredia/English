@@ -1,4 +1,5 @@
 // Exercise database for each verb tense
+import { a1GrammarExercises } from './a1GrammarData';
 import { b1GrammarExercises } from './b1GrammarData';
 import { b2GrammarExercises } from './b2GrammarData';
 
@@ -13,6 +14,7 @@ const shuffleArray = (array) => {
 };
 
 const exercisesData = {
+  ...a1GrammarExercises,
   ...b1GrammarExercises,
   ...b2GrammarExercises,
   'present-perfect': [
@@ -4308,6 +4310,17 @@ const exercisesData = {
 };
 
 export const getExercisesByTense = (tenseId) => {
+  // A1 Mixed Practice: todos los temas A1 mezclados
+  if (tenseId === 'mixed-a1') {
+    const allA1 = Object.keys(a1GrammarExercises).flatMap((key) =>
+      a1GrammarExercises[key].map((exercise) => ({
+        ...exercise,
+        tense: getTenseName(key),
+      }))
+    );
+    return shuffleArray(allA1);
+  }
+
   // Si es mixed-tenses, mezclar todos los ejercicios de todos los tiempos
   if (tenseId === 'mixed-tenses') {
     const allExercises = [];
@@ -4352,6 +4365,18 @@ const getTenseName = (tenseId) => {
     'past-continuous-b1': 'Past Continuous (B1)',
     'past-perfect-b1': 'Past Perfect (B1)',
     'narrative-tenses-b1': 'Narrative Tenses (B1)',
+    'present-simple-a1': 'Present Simple (A1)',
+    'present-continuous-a1': 'Present Continuous (A1)',
+    'past-simple-a1': 'Past Simple (A1)',
+    'going-to-a1': 'Going to (A1)',
+    'verb-be-all-a1': 'Verb be (A1)',
+    'there-is-are-a1': 'There is / There are (A1)',
+    'can-a1': "Can / Can't (A1)",
+    'possessives-a1': "Possessives & 's (A1)",
+    'articles-plurals-a1': 'a / an & Plurals (A1)',
+    'demonstratives-a1': 'This / That / These / Those (A1)',
+    'prepositions-a1': 'Prepositions (A1)',
+    'question-words-a1': 'Question words (A1)',
     'passive-voice-b2': 'Passive Voice (B2)',
     'reported-speech-b2': 'Reported Speech (B2)',
     'used-to-b2': 'Used to / Be used to (B2)',

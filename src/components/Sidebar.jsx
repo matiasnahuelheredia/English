@@ -23,6 +23,9 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
     return {
       Beginner: false,
       'Beginner-Grammar': false,
+      'Beginner-Tenses': false,
+      'Beginner-Vocabulary': false,
+      'Beginner-Mixed': false,
       Intermediate: false,
       'Intermediate-Vocabulary': false,
       'Intermediate-Grammar': false,
@@ -272,7 +275,11 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
           {/* A1 BEGINNER */}
           {(matchesSearch('Beginner') ||
             matchesSearch('Verb be') ||
-            matchesSearch('A1')) && (
+            matchesSearch('A1') ||
+            matchesSearch('Present Simple') ||
+            matchesSearch('Numbers') ||
+            matchesSearch('Family') ||
+            matchesSearch('Colours')) && (
             <div>
               <button
                 onClick={() => toggleSection('Beginner')}
@@ -301,41 +308,93 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
 
               {expandedSections['Beginner'] && (
                 <div className="mt-1 ml-6 space-y-1">
-                  <button
-                    onClick={() => toggleSection('Beginner-Grammar')}
-                    className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card text-htb-text-dim transition-colors"
-                  >
-                    <span>📝 Grammar</span>
-                    <svg
-                      className={`w-3 h-3 transition-transform ${
-                        expandedSections['Beginner-Grammar'] ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {expandedSections['Beginner-Grammar'] && (
-                    <div className="ml-4 space-y-1">
+                  {[
+                    {
+                      key: 'Beginner-Tenses',
+                      label: '⏳ Tenses',
+                      items: [
+                        { id: 'present-simple-a1', name: 'Present Simple' },
+                        { id: 'present-continuous-a1', name: 'Present Continuous' },
+                        { id: 'past-simple-a1', name: 'Past Simple (was / were + verbs)' },
+                        { id: 'going-to-a1', name: 'Future: be going to' },
+                      ],
+                    },
+                    {
+                      key: 'Beginner-Grammar',
+                      label: '📝 Grammar',
+                      items: [
+                        { id: 'verb-be-a1', name: '1A Verb be (singular)' },
+                        { id: 'verb-be-all-a1', name: 'Verb be (all forms)' },
+                        { id: 'there-is-are-a1', name: 'There is / There are' },
+                        { id: 'can-a1', name: "Can / Can't" },
+                        { id: 'possessives-a1', name: "Possessives & 's" },
+                        { id: 'articles-plurals-a1', name: 'a / an & Plurals' },
+                        { id: 'demonstratives-a1', name: 'This / That / These / Those' },
+                        { id: 'prepositions-a1', name: 'Prepositions (place & time)' },
+                        { id: 'question-words-a1', name: 'Question words' },
+                      ],
+                    },
+                    {
+                      key: 'Beginner-Vocabulary',
+                      label: '📖 Vocabulary',
+                      items: [
+                        { id: 'numbers-a1', name: 'Numbers' },
+                        { id: 'colours-a1', name: 'Colours' },
+                        { id: 'family-a1', name: 'Family' },
+                        { id: 'days-months-a1', name: 'Days & Months' },
+                        { id: 'food-drinks-a1', name: 'Food & Drinks' },
+                        { id: 'jobs-a1', name: 'Jobs' },
+                        { id: 'house-a1', name: 'The House' },
+                        { id: 'daily-routine-a1', name: 'Daily Routine' },
+                      ],
+                    },
+                    {
+                      key: 'Beginner-Mixed',
+                      label: '🔀 Mixed Practice',
+                      items: [{ id: 'mixed-a1', name: 'All A1 topics mixed' }],
+                    },
+                  ].map((section) => (
+                    <div key={section.key}>
                       <button
-                        onClick={() => onSelectTense('verb-be-a1')}
-                        className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                          selectedTense === 'verb-be-a1'
-                            ? 'bg-htb-green text-htb-bg'
-                            : 'hover:bg-htb-card text-htb-text-dim'
-                        }`}
+                        onClick={() => toggleSection(section.key)}
+                        className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card text-htb-text-dim transition-colors"
                       >
-                        1A Verb be (singular)
+                        <span>{section.label}</span>
+                        <svg
+                          className={`w-3 h-3 transition-transform ${
+                            expandedSections[section.key] ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
                       </button>
+                      {expandedSections[section.key] && (
+                        <div className="ml-4 space-y-1">
+                          {section.items.map((item) => (
+                            <button
+                              key={item.id}
+                              onClick={() => onSelectTense(item.id)}
+                              className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                                selectedTense === item.id
+                                  ? 'bg-htb-green text-htb-bg'
+                                  : 'hover:bg-htb-card text-htb-text-dim'
+                              }`}
+                            >
+                              {item.name}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  )}
+                  ))}
                 </div>
               )}
             </div>
