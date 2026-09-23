@@ -3,6 +3,11 @@ import useLocalAI from '../ai/useLocalAI';
 import AIModelPanel from './AIModelPanel';
 import AIGenerationProgress from './AIGenerationProgress';
 import { reportWritingTasks } from '../data/reportWritingTasks';
+import AIWritingFeedback from './AIWritingFeedback';
+import {
+  MISTAKES_FORMAT_INSTRUCTIONS,
+  parseMistakes,
+} from '../ai/writingFeedback';
 
 // Entrenador de escritura de informes de pentesting: el alumno escribe una
 // sección de un finding y la IA local le corrige la gramática y el registro
@@ -14,13 +19,11 @@ const buildMessages = (task, text) => [
     content:
       'You are a senior penetration tester coaching a Spanish-speaking analyst who is learning to write security reports in English. ' +
       `The analyst is writing the "${task.section}" of a finding for a ${task.audience} audience. ` +
-      'Correct the grammar, spelling and vocabulary, and rewrite anything that does not sound like a professional pentest report, ' +
-      'keeping the analyst’s technical content and roughly the same length. ' +
-      'Then check whether the text covers these points: ' +
+      'It should read like a professional pentest report and cover these points: ' +
       task.checklist.join('; ') +
-      '. Answer ONLY in this exact format:\n' +
-      'CORRECTED:\n<the improved section, in professional report English>\n' +
-      'FEEDBACK:\n<3 to 4 short bullet points in Spanish: the main language mistakes, whether the register/tone fits a report, and which checklist points are missing>',
+      '. ' +
+      MISTAKES_FORMAT_INSTRUCTIONS +
+      ' Also, if the text is missing any of those required points, add them as extra lines in the same shape, quoting nothing, e.g. - (falta) -> "..." (que debería incluir...).',
   },
   {
     role: 'user',
@@ -30,15 +33,6 @@ const buildMessages = (task, text) => [
       `Analyst's text:\n${text}`,
   },
 ];
-
-const parseAnswer = (raw) => {
-  const corrected = raw.match(/CORRECTED:\s*([\s\S]*?)(?:\n\s*FEEDBACK:|$)/i);
-  const feedback = raw.match(/FEEDBACK:\s*([\s\S]*)$/i);
-  return {
-    corrected: corrected ? corrected[1].trim() : raw.trim(),
-    feedback: feedback ? feedback[1].trim() : '',
-  };
-};
 
 const countWords = (text) => text.trim().split(/\s+/).filter(Boolean).length;
 
@@ -58,10 +52,10 @@ const ReportWritingAI = () => {
     if (!text.trim()) return;
     setResults((prev) => ({ ...prev, [task.id]: null }));
     const answer = await ai.generate(buildMessages(task, text.trim()), {
-      maxNewTokens: 500,
+      maxNewTokens: 400,
     });
     if (answer) {
-      setResults((prev) => ({ ...prev, [task.id]: parseAnswer(answer) }));
+      setResults((prev) => ({ ...prev, [task.id]: parseMistakes(answer) }));
     }
   };
 
@@ -73,9 +67,9 @@ const ReportWritingAI = () => {
         </h1>
         <p className="text-htb-text-dim text-sm sm:text-base mb-6">
           Entrenate para escribir informes de pentesting en inglés. Elegí una
-          tarea, escribí la sección y la IA (que corre en tu navegador) te
-          corrige la gramática y el registro profesional, y te dice si cubriste
-          lo que hay que cubrir.
+          tarea, escribí la sección y la IA (que corre en tu navegador) te marca
+          los errores de gramática y de registro profesional, y te dice qué
+          puntos te faltaron para que lo corrijas vos.
         </p>
 
         {/* Selector de tarea */}
@@ -156,28 +150,7 @@ const ReportWritingAI = () => {
 
         <AIGenerationProgress ai={ai} />
 
-        {result && (
-          <div className="mt-4 grid gap-4 lg:grid-cols-2">
-            <div className="p-4 rounded-md bg-htb-sidebar border border-yellow-500">
-              <p className="font-semibold text-yellow-400 mb-2">
-                ✎ Versión mejorada
-              </p>
-              <p className="text-sm text-white whitespace-pre-wrap">
-                {result.corrected}
-              </p>
-            </div>
-            {result.feedback && (
-              <div className="p-4 rounded-md bg-htb-sidebar border border-htb-green/40">
-                <p className="font-semibold text-htb-green mb-2">
-                  💬 Comentarios
-                </p>
-                <p className="text-sm text-htb-text whitespace-pre-wrap">
-                  {result.feedback}
-                </p>
-              </div>
-            )}
-          </div>
-        )}
+        <AIWritingFeedback result={result} />
 
         {ai.error && (
           <div className="mt-4 p-4 rounded-md bg-htb-sidebar border border-red-500">
@@ -194,14 +167,14 @@ const ReportWritingAI = () => {
               {task.model}
             </p>
             <p className="text-xs text-htb-text-dim mt-2">
-              Es un ejemplo, no la única respuesta correcta. Compará tu versión y
-              la de la IA con este modelo.
+              Es un ejemplo, no la única respuesta correcta. Compará tu versión
+              con este modelo.
             </p>
           </div>
         )}
 
         <p className="mt-6 text-xs text-htb-text-dim">
-          Es una IA pequeña: puede equivocarse. Usala como ayuda y comparala
+          Es una IA pequeña: puede equivocarse. Usala como guía y comparala
           siempre con el ejemplo modelo.
         </p>
       </div>

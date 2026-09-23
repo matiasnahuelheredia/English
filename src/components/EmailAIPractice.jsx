@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import useLocalAI from '../ai/useLocalAI';
 import AIModelPanel from './AIModelPanel';
 import AIGenerationProgress from './AIGenerationProgress';
+import AIWritingFeedback from './AIWritingFeedback';
+import {
+  MISTAKES_FORMAT_INSTRUCTIONS,
+  parseMistakes,
+} from '../ai/writingFeedback';
 
 // Práctica de escritura de emails con la IA local: el alumno escribe su propio
 // email para la situación del ejemplo y la IA lo corrige y comenta.
@@ -11,12 +16,9 @@ const buildMessages = (example, text) => [
     role: 'system',
     content:
       'You are an English teacher. A Spanish-speaking B1 student wrote an email for a writing task. ' +
-      "Correct the grammar, spelling and vocabulary mistakes, keeping the student's ideas and a B1 level. " +
-      `Check that the register is ${example.category.toLowerCase()} and that the email has a greeting, ` +
+      `The register should be ${example.category.toLowerCase()} and the email should have a greeting, ` +
       'clear paragraphs and a suitable closing. ' +
-      'Answer ONLY in this exact format:\n' +
-      'CORRECTED:\n<the corrected email>\n' +
-      'FEEDBACK:\n<3 short bullet points in Spanish about the mistakes, the register (formal/informal) and the structure>',
+      MISTAKES_FORMAT_INSTRUCTIONS,
   },
   {
     role: 'user',
@@ -26,15 +28,6 @@ const buildMessages = (example, text) => [
       `Student email:\n${text}`,
   },
 ];
-
-const parseAnswer = (raw) => {
-  const corrected = raw.match(/CORRECTED:\s*([\s\S]*?)(?:\n\s*FEEDBACK:|$)/i);
-  const feedback = raw.match(/FEEDBACK:\s*([\s\S]*)$/i);
-  return {
-    corrected: corrected ? corrected[1].trim() : raw.trim(),
-    feedback: feedback ? feedback[1].trim() : '',
-  };
-};
 
 const countWords = (text) => text.trim().split(/\s+/).filter(Boolean).length;
 
@@ -52,10 +45,10 @@ const EmailAIPractice = ({ example }) => {
     if (!text.trim()) return;
     setResults((prev) => ({ ...prev, [example.id]: null }));
     const answer = await ai.generate(buildMessages(example, text.trim()), {
-      maxNewTokens: 450,
+      maxNewTokens: 350,
     });
     if (answer) {
-      setResults((prev) => ({ ...prev, [example.id]: parseAnswer(answer) }));
+      setResults((prev) => ({ ...prev, [example.id]: parseMistakes(answer) }));
     }
   };
 
@@ -67,8 +60,8 @@ const EmailAIPractice = ({ example }) => {
           <h2 className="text-xl font-bold text-white">Practice with AI</h2>
           <p className="text-sm text-htb-text-dim">
             Escribí tu propio email para esta situación y la IA (que corre en tu
-            navegador) te lo corrige y te da consejos sobre gramática,
-            formalidad y estructura.
+            navegador) te marca los errores de gramática, formalidad y
+            estructura para que los corrijas vos.
           </p>
         </div>
       </div>
@@ -120,28 +113,7 @@ const EmailAIPractice = ({ example }) => {
 
       <AIGenerationProgress ai={ai} />
 
-      {result && (
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <div className="p-4 rounded-md bg-htb-sidebar border border-yellow-500">
-            <p className="font-semibold text-yellow-400 mb-2">
-              ✎ Email corregido
-            </p>
-            <p className="text-sm text-white whitespace-pre-wrap font-mono">
-              {result.corrected}
-            </p>
-          </div>
-          {result.feedback && (
-            <div className="p-4 rounded-md bg-htb-sidebar border border-htb-green/40">
-              <p className="font-semibold text-htb-green mb-2">
-                💬 Comentarios
-              </p>
-              <p className="text-sm text-htb-text whitespace-pre-wrap">
-                {result.feedback}
-              </p>
-            </div>
-          )}
-        </div>
-      )}
+      <AIWritingFeedback result={result} />
 
       {ai.error && (
         <div className="mt-4 p-4 rounded-md bg-htb-sidebar border border-red-500">
@@ -150,8 +122,8 @@ const EmailAIPractice = ({ example }) => {
       )}
 
       <p className="mt-4 text-xs text-htb-text-dim">
-        Es una IA pequeña: puede equivocarse. Compará su corrección con el
-        ejemplo de arriba y usala como ayuda, no como verdad absoluta.
+        Es una IA pequeña: puede equivocarse. Usala como guía para corregir tu
+        texto, no como verdad absoluta.
       </p>
     </div>
   );
