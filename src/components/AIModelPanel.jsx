@@ -40,14 +40,14 @@ const AIModelPanel = ({ ai }) => (
       </div>
       {ai.heavyModelOnMobile && (
         <p className="text-xs text-yellow-400 mt-2">
-          ⚠️ En un celular, el modelo "Mejor calidad" (~1 GB) suele colgar el
-          teléfono por falta de memoria. Elegí "Liviano" para que no se trabe.
+          ⚠️ En un celular, este modelo puede cerrar la pestaña por falta de
+          memoria al cargar ("¡Oh, no!"). Elegí "Ultra liviano" para que cargue.
         </p>
       )}
       {ai.lowPower && !ai.heavyModelOnMobile && (
         <p className="text-xs text-htb-text-dim mt-2">
-          📱 Detectamos un celular: si se traba, dejá el modelo "Liviano" y el
-          largo de respuesta en "Corta" (más abajo).
+          📱 Detectamos un celular: dejá el modelo "Ultra liviano" y el largo de
+          respuesta en "Corta" (más abajo) para que no se cierre la pestaña.
         </p>
       )}
     </div>
