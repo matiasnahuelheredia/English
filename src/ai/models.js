@@ -1,7 +1,7 @@
 // Modelos disponibles para el corrector con IA (todos cuantizados a 4 bits)
 export const AI_MODELS = [
   {
-    id: 'onnx-community/SmolLM2-360M-Instruct',
+    id: 'HuggingFaceTB/SmolLM2-360M-Instruct',
     name: 'Ultra liviano',
     size: '~270 MB',
     description:
