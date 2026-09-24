@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { AI_MODELS, DEFAULT_MODEL_ID } from './models';
+import { AI_MODELS, DEFAULT_MODEL_ID, LIGHTEST_MODEL_ID } from './models';
 import {
   downloadId,
   getRegistration,
@@ -87,9 +87,11 @@ const getSavedModelId = () => {
     const saved = localStorage.getItem(MODEL_STORAGE_KEY);
     if (AI_MODELS.some((m) => m.id === saved)) return saved;
   } catch {
-    // Sin localStorage: usar el modelo por defecto
+    // Sin localStorage: se decide por el tipo de equipo
   }
-  return DEFAULT_MODEL_ID;
+  // En el celular arrancamos con el más chico (el que más chances tiene de
+  // cargar sin quedarse sin memoria); en la computadora, con el equilibrado.
+  return isLowPowerDevice() ? LIGHTEST_MODEL_ID : DEFAULT_MODEL_ID;
 };
 
 const useLocalAI = () => {
@@ -389,8 +391,9 @@ const useLocalAI = () => {
     responseLength,
     changeResponseLength,
     lowPower,
-    // En un celular, el modelo de 1 GB casi seguro se cuelga por falta de memoria
-    heavyModelOnMobile: lowPower && modelId !== DEFAULT_MODEL_ID,
+    // En un celular, cualquier modelo más grande que el ultra liviano puede
+    // quedarse sin memoria al cargar (cierra la pestaña)
+    heavyModelOnMobile: lowPower && modelId !== LIGHTEST_MODEL_ID,
     partial,
     generation,
     error,

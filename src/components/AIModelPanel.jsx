@@ -40,14 +40,14 @@ const AIModelPanel = ({ ai }) => (
       </div>
       {ai.heavyModelOnMobile && (
         <p className="text-xs text-yellow-400 mt-2">
-          ⚠️ En un celular, el modelo "Mejor calidad" (~1 GB) suele colgar el
-          teléfono por falta de memoria. Elegí "Liviano" para que no se trabe.
+          ⚠️ En un celular, este modelo puede cerrar la pestaña por falta de
+          memoria al cargar ("¡Oh, no!"). Elegí "Ultra liviano" para que cargue.
         </p>
       )}
       {ai.lowPower && !ai.heavyModelOnMobile && (
         <p className="text-xs text-htb-text-dim mt-2">
-          📱 Detectamos un celular: si se traba, dejá el modelo "Liviano" y el
-          largo de respuesta en "Corta" (más abajo).
+          📱 Detectamos un celular: dejá el modelo "Ultra liviano" y el largo de
+          respuesta en "Corta" (más abajo) para que no se cierre la pestaña.
         </p>
       )}
     </div>
@@ -75,9 +75,17 @@ const AIModelPanel = ({ ai }) => (
         ))}
       </div>
       <p className="text-xs text-htb-text-dim mt-1">
-        Si la página se traba mientras la IA trabaja, elegí "Solo CPU": tarda
-        más, pero no congela el celular.
+        ⚡ <b>Automático</b> usa la placa de video: gasta <b>menos memoria</b> del
+        navegador. Elegilo si la pestaña se cierra sola con un error ("¡Oh,
+        no!"). 🐢 <b>Solo CPU</b> es más compatible, pero carga todo el modelo en
+        la RAM y en teléfonos con poca memoria puede cerrar la pestaña.
       </p>
+      {ai.lowPower && ai.devicePreference === 'wasm' && (
+        <p className="text-xs text-yellow-400 mt-1">
+          ⚠️ En un celular, "Solo CPU" puede cerrar la pestaña por falta de
+          memoria al cargar la IA. Si te pasa, probá "Automático (GPU)".
+        </p>
+      )}
     </div>
 
     <div className="mb-6">
