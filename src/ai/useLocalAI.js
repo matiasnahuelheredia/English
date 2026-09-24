@@ -14,6 +14,63 @@ import {
 const MODEL_STORAGE_KEY = 'aiCorrectorModel';
 const DEVICE_STORAGE_KEY = 'aiDevicePreference';
 
+// La IA corre entera dentro del navegador. En un celular (o en un equipo con
+// pocos núcleos o poca memoria) generar mucho texto llena la RAM y cuelga el
+// teléfono, así que en esos equipos limitamos cuánto genera de una vez.
+const isLowPowerDevice = () => {
+  try {
+    const mobileUA = /Android|iPhone|iPad|iPod|Mobile|Silk|Kindle/i.test(
+      navigator.userAgent || ''
+    );
+    const fewCores =
+      typeof navigator.hardwareConcurrency === 'number' &&
+      navigator.hardwareConcurrency > 0 &&
+      navigator.hardwareConcurrency <= 4;
+    const lowMemory =
+      typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4;
+    return Boolean(mobileUA || fewCores || lowMemory);
+  } catch {
+    return false;
+  }
+};
+
+// Largo de la respuesta que elige el usuario. Cuanto más larga, más memoria usa
+// la IA (el KV-cache crece con cada palabra), así que en el celular conviene la
+// corta. maxTokens es el tope: recorta lo que pida cada pantalla.
+export const RESPONSE_LENGTHS = [
+  {
+    id: 'short',
+    label: 'Corta',
+    maxTokens: 140,
+    hint: 'Menos texto: más rápida y liviana. Recomendada para el celular.',
+  },
+  {
+    id: 'medium',
+    label: 'Media',
+    maxTokens: 240,
+    hint: 'Equilibrio entre detalle y velocidad.',
+  },
+  {
+    id: 'long',
+    label: 'Larga',
+    maxTokens: 400,
+    hint: 'Más detalle. Puede trabar teléfonos con poca memoria.',
+  },
+];
+
+const LENGTH_STORAGE_KEY = 'aiResponseLength';
+
+const getSavedResponseLength = () => {
+  try {
+    const saved = localStorage.getItem(LENGTH_STORAGE_KEY);
+    if (RESPONSE_LENGTHS.some((l) => l.id === saved)) return saved;
+  } catch {
+    // Sin localStorage: se decide por el tipo de equipo
+  }
+  // Por defecto: corta en el celular, larga en la computadora
+  return isLowPowerDevice() ? 'short' : 'long';
+};
+
 // 'auto' = GPU si hay (más rápido) | 'wasm' = solo CPU (más lento, más fluido)
 const getSavedDevicePreference = () => {
   try {
@@ -49,6 +106,9 @@ const useLocalAI = () => {
   const [partial, setPartial] = useState('');
   const [generation, setGeneration] = useState(null); // { startedAt, tokens }
   const [error, setError] = useState(null);
+  // Se calcula una sola vez (no cambia durante la sesión)
+  const [lowPower] = useState(isLowPowerDevice);
+  const [responseLength, setResponseLength] = useState(getSavedResponseLength);
 
   const workerRef = useRef(null);
   const pendingRef = useRef(null); // { resolve, reject } de la generación en curso
@@ -226,6 +286,14 @@ const useLocalAI = () => {
     }
   };
 
+  // Largo de la respuesta: no requiere recargar el modelo, solo cambia el tope
+  const changeResponseLength = (id) => {
+    if (id === responseLength || !RESPONSE_LENGTHS.some((l) => l.id === id))
+      return;
+    savePreference(LENGTH_STORAGE_KEY, id);
+    setResponseLength(id);
+  };
+
   const loadModel = async () => {
     setError(null);
     // Con Background Fetch la descarga sigue aunque cambies de app
@@ -256,6 +324,10 @@ const useLocalAI = () => {
       loadModel();
       return Promise.resolve(null);
     }
+    // Recortamos según el largo elegido para no quedarnos sin memoria
+    const lengthCap =
+      RESPONSE_LENGTHS.find((l) => l.id === responseLength)?.maxTokens ?? 400;
+    const cappedTokens = Math.min(maxNewTokens, lengthCap);
     setError(null);
     setPartial('');
     partialRef.current = '';
@@ -268,7 +340,7 @@ const useLocalAI = () => {
         modelId: modelIdRef.current,
         device: devicePreferenceRef.current,
         messages,
-        maxNewTokens,
+        maxNewTokens: cappedTokens,
       });
     }).catch(() => null);
   };
@@ -313,6 +385,12 @@ const useLocalAI = () => {
     },
     devicePreference,
     changeDevicePreference,
+    responseLengths: RESPONSE_LENGTHS,
+    responseLength,
+    changeResponseLength,
+    lowPower,
+    // En un celular, el modelo de 1 GB casi seguro se cuelga por falta de memoria
+    heavyModelOnMobile: lowPower && modelId !== DEFAULT_MODEL_ID,
     partial,
     generation,
     error,

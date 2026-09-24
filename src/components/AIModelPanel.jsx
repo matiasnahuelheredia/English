@@ -38,6 +38,18 @@ const AIModelPanel = ({ ai }) => (
           </button>
         ))}
       </div>
+      {ai.heavyModelOnMobile && (
+        <p className="text-xs text-yellow-400 mt-2">
+          ⚠️ En un celular, el modelo "Mejor calidad" (~1 GB) suele colgar el
+          teléfono por falta de memoria. Elegí "Liviano" para que no se trabe.
+        </p>
+      )}
+      {ai.lowPower && !ai.heavyModelOnMobile && (
+        <p className="text-xs text-htb-text-dim mt-2">
+          📱 Detectamos un celular: si se traba, dejá el modelo "Liviano" y el
+          largo de respuesta en "Corta" (más abajo).
+        </p>
+      )}
     </div>
 
     <div className="mb-6">
@@ -65,6 +77,36 @@ const AIModelPanel = ({ ai }) => (
       <p className="text-xs text-htb-text-dim mt-1">
         Si la página se traba mientras la IA trabaja, elegí "Solo CPU": tarda
         más, pero no congela el celular.
+      </p>
+    </div>
+
+    <div className="mb-6">
+      <p className="text-sm text-htb-text mb-2">Largo de la respuesta</p>
+      <div className="flex flex-wrap gap-2">
+        {ai.responseLengths.map((option) => (
+          <button
+            key={option.id}
+            onClick={() => ai.changeResponseLength(option.id)}
+            disabled={ai.isBusy}
+            aria-pressed={ai.responseLength === option.id}
+            className={`text-sm px-3 py-1.5 rounded-md border transition-colors disabled:cursor-not-allowed ${
+              ai.responseLength === option.id
+                ? 'border-htb-green bg-htb-card text-htb-green'
+                : 'border-gray-700 bg-htb-sidebar text-htb-text-dim hover:border-htb-green/50'
+            }`}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+      <p className="text-xs text-htb-text-dim mt-1">
+        {ai.responseLengths.find((l) => l.id === ai.responseLength)?.hint}
+        {ai.lowPower && ai.responseLength === 'long' && (
+          <span className="text-yellow-400">
+            {' '}
+            Con 4 GB de RAM o menos, "Larga" puede trabar el teléfono.
+          </span>
+        )}
       </p>
     </div>
 
