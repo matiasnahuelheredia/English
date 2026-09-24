@@ -14,6 +14,30 @@ import {
 const MODEL_STORAGE_KEY = 'aiCorrectorModel';
 const DEVICE_STORAGE_KEY = 'aiDevicePreference';
 
+// La IA corre entera dentro del navegador. En un celular (o en un equipo con
+// pocos núcleos o poca memoria) generar mucho texto llena la RAM y cuelga el
+// teléfono, así que en esos equipos limitamos cuánto genera de una vez.
+const isLowPowerDevice = () => {
+  try {
+    const mobileUA = /Android|iPhone|iPad|iPod|Mobile|Silk|Kindle/i.test(
+      navigator.userAgent || ''
+    );
+    const fewCores =
+      typeof navigator.hardwareConcurrency === 'number' &&
+      navigator.hardwareConcurrency > 0 &&
+      navigator.hardwareConcurrency <= 4;
+    const lowMemory =
+      typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4;
+    return Boolean(mobileUA || fewCores || lowMemory);
+  } catch {
+    return false;
+  }
+};
+
+// En un celular limitamos la respuesta a ~180 palabras: alcanza para la lista de
+// errores y evita que el teléfono se cuelgue por falta de memoria.
+const LOW_POWER_MAX_TOKENS = 180;
+
 // 'auto' = GPU si hay (más rápido) | 'wasm' = solo CPU (más lento, más fluido)
 const getSavedDevicePreference = () => {
   try {
@@ -49,6 +73,8 @@ const useLocalAI = () => {
   const [partial, setPartial] = useState('');
   const [generation, setGeneration] = useState(null); // { startedAt, tokens }
   const [error, setError] = useState(null);
+  // Se calcula una sola vez (no cambia durante la sesión)
+  const [lowPower] = useState(isLowPowerDevice);
 
   const workerRef = useRef(null);
   const pendingRef = useRef(null); // { resolve, reject } de la generación en curso
@@ -256,6 +282,10 @@ const useLocalAI = () => {
       loadModel();
       return Promise.resolve(null);
     }
+    // En el celular recortamos la respuesta para que no se cuelgue
+    const cappedTokens = lowPower
+      ? Math.min(maxNewTokens, LOW_POWER_MAX_TOKENS)
+      : maxNewTokens;
     setError(null);
     setPartial('');
     partialRef.current = '';
@@ -268,7 +298,7 @@ const useLocalAI = () => {
         modelId: modelIdRef.current,
         device: devicePreferenceRef.current,
         messages,
-        maxNewTokens,
+        maxNewTokens: cappedTokens,
       });
     }).catch(() => null);
   };
@@ -313,6 +343,9 @@ const useLocalAI = () => {
     },
     devicePreference,
     changeDevicePreference,
+    lowPower,
+    // En un celular, el modelo de 1 GB casi seguro se cuelga por falta de memoria
+    heavyModelOnMobile: lowPower && modelId !== DEFAULT_MODEL_ID,
     partial,
     generation,
     error,

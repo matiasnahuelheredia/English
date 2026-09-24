@@ -38,6 +38,18 @@ const AIModelPanel = ({ ai }) => (
           </button>
         ))}
       </div>
+      {ai.heavyModelOnMobile && (
+        <p className="text-xs text-yellow-400 mt-2">
+          ⚠️ En un celular, el modelo "Mejor calidad" (~1 GB) suele colgar el
+          teléfono por falta de memoria. Elegí "Liviano" para que no se trabe.
+        </p>
+      )}
+      {ai.lowPower && !ai.heavyModelOnMobile && (
+        <p className="text-xs text-htb-text-dim mt-2">
+          📱 En el celular la IA responde más corto (marca los errores más
+          importantes) para no trabarse.
+        </p>
+      )}
     </div>
 
     <div className="mb-6">
