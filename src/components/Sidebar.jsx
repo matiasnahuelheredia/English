@@ -58,45 +58,45 @@ const A1_SECTIONS = [
     key: 'Beginner-Tenses',
     label: '⏳ Tenses',
     items: [
-      { id: 'present-simple-a1', name: 'Present Simple' },
-      { id: 'present-continuous-a1', name: 'Present Continuous' },
-      { id: 'past-simple-a1', name: 'Past Simple (was / were + verbs)' },
-      { id: 'going-to-a1', name: 'Future: be going to' },
+      { id: 'present-simple-a1', name: '🟢 Present Simple' },
+      { id: 'present-continuous-a1', name: '▶️ Present Continuous' },
+      { id: 'past-simple-a1', name: '🕰️ Past Simple (was / were + verbs)' },
+      { id: 'going-to-a1', name: '🔮 Future: be going to' },
     ],
   },
   {
     key: 'Beginner-Grammar',
     label: '📝 Grammar',
     items: [
-      { id: 'verb-be-a1', name: '1A Verb be (singular)' },
-      { id: 'verb-be-all-a1', name: 'Verb be (all forms)' },
-      { id: 'there-is-are-a1', name: 'There is / There are' },
-      { id: 'can-a1', name: "Can / Can't" },
-      { id: 'possessives-a1', name: "Possessives & 's" },
-      { id: 'articles-plurals-a1', name: 'a / an & Plurals' },
-      { id: 'demonstratives-a1', name: 'This / That / These / Those' },
-      { id: 'prepositions-a1', name: 'Prepositions (place & time)' },
-      { id: 'question-words-a1', name: 'Question words' },
+      { id: 'verb-be-a1', name: '🔤 1A Verb be (singular)' },
+      { id: 'verb-be-all-a1', name: '🔤 Verb be (all forms)' },
+      { id: 'there-is-are-a1', name: '📍 There is / There are' },
+      { id: 'can-a1', name: "💪 Can / Can't" },
+      { id: 'possessives-a1', name: "🔑 Possessives & 's" },
+      { id: 'articles-plurals-a1', name: '🅰️ a / an & Plurals' },
+      { id: 'demonstratives-a1', name: '👉 This / That / These / Those' },
+      { id: 'prepositions-a1', name: '📌 Prepositions (place & time)' },
+      { id: 'question-words-a1', name: '❓ Question words' },
     ],
   },
   {
     key: 'Beginner-Vocabulary',
     label: '📖 Vocabulary',
     items: [
-      { id: 'numbers-a1', name: 'Numbers' },
-      { id: 'colours-a1', name: 'Colours' },
-      { id: 'family-a1', name: 'Family' },
-      { id: 'days-months-a1', name: 'Days & Months' },
-      { id: 'food-drinks-a1', name: 'Food & Drinks' },
-      { id: 'jobs-a1', name: 'Jobs' },
-      { id: 'house-a1', name: 'The House' },
-      { id: 'daily-routine-a1', name: 'Daily Routine' },
+      { id: 'numbers-a1', name: '🔢 Numbers' },
+      { id: 'colours-a1', name: '🎨 Colours' },
+      { id: 'family-a1', name: '👨‍👩‍👧 Family' },
+      { id: 'days-months-a1', name: '📅 Days & Months' },
+      { id: 'food-drinks-a1', name: '🍔 Food & Drinks' },
+      { id: 'jobs-a1', name: '💼 Jobs' },
+      { id: 'house-a1', name: '🏠 The House' },
+      { id: 'daily-routine-a1', name: '🔁 Daily Routine' },
     ],
   },
   {
     key: 'Beginner-Mixed',
     label: '🔀 Mixed Practice',
-    items: [{ id: 'mixed-a1', name: 'All A1 topics mixed' }],
+    items: [{ id: 'mixed-a1', name: '🔀 All A1 topics mixed' }],
   },
 ];
 
@@ -105,44 +105,44 @@ const A2_SECTIONS = [
     key: 'Elementary-Tenses',
     label: '⏳ Tenses',
     items: [
-      { id: 'present-simple-continuous-a2', name: 'Present Simple vs Continuous' },
-      { id: 'past-simple-a2', name: 'Past Simple (regular & irregular)' },
-      { id: 'past-continuous-a2', name: 'Past Continuous' },
-      { id: 'present-perfect-a2', name: 'Present Perfect' },
-      { id: 'will-going-to-a2', name: 'Future: will vs going to' },
+      { id: 'present-simple-continuous-a2', name: '🟢 Present Simple vs Continuous' },
+      { id: 'past-simple-a2', name: '🕰️ Past Simple (regular & irregular)' },
+      { id: 'past-continuous-a2', name: '◀️ Past Continuous' },
+      { id: 'present-perfect-a2', name: '✅ Present Perfect' },
+      { id: 'will-going-to-a2', name: '🔮 Future: will vs going to' },
     ],
   },
   {
     key: 'Elementary-Grammar',
     label: '📝 Grammar',
     items: [
-      { id: 'comparatives-a2', name: 'Comparatives' },
-      { id: 'superlatives-a2', name: 'Superlatives' },
-      { id: 'countable-uncountable-a2', name: 'Some / any / much / many' },
-      { id: 'frequency-adverbs-a2', name: 'Adverbs of frequency' },
-      { id: 'have-to-a2', name: "Have to / Don't have to / Must" },
-      { id: 'should-a2', name: "Should / Shouldn't" },
-      { id: 'object-pronouns-a2', name: 'Object pronouns' },
+      { id: 'comparatives-a2', name: '📊 Comparatives' },
+      { id: 'superlatives-a2', name: '🏆 Superlatives' },
+      { id: 'countable-uncountable-a2', name: '🔢 Some / any / much / many' },
+      { id: 'frequency-adverbs-a2', name: '💫 Adverbs of frequency' },
+      { id: 'have-to-a2', name: "⚖️ Have to / Don't have to / Must" },
+      { id: 'should-a2', name: "⚖️ Should / Shouldn't" },
+      { id: 'object-pronouns-a2', name: '🙋 Object pronouns' },
     ],
   },
   {
     key: 'Elementary-Vocabulary',
     label: '📖 Vocabulary',
     items: [
-      { id: 'weather-a2', name: 'Weather' },
-      { id: 'clothes-a2', name: 'Clothes' },
-      { id: 'transport-a2', name: 'Transport' },
-      { id: 'town-city-a2', name: 'Town & City' },
-      { id: 'feelings-a2', name: 'Feelings' },
-      { id: 'holidays-a2', name: 'Holidays & Travel' },
-      { id: 'health-body-a2', name: 'Health & the Body' },
-      { id: 'shopping-a2', name: 'Shopping' },
+      { id: 'weather-a2', name: '🌦️ Weather' },
+      { id: 'clothes-a2', name: '👕 Clothes' },
+      { id: 'transport-a2', name: '⚽ Transport' },
+      { id: 'town-city-a2', name: '🏙️ Town & City' },
+      { id: 'feelings-a2', name: '😊 Feelings' },
+      { id: 'holidays-a2', name: '📅 Holidays & Travel' },
+      { id: 'health-body-a2', name: '🦵 Health & the Body' },
+      { id: 'shopping-a2', name: '🛍️ Shopping' },
     ],
   },
   {
     key: 'Elementary-Mixed',
     label: '🔀 Mixed Practice',
-    items: [{ id: 'mixed-a2', name: 'All A2 topics mixed' }],
+    items: [{ id: 'mixed-a2', name: '🔀 All A2 topics mixed' }],
   },
 ];
 
@@ -151,40 +151,40 @@ const C2_SECTIONS = [
     key: 'Proficiency-Tenses',
     label: '⏳ Tenses & Aspect',
     items: [
-      { id: 'future-in-the-past-c2', name: 'Future in the Past' },
-      { id: 'perfect-aspects-c2', name: 'Perfect Aspects' },
+      { id: 'future-in-the-past-c2', name: '🕰️ Future in the Past' },
+      { id: 'perfect-aspects-c2', name: '⏳ Perfect Aspects' },
     ],
   },
   {
     key: 'Proficiency-Grammar',
     label: '📝 Grammar',
     items: [
-      { id: 'advanced-inversion-c2', name: 'Advanced Inversion' },
-      { id: 'subjunctive-c2', name: 'The Subjunctive' },
-      { id: 'cleft-sentences-c2', name: 'Cleft & Pseudo-cleft Sentences' },
-      { id: 'participle-clauses-c2', name: 'Participle Clauses' },
-      { id: 'advanced-conditionals-c2', name: 'Advanced & Mixed Conditionals' },
-      { id: 'ellipsis-substitution-c2', name: 'Ellipsis & Substitution' },
+      { id: 'advanced-inversion-c2', name: '🔃 Advanced Inversion' },
+      { id: 'subjunctive-c2', name: '🧠 The Subjunctive' },
+      { id: 'cleft-sentences-c2', name: '✂️ Cleft & Pseudo-cleft Sentences' },
+      { id: 'participle-clauses-c2', name: '🧩 Participle Clauses' },
+      { id: 'advanced-conditionals-c2', name: '🔗 Advanced & Mixed Conditionals' },
+      { id: 'ellipsis-substitution-c2', name: '➖ Ellipsis & Substitution' },
     ],
   },
   {
     key: 'Proficiency-Vocabulary',
     label: '📖 Vocabulary',
     items: [
-      { id: 'advanced-idioms-c2', name: 'Advanced Idioms' },
-      { id: 'collocations-c2', name: 'Collocations' },
-      { id: 'phrasal-verbs-c2', name: 'Advanced Phrasal Verbs' },
-      { id: 'formal-language-c2', name: 'Formal & Academic Language' },
-      { id: 'nuanced-synonyms-c2', name: 'Nuanced Synonyms' },
-      { id: 'confusing-words-c2', name: 'Commonly Confused Words' },
-      { id: 'binomials-c2', name: 'Binomials & Fixed Pairs' },
-      { id: 'euphemisms-c2', name: 'Euphemisms & Diplomatic Language' },
+      { id: 'advanced-idioms-c2', name: '🗣️ Advanced Idioms' },
+      { id: 'collocations-c2', name: '🧲 Collocations' },
+      { id: 'phrasal-verbs-c2', name: '🧩 Advanced Phrasal Verbs' },
+      { id: 'formal-language-c2', name: '🎩 Formal & Academic Language' },
+      { id: 'nuanced-synonyms-c2', name: '🔁 Nuanced Synonyms' },
+      { id: 'confusing-words-c2', name: '🌀 Commonly Confused Words' },
+      { id: 'binomials-c2', name: '👫 Binomials & Fixed Pairs' },
+      { id: 'euphemisms-c2', name: '🕊️ Euphemisms & Diplomatic Language' },
     ],
   },
   {
     key: 'Proficiency-Mixed',
     label: '🔀 Mixed Practice',
-    items: [{ id: 'mixed-c2', name: 'All C2 topics mixed' }],
+    items: [{ id: 'mixed-c2', name: '🔀 All C2 topics mixed' }],
   },
 ];
 
@@ -253,66 +253,66 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
   }, [expandedSections]);
 
   const tenses = [
-    { id: 'present-simple', name: 'Present Simple', category: 'Present' },
+    { id: 'present-simple', name: '🟢 Present Simple', category: 'Present' },
     {
       id: 'present-continuous',
-      name: 'Present Continuous',
+      name: '▶️ Present Continuous',
       category: 'Present',
     },
     {
       id: 'present-simple-continuous-mix',
-      name: 'Present Simple & Continuous Mix',
+      name: '🟢 Present Simple & Continuous Mix',
       category: 'Present',
     },
-    { id: 'present-perfect', name: 'Present Perfect', category: 'Present' },
+    { id: 'present-perfect', name: '✅ Present Perfect', category: 'Present' },
     {
       id: 'present-perfect-continuous',
-      name: 'Present Perfect Continuous',
+      name: '✅ Present Perfect Continuous',
       category: 'Present',
     },
 
-    { id: 'past-simple', name: 'Past Simple', category: 'Past' },
-    { id: 'past-continuous', name: 'Past Continuous', category: 'Past' },
-    { id: 'past-perfect', name: 'Past Perfect', category: 'Past' },
+    { id: 'past-simple', name: '🕰️ Past Simple', category: 'Past' },
+    { id: 'past-continuous', name: '◀️ Past Continuous', category: 'Past' },
+    { id: 'past-perfect', name: '⏪ Past Perfect', category: 'Past' },
     {
       id: 'past-perfect-continuous',
-      name: 'Past Perfect Continuous',
+      name: '⏳ Past Perfect Continuous',
       category: 'Past',
     },
 
-    { id: 'future-simple', name: 'Future Simple', category: 'Future' },
-    { id: 'future-continuous', name: 'Future Continuous', category: 'Future' },
-    { id: 'future-perfect', name: 'Future Perfect', category: 'Future' },
+    { id: 'future-simple', name: '🔮 Future Simple', category: 'Future' },
+    { id: 'future-continuous', name: '⏩ Future Continuous', category: 'Future' },
+    { id: 'future-perfect', name: '🎯 Future Perfect', category: 'Future' },
     {
       id: 'future-perfect-continuous',
-      name: 'Future Perfect Continuous',
+      name: '⏳ Future Perfect Continuous',
       category: 'Future',
     },
 
     {
       id: 'first-conditional',
-      name: 'First Conditional',
+      name: '🔗 First Conditional',
       category: 'Conditionals',
     },
     {
       id: 'second-conditional',
-      name: 'Second Conditional',
+      name: '🔗 Second Conditional',
       category: 'Conditionals',
     },
     {
       id: 'third-conditional',
-      name: 'Third Conditional',
+      name: '🔗 Third Conditional',
       category: 'Conditionals',
     },
   ];
 
   const vocabularyTopics = [
-    { id: 'clothes-fashion', name: 'Clothes and Fashion' },
-    { id: 'airport', name: 'Airport' },
-    { id: 'weather', name: 'Weather' },
-    { id: 'illnesses-injuries', name: 'Illnesses and Injuries' },
-    { id: 'conflict-warfare', name: 'Conflict and Warfare' },
-    { id: 'adjectives', name: 'Adjectives' },
+    { id: 'clothes-fashion', name: '👕 Clothes and Fashion' },
+    { id: 'airport', name: '✈️ Airport' },
+    { id: 'weather', name: '🌦️ Weather' },
+    { id: 'illnesses-injuries', name: '🤕 Illnesses and Injuries' },
+    { id: 'conflict-warfare', name: '⚔️ Conflict and Warfare' },
+    { id: 'adjectives', name: '🎨 Adjectives' },
   ];
 
   const groupedTenses = tenses.reduce((acc, tense) => {
@@ -660,6 +660,21 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                               : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                           }`}
                         >
+                          {({
+                            cinema: '🎬',
+                            'dependent-prepositions': '📌',
+                            education: '🎓',
+                            'food-cooking': '🍳',
+                            houses: '🏠',
+                            money: '💰',
+                            personality: '😀',
+                            relationships: '💞',
+                            sport: '⚽',
+                            'the-body': '🦵',
+                            transport: '🚗',
+                            'word-building': '🧱',
+                            work: '💼',
+                          }[topic] || '📖') + ' '}
                           {topic
                             .split('-')
                             .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
@@ -705,36 +720,36 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >✅ 
                         Present Perfect & Past Simple (2)
                       </button>
                       {[
-                        { id: 'present-perfect-b1', name: 'Present Perfect' },
-                        { id: 'past-simple-b1', name: 'Past Simple' },
-                        { id: 'past-continuous-b1', name: 'Past Continuous' },
-                        { id: 'past-perfect-b1', name: 'Past Perfect' },
+                        { id: 'present-perfect-b1', name: '✅ Present Perfect' },
+                        { id: 'past-simple-b1', name: '🕰️ Past Simple' },
+                        { id: 'past-continuous-b1', name: '◀️ Past Continuous' },
+                        { id: 'past-perfect-b1', name: '⏪ Past Perfect' },
                         {
                           id: 'narrative-tenses-b1',
-                          name: 'Narrative Tenses (3 pasts)',
+                          name: '📖 Narrative Tenses (3 pasts)',
                         },
                         {
                           id: 'future-forms-b1',
-                          name: 'Future (will / going to / -ing)',
+                          name: '🔮 Future (will / going to / -ing)',
                         },
-                        { id: 'conditionals-b1', name: 'Conditionals (0/1/2)' },
+                        { id: 'conditionals-b1', name: '🔗 Conditionals (0/1/2)' },
                         {
                           id: 'modals-obligation-b1',
-                          name: 'Modals (must / have to / should)',
+                          name: '⚖️ Modals (must / have to / should)',
                         },
-                        { id: 'passive-b1', name: 'Passive (present & past)' },
-                        { id: 'reported-speech-b1', name: 'Reported Speech' },
+                        { id: 'passive-b1', name: '🟢 Passive (present & past)' },
+                        { id: 'reported-speech-b1', name: '💬 Reported Speech' },
                         {
                           id: 'relative-clauses-b1',
-                          name: 'Relative Clauses (defining)',
+                          name: '🧷 Relative Clauses (defining)',
                         },
-                        { id: 'used-to-b1', name: 'Used to' },
-                        { id: 'question-tags-b1', name: 'Question Tags' },
-                        { id: 'quantifiers-b1', name: 'Quantifiers' },
+                        { id: 'used-to-b1', name: '⏮️ Used to' },
+                        { id: 'question-tags-b1', name: '🏷️ Question Tags' },
+                        { id: 'quantifiers-b1', name: '🔢 Quantifiers' },
                       ].map((topic) => (
                         <button
                           key={topic.id}
@@ -785,7 +800,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔀 
                         All B1 grammar mixed
                       </button>
                     </div>
@@ -825,7 +840,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📧 
                         Email Writing Examples
                       </button>
                     </div>
@@ -867,14 +882,14 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🕵️ 
                         Hacking Terms
                       </button>
                       {[
-                        { id: 'pentest-findings', name: 'Web Pentest Findings' },
+                        { id: 'pentest-findings', name: '🛡️ Web Pentest Findings' },
                         {
                           id: 'pentest-report',
-                          name: 'Pentest Report Writing',
+                          name: '📄 Pentest Report Writing',
                         },
                       ].map((topic) => (
                         <button
@@ -893,18 +908,18 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                         Report Grammar
                       </p>
                       {[
-                        { id: 'report-passive-voice', name: 'Passive Voice' },
+                        { id: 'report-passive-voice', name: '🔄 Passive Voice' },
                         {
                           id: 'report-recommendations',
-                          name: 'Recommendations (should / must)',
+                          name: '⚖️ Recommendations (should / must)',
                         },
                         {
                           id: 'report-impact-conditionals',
-                          name: 'Describing Impact (would / could)',
+                          name: '💥 Describing Impact (would / could)',
                         },
                         {
                           id: 'report-findings-structures',
-                          name: 'Presenting Findings',
+                          name: '🟢 Presenting Findings',
                         },
                         {
                           id: 'mixed-pentest',
@@ -1203,7 +1218,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Word Order in Questions
                       </button>
                     </div>
@@ -1240,7 +1255,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔀 
                         All Tenses Mixed
                       </button>
                       <button
@@ -1301,7 +1316,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >💫 
                         Adverbs and Phrases
                       </button>
                       <button
@@ -1311,7 +1326,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Business
                       </button>
                     </div>
@@ -1351,7 +1366,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🌀 
                         Confusing Adverbs
                       </button>
                       <button
@@ -1361,18 +1376,18 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >💫 
                         Sentence Adverbs
                       </button>
                       {[
-                        { id: 'passive-voice-b2', name: 'Passive Voice' },
-                        { id: 'reported-speech-b2', name: 'Reported Speech' },
-                        { id: 'used-to-b2', name: 'Used to / Be used to' },
-                        { id: 'wish-if-only-b2', name: 'Wish / If only' },
-                        { id: 'modals-deduction-b2', name: 'Modals of Deduction' },
+                        { id: 'passive-voice-b2', name: '🔄 Passive Voice' },
+                        { id: 'reported-speech-b2', name: '💬 Reported Speech' },
+                        { id: 'used-to-b2', name: '⏮️ Used to / Be used to' },
+                        { id: 'wish-if-only-b2', name: '🌠 Wish / If only' },
+                        { id: 'modals-deduction-b2', name: '⚖️ Modals of Deduction' },
                         {
                           id: 'gerunds-infinitives-b2',
-                          name: 'Gerunds & Infinitives',
+                          name: '🎯 Gerunds & Infinitives',
                         },
                       ].map((topic) => (
                         <button
@@ -1424,7 +1439,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔀 
                         All B2 grammar mixed
                       </button>
                     </div>
@@ -1464,7 +1479,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📧 
                         Email Writing Examples
                       </button>
                       <button
@@ -1474,7 +1489,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📖 
                         Story Telling Examples
                       </button>
                       <button
@@ -1484,7 +1499,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🪢 
                         Linking Words & Connectors
                       </button>
                     </div>
@@ -1524,7 +1539,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🗨️ 
                         Talk About Yourself
                       </button>
                       <button
@@ -1534,7 +1549,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🗨️ 
                         Personal Questions & Interview
                       </button>
                       <button
@@ -1544,7 +1559,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🖼️ 
                         Picture Description
                       </button>
                       <button
@@ -1554,7 +1569,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >💼 
                         Job Interview Practice
                       </button>
                     </div>
@@ -1594,7 +1609,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Match Words & Definitions
                       </button>
                     </div>
@@ -1632,7 +1647,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         Complete Exam 1
                       </button>
                       <button
@@ -1642,7 +1657,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         Complete Exam 2
                       </button>
                       <button
@@ -1652,7 +1667,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         Complete Exam 3
                       </button>
                       <button
@@ -1662,7 +1677,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         Complete Exam 4
                       </button>
                     </div>
@@ -1673,7 +1688,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
                     <span className="text-htb-text-dim">
-                      Exam 2 - Cybersecurity
+                      🛡️ Exam 2 - Cybersecurity
                     </span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
@@ -1701,7 +1716,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🛡️ 
                         Cybersecurity Exam
                       </button>
                     </div>
@@ -1714,7 +1729,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                         ? 'bg-htb-green text-htb-bg font-medium'
                         : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                     }`}
-                  >
+                  >📝 
                     Final Exam
                   </button>
                 </div>
@@ -1789,7 +1804,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🤲 
                         Have, Have got & Had
                       </button>
                       <button
@@ -1799,7 +1814,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🪧 
                         Discourse Markers - Linkers
                       </button>
                       <button
@@ -1809,7 +1824,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🙋 
                         Pronouns
                       </button>
                       <button
@@ -1819,7 +1834,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🕰️ 
                         The Past: Habitual Events
                       </button>
                       <button
@@ -1829,7 +1844,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🫳 
                         Get (verb)
                       </button>
                       <button
@@ -1839,7 +1854,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🪧 
                         Discourse Markers
                       </button>
                       <button
@@ -1851,7 +1866,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔮 
                         Speculation & Deduction
                       </button>
                       <button
@@ -1861,7 +1876,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔃 
                         Inversion
                       </button>
                       <button
@@ -1871,7 +1886,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📏 
                         Distancing
                       </button>
                       <button
@@ -1881,7 +1896,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🕰️ 
                         Unreal Past Tenses
                       </button>
                       <button
@@ -1893,7 +1908,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Verb + Object + Inf/Ger
                       </button>
                       <button
@@ -1905,7 +1920,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔗 
                         Conditional Sentences
                       </button>
                       <button
@@ -1917,7 +1932,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🚦 
                         Permission & Obligation
                       </button>
                       <button
@@ -1927,7 +1942,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >👀 
                         Verbs of the Senses
                       </button>
                       <button
@@ -1937,7 +1952,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🎯 
                         Gerunds & Infinitives
                       </button>
                       <button
@@ -1947,7 +1962,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔮 
                         Future Plans & Arrangements
                       </button>
                       <button
@@ -1957,7 +1972,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >➖ 
                         Ellipsis
                       </button>
                       <button
@@ -1969,7 +1984,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🧱 
                         Compound & Possessive Nouns
                       </button>
                       <button
@@ -1979,7 +1994,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >✂️ 
                         Cleft Sentences
                       </button>
                       <button
@@ -1989,7 +2004,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🧷 
                         Relative Clauses
                       </button>
                     </div>
@@ -2027,7 +2042,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🔀 
                         All C1 grammar mixed
                       </button>
                     </div>
@@ -2065,7 +2080,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📄 
                         Managerial Reports
                       </button>
                     </div>
@@ -2105,7 +2120,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Adjectives
                       </button>
                       <button
@@ -2115,7 +2130,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🗣️ 
                         Idioms
                       </button>
                       <button
@@ -2125,7 +2140,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >💼 
                         Work
                       </button>
                       <button
@@ -2135,7 +2150,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🧩 
                         Phrasal Verbs
                       </button>
                       <button
@@ -2145,7 +2160,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Sounds and the Human Voice
                       </button>
                       <button
@@ -2155,7 +2170,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Time Expressions
                       </button>
                       <button
@@ -2165,7 +2180,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📌 
                         Prepositions
                       </button>
                       <button
@@ -2175,7 +2190,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >💰 
                         Money
                       </button>
                       <button
@@ -2185,7 +2200,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Phones and Technology (New)
                       </button>
                       <button
@@ -2195,7 +2210,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Negative Prefixes
                       </button>
                       <button
@@ -2205,7 +2220,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Prefixes with Other Meanings
                       </button>
                       <button
@@ -2215,7 +2230,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Verbs and Verb Phrases
                       </button>
                       <button
@@ -2227,7 +2242,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Animals, Birds & Insects
                       </button>
                       <button
@@ -2237,7 +2252,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Animal Issues
                       </button>
                       <button
@@ -2247,7 +2262,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >🗣️ 
                         Expressions and Idioms
                       </button>
                       <button
@@ -2257,7 +2272,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Utensils
                       </button>
                       <button
@@ -2267,7 +2282,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Adjectives (Old)
                       </button>
                       <button
@@ -2277,7 +2292,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >⚔️ 
                         Conflict and Warfare
                       </button>
                       <button
@@ -2287,7 +2302,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📘 
                         Phones and Technology
                       </button>
                     </div>
@@ -2327,7 +2342,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         C1 Complete Exam 1
                       </button>
                       <button
@@ -2337,7 +2352,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         C1 Complete Exam 2
                       </button>
                       <button
@@ -2347,7 +2362,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         C1 Complete Exam 3
                       </button>
                       <button
@@ -2357,7 +2372,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                             ? 'bg-htb-green text-htb-bg font-medium'
                             : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
                         }`}
-                      >
+                      >📝 
                         C1 Complete Exam 4
                       </button>
                     </div>
