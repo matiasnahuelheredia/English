@@ -731,6 +731,46 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     </div>
                   )}
 
+                  {/* Mixed Practice B1 */}
+                  <button
+                    onClick={() => toggleSection('Intermediate-Mixed')}
+                    className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                  >
+                    <span className="text-htb-text-dim">🔀 Mixed Practice</span>
+                    <svg
+                      className={`w-3 h-3 transition-transform ${
+                        expandedSections['Intermediate-Mixed']
+                          ? 'rotate-180'
+                          : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {expandedSections['Intermediate-Mixed'] && (
+                    <div className="ml-3 space-y-0.5">
+                      <button
+                        onClick={() => onSelectTense('mixed-b1')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'mixed-b1'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        All B1 grammar mixed
+                      </button>
+                    </div>
+                  )}
+
                   {/* Writing B1 */}
                   <button
                     onClick={() => toggleSection('Intermediate-Writing')}
