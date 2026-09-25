@@ -631,6 +631,9 @@ const ExamView6 = () => {
                 }`}>
                   {feedback.isCorrect ? 'Correct!' : 'Incorrect'}
                 </p>
+                <p className="text-xs text-htb-green font-semibold mb-2 bg-htb-card inline-block px-3 py-1 rounded border border-htb-green/30">
+                  📚 {currentSection.title}
+                </p>
                 
                 {!feedback.isCorrect && (
                   <p className="text-sm text-htb-text mb-2">
