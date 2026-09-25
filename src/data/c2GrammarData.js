@@ -262,6 +262,32 @@ export const c2GrammarExercises = {
       '"It is straightforward to show that..." presenta una demostración simple.'),
     ro('As a result, the posterior distribution is Gaussian.',
       '"As a result" introduce una consecuencia (conector formal).'),
+
+    // Segunda tanda: estructuras más avanzadas del registro de papers
+    dd('The terms', 'θ can be grouped together.', ['involving', 'which involve them', 'that involving'], 'involving',
+      'Reduced relative clause: "the terms involving θ" = the terms that involve θ.'),
+    dd('The model', 'in the previous section is nonlinear.', ['described', 'describing', 'which described'], 'described',
+      'Reduced relative (pasiva): "the model described" = the model that was described.'),
+    dd('', 'the training data, the posterior can be computed.', ['Given', 'Giving', 'Being given'], 'Given',
+      '"Given" como preposición = dado/dada; introduce la información de la que se parte.'),
+    dd('', 'the sample size, the smaller the variance of the estimate.', ['The larger', 'The largest', 'The more large'], 'The larger',
+      'Estructura de proporcionalidad: "The + comparativo…, the + comparativo…".'),
+    dd('We approximate the integral,', 'obtaining a tractable bound.', ['thereby', 'therefore', 'however'], 'thereby',
+      '"thereby + -ing" = de ese modo / con lo cual; expresa el resultado de la acción.'),
+    dd('This', 'in a significant reduction of the error.', ['results', 'result', 'is resulting'], 'results',
+      '"result in" = dar como resultado (verbo académico frecuente).'),
+    dd('The', 'of this expression is given in Appendix A.', ['derivation', 'derive', 'derived'], 'derivation',
+      'Nominalización: se prefiere el sustantivo (the derivation of) al verbo.'),
+    dd('The assumption', 'the data are independent is often unrealistic.', ['that', 'which', 'what'], 'that',
+      '"the assumption that…" (that en aposición, no relativo).'),
+    inp('The parameters', '(estimate) by maximizing the likelihood.', 'are estimated',
+      'Pasiva presente: are + participio.'),
+    inp('', '(assume) a Gaussian prior, the posterior is also Gaussian.', 'Assuming',
+      'Participle clause: "Assuming a Gaussian prior, …" = If we assume…'),
+    ro('The larger the model, the greater the risk of overfitting.',
+      'Proporcionalidad: the + comparativo, the + comparativo.'),
+    ro('Each data point is assumed to be independent.',
+      '"be assumed to + infinitive": pasiva de reporte (se asume que…).'),
   ],
 };
 
@@ -377,6 +403,20 @@ export const c2GrammarInfo = {
           items: [
             { word: 'Let X be… / Suppose that… / Consider…', es: 'Sea X… / Supongamos… / Consideremos…', use: 'Para introducir definiciones, hipótesis y casos.', example: 'Let X be a random variable. Suppose that the data are i.i.d.' },
             { word: 'such that / so that / provided that', es: 'tal que / de modo que / siempre que', use: 'Introducen condiciones dentro de una demostración.', example: 'Choose θ such that the likelihood is maximized.' },
+          ],
+        },
+        {
+          label: 'Cláusulas reducidas y "given"',
+          items: [
+            { word: 'the terms involving θ / the model described above', es: 'relativa reducida', use: 'Se omite "that is/are": involving = that involve; described = that was described.', example: 'The terms involving θ can be grouped.' },
+            { word: 'Given the data, … / Assuming X, …', es: 'dado / suponiendo', use: '"Given" funciona como preposición; "Assuming…" es una participle clause (= If we assume…).', example: 'Given the data, the posterior can be computed.' },
+          ],
+        },
+        {
+          label: 'Nominalización y proporcionalidad',
+          items: [
+            { word: 'the derivation of… / the assumption that…', es: 'nominalización', use: 'El registro prefiere el sustantivo al verbo (derive → the derivation of).', example: 'The derivation of this expression is in Appendix A.' },
+            { word: 'The larger…, the smaller… / thereby + -ing', es: 'proporcionalidad y resultado', use: '"The + comp…, the + comp…" liga dos magnitudes; "thereby + -ing" expresa la consecuencia.', example: 'The larger the model, the greater the risk; we approximate it, thereby reducing cost.' },
           ],
         },
       ],
