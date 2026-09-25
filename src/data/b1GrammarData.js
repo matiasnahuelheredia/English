@@ -501,6 +501,36 @@ export const b1GrammarInfo = {
   },
   'future-forms-b1': {
     title: 'Future: will / going to / present continuous - B1 Grammar',
+    theory: {
+      intro:
+        'En inglés hay varias formas de hablar del futuro, y la elección depende de cuánto planeaste la acción y de si hay evidencia. No hay un solo "futuro".',
+      groups: [
+        {
+          label: 'will',
+          items: [
+            { word: 'will + base', es: 'decisión del momento / predicción / promesa', use: 'Algo que decidís al hablar, una opinión ("I think...") o una promesa.', example: "The phone's ringing — I'll answer it. / I think it will rain." },
+          ],
+        },
+        {
+          label: 'be going to',
+          items: [
+            { word: 'be going to + base', es: 'plan / evidencia', use: 'Un plan decidido antes de hablar, o una predicción con evidencia que ves ahora.', example: "We're going to start a business. / Look at those clouds — it's going to rain." },
+          ],
+        },
+        {
+          label: 'Present continuous',
+          items: [
+            { word: 'am/is/are + -ing', es: 'arreglo fijo', use: 'Una cita o arreglo ya cerrado, normalmente con hora/fecha.', example: "I'm meeting Ana at 6. / We're flying to Madrid on Friday." },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'Present simple para horarios', es: 'trenes, cines...', use: 'Para horarios fijos se usa presente simple.', example: 'The train leaves at 6:45.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'will + base | be going to + base | am/is/are + verb-ing',
       negative: "won't + base | isn't going to + base | isn't + verb-ing",
@@ -720,6 +750,33 @@ export const b1GrammarInfo = {
   },
   'relative-clauses-b1': {
     title: 'Relative Clauses (defining) - B1 Grammar',
+    theory: {
+      intro:
+        'Las relative clauses dan información sobre un sustantivo con un pronombre relativo. Las "defining" (las de este ejercicio) dan información esencial para saber de quién/qué hablás, y no llevan comas.',
+      groups: [
+        {
+          label: 'Personas y cosas',
+          items: [
+            { word: 'who', es: 'que (personas)', use: 'Para personas.', example: 'The man who lives next door is a doctor.' },
+            { word: 'which', es: 'que (cosas)', use: 'Para cosas o animales.', example: 'The film which we watched was boring.' },
+            { word: 'that', es: 'que (personas o cosas)', use: 'Sirve para ambos en las defining; muy común.', example: "That's the key that opens the door." },
+          ],
+        },
+        {
+          label: 'Lugar y posesión',
+          items: [
+            { word: 'where', es: 'donde (lugares)', use: 'Para lugares.', example: "That's the hospital where I was born." },
+            { word: 'whose', es: 'cuyo/a (posesión)', use: 'Indica posesión (su... de alguien).', example: "She's the woman whose car was stolen." },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'defining = sin comas', es: 'info esencial', use: 'Si la info es necesaria para identificar el sustantivo, NO va coma. (Las non-defining, con comas, son de C1.)', example: 'The people who work here are friendly.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'who (people) | which/that (things) | where (places) | whose (possession)',
       negative: '(the clause simply defines the noun)',
@@ -765,6 +822,31 @@ export const b1GrammarInfo = {
   },
   'question-tags-b1': {
     title: 'Question Tags - B1 Grammar',
+    theory: {
+      intro:
+        'Las question tags son esas mini-preguntas al final de una oración (…, no?) para confirmar algo o buscar acuerdo. La regla base: oración positiva → tag negativa; oración negativa → tag positiva. La tag repite el auxiliar o modal de la oración.',
+      groups: [
+        {
+          label: 'Regla base',
+          items: [
+            { word: 'Positiva → tag negativa', es: 'afirmación + ¿no?', use: 'Si la oración es positiva, la tag va en negativo.', example: "You're from Spain, aren't you?" },
+            { word: 'Negativa → tag positiva', es: 'negación + ¿sí?', use: 'Si la oración es negativa, la tag va en positivo.', example: "She doesn't like coffee, does she?" },
+          ],
+        },
+        {
+          label: 'Qué auxiliar usar',
+          items: [
+            { word: 'Repetí el auxiliar/modal', es: 'be, do, have, can, will...', use: 'Si no hay auxiliar, usás do/does (presente) o did (pasado).', example: 'You went home, didn\'t you? / He can swim, can\'t he?' },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'I am → aren\'t I?', es: 'excepción', use: 'La tag de "I am" es "aren\'t I?" (no "amn\'t I").', example: "I'm late, aren't I?" },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'Positive statement + negative tag (You are..., aren\'t you?)',
       negative: 'Negative statement + positive tag (You don\'t..., do you?)',
@@ -775,6 +857,34 @@ export const b1GrammarInfo = {
   },
   'quantifiers-b1': {
     title: 'Quantifiers - B1 Grammar',
+    theory: {
+      intro:
+        'Los quantifiers dicen "cuánto" o "cuántos". La clave es si el sustantivo es contable (chairs, apples) o incontable (water, money): algunos van con uno, otros con el otro, y otros con ambos.',
+      groups: [
+        {
+          label: 'some / any',
+          items: [
+            { word: 'some', es: 'algo de / algunos', use: 'En afirmaciones, y en ofrecimientos/pedidos.', example: 'There is some milk. / Would you like some coffee?' },
+            { word: 'any', es: 'algo de / algún', use: 'En negativos y preguntas.', example: "There isn't any milk. / Is there any sugar?" },
+          ],
+        },
+        {
+          label: 'much / many',
+          items: [
+            { word: 'much', es: 'mucho (incontable)', use: 'Con incontables, sobre todo en negativos y preguntas. "How much...?"', example: "I don't have much time. / How much money...?" },
+            { word: 'many', es: 'muchos (contable)', use: 'Con contables en plural. "How many...?"', example: 'How many people came?' },
+          ],
+        },
+        {
+          label: 'a few / a little / a lot of',
+          items: [
+            { word: 'a few', es: 'unos pocos (contable)', use: 'Con contables plurales.', example: 'a few apples.' },
+            { word: 'a little', es: 'un poco (incontable)', use: 'Con incontables.', example: 'a little time.' },
+            { word: 'a lot of / lots of', es: 'mucho/s (ambos)', use: 'Sirve con contables e incontables.', example: 'a lot of friends / a lot of money.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'some | a lot of | much (uncountable) | many (countable) | a little / a few',
       negative: "not any | not much | not many",
