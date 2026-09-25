@@ -717,6 +717,24 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                           id: 'narrative-tenses-b1',
                           name: 'Narrative Tenses (3 pasts)',
                         },
+                        {
+                          id: 'future-forms-b1',
+                          name: 'Future (will / going to / -ing)',
+                        },
+                        { id: 'conditionals-b1', name: 'Conditionals (0/1/2)' },
+                        {
+                          id: 'modals-obligation-b1',
+                          name: 'Modals (must / have to / should)',
+                        },
+                        { id: 'passive-b1', name: 'Passive (present & past)' },
+                        { id: 'reported-speech-b1', name: 'Reported Speech' },
+                        {
+                          id: 'relative-clauses-b1',
+                          name: 'Relative Clauses (defining)',
+                        },
+                        { id: 'used-to-b1', name: 'Used to' },
+                        { id: 'question-tags-b1', name: 'Question Tags' },
+                        { id: 'quantifiers-b1', name: 'Quantifiers' },
                       ].map((topic) => (
                         <button
                           key={topic.id}
