@@ -225,6 +225,44 @@ export const c2GrammarExercises = {
     ro('I asked him to stay, but he refused to.',
       'Ellipsis after "to": refused to (stay).'),
   ],
+
+  // Inglés académico / científico: el registro de papers y libros técnicos
+  // (como el de machine learning de Bishop). Voz pasiva, hedging, conectores
+  // lógicos y estructuras de demostración.
+  'academic-english-c2': [
+    dd('The probability', 'by the following equation.', ['is given', 'gives', 'is giving'], 'is given',
+      'Passive impersonal, típico de papers: "is given by" = viene dado por.'),
+    dd('It can be', 'that the two expressions are equivalent.', ['shown', 'show', 'showing'], 'shown',
+      '"It can be shown that..." presenta un resultado sin nombrar al autor (pasiva).'),
+    dd('', 'X be a random variable with mean μ.', ['Let', 'Be', 'Suppose to'], 'Let',
+      '"Let X be..." introduce una definición en matemática. = Sea X...'),
+    dd('', 'that the data are independent and identically distributed.', ['Suppose', 'Support', 'Let to'], 'Suppose',
+      '"Suppose that..." plantea una hipótesis de trabajo.'),
+    dd('The error', 'to decrease as the number of samples increases.', ['tends', 'tend', 'is tending'], 'tends',
+      'Hedging: "tends to" suaviza la afirmación (no es una ley absoluta).'),
+    dd('This assumption', 'not hold in practice.', ['may', 'must', 'shall'], 'may',
+      'Hedging: "may" expresa posibilidad/cautela, muy común en ciencia.'),
+    dd('The model is nonlinear;', ', an exact solution is intractable.', ['hence', 'however', 'whereas'], 'hence',
+      '"hence" = por lo tanto (conector lógico formal, como thus/therefore).'),
+    dd('We choose the parameters', 'that the likelihood is maximized.', ['such', 'so as', 'in order'], 'such',
+      '"such that" = tal que; introduce una condición.'),
+    dd('It', 'that the estimator is unbiased.', ['follows', 'follow', 'is following'], 'follows',
+      '"It follows that..." = de esto se sigue que (deducción).'),
+    dd('The algorithm', 'described in the previous section.', ['was', 'is been', 'has'], 'was',
+      'Pasiva para referirse a lo ya presentado: "was described".'),
+    dd('This approach performs', 'than the baseline on all datasets.', ['better', 'more good', 'best'], 'better',
+      'Comparativo para reportar resultados: "performs better than".'),
+    inp('The result', '(can / derive) using integration by parts.', 'can be derived',
+      'Modal pasivo impersonal: can + be + participio.'),
+    inp('', '(consider) a data set of N observations.', 'Consider',
+      'Imperativo académico "Consider..." para introducir un caso. = Consideremos...'),
+    inp('The two variables are, ', '(in general), correlated.', 'in general',
+      '"in general" es un hedge que acota la afirmación.'),
+    ro('It is straightforward to show that the result holds.',
+      '"It is straightforward to show that..." presenta una demostración simple.'),
+    ro('As a result, the posterior distribution is Gaussian.',
+      '"As a result" introduce una consecuencia (conector formal).'),
+  ],
 };
 
 export const c2GrammarInfo = {
@@ -306,6 +344,49 @@ export const c2GrammarInfo = {
       interrogative: 'Omit repeated words after auxiliaries and "to"',
       example: 'I wanted to, but I couldn\'t. / So can I. / The red one.',
       signalWords: "I'm afraid not, I expect so, if I could, refused to",
+    },
+  },
+  'academic-english-c2': {
+    title: 'Academic & Scientific English - C2',
+    theory: {
+      intro:
+        'El registro de papers y libros técnicos (como el de Machine Learning de Bishop) tiene patrones muy marcados: se despersonaliza con la voz pasiva, se suaviza con hedging, se encadenan ideas con conectores lógicos y se usan fórmulas fijas para presentar definiciones y demostraciones. Aprender estos patrones te ayuda a leer papers y documentación.',
+      groups: [
+        {
+          label: 'Voz pasiva impersonal',
+          items: [
+            { word: 'is given by / is defined as', es: 'viene dado por / se define como', use: 'Para presentar fórmulas y definiciones sin sujeto personal.', example: 'The probability is given by the equation above.' },
+            { word: 'It can be shown that…', es: 'se puede demostrar que…', use: 'Presenta un resultado sin decir quién lo demuestra.', example: 'It can be shown that both forms are equivalent.' },
+          ],
+        },
+        {
+          label: 'Hedging (cautela)',
+          items: [
+            { word: 'may / tends to / in general', es: 'puede / tiende a / en general', use: 'Suaviza la afirmación: casi nada se dice como verdad absoluta.', example: 'This assumption may not hold in practice.' },
+          ],
+        },
+        {
+          label: 'Conectores lógicos',
+          items: [
+            { word: 'hence / thus / therefore / consequently', es: 'por lo tanto', use: 'Encadenan causa y consecuencia de forma formal.', example: 'The problem is intractable; hence, we approximate it.' },
+            { word: 'it follows that…', es: 'de esto se sigue que…', use: 'Introduce una deducción a partir de lo anterior.', example: 'It follows that the estimator is unbiased.' },
+          ],
+        },
+        {
+          label: 'Estructuras de demostración',
+          items: [
+            { word: 'Let X be… / Suppose that… / Consider…', es: 'Sea X… / Supongamos… / Consideremos…', use: 'Para introducir definiciones, hipótesis y casos.', example: 'Let X be a random variable. Suppose that the data are i.i.d.' },
+            { word: 'such that / so that / provided that', es: 'tal que / de modo que / siempre que', use: 'Introducen condiciones dentro de una demostración.', example: 'Choose θ such that the likelihood is maximized.' },
+          ],
+        },
+      ],
+    },
+    structure: {
+      affirmative: 'Passive: is given by / can be shown | Hedging: may, tends to | Logic: hence, it follows that | Proof: Let X be…, Suppose that…, such that',
+      negative: 'may not / does not necessarily / it does not follow that',
+      interrogative: 'Rare in this register; questions become "We now ask whether…"',
+      example: 'It can be shown that the posterior is Gaussian; hence, inference is tractable.',
+      signalWords: 'is given by, it can be shown, let, suppose, hence, thus, it follows that, such that',
     },
   },
 };

@@ -35,11 +35,16 @@ const offlineImagesPlugin = () => ({
   },
 })
 
+// Cuando se compila para el APK (Capacitor), la app se sirve desde el propio
+// dispositivo: el base tiene que ser '/' y no hace falta el service worker
+// (los archivos ya están dentro del APK).
+const isCapacitor = process.env.CAPACITOR === '1'
+
 export default defineConfig({
   plugins: [
     react(),
     offlineImagesPlugin(),
-    VitePWA({
+    ...(isCapacitor ? [] : [VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg', 'apple-touch-icon.png'],
       manifest: {
@@ -92,10 +97,15 @@ export default defineConfig({
           },
         ],
       },
-    }),
+    })]),
   ],
   worker: {
     format: 'es',
   },
-  base: process.env.NODE_ENV === 'production' ? '/English/' : '/',
+  // APK (Capacitor): raíz | gh-pages: subcarpeta | dev: raíz
+  base: isCapacitor
+    ? '/'
+    : process.env.NODE_ENV === 'production'
+      ? '/English/'
+      : '/',
 })

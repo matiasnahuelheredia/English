@@ -1,0 +1,87 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Necesario para publicar el APK en una Release
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: true
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Java 17: lo necesita Gradle / el plugin de Android de Capacitor
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - run: npm ci --ignore-scripts
+
+      # Build de la web para el APK: base '/' y sin service worker
+      - name: Build web (Capacitor)
+        run: CAPACITOR=1 npm run build
+
+      # Capacitor se instala solo para este job (no toca package.json ni el
+      # lockfile, así el deploy a gh-pages sigue igual)
+      - name: Install Capacitor
+        run: npm install --no-save @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
+
+      # Genera el proyecto android/ a partir de dist + capacitor.config.json
+      - name: Add Android platform
+        run: npx cap add android
+
+      - name: Sync web assets into Android
+        run: npx cap sync android
+
+      # Compila el APK de debug (firmado con el keystore de debug: sirve para
+      # instalar directo, no para publicar en Play Store)
+      - name: Build debug APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Rename APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk English.apk
+
+      # Descargable desde la pestaña Actions (hay que estar logueado en GitHub)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: English-APK
+          path: English.apk
+
+      # Descargable directo desde la página de Releases (ideal para el celular):
+      # una Release fija "apk" que se actualiza en cada build de main
+      - name: Publish APK to Release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk
+          name: English APK (última versión)
+          body: |
+            APK de la app English para instalar directo en Android.
+
+            Cómo instalarlo:
+            1. Descargá `English.apk` desde tu celular (los archivos de abajo).
+            2. Abrilo; si Android lo pide, permití "instalar de fuentes desconocidas".
+            3. Instalá y listo.
+
+            Se regenera automáticamente en cada actualización de la app.
+          files: English.apk
+          prerelease: true
+          make_latest: false
