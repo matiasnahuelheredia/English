@@ -2,6 +2,7 @@
 import { a1GrammarExercises } from './a1GrammarData';
 import { a2GrammarExercises } from './a2GrammarData';
 import { c2GrammarExercises } from './c2GrammarData';
+import { c1MixedExercises } from './c1GrammarData';
 import { pentestGrammarExercises } from './pentestGrammarData';
 import { b1GrammarExercises } from './b1GrammarData';
 import { b2GrammarExercises } from './b2GrammarData';
@@ -4326,6 +4327,8 @@ export const getExercisesByTense = (tenseId) => {
       'present-perfect-past-simple-2':
         exercisesData['present-perfect-past-simple-2'] || [],
     },
+    'mixed-b2': b2GrammarExercises,
+    'mixed-c1': c1MixedExercises,
     'mixed-c2': c2GrammarExercises,
     'mixed-pentest': pentestGrammarExercises,
   }[tenseId];
@@ -4426,6 +4429,12 @@ const getTenseName = (tenseId) => {
     'wish-if-only-b2': 'Wish / If only (B2)',
     'modals-deduction-b2': 'Modals of Deduction (B2)',
     'gerunds-infinitives-b2': 'Gerunds & Infinitives (B2)',
+    'c1-inversion': 'Inversion (C1)',
+    'c1-conditionals': 'Mixed Conditionals (C1)',
+    'c1-unreal-past': 'Unreal Past (C1)',
+    'c1-discourse-markers': 'Discourse Markers (C1)',
+    'c1-speculation': 'Speculation & Deduction (C1)',
+    'c1-verb-patterns': 'Verb Patterns (C1)',
   };
   return tenseNames[tenseId] || tenseId;
 };
