@@ -113,6 +113,42 @@ const Reminders = () => {
     setBusy(false);
   };
 
+  // Notificación de prueba: dispara una a los ~5 segundos para verificar
+  const testNow = async () => {
+    const LN = getPlugin();
+    if (!LN) return;
+    setBusy(true);
+    setStatus(null);
+    try {
+      const perm = await LN.requestPermissions();
+      if (perm.display !== 'granted') {
+        setStatus({
+          type: 'error',
+          text: 'Necesito permiso para enviarte notificaciones. Activalo en los ajustes de la app.',
+        });
+        setBusy(false);
+        return;
+      }
+      await LN.schedule({
+        notifications: [
+          {
+            id: IDS[5],
+            title: 'Prueba de notificación ✅',
+            body: 'Si ves esto, los recordatorios funcionan. 🎉',
+            schedule: { at: new Date(Date.now() + 5000) },
+          },
+        ],
+      });
+      setStatus({
+        type: 'ok',
+        text: 'Enviada. Debería aparecer en unos 5 segundos (podés salir de la app para verla).',
+      });
+    } catch (e) {
+      setStatus({ type: 'error', text: 'No se pudo enviar la prueba: ' + (e?.message || e) });
+    }
+    setBusy(false);
+  };
+
   const disable = async () => {
     const LN = getPlugin();
     if (!LN) return;
@@ -232,6 +268,13 @@ const Reminders = () => {
               {settings.enabled && (
                 <span className="text-htb-green text-sm">🟢 Activados</span>
               )}
+              <button
+                onClick={testNow}
+                disabled={busy}
+                className="text-sm px-4 py-2 rounded-md border border-htb-green/50 text-htb-green hover:bg-htb-card disabled:opacity-50 transition-colors"
+              >
+                🔔 Probar ahora
+              </button>
             </div>
 
             {status && (
