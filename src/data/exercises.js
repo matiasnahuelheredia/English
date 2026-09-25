@@ -4438,6 +4438,7 @@ const getTenseName = (tenseId) => {
     'wish-if-only-b2': 'Wish / If only (B2)',
     'modals-deduction-b2': 'Modals of Deduction (B2)',
     'gerunds-infinitives-b2': 'Gerunds & Infinitives (B2)',
+    'connectors-b2': 'Connectors / Linkers (B2)',
     'c1-inversion': 'Inversion (C1)',
     'c1-conditionals': 'Mixed Conditionals (C1)',
     'c1-unreal-past': 'Unreal Past (C1)',

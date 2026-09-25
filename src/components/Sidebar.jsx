@@ -1389,6 +1389,10 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                           id: 'gerunds-infinitives-b2',
                           name: '🎯 Gerunds & Infinitives',
                         },
+                        {
+                          id: 'connectors-b2',
+                          name: '🪢 Connectors / Linkers',
+                        },
                       ].map((topic) => (
                         <button
                           key={topic.id}

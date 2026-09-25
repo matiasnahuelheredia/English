@@ -217,6 +217,42 @@ export const b2GrammarExercises = {
     ro('He suggested going to the cinema.',
       '"Suggest" + -ing.'),
   ],
+
+  // Conectores / linkers: contraste, resultado, adición, propósito
+  'connectors-b2': [
+    dd('The tool is powerful.', ', it is hard to configure.', ['However', 'Whereas', 'Moreover'], 'However',
+      'However = sin embargo. Contrasta con la oración anterior; va al principio y con coma.'),
+    dd('I like tea,', 'my brother prefers coffee.', ['whereas', 'however', 'therefore'], 'whereas',
+      'whereas = mientras que. Compara dos cosas opuestas dentro de la misma oración.'),
+    dd('', 'it was raining, we went for a walk.', ['Although', 'Despite', 'However'], 'Although',
+      'Although + oración (sujeto + verbo). Although it was raining = aunque llovía.'),
+    dd('', 'the rain, we went for a walk.', ['Despite', 'Although', 'Whereas'], 'Despite',
+      'Despite / In spite of + sustantivo o -ing (no una oración completa).'),
+    dd('The server was slow;', ', we rotated the credentials.', ['therefore', 'whereas', 'although'], 'therefore',
+      'therefore = por lo tanto (resultado/consecuencia).'),
+    dd('The report was clear.', ', it was well structured.', ['Moreover', 'However', 'Whereas'], 'Moreover',
+      'Moreover / Furthermore = además (agrega otra idea en la misma dirección).'),
+    dd('Encrypt the backups;', ', the data could be stolen.', ['otherwise', 'therefore', 'moreover'], 'otherwise',
+      'otherwise = si no; introduce la mala consecuencia.'),
+    dd('She studied hard;', ', she passed the exam easily.', ['as a result', 'whereas', 'although'], 'as a result',
+      'as a result = como resultado (consecuencia).'),
+    dd('Some people love it,', 'others hate it.', ['while', 'despite', 'therefore'], 'while',
+      'while (aquí) = mientras que; contrasta dos grupos, como whereas.'),
+    dd('He was tired.', ', he kept working.', ['Nevertheless', 'Moreover', 'Therefore'], 'Nevertheless',
+      'Nevertheless = no obstante; contraste fuerte, como however.'),
+    dd('We took an umbrella', 'we wouldn\'t get wet.', ['so that', 'despite', 'whereas'], 'so that',
+      'so that + oración = para que (propósito).'),
+    inp('', '(although) he was rich, he was unhappy.', 'Although',
+      'Although + oración; empieza con mayúscula.'),
+    inp('The plan was risky.', '(however), we decided to try it.', 'However',
+      'However al principio de la segunda oración, con coma.'),
+    ro('I wanted to help, however, I was too busy.',
+      'however = sin embargo; entre dos ideas, con comas.'),
+    ro('Python is easy, whereas C is more complex.',
+      'whereas = mientras que; compara dos cosas en una oración.'),
+    ro('Despite the noise, she kept reading.',
+      'Despite + sustantivo (the noise) al principio de la oración.'),
+  ],
 };
 
 export const b2GrammarInfo = {
@@ -283,6 +319,19 @@ export const b2GrammarInfo = {
       interrogative: 'Do you enjoy + -ing? / Did you decide + to...?',
       example: 'I enjoy reading / I decided to leave / Remember to call / I remember calling',
       signalWords: 'remember, stop, try, forget (change meaning with -ing or to)',
+    },
+  },
+  'connectors-b2': {
+    title: 'Connectors / Linkers - B2 Grammar',
+    structure: {
+      affirmative:
+        'Contrast: however, whereas, although, despite/in spite of, nevertheless | Result: therefore, so, as a result | Addition: moreover, furthermore | Purpose: so that',
+      negative: 'otherwise (= if not, this bad thing happens)',
+      interrogative: 'however / therefore go at the start of a new sentence, with a comma',
+      example:
+        "It's cheap. However, it's slow. / I like tea, whereas he likes coffee. / Although it rained, we went out.",
+      signalWords:
+        'however, whereas, although, despite, therefore, moreover, nevertheless, so that, otherwise',
     },
   },
 };
