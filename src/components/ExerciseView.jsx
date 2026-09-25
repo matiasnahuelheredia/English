@@ -77,7 +77,9 @@ import TenseCorrectorAI from './TenseCorrectorAI';
 import OfflineMode from './OfflineMode';
 import ReportWritingAI from './ReportWritingAI';
 import Reminders from './Reminders';
+import Progress from './Progress';
 import { useSuccess } from '../hooks/useSuccess';
+import { recordAnswer } from '../progress';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -98,6 +100,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Recordatorios (notificaciones locales en la app de Android)
   if (tenseId === 'reminders') {
     return <Reminders />;
+  }
+
+  // Progreso guardado (racha, precisión, por tema)
+  if (tenseId === 'progress') {
+    return <Progress />;
   }
 
   // Si es ai-tense-corrector, mostrar el corrector con IA en el navegador
@@ -421,10 +428,13 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const { celebrateSmall } = useSuccess();
 
   useEffect(() => {
-    if (feedback?.isCorrect) {
-      celebrateSmall();
+    if (feedback && typeof feedback.isCorrect === 'boolean') {
+      // Guardar el progreso (correctas/incorrectas por tema + racha de días)
+      recordAnswer(tenseId, feedback.isCorrect);
+      if (feedback.isCorrect) celebrateSmall();
     }
-  }, [feedback, celebrateSmall]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [feedback]);
 
   const inputRef = useRef(null);
   const initialTimerRef = useRef(null);
