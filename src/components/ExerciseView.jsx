@@ -1755,6 +1755,61 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                     )}
                   </>
                 )}
+
+                {/* Reglas del tiempo verbal, para entrenar al hacer check */}
+                {!isVocabulary && getTenseStructure() && (
+                  <div className="mt-4 pt-3 border-t border-gray-700">
+                    <p className="text-xs font-bold text-htb-green uppercase tracking-wide mb-2">
+                      📘 Reglas
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-htb-card rounded p-2 border border-gray-800">
+                        <p className="font-semibold text-htb-green mb-0.5">
+                          ✓ Afirmativo
+                        </p>
+                        <p className="text-htb-text-dim leading-snug">
+                          {getTenseStructure().affirmative}
+                        </p>
+                      </div>
+                      <div className="bg-htb-card rounded p-2 border border-gray-800">
+                        <p className="font-semibold text-red-500 mb-0.5">
+                          ✗ Negativo
+                        </p>
+                        <p className="text-htb-text-dim leading-snug">
+                          {getTenseStructure().negative}
+                        </p>
+                      </div>
+                      <div className="bg-htb-card rounded p-2 border border-gray-800">
+                        <p className="font-semibold text-blue-400 mb-0.5">
+                          ? Pregunta
+                        </p>
+                        <p className="text-htb-text-dim leading-snug">
+                          {getTenseStructure().interrogative}
+                        </p>
+                      </div>
+                    </div>
+                    {getTenseStructure().example && (
+                      <p className="text-xs text-htb-text-dim mt-2">
+                        <span className="text-htb-green font-semibold">
+                          Ej:
+                        </span>{' '}
+                        <span className="italic">
+                          {getTenseStructure().example}
+                        </span>
+                      </p>
+                    )}
+                    {getTenseStructure().signalWords && (
+                      <p className="text-xs text-htb-text-dim mt-1">
+                        <span className="text-htb-green font-semibold">
+                          Señales:
+                        </span>{' '}
+                        <span className="italic">
+                          {getTenseStructure().signalWords}
+                        </span>
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
             )}
 
