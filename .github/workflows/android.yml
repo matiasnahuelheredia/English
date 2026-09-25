@@ -45,6 +45,17 @@ jobs:
       - name: Add Android platform
         run: npx cap add android
 
+      # Garantiza el permiso de notificaciones (Android 13+). Sin esto, el
+      # interruptor de notificaciones aparece bloqueado y no se puede activar.
+      - name: Ensure notification permission
+        run: |
+          MANIFEST=android/app/src/main/AndroidManifest.xml
+          if ! grep -q 'POST_NOTIFICATIONS' "$MANIFEST"; then
+            sed -i 's#</manifest>#    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n</manifest>#' "$MANIFEST"
+          fi
+          echo "----- AndroidManifest.xml -----"
+          cat "$MANIFEST"
+
       - name: Sync web assets into Android
         run: npx cap sync android
 
