@@ -511,6 +511,62 @@ export const b1GrammarInfo = {
   },
   'conditionals-b1': {
     title: 'Conditionals 0 / 1 / 2 - B1 Grammar',
+    theory: {
+      intro:
+        'Un condicional tiene dos partes: la condición (if...) y el resultado. Según qué tan real o imaginaria sea la situación, cambian los tiempos verbales. Ojo: si "if" va al principio, se separa con una coma; si va en el medio, no.',
+      groups: [
+        {
+          label: 'Zero (verdades generales)',
+          items: [
+            {
+              word: 'If + present, + present',
+              es: 'para hechos siempre ciertos',
+              use: 'Cosas que pasan siempre: ciencia, reglas, hábitos. Podés cambiar "if" por "when".',
+              example: 'If you heat water to 100°C, it boils.',
+            },
+          ],
+        },
+        {
+          label: 'First (real y posible)',
+          items: [
+            {
+              word: 'If + present, + will + base',
+              es: 'situación real en el futuro',
+              use: 'Algo que probablemente pase. La condición usa presente (no "will").',
+              example: 'If it rains tomorrow, we will stay at home.',
+            },
+          ],
+        },
+        {
+          label: 'Second (imaginario / improbable)',
+          items: [
+            {
+              word: 'If + past simple, + would + base',
+              es: 'situación imaginaria o poco probable',
+              use: 'Hipótesis sobre el presente/futuro. Con "to be" se usa "were" para todos (If I were you...).',
+              example: 'If I had more time, I would learn the guitar.',
+            },
+          ],
+        },
+        {
+          label: 'Consejos y errores típicos',
+          items: [
+            {
+              word: 'If I were you, I would...',
+              es: 'para dar consejos',
+              use: 'Es la forma más común de aconsejar en inglés.',
+              example: 'If I were you, I would see a doctor.',
+            },
+            {
+              word: '❌ If I will... / If I would...',
+              es: 'error frecuente',
+              use: 'Después de "if" NO va will ni would: va presente (1er) o pasado (2do).',
+              example: 'If it rains (✓), not: If it will rain (✗).',
+            },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'Zero: if + present, present | First: if + present, will + base | Second: if + past, would + base',
       negative: "if + don't..., won't... | if + didn't..., wouldn't...",
