@@ -1,7 +1,22 @@
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 import confetti from 'canvas-confetti';
 
 export const useSuccess = () => {
+  // Un único AudioContext reutilizable: crear uno nuevo por cada acierto haría
+  // que el navegador (Chrome permite ~6) deje de reproducir el sonido.
+  const audioContextRef = useRef(null);
+  const getAudioContext = useCallback(() => {
+    if (!audioContextRef.current) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return null;
+      audioContextRef.current = new AudioCtx();
+    }
+    // Si quedó suspendido (política de autoplay), reanudarlo
+    if (audioContextRef.current.state === 'suspended') {
+      audioContextRef.current.resume().catch(() => {});
+    }
+    return audioContextRef.current;
+  }, []);
   // Función para lanzar confetti
   const launchConfetti = useCallback(() => {
     const count = 200;
@@ -46,11 +61,23 @@ export const useSuccess = () => {
     });
   }, []);
 
+  // Confetti más chico, para festejar cada respuesta correcta sin saturar
+  const launchMiniConfetti = useCallback(() => {
+    confetti({
+      particleCount: 70,
+      spread: 75,
+      startVelocity: 45,
+      origin: { y: 0.75 },
+      zIndex: 9999,
+    });
+  }, []);
+
   // Función para reproducir sonido de victoria
   const playSuccessSound = useCallback(() => {
-    // Creamos un contexto de audio simple para generar un sonido de victoria
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    
+    // Reutilizamos el mismo contexto de audio para todos los festejos
+    const audioContext = getAudioContext();
+    if (!audioContext) return;
+
     // Melodía ascendente de victoria
     const notes = [
       { freq: 523.25, time: 0, duration: 0.1 },    // C5
@@ -74,7 +101,7 @@ export const useSuccess = () => {
       oscillator.start(audioContext.currentTime + time);
       oscillator.stop(audioContext.currentTime + time + duration);
     });
-  }, []);
+  }, [getAudioContext]);
 
   // Función que ejecuta todo: confetti + sonido
   const celebrate = useCallback(() => {
@@ -82,5 +109,17 @@ export const useSuccess = () => {
     playSuccessSound();
   }, [launchConfetti, playSuccessSound]);
 
-  return { celebrate, launchConfetti, playSuccessSound };
+  // Festejo chico: confetti mini + sonido, para cada acierto
+  const celebrateSmall = useCallback(() => {
+    launchMiniConfetti();
+    playSuccessSound();
+  }, [launchMiniConfetti, playSuccessSound]);
+
+  return {
+    celebrate,
+    celebrateSmall,
+    launchConfetti,
+    launchMiniConfetti,
+    playSuccessSound,
+  };
 };
