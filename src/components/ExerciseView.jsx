@@ -76,6 +76,7 @@ import UtensilsC1Exercise from './UtensilsC1Exercise';
 import TenseCorrectorAI from './TenseCorrectorAI';
 import OfflineMode from './OfflineMode';
 import ReportWritingAI from './ReportWritingAI';
+import Reminders from './Reminders';
 import { useSuccess } from '../hooks/useSuccess';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
@@ -92,6 +93,11 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Entrenador de escritura de informes de pentesting con IA
   if (tenseId === 'report-writing') {
     return <ReportWritingAI />;
+  }
+
+  // Recordatorios (notificaciones locales en la app de Android)
+  if (tenseId === 'reminders') {
+    return <Reminders />;
   }
 
   // Si es ai-tense-corrector, mostrar el corrector con IA en el navegador
