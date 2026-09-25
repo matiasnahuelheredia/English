@@ -477,6 +477,17 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                 <span>📴</span>
                 <span>Offline mode</span>
               </button>
+              <button
+                onClick={() => onSelectTense('reminders')}
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  selectedTense === 'reminders'
+                    ? 'bg-htb-green text-htb-bg'
+                    : 'hover:bg-htb-card text-htb-text'
+                }`}
+              >
+                <span>🔔</span>
+                <span>Recordatorios</span>
+              </button>
             </div>
           )}
 

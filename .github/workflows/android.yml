@@ -39,7 +39,7 @@ jobs:
       # Capacitor se instala solo para este job (no toca package.json ni el
       # lockfile, así el deploy a gh-pages sigue igual)
       - name: Install Capacitor
-        run: npm install --no-save @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
+        run: npm install --no-save @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6 @capacitor/local-notifications@6
 
       # Genera el proyecto android/ a partir de dist + capacitor.config.json
       - name: Add Android platform
