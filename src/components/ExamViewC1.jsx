@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { toast } from '../toast';
 import { examDataC1_1 } from '../data/examDataC1_1';
 import { examDataC1_2 } from '../data/examDataC1_2';
 import { examDataC1_3 } from '../data/examDataC1_3';
@@ -76,7 +77,7 @@ const ExamViewC1 = ({ tenseId }) => {
 
   const checkAnswer = () => {
     if (!userAnswer.trim()) {
-      alert('Please write your answer');
+      toast('Escribí tu respuesta antes de continuar.', 'error');
       return;
     }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { toast } from '../toast';
 import { getExercisesByTense } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
 import { a1GrammarInfo } from '../data/a1GrammarData';
@@ -839,7 +840,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
         // Mostrar mensaje si completó todos
         if (updatedRemaining.length === 0) {
           setTimeout(() => {
-            alert(
+            toast(
               'Congratulations! You have completed all words correctly. 🎉\n\nFinal statistics:\nCorrect: ' +
                 (stats.correct + 1) +
                 '\nIncorrect: ' +

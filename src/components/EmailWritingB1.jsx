@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from '../toast';
 import EmailAIPractice from './EmailAIPractice';
 
 const EmailWritingB1 = () => {
@@ -668,7 +669,7 @@ Emma`,
           <button
             onClick={() => {
               navigator.clipboard.writeText(currentExample.email);
-              alert('Email copied to clipboard!');
+              toast('Email copiado al portapapeles 📋', 'success');
             }}
             className="w-full bg-htb-green hover:bg-htb-green-hover text-htb-bg px-4 py-2 rounded-lg font-semibold transition-all duration-200"
           >

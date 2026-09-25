@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from '../toast';
 
 const EmailWritingB2 = () => {
   const [selectedEmail, setSelectedEmail] = useState(0);
@@ -2251,7 +2252,7 @@ Application Submitted: August 15, 2025`,
           <button
             onClick={() => {
               navigator.clipboard.writeText(currentExample.email);
-              alert('Email copied to clipboard!');
+              toast('Email copiado al portapapeles 📋', 'success');
             }}
             className="w-full bg-htb-green hover:bg-htb-green-hover text-htb-bg px-4 py-2 rounded-lg font-semibold transition-all duration-200"
           >
