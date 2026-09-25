@@ -577,6 +577,32 @@ export const b1GrammarInfo = {
   },
   'modals-obligation-b1': {
     title: 'Modals: must / have to / should - B1 Grammar',
+    theory: {
+      intro:
+        'Estos modales hablan de obligación, prohibición y consejo. Todos van seguidos del verbo en forma base (sin "to"), menos "have to". Ojo con los negativos: "mustn\'t" y "don\'t have to" NO significan lo mismo.',
+      groups: [
+        {
+          label: 'Obligación',
+          items: [
+            { word: 'must + base', es: 'obligación (regla propia/fuerte)', use: 'Obligación que siente el hablante, o una regla/ley.', example: 'You must wear a seatbelt.' },
+            { word: 'have to + base', es: 'obligación externa', use: 'Obligación que viene de afuera (circunstancias, otras personas). En pasado: had to.', example: 'I have to work tomorrow. / He had to stay late.' },
+          ],
+        },
+        {
+          label: 'Negativos (¡cuidado!)',
+          items: [
+            { word: "mustn't + base", es: 'prohibición', use: 'Está PROHIBIDO hacerlo.', example: "You mustn't use your phone in the exam." },
+            { word: "don't have to + base", es: 'no es necesario', use: 'NO hay obligación (podés, pero no hace falta). Muy distinto de mustn\'t.', example: "You don't have to pay; it's free." },
+          ],
+        },
+        {
+          label: 'Consejo',
+          items: [
+            { word: 'should / shouldn\'t + base', es: 'debería / no debería', use: 'Para dar consejos o recomendaciones.', example: 'You should rest. / You shouldn\'t eat so much sugar.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'must + base | have/has to + base | should + base',
       negative: "mustn't (prohibition) | don't have to (no obligation) | shouldn't",
@@ -704,6 +730,31 @@ export const b1GrammarInfo = {
   },
   'used-to-b1': {
     title: 'Used to (past habits) - B1 Grammar',
+    theory: {
+      intro:
+        '"Used to" sirve para hablar de hábitos o estados del pasado que YA NO son ciertos ahora. Va seguido del verbo en forma base. En preguntas y negativos pierde la "-d": "use to".',
+      groups: [
+        {
+          label: 'Afirmativo',
+          items: [
+            { word: 'used to + base', es: 'antes hacía / antes era', use: 'Hábito o estado del pasado que cambió.', example: 'I used to play football. / She used to have long hair.' },
+          ],
+        },
+        {
+          label: 'Negativo e interrogativo (sin -d)',
+          items: [
+            { word: "didn't use to + base", es: 'antes no', use: 'En negativo se dice "use to" (no "used to").', example: "I didn't use to like coffee." },
+            { word: 'Did + sujeto + use to + base?', es: '¿antes...?', use: 'En preguntas también "use to".', example: 'Did you use to live in London?' },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'used to ≠ be used to', es: 'no confundir', use: '"used to + base" = hábito pasado. "be used to + -ing" = estar acostumbrado a (¡otro tema!).', example: 'I used to smoke. / I am used to working late.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'used to + base verb',
       negative: "didn't use to + base verb",
