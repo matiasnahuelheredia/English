@@ -76,6 +76,7 @@ import UtensilsC1Exercise from './UtensilsC1Exercise';
 import TenseCorrectorAI from './TenseCorrectorAI';
 import OfflineMode from './OfflineMode';
 import ReportWritingAI from './ReportWritingAI';
+import { useSuccess } from '../hooks/useSuccess';
 
 const ExerciseView = ({ tenseId, onSelectTense }) => {
   // Si es la introducción, mostrar el componente Introduction
@@ -409,6 +410,15 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
   const [remainingVocabExercises, setRemainingVocabExercises] = useState([]);
   const [reorderedWords, setReorderedWords] = useState([]);
   const [availableWords, setAvailableWords] = useState([]);
+
+  // Festejo (confetti + sonido) en cada respuesta correcta
+  const { celebrateSmall } = useSuccess();
+
+  useEffect(() => {
+    if (feedback?.isCorrect) {
+      celebrateSmall();
+    }
+  }, [feedback, celebrateSmall]);
 
   const inputRef = useRef(null);
   const initialTimerRef = useRef(null);
