@@ -323,6 +323,48 @@ export const b2GrammarInfo = {
   },
   'connectors-b2': {
     title: 'Connectors / Linkers - B2 Grammar',
+    theory: {
+      intro:
+        'Los conectores unen ideas y muestran la relación entre ellas (contraste, resultado, adición o propósito). Fijate en la puntuación: algunos van entre dos oraciones separadas y otros dentro de una misma oración.',
+      groups: [
+        {
+          label: 'Contraste',
+          color: 'contrast',
+          items: [
+            { word: 'however', es: 'sin embargo', use: 'Entre dos oraciones separadas. Punto/";" antes y coma después.', example: "It's cheap. However, it's slow." },
+            { word: 'whereas', es: 'mientras que', use: 'Compara dos cosas opuestas en la MISMA oración.', example: 'I like tea, whereas he likes coffee.' },
+            { word: 'while', es: 'mientras que', use: 'Igual que whereas, para contrastar.', example: 'Some love it, while others hate it.' },
+            { word: 'although', es: 'aunque', use: 'Seguido de una ORACIÓN (sujeto + verbo).', example: 'Although it rained, we went out.' },
+            { word: 'despite / in spite of', es: 'a pesar de', use: 'Seguido de SUSTANTIVO o -ing (no una oración).', example: 'Despite the rain, we went out.' },
+            { word: 'nevertheless', es: 'no obstante', use: 'Contraste fuerte, como however (más formal).', example: 'He was tired. Nevertheless, he kept working.' },
+          ],
+        },
+        {
+          label: 'Resultado',
+          color: 'result',
+          items: [
+            { word: 'therefore', es: 'por lo tanto', use: 'Introduce una consecuencia (formal).', example: 'The server was down; therefore, we waited.' },
+            { word: 'as a result', es: 'como resultado', use: 'Consecuencia de lo anterior.', example: 'She studied hard. As a result, she passed.' },
+            { word: 'so', es: 'así que', use: 'Consecuencia (informal), une dos oraciones.', example: 'It was late, so we left.' },
+          ],
+        },
+        {
+          label: 'Adición',
+          color: 'add',
+          items: [
+            { word: 'moreover / furthermore', es: 'además', use: 'Agrega otra idea en la misma dirección.', example: 'It’s clear. Moreover, it’s well structured.' },
+          ],
+        },
+        {
+          label: 'Propósito / Condición',
+          color: 'purpose',
+          items: [
+            { word: 'so that', es: 'para que', use: 'Propósito; seguido de una oración.', example: 'We took an umbrella so that we wouldn’t get wet.' },
+            { word: 'otherwise', es: 'si no', use: 'Introduce la mala consecuencia si no hacés algo.', example: 'Encrypt it; otherwise, it could be stolen.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative:
         'Contrast: however, whereas, although, despite/in spite of, nevertheless | Result: therefore, so, as a result | Addition: moreover, furthermore | Purpose: so that',
