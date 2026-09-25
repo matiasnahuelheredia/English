@@ -1200,6 +1200,18 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     return structures[tenseId] || info?.structure || null;
   };
 
+  // Ficha teórica extra (por ahora, conectores B2): grupos de conectores
+  const getTenseTheory = () => {
+    const info =
+      a1GrammarInfo[tenseId] ||
+      a2GrammarInfo[tenseId] ||
+      b1GrammarInfo[tenseId] ||
+      b2GrammarInfo[tenseId] ||
+      c2GrammarInfo[tenseId] ||
+      pentestGrammarInfo[tenseId];
+    return info?.theory || null;
+  };
+
   if (!currentExercise) {
     return (
       <div className="bg-htb-card border border-gray-800 rounded-lg p-8 text-center">
@@ -1326,6 +1338,49 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
               <span className="text-xs sm:text-sm font-medium text-htb-text">
                 Change direction
               </span>
+            </div>
+          </div>
+        )}
+
+        {/* Ficha teórica (conectores) */}
+        {!isVocabulary && getTenseTheory() && (
+          <div className="mt-4 bg-htb-sidebar border border-htb-green/30 rounded-lg p-4">
+            <div className="flex items-start gap-2 mb-3">
+              <span className="text-htb-green text-xl">📝</span>
+              <h3 className="text-sm font-bold text-htb-green uppercase tracking-wide">
+                Teoría rápida
+              </h3>
+            </div>
+            {getTenseTheory().intro && (
+              <p className="text-xs text-htb-text-dim leading-relaxed mb-3">
+                {getTenseTheory().intro}
+              </p>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {getTenseTheory().groups.map((group) => (
+                <div
+                  key={group.label}
+                  className="bg-htb-card rounded p-3 border border-gray-800"
+                >
+                  <p className="font-semibold text-htb-green text-xs uppercase tracking-wide mb-2">
+                    {group.label}
+                  </p>
+                  <ul className="space-y-2">
+                    {group.items.map((item) => (
+                      <li key={item.word} className="text-xs">
+                        <span className="font-bold text-white">
+                          {item.word}
+                        </span>
+                        <span className="text-htb-text-dim"> — {item.es}</span>
+                        <p className="text-htb-text-dim leading-relaxed">
+                          {item.use}
+                        </p>
+                        <p className="text-htb-text italic">“{item.example}”</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         )}

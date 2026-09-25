@@ -501,6 +501,36 @@ export const b1GrammarInfo = {
   },
   'future-forms-b1': {
     title: 'Future: will / going to / present continuous - B1 Grammar',
+    theory: {
+      intro:
+        'En inglés hay varias formas de hablar del futuro, y la elección depende de cuánto planeaste la acción y de si hay evidencia. No hay un solo "futuro".',
+      groups: [
+        {
+          label: 'will',
+          items: [
+            { word: 'will + base', es: 'decisión del momento / predicción / promesa', use: 'Algo que decidís al hablar, una opinión ("I think...") o una promesa.', example: "The phone's ringing — I'll answer it. / I think it will rain." },
+          ],
+        },
+        {
+          label: 'be going to',
+          items: [
+            { word: 'be going to + base', es: 'plan / evidencia', use: 'Un plan decidido antes de hablar, o una predicción con evidencia que ves ahora.', example: "We're going to start a business. / Look at those clouds — it's going to rain." },
+          ],
+        },
+        {
+          label: 'Present continuous',
+          items: [
+            { word: 'am/is/are + -ing', es: 'arreglo fijo', use: 'Una cita o arreglo ya cerrado, normalmente con hora/fecha.', example: "I'm meeting Ana at 6. / We're flying to Madrid on Friday." },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'Present simple para horarios', es: 'trenes, cines...', use: 'Para horarios fijos se usa presente simple.', example: 'The train leaves at 6:45.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'will + base | be going to + base | am/is/are + verb-ing',
       negative: "won't + base | isn't going to + base | isn't + verb-ing",
@@ -511,6 +541,62 @@ export const b1GrammarInfo = {
   },
   'conditionals-b1': {
     title: 'Conditionals 0 / 1 / 2 - B1 Grammar',
+    theory: {
+      intro:
+        'Un condicional tiene dos partes: la condición (if...) y el resultado. Según qué tan real o imaginaria sea la situación, cambian los tiempos verbales. Ojo: si "if" va al principio, se separa con una coma; si va en el medio, no.',
+      groups: [
+        {
+          label: 'Zero (verdades generales)',
+          items: [
+            {
+              word: 'If + present, + present',
+              es: 'para hechos siempre ciertos',
+              use: 'Cosas que pasan siempre: ciencia, reglas, hábitos. Podés cambiar "if" por "when".',
+              example: 'If you heat water to 100°C, it boils.',
+            },
+          ],
+        },
+        {
+          label: 'First (real y posible)',
+          items: [
+            {
+              word: 'If + present, + will + base',
+              es: 'situación real en el futuro',
+              use: 'Algo que probablemente pase. La condición usa presente (no "will").',
+              example: 'If it rains tomorrow, we will stay at home.',
+            },
+          ],
+        },
+        {
+          label: 'Second (imaginario / improbable)',
+          items: [
+            {
+              word: 'If + past simple, + would + base',
+              es: 'situación imaginaria o poco probable',
+              use: 'Hipótesis sobre el presente/futuro. Con "to be" se usa "were" para todos (If I were you...).',
+              example: 'If I had more time, I would learn the guitar.',
+            },
+          ],
+        },
+        {
+          label: 'Consejos y errores típicos',
+          items: [
+            {
+              word: 'If I were you, I would...',
+              es: 'para dar consejos',
+              use: 'Es la forma más común de aconsejar en inglés.',
+              example: 'If I were you, I would see a doctor.',
+            },
+            {
+              word: '❌ If I will... / If I would...',
+              es: 'error frecuente',
+              use: 'Después de "if" NO va will ni would: va presente (1er) o pasado (2do).',
+              example: 'If it rains (✓), not: If it will rain (✗).',
+            },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'Zero: if + present, present | First: if + present, will + base | Second: if + past, would + base',
       negative: "if + don't..., won't... | if + didn't..., wouldn't...",
@@ -521,6 +607,32 @@ export const b1GrammarInfo = {
   },
   'modals-obligation-b1': {
     title: 'Modals: must / have to / should - B1 Grammar',
+    theory: {
+      intro:
+        'Estos modales hablan de obligación, prohibición y consejo. Todos van seguidos del verbo en forma base (sin "to"), menos "have to". Ojo con los negativos: "mustn\'t" y "don\'t have to" NO significan lo mismo.',
+      groups: [
+        {
+          label: 'Obligación',
+          items: [
+            { word: 'must + base', es: 'obligación (regla propia/fuerte)', use: 'Obligación que siente el hablante, o una regla/ley.', example: 'You must wear a seatbelt.' },
+            { word: 'have to + base', es: 'obligación externa', use: 'Obligación que viene de afuera (circunstancias, otras personas). En pasado: had to.', example: 'I have to work tomorrow. / He had to stay late.' },
+          ],
+        },
+        {
+          label: 'Negativos (¡cuidado!)',
+          items: [
+            { word: "mustn't + base", es: 'prohibición', use: 'Está PROHIBIDO hacerlo.', example: "You mustn't use your phone in the exam." },
+            { word: "don't have to + base", es: 'no es necesario', use: 'NO hay obligación (podés, pero no hace falta). Muy distinto de mustn\'t.', example: "You don't have to pay; it's free." },
+          ],
+        },
+        {
+          label: 'Consejo',
+          items: [
+            { word: 'should / shouldn\'t + base', es: 'debería / no debería', use: 'Para dar consejos o recomendaciones.', example: 'You should rest. / You shouldn\'t eat so much sugar.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'must + base | have/has to + base | should + base',
       negative: "mustn't (prohibition) | don't have to (no obligation) | shouldn't",
@@ -531,6 +643,56 @@ export const b1GrammarInfo = {
   },
   'passive-b1': {
     title: 'Passive: present & past simple - B1 Grammar',
+    theory: {
+      intro:
+        'La pasiva se usa cuando lo importante es la acción o el objeto, no quién la hace (o no se sabe). Se forma con el verbo "be" (en el tiempo que toque) + el participio pasado. El sujeto activo pasa al final con "by", y solo se pone si es importante.',
+      groups: [
+        {
+          label: 'Present simple passive',
+          items: [
+            {
+              word: 'am / is / are + past participle',
+              es: 'presente',
+              use: 'Hechos generales, procesos o cosas habituales. is (singular) / are (plural).',
+              example: 'English is spoken here. / These cars are made in Japan.',
+            },
+          ],
+        },
+        {
+          label: 'Past simple passive',
+          items: [
+            {
+              word: 'was / were + past participle',
+              es: 'pasado',
+              use: 'Acción terminada en el pasado. was (singular) / were (plural).',
+              example: 'The house was built in 1990. / The letters were sent yesterday.',
+            },
+          ],
+        },
+        {
+          label: 'Activa → Pasiva',
+          items: [
+            {
+              word: 'Shakespeare wrote Hamlet → Hamlet was written by Shakespeare',
+              es: 'cómo transformar',
+              use: 'El objeto (Hamlet) pasa a ser el sujeto; el sujeto activo va con "by" (solo si importa).',
+              example: 'They clean the room → The room is cleaned.',
+            },
+          ],
+        },
+        {
+          label: 'Errores típicos',
+          items: [
+            {
+              word: 'be + PARTICIPIO (no infinitivo)',
+              es: 'ojo con esto',
+              use: 'Siempre participio pasado: is spoken (✓), no "is speak" (✗). No te olvides del "be".',
+              example: 'It was made (✓), not: It was make (✗).',
+            },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'Present: am/is/are + past participle | Past: was/were + past participle',
       negative: "isn't/aren't + participle | wasn't/weren't + participle",
@@ -541,6 +703,43 @@ export const b1GrammarInfo = {
   },
   'reported-speech-b1': {
     title: 'Reported Speech (basic) - B1 Grammar',
+    theory: {
+      intro:
+        'El estilo indirecto sirve para contar lo que otra persona dijo, sin repetirlo textual. Se usa say o tell y, como el momento de hablar ya pasó, el verbo "retrocede" un tiempo (backshift). También cambian algunos pronombres y palabras de tiempo/lugar.',
+      groups: [
+        {
+          label: 'Backshift (el verbo retrocede)',
+          items: [
+            { word: 'present → past', es: 'am/is/are → was/were; like → liked', use: 'El presente pasa a pasado.', example: '"I am tired" → She said she was tired.' },
+            { word: 'will → would', es: 'futuro', use: 'will pasa a would.', example: '"I will call" → He said he would call.' },
+            { word: 'can → could', es: 'modal', use: 'can pasa a could.', example: '"I can swim" → She said she could swim.' },
+            { word: 'present perfect / past → past perfect', es: 'have done / did → had done', use: 'Ambos van a past perfect.', example: '"I have finished" → He said he had finished.' },
+          ],
+        },
+        {
+          label: 'say vs tell',
+          items: [
+            {
+              word: 'tell + persona | say (sin persona)',
+              es: 'no se mezclan',
+              use: 'tell SIEMPRE lleva a quién (tell me); say no lleva persona (say that...).',
+              example: 'She told me she was busy. / She said she was busy.',
+            },
+          ],
+        },
+        {
+          label: 'Cambian también',
+          items: [
+            {
+              word: 'pronombres y tiempo/lugar',
+              es: 'según quién y cuándo',
+              use: 'I → he/she, my → his/her; now → then, today → that day, yesterday → the day before, here → there.',
+              example: '"I saw him yesterday" → She said she had seen him the day before.',
+            },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'say (that) + backshift | tell + person + (that) + backshift',
       negative: "said he didn't... | told me he wasn't...",
@@ -551,6 +750,33 @@ export const b1GrammarInfo = {
   },
   'relative-clauses-b1': {
     title: 'Relative Clauses (defining) - B1 Grammar',
+    theory: {
+      intro:
+        'Las relative clauses dan información sobre un sustantivo con un pronombre relativo. Las "defining" (las de este ejercicio) dan información esencial para saber de quién/qué hablás, y no llevan comas.',
+      groups: [
+        {
+          label: 'Personas y cosas',
+          items: [
+            { word: 'who', es: 'que (personas)', use: 'Para personas.', example: 'The man who lives next door is a doctor.' },
+            { word: 'which', es: 'que (cosas)', use: 'Para cosas o animales.', example: 'The film which we watched was boring.' },
+            { word: 'that', es: 'que (personas o cosas)', use: 'Sirve para ambos en las defining; muy común.', example: "That's the key that opens the door." },
+          ],
+        },
+        {
+          label: 'Lugar y posesión',
+          items: [
+            { word: 'where', es: 'donde (lugares)', use: 'Para lugares.', example: "That's the hospital where I was born." },
+            { word: 'whose', es: 'cuyo/a (posesión)', use: 'Indica posesión (su... de alguien).', example: "She's the woman whose car was stolen." },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'defining = sin comas', es: 'info esencial', use: 'Si la info es necesaria para identificar el sustantivo, NO va coma. (Las non-defining, con comas, son de C1.)', example: 'The people who work here are friendly.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'who (people) | which/that (things) | where (places) | whose (possession)',
       negative: '(the clause simply defines the noun)',
@@ -561,6 +787,31 @@ export const b1GrammarInfo = {
   },
   'used-to-b1': {
     title: 'Used to (past habits) - B1 Grammar',
+    theory: {
+      intro:
+        '"Used to" sirve para hablar de hábitos o estados del pasado que YA NO son ciertos ahora. Va seguido del verbo en forma base. En preguntas y negativos pierde la "-d": "use to".',
+      groups: [
+        {
+          label: 'Afirmativo',
+          items: [
+            { word: 'used to + base', es: 'antes hacía / antes era', use: 'Hábito o estado del pasado que cambió.', example: 'I used to play football. / She used to have long hair.' },
+          ],
+        },
+        {
+          label: 'Negativo e interrogativo (sin -d)',
+          items: [
+            { word: "didn't use to + base", es: 'antes no', use: 'En negativo se dice "use to" (no "used to").', example: "I didn't use to like coffee." },
+            { word: 'Did + sujeto + use to + base?', es: '¿antes...?', use: 'En preguntas también "use to".', example: 'Did you use to live in London?' },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'used to ≠ be used to', es: 'no confundir', use: '"used to + base" = hábito pasado. "be used to + -ing" = estar acostumbrado a (¡otro tema!).', example: 'I used to smoke. / I am used to working late.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'used to + base verb',
       negative: "didn't use to + base verb",
@@ -571,6 +822,31 @@ export const b1GrammarInfo = {
   },
   'question-tags-b1': {
     title: 'Question Tags - B1 Grammar',
+    theory: {
+      intro:
+        'Las question tags son esas mini-preguntas al final de una oración (…, no?) para confirmar algo o buscar acuerdo. La regla base: oración positiva → tag negativa; oración negativa → tag positiva. La tag repite el auxiliar o modal de la oración.',
+      groups: [
+        {
+          label: 'Regla base',
+          items: [
+            { word: 'Positiva → tag negativa', es: 'afirmación + ¿no?', use: 'Si la oración es positiva, la tag va en negativo.', example: "You're from Spain, aren't you?" },
+            { word: 'Negativa → tag positiva', es: 'negación + ¿sí?', use: 'Si la oración es negativa, la tag va en positivo.', example: "She doesn't like coffee, does she?" },
+          ],
+        },
+        {
+          label: 'Qué auxiliar usar',
+          items: [
+            { word: 'Repetí el auxiliar/modal', es: 'be, do, have, can, will...', use: 'Si no hay auxiliar, usás do/does (presente) o did (pasado).', example: 'You went home, didn\'t you? / He can swim, can\'t he?' },
+          ],
+        },
+        {
+          label: 'Ojo',
+          items: [
+            { word: 'I am → aren\'t I?', es: 'excepción', use: 'La tag de "I am" es "aren\'t I?" (no "amn\'t I").', example: "I'm late, aren't I?" },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'Positive statement + negative tag (You are..., aren\'t you?)',
       negative: 'Negative statement + positive tag (You don\'t..., do you?)',
@@ -581,6 +857,34 @@ export const b1GrammarInfo = {
   },
   'quantifiers-b1': {
     title: 'Quantifiers - B1 Grammar',
+    theory: {
+      intro:
+        'Los quantifiers dicen "cuánto" o "cuántos". La clave es si el sustantivo es contable (chairs, apples) o incontable (water, money): algunos van con uno, otros con el otro, y otros con ambos.',
+      groups: [
+        {
+          label: 'some / any',
+          items: [
+            { word: 'some', es: 'algo de / algunos', use: 'En afirmaciones, y en ofrecimientos/pedidos.', example: 'There is some milk. / Would you like some coffee?' },
+            { word: 'any', es: 'algo de / algún', use: 'En negativos y preguntas.', example: "There isn't any milk. / Is there any sugar?" },
+          ],
+        },
+        {
+          label: 'much / many',
+          items: [
+            { word: 'much', es: 'mucho (incontable)', use: 'Con incontables, sobre todo en negativos y preguntas. "How much...?"', example: "I don't have much time. / How much money...?" },
+            { word: 'many', es: 'muchos (contable)', use: 'Con contables en plural. "How many...?"', example: 'How many people came?' },
+          ],
+        },
+        {
+          label: 'a few / a little / a lot of',
+          items: [
+            { word: 'a few', es: 'unos pocos (contable)', use: 'Con contables plurales.', example: 'a few apples.' },
+            { word: 'a little', es: 'un poco (incontable)', use: 'Con incontables.', example: 'a little time.' },
+            { word: 'a lot of / lots of', es: 'mucho/s (ambos)', use: 'Sirve con contables e incontables.', example: 'a lot of friends / a lot of money.' },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'some | a lot of | much (uncountable) | many (countable) | a little / a few',
       negative: "not any | not much | not many",

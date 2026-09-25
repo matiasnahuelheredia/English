@@ -217,6 +217,42 @@ export const b2GrammarExercises = {
     ro('He suggested going to the cinema.',
       '"Suggest" + -ing.'),
   ],
+
+  // Conectores / linkers: contraste, resultado, adición, propósito
+  'connectors-b2': [
+    dd('The tool is powerful.', ', it is hard to configure.', ['However', 'Whereas', 'Moreover'], 'However',
+      'However = sin embargo. Contrasta con la oración anterior; va al principio y con coma.'),
+    dd('I like tea,', 'my brother prefers coffee.', ['whereas', 'however', 'therefore'], 'whereas',
+      'whereas = mientras que. Compara dos cosas opuestas dentro de la misma oración.'),
+    dd('', 'it was raining, we went for a walk.', ['Although', 'Despite', 'However'], 'Although',
+      'Although + oración (sujeto + verbo). Although it was raining = aunque llovía.'),
+    dd('', 'the rain, we went for a walk.', ['Despite', 'Although', 'Whereas'], 'Despite',
+      'Despite / In spite of + sustantivo o -ing (no una oración completa).'),
+    dd('The server was slow;', ', we rotated the credentials.', ['therefore', 'whereas', 'although'], 'therefore',
+      'therefore = por lo tanto (resultado/consecuencia).'),
+    dd('The report was clear.', ', it was well structured.', ['Moreover', 'However', 'Whereas'], 'Moreover',
+      'Moreover / Furthermore = además (agrega otra idea en la misma dirección).'),
+    dd('Encrypt the backups;', ', the data could be stolen.', ['otherwise', 'therefore', 'moreover'], 'otherwise',
+      'otherwise = si no; introduce la mala consecuencia.'),
+    dd('She studied hard;', ', she passed the exam easily.', ['as a result', 'whereas', 'although'], 'as a result',
+      'as a result = como resultado (consecuencia).'),
+    dd('Some people love it,', 'others hate it.', ['while', 'despite', 'therefore'], 'while',
+      'while (aquí) = mientras que; contrasta dos grupos, como whereas.'),
+    dd('He was tired.', ', he kept working.', ['Nevertheless', 'Moreover', 'Therefore'], 'Nevertheless',
+      'Nevertheless = no obstante; contraste fuerte, como however.'),
+    dd('We took an umbrella', 'we wouldn\'t get wet.', ['so that', 'despite', 'whereas'], 'so that',
+      'so that + oración = para que (propósito).'),
+    inp('', '(although) he was rich, he was unhappy.', 'Although',
+      'Although + oración; empieza con mayúscula.'),
+    inp('The plan was risky.', '(however), we decided to try it.', 'However',
+      'However al principio de la segunda oración, con coma.'),
+    ro('I wanted to help, however, I was too busy.',
+      'however = sin embargo; entre dos ideas, con comas.'),
+    ro('Python is easy, whereas C is more complex.',
+      'whereas = mientras que; compara dos cosas en una oración.'),
+    ro('Despite the noise, she kept reading.',
+      'Despite + sustantivo (the noise) al principio de la oración.'),
+  ],
 };
 
 export const b2GrammarInfo = {
@@ -283,6 +319,61 @@ export const b2GrammarInfo = {
       interrogative: 'Do you enjoy + -ing? / Did you decide + to...?',
       example: 'I enjoy reading / I decided to leave / Remember to call / I remember calling',
       signalWords: 'remember, stop, try, forget (change meaning with -ing or to)',
+    },
+  },
+  'connectors-b2': {
+    title: 'Connectors / Linkers - B2 Grammar',
+    theory: {
+      intro:
+        'Los conectores unen ideas y muestran la relación entre ellas (contraste, resultado, adición o propósito). Fijate en la puntuación: algunos van entre dos oraciones separadas y otros dentro de una misma oración.',
+      groups: [
+        {
+          label: 'Contraste',
+          color: 'contrast',
+          items: [
+            { word: 'however', es: 'sin embargo', use: 'Entre dos oraciones separadas. Punto/";" antes y coma después.', example: "It's cheap. However, it's slow." },
+            { word: 'whereas', es: 'mientras que', use: 'Compara dos cosas opuestas en la MISMA oración.', example: 'I like tea, whereas he likes coffee.' },
+            { word: 'while', es: 'mientras que', use: 'Igual que whereas, para contrastar.', example: 'Some love it, while others hate it.' },
+            { word: 'although', es: 'aunque', use: 'Seguido de una ORACIÓN (sujeto + verbo).', example: 'Although it rained, we went out.' },
+            { word: 'despite / in spite of', es: 'a pesar de', use: 'Seguido de SUSTANTIVO o -ing (no una oración).', example: 'Despite the rain, we went out.' },
+            { word: 'nevertheless', es: 'no obstante', use: 'Contraste fuerte, como however (más formal).', example: 'He was tired. Nevertheless, he kept working.' },
+          ],
+        },
+        {
+          label: 'Resultado',
+          color: 'result',
+          items: [
+            { word: 'therefore', es: 'por lo tanto', use: 'Introduce una consecuencia (formal).', example: 'The server was down; therefore, we waited.' },
+            { word: 'as a result', es: 'como resultado', use: 'Consecuencia de lo anterior.', example: 'She studied hard. As a result, she passed.' },
+            { word: 'so', es: 'así que', use: 'Consecuencia (informal), une dos oraciones.', example: 'It was late, so we left.' },
+          ],
+        },
+        {
+          label: 'Adición',
+          color: 'add',
+          items: [
+            { word: 'moreover / furthermore', es: 'además', use: 'Agrega otra idea en la misma dirección.', example: 'It’s clear. Moreover, it’s well structured.' },
+          ],
+        },
+        {
+          label: 'Propósito / Condición',
+          color: 'purpose',
+          items: [
+            { word: 'so that', es: 'para que', use: 'Propósito; seguido de una oración.', example: 'We took an umbrella so that we wouldn’t get wet.' },
+            { word: 'otherwise', es: 'si no', use: 'Introduce la mala consecuencia si no hacés algo.', example: 'Encrypt it; otherwise, it could be stolen.' },
+          ],
+        },
+      ],
+    },
+    structure: {
+      affirmative:
+        'Contrast: however, whereas, although, despite/in spite of, nevertheless | Result: therefore, so, as a result | Addition: moreover, furthermore | Purpose: so that',
+      negative: 'otherwise (= if not, this bad thing happens)',
+      interrogative: 'however / therefore go at the start of a new sentence, with a comma',
+      example:
+        "It's cheap. However, it's slow. / I like tea, whereas he likes coffee. / Although it rained, we went out.",
+      signalWords:
+        'however, whereas, although, despite, therefore, moreover, nevertheless, so that, otherwise',
     },
   },
 };
