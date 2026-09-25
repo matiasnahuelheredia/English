@@ -587,6 +587,56 @@ export const b1GrammarInfo = {
   },
   'passive-b1': {
     title: 'Passive: present & past simple - B1 Grammar',
+    theory: {
+      intro:
+        'La pasiva se usa cuando lo importante es la acción o el objeto, no quién la hace (o no se sabe). Se forma con el verbo "be" (en el tiempo que toque) + el participio pasado. El sujeto activo pasa al final con "by", y solo se pone si es importante.',
+      groups: [
+        {
+          label: 'Present simple passive',
+          items: [
+            {
+              word: 'am / is / are + past participle',
+              es: 'presente',
+              use: 'Hechos generales, procesos o cosas habituales. is (singular) / are (plural).',
+              example: 'English is spoken here. / These cars are made in Japan.',
+            },
+          ],
+        },
+        {
+          label: 'Past simple passive',
+          items: [
+            {
+              word: 'was / were + past participle',
+              es: 'pasado',
+              use: 'Acción terminada en el pasado. was (singular) / were (plural).',
+              example: 'The house was built in 1990. / The letters were sent yesterday.',
+            },
+          ],
+        },
+        {
+          label: 'Activa → Pasiva',
+          items: [
+            {
+              word: 'Shakespeare wrote Hamlet → Hamlet was written by Shakespeare',
+              es: 'cómo transformar',
+              use: 'El objeto (Hamlet) pasa a ser el sujeto; el sujeto activo va con "by" (solo si importa).',
+              example: 'They clean the room → The room is cleaned.',
+            },
+          ],
+        },
+        {
+          label: 'Errores típicos',
+          items: [
+            {
+              word: 'be + PARTICIPIO (no infinitivo)',
+              es: 'ojo con esto',
+              use: 'Siempre participio pasado: is spoken (✓), no "is speak" (✗). No te olvides del "be".',
+              example: 'It was made (✓), not: It was make (✗).',
+            },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'Present: am/is/are + past participle | Past: was/were + past participle',
       negative: "isn't/aren't + participle | wasn't/weren't + participle",
@@ -597,6 +647,43 @@ export const b1GrammarInfo = {
   },
   'reported-speech-b1': {
     title: 'Reported Speech (basic) - B1 Grammar',
+    theory: {
+      intro:
+        'El estilo indirecto sirve para contar lo que otra persona dijo, sin repetirlo textual. Se usa say o tell y, como el momento de hablar ya pasó, el verbo "retrocede" un tiempo (backshift). También cambian algunos pronombres y palabras de tiempo/lugar.',
+      groups: [
+        {
+          label: 'Backshift (el verbo retrocede)',
+          items: [
+            { word: 'present → past', es: 'am/is/are → was/were; like → liked', use: 'El presente pasa a pasado.', example: '"I am tired" → She said she was tired.' },
+            { word: 'will → would', es: 'futuro', use: 'will pasa a would.', example: '"I will call" → He said he would call.' },
+            { word: 'can → could', es: 'modal', use: 'can pasa a could.', example: '"I can swim" → She said she could swim.' },
+            { word: 'present perfect / past → past perfect', es: 'have done / did → had done', use: 'Ambos van a past perfect.', example: '"I have finished" → He said he had finished.' },
+          ],
+        },
+        {
+          label: 'say vs tell',
+          items: [
+            {
+              word: 'tell + persona | say (sin persona)',
+              es: 'no se mezclan',
+              use: 'tell SIEMPRE lleva a quién (tell me); say no lleva persona (say that...).',
+              example: 'She told me she was busy. / She said she was busy.',
+            },
+          ],
+        },
+        {
+          label: 'Cambian también',
+          items: [
+            {
+              word: 'pronombres y tiempo/lugar',
+              es: 'según quién y cuándo',
+              use: 'I → he/she, my → his/her; now → then, today → that day, yesterday → the day before, here → there.',
+              example: '"I saw him yesterday" → She said she had seen him the day before.',
+            },
+          ],
+        },
+      ],
+    },
     structure: {
       affirmative: 'say (that) + backshift | tell + person + (that) + backshift',
       negative: "said he didn't... | told me he wasn't...",
