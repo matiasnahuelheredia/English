@@ -4320,6 +4320,12 @@ export const getExercisesByTense = (tenseId) => {
   const levelExercises = {
     'mixed-a1': a1GrammarExercises,
     'mixed-a2': a2GrammarExercises,
+    // B1: gramática B1 + el repaso de Present Perfect vs Past Simple (2)
+    'mixed-b1': {
+      ...b1GrammarExercises,
+      'present-perfect-past-simple-2':
+        exercisesData['present-perfect-past-simple-2'] || [],
+    },
     'mixed-c2': c2GrammarExercises,
     'mixed-pentest': pentestGrammarExercises,
   }[tenseId];
@@ -4372,6 +4378,7 @@ const getTenseName = (tenseId) => {
     'second-conditional': 'Second Conditional',
     'third-conditional': 'Third Conditional',
     'question-forms': 'Question Forms',
+    'present-perfect-past-simple-2': 'Present Perfect vs Past Simple (B1)',
     'present-perfect-b1': 'Present Perfect (B1)',
     'past-simple-b1': 'Past Simple (B1)',
     'past-continuous-b1': 'Past Continuous (B1)',
