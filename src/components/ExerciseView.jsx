@@ -1027,6 +1027,8 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       'mixed-a1': 'A1 Mixed Practice',
       'mixed-a2': 'A2 Mixed Practice',
       'mixed-b1': 'B1 Mixed Practice',
+      'mixed-b2': 'B2 Mixed Practice',
+      'mixed-c1': 'C1 Mixed Practice',
       'mixed-c2': 'C2 Mixed Practice',
       'mixed-pentest': 'Pentest Report Grammar - Mixed',
     };
@@ -1646,7 +1648,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                   {feedback.isCorrect ? '✓ Correct' : '✗ Incorrect'}
                 </p>
                 {/* Mostrar el tiempo verbal solo en Mixed Tenses */}
-                {['mixed-tenses', 'mixed-a1', 'mixed-a2', 'mixed-b1', 'mixed-c2', 'mixed-pentest'].includes(
+                {['mixed-tenses', 'mixed-a1', 'mixed-a2', 'mixed-b1', 'mixed-b2', 'mixed-c1', 'mixed-c2', 'mixed-pentest'].includes(
                     tenseId
                   ) &&
                   feedback.tense && (

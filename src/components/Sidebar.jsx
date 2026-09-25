@@ -612,7 +612,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Intermediate-Vocabulary')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Vocabulary</span>
+                    <span className="text-htb-text-dim">📖 Vocabulary</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Intermediate-Vocabulary']
@@ -672,7 +672,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Intermediate-Grammar')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Grammar</span>
+                    <span className="text-htb-text-dim">📝 Grammar</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Intermediate-Grammar']
@@ -776,7 +776,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Intermediate-Writing')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Writing Skills</span>
+                    <span className="text-htb-text-dim">✍️ Writing Skills</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Intermediate-Writing']
@@ -965,7 +965,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Tiempos Verbales')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Tenses</span>
+                    <span className="text-htb-text-dim">⏳ Tenses</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Tiempos Verbales'] ? 'rotate-180' : ''
@@ -990,7 +990,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                         onClick={() => toggleSection('Present')}
                         className="w-full flex items-center justify-between px-3 py-1.5 rounded text-xs hover:bg-htb-card transition-colors"
                       >
-                        <span className="text-htb-text-dim">Present</span>
+                        <span className="text-htb-text-dim">🟢 Present</span>
                         <svg
                           className={`w-3 h-3 transition-transform ${
                             expandedSections['Present'] ? 'rotate-180' : ''
@@ -1031,7 +1031,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                         onClick={() => toggleSection('Past')}
                         className="w-full flex items-center justify-between px-3 py-1.5 rounded text-xs hover:bg-htb-card transition-colors"
                       >
-                        <span className="text-htb-text-dim">Past</span>
+                        <span className="text-htb-text-dim">🕰️ Past</span>
                         <svg
                           className={`w-3 h-3 transition-transform ${
                             expandedSections['Past'] ? 'rotate-180' : ''
@@ -1072,7 +1072,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                         onClick={() => toggleSection('Future')}
                         className="w-full flex items-center justify-between px-3 py-1.5 rounded text-xs hover:bg-htb-card transition-colors"
                       >
-                        <span className="text-htb-text-dim">Future</span>
+                        <span className="text-htb-text-dim">🔮 Future</span>
                         <svg
                           className={`w-3 h-3 transition-transform ${
                             expandedSections['Future'] ? 'rotate-180' : ''
@@ -1115,7 +1115,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Conditionals')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Conditionals</span>
+                    <span className="text-htb-text-dim">🔗 Conditionals</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Conditionals'] ? 'rotate-180' : ''
@@ -1156,7 +1156,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Question Forms')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Question Forms</span>
+                    <span className="text-htb-text-dim">❓ Question Forms</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Question Forms'] ? 'rotate-180' : ''
@@ -1193,7 +1193,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Mixed Practice')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Mixed Practice</span>
+                    <span className="text-htb-text-dim">🔀 Mixed Practice</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Mixed Practice'] ? 'rotate-180' : ''
@@ -1241,7 +1241,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Vocabulary')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Vocabulary</span>
+                    <span className="text-htb-text-dim">📖 Vocabulary</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Vocabulary'] ? 'rotate-180' : ''
@@ -1302,7 +1302,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Upper-Intermediate-Grammar')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Grammar</span>
+                    <span className="text-htb-text-dim">📝 Grammar</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Upper-Intermediate-Grammar']
@@ -1370,12 +1370,52 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     </div>
                   )}
 
+                  {/* Mixed Practice B2 */}
+                  <button
+                    onClick={() => toggleSection('Upper-Intermediate-Mixed')}
+                    className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                  >
+                    <span className="text-htb-text-dim">🔀 Mixed Practice</span>
+                    <svg
+                      className={`w-3 h-3 transition-transform ${
+                        expandedSections['Upper-Intermediate-Mixed']
+                          ? 'rotate-180'
+                          : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {expandedSections['Upper-Intermediate-Mixed'] && (
+                    <div className="ml-3 space-y-0.5">
+                      <button
+                        onClick={() => onSelectTense('mixed-b2')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'mixed-b2'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        All B2 grammar mixed
+                      </button>
+                    </div>
+                  )}
+
                   {/* Writing B2 */}
                   <button
                     onClick={() => toggleSection('Upper-Intermediate-Writing')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Writing Skills</span>
+                    <span className="text-htb-text-dim">✍️ Writing Skills</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Upper-Intermediate-Writing']
@@ -1435,7 +1475,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Upper-Intermediate-Speaking')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Speaking Skills</span>
+                    <span className="text-htb-text-dim">🗣️ Speaking Skills</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Upper-Intermediate-Speaking']
@@ -1505,7 +1545,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Weather Exercise B1')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Weather Exercise</span>
+                    <span className="text-htb-text-dim">🌦️ Weather Exercise</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Weather Exercise B1']
@@ -1545,7 +1585,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Exam')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Complete Exams</span>
+                    <span className="text-htb-text-dim">📄 Complete Exams</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Exam'] ? 'rotate-180' : ''
@@ -1702,7 +1742,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Advanced-Grammar')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Grammar</span>
+                    <span className="text-htb-text-dim">📝 Grammar</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Advanced-Grammar'] ? 'rotate-180' : ''
@@ -1935,12 +1975,50 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     </div>
                   )}
 
+                  {/* Mixed Practice C1 */}
+                  <button
+                    onClick={() => toggleSection('Advanced-Mixed')}
+                    className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
+                  >
+                    <span className="text-htb-text-dim">🔀 Mixed Practice</span>
+                    <svg
+                      className={`w-3 h-3 transition-transform ${
+                        expandedSections['Advanced-Mixed'] ? 'rotate-180' : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  {expandedSections['Advanced-Mixed'] && (
+                    <div className="ml-3 space-y-0.5">
+                      <button
+                        onClick={() => onSelectTense('mixed-c1')}
+                        className={`w-full text-left px-3 py-1.5 rounded text-xs transition-colors ${
+                          selectedTense === 'mixed-c1'
+                            ? 'bg-htb-green text-htb-bg font-medium'
+                            : 'text-htb-text-dim hover:text-htb-text hover:bg-htb-card'
+                        }`}
+                      >
+                        All C1 grammar mixed
+                      </button>
+                    </div>
+                  )}
+
                   {/* Writing Skills */}
                   <button
                     onClick={() => toggleSection('Advanced-Writing')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Writing Skills</span>
+                    <span className="text-htb-text-dim">✍️ Writing Skills</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Advanced-Writing'] ? 'rotate-180' : ''
@@ -1978,7 +2056,7 @@ const Sidebar = ({ selectedTense, onSelectTense: selectTense }) => {
                     onClick={() => toggleSection('Advanced-Vocabulary')}
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-htb-card transition-colors"
                   >
-                    <span className="text-htb-text-dim">Vocabulary</span>
+                    <span className="text-htb-text-dim">📖 Vocabulary</span>
                     <svg
                       className={`w-3 h-3 transition-transform ${
                         expandedSections['Advanced-Vocabulary']
