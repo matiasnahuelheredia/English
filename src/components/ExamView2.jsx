@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { toast } from '../toast';
 import { getExam2Sections, getTotalExam2Exercises } from '../data/examData2';
 import SuccessModal from './SuccessModal';
 import { useSuccess } from '../hooks/useSuccess';
@@ -179,7 +180,7 @@ const ExamView2 = () => {
 
   const checkAnswer = () => {
     if (!userAnswer.trim()) {
-      alert('Please write your answer');
+      toast('Escribí tu respuesta antes de continuar.', 'error');
       return;
     }
 

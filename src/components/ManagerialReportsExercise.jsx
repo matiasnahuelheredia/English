@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from '../toast';
 
 const ManagerialReportsExercise = () => {
   // All questions pool - much larger now
@@ -517,7 +518,7 @@ const ManagerialReportsExercise = () => {
 
   const checkAnswer = () => {
     if (!selectedAnswer) {
-      alert('Please select an answer');
+      toast('Seleccioná una respuesta.', 'error');
       return;
     }
 

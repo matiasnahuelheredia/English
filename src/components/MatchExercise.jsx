@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from '../toast';
 import { getExercisesByTense } from '../data/exercises';
 
 const MatchExercise = ({ tenseId }) => {
@@ -46,7 +47,7 @@ const MatchExercise = ({ tenseId }) => {
     const answeredCount = Object.keys(userAnswers).length;
 
     if (answeredCount < totalDefinitions) {
-      alert('Please complete all answers before verifying.');
+      toast('Completá todas las respuestas antes de verificar.', 'error');
       return;
     }
 

@@ -149,6 +149,41 @@ const Reminders = () => {
     setBusy(false);
   };
 
+  // Prueba en el navegador: muestra una notificación inmediata vía el service
+  // worker. En la web no se pueden programar avisos en segundo plano.
+  const testWeb = async () => {
+    setStatus(null);
+    if (typeof Notification === 'undefined') {
+      setStatus({ type: 'error', text: 'Este navegador no soporta notificaciones.' });
+      return;
+    }
+    setBusy(true);
+    try {
+      const perm = await Notification.requestPermission();
+      if (perm !== 'granted') {
+        setStatus({
+          type: 'error',
+          text: 'No diste permiso de notificaciones. Activalo en el candado 🔒 de la barra de direcciones.',
+        });
+        setBusy(false);
+        return;
+      }
+      const title = 'Prueba de notificación ✅';
+      const options = { body: 'Si ves esto, las notificaciones del navegador funcionan. 🎉' };
+      if (navigator.serviceWorker?.ready) {
+        const reg = await navigator.serviceWorker.ready;
+        await reg.showNotification(title, options);
+      } else {
+        // eslint-disable-next-line no-new
+        new Notification(title, options);
+      }
+      setStatus({ type: 'ok', text: 'Enviada. Debería aparecer ahora mismo.' });
+    } catch (e) {
+      setStatus({ type: 'error', text: 'No se pudo mostrar la notificación: ' + (e?.message || e) });
+    }
+    setBusy(false);
+  };
+
   const disable = async () => {
     const LN = getPlugin();
     if (!LN) return;
@@ -195,11 +230,31 @@ const Reminders = () => {
             <p className="text-yellow-400 text-sm mb-2 font-semibold">
               📱 Solo en la app de Android
             </p>
-            <p className="text-htb-text-dim text-sm">
-              Los recordatorios necesitan la app instalada (el APK). En el
-              navegador no se pueden programar avisos fiables en segundo plano.
-              Instalá la app desde la Release del repo y abrí esta pantalla ahí.
+            <p className="text-htb-text-dim text-sm mb-3">
+              Los recordatorios <b>que se repiten en segundo plano</b> (aunque
+              cierres la app) necesitan la app de Android. En el navegador solo
+              puedo mostrarte notificaciones <b>en el momento</b>: no hay forma
+              estándar de programar un aviso para más tarde con la pestaña
+              cerrada (eso requeriría un servidor con push).
             </p>
+            <button
+              onClick={testWeb}
+              disabled={busy}
+              className="text-sm px-4 py-2 rounded-md border border-htb-green/50 text-htb-green hover:bg-htb-card disabled:opacity-50 transition-colors"
+            >
+              🔔 Probar notificación (navegador)
+            </button>
+            {status && (
+              <div
+                className={`mt-3 p-3 rounded-md border text-sm ${
+                  status.type === 'ok'
+                    ? 'bg-htb-sidebar border-htb-green/40 text-htb-text'
+                    : 'bg-htb-sidebar border-red-500 text-red-400'
+                }`}
+              >
+                {status.text}
+              </div>
+            )}
           </div>
         )}
 

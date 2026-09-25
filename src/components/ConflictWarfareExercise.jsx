@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from '../toast';
 
 const ConflictWarfareExercise = () => {
   // Exercise 1: Dialogue ordering
@@ -47,7 +48,7 @@ const ConflictWarfareExercise = () => {
 
   const checkDialogueOrder = () => {
     if (selectedOrder.length !== dialogueSentences.length) {
-      alert('Please select all sentences in order!');
+      toast('Seleccioná todas las oraciones en orden.', 'error');
       return;
     }
 
