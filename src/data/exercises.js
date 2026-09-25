@@ -4428,6 +4428,7 @@ const getTenseName = (tenseId) => {
     'participle-clauses-c2': 'Participle Clauses (C2)',
     'advanced-conditionals-c2': 'Advanced Conditionals (C2)',
     'ellipsis-substitution-c2': 'Ellipsis & Substitution (C2)',
+    'academic-english-c2': 'Academic & Scientific English (C2)',
     'report-passive-voice': 'Passive Voice (Report)',
     'report-recommendations': 'Recommendations (Report)',
     'report-impact-conditionals': 'Impact / Conditionals (Report)',

@@ -165,6 +165,7 @@ const C2_SECTIONS = [
       { id: 'participle-clauses-c2', name: '🧩 Participle Clauses' },
       { id: 'advanced-conditionals-c2', name: '🔗 Advanced & Mixed Conditionals' },
       { id: 'ellipsis-substitution-c2', name: '➖ Ellipsis & Substitution' },
+      { id: 'academic-english-c2', name: '🔬 Academic & Scientific English' },
     ],
   },
   {
