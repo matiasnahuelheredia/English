@@ -177,6 +177,8 @@ const C2_SECTIONS = [
       { id: 'formal-language-c2', name: 'Formal & Academic Language' },
       { id: 'nuanced-synonyms-c2', name: 'Nuanced Synonyms' },
       { id: 'confusing-words-c2', name: 'Commonly Confused Words' },
+      { id: 'binomials-c2', name: 'Binomials & Fixed Pairs' },
+      { id: 'euphemisms-c2', name: 'Euphemisms & Diplomatic Language' },
     ],
   },
   {

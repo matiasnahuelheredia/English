@@ -105,6 +105,42 @@ export const c2VocabularyData = {
     w('Sensible', ['sensato', 'sensata', 'razonable'], '🧠', '"Sensible" = sensato (falso amigo). Sensitive = sensible.'),
     w('Sensitive', ['sensible'], '💗', '"Sensitive" = sensible.'),
   ],
+
+  // Binomios: pares fijos unidos por "and/or", con orden invariable
+  'binomials-c2': [
+    w('By and large', ['en general', 'en líneas generales'], '📊', '"By and large" = en general, considerándolo todo.'),
+    w('Give and take', ['toma y daca', 'concesiones mutuas'], '🤝', '"Give and take" = compromiso mutuo, ceder de ambos lados.'),
+    w('Sooner or later', ['tarde o temprano'], '⏰', '"Sooner or later" = tarde o temprano; algo pasará sí o sí.'),
+    w('Back and forth', ['de un lado a otro', 'ida y vuelta'], '↔️', '"Back and forth" = de acá para allá; también un intercambio de mensajes.'),
+    w('Pros and cons', ['pros y contras', 'ventajas y desventajas'], '⚖️', '"Pros and cons" = los puntos a favor y en contra.'),
+    w('Wear and tear', ['desgaste', 'deterioro por el uso'], '🔧', '"Wear and tear" = el desgaste normal por el uso.'),
+    w('Ups and downs', ['altibajos', 'idas y vueltas'], '🎢', '"Ups and downs" = los buenos y malos momentos.'),
+    w('Part and parcel', ['parte esencial', 'algo inherente'], '🧩', '"Part and parcel (of)" = una parte esencial e inseparable de algo.'),
+    w('Safe and sound', ['sano y salvo'], '🛟', '"Safe and sound" = sano y salvo, sin ningún daño.'),
+    w('Touch and go', ['en la cuerda floja', 'incierto', 'peliagudo'], '😰', '"Touch and go" = una situación incierta y riesgosa; puede salir mal.'),
+    w('First and foremost', ['ante todo', 'en primer lugar'], '1️⃣', '"First and foremost" = ante todo, lo más importante primero.'),
+    w('Null and void', ['nulo y sin efecto', 'sin validez'], '🚫', '"Null and void" = sin ningún valor legal (registro formal/legal).'),
+    w('Odds and ends', ['cosas sueltas', 'cachivaches'], '📦', '"Odds and ends" = objetos varios y pequeños sin importancia.'),
+    w('Bits and pieces', ['pedacitos', 'cosillas varias'], '🧷', '"Bits and pieces" = pequeñas cosas o tareas varias.'),
+  ],
+
+  // Eufemismos y lenguaje diplomático: decir algo delicado de forma suave
+  'euphemisms-c2': [
+    w('Pass away', ['fallecer', 'partir'], '🕊️', '"Pass away" = morir, dicho de forma suave y respetuosa.'),
+    w('Let someone go', ['despedir', 'echar del trabajo'], '📤', '"Let someone go" = despedir a alguien (eufemismo de "fire").'),
+    w('Between jobs', ['sin trabajo por ahora', 'en transición laboral'], '💼', '"Between jobs" = desempleado, dicho con delicadeza.'),
+    w('Economical with the truth', ['no del todo sincero', 'que oculta parte de la verdad'], '🤥', '"Economical with the truth" = mentir por omisión, sin decir "liar".'),
+    w('Downsizing', ['reducción de personal', 'recorte'], '📉', '"Downsizing" = recortar plantilla; eufemismo empresarial por despidos.'),
+    w('Collateral damage', ['daños colaterales'], '💥', '"Collateral damage" = víctimas o daños no buscados (registro militar/eufemístico).'),
+    w('Under the weather', ['pachucho', 'indispuesto', 'medio mal'], '🤒', '"Under the weather" = sentirse un poco enfermo.'),
+    w('Senior citizen', ['persona mayor', 'adulto mayor'], '👵', '"Senior citizen" = persona mayor, término respetuoso.'),
+    w('Correctional facility', ['centro penitenciario', 'cárcel'], '🏢', '"Correctional facility" = cárcel, en registro formal/eufemístico.'),
+    w('Put to sleep', ['sacrificar (a un animal)'], '🐕', '"Put (an animal) to sleep" = sacrificar a una mascota de forma suave.'),
+    w('Tired and emotional', ['borracho (con eufemismo)'], '🍷', '"Tired and emotional" = eufemismo británico e irónico por "borracho".'),
+    w('A woman of a certain age', ['una mujer de cierta edad'], '💃', '"Of a certain age" = evita decir la edad concreta (mayor).'),
+    w('Restructuring', ['reestructuración'], '🏗️', '"Restructuring" = reorganizar la empresa; suele implicar despidos.'),
+    w('Enhanced interrogation', ['interrogatorio coercitivo'], '⛓️', '"Enhanced interrogation" = eufemismo controvertido por tortura.'),
+  ],
 };
 
 export const c2VocabularyTitles = {
@@ -114,4 +150,6 @@ export const c2VocabularyTitles = {
   'formal-language-c2': 'Formal & Academic Language - C2 Vocabulary',
   'nuanced-synonyms-c2': 'Nuanced Synonyms - C2 Vocabulary',
   'confusing-words-c2': 'Commonly Confused Words - C2 Vocabulary',
+  'binomials-c2': 'Binomials & Fixed Pairs - C2 Vocabulary',
+  'euphemisms-c2': 'Euphemisms & Diplomatic Language - C2 Vocabulary',
 };
