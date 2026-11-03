@@ -1061,7 +1061,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
     );
   };
 
-  const getTenseStructure = () => {
+  const getTenseStructure = (id = tenseId) => {
     const structures = {
       'present-simple': {
         affirmative: 'Subject + verb (base form) / verb + s/es (3rd person)',
@@ -1208,14 +1208,22 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       },
     };
     const info =
-      a1GrammarInfo[tenseId] ||
-      a2GrammarInfo[tenseId] ||
-      b1GrammarInfo[tenseId] ||
-      b2GrammarInfo[tenseId] ||
-      c2GrammarInfo[tenseId] ||
-      pentestGrammarInfo[tenseId];
-    return structures[tenseId] || info?.structure || null;
+      a1GrammarInfo[id] ||
+      a2GrammarInfo[id] ||
+      b1GrammarInfo[id] ||
+      b2GrammarInfo[id] ||
+      c2GrammarInfo[id] ||
+      pentestGrammarInfo[id];
+    return structures[id] || info?.structure || null;
   };
+
+  // Para el feedback: si el tema no tiene estructura propia (p. ej. un Mixed
+  // Practice), usa la del tiempo verbal de la pregunta actual (tenseKey).
+  const getFeedbackStructure = () =>
+    getTenseStructure() ||
+    (currentExercise?.tenseKey
+      ? getTenseStructure(currentExercise.tenseKey)
+      : null);
 
   // Ficha teórica extra (por ahora, conectores B2): grupos de conectores
   const getTenseTheory = () => {
@@ -1757,7 +1765,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                 )}
 
                 {/* Reglas del tiempo verbal, para entrenar al hacer check */}
-                {!isVocabulary && getTenseStructure() && (
+                {!isVocabulary && getFeedbackStructure() && (
                   <div className="mt-4 pt-3 border-t border-gray-700">
                     <p className="text-xs font-bold text-htb-green uppercase tracking-wide mb-2">
                       📘 Reglas
@@ -1768,7 +1776,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                           ✓ Afirmativo
                         </p>
                         <p className="text-htb-text-dim leading-snug">
-                          {getTenseStructure().affirmative}
+                          {getFeedbackStructure().affirmative}
                         </p>
                       </div>
                       <div className="bg-htb-card rounded p-2 border border-gray-800">
@@ -1776,7 +1784,7 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                           ✗ Negativo
                         </p>
                         <p className="text-htb-text-dim leading-snug">
-                          {getTenseStructure().negative}
+                          {getFeedbackStructure().negative}
                         </p>
                       </div>
                       <div className="bg-htb-card rounded p-2 border border-gray-800">
@@ -1784,27 +1792,27 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                           ? Pregunta
                         </p>
                         <p className="text-htb-text-dim leading-snug">
-                          {getTenseStructure().interrogative}
+                          {getFeedbackStructure().interrogative}
                         </p>
                       </div>
                     </div>
-                    {getTenseStructure().example && (
+                    {getFeedbackStructure().example && (
                       <p className="text-xs text-htb-text-dim mt-2">
                         <span className="text-htb-green font-semibold">
                           Ej:
                         </span>{' '}
                         <span className="italic">
-                          {getTenseStructure().example}
+                          {getFeedbackStructure().example}
                         </span>
                       </p>
                     )}
-                    {getTenseStructure().signalWords && (
+                    {getFeedbackStructure().signalWords && (
                       <p className="text-xs text-htb-text-dim mt-1">
                         <span className="text-htb-green font-semibold">
                           Señales:
                         </span>{' '}
                         <span className="italic">
-                          {getTenseStructure().signalWords}
+                          {getFeedbackStructure().signalWords}
                         </span>
                       </p>
                     )}
