@@ -4337,6 +4337,7 @@ export const getExercisesByTense = (tenseId) => {
       levelExercises[key].map((exercise) => ({
         ...exercise,
         tense: getTenseName(key),
+        tenseKey: key,
       }))
     );
     return shuffleArray(all);
@@ -4351,6 +4352,7 @@ export const getExercisesByTense = (tenseId) => {
         const exercisesWithTense = exercisesData[key].map((exercise) => ({
           ...exercise,
           tense: getTenseName(key),
+          tenseKey: key,
         }));
         allExercises.push(...exercisesWithTense);
       }
