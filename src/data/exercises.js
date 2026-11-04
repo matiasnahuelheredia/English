@@ -4365,7 +4365,7 @@ export const getExercisesByTense = (tenseId) => {
 };
 
 // Helper function to get the verb tense name in Spanish
-const getTenseName = (tenseId) => {
+export const getTenseName = (tenseId) => {
   const tenseNames = {
     'present-perfect': 'Present Perfect',
     'present-perfect-continuous': 'Present Perfect Continuous',
