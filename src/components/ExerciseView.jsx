@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { toast } from '../toast';
-import { getExercisesByTense } from '../data/exercises';
+import { getExercisesByTense, getTenseName } from '../data/exercises';
 import { getVocabularyByTopic } from '../data/vocabularyData';
 import { a1GrammarInfo } from '../data/a1GrammarData';
 import { a1VocabularyData, a1VocabularyTitles } from '../data/a1VocabularyData';
@@ -1225,17 +1225,26 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
       ? getTenseStructure(currentExercise.tenseKey)
       : null);
 
-  // Ficha teórica extra (por ahora, conectores B2): grupos de conectores
-  const getTenseTheory = () => {
+  // Ficha teórica extra (conectores, condicionales, etc.): grupos
+  const getTenseTheory = (id = tenseId) => {
     const info =
-      a1GrammarInfo[tenseId] ||
-      a2GrammarInfo[tenseId] ||
-      b1GrammarInfo[tenseId] ||
-      b2GrammarInfo[tenseId] ||
-      c2GrammarInfo[tenseId] ||
-      pentestGrammarInfo[tenseId];
+      a1GrammarInfo[id] ||
+      a2GrammarInfo[id] ||
+      b1GrammarInfo[id] ||
+      b2GrammarInfo[id] ||
+      c2GrammarInfo[id] ||
+      pentestGrammarInfo[id];
     return info?.theory || null;
   };
+
+  // Clave del tiempo de la pregunta actual (en los mixed) o del tema
+  const activeTenseKey = currentExercise?.tenseKey || tenseId;
+  // Modal con la explicación del tiempo verbal (se abre al clickear la badge)
+  const [tenseModalOpen, setTenseModalOpen] = useState(false);
+  const modalStructure = getTenseStructure(activeTenseKey);
+  const modalTheory = getTenseTheory(activeTenseKey);
+  const modalTitle =
+    (feedback && feedback.tense) || getTenseName(activeTenseKey);
 
   if (!currentExercise) {
     return (
@@ -1727,14 +1736,19 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
                 >
                   {feedback.isCorrect ? '✓ Correct' : '✗ Incorrect'}
                 </p>
-                {/* Mostrar el tiempo verbal solo en Mixed Tenses */}
-                {['mixed-tenses', 'mixed-a1', 'mixed-a2', 'mixed-b1', 'mixed-b2', 'mixed-c1', 'mixed-c2', 'mixed-pentest'].includes(
-                    tenseId
-                  ) &&
-                  feedback.tense && (
-                  <p className="text-sm text-htb-green font-semibold mt-1 bg-htb-card inline-block px-3 py-1 rounded border border-htb-green/30">
-                    📚 {feedback.tense}
-                  </p>
+                {/* Badge clickeable del tiempo verbal: abre el modal con la
+                    explicación de cómo funciona ese tiempo */}
+                {!isVocabulary && (modalStructure || modalTheory) && (
+                  <button
+                    onClick={() => setTenseModalOpen(true)}
+                    title="Ver explicación"
+                    className="text-sm text-htb-green font-semibold mt-1 bg-htb-card inline-flex items-center gap-1.5 px-3 py-1 rounded border border-htb-green/30 hover:border-htb-green hover:bg-htb-sidebar transition-colors cursor-pointer"
+                  >
+                    📚 {modalTitle}
+                    <span className="text-[10px] font-normal opacity-80">
+                      ⓘ ver
+                    </span>
+                  </button>
                 )}
                 <p className="text-base text-htb-text mt-2">
                   {feedback.message}
@@ -1850,6 +1864,134 @@ const ExerciseView = ({ tenseId, onSelectTense }) => {
           </div>
         </div>
       </div>
+
+      {tenseModalOpen && (modalStructure || modalTheory) && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70"
+          onClick={() => setTenseModalOpen(false)}
+        >
+          <div
+            className="bg-htb-bg border border-htb-green/40 rounded-lg max-w-2xl w-full max-h-[85vh] overflow-y-auto p-5 sm:p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <h2 className="text-xl font-bold text-htb-green">
+                📚 {modalTitle}
+              </h2>
+              <button
+                onClick={() => setTenseModalOpen(false)}
+                className="text-htb-text-dim hover:text-white text-2xl leading-none"
+                aria-label="Cerrar"
+              >
+                ×
+              </button>
+            </div>
+
+            {modalStructure && (
+              <>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs mb-3">
+                  <div className="bg-htb-card rounded p-3 border border-gray-800">
+                    <p className="font-semibold text-htb-green mb-1">
+                      ✓ Afirmativo
+                    </p>
+                    <p className="text-htb-text leading-relaxed">
+                      {modalStructure.affirmative}
+                    </p>
+                  </div>
+                  <div className="bg-htb-card rounded p-3 border border-gray-800">
+                    <p className="font-semibold text-red-500 mb-1">
+                      ✗ Negativo
+                    </p>
+                    <p className="text-htb-text leading-relaxed">
+                      {modalStructure.negative}
+                    </p>
+                  </div>
+                  <div className="bg-htb-card rounded p-3 border border-gray-800">
+                    <p className="font-semibold text-blue-400 mb-1">
+                      ? Pregunta
+                    </p>
+                    <p className="text-htb-text leading-relaxed">
+                      {modalStructure.interrogative}
+                    </p>
+                  </div>
+                </div>
+                {modalStructure.example && (
+                  <p className="text-sm text-htb-text-dim mb-1">
+                    <span className="text-htb-green font-semibold">
+                      Ejemplo:
+                    </span>{' '}
+                    <span className="italic text-htb-text">
+                      {modalStructure.example}
+                    </span>
+                  </p>
+                )}
+                {modalStructure.signalWords && (
+                  <p className="text-sm text-htb-text-dim mb-1">
+                    <span className="text-htb-green font-semibold">
+                      Palabras señal:
+                    </span>{' '}
+                    <span className="italic">{modalStructure.signalWords}</span>
+                  </p>
+                )}
+              </>
+            )}
+
+            {modalTheory && (
+              <div className="mt-4">
+                {modalTheory.intro && (
+                  <p className="text-sm text-htb-text-dim leading-relaxed mb-3">
+                    {modalTheory.intro}
+                  </p>
+                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {modalTheory.groups.map((group) => (
+                    <div
+                      key={group.label}
+                      className="bg-htb-card rounded p-3 border border-gray-800"
+                    >
+                      <p className="font-semibold text-htb-green text-xs uppercase tracking-wide mb-2">
+                        {group.label}
+                      </p>
+                      <ul className="space-y-2">
+                        {group.items.map((item) => (
+                          <li key={item.word} className="text-xs">
+                            <span className="font-bold text-white">
+                              {item.word}
+                            </span>
+                            {item.es && (
+                              <span className="text-htb-text-dim">
+                                {' '}
+                                — {item.es}
+                              </span>
+                            )}
+                            {item.use && (
+                              <p className="text-htb-text-dim leading-relaxed">
+                                {item.use}
+                              </p>
+                            )}
+                            {item.example && (
+                              <p className="text-htb-text italic">
+                                “{item.example}”
+                              </p>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <button
+              onClick={() => setTenseModalOpen(false)}
+              className="mt-5 w-full bg-htb-green hover:bg-htb-green-hover text-htb-bg px-4 py-2.5 rounded-md font-semibold transition-colors"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
